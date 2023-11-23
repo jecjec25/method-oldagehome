@@ -1,0 +1,251 @@
+CRITICAL - 2023-11-22 13:01:29 --> syntax error, unexpected end of file
+in APPPATH\Config\Routes.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 13:01:36 --> syntax error, unexpected end of file
+in APPPATH\Config\Routes.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 13:01:42 --> syntax error, unexpected end of file
+in APPPATH\Config\Routes.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 14:00:51 --> syntax error, unexpected end of file
+in APPPATH\Config\Routes.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 14:01:17 --> include_once(includes/header.php): Failed to open stream: No such file or directory
+in APPPATH\Views\admin\home.php on line 33.
+ 1 APPPATH\Views\admin\home.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include_once(includes/header.php): Failed to open stream: No such file or directory', 'C:\\laragon\\www\\ArugaKapatid\\app\\Views\\admin\\home.php', 33)
+ 2 APPPATH\Views\admin\home.php(33): include_once()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\ArugaKapatid\\app\\Views\\admin\\home.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/home', [], true)
+ 6 APPPATH\Controllers\ViewController.php(11): view('admin/home')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 14:01:51 --> include_once(includes/footer.php): Failed to open stream: No such file or directory
+in APPPATH\Views\admin\home.php on line 165.
+ 1 APPPATH\Views\admin\home.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include_once(includes/footer.php): Failed to open stream: No such file or directory', 'C:\\laragon\\www\\ArugaKapatid\\app\\Views\\admin\\home.php', 165)
+ 2 APPPATH\Views\admin\home.php(165): include_once()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\ArugaKapatid\\app\\Views\\admin\\home.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/home', [], true)
+ 6 APPPATH\Controllers\ViewController.php(11): view('admin/home')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 14:03:01 --> include_once(includes/header.php): Failed to open stream: No such file or directory
+in APPPATH\Views\admin\home.php on line 33.
+ 1 APPPATH\Views\admin\home.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include_once(includes/header.php): Failed to open stream: No such file or directory', 'C:\\laragon\\www\\ArugaKapatid\\app\\Views\\admin\\home.php', 33)
+ 2 APPPATH\Views\admin\home.php(33): include_once()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\ArugaKapatid\\app\\Views\\admin\\home.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/home', [], true)
+ 6 APPPATH\Controllers\ViewController.php(11): view('admin/home')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 14:19:26 --> Invalid file: "admin/eligability.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/eligability.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/eligability', [], true)
+ 3 APPPATH\Controllers\ViewController.php(19): view('admin/eligability')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->eligability()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:42:02 --> syntax error, unexpected token "{", expecting "("
+in APPPATH\Controllers\UserController.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\ArugaKapatid\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:42:38 --> syntax error, unexpected token "else", expecting ";"
+in APPPATH\Controllers\UserController.php on line 41.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\ArugaKapatid\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:43:08 --> syntax error, unexpected token "else", expecting ";"
+in APPPATH\Controllers\UserController.php on line 41.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\ArugaKapatid\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:43:10 --> syntax error, unexpected token "else", expecting ";"
+in APPPATH\Controllers\UserController.php on line 41.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\ArugaKapatid\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:43:13 --> syntax error, unexpected token "else"
+in APPPATH\Controllers\UserController.php on line 41.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\ArugaKapatid\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:43:22 --> syntax error, unexpected token "else"
+in APPPATH\Controllers\UserController.php on line 42.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\ArugaKapatid\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:43:31 --> syntax error, unexpected token "else"
+in APPPATH\Controllers\UserController.php on line 42.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\ArugaKapatid\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:43:42 --> Cannot use [] for reading
+in APPPATH\Controllers\UserController.php on line 15.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-22 21:45:35 --> Class "App\Controllers\App\Models\UserModel" not found
+in APPPATH\Controllers\UserController.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:54:31 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Validation\StrictRules\Rules.php(194): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('changeldc11@gmai.com', '', [...], null, 'email')
+ 3 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'changeldc11@gmai.com', [...], [...])
+ 4 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\UserController.php(32): CodeIgniter\Controller->validate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:56:16 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Validation\StrictRules\Rules.php(194): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('changeldc11@gmai.com', '', [...], null, 'email')
+ 3 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'changeldc11@gmai.com', [...], [...])
+ 4 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\UserController.php(32): CodeIgniter\Controller->validate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:57:01 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Validation\StrictRules\Rules.php(194): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('changeldc11@gmail.com', '', [...], null, 'email')
+ 3 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'changeldc11@gmail.com', [...], [...])
+ 4 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\UserController.php(32): CodeIgniter\Controller->validate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:57:55 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Validation\StrictRules\Rules.php(194): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('changeldc11@gmail.com', '', [...], null, 'email')
+ 3 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'changeldc11@gmail.com', [...], [...])
+ 4 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\UserController.php(32): CodeIgniter\Controller->validate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 21:59:32 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Validation\StrictRules\Rules.php(194): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('changeldc11@gmail.com', '', [...], null, 'email')
+ 3 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'changeldc11@gmail.com', [...], [...])
+ 4 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\UserController.php(32): CodeIgniter\Controller->validate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 22:05:01 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\UserController.php on line 20.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\ArugaKapatid\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 22:05:08 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Validation\StrictRules\Rules.php(194): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('changeldc11@gmail.com', '', [...], null, 'email')
+ 3 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'changeldc11@gmail.com', [...], [...])
+ 4 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\UserController.php(34): CodeIgniter\Controller->validate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
+CRITICAL - 2023-11-22 22:07:49 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Validation\StrictRules\Rules.php(194): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('changeldc11@gmail.com', '', [...], null, 'email')
+ 3 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'changeldc11@gmail.com', [...], [...])
+ 4 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\UserController.php(34): CodeIgniter\Controller->validate([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\ArugaKapatid\\public\\index.php')
