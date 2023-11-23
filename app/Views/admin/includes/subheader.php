@@ -1,5 +1,5 @@
 <!--header-->
-  <div class="strip"> </div>
+<div class="strip"> </div>
   <div class="header-top" id="home">
     <div class="container">
       <div class="head-section">

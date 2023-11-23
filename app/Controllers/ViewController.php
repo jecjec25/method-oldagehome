@@ -30,4 +30,8 @@ class ViewController extends BaseController
     {
         return view('admin/service');
     }
+    public function products()
+    {
+        return view('admin/shop');
+    }
 }

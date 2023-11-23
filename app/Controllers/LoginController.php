@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\UserModel;
 
 class LoginController extends BaseController
 {
@@ -44,6 +45,7 @@ class LoginController extends BaseController
         }else{
             $session->setFlashdata('msg', 'Email does not exist.');
             return redirect()->to('/signin');
-        }+
+        }
         
+    }
 }
