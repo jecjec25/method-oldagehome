@@ -32,6 +32,6 @@ class ViewController extends BaseController
     }
     public function products()
     {
-        return view('admin/shop');
+        return view('admin/products');
     }
 }
