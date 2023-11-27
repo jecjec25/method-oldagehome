@@ -36,13 +36,10 @@
 <div class="banner-section">
 	<div class="container">
 		<div class="banner-head">
-			<h1>Old age home is shelter place for senior citizen </h1>
-			<p>when an unknown printer  took a galley of type and 
-			scrambled it to make a type specimen book.
-			when an unknown printer  took a galley of type and 
-			scrambled it to make a type specimen book.
-			when an unknown printer  took a galley of type and 
-			scrambled it to make a type specimen book.</p>
+			<h1>Old age is just a record of one's whole life </h1>
+			<p>Old age is not a disease - it is strength and survivorship,
+			triumph over all kinds of vicissitudes and
+			disappointments, trials and illnesses.</p>
 		</div>
 	</div>
 </div>
