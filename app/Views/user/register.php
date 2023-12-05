@@ -23,12 +23,14 @@
               <h3 style="color:seagreen;">OAHMS</h3>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Register</h6>
-              <form class="pt-3" action="UserController/register" method="post" >
+              <form class="pt-3" action="/register" method="post" >
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="LastName" placeholder="Lastname" name="LastName">
+                  <input type="text" class="form-control form-control-lg border-left-0" id="lastname" placeholder="lastname" name="LastName">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="FirstName" placeholder="First Name" name="FirstName">
+                  <input type="text" class="form-control form-control-lg border-left-0" id="firstname" placeholder="First Name" name="firstname">
+                </div>
+                  <input type="text" class="form-control form-control-lg border-left-0" id="contactnum" placeholder="Contact Number" name="contactnum" >
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg border-left-0" id="username" placeholder="username" name="username" >
@@ -36,10 +38,6 @@
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg border-left-0" id="email" placeholder="email" name="email" >
                 </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="contactno" placeholder="Contact Number" name="contactno" >
-                </div>
-
                 <div class="form-group">
                   <input type="password" class="form-control form-control-lg border-left-0" id="password" placeholder="Password" name="password" required="true" >
                 </div>

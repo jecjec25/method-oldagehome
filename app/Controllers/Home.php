@@ -10,6 +10,6 @@ class Home extends BaseController
     }
     public function try()
     {               
-        echo view('user/login');
+        echo view('user/register');
     }
 }

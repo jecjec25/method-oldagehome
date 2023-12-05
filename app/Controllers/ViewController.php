@@ -34,4 +34,40 @@ class ViewController extends BaseController
     {
         return view('admin/products');
     }
+    public function dash()
+    {
+        return view('dashboard/dash');
+    }
+    public function search()
+    {
+        return view('dashboard/search');
+    }
+    public function rule()
+    {
+        return view('dashboard/rule');
+    }
+    public function eligibility()
+    {
+        return view('dashboard/eligibility');
+    }
+    public function aboutus()
+    {
+        return view('dashboard/aboutus');
+    }
+    public function contactus()
+    {
+        return view('dashboard/contactus');
+    }
+    public function reports()
+    {
+        return view('dashboard/reports');
+    }
+    public function addservices()
+    {
+        return view('dashboard/addservices');
+    }
+    public function manageservices()
+    {
+        return view('dashboard/manageservices');
+    }
 }

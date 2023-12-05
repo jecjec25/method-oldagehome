@@ -4,17 +4,17 @@
 <title>Old Age Home Management System || Home Page</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="./css/style.css" rel='stylesheet' type='text/css' />
 <!--Custom Theme files-->
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/modernizr.custom.js"></script>
 
  <!--start-smoth-scrolling-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="./js/move-top.js"></script>
+<script type="text/javascript" src="./js/easing.js"></script>
 		
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
@@ -155,7 +155,7 @@
 		</div>
 	</div>
   </div>          
-   <script src="js/jquery.wmuSlider.js"></script> 
+   <script src="./js/jquery.wmuSlider.js"></script> 
 					<script>
        				     $('.example1').wmuSlider();         
    					</script> 	           	      

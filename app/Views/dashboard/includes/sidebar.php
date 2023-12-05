@@ -1,4 +1,4 @@
- <div class="theme-setting-wrapper">
+<div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close typcn typcn-times"></i>
@@ -19,7 +19,7 @@
  <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">
+            <a class="nav-link" href="/dash">
               <i class="typcn typcn-device-desktop menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -32,10 +32,10 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="aboutus.php">About Us</a></li>
-                <li class="nav-item"> <a class="nav-link" href="contactus.php">Contact Us</a></li>
-                <li class="nav-item"> <a class="nav-link" href="rules.php">Rules</a></li>
-                <li class="nav-item"> <a class="nav-link" href="eligibility.php">Eligibility</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/aboutus">About Us</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/contactus">Contact Us</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/rule">Rules</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/eligibility">Eligibility</a></li>
               </ul>
             </div>
           </li>
@@ -47,8 +47,8 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="add-services.php">Add Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="manage-services.php">Manage Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="/addservices">Add Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="/manageservices">Manage Services</a></li>
               </ul>
             </div>
           </li>
@@ -86,12 +86,12 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="between-datesreport.php">B/W dates Report</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/reports">B/W dates Report</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="search.php">
+            <a class="nav-link" href="/search">
               <i class="typcn typcn-mortar-board menu-icon"></i>
               <span class="menu-title">Search</span>
             </a>

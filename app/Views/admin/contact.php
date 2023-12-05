@@ -42,25 +42,25 @@
 				  	   <form method="post" class="left_form">
 					    	<div>
 						    	<span><label>First Name</label></span>
-						    	<span><input required="true" name="fname" type="text" class="textbox"></span>
+						    	<span><input required="true" name="FirstName" type="text" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>Last Name</label></span>
-						    	<span><input required="true" name="lname" type="text" class="textbox"></span>
+						    	<span><input required="true" name="LastName" type="text" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>Contact Number</label></span>
-						    	<span><input required="true" name="phone" pattern="[0-9]+" maxlength="10" type="text" class="textbox"></span>
+						    	<span><input required="true" name="Phone" pattern="[0-9]+" maxlength="10" type="text" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>E-MAIL</label></span>
-						    	<span><input required="" name="email" type="text" class="textbox"></span>
+						    	<span><input required="" name="Email" type="text" class="textbox"></span>
 						    </div>
 						   
 					   
 					        <div>					    	
 						    	<span><label>Message</label></span>
-						    	<span><textarea required="true" name="message"> </textarea></span>
+						    	<span><textarea required="true" name="Message"> </textarea></span>
 						    </div>
 						   <div>
 						   		<input type="submit" value="Submit " name="submit" />

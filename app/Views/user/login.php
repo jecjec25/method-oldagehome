@@ -30,7 +30,7 @@
                 <div class="form-group">
                   <input type="password" class="form-control form-control-lg border-left-0" id="password" placeholder="Password" name="password" required="true" value="<?php if(isset($_COOKIE["userpassword"])) { echo $_COOKIE["userpassword"]; } ?>">
                 </div>
-                <div class="mt-3">
+                <div class="mt-3" action="/dash">
                   <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" name="submit">LOGIN</button>
                 </div>
                 </form> 

@@ -12,10 +12,10 @@
               </div>
               <div class="top-log">
                 <ul>
-                  <li><a href="#">Admin</a></li>
+                  <li><a href="/dash">Admin</a></li>
                   <li><a href="/contact">Contact</a></li>
                  <li><a href="/eligibility">Eligibility</a></li>
-                <li><a href="/rules"> Rules </a></li>
+                <li><a href="/rule"> Rules </a></li>
                  <li><a href="#"> Search </a></li>
                 </ul>
                   <div class="clearfix"> </div> 
