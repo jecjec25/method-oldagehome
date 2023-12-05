@@ -12,7 +12,7 @@
               </div>
               <div class="top-log">
                 <ul>
-                  <li><a href="/dash">Admin</a></li>
+                  <li><a href="/register">Admin</a></li>
                   <li><a href="/contact">Contact</a></li>
                  <li><a href="/eligibility">Eligibility</a></li>
                 <li><a href="/rule"> Rules </a></li>

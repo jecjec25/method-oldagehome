@@ -23,11 +23,12 @@ class UserController extends BaseController
        
         helper(['form']);
         $validation = [
-            'LastName'  => 'required|min_length[2]|max_length[100]',
-            'FirstName' => 'required|min_length[2]|max_length[100]',
+            'lastname'  => 'required|min_length[2]|max_length[100]',
+            'firstname' => 'required|min_length[2]|max_length[100]',
+            'address' => 'required|min_length[2]|max_length[100]',
+            'contactnum' => 'required|min_length[11]|max_length[13]',
             'username' => 'required|min_length[4]|max_length[100]',
-            'email' => 'required|min_length[4]|max_length[100]|valid_email|is_unique[]',
-            'contactno' => 'required|min_legnth[11]|numeric|max_length[13]',
+            'email' => 'required|min_length[4]|max_length[100]|valid_email|is_unique[usertbl.email]',
             'password' => 'required|min_length[10]|max_length[100]',
         ];
 
@@ -35,15 +36,16 @@ class UserController extends BaseController
         {
             $user = new UserModel();
             $data =[
-                'LastName' => $this->request->getVar('LastName'),
-                'FirstName' => $this->request->getVar('FirstName'),
+                'lastname' => $this->request->getVar('lastname'),
+                'firstname' => $this->request->getVar('firstname'),
+                'address' =>  $this->request->getVar('address'),
+                'contactnum' => $this->request->getVar('contactnum'),
                 'username' => $this->request->getVar('username'),
                 'email' => $this->request->getVar('email'),
-                'contactno' => $this->request->getVar('contactno'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             ];
             $user->save($data);
-            return redirect()->to('/login');
+            return redirect()->to('/signin');
             
         }
         else{
