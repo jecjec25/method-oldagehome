@@ -8,12 +8,12 @@ use App\Models\UsersModel;
 class SigninController extends BaseController
 {
     public function signin(){
-        return view('user/login');
+        return view('user/signin');
     }
     public function index()
     {
         helper(['form']);
-        return view('signin');
+        return view('user/signin');
     }
     public function loginAuth()
     {

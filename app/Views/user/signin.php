@@ -37,7 +37,7 @@
                   <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" name="submit">LOGIN</button>
                 </div>
                 </form> 
-                <form action="/register">
+                <form action="/signup">
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn btn-success" name="submit">REGISTER</button>
                 </div>

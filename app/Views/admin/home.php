@@ -44,25 +44,30 @@
 	<div class="org-chart" style="display:block;margin-left:auto;margin-right:auto;width:50%">
 		<div class="person" style="text-align: center;">
 		<img src="images/1.jpg" alt="Person 1" style="width: 200px;height: auto;">
-		<p>Person 1</p>
+		<p>REV. FR. NESTOR J. ADALIA</p>
+		<p>Apostolic Administrator</p>
 		</div>
 		<div class="row">
-		<div class="column" style="float: left;width: 33.33%;padding: 5px;">
+		<div class="column" style="float: left;width: 33.33%;padding: 5px; margi;">
 		<img src="images/2.jpg" alt="Person 2" style="width: 200px;height: auto;">
-		<p>Person 2</p>
+		<p>LITO C. VERGARA</p>
+		<p>Administrator</p>
 		</div>
 		<div class="person">
 		<img src="images/3.jpg" alt="Person 3"style="width: 200px;height: auto;">
-		<p>Person 3</p>
+		<p>HENRY N. DACANAY III</p>
+		<p>Admin Staff</p>
 		</div>
 		</div>
 		<div class="person">
 		<img src="images/4.jpg" alt="Person 4"style="width: 200px;height: auto;">
-		<p>Person 3</p>
+		<p>EDUARDO D. ZAMORA</p>
+		<p>Driver/Maintenance</p>
 		</div>
 		<div class="person">
 		<img src="images/5.jpg" alt="Person 5"style="width: 200px;height: auto;">
-		<p>Person 3</p>
+		<p>ARNOLD S. SAMSON</p>
+		<p>Kitchen Staff/Helper</p>
 		</div>
 
 	</div>

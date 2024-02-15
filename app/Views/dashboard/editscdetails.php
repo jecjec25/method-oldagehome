@@ -43,7 +43,10 @@
                     Update Senior Citizen Details of senior care!!!
                   </p>
                  
-                  <form class="forms-sample" action="<?= site_url('update/' . $main['Id']) ?>" method="post">
+                  <form class="forms-sample" action="<?= site_url('update') ?>" method="post">
+                  <?php if(isset($d['Id'])){?>
+                      <input type="hidden" name="Id" value="<?=$d['Id']?>">
+                    <?php }?>
                     <div class="form-group">
                        <label for="exampleInputUsername1">Name of Senior Citizen</label>
                       <input id="Name" name="Name" type="text" class="form-control" required="true" value="<?= $main['Name'] ?>" />

@@ -71,7 +71,7 @@
               <img src="images/bracelet name.jpg" alt="">
               <h3> Bracelet with Name</h3>
               <p></p>
-              <h6>80.00</h6>
+              <h6>20.00</h6>
               <ul>
                 <li>
                   <i  class="fa fa-star checked"></i>

@@ -731,3 +731,230 @@ in APPPATH\Views\dashboard\editscdetails.php on line 46.
  8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:41:04 --> Undefined variable $main
+in APPPATH\Views\dashboard\editscdetails.php on line 46.
+ 1 APPPATH\Views\dashboard\editscdetails.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $main', 'C:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editscdetails.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editscdetails.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editscdetails', [], true)
+ 5 APPPATH\Controllers\ViewController.php(101): view('dashboard/editscdetails', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->editscdetails()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:44:17 --> Undefined variable $main
+in APPPATH\Views\dashboard\editscdetails.php on line 46.
+ 1 APPPATH\Views\dashboard\editscdetails.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $main', 'C:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editscdetails.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editscdetails.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editscdetails', [], true)
+ 5 APPPATH\Controllers\ViewController.php(101): view('dashboard/editscdetails', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->editscdetails()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:56:54 --> Invalid file: "signin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signin', [], true)
+ 3 APPPATH\Controllers\SigninController.php(16): view('signin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SigninController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:58:01 --> Invalid file: "signin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signin', [], true)
+ 3 APPPATH\Controllers\SigninController.php(16): view('signin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SigninController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:58:03 --> Invalid file: "signin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signin', [], true)
+ 3 APPPATH\Controllers\SigninController.php(16): view('signin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SigninController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:58:04 --> Invalid file: "signin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signin', [], true)
+ 3 APPPATH\Controllers\SigninController.php(16): view('signin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SigninController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:58:04 --> Invalid file: "signin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signin', [], true)
+ 3 APPPATH\Controllers\SigninController.php(16): view('signin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SigninController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:59:04 --> Invalid file: "user/login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user/login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('user/login', [], true)
+ 3 APPPATH\Controllers\SigninController.php(11): view('user/login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SigninController->signin()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 06:59:12 --> Invalid file: "user/login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user/login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('user/login', [], true)
+ 3 APPPATH\Controllers\SigninController.php(11): view('user/login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SigninController->signin()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SigninController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-02-15 07:00:45 --> mysqli_sql_exception: Table 'seniorcaredb.users' doesn't exist in C:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\method-oldagehome\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\method-oldagehome\system\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('jen@gmail.com', 'email', Array, NULL, 'Email')
+#6 C:\laragon\www\method-oldagehome\system\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('Email', 'Email', 'jen@gmail.com', Array, Array)
+#7 C:\laragon\www\method-oldagehome\system\Controller.php(150): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\method-oldagehome\app\Controllers\SignupController.php(29): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\SignupController->store()
+#10 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+#11 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-02-15 07:00:45 --> Table 'seniorcaredb.users' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('jen@gmail.com', 'email', [...], null, 'Email')
+ 4 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('Email', 'Email', 'jen@gmail.com', [...], [...])
+ 5 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\SignupController.php(29): CodeIgniter\Controller->validate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:03:34 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:04:25 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:04:44 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:06:16 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:07:00 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:07:39 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:08:14 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:08:18 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:08:26 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-02-15 07:14:37 --> Invalid file: "signup.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('signup.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('signup', [], true)
+ 3 APPPATH\Controllers\SignupController.php(43): view('signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')

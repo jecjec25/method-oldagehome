@@ -11,7 +11,7 @@ class SignupController extends BaseController
     {
         helper(['form']);
         $data = [];
-        return view('signup', $data);
+        return view('user/signup', $data);
     }
 
     public function store()
@@ -36,8 +36,8 @@ class SignupController extends BaseController
                 'ContactNum'    => $this->request->getVar('ContactNum'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
-            $userModel->save($data);
-            return redirect()->to('/signin');
+            $userModel->store($data);
+            return redirect()->to('signin');
         }else{
             $data['validation'] = $this->validator;
             return view('signup', $data);

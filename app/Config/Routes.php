@@ -6,14 +6,13 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
- $routes->get('/log', 'SignupController::index');
  $routes->get('/signup', 'SignupController::index');
  $routes->match(['get', 'post'], 'SignupController/store', 'SignupController::store');
  $routes->match(['get', 'post'], 'SigninController/loginAuth', 'SigninController::loginAuth');
  $routes->get('/signin', 'SigninController::index');
- $routes->get('/SignIn', 'SigninController::signin');
+ $routes->get('/SignIns', 'SigninController::signin');
  $routes->get('/profile', 'ProfileController::index',['filter'  => 'authGuard']);
- $routes->get('/', 'ViewController::home');
+ $routes->get('/h', 'ViewController::home');
  $routes->get('/contact', 'ViewController::contact');
  $routes->get('/eligibility', 'ViewController::eligability');
  $routes->get('/about', 'ViewController::about');
