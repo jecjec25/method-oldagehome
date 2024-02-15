@@ -96,12 +96,14 @@ class ViewController extends BaseController
     }
     public function editscdetails()
     {
-        return view('dashboard/editscdetails');
+        $main = new MainModel();
+        $data['tblscdetails'] = $main->findAll();
+        return view('dashboard/editscdetails', $data);
     }
     public function editproduct()
     {
         $main = new MainModel();
-        $data['tblscdetails'] = $main->findAll();
+        $data['tblproduct'] = $main->findAll();
         return view('dashboard/editproduct', $data);
     }
     //UserForm

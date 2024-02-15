@@ -13,6 +13,7 @@ class SignupController extends BaseController
         $data = [];
         return view('signup', $data);
     }
+
     public function store()
     {
         helper(['form']);
@@ -21,7 +22,7 @@ class SignupController extends BaseController
             'FirstName'          => 'required|min_length[2]|max_length[50]',
             'Username'          => 'required|min_length[2]|max_length[50]',
             'Email'         => 'required|min_length[4]|max_length[50]|valid_email|is_unique[users.email]',
-            'ContactNum'          => 'required|min_length[2]|max_length[50]',
+            'ContactNum'          => 'required|min_length[2]|max_length[13]',
             'password'      => 'required|min_length[4]|max_length[50]',
         ];
           

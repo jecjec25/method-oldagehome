@@ -42,11 +42,11 @@
                   <p class="card-description">
                     Update Senior Citizen Details of senior care!!!
                   </p>
-                  <form class="forms-sample" action="<?= base_url('update') ?>" method="PUT">
-                  
+                 
+                  <form class="forms-sample" action="<?= site_url('update/' . $main['Id']) ?>" method="post">
                     <div class="form-group">
                        <label for="exampleInputUsername1">Name of Senior Citizen</label>
-                      <input id="Name" name="Name" type="text" class="form-control" required="true" value="<?= isset($d['Name']) ? $d['Name'] : '' ?>" >
+                      <input id="Name" name="Name" type="text" class="form-control" required="true" value="<?= $main['Name'] ?>" />
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Contact Number</label>
@@ -70,6 +70,7 @@
                     
                     <button type="submit" class="btn btn-primary mr-2" name="submit" value="submit">Submit</button>
                   </form>
+                 
                 </div>
               </div>
             </div>

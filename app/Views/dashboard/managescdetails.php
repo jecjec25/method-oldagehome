@@ -72,7 +72,7 @@
                     <td>
                           <div class="d-flex align-items-center">
                             <a href="/editscdetails" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
-                            <a href="<?php ('delete/'.$k['Id']);?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
+                            <a href="<?php  echo base_url("posts/delete/". $k['Id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
                           </div>
                     </td>
                 </tr>

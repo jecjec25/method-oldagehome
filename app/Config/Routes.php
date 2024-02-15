@@ -62,7 +62,7 @@ $routes->post('/save', 'NewController::save');
 $routes->get('/test', 'NewController::test');
 $routes->put('/update/(:num)', 'NewController::update/$1');
 $routes->put('/submit', 'NewController::submit');
-$routes->post('/updates', 'NewController::updates');
+$routes->post('/update/(:num)', 'NewController::updates/$1');
 $routes->get('/edit/(:num)', 'NewController::edit/$1');
 $routes->get('/show', 'NewController::show');
 $routes->post('/saved', 'NewController::saved');

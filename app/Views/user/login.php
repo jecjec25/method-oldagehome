@@ -26,7 +26,7 @@
                   <?= session()->getFlashdata('msg')?>
                 </div>
                 <?php endif;?>
-              <form class="pt-3" action="<?php echo base_url(); ?>/SigninController/loginAuth" method="post">
+              <form class="pt-3" action="<?php echo base_url(); ?>/SigninController/loginAuth" method="post" id="tbladmin">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg border-left-0" id="Username" placeholder="Username" name="Username" value="<?= ('Username') ?>">
                 </div>
