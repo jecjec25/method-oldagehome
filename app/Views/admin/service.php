@@ -1,18 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Old Age Home Management System || Search</title>
+<title>Senior Care Management System || Search</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<!--Custom Theme files-->
 
+<link href="css/style.css" rel='stylesheet' type='text/css' />
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/modernizr.custom.js"></script>
-<!--start-smoth-scrolling-->
+
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 		
@@ -24,25 +22,21 @@
 				});
 			});
 		</script>
-<!--start-smoth-scrolling-->
-<!--webfonts-->
+
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
-	<!--webfonts-->
+
 </head>
 <body>
 
 	
 <?php include_once('includes/header.php');?>	
 </div>	
-<!--/start-footer-->
-	<!--content-->
 
 	<div class="content">
 	<div class="blog">
 		<div class="container">	
 			<div class="blog-top">		
 				<h3>Services</h3>
-
 			</div>
 
     <div class="col-md-12" style="margin-top:4%">
@@ -51,28 +45,35 @@
             </div>
             <div class="col-md-8 service-images-text">
               <div class="inner-text">
-</div>
+				<h3>Means of Receipts</h3>
+				<h4>Referral / Endorsement by:</h4>
+				<p>I. NGO's/NGA's/LGU's<br>
+					<span>1. DSWD Fields Offices<br>
+					2. Crisis Intervention Unit<br>
+					3. LGU's <br>
+					4. NG0's <br><span>
+					II. Concerned Citizen<br>
+					III. Walk-in <br>
+					IV. Outreach <br> 
+					<span>Note: If cliient is eligible or admissible follow step A to D.</span>
+						
+				</p>
+				<p></p>
+			</div>
 
 		</div>	
 	</div>
 	<?php include_once('includes/footer.php');?>
 								<script type="text/javascript">
 									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
+										
 										
 										$().UItoTop({ easingType: 'easeOutQuart' });
 										
 									});
 								</script>
 				<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
+				
 
 
 </body>

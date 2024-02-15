@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Old Age Home Management System || Contact Us Page</title>
+<title>Senior Care Management System || Contact Us Page</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
+
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<!--Custom Theme files-->
+
 
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/modernizr.custom.js"></script>
-<!--start-smoth-scrolling-->
+
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 		
@@ -24,17 +24,16 @@
 				});
 			});
 		</script>
-<!--start-smoth-scrolling-->
-<!--webfonts-->
+
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
-	<!--webfonts-->
+	
 </head>
 <body>
-<!--header-->
+
 	<?php include_once('includes/header.php');?>
 	</div>	
 </div>	
-		 <!--start-content-->
+		
 		    <div class="contact_desc">
 		        <div class="container">
 		        	<h2>Contact Us</h2>
@@ -74,18 +73,11 @@
 	                </div>	
 	             </div>  
 	          </div>
-	<!--/start-footer-->
+	
 	<?php include_once('includes/footer.php');?>
 								<script type="text/javascript">
 									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
+										
 										
 										$().UItoTop({ easingType: 'easeOutQuart' });
 										

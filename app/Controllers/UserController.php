@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\UserModel;
+use App\Models\UsersModel;
 class UserController extends BaseController
 {
     public function __construct(){
@@ -34,7 +34,7 @@ class UserController extends BaseController
 
         if($this->validate($validation))
         {
-            $user = new UserModel();
+            $user = new UsersModel();
             $data =[
                 'lastname' => $this->request->getVar('lastname'),
                 'firstname' => $this->request->getVar('firstname'),
@@ -45,12 +45,12 @@ class UserController extends BaseController
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             ];
             $user->save($data);
-            return redirect()->to('/signin');
+            return redirect()->to('admin/dash');
             
         }
         else{
             $data['validation'] = $this->validator;
-            echo view('user/register', $data);
+            echo view('admin/dash', $data);
         }
     }
 }

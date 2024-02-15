@@ -19,38 +19,10 @@
  <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/dash">
+            <a class="nav-link" href="/dashboard">
               <i class="typcn typcn-device-desktop menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="typcn typcn-document-text menu-icon"></i>
-              <span class="menu-title">Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/aboutus">About Us</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/contactus">Contact Us</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/rule">Rules</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/eligibility">Eligibility</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-film menu-icon"></i>
-              <span class="menu-title">Services</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="/addservices">Add Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="/manageservices">Manage Services</a></li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
@@ -60,21 +32,34 @@
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="add-scdetails.php">Add Details</a></li>
-                <li class="nav-item"> <a class="nav-link" href="manage-scdetails.php">Manage Details</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/adddetails">Add Details</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/test">Manage Details</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false" aria-controls="charts">
+              <i class="typcn typcn-shopping-bag menu-icon"></i>
+              <span class="menu-title">Product Details</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="product">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/addproduct">Add Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/show">Manage Products</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-element" aria-expanded="false" aria-controls="form-elements">
               <i class="typcn typcn-film menu-icon"></i>
               <span class="menu-title">Enquiry</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="form-elements">
+            <div class="collapse" id="form-element">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="unreadenq.php">Unread Enquiry</a></li>
-                <li class="nav-item"><a class="nav-link" href="readenq.php">Read Enquiry</a></li>
+                <li class="nav-item"><a class="nav-link" href="/unreadq">Unread Enquiry</a></li>
+                <li class="nav-item"><a class="nav-link" href="/readenq">Read Enquiry</a></li>
               </ul>
             </div>
           </li>

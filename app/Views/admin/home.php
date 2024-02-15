@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Old Age Home Management System || Home Page</title>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
+<title>Senior Care Management System || Home Page</title>
+<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
+
 <link href="./css/style.css" rel='stylesheet' type='text/css' />
-<!--Custom Theme files-->
+
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
 <script src="./js/jquery-1.8.3.min.js"></script>
 <script src="./js/modernizr.custom.js"></script>
 
- <!--start-smoth-scrolling-->
+
 <script type="text/javascript" src="./js/move-top.js"></script>
 <script type="text/javascript" src="./js/easing.js"></script>
 		
@@ -24,10 +24,9 @@
 				});
 			});
 		</script>
-<!--start-smoth-scrolling-->
-<!--webfonts-->
+
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
-	<!--webfonts-->
+
 </head>
 <body>
 <?php include_once('includes/header.php');?>
@@ -36,30 +35,42 @@
 <div class="banner-section">
 	<div class="container">
 		<div class="banner-head">
-			<h1>Old age is just a record of one's whole life </h1>
-			<p>Old age is not a disease - it is strength and survivorship,
-			triumph over all kinds of vicissitudes and
-			disappointments, trials and illnesses.</p>
+			<h1 style="font-style:normal">Old age is just a record of one's whole life </h1>
+			<p>Old age is not a matter for sorrow. It is matter for thanks if we have left our work done behind us.<br> - Thomas Carlyle</p>
 		</div>
 	</div>
 </div>
-		<div class="welcome-section">
-				<div class="container">
-					<div class="welcom-grids">
-						<div class="col-md-6 welcom-grid-img">
-							<img src="images/v1.jpg" title="img" />
-						</div>
-						<div class="col-md-6 welcom-grid-text">
-						</div>
-						<div class="clearfix"> </div>  
-					</div>
-				</div>
-			</div>
-			<!--start-letest-->
+<br><br>
+	<div class="org-chart" style="display:block;margin-left:auto;margin-right:auto;width:50%">
+		<div class="person" style="text-align: center;">
+		<img src="images/1.jpg" alt="Person 1" style="width: 200px;height: auto;">
+		<p>Person 1</p>
+		</div>
+		<div class="row">
+		<div class="column" style="float: left;width: 33.33%;padding: 5px;">
+		<img src="images/2.jpg" alt="Person 2" style="width: 200px;height: auto;">
+		<p>Person 2</p>
+		</div>
+		<div class="person">
+		<img src="images/3.jpg" alt="Person 3"style="width: 200px;height: auto;">
+		<p>Person 3</p>
+		</div>
+		</div>
+		<div class="person">
+		<img src="images/4.jpg" alt="Person 4"style="width: 200px;height: auto;">
+		<p>Person 3</p>
+		</div>
+		<div class="person">
+		<img src="images/5.jpg" alt="Person 5"style="width: 200px;height: auto;">
+		<p>Person 3</p>
+		</div>
+
+	</div>
+
 			 <div class="letest-section">
 	 			<div class="container">
 
- <!--/End-services-->
+
 <div class="Events">
 	<div class="wmuSlider example1">
 		 	<div class="container">
@@ -157,20 +168,11 @@
        				     $('.example1').wmuSlider();         
    					</script> 	           	      
 
-<!--/new-projects-->
-	
-	<!--/start-footer-->
+
 	<?php include_once('includes/footer.php');?>
 								<script type="text/javascript">
 									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
+										
 										
 										$().UItoTop({ easingType: 'easeOutQuart' });
 										
