@@ -26,7 +26,7 @@
                 <i class="typcn typcn-cog-outline text-primary"></i>
                 Change Password
               </a>
-              <a class="dropdown-item" href="logout.php">
+              <a class="dropdown-item" href="/logout">
                 <i class="typcn typcn-eject text-primary"></i>
                 Logout
               </a>

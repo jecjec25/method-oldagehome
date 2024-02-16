@@ -26,15 +26,15 @@
                   <?= session()->getFlashdata('msg')?>
                 </div>
                 <?php endif;?>
-              <form class="pt-3" action="<?php echo base_url(); ?>/SigninController/loginAuth" method="post" id="tbladmin">
+              <form class="pt-3" action="<?php echo base_url('/SigninController/loginAuth'); ?>" method="post" id="tbladmin">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="Username" placeholder="Username" name="Username" value="<?= ('Username') ?>">
+                  <input type="text" class="form-control form-control-lg border-left-0" id="Email" placeholder="Email" name="Email">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg border-left-0" id="password" placeholder="Password" name="password" required="true" value="">
+                  <input type="password" name="pass" class="form-control form-control-lg border-left-0" id="Password" placeholder="Password" >
                 </div>
-                <div class="mt-3" action="/dashboard">
-                  <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" name="submit">LOGIN</button>
+                <div class="mt-3">
+                  <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn">LOGIN</button>
                 </div>
                 </form> 
                 <form action="/signup">

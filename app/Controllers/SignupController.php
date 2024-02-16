@@ -21,9 +21,9 @@ class SignupController extends BaseController
             'LastName'          => 'required|min_length[2]|max_length[50]',
             'FirstName'          => 'required|min_length[2]|max_length[50]',
             'Username'          => 'required|min_length[2]|max_length[50]',
-            'Email'         => 'required|min_length[4]|max_length[50]|valid_email|is_unique[users.email]',
+            'Email'         => 'required|min_length[4]|max_length[50]|valid_email|is_unique[tbladmin.email]',
             'ContactNum'          => 'required|min_length[2]|max_length[13]',
-            'password'      => 'required|min_length[4]|max_length[50]',
+            'Password'      => 'required|min_length[4]|max_length[50]',
         ];
           
         if($this->validate($rules)){
@@ -34,13 +34,13 @@ class SignupController extends BaseController
                 'Username'     => $this->request->getVar('Username'),
                 'Email'    => $this->request->getVar('Email'),
                 'ContactNum'    => $this->request->getVar('ContactNum'),
-                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+                'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
             ];
-            $userModel->store($data);
+            $userModel->save($data);
             return redirect()->to('signin');
         }else{
             $data['validation'] = $this->validator;
-            return view('signup', $data);
+            return view('user/signup', $data);
         }
     }
 

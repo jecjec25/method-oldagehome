@@ -41,18 +41,13 @@ class NewController extends BaseController
         return redirect()->to('/test');
     }
     public function edit($Id)
-    {
-         // Fetch the user data from the database
-    $main = $this->MainModel->find($Id);
+     {
+        $MainModel = new MainModel();
+    $data['d'] = $MainModel->find($Id);
 
+    // var_dump($data);
+   return view('dashboard/editscdetails', $data);
     // Check if the user exists
-    if ($main) {
-        // Load the edit view and pass the user data
-        return view('edit', ['user' => $main]);
-    } else {
-        // User not found
-        throw new \CodeIgniter\Exceptions\PageNotFoundException('User not found');
-    }
     }
     public function delete($Id = null)
     {

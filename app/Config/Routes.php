@@ -8,7 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 
  $routes->get('/signup', 'SignupController::index');
  $routes->match(['get', 'post'], 'SignupController/store', 'SignupController::store');
- $routes->match(['get', 'post'], 'SigninController/loginAuth', 'SigninController::loginAuth');
+ $routes->post('SigninController/loginAuth', 'SigninController::loginAuth', ['filter' => 'authGuard']);
  $routes->get('/signin', 'SigninController::index');
  $routes->get('/SignIns', 'SigninController::signin');
  $routes->get('/profile', 'ProfileController::index',['filter'  => 'authGuard']);
@@ -20,6 +20,7 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/services', 'ViewController::service');
  $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
  $routes->get('/register', 'UserController::register');
+$routes->get('logout', 'SigninController::logout');
 
 $routes->get('/signin', 'Home::try');
 $routes->get('/', 'ViewController::home');
@@ -62,6 +63,6 @@ $routes->get('/test', 'NewController::test');
 $routes->put('/update/(:num)', 'NewController::update/$1');
 $routes->put('/submit', 'NewController::submit');
 $routes->post('/update/(:num)', 'NewController::updates/$1');
-$routes->get('/edit/(:num)', 'NewController::edit/$1');
+$routes->get('/edit/(:any)', 'NewController::edit/$1');
 $routes->get('/show', 'NewController::show');
 $routes->post('/saved', 'NewController::saved');

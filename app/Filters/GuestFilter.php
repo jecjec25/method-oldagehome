@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class AuthGaurd implements FilterInterface
+class GuestFilter implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -28,7 +28,7 @@ class AuthGaurd implements FilterInterface
         if (!session()->get('isLoggedIn'))
         {
             return redirect()
-                ->to('/dashboard');
+                ->to('/signin');
         }
     }
 

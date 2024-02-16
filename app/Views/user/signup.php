@@ -29,10 +29,10 @@
                 <?php endif;?>
               <form class="pt-3" action="<?php echo base_url(); ?>/SignupController/store" method="post" id="tbladmin" >
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="LastName"  value="<?= set_value('LastName') ?>" placeholder="Lastname" name="Lastname" >
+                  <input type="text" class="form-control form-control-lg border-left-0" id="LastName"  value="<?= set_value('LastName') ?>" placeholder="Lastname" name="LastName" >
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="FirstName"  value="<?= set_value('FastName') ?>" placeholder="First Name" name="firstname">
+                  <input type="text" class="form-control form-control-lg border-left-0" id="FirstName"  value="<?= set_value('FastName') ?>" placeholder="First Name" name="FirstName">
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg border-left-0" id="Username" value="<?= set_value('Username') ?>" placeholder="Username" name="Username" >
