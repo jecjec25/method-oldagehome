@@ -6,35 +6,33 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
- $routes->get('/signup', 'SignupController::index');
- $routes->match(['get', 'post'], 'SignupController/store', 'SignupController::store');
- $routes->post('SigninController/loginAuth', 'SigninController::loginAuth', ['filter' => 'authGuard']);
- $routes->get('/signin', 'SigninController::index');
- $routes->get('/SignIns', 'SigninController::signin');
- $routes->get('/profile', 'ProfileController::index',['filter'  => 'authGuard']);
- $routes->get('/h', 'ViewController::home');
+ $routes->get('/signup', 'SignupController::index', ['filter'  => 'guestFilter']);
+ $routes->match(['get', 'post'], 'store', 'SignupController::store');
+ $routes->match(['get', 'post'], 'UserController/loginAuth', 'UserController::loginAuth');
+ $routes->get('/signin', 'UserController::index', ['filter'  => 'guestFilter']);
  $routes->get('/contact', 'ViewController::contact');
  $routes->get('/eligibility', 'ViewController::eligability');
  $routes->get('/about', 'ViewController::about');
  $routes->get('/rules', 'ViewController::rules');
  $routes->get('/services', 'ViewController::service');
+
  $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
- $routes->get('/register', 'UserController::register');
-$routes->get('logout', 'SigninController::logout');
+$routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
+
 
 $routes->get('/signin', 'Home::try');
-$routes->get('/', 'ViewController::home');
+$routes->get('/', 'ViewController::home',  ['filter'  => 'guestFilter']);
 $routes->get('/contact', 'ViewController::contact');
 $routes->match(['GET', 'POST'],'ContactController/contact', 'ContactController::submit');
 $routes->get('/eligibility', 'ViewController::eligability');
-$routes->get('/about', 'ViewController::about');
-$routes->get('/rules', 'ViewController::rules');
-$routes->get('/services', 'ViewController::service');
-$routes->get('/products', 'ViewController::products');
+$routes->get('/about', 'ViewController::about', ['filter'  => 'authGuard']);
+$routes->get('/rules', 'ViewController::rules', ['filter'  => 'authGuard']);
+$routes->get('/services', 'ViewController::service', ['filter'  => 'authGuard']);
+$routes->get('/products', 'ViewController::products', ['filter'  => 'guestFilter']);
 $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
 $routes->get('/register', 'UserController::register');
-$routes->get('/products', 'ProductsController::products');
-$routes->get('/dashboard', 'ViewController::dash');
+$routes->get('/products', 'ProductsController::products', ['filter'  => 'authGuard']);
+$routes->get('/dashboard', 'ViewController::dash', ['filter'  => 'authGuard']);
 $routes->get('/search', 'ViewController::search');
 $routes->get('/searchs', 'ViewController::searchs');
 $routes->get('/rule', 'ViewController::rule');
@@ -63,6 +61,6 @@ $routes->get('/test', 'NewController::test');
 $routes->put('/update/(:num)', 'NewController::update/$1');
 $routes->put('/submit', 'NewController::submit');
 $routes->post('/update/(:num)', 'NewController::updates/$1');
-$routes->get('/edit/(:any)', 'NewController::edit/$1');
+$routes->get('/edit/(:num)', 'NewController::edit/$1');
 $routes->get('/show', 'NewController::show');
 $routes->post('/saved', 'NewController::saved');

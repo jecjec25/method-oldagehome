@@ -7,13 +7,13 @@ use CodeIgniter\Model;
 class UsersModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'tbladmin';
-    protected $primaryKey       = 'Id';
+    protected $table            = 'user';
+    protected $primaryKey       = 'userID';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['LastName', 'FirstName', 'Username',  'Email','ContactNum', 'Password'];
+    protected $allowedFields    = ['LastName', 'FirstName', 'Username', 'Email', 'ContactNo', 'Password', 'birhtday'];
 
     // Dates
     protected $useTimestamps = false;

@@ -18,12 +18,12 @@ class SignupController extends BaseController
     {
         helper(['form']);
         $rules = [
-            'LastName'          => 'required|min_length[2]|max_length[50]',
-            'FirstName'          => 'required|min_length[2]|max_length[50]',
-            'Username'          => 'required|min_length[2]|max_length[50]',
-            'Email'         => 'required|min_length[4]|max_length[50]|valid_email|is_unique[tbladmin.email]',
-            'ContactNum'          => 'required|min_length[2]|max_length[13]',
-            'Password'      => 'required|min_length[4]|max_length[50]',
+            'LastName'   => 'required|max_length[30]',
+            'FirstName'  => 'required|max_length[30]',
+            'Username'   => 'required|max_length[30]',
+            'Email'      => 'required|max_length[254]|valid_email',
+            'ContactNumber' => 'required|max_length[13]|min_length[10]',
+            'Password'   => 'required|max_length[255]|min_length[10]',
         ];
           
         if($this->validate($rules)){
@@ -33,16 +33,19 @@ class SignupController extends BaseController
                 'FirstName'     => $this->request->getVar('FirstName'),
                 'Username'     => $this->request->getVar('Username'),
                 'Email'    => $this->request->getVar('Email'),
-                'ContactNum'    => $this->request->getVar('ContactNum'),
+                'ContactNo'    => $this->request->getVar('ContactNumber'),
+                'birthday'    => $this->request->getVar('birthday'),
                 'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
             ];
             $userModel->save($data);
+            session()->setFlashdata('success', 'Saved successfully. You can now signin');
             return redirect()->to('signin');
         }else{
             $data['validation'] = $this->validator;
             return view('user/signup', $data);
         }
     }
+}
 
     // public function loginAuth()
     // {
@@ -79,4 +82,4 @@ class SignupController extends BaseController
     //     }
         
     // }
-}
+

@@ -14,7 +14,7 @@
                   <br>
                   <br>
                 <ul>
-                  <li><a href="/signin">Admin</a></li>
+             
                   <li><a href="/contact">Contact</a></li>
                  <li><a href="/search"> Search </a></li>
                 </ul>

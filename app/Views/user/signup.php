@@ -22,37 +22,56 @@
               <h3 style="color:seagreen;">Senior Care</h3>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Register</h6>
-              <?php if (isset($validation)):?>
-                <div class="alert alert-warning">
-                  <?= $validation->listErrors() ?>
-                </div>
+              <form class="pt-3" action="<?= base_url('store'); ?>" method="post" id="tbladmin" >
+                <div class="form-group">
+                <?php if(isset($validation)):?>
+                 <small class="text-danger"><?= $validation->getError('LastName') ?></small>
                 <?php endif;?>
-              <form class="pt-3" action="<?php echo base_url(); ?>/SignupController/store" method="post" id="tbladmin" >
+                  <input type="text" class="form-control form-control-lg border-left-0" placeholder="Lastname" name="LastName" >
+                </div>  
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="LastName"  value="<?= set_value('LastName') ?>" placeholder="Lastname" name="LastName" >
+                <?php if(isset($validation)):?>
+                <small class="text-danger"><?= $validation->getError('FirstName') ?></small>
+                <?php endif;?>
+                  <input type="text" class="form-control form-control-lg border-left-0" placeholder="First Name" name="FirstName">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="FirstName"  value="<?= set_value('FastName') ?>" placeholder="First Name" name="FirstName">
+                <?php if(isset($validation)):?>
+                <small class="text-danger"><?= $validation->getError('Username') ?></small>
+                <?php endif;?>
+                  <input type="text" class="form-control form-control-lg border-left-0" placeholder="Username" name="Username" >
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="Username" value="<?= set_value('Username') ?>" placeholder="Username" name="Username" >
+                <?php if(isset($validation)):?>
+                <small class="text-danger"><?= $validation->getError('Email') ?></small>
+                <?php endif;?>
+                  <input type="text" class="form-control form-control-lg border-left-0" placeholder="Email" name="Email" >
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="Email" value="<?= set_value('Email') ?>" placeholder="Email" name="Email" >
+                <?php if(isset($validation)):?>
+                <small class="text-danger"><?= $validation->getError('ContactNumber') ?></small>
+                <?php endif;?>
+                  <input type="text" class="form-control form-control-lg border-left-0"  placeholder="Contact Number" name="ContactNumber" >
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg border-left-0" id="ContactNum" value="<?= set_value('ContactNum') ?>"  placeholder="Contact Number" name="ContactNum" >
+                  <input type="date" class="form-control form-control-lg border-left-0"  placeholder="Birth Day" name="birthday" >
                 </div>
-
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg border-left-0" id="Password" placeholder="Password" name="Password" required="true" >
-                </div>
+                <?php if(isset($validation)):?>
+                <small class="text-danger"><?= $validation->getError('Password') ?></small>
+                <?php endif;?>
+                  <input type="password" class="form-control form-control-lg border-left-0" placeholder="Password" name="Password" required="true" >
+              </div>
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" name="submit">REGISTER</button>
                 </div>
-                
-               <a href="../index.php" class="auth-link text-black">Home Page!!!</a>
               </form>
+              <div class="mt-3">
+                <p>Already have an account? <a href="/signin">Login here.</a>.</p>
+              </div>
+              <div class="mt-3">
+               <a href="../index.php" class="auth-link text-black">Home Page!!!</a>
+              </div>
             </div>
           </div>
         </div>
