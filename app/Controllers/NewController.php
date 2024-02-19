@@ -9,11 +9,16 @@ use App\Models\UserModel;
 use App\Controllers\ViewController;
 class NewController extends BaseController
 {
+    private $main;
+    public function __construct()
+    {
+        $this->main = new MainModel();
+    }
     public function test()
     {
         $main = new MainModel();
         $data['main'] = $main->findAll();
-        return view ('dashboard/managescdetails', $data);
+        return view('dashboard/managescdetails', $data);
     }
     public function save()
     {
@@ -43,12 +48,13 @@ class NewController extends BaseController
     public function edit($Id)
     {
          // Fetch the user data from the database
-    $main = $this->MainModel->find($Id);
+         
+    $main['d'] = $this->main->find($Id);
 
     // Check if the user exists
     if ($main) {
         // Load the edit view and pass the user data
-        return view('edit', ['user' => $main]);
+        return view('dashboard/editscdetails', $main);
     } else {
         // User not found
         throw new \CodeIgniter\Exceptions\PageNotFoundException('User not found');
@@ -59,11 +65,11 @@ class NewController extends BaseController
 
      $main = new MainModel();
 
-     $data['main'] = $main->where('Id', $Id)->delete();
+     $data= $main->where('Id', $Id)->delete();
 
-     return redirect()->to( base_url('save') );
+     return redirect()->to('/test');
     }
-    public function update($Id)
+    public function update($id)
     {
         $main = new MainModel();
 
@@ -78,7 +84,7 @@ class NewController extends BaseController
             'RegDate' => $this->request->getPost('RegDate'),
         ];
 
-        $main->update($Id, $data);
+        $main->update($id, $data);
 
         return redirect()->to('/test')->with('success', 'Senior Citizen details updated successfully');
     }

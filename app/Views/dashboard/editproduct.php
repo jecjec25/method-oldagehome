@@ -1,24 +1,4 @@
-<?php session_start();
-error_reporting(0);
-include_once('includes/config.php');
-if (strlen($_SESSION['aid']==0)) {
-  header('location:logout.php');
-  } else{
-if(isset($_POST['submit']))
-{
-$namesc=$_POST['namesc'];
-$dob=$_POST['dob'];
-$contnum=$_POST['contnum'];
-$commadd=$_POST['commadd'];
-$emeradd=$_POST['emeradd'];
-$emercontnum=$_POST['emercontnum'];
-$id=intval($_GET['id']);
-$sql=mysqli_query($con,"update tblseniorcitizen set Name='$namesc',DateofBirth='$dob', ContactNumber='$contnum',CommunicationAddress='$commadd',EmergencyAddress='$emeradd',EmergencyContactnumber='$emercontnum' where ID='$id'");
-echo "<script>alert('Senior citizen detail has been updated successfully');</script>";
-echo "<script>window.location.href='manage-scdetails.php'</script>";
 
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,24 +6,15 @@ echo "<script>window.location.href='manage-scdetails.php'</script>";
   
   <title>Senior Care Management System || Update Product Details</title>
   <!-- base:css -->
-  <link rel="stylesheet" href="vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../login/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <!-- plugin css for this page -->
-  <link rel="stylesheet" href="vendors/select2/select2.min.css">
-  <link rel="stylesheet" href="vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-  <!-- endinject -->
-  
-  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 </head>
-
-<body>
-  <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
+    <body>
+    <div class="container-scroller">
+    <?php include_once('includes/header.php');?>
 
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
@@ -76,39 +47,31 @@ echo "<script>window.location.href='manage-scdetails.php'</script>";
                   <p class="card-description">
                     Update Product Details of senior care!!!
                   </p>
-                  <form class="forms-sample" method="post">
-                    <?php
-                    $id=intval($_GET['id']);
-                         $query=mysqli_query($con,"select * from tblseniorcitizen where tblseniorcitizen.ID='$id'");
-
-while($row=mysqli_fetch_array($query))
-{
-?>
-                    <div class="form-group">
+                  <form class="forms-sample"  action="<?= base_url('updateprod/' .$prod['Id'])?>"method="post">
+                                  <div class="form-group">
                        <label for="exampleInputUsername1">Product Name</label>
-                      <input id="namesc" name="namesc" type="text" class="form-control" required="true" value="<?php echo htmlentities($row['Name']);?>">
+                      <input id="ProdName" name="ProdName" type="text" class="form-control" required="true" value="<?= $prod['ProdName'];?>">
                     </div>
-                  <div class="form-group">
+                    <div class="form-group">
                       <label for="exampleInputEmail1">Quantity</label>
-                     <input id="dob" name="dob" type="date" class="form-control" required="true" value="<?php echo htmlentities($row['DateofBirth']);?>">
+                     <input id="Quantity" name="Quantity" type="text" class="form-control" required="true" max="1970-01-01" value="<?= $prod['Quantity']; ?>">
                     </div>
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Product's Price</label>
-                     <input id="contnum" name="contnum" type="text" pattern="[0-9]+" maxlength="10" class="form-control" required="true" value="<?php echo htmlentities($row['ContactNumber']);?>">
+                     <input id="contnum" name="ProdPrice" type="text" pattern="[0-9]+" maxlength="10" class="form-control" required="true" value="<?= $prod['ProdPrice'];?>">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Product Description</label>
-                     <textarea class="form-control" id="commadd" name="commadd" rows="5"><?php echo htmlentities($row['CommunicationAddress']);?></textarea>
+                     <input class="form-control" id="commadd" name="ProdDescription" rows="5" value ="<?= $prod['ProdDescription']; ?>" >
                      
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Product Picture</label>
                      
-                      <img src="images/<?php echo htmlentities($row['ProfilePic']);?>" width="250">
-    <a href="change-image.php?id=<?php echo $row['ID'];?>">Change Image</a>
+                    <p> <input type="file" name="ProdPic" > </p>
                     </div>
-                    <?php } ?>
+              
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
                   </form>
                 </div>
@@ -118,33 +81,32 @@ while($row=mysqli_fetch_array($query))
           </div>
         </div>
         <!-- content-wrapper ends -->
-       <?php include_once('includes/footer.php');?>
+        <?php include_once('includes/footer.php');?>
+        </div>
+        <!-- main-panel ends -->
       </div>
-      <!-- main-panel ends -->
+      <!-- page-body-wrapper ends -->
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <!-- base:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- plugin js for this page -->
-  <script src="vendors/typeahead.js/typeahead.bundle.min.js"></script>
-  <script src="vendors/select2/select2.min.js"></script>
-  <!-- End plugin js for this page -->
-  <!-- Custom js for this page-->
-  <script src="js/file-upload.js"></script>
-  <script src="js/typeahead.js"></script>
-  <script src="js/select2.js"></script>
-  <!-- End custom js for this page-->
+    <!-- container-scroller -->
+    <!-- base:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="vendors/select2/select2.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="js/file-upload.js"></script>
+    <script src="js/typeahead.js"></script>
+    <script src="js/select2.js"></script>
+    <!-- End custom js for this page-->
 </body>
 
 </html>
-<?php } ?>

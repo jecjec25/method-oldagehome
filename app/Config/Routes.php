@@ -58,9 +58,13 @@ $routes->get('/editscdetails', 'ViewController::editscdetails');
 $routes->get('/editproduct', 'ViewController::editproduct');
 $routes->post('/save', 'NewController::save');
 $routes->get('/test', 'NewController::test');
-$routes->put('/update/(:num)', 'NewController::update/$1');
-$routes->put('/submit', 'NewController::submit');
+$routes->post('/update/(:any)', 'NewController::update/$1');
+$routes->post('/submit', 'NewController::submit');
 $routes->post('/update/(:num)', 'NewController::updates/$1');
 $routes->get('/edit/(:num)', 'NewController::edit/$1');
 $routes->get('/show', 'NewController::show');
 $routes->post('/saved', 'NewController::saved');
+
+$routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
+$routes->get('/editproduct/(:num)', 'ProductsController::editprod/$1');
+$routes->post('/updateprod/(:num)', 'ProductsController::updateprod/$1');

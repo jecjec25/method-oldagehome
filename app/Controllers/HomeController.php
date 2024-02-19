@@ -10,7 +10,7 @@ class HomeController extends BaseController
 {
     public function index(){
         $main = new MainModel();
-        $data['tblscdetails'] = $main->orderBy('Id', 'DESC')->findAll();
+        $data['main'] = $main->orderBy('Id', 'DESC')->findAll();
         return view('dashboard/managescdetails', $data);
     }
     public function create(){
@@ -50,13 +50,13 @@ class HomeController extends BaseController
             'RegDate'  => $this->request->getVar('RegDate'),
         ];
         $main->update($Id, $data);
-        return $this->response->redirect(site_url('/list'));
+        return $this->response->redirect('/list');
     }
  
     // delete name
     public function delete($Id = null){
         $main = new MainModel();
         $data['tblscdetails'] = $main->where('Id', $Id)->delete($Id);
-        return $this->response->redirect(site_url('/list'));
+        return $this->response->redirect(site_url('/test'));
     }    
 }

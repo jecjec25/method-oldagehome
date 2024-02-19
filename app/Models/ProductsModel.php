@@ -8,7 +8,7 @@ class ProductsModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'tblproduct';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'Id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;

@@ -54,8 +54,8 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Contact Number</label>
-                     <input id="ContNum" name="ContNum" type="text" pattern="[0-9]+" maxlength="10" class="form-control" required="true" value="<?= isset($d['ContNum']) ? $d['ContNum'] : '' ?>">
+                    <label for="ContNum">Contact Number (Philippines)</label>
+                    <input id="ContNum" name="ContNum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" class="form-control" required="true" value="<?= isset($d['ContNum']) ? $d['ContNum'] : '' ?>">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Communication Address</label>
@@ -72,8 +72,8 @@
                      <textarea class="form-control" id="EmergencyAdd" name="EmergencyAdd" rows="5" value="<?= isset($d['EmergencyAdd']) ? $d['EmergencyAdd'] : '' ?>"></textarea>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Emergency Contact Number</label>
-                     <input id="EmergencyContNum" name="EmergencyContNum" pattern="[0-9]+" maxlength="10" type="text" class="form-control" required="true" value="<?= isset($d['EmergencyContNum']) ? $d['EmergencyContNum'] : '' ?>">
+                    <label for="EmergencyContNum">Emergency Contact Number (Philippines)</label>
+                    <input id="EmergencyContNum" name="EmergencyContNum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" class="form-control" required="true" value="<?= isset($d['EmergencyContNum']) ? $d['EmergencyContNum'] : '' ?>">
                     </div>
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
                   </form>
