@@ -54,6 +54,7 @@
                         <th>Quantity</th>
                         <th>Product's Price</th>
                         <th>Product Description</th>
+                        <th>Product Picture</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -65,6 +66,7 @@
                         <td><?=$a['Quantity']?></td>
                         <td><?=$a['ProdPrice']?></td>
                         <td><?=$a['ProdDescription']?></td>
+                        <td><img src="<?php base_url();?>/productsimage/<?=$a['ProdPic'] ?>" alt="" style="width: 200px; height: 200px;"></td>
                         <td>
                           <div class="d-flex align-items-center">
                           <a href="<?= base_url('editproduct/') .$a['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 

@@ -30,7 +30,7 @@
       </div>
     </nav>
     <div class="container-fluid page-body-wrapper">
-     <?php include_once('includes/sidebar.php');?>
+    
            <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
@@ -72,16 +72,19 @@
               <label for="EmergencyContNum">Emergency Contact Number</label>
               <input id="EmergencyContNum" name="EmergencyContNum" maxlength="13" class="form-control" required="true" value="<?= $d['EmergencyContNum']; ?>" pattern="^(\+?63|0)9\d{9}$">
               </div>
-              
               <button type="submit" class="btn btn-primary mr-2" name="submit" value="submit">Submit</button>
-            </form>
-           
+              <div class="row mt-3">
+              <div class="col-md-12">
+                  <a href="/test" class="btn btn-secondary">Back</a>
+              </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
+</div>
 
         <?php include_once('includes/footer.php');?>
       </div>

@@ -15,28 +15,8 @@
     <body>
     <div class="container-scroller">
     <?php include_once('includes/header.php');?>
-
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="navbar-brand-wrapper d-flex justify-content-center">
-        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="typcn typcn-th-menu"></span>
-          </button>
-        </div>
-      </div>
-      <?php include_once('includes/header.php');?>
-    </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
-     
-    <?php include_once('includes/sidebar.php');?>
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
-  
-      <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
@@ -73,6 +53,9 @@
                     </div>
               
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <div class="row mt-3">
+                    <div class="col-md-12">
+                    <a href="/show" class="btn btn-secondary">Back</a>
                   </form>
                 </div>
               </div>

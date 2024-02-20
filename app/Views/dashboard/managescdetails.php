@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,8 +50,9 @@
                         <th>Name</th>
                         <th>Date of Birth</th>
                         <th>Contact Number</th>
+                        <th>Profile Picture</th>
                         <th>Communication Address</th>
-                        <th>Emergency Contact Number</th>
+                        <th>Emergency Address</th>
                         <th>Emergency Contact Number</th>
                         <th>Actions</th>
                       </tr>
@@ -64,6 +64,7 @@
                     <td><?=$k['Name'] ?></td>
                     <td><?=$k['DateBirth'] ?></td>
                     <td><?=$k['ContNum'] ?></td>
+                    <td><img src="<?php base_url();?>/eldersimage/<?=$k['ProfPic'] ?>" alt="" style="width: 200px; height: 200px; border:box;"></td>
                     <td><?=$k['ComAdd'] ?></td>
                     <td><?=$k['EmergencyAdd'] ?></td>
                     <td><?=$k['EmergencyContNum'] ?></td>
