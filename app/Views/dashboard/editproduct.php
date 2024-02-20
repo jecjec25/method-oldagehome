@@ -39,11 +39,11 @@
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Product's Price</label>
-                     <input id="contnum" name="ProdPrice" type="text" pattern="[0-9]+" maxlength="10" class="form-control" required="true" value="<?= $prod['ProdPrice'];?>">
+                     <input id="ProdPrice" name="ProdPrice" type="text" pattern="[0-9]+" maxlength="10" class="form-control" required="true" value="<?= $prod['ProdPrice'];?>">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Product Description</label>
-                     <input class="form-control" id="commadd" name="ProdDescription" rows="5" value ="<?= $prod['ProdDescription']; ?>" >
+                     <input class="form-control" id="ProdDescription" name="ProdDescription" rows="5" value ="<?= $prod['ProdDescription']; ?>" >
                      
                     </div>
                     <div class="form-group">

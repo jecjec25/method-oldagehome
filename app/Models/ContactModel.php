@@ -8,12 +8,12 @@ class ContactModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'tblcontact';
-    protected $primaryKey       = 'ID';
+    protected $primaryKey       = 'Id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['FirstName', 'LastName', 'Email', 'Phone', 'Message',];
+    protected $allowedFields    = ['Name', 'Phone', 'Email', 'Message',];
 
     // Dates
     protected $useTimestamps = false;

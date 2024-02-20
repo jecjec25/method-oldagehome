@@ -38,31 +38,30 @@
 		        <div class="container">
 		        	<h2>Contact Us</h2>
 			         <div class="contact-form">
-				  	   <form method="post" class="left_form">
-					    	<div>
-						    	<span><label>First Name</label></span>
-						    	<span><input required="true" name="FirstName" type="text" class="textbox"></span>
-						    </div>
+				  	   <form action="<?= base_url("check") ?>" method="post" class="left_form">
+						 <?php if(isset($cont['Id'])){?>
+                      		<input type="hidden" name="Id" value="<?=$cont['Id']?>">
+                    	 <?php }?>
 						    <div>
-						    	<span><label>Last Name</label></span>
-						    	<span><input required="true" name="LastName" type="text" class="textbox"></span>
+						    	<span><label>Full Name</label></span>
+						    	<span><input required="true" name="Name" type="text"  value="<?= isset($cont['Name']) ? $cont['Name'] : '' ?>" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>Contact Number</label></span>
-						    	<span><input required="true" name="Phone" pattern="[0-9]+" maxlength="10" type="text" class="textbox"></span>
+						    	<span><input required="true" name="Phone" pattern="[0-9]+" maxlength="10" type="text" value="<?= isset($cont['Phone']) ? $cont['Phone'] : '' ?>" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>E-MAIL</label></span>
-						    	<span><input required="" name="Email" type="text" class="textbox"></span>
+						    	<span><input required="true" name="Email" type="text" value="<?= isset($cont['Email']) ? $cont['Email'] : '' ?>" class="textbox"></span>
 						    </div>
 						   
 					   
 					        <div>					    	
 						    	<span><label>Message</label></span>
-						    	<span><textarea required="true" name="Message"> </textarea></span>
+						    	<span><textarea required="true" name="Message" value="<?= isset($cont['Message']) ? $cont['Message'] : '' ?>" > </textarea></span>
 						    </div>
 						   <div>
-						   		<input type="submit" value="Submit " name="submit" />
+						   		<input type="submit" value="Submit" name="submitted" />
 						  </div>
 					    </form>
 					    <div class="clearfix"></div>

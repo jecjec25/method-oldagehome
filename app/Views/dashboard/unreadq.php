@@ -28,15 +28,12 @@
             </div>
           </li>
         </ul>
-       
       </div>
     </nav>
     <div class="container-fluid page-body-wrapper">
      <?php include_once('includes/sidebar.php');?>
       <div class="main-panel">
         <div class="content-wrapper">
-
-
           <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -46,26 +43,36 @@
                   </p>
                 <div class="table-responsive pt-3">
                   
-                  <table class="table table-striped project-orders-table">
+                  <table class="table table-striped project-orders-table" id="tblcontact">
+                    <?php if(isset($f['Id'])){?>
+                      <input type="hidden" name="Id" value="<?=$f['Id']?>">
+                    <?php }?>
                     <thead>
-                       <tr>
-                   <th>S.No</th>
-                   <th>Name</th>
-                    <th>Email</th>
-                    <th>Enquiry Date</th>
-                     <th>Action</th>
-                  </tr>
+                        <tr>
+                          <th>S.No</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Enquiry Date</th>
+                          <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody>
-                  
-                      
-                      
+                    <?php foreach($cont as $f): ?>
+                    <tr>
+                      <td><?=$f['Id'] ?></td>
+                      <td><?=$f['Name'] ?></td>
+                      <td><?=$f['Email'] ?></td>
+                      <td><?=$f['Enquiry_Date'] ?></td>
+                      <td>
+                          <div class="d-flex align-items-center">
+                            <a href="<?= base_url('readenq') ?>" class="btn btn-success btn-sm btn-icon-text mr-3">Read <i class="typcn typcn-edit btn-icon-append"></i> </a> 
+                          </div>
+                    </td>
+                    </tr>
+                    <?php endforeach; ?>
                     </tbody>
                   </table>
-
-
                 </div>
-                
               </div>
             </div>
           </div>

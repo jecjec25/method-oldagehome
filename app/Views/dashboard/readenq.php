@@ -47,20 +47,23 @@
                   
                   <table class="table table-striped project-orders-table">
                     <thead>
-                       <tr>
-                   <th>S.No</th>
-                   <th>Name</th>
-                    <th>Email</th>
-                    <th>Enquiry Date</th>
-                     <th>Action</th>
-                  </tr>
+                        <tr>
+                          <th>S.No</th>
+                          <th>Name</th>
+                          <th>Message</th>
+                          <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody>
-                     
+                    <?php foreach($cont as $f): ?>
+                      <tr>
+                        <td><?=$f['Id'] ?></td>
+                        <td><?=$f['Name'] ?></td>
+                        <td><?=$f['Message'] ?></td>
+                      </tr>
+                      <?php endforeach; ?>
                     </tbody>
                   </table>
-
-
                 </div>
                 
               </div>

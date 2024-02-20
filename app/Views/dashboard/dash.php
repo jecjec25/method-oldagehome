@@ -76,7 +76,7 @@
                     </div>
                     <i class="typcn typcn-messages icon-xl text-secondary"></i>
                   </div>
-                  <a href="unreadenq.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="contactu" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@
                     </div>
                     <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
                   </div>
-                   <a href="readenq.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                   <a href="readenq" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>

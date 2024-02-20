@@ -68,3 +68,7 @@ $routes->post('/saved', 'NewController::saved');
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
 $routes->get('/editproduct/(:num)', 'ProductsController::editprod/$1');
 $routes->post('/updateprod/(:num)', 'ProductsController::updateprod/$1');
+
+$routes->get('/contactu', 'ContactController::contactu');
+$routes->post('/check', 'ContactController::check');
+$routes->post('/checked', 'ContactController::checked');
