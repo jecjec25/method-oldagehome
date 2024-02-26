@@ -39,12 +39,14 @@ $routes->get('/rule', 'ViewController::rule');
 $routes->get('/eligibility', 'ViewController::eligibility');
 $routes->get('/aboutus', 'ViewController::aboutus');
 $routes->get('/contactus', 'ViewController::contactus');
+$routes->get('/news', 'ViewController::news');
 $routes->get('/reports', 'ViewController::reports');
 $routes->get('/list', 'HomeController::index');
 $routes->get('/create', 'ViewController::create');
 $routes->post('/submit', 'ViewController::store');
 
 $routes->get('/delete/(:num)', 'HomeController::delete/$1');
+$routes->get('/withDeleted', 'NewController::withDeleted');
 $routes->get('/adddetails', 'ViewController::adddetails');
 $routes->get('/details', 'HomeController::details');
 $routes->post('/submit', 'HomeController::store');
