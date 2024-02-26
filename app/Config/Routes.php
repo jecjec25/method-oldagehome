@@ -48,6 +48,7 @@ $routes->post('/submit', 'ViewController::store');
 $routes->get('/delete/(:num)', 'HomeController::delete/$1');
 $routes->get('/withDeleted', 'NewController::withDeleted');
 $routes->get('/adddetails', 'ViewController::adddetails');
+$routes->get('/announcement', 'ViewController::announcement');
 $routes->get('/details', 'HomeController::details');
 $routes->post('/submit', 'HomeController::store');
 $routes->get('/manageservices', 'ViewController::manageservices');

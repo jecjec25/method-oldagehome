@@ -34,6 +34,14 @@ class ViewController extends BaseController
     {
         return view('admin/searchs');
     }
+    public function news()
+    {
+        return view('admin/news');
+    }
+    public function announcement()
+    {
+        return view('admin/announcement');
+    }
     public function products()
     {
         return view('admin/products');
