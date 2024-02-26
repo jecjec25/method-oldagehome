@@ -48,7 +48,7 @@
                 <li><a href="/about">  About </a></li>
                 <li><a href="/products">Products</a></li>
                 <li><a href="/services">Services</a></li>
-                <li><a href="/searchs"> Search </a></li>
+                <li><a href="/news">News & Events</a></li>
                 <li><a href="/contact">Contact</a></li>
                   <div class="clearfix"> </div>
 
