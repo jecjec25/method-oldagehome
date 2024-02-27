@@ -38,6 +38,9 @@
 		        <div class="container">
 		        	<h2>Contact Us</h2>
 			         <div class="contact-form">
+						<?php if(session()->getFlashdata('success')): ?>
+					<div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+					<?php endif; ?>
 				  	   <form action="<?= base_url("check") ?>" method="post" class="left_form">
 						 <?php if(isset($cont['Id'])){?>
                       		<input type="hidden" name="Id" value="<?=$cont['Id']?>">

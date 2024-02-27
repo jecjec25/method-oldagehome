@@ -36,6 +36,7 @@ class ContactController extends BaseController
         {
             $contact->save($data);
         }
+        session()->setFlashdata('success', 'The data has been saved sucessfully.');
         return redirect()->to('/contact');
     } 
     public function checked(){

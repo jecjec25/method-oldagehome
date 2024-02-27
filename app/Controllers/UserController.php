@@ -54,14 +54,12 @@ class UserController extends BaseController
         else
         {
             $session->setFlashdata('msg', 'Incorrect Password');
-
             return redirect()->to('/signin');
         }
     }
     else
     {
         $session->setFlashdata('msg', 'Incorrect Email');
-
         return redirect()->to('/signin');
     }
     }

@@ -46,6 +46,22 @@ class ViewController extends BaseController
     {
         return view('admin/products');
     }
+    public function usersignin()
+    {
+        return view('admin/usersignin');
+    }
+    public function usersignup()
+    {
+        return view('admin/usersignup');
+    }
+    public function userbooking()
+    {
+        return view('admin/userbooking');
+    }
+    public function addingcalendar()
+    {
+        return view('dashboard/fullcalendar');
+    }
     public function dash()
     {
         return view('dashboard/dash');
@@ -172,5 +188,6 @@ class ViewController extends BaseController
         $main = new MainModel();
         $data['user'] = $main->where('Id', $Id)->delete($Id);
         return $this->response->redirect(site_url('/users-list'));
-    }    
+    }  
+
 }

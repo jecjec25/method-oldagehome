@@ -81,6 +81,12 @@
               <span class="menu-title">Search</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/calendar">
+              <i class="typcn typcn-mortar-board menu-icon"></i>
+              <span class="menu-title">Calendar</span>
+            </a>
+          </li>
          
           
         </ul>

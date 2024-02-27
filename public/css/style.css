@@ -45,7 +45,7 @@ font-family: 'Lato', sans-serif;
 	padding: 0;
 	display: block;
 	line-height: 1.7em;
-	text-transform: uppercase;
+	text-transform: none;
 }
 .top-log ul li a:hover {
 	color:#ff5a5f;
@@ -148,7 +148,7 @@ color: #fff;
 text-decoration: none;
 font-size: 1.1em;
 font-weight:500;
-text-transform: uppercase;
+text-transform: none;
 padding: 10px 18px 10px;
 display: block;
 }
@@ -287,7 +287,6 @@ nav a#pull {
 	font-family: 'Serif', georgia;
 	color:#ff5a5f;
 	font-size: 3.3em;
-	text-transform: uppercase;
 }
 .banner-head p{
 	color: #777;
@@ -306,7 +305,7 @@ padding: 5em 0 3em 0;
 	font-size: 2em;
 	margin: 0em 0;
 	font-weight: 400;
-	text-transform: uppercase;
+	text-transform: none;
 	font-family: 'Lato', sans-serif;
 }
 .welcom-grid-img img{
@@ -339,7 +338,7 @@ font-family: 'Lato', sans-serif;
 	width:85px;
 	height:100px;
 	font: 300 48px/68px  'Lato', sans-serif;
-	text-transform: uppercase;
+	text-transform: none;
 	text-align: center;
 	color: #fff;
 	background: #ff9900;
@@ -382,7 +381,7 @@ font-family: 'Lato', sans-serif;
 	margin: 0em 1em 1.5em 0.7em;
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
-	text-transform: uppercase;
+	text-transform: none;
 }
 .letest-main h4{
 	color: #5b5858;
@@ -391,7 +390,7 @@ font-family: 'Lato', sans-serif;
 	font-family: 'Lato', sans-serif;
 	font-weight:700;
 	line-height: 1.5em;
-	text-transform: uppercase;
+	text-transform: none;
 }
 .col-md-10.latest-text.dimand {
 	width: 68%;
@@ -429,7 +428,7 @@ color: #ff5a5f;
 	margin: 0em 1em 1.5em 0.7em;
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
-	text-transform: uppercase;
+	text-transform: none;
 }
 
 
@@ -550,7 +549,7 @@ color:#C0B9CD;
 	border:none;
 	-webkit-appearance:none;
 	color: #fe9901;
-	text-transform: uppercase;
+	text-transform: none;
 	margin: 0px -5px;
 }
 .testmonial-text form input[type="submit"]:hover{
@@ -580,7 +579,7 @@ background: #cabfae;
 	margin: 1em 0 0em 0;
 	font-size: 2em;
 	color: #0a0a0a;
-	text-transform: uppercase;
+	text-transform: none;
 	text-align: left;
 	font-weight: 700;
 	line-height: 1.45em;
@@ -597,7 +596,7 @@ background: #cabfae;
 	margin:0.5em 0 0.9em 0;
 	font-size:2.6em;
 	color:#ff5a5f;
-	text-transform:uppercase;
+	text-transform:none;
 	text-align: left;
 }
 .inspiration-img img {
@@ -607,7 +606,7 @@ border: 8px solid#F90;
 	margin: 1em 0 0em 0;
 	font-size: 2em;
 	color: #0a0a0a;
-	text-transform: uppercase;
+	text-transform: none;
 	text-align: left;
 	font-weight: 700;
 	line-height: 1.45em;
@@ -616,7 +615,7 @@ border: 8px solid#F90;
 	margin:0.5em 0 0.9em 0;
 	font-size:1.2em;
 	color:#ff9900;
-	text-transform:uppercase;
+	text-transform:none;
 	text-align: left;
 }
 .inspiration-text p {
@@ -667,7 +666,7 @@ a.slide-btn {
 	padding: 0.65em 1em;
 	border: double #FF5A5F;
 	display: inline-block;
-	text-transform: uppercase;
+	text-transform: none;
 	color: #FFF;
 	font-size: 1em;
 	text-align: center;
@@ -709,7 +708,7 @@ padding:2em 0 0 0;
 	margin: 0 0 0.5em;
 	font-size: 2.7em;
 	color: #ff5a5f;
-	text-transform: uppercase;
+	text-transform: none;
 	text-align: left;
 }
 .gallery-section h3 {
@@ -755,7 +754,7 @@ border-radius: 28px;
 	margin: 0 0 0.5em;
 	font-size: 1.5em;
 	color: #f5eded;
-	text-transform: uppercase;
+	text-transform: none;
 	text-align: left;
 }
 .inner-text p {
@@ -833,7 +832,7 @@ ul.breadcrumbs li {
 display: inline-block;
 font-size: 1.1em;
 color: #3F3F3F;
-text-transform: uppercase;
+text-transform: none;
 }
 li.home a {
 font-size: 0.9em;
@@ -871,7 +870,7 @@ padding: 0;
 	color:#ff5a5f;
 	font-weight:600;
 	font-size:24px;
-	text-transform: uppercase;
+	text-transform: none;
 	margin: 0;
 	padding: 13px 0 0 0;
 }
@@ -890,7 +889,7 @@ font-size: 21px;
 font-weight: 400;
 margin: 15px 3px;
 color: #FF5A5F;
-text-transform: uppercase;
+text-transform: none;
 font-family: 'Lato', sans-serif;
 }
 
@@ -987,7 +986,7 @@ border: double#ff9901;
 outline: none;
 cursor: pointer;
 font-size: 0.85em;
-text-transform: uppercase;
+text-transform: none;
 width: 35%;
   transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
@@ -1008,7 +1007,7 @@ width: 35%;
 	outline: none;
 	cursor: pointer;
 	font-size: 0.8em;
-	text-transform: uppercase;
+	text-transform: none;
 	width: 20%;
   margin: 0.5em 0;
    transition: all 0.5s ease-out;
@@ -1126,7 +1125,7 @@ a.back:hover{
 	margin:0 0 0.5em;
 	font-size:3em;
 	color:#ff5a5f;
-	text-transform:uppercase;
+	text-transform:none;
 	text-align: left;
 }
 .blog-left,.left-blog,.top-blog{
@@ -1179,12 +1178,12 @@ ul.men-grid li a{
 	font-weight: 400;
 	color: #777;
 	vertical-align: top;
-	text-transform: uppercase;
+	text-transform: none;
 }
 .top-blog a.fast h2 {
 	text-decoration: none;
 font-size: 1.35em;
-text-transform: uppercase;
+text-transform: none;
 color: #FF5A5F;
 margin: 0.5em 0;
 font-weight: 400;
@@ -1219,7 +1218,7 @@ border: double#ff5a5f;
 outline: none;
 cursor: pointer;
 font-size: 1em;
-text-transform: uppercase;
+text-transform: none;
 width:22%;
 }
 a.read-more:hover{
@@ -1265,7 +1264,7 @@ border: double#ff9901;
 outline: none;
 cursor: pointer;
 font-size: 1em;
-text-transform: uppercase;
+text-transform: none;
 margin-top: 0.8em;
 width:16%;
 }
@@ -1276,7 +1275,7 @@ width:16%;
 .artical-commentbox h3{
 	font-size: 1.4em;
 color: #ff5a5f;
-text-transform: uppercase;
+text-transform: none;
 margin: 1em 0;
 text-align: left;
 }	
@@ -1291,7 +1290,7 @@ border-bottom: 1px dashed#999;
 .single-header h3{
 	font-size: 3em;
 	color: #ff5a5f;
-	text-transform: uppercase;
+	text-transform: none;
 	margin:0;
 	text-align: left;
 }
@@ -1311,7 +1310,7 @@ border-right: none;
 }
 .artical-links ul li span {
 vertical-align: top;
-text-transform: uppercase;
+text-transform: none;
 color: #333;
 font-size: 1em;
 }
@@ -1344,7 +1343,7 @@ font-size: 1em;
 .artical-content h3{
 	color: #ff9900;
 	text-align: left;
-	text-transform: uppercase;
+	text-transform: none;
 	padding: 5px 0px 15px 0;
 	font-size: 1.8em;
 }
@@ -1361,7 +1360,7 @@ padding: 0;
 .share-artical h3{
 	font-size:1.4em;
 	color: #ff5a5f;
-	text-transform: uppercase;
+	text-transform: none;
 	margin:1em 0;
 	text-align: left;
 }
@@ -1421,7 +1420,7 @@ padding: 1em 0;
 	text-align: center;
 	color: #fff;
 	font-size: 3em;
-	text-transform: uppercase;
+	text-transform: none;
 	font-weight: 300;
 	margin-bottom:1em;
 }
@@ -1433,7 +1432,7 @@ padding: 1em 0;
 	padding: 17px 18px;
 	font-weight: 400;
 	font-size: 15px;
-	text-transform: uppercase;
+	text-transform: none;
 	color: #7e7e7e;
 	margin: 0px 0 5px 0;
 	box-shadow: inset 0px 0px 3px #999;
@@ -1460,7 +1459,7 @@ width: 49%;
 	padding: 21px 25px;
 	color: #fff;
 	background: #ff9900;
-	text-transform: uppercase;
+	text-transform: none;
 	font-weight: 400;
 	font-size: 18px;
 	border: double #ff9900;
@@ -1493,7 +1492,7 @@ padding: 2em 0;
 	font-size:2.5em;
 	text-decoration: none;
 	font-weight:400;
-	text-transform: uppercase;
+	text-transform: none;
 	margin: 0 0 0.5em 0;
 	padding-top:0.5em;
 }
@@ -1546,7 +1545,7 @@ color: #ff5a5f;
 font-size: 2.5em;
 margin: 0em 1em 1.5em 0em;
 font-weight: 400;
-text-transform: uppercase;
+text-transform: none;
 }
 .contact_desc h3 {
 	color: #ff9900;
@@ -1569,7 +1568,7 @@ text-transform: uppercase;
 	outline: none;
 	cursor: pointer;
 	font-size: 1em;
-	text-transform: uppercase;
+	text-transform: none;
 	width:30%;
 }
 .conatact-bottom input[type="submit"]:hover{
@@ -1649,7 +1648,7 @@ font-weight:600;
 font-size: 0.9em;
 padding-bottom: 0.2em;
 display: inline-block;
-text-transform: uppercase;
+text-transform: none;
 transition: 0.5s all;
 -webkit-transition: 0.5s all;
 -moz-transition: 0.5s all;
@@ -1659,7 +1658,7 @@ transition: 0.5s all;
 color: #333;
 font-size: 0.9em;
 padding-bottom: 0.2em;
-text-transform: uppercase;
+text-transform: none;
 transition: 0.5s all;
 -webkit-transition: 0.5s all;
 -moz-transition: 0.5s all;

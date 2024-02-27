@@ -180,7 +180,7 @@ a.cbp-vm-icon.cbp-vm-list {
 
 .cbp-vm-view-grid .cbp-vm-title {
 	font-size: 1.3em;
-	text-transform: uppercase;
+	text-transform: none;
 	color: #FF5A5F;
 	font-weight: 400;
 	font-family: 'Lato', sans-serif;
@@ -231,7 +231,7 @@ a.cbp-vm-icon.cbp-vm-list {
 	white-space: normal;
 	width: 23%;
 	font-size: 1.3em;
-	text-transform: uppercase;
+	text-transform: none;
 	color: #FF5A5F;
 	font-weight: 400;
 	font-family: 'Lato', sans-serif;

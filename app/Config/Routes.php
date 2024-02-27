@@ -9,7 +9,7 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/signup', 'SignupController::index', ['filter'  => 'guestFilter']);
  $routes->match(['get', 'post'], 'store', 'SignupController::store');
  $routes->match(['get', 'post'], 'UserController/loginAuth', 'UserController::loginAuth');
- $routes->get('/signin', 'UserController::index', ['filter'  => 'guestFilter']);
+ $routes->get('/signin', 'UserController::index', ['filter' => 'guestFilter']);
  $routes->get('/contact', 'ViewController::contact');
  $routes->get('/eligibility', 'ViewController::eligability');
  $routes->get('/about', 'ViewController::about');
@@ -23,6 +23,7 @@ $routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
 $routes->get('/signin', 'Home::try');
 $routes->get('/', 'ViewController::home',  ['filter'  => 'guestFilter']);
 $routes->get('/contact', 'ViewController::contact');
+$routes->get('/userbooking', 'ViewController::userbooking');
 $routes->match(['GET', 'POST'],'ContactController/contact', 'ContactController::submit');
 $routes->get('/eligibility', 'ViewController::eligability');
 $routes->get('/about', 'ViewController::about', ['filter'  => 'authGuard']);
@@ -59,6 +60,8 @@ $routes->get('/manageproduct', 'ViewController::manageproduct');
 $routes->get('/addproduct', 'ViewController::addproduct');
 $routes->get('/editscdetails', 'ViewController::editscdetails');
 $routes->get('/editproduct', 'ViewController::editproduct');
+$routes->get('/usersignin', 'ViewController::usersignin');
+$routes->get('/usersignup', 'ViewController::usersignup');
 $routes->post('/save', 'NewController::save');
 $routes->get('/test', 'NewController::test');
 $routes->post('/update/(:any)', 'NewController::update/$1');
@@ -75,3 +78,21 @@ $routes->post('/updateprod/(:num)', 'ProductsController::updateprod/$1');
 $routes->get('/contactu', 'ContactController::contactu');
 $routes->post('/check', 'ContactController::check');
 $routes->post('/checked', 'ContactController::checked');
+
+//calendar to
+$routes->get('/calendar', 'UserbookingController::bookinge');
+$routes->get('/booking', 'UserbookingController::bookchecked', ['filter'  => 'userFilter']);
+$routes->post('/checkbooks', 'UserbookingController::checkbook');
+$routes->post('/bookcheck', 'UserbookingController::bookcheck');
+
+
+$routes->get('usersignin','UsersigninController::usersignin', ['filter'  => 'uFilter']);
+$routes->get('/usersign', 'UsersigninController::indexes');
+$routes->post('/UsersigninController/Auth', 'UsersigninController::UserLogin', ['filter'  => 'userFilter']);
+$routes->post('usersignup', 'UsersigninController::usersignup');
+
+$routes->match(['post', 'get'], 'fundamental/accept', 'Fullcalendar::Accept');
+$routes->match(['post', 'get'], 'fullcalendar/decline', 'Fullcalendar::Decline');
+
+
+
