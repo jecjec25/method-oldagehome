@@ -79,20 +79,21 @@ $routes->get('/contactu', 'ContactController::contactu');
 $routes->post('/check', 'ContactController::check');
 $routes->post('/checked', 'ContactController::checked');
 
-//calendar to
+//calendar to`
 $routes->get('/calendar', 'UserbookingController::bookinge');
-$routes->get('/booking', 'UserbookingController::bookchecked', ['filter'  => 'userFilter']);
+$routes->get('/booking', 'UserbookingController::bookchecked');
 $routes->post('/checkbooks', 'UserbookingController::checkbook');
 $routes->post('/bookcheck', 'UserbookingController::bookcheck');
 
 
-$routes->get('usersignin','UsersigninController::usersignin', ['filter'  => 'uFilter']);
+$routes->get('usersignin','UsersigninController::usersignin');
 $routes->get('/usersign', 'UsersigninController::indexes');
-$routes->post('/UsersigninController/Auth', 'UsersigninController::UserLogin', ['filter'  => 'userFilter']);
+$routes->post('/UsersigninController/Auth', 'UsersigninController::UserLogin');
 $routes->post('usersignup', 'UsersigninController::usersignup');
 
 $routes->match(['post', 'get'], 'fundamental/accept', 'Fullcalendar::Accept');
 $routes->match(['post', 'get'], 'fullcalendar/decline', 'Fullcalendar::Decline');
 
-
+$routes->get('/ADbooking', 'UserbookingController::bookingAD');
+$routes->get('/Dbooking', 'UserbookingController::bookingD');
 

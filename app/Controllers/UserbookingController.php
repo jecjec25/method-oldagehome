@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UserbookingModel;
 use App\Models\BookingModel;
+
 class UserbookingController extends BaseController
 {
     private $userbooking;
@@ -55,5 +56,18 @@ class UserbookingController extends BaseController
         $userbooking = new UserbookingModel();
         $data['book'] = $userbooking->findAll();
         return view ('admin/userbooking', $data);
+    }
+
+    public function bookingAD()
+    {
+        $data['calen'] = $this->booking->where('status', 'Accepted')->findAll();
+
+        return view('dashboard/bookings', $data);
+    }
+    public function bookingD()
+    {
+        $data['calen'] = $this->booking->where('status', 'Declined')->findAll();
+
+        return view('dashboard/bookingDec', $data);
     }
 }

@@ -1,3 +1,4 @@
+
 <div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
         <div id="theme-settings" class="settings-panel">
@@ -83,11 +84,23 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/calendar">
-              <i class="typcn typcn-mortar-board menu-icon"></i>
+            <i class="typcn typcn-calendar menu-icon"></i>
               <span class="menu-title">Calendar</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ADbooking">
+            <i class="typcn typcn-arrow-back-outline menu-icon"></i>
+              <span class="menu-title">Accepted</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Dbooking">
+            <i class="typcn typcn-arrow-forward-outline menu-icon"></i>
+              <span class="menu-title">Declined</span>
             </a>
           </li>
          
           
-        </ul>
+        </ul >
       </nav>

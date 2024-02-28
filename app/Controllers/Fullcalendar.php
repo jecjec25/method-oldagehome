@@ -56,6 +56,7 @@ class Fullcalendar extends BaseController
         foreach($acceptMe as $a)
         {
             $acceptBookings[] = [
+            'usersignsId' => $a['usersignsId'],
             'lastname' => $a['lastname'],
             'firstname' => $a['firstname'],
             'middlename' => $a['middlename'],
@@ -113,6 +114,7 @@ class Fullcalendar extends BaseController
         foreach($declineMe as $a)
         {
             $declineBookings[] = [
+            'usersignsId' => $a['usersignsId'],
             'lastname' => $a['lastname'],
             'firstname' => $a['firstname'],
             'middlename' => $a['middlename'],
@@ -122,7 +124,7 @@ class Fullcalendar extends BaseController
             'alterdate' => $a['alterdate'],
             'equipment' => $a['equipment'],
             'comments' => $a['comments'],
-            'status' => 'Decline'
+            'status' => 'Declined'
             ];
         }
         

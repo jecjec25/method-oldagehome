@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,6 +57,7 @@
                           <th>Alternate Date</th>
                           <th>Equipment</th>
                           <th>Comments</th>
+                          <th>STATUS</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,22 +73,8 @@
                       <td><?=$even['equipment'] ?></td>
                       <td><?=$even['comments'] ?></td>
                       <td>
-                          <div class="d-flex align-items-center">
-                            
-                            <input type="hidden" name="accept" value="<?= $even['bookingId']?>">
-                              
-                            <button type="sumbit" class="btn btn-success btn-sm btn-icon-text mr-3">Accept<i class="typcn typcn-tick btn-icon-append"></i></button>
-                            </form>
-                
-
-                          <!-- Decline Button -->
-                          <form action="<?= base_url('fullcalendar/decline')?>" method="post">
-                          <input type="hidden" name="decline" value="<?= $even['bookingId']?>">
-                              
-                          <button type="sumbit" class="btn btn-danger btn-sm btn-icon-text">Decline<i class="typcn typcn-times btn-icon-append"></i></i></button>
-                          </form>  
-                       
-                          </div>
+                        
+                          <?= $even['status']?>
                     </td>
                     </tr>
                     <?php endforeach; ?>
