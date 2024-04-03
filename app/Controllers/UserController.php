@@ -18,7 +18,25 @@ class UserController extends BaseController
         helper(['form']);
         return view('user/signin');
     }
-    
+    public function Admin()
+    {
+        return view('dashboard/profile');
+    }
+    public function updateProfile($id)
+    {
+        $user = new UsersModel();
+        $data = [
+            'LastName'     => $this->request->getVar('LastName'),
+            'FirstName'     => $this->request->getVar('FirstName'),
+            'Username'     => $this->request->getVar('Username'),
+            'Email'    => $this->request->getVar('Email'),
+            'ContactNo'    => $this->request->getVar('ContactNo'),
+            'birthday'    => $this->request->getVar('birthday'),
+         ];
+         $user->update($id, $data);
+        return redirect()->to('profile');
+        
+    }
     public function loginAuth()
     {
     $session = session();

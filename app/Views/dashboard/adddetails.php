@@ -52,9 +52,8 @@
                       <label for="exampleInputEmail1">Date of Birth</label>
                      <input id="DateBirth" name="DateBirth" type="date" class="form-control" required="true" value="<?= isset($d['DateBirth']) ? $d['DateBirth'] : '' ?>" max="1970-01-01">
                     </div>
-
                     <div class="form-group">
-                    <label for="ContNum">Contact Number (Philippines)</label>
+                    <label for="ContNum">Contact Number</label>
                     <input id="ContNum" name="ContNum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" class="form-control" required="true" value="<?= isset($d['ContNum']) ? $d['ContNum'] : '' ?>">
                     </div>
                     <div class="form-group">
@@ -68,12 +67,15 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Emergency Address</label>
-                    
                      <textarea class="form-control" id="EmergencyAdd" name="EmergencyAdd" rows="5" value="<?= isset($d['EmergencyAdd']) ? $d['EmergencyAdd'] : '' ?>"></textarea>
                     </div>
                     <div class="form-group">
                     <label for="EmergencyContNum">Emergency Contact Number (Philippines)</label>
                     <input id="EmergencyContNum" name="EmergencyContNum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" class="form-control" required="true" value="<?= isset($d['EmergencyContNum']) ? $d['EmergencyContNum'] : '' ?>">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Registration Date</label>
+                     <input id="RegDate" name="RegDate" type="date" class="form-control" required="true" value="<?= isset($d['RegDate']) ? $d['RegDate'] : '' ?>">
                     </div>
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
                   </form>

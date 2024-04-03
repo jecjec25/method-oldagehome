@@ -59,6 +59,10 @@
               <input id="ContNum" name="ContNum" maxlength="13" class="form-control" required="true" value="<?= $d['ContNum']?>" pattern="^(\+?63|0)9\d{9}$">
               </div>
               <div class="form-group">
+                      <label for="exampleInputEmail1">Elder Picture</label>
+                    <p> <input type="file" name="ProfPic" > </p>
+                    </div>
+              <div class="form-group">
                 <label for="exampleInputEmail1">Communication Address</label>
                <input class="form-control" id="ComAdd" name="ComAdd" value="<?= $d['ComAdd']?>" rows="5">                     
               </div>
@@ -71,6 +75,10 @@
               <div class="form-group">
               <label for="EmergencyContNum">Emergency Contact Number</label>
               <input id="EmergencyContNum" name="EmergencyContNum" maxlength="13" class="form-control" required="true" value="<?= $d['EmergencyContNum']; ?>" pattern="^(\+?63|0)9\d{9}$">
+              </div>
+              <div class="form-group">
+              <label for="exampleInputEmail1">Registration Date</label>
+              <input id="RegDate" name="RegDate" type="date" class="form-control" required="true" value="<?= $d['RegDate'] ?>">
               </div>
               <button type="submit" class="btn btn-primary mr-2" name="submit" value="submit">Submit</button>
               <div class="row mt-3">

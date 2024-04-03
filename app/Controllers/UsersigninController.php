@@ -65,13 +65,28 @@ class UsersigninController extends BaseController
 
         }
     }
+
     public function index()
     {
         helper(['form']);
         $data = [];
         return view('admin/usersignup', $data);
     }
-
+    public function updateuserProfile($id)
+    {
+        $user = new UsersignModel();
+        $data = [
+            'LastName'     => $this->request->getVar('LastName'),
+            'FirstName'     => $this->request->getVar('FirstName'),
+            'Username'     => $this->request->getVar('Username'),
+            'Email'    => $this->request->getVar('Email'),
+            'ContactNo'    => $this->request->getVar('ContactNo'),
+            'birthday'    => $this->request->getVar('birthday'),
+         ];
+         $user->update($id, $data);
+        return redirect()->to('booking');
+        
+    }
     public function usersignup()
     {
         helper(['form']);
@@ -102,4 +117,16 @@ class UsersigninController extends BaseController
             return view('admin/usersignup', $data);
         }
     }
+
+    public function userProfile()
+    {
+        return view('admin/userprofile');
+    }
+    public function logout()
+    {
+        session_destroy();
+
+        return redirect()->to('/usersignin');
+        }
+
 }

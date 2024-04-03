@@ -36,9 +36,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Admin Calendar</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Admin declined event</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    User event has been received!!!
+                    Users event has been declined!!!
                   </p>
                 <div class="table-responsive pt-3">
                 <form action="<?= base_url('fundamental/accept') ?>" method ="post">

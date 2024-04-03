@@ -37,9 +37,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Admin Calendar</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Admin accepted event</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    User event has been received!!!
+                    Users event has been accepted!!!
                   </p>
                 <div class="table-responsive pt-3">
                 <form action="<?= base_url('fundamental/accept') ?>" method ="post">
@@ -59,6 +59,11 @@
                           <th>Equipment</th>
                           <th>Comments</th>
                           <th>STATUS</th>
+                          <th>DESCRIPTION</th>
+                          <th>AMOUNT</th>
+                          <th>OUTCOMES</th>
+                          <th>ACKNOWLEDGEMENT</th>
+                          <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,8 +79,14 @@
                       <td><?=$even['equipment'] ?></td>
                       <td><?=$even['comments'] ?></td>
                       <td>
-                        
                           <?= $even['status']?>
+                    </td>
+                    <td><?=$even['description'] ?></td>
+                    <td><?=$even['amount_raised'] ?></td>
+                    <td><?=$even['outcomes'] ?></td>
+                    <td><?=$even['acknowledgement'] ?></td>
+                    <td>
+                      <a href="<?= base_url('viewEvent/') .$even['id']?>">View Event</a>
                     </td>
                     </tr>
                     <?php endforeach; ?>

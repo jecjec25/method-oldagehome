@@ -4,8 +4,20 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\MainModel;
+use App\Models\BookingModel;
+use App\Models\ContactModel;
 class ViewController extends BaseController
 {
+
+    private $booking;
+    private $contact;
+
+    public function __construct()
+    {
+        $this->booing = new BookingModel();
+        $this->contact = new ContactModel();
+        helper(['form']);
+    }
     public function home()
     {
         return view('admin/home');
@@ -66,10 +78,6 @@ class ViewController extends BaseController
     {
         return view('dashboard/dash');
     }
-    public function search()
-    {
-        return view('dashboard/search');
-    }
     public function rule()
     {
         return view('dashboard/rule');
@@ -108,7 +116,9 @@ class ViewController extends BaseController
     }
     public function readenq()
     {
-        return view('dashboard/readenq');
+        $data['cont'] = $this->contact->where('contact_status', 'Read')->findAll();
+    
+        return view('dashboard/readenq', $data);
     }
     public function manageproduct()
     {
@@ -189,5 +199,13 @@ class ViewController extends BaseController
         $data['user'] = $main->where('Id', $Id)->delete($Id);
         return $this->response->redirect(site_url('/users-list'));
     }  
+
+    public function viewreports()
+    {
+
+
+
+        return view ('dashboard/reportdetails');
+    }
 
 }

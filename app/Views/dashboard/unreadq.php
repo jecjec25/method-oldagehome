@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   
-  <title>Senior Care Management System|| Unread Enquiry</title>
+  <title>Senior Care Management System|| Unread Inquiry</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
@@ -18,13 +18,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Unread Enquiry</h4>
+            <h4 class="mb-0">Unread Inquiry</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Unread Enquiry</p>
+              <p class="mb-0">Unread Inquiry</p>
             </div>
           </li>
         </ul>
@@ -37,9 +37,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Unread Enquiry</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Unread Inquiry</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Enquiry has been received!!!
+                    Inquiry has been received!!!
                   </p>
                 <div class="table-responsive pt-3">
                   
@@ -65,7 +65,11 @@
                       <td><?=$f['Enquiry_Date'] ?></td>
                       <td>
                           <div class="d-flex align-items-center">
-                            <a href="<?= base_url('readenq') ?>" class="btn btn-success btn-sm btn-icon-text mr-3">Read <i class="typcn typcn-edit btn-icon-append"></i> </a> 
+                            <form action="<?= base_url('updateToRead') ?>" method="post">
+                            <input type="hidden" name="update" value="<?=$f['Id']?>">
+                            <button class="btn btn-success btn-sm btn-icon-text mr-3">Read <i class="typcn typcn-edit btn-icon-append"></i></button>
+                          </form>
+                      
                           </div>
                     </td>
                     </tr>

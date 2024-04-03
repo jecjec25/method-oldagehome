@@ -5,15 +5,18 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UserbookingModel;
 use App\Models\BookingModel;
+use App\Models\MainModel;
 class Fullcalendar extends BaseController
 {
 
     private $booking;
     private $book;
+    private $main;
     public function __construct()
     {
         $this->booking = new UserbookingModel();
         $this->book = new BookingModel();
+        $this->main = new MainModel();
         helper(['form']); 
     }
 
@@ -39,6 +42,43 @@ class Fullcalendar extends BaseController
         $acceptMe = $this->booking->where('bookingId', $accept)->get()->getResultArray();
 
         return $acceptMe;
+    }
+
+    public function try()
+    {
+     
+            $data = [
+                'reg' => $this->main->findALl(),
+                   ];
+       
+        return view('dashboard/reports',$data);
+
+    }
+
+    public function searchRes()
+    {$searchRes = $this->request->getVar('regdate');
+        $search = $this->request->getVar('todate');
+        
+        // Assuming $this->main is an instance of your model
+        $data = [
+            'booking' => $this->main->findAll(), // Fetching all data from the model
+            'reg' => $this->main->where('RegDate <=', $searchRes)
+                                 ->where('RegDate >=', $search)
+                                 ->where('scstatus', 'Unarchive')
+                                 ->findAll() // Fetching data where RegistrationDate falls between $searchRes and $search
+        ];
+        
+        if (!empty($query)) {
+            $data['reg'] = $query;
+        } else {
+            // No data found, handle this situation here
+            // For example, you can set a message to display in the view
+                $data['no_data_message'] = 'No data found.';
+        }
+        
+        return view('dashboard/reportstable', $data);
+
+        
     }
 
 
@@ -134,4 +174,32 @@ class Fullcalendar extends BaseController
     {
         $this->booking->where('bookingId', $decline)->delete();
     } 
+    public function Archive()
+    {
+        $contacts = $this->request->getVar('update');
+
+        $update = $this->scDetails($contacts);
+                        $this->updateMyVisibility($update);
+        return redirect()->to('/reports');
+    }
+
+    private function scDetails($contacts)
+    {
+        $update = $this->main->where('Id', $contacts)->first();
+
+        return $update;
+
+        
+    }
+
+    private function updateMyVisibility($update)
+    {
+        $data = [
+            'scstatus' => 'Archive',
+        ];
+
+        $this->main->update($update, $data);
+        
+    }
+
 }

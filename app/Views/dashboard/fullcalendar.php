@@ -39,7 +39,7 @@
               <div class="card">
                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Admin Calendar</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    User event has been received!!!
+                    Users event reservation has been received!!!
                   </p>
                 <div class="table-responsive pt-3">
                 <form action="<?= base_url('fundamental/accept') ?>" method ="post">
@@ -79,8 +79,6 @@
                               
                             <button type="sumbit" class="btn btn-success btn-sm btn-icon-text mr-3">Accept<i class="typcn typcn-tick btn-icon-append"></i></button>
                             </form>
-                
-
                           <!-- Decline Button -->
                           <form action="<?= base_url('fullcalendar/decline')?>" method="post">
                           <input type="hidden" name="decline" value="<?= $even['bookingId']?>">

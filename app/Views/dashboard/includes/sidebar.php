@@ -35,6 +35,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/adddetails">Add Details</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/test">Manage Details</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/archives">Archives</a></li>
               </ul>
             </div>
           </li>
@@ -54,13 +55,13 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-element" aria-expanded="false" aria-controls="form-elements">
               <i class="typcn typcn-film menu-icon"></i>
-              <span class="menu-title">Enquiry</span>
+              <span class="menu-title">Inquiry</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-element">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="contactu">Unread Enquiry</a></li>
-                <li class="nav-item"><a class="nav-link" href="/readenq">Read Enquiry</a></li>
+                <li class="nav-item"><a class="nav-link" href="contactu">Unread Inquiry</a></li>
+                <li class="nav-item"><a class="nav-link" href="/readenq">Read Inquiry</a></li>
               </ul>
             </div>
           </li>
@@ -75,12 +76,6 @@
                 <li class="nav-item"> <a class="nav-link" href="/reports">B/W dates Report</a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/search">
-              <i class="typcn typcn-mortar-board menu-icon"></i>
-              <span class="menu-title">Search</span>
-            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/calendar">
@@ -98,6 +93,18 @@
             <a class="nav-link" href="/Dbooking">
             <i class="typcn typcn-arrow-forward-outline menu-icon"></i>
               <span class="menu-title">Declined</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/donation">
+            <i class="typcn typcn-briefcase menu-icon"></i>
+              <span class="menu-title">Report Donation</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/viewDonation">
+            <i class="typcn typcn-contacts menu-icon"></i>
+              <span class="menu-title">Donation Details</span>
             </a>
           </li>
          

@@ -39,23 +39,22 @@
                   <p class="card-description">
                     Between Dates Report of Senoir Citizen Regsitration
                   </p>
-                  <form class="forms-sample" method="post" action="bwdates-report-details.php">
+                  <form class="forms-sample" method="get" action="<?= base_url('searchreps')?>">
                     
                     <div class="form-group">
                       <label for="exampleInputUsername1">From Dates</label>
-                      <input class="form-control" id="fromdate" name="fromdate"  type="date" required="true">
+                      <input class="form-control" id="fromdate" name="todate"  type="date" required="true">
                     </div>
-                    <div class="form-group">
+                     <div class="form-group">
                       <label for="exampleInputEmail1">To Dates</label>
-                      <input class="form-control " id="todate" type="date" name="todate" required="true">
+                      <input class="form-control " id="todate" type="date" name="regdate" required="true">
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                     
+                    <button type="submit" cl  ass="btn btn-primary mr-2" name="submit">Submit</button>
                   </form>
                 </div>
               </div>
             </div>
-     
           </div>
         </div>
        <?php include_once('includes/footer.php');?>

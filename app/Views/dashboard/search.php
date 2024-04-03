@@ -1,131 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Senior Care Management System|| Search Senior Citizen Details</title>
+  
+  <title>Senior Care Management System || Add Senior Details</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="login/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
+  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 </head>
+
 <body>
-  
   <div class="container-scroller">
-    <?php include_once('includes/header.php');?>
-    <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
-  &nbsp;
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item ml-0">
-            <h4 class="mb-0">Search Senior Citizen Details</h4>
-          </li>
-          <li class="nav-item">
-            <div class="d-flex align-items-baseline">
-              <p class="mb-0">Home</p>
-              <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Search Senior Citizen Details</p>
-            </div>
-          </li>
-        </ul>
-       
-      </div>
-    </nav>
-    <div class="container-fluid page-body-wrapper">
-     <?php include_once('includes/sidebar.php');?>
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <form class="forms-sample" method="post">
-                  </form>
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Search</h4>
-                  <p class="card-description">
-                    Serach Senior Citizen details by regsitration number
-                  </p>
-                  <form class="forms-sample" method="post">
-                    
-                   <div class="form-group">
-                      <label for="exampleInputUsername1">Search By Registration Number</label>
-                      <input type="text" id="searchdata" name="searchdata" class="form-control" required="required" autofocus="autofocus" >
-                    </div>
-                   
-                   
-                    <button type="submit" name="search" class="btn btn-info btn-min-width mr-1 mb-1">Search</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-     
-          </div>
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
+          <a class="navbar-brand brand-logo" href="index.html"><img src="login/login/images/logo.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="login/images/logo-mini.svg" alt="logo"/></a>
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
         </div>
+      </div>
+      <?php include_once('includes/header.php');?>
+    </nav>
+    <div class="container-fluid page-body-wrapper">     
+    <?php include_once('includes/sidebar.php');?>
+          <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
             <div class="col-md-12">
-
               <div class="card">
- 
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Manage Senior Citizen Details</h4>
+                  <p class="card-description" style="padding-left: 20px;"> 
+                    Manage Senior Citizen Details in old age home!!!
+                  </p>
+                  <form action="searchdets" method="get">
+                  <input name="searchsc" type="text">
 
-                 
+                  <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
+                  </form>  
                 <div class="table-responsive pt-3">
                   
-                  <?php
-if(isset($_POST['search']))
-
-
-$sdata=$_POST['searchdata'];
-  ?>
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Result against "<?php echo $sdata;?>" keyword</h4>
-                  <table class="table table-striped project-orders-table">
+                  <table class="table table-striped project-orders-table" id="tblscdetails">
+                  <?php if(isset($k['Id'])){?>
+                      <input type="hidden" name="Id" value="<?=$k['Id']?>">
+                    <?php }?>
                     <thead>
                       <tr>
-                        <th class="ml-5">#</th>
-                        <th>Registration Number</th>
                         <th>Name</th>
-                        <th>Contact Number</th>
                         <th>Date of Birth</th>
-                        <th>Added By</th>
+                        <th>Contact Number</th>
+                        <th>Profile Picture</th>
+                        <th>Communication Address</th>
+                        <th>Emergency Address</th>
+                        <th>Emergency Contact Number</th>
                         <th>Registration Date</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <?php
-                         $query=mysqli_query($con,"select * from tblseniorcitizen where tblseniorcitizen.RegistrationNumber like '$sdata%'");
-                         $num=mysqli_num_rows($query);
-if($num>0){
-$cnt=1;
-while($row=mysqli_fetch_array($query))
-{
-?>
-                      <tr>
-                        <td><?php echo htmlentities($cnt);?></td>
-                        <td><?php echo htmlentities($row['RegistrationNumber']);?> </td>
-                        <td><?php echo htmlentities($row['Name']);?> </td>
-                        <td><?php echo htmlentities($row['ContactNumber']);?> </td>
-                        <td><?php echo htmlentities($row['DateofBirth']);?> </td>
-                        <td><?php echo htmlentities($row['AddedBy']);?> </td>
-                        <td><?php echo htmlentities($row['RegitrationDate']);?></td>
-                        <td>
+                    <?php foreach($main as $k): ?>
+                <tr>
+                    <td><?=$k['Name'] ?></td>
+                    <td><?=$k['DateBirth'] ?></td>
+                    <td><?=$k['ContNum'] ?></td>
+                    <td><img src="<?php base_url();?>/eldersimage/<?=$k['ProfPic'] ?>" alt="" style="width: 200px; height: 200px; border:box;"></td>
+                    <td><?=$k['ComAdd'] ?></td>
+                    <td><?=$k['EmergencyAdd'] ?></td>
+                    <td><?=$k['EmergencyContNum'] ?></td>
+                    <td><?=$k['RegDate'] ?></td>
+                    <td>
                           <div class="d-flex align-items-center">
-                            <a href="edit-scdetails.php?id=<?php echo $row['ID']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
-                                            <a href="manage-scdetails.php?id=<?php echo $row['ID']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
+                            <a href="<?= base_url('edit/') .$k['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
+                            <form action="<?= base_url('Archive')?>" method="post">
+                            <input type="hidden" name="update" value="<?= $k['Id']?>">
+                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive</button>
+                          </form>
                           </div>
-                        </td>
-                      </tr> <?php 
-$cnt=$cnt+1;
-} } else ?>
-  <tr>
-    <td colspan="8"> No record found against this search</td>
-
-  </tr>
-
-                      
+                    </td>
+                </tr>
+                  <?php endforeach; ?>
                     </tbody>
                   </table>
+
+
                 </div>
+                
               </div>
             </div>
           </div>
+
         </div>
         <?php include_once('includes/footer.php');?>
       </div>
@@ -138,8 +106,7 @@ $cnt=$cnt+1;
   <script src="login/js/template.js"></script>
   <script src="login/js/settings.js"></script>
   <script src="login/js/todolist.js"></script>
-
   <script src="login/js/dashboard.js"></script>
-</body>
-</html>
 
+   </body>
+</html>

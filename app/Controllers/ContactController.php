@@ -10,12 +10,64 @@ class ContactController extends BaseController
     public function __construct()
     {
         $this->contact = new ContactModel();
+        helper(['form']);
     }
     public function contactu()
     {
-        $contact = new ContactModel();
-        $data['cont'] = $contact->findAll();
+        $data['cont'] = $this->contact->where('contact_status', 'Unread')->findAll();
         return view('dashboard/unreadq', $data);
+    }
+
+    public function updateRead()
+    {
+        $contacts = $this->request->getVar('update');
+
+        $updateToRead = $this->myContact($contacts);
+                        $this->updateMyContact($updateToRead);
+        return redirect()->to('/contactu');
+    }
+
+    private function myContact($contacts)
+    {
+        $updateToRead = $this->contact->where('Id', $contacts)->first();
+
+        return $updateToRead;
+    }
+
+    private function updateMyContact($updateToRead)
+    {
+        $data = [
+            'contact_status' => 'Read',
+        ];
+
+        $this->contact->update($updateToRead, $data);
+        
+    }
+
+    public function updateUnread()
+    {
+        $unread = $this->request->getVar('update');
+
+        $updateToUnread = $this->myReadContact($unread);
+                        $this->updateMyReadContact($updateToUnread);
+                        return redirect()->to('/readenq');
+    }
+
+    private function myReadContact($contacts)
+    {
+        $updateToUnread = $this->contact->where('Id', $contacts)->first();
+
+        return $updateToUnread;
+    }
+
+    private function updateMyReadContact($updateToUnread)
+    {
+        $data = [
+            'contact_status' => 'Unread',
+        ];
+
+        $this->contact->update($updateToUnread, $data);
+        
     }
     public function check()
     {
@@ -25,6 +77,7 @@ class ContactController extends BaseController
             'Phone' => $this->request->getPost('Phone'),
             'Email' => $this->request->getPost('Email'),
             'Message' => $this->request->getPost('Message'),
+            'contact_status' => 'Unread'
         ];
         
         $contact = new ContactModel();
@@ -42,6 +95,13 @@ class ContactController extends BaseController
     public function checked(){
         $contact = new ContactModel();
         $data['contact'] = $contact->findAll();
+        return view ('/contactu', $data);
+    }
+
+    public function Unread()
+    {
+        $data['unread'] = $this->contact->where('contact_status', 'Unread')->findAll();
+
         return view ('/contactu', $data);
     }
 }

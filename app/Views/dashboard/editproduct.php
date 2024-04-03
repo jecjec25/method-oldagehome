@@ -15,8 +15,9 @@
     <body>
     <div class="container-scroller">
     <?php include_once('includes/header.php');?>
-    <!-- partial -->
+    
     <div class="container-fluid page-body-wrapper">
+      
       <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
@@ -48,7 +49,6 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Product Picture</label>
-                     
                     <p> <input type="file" name="ProdPic" > </p>
                     </div>
               

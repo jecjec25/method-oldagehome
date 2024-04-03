@@ -2,6 +2,12 @@
 <html>
 <head>
 <title>Senior Care Management System || User reservation Page</title>
+<link rel="stylesheet" href="login/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="login/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
+  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>	
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -29,10 +35,8 @@
 	
 </head>
 <body>
-	</div>	
-</div>	
-		
 		    <div class="contact_desc">
+				<?php include('header.php')?>
 		        <div class="container">
 		        	<h2>Reservation of an Event</h2>
 					<div class="contact-form">
@@ -59,7 +63,7 @@
 						    </div>
 							<div>
 						    	<span><label>Contact Number</label></span>
-						    	<span><input required="true" name="contactnum" type="text" maxlength='11'  value="<?= isset($book['contactnum']) ? $book['contactnum'] : '' ?>" placeholder="Contact number" class="textbox"></span>
+						    	<span><input required="true" name="contactnum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" value="<?= isset($book['contactnum']) ? $book['contactnum'] : '' ?>" placeholder="Contact number" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>Type of Event</label></span>
@@ -106,6 +110,23 @@
 					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 
-
+					<script src="vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script src="vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="vendors/select2/select2.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script src="js/file-upload.js"></script>
+  <script src="js/typeahead.js"></script>
+  <script src="js/select2.js"></script>
+ 
 </body>
 </html>		

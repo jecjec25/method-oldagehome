@@ -17,8 +17,14 @@ class NewController extends BaseController
     public function test()
     {
         $main = new MainModel();
-        $data['main'] = $main->findAll();
+        $data['main'] = $this->main->where('scstatus', 'Unarchive')->findAll();
         return view('dashboard/managescdetails', $data);
+    }
+
+    public function archives()
+    {
+       $data['main']= $this->main->where('scstatus','Archive')->findAll();
+        return view('dashboard/scarchived', $data);
     }
     public function save()
     {
@@ -32,6 +38,8 @@ class NewController extends BaseController
             'EmergencyAdd' => $this->request->getPost('EmergencyAdd'),
             'EmergencyContNum' => $this->request->getPost('EmergencyContNum'),
             'RegDate' => $this->request->getPost('RegDate'),
+            'scstatus' => 'Unarchive'
+
         ];
         
         $main = new MainModel();
@@ -60,15 +68,47 @@ class NewController extends BaseController
         throw new \CodeIgniter\Exceptions\PageNotFoundException('User not found');
     }
     }
-    public function delete($Id = null)
+
+    public function searchsc()
     {
+        $search = $this->request->getVar('searchsc');
 
-     $main = new MainModel();
 
-     $data= $main->where('Id', $Id)->delete();
+        if($search)
+        {
+            $data = [
+                'main' => $this->main->like('Name', $search)->where('scstatus','Unarchive')->findAll()
+            ];
 
-     return redirect()->to('/test');
+            return view('dashboard/search',$data);
+        }
     }
+    public function Archive()
+    {
+        $contacts = $this->request->getVar('update');
+
+        $update = $this->scDetails($contacts);
+                        $this->updateMyVisibility($update);
+        return redirect()->to('/test');
+    }
+
+    private function scDetails($contacts)
+    {
+        $update = $this->main->where('Id', $contacts)->first();
+
+        return $update;
+    }
+
+    private function updateMyVisibility($update)
+    {
+        $data = [
+            'scstatus' => 'Archive',
+        ];
+
+        $this->main->update($update, $data);
+        
+    }
+
     public function update($id)
     {
         $main = new MainModel();

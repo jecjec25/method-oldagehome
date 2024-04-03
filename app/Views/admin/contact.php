@@ -51,7 +51,7 @@
 						    </div>
 						    <div>
 						    	<span><label>Contact Number</label></span>
-						    	<span><input required="true" name="Phone" pattern="[0-9]+" maxlength="10" type="text" value="<?= isset($cont['Phone']) ? $cont['Phone'] : '' ?>" class="textbox"></span>
+						    	<span><input required="true" name="Phone" pattern="(\+?63|0)9\d{9}" maxlength="13" type="text" value="<?= isset($cont['Phone']) ? $cont['Phone'] : '' ?>" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>E-MAIL</label></span>

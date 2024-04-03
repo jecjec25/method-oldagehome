@@ -38,6 +38,11 @@
                   <p class="card-description" style="padding-left: 20px;"> 
                     Manage Senior Citizen Details in old age home!!!
                   </p>
+                  <form action="searchdets" method="get">
+                  <input  name="searchsc" type="text">
+
+                  <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
+                  </form>  
                 <div class="table-responsive pt-3">
                   
                   <table class="table table-striped project-orders-table" id="tblscdetails">
@@ -46,7 +51,6 @@
                     <?php }?>
                     <thead>
                       <tr>
-                        <th class="ml-5">#</th>
                         <th>Name</th>
                         <th>Date of Birth</th>
                         <th>Contact Number</th>
@@ -54,13 +58,13 @@
                         <th>Communication Address</th>
                         <th>Emergency Address</th>
                         <th>Emergency Contact Number</th>
+                        <th>Registration Date</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                     <?php foreach($main as $k): ?>
                 <tr>
-                    <td><?=$k['Id']   ?></td>
                     <td><?=$k['Name'] ?></td>
                     <td><?=$k['DateBirth'] ?></td>
                     <td><?=$k['ContNum'] ?></td>
@@ -68,10 +72,14 @@
                     <td><?=$k['ComAdd'] ?></td>
                     <td><?=$k['EmergencyAdd'] ?></td>
                     <td><?=$k['EmergencyContNum'] ?></td>
+                    <td><?=$k['RegDate'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">
                             <a href="<?= base_url('edit/') .$k['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
-                            <a href="<?= base_url("delete/".$k['Id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
+                            <form action="<?= base_url('Archive')?>" method="post">
+                            <input type="hidden" name="update" value="<?= $k['Id']?>">
+                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive</button>
+                          </form>
                           </div>
                     </td>
                 </tr>
@@ -100,5 +108,5 @@
   <script src="login/js/todolist.js"></script>
   <script src="login/js/dashboard.js"></script>
 
-                      </body>
+   </body>
 </html>
