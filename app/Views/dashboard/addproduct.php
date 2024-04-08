@@ -77,15 +77,11 @@
                 </div>
               </div>
             </div>
-     
           </div>
         </div>
-
-       <?php include_once('includes/footer.php');?>
+        <?php include_once('includes/footer.php');?>
       </div>
- 
     </div>
-
   </div>
   <script>
     if ($("#add_create").length > 0) {

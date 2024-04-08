@@ -70,7 +70,7 @@
                         <td><?=$a['Quantity']?></td>
                         <td><?=$a['ProdPrice']?></td>
                         <td><?=$a['ProdDescription']?></td>
-                        <td><img src="<?php base_url();?>/productsimage/<?=$a['ProdPic'] ?>" alt="" style="width: 200px; height: 200px;"></td>
+                        <td><img src="<?php base_url();?>/productsimage/<?=$a['ProdPic'] ?>" alt="" style="width:50px; height:50px;"></td>
                         <td>
                           <div class="d-flex align-items-center">
                           <a href="<?= base_url('editproduct/') .$a['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
@@ -81,18 +81,13 @@
                       <?php endforeach; ?>
                     </tbody>
                   </table>
-
-
                 </div>
-                
               </div>
             </div>
           </div>
-
         </div>
-        
-        <?php include_once('includes/footer.php');?>
       </div>
+      <?php include_once('includes/footer.php');?>
     </div>
   </div>
   <script src="login/vendors/js/vendor.bundle.base.js"></script>

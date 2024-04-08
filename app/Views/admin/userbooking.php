@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Senior Care Management System || User reservation Page</title>
+<title>Event Booking</title>
 <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
@@ -38,7 +38,7 @@
 		    <div class="contact_desc">
 				<?php include('header.php')?>
 		        <div class="container">
-		        	<h2>Reservation of an Event</h2>
+		        	<h2>Event Reservation</h2>
 					<div class="contact-form">
 					<?php if(session()->getFlashdata('success')): ?>
 					<div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>

@@ -68,7 +68,7 @@
                     <td><?=$k['Name'] ?></td>
                     <td><?=$k['DateBirth'] ?></td>
                     <td><?=$k['ContNum'] ?></td>
-                    <td><img src="<?php base_url();?>/eldersimage/<?=$k['ProfPic'] ?>" alt="" style="width: 200px; height: 200px; border:box;"></td>
+                    <td><img src="<?php base_url();?>/eldersimage/<?=$k['ProfPic'] ?>" alt="" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$k['ComAdd'] ?></td>
                     <td><?=$k['EmergencyAdd'] ?></td>
                     <td><?=$k['EmergencyContNum'] ?></td>

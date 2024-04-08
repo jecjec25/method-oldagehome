@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>Senior Care Management System || Add Product  Details</title>
+  <title>Update User Profile</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -25,9 +25,9 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Profile of Admin</h4>
+                  <h4 class="card-title">User Profile</h4>
                   <p class="card-description">
-                    Update your information!!!
+                    Update user profile.
                   </p>
                   <form action="<?= base_url('updateUserProfile/') . session()->get('id')?>" class="forms-sample" method="post">
                     <div class="form-group">
@@ -53,6 +53,10 @@
                     </div>
                     <div class="form-group">
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <div class="row mt-3">
+                    <div class="col-md-12">
+                    <a href="/userbooking" class="btn btn-secondary">Back</a>
+                    </div>
                   </form>
                 </div>
               </div>

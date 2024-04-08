@@ -219,18 +219,18 @@
                   <i  class="fa fa-star"></i>
                 </li>
               </ul>
-              
-            </div>
+          </div>
+          </div>
   </section>
-<?php include_once('includes/footer.php');?>
-								<script type="text/javascript">
-									$(document).ready(function() {
-								
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
-					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>  
+  <?php include_once('includes/footer.php');?>
+        <script type="text/javascript">
+          $(document).ready(function() {
+        
+            
+            $().UItoTop({ easingType: 'easeOutQuart' });
+            
+          });
+        </script>
+  <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>  
 </body>
 </html> 

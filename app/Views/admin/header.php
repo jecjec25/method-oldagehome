@@ -1,7 +1,7 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
   
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-      <h4>Welcome  <?= session()->get('Username')?> !! </h4>
+      <h4>Welcome  <?= session()->get('Username')?> </h4>
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -14,11 +14,11 @@
                 <i class="typcn typcn-cog-outline text-primary"></i>
                 Profile
               </a>
-              <a class="dropdown-item" href="change-password.php">
+              <!-- <a class="dropdown-item" href="change-password.php">
                 <i class="typcn typcn-cog-outline text-primary"></i>
                 Change Password
-              </a>
-              <a class="dropdown-item" href="/logout">
+              </a> -->
+              <a class="dropdown-item" href="/usersignin">
                 <i class="typcn typcn-eject text-primary"></i>
                 Logout
               </a>
