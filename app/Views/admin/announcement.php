@@ -31,7 +31,7 @@
     <div>
 <?php include_once('includes/header.php');?>
 
-
+This is announcement page
 
     </div>
 <?php include_once('includes/footer.php');?>	

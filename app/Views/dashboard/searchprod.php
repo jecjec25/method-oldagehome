@@ -43,7 +43,7 @@
                   </p>
                 <div class="table-responsive pt-3">
                 </p>
-                <form action="/searchpdets" method="get">
+                  <form action="/searchpdets" method="get">
                   <input  name="searchprod" type="text">
                   <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
                   </form>  

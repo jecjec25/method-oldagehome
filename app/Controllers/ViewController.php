@@ -26,9 +26,9 @@ class ViewController extends BaseController
     {
         return view('admin/contact');
     }
-    public function eligability()
+    public function donation()
     {
-        return view('admin/eligibility');
+        return view('admin/donation');
     }
     public function about()
     {

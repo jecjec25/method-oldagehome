@@ -24,9 +24,9 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Update Product Details</h4>
+                  <h4 class="card-title">Update Details</h4>
                   <p class="card-description">
-                    Update Product Details of senior care!!!
+                    Update Event Details of User!!!
                   </p>
                   <form class="forms-sample" action="<?= site_url('updateRecords/' .$reports['id']) ?>" method="post">
                 

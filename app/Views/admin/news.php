@@ -31,7 +31,7 @@
     <div>
 <?php include_once('includes/header.php');?>
 
-fhdtbnvzeaz
+This is news and event page
 
     </div>
 <?php include_once('includes/footer.php');?>	

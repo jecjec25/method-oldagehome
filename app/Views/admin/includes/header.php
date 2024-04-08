@@ -16,7 +16,7 @@
                 <ul>
                 <li><a href="/usersignin">Login Here</a></li>
                  <li><a href="/contact">Contact</a></li>
-                 <li><a href="/search"> Search </a></li>
+                 <!-- <li><a href="/search"> Search </a></li> -->
                 </ul>
                   <div class="clearfix"> </div> 
               </div>  
@@ -28,10 +28,10 @@
                   <br>
                   <br>
                 <ul>
-                  <li><a class="fb" href="#"><span> </span></a></li>
-                  <li><a class="gp" href="#"><span> </span></a></li>
+                  <li><a class="fb" href="https://www.facebook.com/arugakapatid"><span> </span></a></li>
+                  <li><a class="gp" href="https://pia4b.wordpress.com/2015/07/29/lathalain-aruga-kapatid-foundation-bahay-kanlungan-para-sa-mga-matatanda-sa-calapan/"><span> </span></a></li>
                   <li><a class="tw" href="#"><span> </span></a></li>
-                  <li><a class="you" href="#"><span> </span></a></li>
+                  <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
                   <div class="clearfix"> </div>
                 </ul>
               </div>
@@ -50,6 +50,7 @@
                 <li><a href="/services">Services</a></li>
                 <li><a href="/news">News & Events</a></li>
                 <li><a href="/announcement">Announcement</a></li>
+                <li><a href="/donation">Donation</a></li>
                 <li><a href="/contact">Contact</a></li>
                   <div class="clearfix"> </div>
 

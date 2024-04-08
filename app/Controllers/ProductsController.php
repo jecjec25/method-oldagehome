@@ -8,6 +8,8 @@ use App\Models\ProductsModel;
 class ProductsController extends BaseController
 {
 
+
+
     public function products(){
         return view('admin/shop');
     }   
@@ -41,5 +43,19 @@ class ProductsController extends BaseController
         $main->update($Id, $data);
         return $this->response->redirect('/show');
     }
+
+    public function searchprod()
+    {
+        $main = new ProductsModel();
+        $searchprod = $this->request->getVar('searchprod');
+        if($searchprod)
+        {
+            $data = [
+                'product' => $main->like('ProdName', $searchprod)->findAll()
+            ];
+            return view('dashboard/searchprod',$data);
+        }
+    }
+
 }
 ?>

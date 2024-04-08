@@ -44,7 +44,7 @@
                   </p>
                   <form action="<?= base_url('updateProfile/') . session()->get('userID')?>" class="forms-sample" method="post">
                     <div class="form-group">
-                      <p><?= session()->get('userID')?></p>
+                    <p><?= session()->get('userID')?></p>
                        <label for="exampleInputUsername1">Last Name</label>
                       <input type="text" class="form-control" name="LastName" id="adminname" value="<?= session()->get('LastName')?>" required='true' />
                     </div>

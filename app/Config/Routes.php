@@ -29,7 +29,7 @@ $routes->get('/', 'ViewController::home',  ['filter'  => 'guestFilter'], ['filte
 $routes->get('/contact', 'ViewController::contact');
 $routes->get('/userbooking', 'ViewController::userbooking');
 $routes->match(['GET', 'POST'],'ContactController/contact', 'ContactController::submit');
-$routes->get('/eligibility', 'ViewController::eligability');
+$routes->get('/donation', 'ViewController::donation');
 $routes->get('/about', 'ViewController::about', ['filter'  => 'authGuard']);
 $routes->get('/rules', 'ViewController::rules', ['filter'  => 'authGuard']);
 $routes->get('/services', 'ViewController::service', ['filter'  => 'authGuard']);
@@ -64,6 +64,7 @@ $routes->get('/unreadq', 'ViewController::unreadq');
 $routes->get('/readenq', 'ViewController::readenq');
 $routes->get('/manageproduct', 'ViewController::manageproduct');
 $routes->get('/addproduct', 'ViewController::addproduct');
+$routes->get('/mysearchproducts', 'ProductsController::searchproduct');
 $routes->get('/editscdetails', 'ViewController::editscdetails');
 $routes->get('/editproduct', 'ViewController::editproduct');
 $routes->get('/usersignin', 'ViewController::usersignin');
@@ -78,6 +79,8 @@ $routes->post('/update/(:num)', 'NewController::updates/$1');
 $routes->get('/edit/(:num)', 'NewController::edit/$1');
 $routes->get('/show', 'NewController::show');
 $routes->post('/saved', 'NewController::saved');
+$routes->get('searchproduct', 'ProductsController::searchproduct');
+$routes->get('/searchpdets', 'ProductsController::searchprod');
 
 
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');

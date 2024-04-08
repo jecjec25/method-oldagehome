@@ -30,7 +30,8 @@
 <body>
 <?php include_once('includes/header.php');?>
 	</div>	
-</div>	
+</div>
+
 
 	<div class="About-section">
 	 	<div class="container">
@@ -61,6 +62,7 @@
 					<p>6. Build up funds to support the program of AKFI.</p>
 					<div class="clearfix"> </div>  
 	 		</div>
+			 <?php include_once('includes/organization.php');?>
 	
 	 	</div>
 	 </div>

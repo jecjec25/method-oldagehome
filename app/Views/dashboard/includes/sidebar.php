@@ -78,36 +78,31 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/calendar">
-            <i class="typcn typcn-calendar menu-icon"></i>
+            <a class="nav-link" data-toggle="collapse" href="#calendar" aria-expanded="false" aria-controls="charts">
+              <i class="typcn typcn-calendar menu-icon"></i>
               <span class="menu-title">Calendar</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="calendar">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/calendar">Calendar</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/ADbooking">Accepted</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Dbooking">Declined</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/ADbooking">
-            <i class="typcn typcn-arrow-back-outline menu-icon"></i>
-              <span class="menu-title">Accepted</span>
+            <a class="nav-link" data-toggle="collapse" href="#reports" aria-expanded="false" aria-controls="charts">
+              <i class="typcn typcn-document-text menu-icon"></i>
+              <span class="menu-title">Reports</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="reports">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/donation">Report Donation</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/viewDonation">Donation Details</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Dbooking">
-            <i class="typcn typcn-arrow-forward-outline menu-icon"></i>
-              <span class="menu-title">Declined</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/donation">
-            <i class="typcn typcn-briefcase menu-icon"></i>
-              <span class="menu-title">Report Donation</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/viewDonation">
-            <i class="typcn typcn-contacts menu-icon"></i>
-              <span class="menu-title">Donation Details</span>
-            </a>
-          </li>
-         
           
-        </ul >
       </nav>

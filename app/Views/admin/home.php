@@ -29,54 +29,21 @@
 
 </head>
 <body>
-<?php include_once('includes/header.php');?>
-	</div>	
-</div>	
-<div class="banner-section">
-	<div class="container">
-		<div class="banner-head">
-			<h1 style="font-style:normal">Old age is just a record of one's whole life </h1>
-			<p>Old age is not a matter for sorrow. It is matter for thanks if we have left our work done behind us.<br> - Thomas Carlyle</p>
+	<?php include_once('includes/header.php');?>
+	<div class="banner-section">
+		<div class="container">
+			<div class="banner-head">
+				<h1 style="font-style:normal">Old age is just a record of one's whole life </h1>
+				<p>Old age is not a matter for sorrow. It is matter for thanks if we have left our work done behind us.<br> - Thomas Carlyle</p>
+			</div>
 		</div>
 	</div>
-</div>
-<br><br>
-	<div class="org-chart" style="display:block;margin-left:auto;margin-right:auto;width:50%">
-		<div class="person" style="text-align: center;">
-		<img src="images/1.jpg" alt="Person 1" style="width: 200px;height: auto;">
-		<p>REV. FR. NESTOR J. ADALIA</p>
-		<p>Apostolic Administrator</p>
-		</div>
-		<div class="row">
-		<div class="column" style="float: left;width: 33.33%;padding: 5px; margi;">
-		<img src="images/2.jpg" alt="Person 2" style="width: 200px;height: auto;">
-		<p>LITO C. VERGARA</p>
-		<p>Administrator</p>
-		</div>
-		<div class="person">
-		<img src="images/3.jpg" alt="Person 3"style="width: 200px;height: auto;">
-		<p>HENRY N. DACANAY III</p>
-		<p>Admin Staff</p>
-		</div>
-		</div>
-		<div class="person">
-		<img src="images/4.jpg" alt="Person 4"style="width: 200px;height: auto;">
-		<p>EDUARDO D. ZAMORA</p>
-		<p>Driver/Maintenance</p>
-		</div>
-		<div class="person">
-		<img src="images/5.jpg" alt="Person 5"style="width: 200px;height: auto;">
-		<p>ARNOLD S. SAMSON</p>
-		<p>Kitchen Staff/Helper</p>
-		</div>
-
-	</div>
-
+	
 			 <div class="letest-section">
 	 			<div class="container">
 
 
-<div class="Events">
+	<div class="Events">
 	<div class="wmuSlider example1">
 		 	<div class="container">
 		 		<h3>Gallery</h3>
