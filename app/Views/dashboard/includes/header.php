@@ -23,10 +23,10 @@
                 <i class="typcn typcn-cog-outline text-primary"></i>
                 Profile
               </a>
-              <a class="dropdown-item" href="change-password.php">
+              <!-- <a class="dropdown-item" href="change-password.php">
                 <i class="typcn typcn-cog-outline text-primary"></i>
                 Change Password
-              </a>
+              </a> -->
               <a class="dropdown-item" href="/logout">
                 <i class="typcn typcn-eject text-primary"></i>
                 Logout

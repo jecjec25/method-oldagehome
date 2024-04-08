@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>Senior Care Management System || Add Product  Details</title>
+  <title>Update Profile</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -15,17 +15,23 @@
 
 <body>
   <div class="container-scroller">
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="navbar-brand-wrapper d-flex justify-content-center">
-        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="login/login/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="login/images/logo-mini.svg" alt="logo"/></a>
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="typcn typcn-th-menu"></span>
-          </button>
-        </div>
+  <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+&nbsp;
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item ml-0">
+            <h4 class="mb-0">Update Profile</h4>
+          </li>
+          <li class="nav-item">
+            <div class="d-flex align-items-baseline">
+              <p class="mb-0">Home</p>
+              <i class="typcn typcn-chevron-right"></i>
+              <p class="mb-0">Dashboard</p>
+            </div>
+          </li>
+        </ul>
+        <?php include('includes/header.php') ?>
       </div>
-      <?php include_once('includes/header.php');?>
     </nav>
     <div class="container-fluid page-body-wrapper">     
     <?php include_once('includes/sidebar.php');?>
@@ -44,7 +50,7 @@
                   </p>
                   <form action="<?= base_url('updateProfile/') . session()->get('userID')?>" class="forms-sample" method="post">
                     <div class="form-group">
-                    <p><?= session()->get('userID')?></p>
+                
                        <label for="exampleInputUsername1">Last Name</label>
                       <input type="text" class="form-control" name="LastName" id="adminname" value="<?= session()->get('LastName')?>" required='true' />
                     </div>
@@ -70,6 +76,10 @@
                     </div>
                     <div class="form-group">
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <div class="row mt-3">
+                    <div class="col-md-12">
+                    <a href="/dashboard" class="btn btn-secondary">Back</a>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -78,10 +88,12 @@
           </div>
         </div>
         <!-- content-wrapper ends -->
-       <?php include_once('includes/footer.php');?>
       </div>
       <!-- main-panel ends -->
+      
+     
     </div>
+    <?php include_once('includes/footer.php');?>
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
