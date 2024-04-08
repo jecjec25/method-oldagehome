@@ -35,10 +35,10 @@
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form action="<?= base_url('/UsersigninController/Auth')?>" method="post">
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg border-left-0" id="Email" placeholder="Email" name="Email">
+                <input type="text" class="form-control form-control-lg border-left-2" id="Email" placeholder="Email" name="Email">
               </div>
               <div class="form-group">
-                <input type="password" name="Password" class="form-control form-control-lg border-left-0" id="Password" placeholder="Password">
+                <input type="password" name="Password" class="form-control form-control-lg border-left-2" id="Password" placeholder="Password">
               </div>
               <div class="mt-3">
                 <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn">LOGIN</button>

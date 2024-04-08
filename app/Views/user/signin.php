@@ -6,7 +6,6 @@
   <title>Senior Care Management System || Login Page</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
- 
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
   
 </head>
@@ -35,10 +34,10 @@
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form action="<?= base_url('/UserController/loginAuth')?>" method="post">
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg border-left-0" id="Email" placeholder="Email" name="Email">
+                <input type="text" class="form-control form-control-lg border-left-2" id="Email" placeholder="Email" name="Email">
               </div>
               <div class="form-group">
-                <input type="password" name="Password" class="form-control form-control-lg border-left-0" id="Password" placeholder="Password">
+                <input type="password" name="Password" class="form-control form-control-lg border-left-2" id="Password" placeholder="Password">
               </div>
               <div class="mt-3">
                 <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn">LOGIN</button>

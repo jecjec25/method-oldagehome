@@ -1,28 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Care Management System || Product Page</title>
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  	<link href="css/font-awesome.min.css" rel="stylesheet" />
-  	<link href="css/style.css" rel="stylesheet" />
-  	<link href="css/styles.css" rel="stylesheet" />
-  	<link href="css/responsive.css" rel="stylesheet" />
-	  <script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-		</script>
-</head>
-<body>
+<!DOCTYPE HTML>
+	<html>
+	<head>
+	<title>Senior Care Management System || Home Page</title>
+	<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
 
+	<link href="./css/style.css" rel='stylesheet' type='text/css' />
+
+
+	<script src="./js/jquery-1.8.3.min.js"></script>
+	<script src="./js/modernizr.custom.js"></script>
+
+
+	<script type="text/javascript" src="./js/move-top.js"></script>
+	<script type="text/javascript" src="./js/easing.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  	<link href="css/font-awesome.min.css" rel="stylesheet" />
+      <link href="css/style.css" rel="stylesheet" />
+      <link href="css/styles.css" rel="stylesheet" />
+  	<link href="css/responsive.css" rel="stylesheet" />
+			
+			<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){		
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+			</script>
+
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
+
+	</head><body>
 <?php include_once('includes/header.php');?>
+	
 <section class="team_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
@@ -39,7 +49,7 @@
               <h3 name="ProductName"> Bracelet </h3>
               <p name="Description"></p>
               <h6 name="Price">20.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -56,7 +66,7 @@
               <h3 name="ProductName"> Bracelet </h3>
               <p name="Description"></p>
               <h6 name="Price">10.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -72,7 +82,7 @@
               <h3> Bracelet with Name</h3>
               <p></p>
               <h6>20.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -88,7 +98,7 @@
               <h3> Mama Mary</h3>
               <p></p>
               <h6>100.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -120,7 +130,7 @@
               <h3> Doormat </h3>
               <p></p>
               <h6>50.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -136,7 +146,7 @@
               <h3> Round Doormat</h3>
               <p></p>
               <h6>50.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -152,7 +162,7 @@
               <h3> Damcloth</h3>
               <p></p>
               <h6>100.00</h6>
-              <ul>
+              <ul class=" pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -168,7 +178,7 @@
               <h3> Angel </h3>
               <p></p>
               <h6>100.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -184,7 +194,7 @@
               <h3> Rosary </h3>
               <p></p>
               <h6>20.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -200,7 +210,7 @@
               <h3> Black Nazaren</h3>
               <p></p>
               <h6>100.00</h6>
-              <ul>
+              <ul class="pics">
                 <li>
                   <i  class="fa fa-star checked"></i>
                   <i  class="fa fa-star checked"></i>
@@ -223,4 +233,4 @@
 								</script>
 					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>  
 </body>
-</html>
+</html> 

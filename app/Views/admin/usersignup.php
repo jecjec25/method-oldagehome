@@ -27,44 +27,44 @@
                 <?php if(isset($validation)):?>
                  <small class="text-danger"><?= $validation->getError('LastName') ?></small>
                 <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-0" placeholder="Lastname" name="LastName" >
+                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Lastname" name="LastName" >
                 </div>  
                 <div class="form-group">
                 <?php if(isset($validation)):?>
                 <small class="text-danger"><?= $validation->getError('FirstName') ?></small>
                 <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-0" placeholder="First Name" name="FirstName">
+                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="First Name" name="FirstName">
                 </div>
                 <div class="form-group">
                 <?php if(isset($validation)):?>
                 <small class="text-danger"><?= $validation->getError('Username') ?></small>
                 <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-0" placeholder="Username" name="Username" >
+                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Username" name="Username" >
                 </div>
                 <div class="form-group">
                 <?php if(isset($validation)):?>
                 <small class="text-danger"><?= $validation->getError('Email') ?></small>
                 <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-0" placeholder="Email" name="Email" >
+                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Email" name="Email" >
                 </div>
                 <div class="form-group">
                 <?php if(isset($validation)):?>
                 <small class="text-danger"><?= $validation->getError('ContactNumber') ?></small>
                 <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-0" maxlength="11" placeholder="Contact Number" name="ContactNumber" >
+                  <input type="text" class="form-control form-control-lg border-left-2" maxlength="11" placeholder="Contact Number" name="ContactNumber" >
                 </div>
                 <div class="form-group">
                 <?php if(isset($validation)):?>
                 <small class="text-danger"><?= $validation->getError('Password') ?></small>
                 <?php endif;?>
-                  <input type="password" class="form-control form-control-lg border-left-0" placeholder="Password" name="Password" required="true" >
+                  <input type="password" class="form-control form-control-lg border-left-2" placeholder="Password" name="Password" required="true" >
               </div>
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" name="submit">REGISTER</button>
                 </div>
               </form>
               <div class="mt-3">
-                <p>Already have an account? <a href="/usersignin">Login here.</a>.</p>
+                <p>Already have an account? <a href="/usersignin">Login here</a>.</p>
               </div>
               <div class="mt-3">
                <a href="../index.php" class="auth-link text-black">Home Page!!!</a>

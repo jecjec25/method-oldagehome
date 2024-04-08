@@ -36,7 +36,7 @@ $routes->get('/services', 'ViewController::service', ['filter'  => 'authGuard'])
 $routes->get('/products', 'ViewController::products', ['filter'  => 'guestFilter']);
 $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
 $routes->get('/register', 'UserController::register');
-$routes->get('/products', 'ProductsController::products', ['filter'  => 'authGuard']);
+$routes->get('/product', 'ProductsController::products', ['filter'  => 'authGuard']);
 $routes->get('/dashboard', 'ViewController::dash', ['filter'  => 'authGuard']);
 $routes->get('/search', 'ViewController::search');
 $routes->get('/searchs', 'ViewController::searchs');
