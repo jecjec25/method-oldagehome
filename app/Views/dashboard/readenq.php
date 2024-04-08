@@ -4,11 +4,10 @@
 
 <head>
   
-  <title>Senior Care Management System|| Read Inquiry</title>
+  <title>Read Inquiry</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
-  
 </head>
 <body>
   
@@ -25,7 +24,7 @@
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Read Inquiry</p>
+              <p class="mb-0">Inquiry</p>
             </div>
           </li>
         </ul>
@@ -41,7 +40,7 @@
               <div class="card">
                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Read Inquiry</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Inquiry has been read!!!
+                    Inquiry has been read
                   </p>
                 <div class="table-responsive pt-3">
                   

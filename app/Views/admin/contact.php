@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Senior Care Management System || Contact Us Page</title>
+<title>Contact</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -29,18 +29,17 @@
 	
 </head>
 <body>
-
 	<?php include_once('includes/header.php');?>
-	</div>	
-</div>	
-		
 		    <div class="contact_desc">
 		        <div class="container">
-		        	<h2>Contact Us</h2>
-			         <div class="contact-form">
-						<?php if(session()->getFlashdata('success')): ?>
+					
+				<?php if(session()->getFlashdata('success')): ?>
 					<div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
 					<?php endif; ?>
+				<h2>Contact Us</h2>
+				<div class="contact-form">
+		        	
+			         
 				  	   <form action="<?= base_url("check") ?>" method="post" class="left_form">
 						 <?php if(isset($cont['Id'])){?>
                       		<input type="hidden" name="Id" value="<?=$cont['Id']?>">

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Senior Care Management System || Search</title>
+<title>Services</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <link href="css/style.css" rel='stylesheet' type='text/css' />

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Senior Care Management System || Contact Us Page</title>
+<title>Donation</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -137,8 +137,6 @@
 									});
 								</script>
 					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
-
 
 </body>
 </html>		

@@ -16,7 +16,7 @@
                 <ul>
                 <li><a href="/usersignin">Login Here</a></li>
                 
-                 <li><a href="/contact"> Contact</a></li>
+                 <li><a href="/contact">Contact</a></li>
                  <!-- <li><a href="/search"> Search </a></li> -->
                 </ul>
                   <div class="clearfix"> </div> 
@@ -29,8 +29,8 @@
                   <br>
                   <br>
                 <ul>
-                  <li><a class="fb" href="https://www.facebook.com/arugakapatid"><span> </span></a></li>
-                  <li><a class="gp" href="https://pia4b.wordpress.com/2015/07/29/lathalain-aruga-kapatid-foundation-bahay-kanlungan-para-sa-mga-matatanda-sa-calapan/"><span> </span></a></li>
+                  <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
+                  <li><a class="gp" href="aruga.kapatid@gmail.com"><span> </span></a></li>
                   <li><a class="tw" href="#"><span> </span></a></li>
                   <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
                   <div class="clearfix"> </div>

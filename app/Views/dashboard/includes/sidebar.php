@@ -28,27 +28,27 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-user menu-icon"></i>
-              <span class="menu-title">SC Details</span>
+              <span class="menu-title">Register Elder</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/adddetails">Add Details</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/test">Manage Details</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/archives">Archives</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/adddetails">Register Elder</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/test">Update Elder</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/archives">Archived Elder</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-shopping-bag menu-icon"></i>
-              <span class="menu-title">Product Details</span>
+              <span class="menu-title">Handmade Product</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="product">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/addproduct">Add Products</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/show">Manage Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/addproduct">Add Product</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/show">Update Product</a></li>
               </ul>
             </div>
           </li>
@@ -68,7 +68,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="typcn typcn-th-small-outline menu-icon"></i>
-              <span class="menu-title">Reports</span>
+              <span class="menu-title">Elder Report</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
@@ -80,27 +80,27 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#calendar" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-calendar menu-icon"></i>
-              <span class="menu-title">Calendar</span>
+              <span class="menu-title">Event Calendar</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="calendar">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/calendar">Calendar</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/ADbooking">Accepted</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/Dbooking">Declined</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/calendar">Event Calendar</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/ADbooking">Accepted Event</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Dbooking">Declined Event</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#reports" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-document-text menu-icon"></i>
-              <span class="menu-title">Reports</span>
+              <span class="menu-title">Report of Donation</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="reports">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/donation">Report Donation</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/viewDonation">Donation Details</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/donationReps ">Report of Donation</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/viewDonation">Update Donation Report</a></li>
               </ul>
             </div>
           </li>

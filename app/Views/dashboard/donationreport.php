@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Senior Care Management System || Add Product  Details</title>
+  <title>Report of Donation</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -15,18 +15,24 @@
 </head>
 
 <body>
-  <div class="container-scroller">
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="navbar-brand-wrapper d-flex justify-content-center">
-        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="login/login/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="login/images/logo-mini.svg" alt="logo"/></a>
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="typcn typcn-th-menu"></span>
-          </button>
-        </div>
+<div class="container-scroller">
+  <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+&nbsp;
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item ml-0">
+            <h4 class="mb-0">Report of Donation</h4>
+          </li>
+          <li class="nav-item">
+            <div class="d-flex align-items-baseline">
+              <p class="mb-0">Home</p>
+              <i class="typcn typcn-chevron-right"></i>
+              <p class="mb-0">Report of Donation</p>
+            </div>
+          </li>
+        </ul>
+        <?php include('includes/header.php') ?>
       </div>
-      <?php include_once('includes/header.php');?>
     </nav>
     <div class="container-fluid page-body-wrapper">     
     <?php include_once('includes/sidebar.php');?>
@@ -36,29 +42,33 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
+                <h4 class="card-title">Add Report</h4>
+                  <p class="card-description">
+                    Add Report to donation
+                  </p>
                   <form method="post" id="add_create" name="add_create" action="<?= site_url('insertDonation') ?>">
                     <div class="form-group">
-                       <label for="exampleInputUsername1">Date</label>
+                      <label for="exampleInputUsername1">Date</label>
                       <input id="ProdName" name="date" type="date" class="form-control" required="true" >
                     </div>
                   <div class="form-group">
                       <label for="exampleInputEmail1">Donor Name</label>
-                     <input id="Quantity" name="donor_name" type="text" class="form-control" required="true" max="1970-01-01">
+                    <input id="Quantity" name="donor_name" type="text" class="form-control" required="true" max="1970-01-01">
                     </div>
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Donation Type</label>
-                     <input id="ProdPrice" name="donation_type" type="text"  class="form-control" required="true" >
+                    <input id="ProdPrice" name="donation_type" type="text"  class="form-control" required="true" >
                     </div>
-               
+              
                     <div class="form-group">
                       <label for="exampleInputEmail1">Amount</label>
-                     <input id="ProdPrice" name="amount" type="text"  class="form-control" required="true" >
+                    <input id="ProdPrice" name="amount" type="text"  class="form-control" required="true" >
                     </div>
                     
                     <div class="form-group">
                       <label for="exampleInputEmail1">Project Supported</label>
-                     <input id="ProdPrice" name="project_supported" type="text"  class="form-control" required="true" >
+                    <input id="ProdPrice" name="project_supported" type="text"  class="form-control" required="true" >
                     </div>  
                   
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
@@ -66,13 +76,13 @@
                 </div>
               </div>
             </div>
-     
+    
           </div>
         </div>
 
-       <?php include_once('includes/footer.php');?>
+      <?php include_once('includes/footer.php');?>
       </div>
- 
+
     </div>
 
   </div>
@@ -102,7 +112,7 @@
       })
     }
   </script>
- 
+
   <script src="login/vendors/js/vendor.bundle.base.js"></script>
 
   <script src="login/js/off-canvas.js"></script>
@@ -113,7 +123,7 @@
 
   <script src="login/vendors/typeahead.js/typeahead.bundle.min.js"></script>
   <script src="login/vendors/select2/select2.min.js"></script>
- 
+
   <script src="login/js/file-upload.js"></script>
   <script src="login/js/typeahead.js"></script>
   <script src="login/js/select2.js"></script>

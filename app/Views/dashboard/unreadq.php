@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   
-  <title>Senior Care Management System|| Unread Inquiry</title>
+  <title>Unread Inquiry</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
@@ -24,7 +24,7 @@
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Unread Inquiry</p>
+              <p class="mb-0">Inquiry</p>
             </div>
           </li>
         </ul>
@@ -39,7 +39,7 @@
               <div class="card">
                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Unread Inquiry</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Inquiry has been received!!!
+                    Inquiry has been received
                   </p>
                 <div class="table-responsive pt-3">
                   

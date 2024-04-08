@@ -43,10 +43,10 @@
                   </p>
                 <div class="table-responsive pt-3">
                 </p>
-                  <form action="/searchpdets" method="get">
-                  <input  name="searchprod" type="text">
-                  <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
-                  </form>  
+                <form action="searchpdets" method="get">
+                    <input name="searchprod" id='name'type="text">
+                    <button type="submit"><span class="material-symbols-outlined">Search</span></button>
+                </form>  
                 <div class="table-responsive pt-3">
                   
                   <table class="table table-striped project-orders-table" id="tblproduct">

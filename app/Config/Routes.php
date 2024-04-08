@@ -123,7 +123,7 @@ $routes->get('userloguot', 'USersigninController::logout');
 $routes->match(['post', 'get'], 'updateRecords/(:any)', 'ReportController::eventupdate/$1');
 $routes->match(['post', 'get'], 'viewEvent/(:any)', 'ReportController::ViewReports/$1');
 $routes->post('insertDonation', 'ReportController::donationreportadd');
-$routes->get('donation', 'ReportController::donation');
+$routes->get('donationReps', 'ReportController::donation');
 $routes->get('viewDonation', 'ReportController::viewdonrep');
 
 $routes->post('Archivestat', 'Fullcalendar::Archive');

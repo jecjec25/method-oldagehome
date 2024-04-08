@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Senior Care Management System|| Dashboard</title>
+  <title>Dashboard</title>
   <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../login/css/vertical-layout-light/style.css">
@@ -22,7 +22,7 @@
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Main Dahboard</p>
+              <p class="mb-0">Main Dashboard</p>
             </div>
           </li>
         </ul>
@@ -71,7 +71,7 @@
                   <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
                     <div>
                      
-                      <h5 class="mb-0" style="color: blue;">Unread Enquiry</h5>
+                      <h5 class="mb-0" style="color: blue;">Unread Inquiry</h5>
                       <h1 class="mb-0"></h1>
                     </div>
                     <i class="typcn typcn-messages icon-xl text-secondary"></i>
@@ -86,7 +86,7 @@
                   <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
                     <div>
                       
-                      <h5 class="mb-0" style="color: blue;">Read Enquiry</h5>
+                      <h5 class="mb-0" style="color: blue;">Read Inquiry</h5>
                       <h1 class="mb-0"></h1>
                     </div>
                     <i class="typcn typcn-clipboard icon-xl text-secondary"></i>

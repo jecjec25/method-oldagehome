@@ -1,33 +1,33 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Senior Care Management System || Home Page</title>
-<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<!DOCTYPE HTML>
+	<html>
+	<head>
+	<title>Home</title>
+	<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
 
-<link href="./css/style.css" rel='stylesheet' type='text/css' />
-
-
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-</script>
-<script src="./js/jquery-1.8.3.min.js"></script>
-<script src="./js/modernizr.custom.js"></script>
+	<link href="./css/style.css" rel='stylesheet' type='text/css' />
 
 
-<script type="text/javascript" src="./js/move-top.js"></script>
-<script type="text/javascript" src="./js/easing.js"></script>
-		
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	</script>
+	<script src="./js/jquery-1.8.3.min.js"></script>
+	<script src="./js/modernizr.custom.js"></script>
+
+
+	<script type="text/javascript" src="./js/move-top.js"></script>
+	<script type="text/javascript" src="./js/easing.js"></script>
+			
+			<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){		
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
 				});
-			});
-		</script>
+			</script>
 
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 
-</head>
+	</head>
 <body>
 	<?php include_once('includes/header.php');?>
 	<div class="banner-section">

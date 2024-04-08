@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>Senior Care Management System || Login Page</title>
+  <title>User Register</title>
 
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">

@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Senior Care Management System || Update Product Details</title>
+  <title>Edit Product</title>
   <!-- base:css -->
   <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
@@ -16,18 +16,38 @@
     <div class="container-scroller">
     <?php include_once('includes/header.php');?>
     
+    <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+   &nbsp;
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item ml-0">
+            <h4 class="mb-0">Edit Product</h4>
+          </li>
+          <li class="nav-item">
+            <div class="d-flex align-items-baseline">
+              <p class="mb-0">Home</p>
+              <i class="typcn typcn-chevron-right"></i>
+              <p class="mb-0">Update product</p>
+            </div>
+          </li>
+        </ul>
+       
+      </div>
+    </nav>
     <div class="container-fluid page-body-wrapper">
-      
+
       <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Update Product Details</h4>
+                  <br>
+                <h4 class="card-title">Edit Product</h4>
                   <p class="card-description">
-                    Update Product Details of senior care!!!
+                    Edit a Product to Aruga Kapatid
                   </p>
+
                   <form class="forms-sample"  action="<?= base_url('updateprod/' .$prod['Id'])?>"method="post">
                                   <div class="form-group">
                        <label for="exampleInputUsername1">Product Name</label>

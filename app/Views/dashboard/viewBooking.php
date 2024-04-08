@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Senior Care Management System || Update Product Details</title>
+  <title>Update Event Booked</title>
   <!-- base:css -->
   <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
@@ -15,6 +15,24 @@
     <body>
     <div class="container-scroller">
     <?php include_once('includes/header.php');?>
+    <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+   &nbsp;
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item ml-0">
+            <h4 class="mb-0">Admin Calendar</h4>
+          </li>
+          <li class="nav-item">
+            <div class="d-flex align-items-baseline">
+              <p class="mb-0">Home</p>
+              <i class="typcn typcn-chevron-right"></i>
+              <p class="mb-0">Update Event Booked</p>
+            </div>
+          </li>
+        </ul>
+       
+      </div>
+    </nav>
     
     <div class="container-fluid page-body-wrapper">
       
@@ -24,9 +42,9 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Update Details</h4>
+                  <h4 class="card-title">Update Event Booked</h4>
                   <p class="card-description">
-                    Update Event Details of User!!!
+                    Update Event Booked of User
                   </p>
                   <form class="forms-sample" action="<?= site_url('updateRecords/' .$reports['id']) ?>" method="post">
                 

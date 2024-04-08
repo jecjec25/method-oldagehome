@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-  
-  <title>Senior Care Management System || Add Senior Details</title>
+  <title>Update Elder</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -14,18 +13,24 @@
 </head>
 
 <body>
-  <div class="container-scroller">
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="navbar-brand-wrapper d-flex justify-content-center">
-        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="login/login/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="login/images/logo-mini.svg" alt="logo"/></a>
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="typcn typcn-th-menu"></span>
-          </button>
-        </div>
+<div class="container-scroller">
+  <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+&nbsp;
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item ml-0">
+            <h4 class="mb-0">Update Elder</h4>
+          </li>
+          <li class="nav-item">
+            <div class="d-flex align-items-baseline">
+              <p class="mb-0">Home</p>
+              <i class="typcn typcn-chevron-right"></i>
+              <p class="mb-0">Register Elder</p>
+            </div>
+          </li>
+        </ul>
+        <?php include('includes/header.php') ?>
       </div>
-      <?php include_once('includes/header.php');?>
     </nav>
     <div class="container-fluid page-body-wrapper">     
     <?php include_once('includes/sidebar.php');?>
@@ -34,9 +39,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Manage Senior Citizen Details</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Elder</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Manage Senior Citizen Details in old age home!!!
+                    Update an Elder to Aruga Kapatid
                   </p>
                   <form action="searchdets" method="get">
                   <input  name="searchsc" type="text">
@@ -78,7 +83,7 @@
                             <a href="<?= base_url('edit/') .$k['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
                             <form action="<?= base_url('Archive')?>" method="post">
                             <input type="hidden" name="update" value="<?= $k['Id']?>">
-                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive</button>
+                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive <i class="typcn typcn-archive btn-icon-append"></i></button>
                           </form>
                           </div>
                     </td>

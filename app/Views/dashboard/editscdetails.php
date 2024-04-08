@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>Edit Elder</title>
 <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../login/css/vertical-layout-light/style.css">
@@ -16,13 +17,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Update Senior Citizen Details</h4>
+            <h4 class="mb-0">Edit Elder</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Update Senior Citizen Details</p>
+              <p class="mb-0">Update Elder</p>
             </div>
           </li>
         </ul>
@@ -37,9 +38,9 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Update Senior Citizen Details</h4>
+                  <h4 class="card-title">Edit Elder</h4>
                   <p class="card-description">
-                    Update Senior Citizen Details of senior care!!!
+                    Edit an Elder to Aruga Kapatid
                   </p>
                  
                   <form class="forms-sample" action="<?= site_url('update/' .$d['Id']) ?>" method="post">

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   
-  <title>Senior Care Management System|| Admin Calendar</title>
+  <title>Event Declined</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
@@ -17,13 +17,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Admin Calendar</h4>
+            <h4 class="mb-0">Declined Event</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Admin Calendar</p>
+              <p class="mb-0">Event Calendar</p>
             </div>
           </li>
         </ul>
@@ -36,9 +36,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Admin declined event</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Declined event</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Users event has been declined!!!
+                    User event has been declined.
                   </p>
                 <div class="table-responsive pt-3">
                 <form action="<?= base_url('fundamental/accept') ?>" method ="post">
