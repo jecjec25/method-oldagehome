@@ -112,8 +112,9 @@
             </a>
             <div class="collapse" id="news">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/newsAndevents">News and Events</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/updatenews">Update News and Event</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/adnews">News</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/updatenews">Update News</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/newsarchive">Archived News</a></li>
               </ul>
             </div>
           </li>

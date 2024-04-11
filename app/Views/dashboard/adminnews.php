@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>News and Events</title>
+  <title>Admin News and Events</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -56,17 +56,26 @@
                        <label for="Title">Title</label>
                       <input id="title" name="title" type="text" class="form-control" required="true" >
                     </div>
-                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="Content">Content</label>
+                      <input id="Content" name="Content" type="text" class="form-control" required="true" >
+                    </div>
+                    <div class="form-group">
                       <label for="Author">Author</label>
                      <input id="author" name="author" type="text" class="form-control" required="true">
                     </div>
                     <div class="form-group">
-                     <label for="Picture">Picture</label><br>
-                    <input id="picture" name="picture" type="file" required="true" >
+                    <label for="Category">Category</label><br>
+                    <input type="checkbox" id="health" name="Category[]" value="Health">
+                    <label for="health"> Health</label><br>
+                    <input type="checkbox" id="community" name="Category[]" value="Community">
+                    <label for="community"> Community</label><br> 
+                    <input type="checkbox" id="staff" name="Category[]" value="Staff">
+                    <label for="staff"> Staff</label><br>
                     </div>
                     <div class="form-group">
-                      <label for="Description">Description</label>
-                      <input id="description" name="description" type="text" class="form-control" required="true" >
+                     <label for="Picture">Picture</label><br>
+                    <input id="picture" name="picture" type="file" required="true" >
                     </div>
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
                     <?= form_close() ?>

@@ -49,76 +49,90 @@ class NewsController extends BaseController
     //     }
     // }
 
-    public function savenews()
-    {
-
-        $rules = [
-            'title'   => 'required|min_length[5]',
-            'author'  => 'required|min_length[5]',
-            'description'   => 'required|min_length[10]'
-        ];
-
-        $image = $this->request->getFile('picture');
-        if($this->validate($rules))
+        public function savenews()
         {
 
-        if ($image && $image->isValid() && !$image->hasMoved()) 
-        {
-            $myImage = $image->getRandomName();
-
-            $image->move(WRITEPATH . 'uploads', $myImage);
-    
-            $data = [
-                'picture' => $image,
-                'picture' => 'uploads/' . $myImage,
-                'title' => $this->request->getVar('title'),
-                'author' => $this->request->getVar('author'),
-                'status' => 'Unarchive',
-                'description' => $this->request->getVar('description')
+            $rules = [
+                'title'   => 'required|min_length[5]',
+                'Content'   => 'required|min_length[10]',
+                'author'  => 'required|min_length[5]',
+                'Category'   => 'required'
             ];
-    
-            $this->newsevent->save($data);
-    
-            return redirect()->to('/newsAndevents')->with('success', 'Data has been Uploaded');
+
+            $image = $this->request->getFile('picture');
+            if($this->validate($rules))
+            {
+
+            if ($image && $image->isValid() && !$image->hasMoved()) 
+            {
+                $myImage = $image->getRandomName();
+
+                $image->move(WRITEPATH . 'uploads', $myImage);
+        
+                $data = [
+                    'picture' => $image,
+                    'picture' => 'uploads/' . $myImage,
+                    'title' => $this->request->getVar('title'),
+                    'Content' => $this->request->getVar('Content'),
+                    'author' => $this->request->getVar('author'),
+                    'status' => 'Unarchive',
+                ];
+
+                $categories = $this->request->getVar('Category');
+                if (!empty($categories)) {
+                    $data['Category'] = implode(', ', $categories);
+                }
+        
+                $this->newsevent->save($data);
+        
+                return redirect()->to('/updatenews')->with('success', 'Data has been Uploaded');
+            }
+            else
+            {
+                return redirect()->to('/newsAndevents')->with('error', 'Error uploading image.');
+            }
         }
-        else
+        else{
+            $data['validation'] = $this->validator;
+            echo'Invalid, try again.';
+        }
+        }
+        public function updatenews()
         {
-            return redirect()->to('/newsAndevents')->with('error', 'Error uploading image.');
+            $mnews = new NewsModel();
+            $data['main'] = $mnews->where('status', 'Unarchive')->findAll();
+            return view('dashboard/managenews', $data);
         }
-    }
-    else{
-        $data['validation'] = $this->validator;
-        echo'hindi mo na tumpak';
-    }
-    }
-    public function updatenews()
-    {
-        $mnews = new NewsModel();
-        $data['main'] = $mnews->where('status', 'Unarchive')->findAll();
-        return view('dashboard/managenews', $data);
-    }
 
-    public function update($id)
-    {
-        $data['main'] = $this->newsevent->where('id', $id)->first();
+        public function update($id)
+        {
+            $data['main'] = $this->newsevent->where('id', $id)->first();
 
-        return view('dashboard/editnews', $data);
+            return view('dashboard/editnews', $data);
 
-    }
+        }
     public function EditNews($id)
     {
 
         $data = [
             'title' => $this->request->getVar('title'),
+            'Content' => $this->request->getVar('Content'),
             'author' => $this->request->getVar('author'),
+            'Category' => $this->request->getVar('Category'),
             'picture' => $this->request->getVar('picture'),
-            'description' => $this->request->getVar('description')
+            'status' => $this->request->getVar('status')
         ];
 
 
         $this->newsevent->update($id, $data);
 
         return redirect()->to('/updatenews')->with('success', 'Senior Citizen details updated successfully');
+    }
+
+    public function newsarchived()
+    {
+       $data['main']= $this->newsevent->where('status','Archive')->findAll();
+        return view('dashboard/newsarchived', $data);
     }
 
     public function Archive()
@@ -157,4 +171,5 @@ class NewsController extends BaseController
             return view('dashboard/searchnews',$data);
         }
     }
+
 }

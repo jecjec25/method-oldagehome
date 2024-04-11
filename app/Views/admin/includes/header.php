@@ -30,7 +30,7 @@
                   <br>
                 <ul>
                   <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
-                  <li><a class="gp" href="#"><span> </span></a></li>
+                  <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
                   <li><a class="tw" href="#"><span> </span></a></li>
                   <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
                   <div class="clearfix"> </div>

@@ -44,11 +44,6 @@
 						<p>EDUARDO D. ZAMORA</p>
 						<p>Driver/Maintenance</p>
 					</div>
-					<div class="person" style="float: left;width: 30%;padding-left: 5px;text-align: center;">
-						<img src="images/samson.jpg" style="width: 100px;height: auto;">
-							<p>SAMSON</p>
-							<p>Kitchen Staff/Helper</p>
-					</div>
                     <div class="person" style="float: left;width: 30%;padding-left: 5px;text-align: center;">
 						<img src="images/arnold.jpg" style="width: 100px;height: auto;">
 							<p>ARNOLD S. SAMSON</p>

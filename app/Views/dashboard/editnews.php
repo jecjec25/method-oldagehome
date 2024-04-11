@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Edit Product</title>
+  <title>Edit News</title>
   <!-- base:css -->
   <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
@@ -21,13 +21,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Edit Product</h4>
+            <h4 class="mb-0">Edit News</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Update product</p>
+              <p class="mb-0">Update News</p>
             </div>
           </li>
         </ul>
@@ -43,31 +43,46 @@
               <div class="card">
                 <div class="card-body">
                   <br>
-                <h4 class="card-title">Edit NewsAndEvents</h4>
+                <h4 class="card-title">Edit News and Events</h4>
                   <p class="card-description">
-                    Edit a Product to Aruga Kapatid
+                    Edit News to Aruga Kapatid
                   </p>
 
                   <form class="forms-sample"  action="<?= base_url('editnews/' .$main['id'])?>"method="post">
-                                  <div class="form-group">
-                       <label for="exampleInputUsername1">Product Name</label>
-                      <input id="title" name="title" type="text" class="form-control" required="true" value="<?= $main['title'];?>">
+                    <div class="form-group">
+                      <label for="title">Title</label>
+                    <input id="title" name="title" type="text" class="form-control" required="true" value="<?= $main['title'];?>">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Quantity</label>
-                     <input id="author" name="author" type="text" class="form-control" required="true" max="1970-01-01" value="<?= $main['author']; ?>">
+                      <label for="Content">Content</label>
+                     <input id="Content" name="Content" type="text" class="form-control" required="true" value="<?= $main['Content']; ?>">
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Product's Price</label>
-                     <input id="picture" name="picture" type="file" pattern="[0-9]+" maxlength="10" class="form-control" required="true" value="<?= $main['picture'];?>">
+                      <label for="author">Author</label>
+                     <input id="author" name="author" type="text" class="form-control" required="true" value="<?= $main['author']; ?>">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Product Description</label>
-                     <input class="form-control" id="description" name="description" rows="5" value ="<?= $main['description']; ?>" >
-                     
+                    <label for="Category">Category</label><br>
+                    <input type="checkbox" id="health" name="Category[]" value="Health">
+                    <label for="health"> Health</label><br>
+                    <input type="checkbox" id="community" name="Category[]" value="Community">
+                    <label for="community"> Community</label><br> 
+                    <input type="checkbox" id="staff" name="Category[]" value="Staff">
+                    <label for="staff"> Staff</label><br>
                     </div>
-              
+                    <div class="form-group">
+                     <label for="Picture">Picture</label><br>
+                    <input id="picture" name="picture" type="file" required="true" >
+                    </div>
+                    <div class="form-group">
+                      <label for="status">Status</label>
+                     <input class="form-control" id="status" name="status" required="" value ="<?= $main['status']; ?>" >
+                    </div>
+                    <div class="form-group">
+                      <label for="Feedback">Feedback</label>
+                     <input id="Feedback" name="Feedback" type="text" class="form-control" readonly='true' value="<?= $main['Feedback']; ?>">
+                    </div>
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">

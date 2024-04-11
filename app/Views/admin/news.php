@@ -30,14 +30,20 @@
 <body>
     <div>
 <?php include_once('includes/header.php');?>
-<?php foreach($news as $news):?>
-	<ul>
-		<li>
-			<?= $news['title'];?> <br><?= $news['picture']?> <br><?= $news['author']?> <br> <?= $news['description']?>
-		</li>
-	</ul>
-
-	<?php endforeach;?>
+<?php foreach($news as $single_news):?>
+    <?php if ($single_news['status'] != 'Archive'): ?>
+        <ul>
+            <li>
+                <?= $single_news['title'];?> <br>
+                <?= $single_news['Content']?> <br>
+                <?= $single_news['author']?> <br>
+                <?= $single_news['Category']?> <br>
+                <?= $single_news['picture']?> <br>
+                <?= $single_news['Feedback']?>
+            </li>
+        </ul>
+    <?php endif; ?>
+<?php endforeach; ?>
     </div>
 <?php include_once('includes/footer.php');?>	
 								<script type="text/javascript">

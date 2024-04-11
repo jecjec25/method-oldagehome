@@ -41,7 +41,7 @@
               <div class="card">
                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update News and Events</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Update News and Events of Aruga Kapatid
+                    Update News of Aruga Kapatid
                   </p>
                   <form action="searchnews" method="get">
                   <input  name="searchnews" type="text">
@@ -57,25 +57,33 @@
                     <thead>
                       <tr>
                         <th>Title</th>
+                        <th>Content</th>
                         <th>Author</th>
-                        <th>Picture</th>
-                        <th>Description</th>
+                        <th>Date Published</th>
+                        <th>Category</th>
+                        <th>Pictures</th>
+                        <th>Status</th>
+                        <th>Feedback</th>
+                        <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                     <?php foreach($main as $mnews): ?>
                 <tr>
                     <td><?=$mnews['title'] ?></td>
+                    <td><?=$mnews['Content'] ?></td>
                     <td><?=$mnews['author'] ?></td>
-                    <td><img src="<?=$mnews['picture']?>" alt="events" style="width:50px; height:50px; border:box;"></td>
-                  
-                    <td><?=$mnews['description'] ?></td>
+                    <td><?=$mnews['date_published'] ?></td>
+                    <td><?=$mnews['Category'] ?></td>
+                    <td><img src="<?=$mnews['picture']?>" style="width:50px; height:50px; border:box;"></td>
+                    <td><?=$mnews['status'] ?></td>
+                    <td><?=$mnews['Feedback'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">
                             <a href="<?= base_url('updatenews/') .$mnews['id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
                             <form action="<?= base_url('NewsArchive')?>" method="post">
                             <input type="hidden" name="update" value="<?= $mnews['id']?>">
-                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive <i class="typcn typcn-archive btn-icon-append"></i></button>
+                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive<i class="typcn typcn-archive btn-icon-append"></i></button>
                           </form>
                           </div>
                     </td>
