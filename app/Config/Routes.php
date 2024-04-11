@@ -127,3 +127,13 @@ $routes->get('donationReps', 'ReportController::donation');
 $routes->get('viewDonation', 'ReportController::viewdonrep');
 
 $routes->post('Archivestat', 'Fullcalendar::Archive');
+
+//news and events sa admin side
+$routes->get('newsAndevents', 'NewsController::adminnews');
+$routes->post('savenews', 'NewsController::savenews');
+$routes->get('/updatenews', 'NewsController::updatenews');
+
+$routes->get('/updatenews/(:any)', 'NewsController::update/$1');
+$routes->post('editnews/(:any)', 'NewsController::EditNews/$1');
+$routes->post('NewsArchive', 'NewsController::Archive');
+$routes->get('searchnews', 'NewsController::searchnews');

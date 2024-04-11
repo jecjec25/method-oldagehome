@@ -30,9 +30,14 @@
 <body>
     <div>
 <?php include_once('includes/header.php');?>
+<?php foreach($news as $news):?>
+	<ul>
+		<li>
+			<?= $news['title'];?> <br><?= $news['picture']?> <br><?= $news['author']?> <br> <?= $news['description']?>
+		</li>
+	</ul>
 
-This is news and event page
-
+	<?php endforeach;?>
     </div>
 <?php include_once('includes/footer.php');?>	
 								<script type="text/javascript">

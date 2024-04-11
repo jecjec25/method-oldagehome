@@ -6,14 +6,16 @@ use App\Controllers\BaseController;
 use App\Models\MainModel;
 use App\Models\BookingModel;
 use App\Models\ContactModel;
+use App\Models\NewsModel;
 class ViewController extends BaseController
 {
 
     private $booking;
     private $contact;
-
+    private $newsevents;
     public function __construct()
     {
+        $this->newsevents = new NewsModel();
         $this->booing = new BookingModel();
         $this->contact = new ContactModel();
         helper(['form']);
@@ -48,7 +50,8 @@ class ViewController extends BaseController
     }
     public function news()
     {
-        return view('admin/news');
+        $data['news'] = $this->newsevents->findAll();
+        return view('admin/news', $data);
     }
     public function announcement()
     {
@@ -56,7 +59,7 @@ class ViewController extends BaseController
     }
     public function products()
     {
-        return view('admin/products');
+        return view('admin/products');  
     }
     public function usersignin()
     {

@@ -104,5 +104,18 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#news" aria-expanded="false" aria-controls="charts">
+              <i class="typcn typcn-document-text menu-icon"></i>
+              <span class="menu-title">News and Events</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="news">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/newsAndevents">News and Events</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/updatenews">Update News and Event</a></li>
+              </ul>
+            </div>
+          </li>
           
       </nav>

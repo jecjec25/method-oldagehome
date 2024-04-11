@@ -111,7 +111,7 @@
             </div>
             <div class="content">
               <img src="images/patholder.jpg" alt="">
-              <h3> Patholder</h3>
+              <h3>Patholder</h3>
               <p></p>
               <h6>3pcs. 100.00</h6>
               <ul>
@@ -123,7 +123,6 @@
                   <i  class="fa fa-star"></i>
                 </li>
               </ul>
-              
             </div>
             <div class="content">
               <img src="images/rectangle doormat.jpg" alt="">
