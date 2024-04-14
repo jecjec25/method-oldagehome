@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Admin News and Events</title>
+  <title>Admin News</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -21,7 +21,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">News and Events</h4>
+            <h4 class="mb-0">News</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
@@ -42,9 +42,9 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">News and Events</h4>
+                  <h4 class="card-title">News</h4>
                   <p class="card-description">
-                    News and Events of Aruga Kapatid
+                    News of Aruga Kapatid
                   </p>
                   <?php if (session()->has('success')) : ?>
               <p><?= session('success') ?></p>
@@ -67,7 +67,7 @@
                     <div class="form-group">
                     <label for="Category">Category</label><br>
                     <input type="checkbox" id="health" name="Category[]" value="Health">
-                    <label for="health"> Health</label><br>
+                    <l  abel for="health"> Health</label><br>
                     <input type="checkbox" id="community" name="Category[]" value="Community">
                     <label for="community"> Community</label><br> 
                     <input type="checkbox" id="staff" name="Category[]" value="Staff">

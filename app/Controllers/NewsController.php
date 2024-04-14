@@ -75,7 +75,7 @@ class NewsController extends BaseController
                     'title' => $this->request->getVar('title'),
                     'Content' => $this->request->getVar('Content'),
                     'author' => $this->request->getVar('author'),
-                    'status' => 'Unarchive',
+                    'status' => 'Draft',
                 ];
 
                 $categories = $this->request->getVar('Category');
@@ -100,7 +100,7 @@ class NewsController extends BaseController
         public function updatenews()
         {
             $mnews = new NewsModel();
-            $data['main'] = $mnews->where('status', 'Unarchive')->findAll();
+            $data['main'] = $mnews->where('status', 'Draft')->findAll();
             return view('dashboard/managenews', $data);
         }
 
@@ -118,10 +118,14 @@ class NewsController extends BaseController
             'title' => $this->request->getVar('title'),
             'Content' => $this->request->getVar('Content'),
             'author' => $this->request->getVar('author'),
-            'Category' => $this->request->getVar('Category'),
             'picture' => $this->request->getVar('picture'),
             'status' => $this->request->getVar('status')
         ];
+
+        $categories = $this->request->getVar('Category');
+        if (!empty($categories)) {
+            $data['Category'] = implode(', ', $categories);
+        }
 
 
         $this->newsevent->update($id, $data);
@@ -160,6 +164,7 @@ class NewsController extends BaseController
         $this->newsevent->update($update, $data);
         
     }
+    
     public function searchnews()
     {
         $searchnews = $this->request->getVar('searchnews');
@@ -172,4 +177,34 @@ class NewsController extends BaseController
         }
     }
 
+    public function published()
+    {
+        $data['main'] = $this->newsevent->where('status', 'published')->findAll();
+        return view('dashboard/newspublished', $data);
+    }
+    public function PubArchive()
+    {
+        $news = $this->request->getVar('update');
+
+        $update = $this->NewsDetails($news);
+                        $this->updateMyVisibility($update);
+        return redirect()->to('/newspublished');
+    }
+
+    private function NewsPublishedArch($news)
+    {
+        $update = $this->newsevent->where('id', $news)->first();
+        return $update;
+    }
+
+    private function updateMyPublished($update)
+    {
+        $data = [
+            'status' => 'Archive',
+        ];
+
+        $this->newsevent->update($update, $data);
+        
+    }
 }
+    

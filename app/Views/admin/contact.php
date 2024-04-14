@@ -28,6 +28,13 @@
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 	
 </head>
+<style>
+        .required::after {
+            content: "*";
+            color: red;
+            margin-left: 5px;
+        }
+    </style>
 <body>
 	<?php include_once('includes/header.php');?>
 		    <div class="contact_desc">
@@ -45,21 +52,21 @@
                       		<input type="hidden" name="Id" value="<?=$cont['Id']?>">
                     	 <?php }?>
 						    <div>
-						    	<span><label>Full Name</label></span>
+						    	<span><label>Full Name<span class="required"></span>:</label></span>
 						    	<span><input required="true" name="Name" type="text"  value="<?= isset($cont['Name']) ? $cont['Name'] : '' ?>" class="textbox"></span>
 						    </div>
 						    <div>
-						    	<span><label>Contact Number</label></span>
+						    	<span><label>Contact Number<span class="required"></span>:</label></span>
 						    	<span><input required="true" name="Phone" pattern="(\+?63|0)9\d{9}" maxlength="13" type="text" value="<?= isset($cont['Phone']) ? $cont['Phone'] : '' ?>" class="textbox"></span>
 						    </div>
 						    <div>
-						    	<span><label>E-MAIL</label></span>
+						    	<span><label>E-MAIL<span class="required"></span>:</label></span>
 						    	<span><input required="true" name="Email" type="text" value="<?= isset($cont['Email']) ? $cont['Email'] : '' ?>" class="textbox"></span>
 						    </div>
 						   
 					   
 					        <div>					    	
-						    	<span><label>Message</label></span>
+						    	<span><label>Message<span class="required"></span>:</label></span>
 						    	<span><textarea required="true" name="Message" value="<?= isset($cont['Message']) ? $cont['Message'] : '' ?>" > </textarea></span>
 						    </div>
 						   <div>

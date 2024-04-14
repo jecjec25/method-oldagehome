@@ -106,7 +106,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#news" aria-expanded="false" aria-controls="charts">
-              <i class="typcn typcn-document-text menu-icon"></i>
+              <i class="typcn typcn-news menu-icon"></i>
               <span class="menu-title">News and Events</span>
               <i class="menu-arrow"></i>
             </a>
@@ -114,9 +114,15 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/adnews">News</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/updatenews">Update News</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/newspublished">Published News</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/newsarchive">Archived News</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/adevents">Events</a></li>
+                <li class="nav-item"> <a class="nav-link" href="Viewevents">Update Events</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/publishedevents  ">Published Events</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/eventsarchive ">Archived Events</a></li>
               </ul>
             </div>
           </li>
-          
       </nav>
+
+

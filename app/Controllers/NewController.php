@@ -88,7 +88,7 @@ class NewController extends BaseController
         $contacts = $this->request->getVar('update');
 
         $update = $this->scDetails($contacts);
-                        $this->updateMyVisibility($update);
+        $this->updateMyVisibility($update);
         return redirect()->to('/test');
     }
 
@@ -113,20 +113,20 @@ class NewController extends BaseController
     {
         $main = new MainModel();
 
-        $data = [
-            'Name' => $this->request->getPost('Name'),
-            'DateBirth' => $this->request->getPost('DateBirth'),
-            'ContNum' => $this->request->getPost('ContNum'),
-            'ComAdd' => $this->request->getPost('ComAdd'),
-            'ProfPic' => $this->request->getPost('ProfPic'),
-            'EmergencyAdd' => $this->request->getPost('EmergencyAdd'),
-            'EmergencyContNum' => $this->request->getPost('EmergencyContNum'),
-            'RegDate' => $this->request->getPost('RegDate'),
-        ];
+            $data = [
+                'Name' => $this->request->getPost('Name'),
+                'DateBirth' => $this->request->getPost('DateBirth'),
+                'ContNum' => $this->request->getPost('ContNum'),
+                'ComAdd' => $this->request->getPost('ComAdd'),
+                'ProfPic' => $this->request->getPost('ProfPic'),
+                'EmergencyAdd' => $this->request->getPost('EmergencyAdd'),
+                'EmergencyContNum' => $this->request->getPost('EmergencyContNum'),
+                'RegDate' => $this->request->getPost('RegDate'),
+            ];
 
-        $main->update($id, $data);
+            $main->update($id, $data);
 
-        return redirect()->to('/test')->with('success', 'Senior Citizen details updated successfully');
+            return redirect()->to('/test')->with('success', 'Senior Citizen details updated successfully');
     }
     // public function updatess()
     // {

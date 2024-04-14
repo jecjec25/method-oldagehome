@@ -52,7 +52,7 @@
 						<div class="event-section">
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c1.jpg" title="" />
+					 					<img class="picturelang" src ="images/tia_images/i1.jpg" title="" />
 									</div>
 					 			</div>
 				 				<div class="col-md-4">

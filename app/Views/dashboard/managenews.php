@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Update News and Events</title>
+  <title>Update News</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -19,7 +19,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Update News and Events</h4>
+            <h4 class="mb-0">Update News</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
@@ -39,7 +39,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update News and Events</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update News</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
                     Update News of Aruga Kapatid
                   </p>

@@ -38,4 +38,15 @@ class BookingModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+
+    public function isAvailable($startDate, $endDate)
+    {
+        // Check if there are any overlapping reservations
+        $query = $this->where("prefferdate BETWEEN '$startDate' AND '$endDate'")
+                      ->orWhere("alterdate BETWEEN '$startDate' AND '$endDate'")
+                      ->countAllResults();
+
+        return $query == 0; // If count is 0, dates are available
+    }
 }

@@ -99,7 +99,7 @@ $routes->get('/calendar', 'UserbookingController::bookinge');
 $routes->get('/booking', 'UserbookingController::bookchecked');
 $routes->post('/checkbooks', 'UserbookingController::checkbook');
 $routes->post('/bookcheck', 'UserbookingController::bookcheck');
-
+$routes->post('reservationeventdate', 'UserbookingController::reserveEventDate');
 
 $routes->get('usersignin','UsersigninController::usersignin');
 $routes->get('/usersign', 'UsersigninController::indexes');
@@ -138,3 +138,17 @@ $routes->post('editnews/(:any)', 'NewsController::EditNews/$1');
 $routes->post('NewsArchive', 'NewsController::Archive');
 $routes->get('searchnews', 'NewsController::searchnews');
 $routes->get('/newsarchive', 'NewsController::newsarchived');
+$routes->get('/newspublished', 'NewsController::published');
+$routes->post('/PubArchive', 'NewsController::PubArchive');
+$routes->get('newsvents/(:any)', 'ViewController::eventnews/$1');
+
+$routes->get('/adevents', 'EventsController::adminevents');
+$routes->post('saveEvents', 'EventsController::saveEvents');
+$routes->get('Viewevents', 'EventsController::Viewevents');
+$routes->get('updateevents/(:any)', 'EventsController::update/$1');
+$routes->post('editEvents/(:any)', 'EventsController::EditEvents/$1');
+$routes->post('ArchiveEvents', 'EventsController::Archive');
+$routes->get('searchevents', 'EventsController::searchevents');
+$routes->get('/publishedevents', 'EventsController::initialpublishedevent');
+$routes->get('/eventsarchive', 'EventsController::eventsarchived');
+$routes->post('/EventPubArc', 'EventsController::EventPubArc');

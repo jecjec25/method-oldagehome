@@ -273,20 +273,25 @@ nav a#pull {
 }
 
 .banner-section{
-	background:url(../images/banner.jpg)no-repeat 0px 0px;
+	background:url(../images/h2.png)no-repeat 0px 0px;
 	-webkit-background-size:cover;
 	-o-background-size:cover;
 	-moz-background-size:cover;
-	min-height: 700px;
+	min-height: 950px;
 }
 .banner-head {
 	width: 44%;
 	margin: 23% 0 auto 0;
+	
+	background-color: white;
+	background: rgba(255, 255,255, 0.5);
+	
+
 }
 .banner-head  h1{
 	font-family: 'Serif', georgia;
-	color:#ff5a5f;
-	font-size: 3.3em;
+	color:#ab5e12;
+	font-size: 50px;
 }
 .banner-head p{
 	color: #777;
@@ -294,7 +299,7 @@ nav a#pull {
 	font-size: 1.5em;
 	margin: 1em 0 0 0;
 	font-weight: 400;
-	line-height: 1.9em;
+	line-height: 40px;
 }
 
 .welcome-section {
@@ -446,6 +451,10 @@ article > div {
 .wmuGallery .wmuGalleryImage {
 	position: relative;
 }
+.picturelang{
+	width: 358px;
+	height: 257px;
+}
 .wmuGallery .wmuGalleryImage img {
 	max-width: 100%;
 	width: auto;
@@ -475,11 +484,11 @@ article > div {
 }
 .wmuSliderPrev {
 	background-position: -311px -170px;
-	left:135px;
+	left: 5px;
 }
 .wmuSliderNext {
 	background-position: -375px -170px;
-	right:125px;
+	right:-10px;
 }
 .event-section1 {
 padding-top: 1.3em;

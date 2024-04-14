@@ -7,17 +7,21 @@ use App\Models\MainModel;
 use App\Models\BookingModel;
 use App\Models\ContactModel;
 use App\Models\NewsModel;
+use App\Models\EventsModel;
+
 class ViewController extends BaseController
 {
 
     private $booking;
     private $contact;
     private $newsevents;
+    private $events;
     public function __construct()
     {
         $this->newsevents = new NewsModel();
         $this->booing = new BookingModel();
         $this->contact = new ContactModel();
+        $this->events = new EventsModel();
         helper(['form']);
     }
     public function home()
@@ -50,8 +54,16 @@ class ViewController extends BaseController
     }
     public function news()
     {
-        $data['news'] = $this->newsevents->findAll();
+        $data['news'] = $this->newsevents->where('status', 'Published')->findAll();
+        $data['events'] = $this->events->where('status', 'Published')->findAll();
+ 
         return view('admin/news', $data);
+    }
+    public function eventnews($id)
+    {
+        $data['news'] = $this->newsevents->where('id', $id)->where('status', 'Published')->find();
+        $data['events'] = $this->events->where('EventID', $id)->where('status', 'Published')->find();
+        return view('admin/newsevent', $data);
     }
     public function announcement()
     {

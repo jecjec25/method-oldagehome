@@ -5,13 +5,15 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UserbookingModel;
 use App\Models\BookingModel;
-
+use App\Models\EventsModel;
 class UserbookingController extends BaseController
 {
     private $userbooking;
     private $booking;
+    private $admevent;
     public function __construct()
     {
+        $this->admevent = new EventsModel();
         $this->userbooking = new UserbookingModel();
         $this->booking = new BookingModel();
     }
@@ -24,6 +26,7 @@ class UserbookingController extends BaseController
     public function checkbook()
     {
         $session = session();
+
 
         $Id = $this->request->getPost('bookingId');
         $data = [
@@ -53,13 +56,28 @@ class UserbookingController extends BaseController
         return redirect()->to('/booking');
     } 
     public function bookchecked(){
-        $userbooking = new UserbookingModel();
-        $data['book'] = $userbooking->findAll();
-        return view ('admin/userbooking', $data);
+        // $data['book'] = $userbooking->findAll();
+        // $data['reservedDates'] = $this->getReservationDates() ;
+        // // var_dump($data);
+        return view ('admin/userbooking');
+    }
+
+    private function getReservationDates()
+    {
+        $data = $this->userbooking->select('prefferdate')->findAll();
+        $formatedDates = [];
+
+        foreach($data as $reservation)
+        {
+            $formatedDates [] =  date('Y-m-d', strtotime($reservation['prefferdate']));
+        }
+
+        return $formatedDates;
+
     }
 
     public function bookingAD()
-    {
+    {   
         $data['calen'] = $this->booking->where('status', 'Accepted')->findAll();
 
         return view('dashboard/bookings', $data);
@@ -70,4 +88,26 @@ class UserbookingController extends BaseController
 
         return view('dashboard/bookingDec', $data);
     }
+
+    public function reserveEventDate()
+    {
+        $startDate = $this->request->getPost('prefferdate');
+        $endDate = $this->request->getPost('alterdate');
+
+
+        // Check if the selected dates are available
+        $isAvailable = $this->booking->isAvailable($startDate, $endDate);
+
+        // return json_encode(['available' => $isAvailable]);
+
+        if(!$isAvailable)
+        {
+            echo'1';
+        }
+        else
+        {
+            echo '2';
+        }
+    }
+
 }

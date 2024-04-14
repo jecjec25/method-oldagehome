@@ -43,7 +43,7 @@
               <div class="card">
                 <div class="card-body">
                   <br>
-                <h4 class="card-title">Edit News and Events</h4>
+                <h4 class="card-title">Edit News</h4>
                   <p class="card-description">
                     Edit News to Aruga Kapatid
                   </p>
@@ -73,11 +73,14 @@
                     </div>
                     <div class="form-group">
                      <label for="Picture">Picture</label><br>
-                    <input id="picture" name="picture" type="file" required="true" >
+                    <input class="form-control" id="picture" name="picture" type="file" required="true" >
                     </div>
                     <div class="form-group">
                       <label for="status">Status</label>
-                     <input class="form-control" id="status" name="status" required="" value ="<?= $main['status']; ?>" >
+                      <select class="form-control" name="status" id="status">
+                        <option selected value="Draft">Draft</option>
+                        <option value="Published">Published</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <label for="Feedback">Feedback</label>

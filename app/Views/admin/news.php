@@ -40,11 +40,34 @@
                 <?= $single_news['Category']?> <br>
                 <?= $single_news['picture']?> <br>
                 <?= $single_news['Feedback']?>
+				<a href="<?= base_url('newsvents/' . $single_news['id'])?>">View News</a>
             </li>
         </ul>
     <?php endif; ?>
 <?php endforeach; ?>
+
+
     </div>
+
+	<div>
+	<?php foreach($events as $mevents): ?>
+                <tr>
+					<ul>
+                    <li><?=$mevents['Title'] ?><br>
+                    <?=$mevents['Description'] ?><br>
+                    <?=$mevents['Organizer'] ?><br>
+                    <?=$mevents['Start_date'] ?><br>
+                    <?=$mevents['End_date'] ?><br>
+                    <?=$mevents['Category']?><br>
+                    <?=$mevents['Status'] ?><br>
+                    <?=$mevents['Atendees'] ?><br>
+                    <?=$mevents['Attachments'] ?><br>
+                    <?=$mevents['Feedback'] ?></li>
+					<a href="<?= base_url('newsvents/' . $mevents['EventID'])?>">View Event</a>
+                    </ul>
+		            
+                  <?php endforeach; ?>
+				  </div>     
 <?php include_once('includes/footer.php');?>	
 								<script type="text/javascript">
 									$(document).ready(function() {
