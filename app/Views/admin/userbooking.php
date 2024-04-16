@@ -50,7 +50,7 @@
 					<?php if(session()->getFlashdata('success')): ?>
 					<div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
 					<?php endif; ?>
-				  	   <form action="<?= base_url("reservationeventdate") ?>" method="post" class="left_form">
+				  	   <form action="<?= base_url("checkbooks") ?>" method="post" class="left_form">
 						 <?php if(isset($book['bookingId'])){?>
                       		<input type="hidden" name="bookingId" value="<?=$book['bookingId']?>">
                     	 <?php }?>

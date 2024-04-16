@@ -38,7 +38,7 @@
 	 		<h3>ABOUT US</h3>
 	 		<div class="about-part">
 		 		<div class="about-pic">
-		 			<img class="img-responsive" src="images/about.jpg" alt="" />
+		 			<img class="img-responsive" src="aruga_gallery/g21.jpg" alt="" />
 		 		</div>
 		 		<div class="about-textside">
 					
@@ -55,7 +55,7 @@
 				<h4>MISSION</h4>
 					<p>Under the insperation of the Holy Spirit, and the following the prudent </p> <p> direction of the competent authority of the Apostolic Vicariate of Calapan, we,</p> <p> who are members of the Aruga Kapatid Foundation, Inc. commit ourselves to:</p>
 					<p>1. Live out evangelical poverty</p>
-					<p>2. Make Bahay-Ampunan in Managp, Calapan City a home where the sick and the elderly can experience love and family spirit.</p>
+					<p>2. Make Bahay-Ampunan in Managpi, Calapan City a home where the sick and the elderly can experience love and family spirit.</p>
 					<p>3. Promote the welfare and pastoral care of the poorest of the poor-the sick, the abandoned, the elderly, the deprived  be they at home or in institution.</p>
 					<p>4. Make linkages with NGO's, government offices, the church entitles to respond more adequately to the needs of the poor.</p>
 					<p>5. Promote social awareness among church groups, schools, and government entities regarding the different situations of the poor at the AVC.</p>

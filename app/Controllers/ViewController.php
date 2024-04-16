@@ -217,10 +217,12 @@ class ViewController extends BaseController
 
     public function viewreports()
     {
-
-
-
         return view ('dashboard/reportdetails');
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard/dashboard');
     }
 
 }

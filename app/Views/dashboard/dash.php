@@ -96,6 +96,7 @@
               </div>
             </div>
           </div>
+          <?php include_once('dashboard.php');?>
         </div>
         <?php include_once('includes/footer.php');?>
       </div>

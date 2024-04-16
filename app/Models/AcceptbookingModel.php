@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserbookingModel extends Model
+class AcceptbookingModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'userbooking';
+    protected $table            = 'acceptbooking';
     protected $primaryKey       = 'bookingId';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

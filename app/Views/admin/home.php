@@ -52,17 +52,17 @@
 						<div class="event-section">
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img class="picturelang" src ="images/tia_images/i1.jpg" title="" />
+					 					<img class="arugaGallery" src ="aruga_gallery/g1.jfif" title="" />
 									</div>
 					 			</div>
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c2.jpg" title="" />
+					 					<img class="arugaGallery" src ="aruga_gallery/g2.jfif" title="" />
 									</div>	
 				 				</div>
 				 				<div class=" col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c3.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g3.jfif" title="" />
 									</div>	
 				 				</div>
 				 				<div class="clearfix"> </div>  		
@@ -70,17 +70,17 @@
 				 			<div class="event-section1">
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c4.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g6.jfif" title="" />
 									</div>
 					 			</div>
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c5.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g9.jfif" title="" />
 									</div>	
 				 				</div>
 				 				<div class=" col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c6.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g10.jfif" title="" />
 									</div>	
 				 				</div>
 				 				</div>
@@ -92,17 +92,17 @@
 						<div class="event-section">
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c6.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g11.jfif" title="" />
 									</div>
 					 			</div>
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c5.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g12.jfif" title="" />
 									</div>	
 				 				</div>
 				 				<div class=" col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c4.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g14.jfif" title="" />
 									</div>	
 				 				</div>
 				 				<div class="clearfix"> </div>  		
@@ -110,23 +110,62 @@
 				 			<div class="event-section1">
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c3.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g16.jfif" title="" />
 									</div>
 					 			</div>
 				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c2.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g17.jfif" title="" />
 									</div>	
 				 				</div>
-				 				<div class=" col-md-4">
+				 				<div class="col-md-4">
 				 					<div class="client-img">
-					 					<img src="images/c1.jpg" title="" />
+					 					<img class="arugaGallery" src="aruga_gallery/g18.jfif" title="" />
 									</div>	
-				 				</div>
 				 				</div>
 			 				<div class="clearfix"> </div> 
 			 		 </div> 		
 		 			 </article>
+					  <article style="position: absolute; width:64%; opacity: 0;"> 
+				   	<div class="client-sections">
+						<div class="event-section">
+				 				<div class="col-md-4">
+				 					<div class="client-img">
+					 					<img class="arugaGallery" src="tia_images/t1.jpg" title="" />
+									</div>	
+				 				</div>
+				 				<div class="col-md-4">
+				 					<div class="client-img">
+					 					<img class="arugaGallery" src="tia_images/t2.jpg"  title="" />
+									</div>	
+				 				</div>
+				 				<div class=" col-md-4">
+				 					<div class="client-img">
+					 					<img class="arugaGallery" src="tia_images/t7.jpg" title="" />
+									</div>	
+				 				</div>
+				 				<div class="clearfix"> </div>  		
+				 			</div>
+				 			<div class="event-section1">
+				 				<div class="col-md-4">
+				 					<div class="client-img">
+					 					<img class="arugaGallery" src="tia_images/t8.jpg" title="" />
+									</div>
+					 			</div>
+				 				<div class="col-md-4">
+				 					<div class="client-img">
+					 					<img class="arugaGallery" src="tia_images/t9.jpg" title="" />
+									</div>	
+				 				</div>
+				 				<div class="col-md-4">
+				 					<div class="client-img">
+					 					<img class="arugaGallery" src="tia_images/t10.jpg" title="" />
+									</div>	
+				 				</div>
+			 				<div class="clearfix"> </div> 
+			 		 </div> 		
+		 			 </article>
+			
 			
 			
 				 </div>

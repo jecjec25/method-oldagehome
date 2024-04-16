@@ -38,4 +38,9 @@ class ProductsModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getProducts()
+    {
+        return $this->findAll();
+    }
 }

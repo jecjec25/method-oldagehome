@@ -99,7 +99,7 @@ $routes->get('/calendar', 'UserbookingController::bookinge');
 $routes->get('/booking', 'UserbookingController::bookchecked');
 $routes->post('/checkbooks', 'UserbookingController::checkbook');
 $routes->post('/bookcheck', 'UserbookingController::bookcheck');
-$routes->post('reservationeventdate', 'UserbookingController::reserveEventDate');
+// $routes->post('reservationeventdate', 'UserbookingController::reserveEventDate');
 
 $routes->get('usersignin','UsersigninController::usersignin');
 $routes->get('/usersign', 'UsersigninController::indexes');
@@ -152,3 +152,8 @@ $routes->get('searchevents', 'EventsController::searchevents');
 $routes->get('/publishedevents', 'EventsController::initialpublishedevent');
 $routes->get('/eventsarchive', 'EventsController::eventsarchived');
 $routes->post('/EventPubArc', 'EventsController::EventPubArc');
+
+//visualization
+$routes->get('bookings/by-month', 'UserbookingController::index');
+$routes->get('products/quantities', 'ProductsController::index');
+$routes->get('/dash', 'ViewController::dashboard');
