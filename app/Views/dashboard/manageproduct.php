@@ -56,7 +56,7 @@
                     <thead>
                       <tr>
                         <th>Product Name</th>
-                        <th>Quantity</th>
+                        <th>Stock</th>
                         <th>Product's Price</th>
                         <th>Product Description</th>
                         <th>Product Picture</th>

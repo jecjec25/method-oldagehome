@@ -83,7 +83,7 @@
                       <label for="exampleInputEmail1">Registration Date</label>
                      <input id="RegDate" name="RegDate" type="date" class="form-control" required="true" value="<?= isset($d['RegDate']) ? $d['RegDate'] : '' ?>">
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">Submit</button>
                   </form>
                 </div>
               </div>

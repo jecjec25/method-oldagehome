@@ -189,9 +189,7 @@ class EventsController extends BaseController
     }
     public function reservations()
     {
-    
       return view('dashboard/adminevents', $reservedDates);
-     
     }
        
 }

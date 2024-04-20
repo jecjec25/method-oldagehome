@@ -64,8 +64,8 @@ class UserbookingController extends ResourceController
     }
     public function bookchecked()
     {
-        $userbooking = new UserbookingModel();
-        $data['book'] = $userbooking->findAll();
+       
+        $data['book'] = $this->acceptbooking->where('status', 'Accepted')->findAll();
         return view('admin/userbooking', $data);
     }
 

@@ -9,6 +9,11 @@ use CodeIgniter\RESTful\ResourceController;
 class ProductsController extends ResourceController
 {
 
+    private $pro;
+    public function __construct()
+    {
+        $this->prod = new ProductsModel();
+    }
     public function index()
     {
         $model = new ProductsModel();
@@ -41,10 +46,11 @@ class ProductsController extends ResourceController
     public function updateprod($Id)
     {
         $main = new ProductsModel();
-
+        $hello = $main->where('Id',$Id)->first();
+        $newQuantity = $hello['Quantity'] + $this->request->getVar('addQuantity');
         $data = [
             'ProdName' => $this->request->getVar('ProdName'),
-            'Quantity' => $this->request->getVar('Quantity'),
+            'Quantity' => $newQuantity,
             'ProdPrice' => $this->request->getVar('ProdPrice'),
             'ProdDescription' => $this->request->getVar('ProdDescription'),
             'ProfPic' => $this->request->getVar('ProfPic'),
@@ -64,4 +70,24 @@ class ProductsController extends ResourceController
             return view('dashboard/searchprod', $data);
         }
     }
+
+    public function myStock($stockID)
+    {
+        $updateStock = $this->viewStock($stockID);
+
+                       $this->newStock($updateStock, $stockID);
+    }
+
+    private function viewStock($stockID)
+    {
+        $updateStock = $this->prod->find($stockID);
+
+        return $updateStock;
+    }
+
+    private function newStock($updateStock, $stockID)
+    {
+
+        $addStock = $this->request->getPost('newStock');
+    }   
 }

@@ -13,7 +13,7 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/signup', 'SignupController::index', ['filter'  => 'guestFilter']);
  $routes->match(['get', 'post'], 'store', 'SignupController::store');
  $routes->match(['get', 'post'], 'UserController/loginAuth', 'UserController::loginAuth');
- $routes->get('/signin', 'UserController::index', ['filter' => 'guestFilter']);
+ $routes->get('/signin', 'UserController::index', ['filter' => 'userGuard']);
  $routes->get('/contact', 'ViewController::contact');
  $routes->get('/eligibility', 'ViewController::eligability');
  $routes->get('/about', 'ViewController::about');
@@ -25,7 +25,7 @@ $routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
 
 
 $routes->get('/signin', 'Home::try');
-$routes->get('/', 'ViewController::home',  ['filter'  => 'guestFilter'], ['filter'  => 'uFilter']);
+$routes->get('/', 'ViewController::home', ['filter' => 'userGuard']);
 $routes->get('/contact', 'ViewController::contact');
 $routes->get('/userbooking', 'ViewController::userbooking');
 $routes->match(['GET', 'POST'],'ContactController/contact', 'ContactController::submit');
@@ -156,4 +156,23 @@ $routes->post('/EventPubArc', 'EventsController::EventPubArc');
 //visualization
 $routes->get('bookings/by-month', 'UserbookingController::index');
 $routes->get('products/quantities', 'ProductsController::index');
-$routes->get('/dash', 'ViewController::dashboard');
+$routes->get('/dash', 'ViewController::dashboard'); 
+
+//announcements
+$routes->get('Adannouncement', 'AnnouncementController::Adannnouncement');
+$routes->post('saveannounce', 'AnnouncementController::saveAnnouncement');
+$routes->get('/updateannounce', 'AnnouncementController::viewannounce');
+$routes->post('editAnnounce/(:any)', 'AnnouncementController::EditAnnounce/$1');
+$routes->get('/updateannouncement/(:any)', 'AnnouncementController::updateannouncement/$1');
+
+//user event post
+$routes->get('usereventpost', 'UserEvntPostController::userEventpost');
+
+//user view event post
+$routes->get('userViewpost', 'UserViewPostController::userViewpost');
+
+//user donation site
+$routes->get('userdonation', 'UserDonationController::userdonation');
+
+//user products
+$routes->get('userproduct', 'UserProductController::userproduct');

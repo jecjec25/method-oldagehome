@@ -28,6 +28,7 @@ class Filters extends BaseConfig
         'guestFilter' => \App\Filters\GuestFilter::class,
         'uFilter' => \App\Filters\Ufilter::class,
         'userFilter' => \App\Filters\UserFilter::class,
+        'userGuard' => \App\Filters\UserGuard::class,
     ];
 
     /**

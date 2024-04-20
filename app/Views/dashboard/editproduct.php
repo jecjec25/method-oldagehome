@@ -54,10 +54,13 @@
                       <input id="ProdName" name="ProdName" type="text" class="form-control" required="true" value="<?= $prod['ProdName'];?>">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Quantity</label>
-                     <input id="Quantity" name="Quantity" type="text" class="form-control" required="true" max="1970-01-01" value="<?= $prod['Quantity']; ?>">
+                      <label for="exampleInputEmail1">Number of Stock</label>
+                     <input id="Quantity" name="Quantity" disabled type="text" class="form-control" required="true"  value="<?= $prod['Quantity']; ?>">
                     </div>
-
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Add Stock</label>
+                     <input id="Quantity" name="addQuantity" type="text" class="form-control" required="true" >
+                    </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Product's Price</label>
                      <input id="ProdPrice" name="ProdPrice" type="text" pattern="[0-9]+" maxlength="10" class="form-control" required="true" value="<?= $prod['ProdPrice'];?>">
@@ -71,7 +74,6 @@
                       <label for="exampleInputEmail1">Product Picture</label>
                     <p> <input type="file" name="ProdPic" > </p>
                     </div>
-              
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">

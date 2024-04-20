@@ -36,33 +36,39 @@
 	<div class="blog">
 		<div class="container">	
 			<div class="blog-top">		
-				<h3>Services</h3>
+				<h3>Services offered by Aruga Kapatid</h3>
 			</div>
 
-    <div class="col-md-12" style="margin-top:4%">
+    <div class="col-md-12" style="margin-top:4%;padding-top:4%;padding-bottom:4%;border:solid;border-radius:28px;color:rgb(201, 68, 103);;background-color:#c9c7c1">
             <div class="col-md-4 service-images">
-              <img src="images/c2.jpg" class="img-responsive" alt=""/>
+              <img src="aruga_gallery/g21.jpg" class="img-responsive" alt=""/>
             </div>
             <div class="col-md-8 service-images-text">
               <div class="inner-text">
-				<h3>Means of Receipts</h3>
-				<h4>Referral / Endorsement by:</h4>
-				<p>I. NGO's/NGA's/LGU's<br>
-					<span>1. DSWD Fields Offices<br>
-					2. Crisis Intervention Unit<br>
-					3. LGU's <br>
-					4. NG0's <br><span>
-					II. Concerned Citizen<br>
-					III. Walk-in <br>
-					IV. Outreach <br> 
-					<span>Note: If cliient is eligible or admissible follow step A to D.</span>
+				<h3>SERVICES</h3>
+				<p>I. MEDICAL NEEDS<br>
+					<span>1. Providing healthcare services, medication management, and emergency assistance.<br><span>
+					II. PERSONAL HYGIENE<br>
+					<span>Assisting with bathing, grooming, and maintaining cleanliness.<br><span>
+					III. PHYSICAL ACTIVITIES<br>
+					<span>Organizing exercises and games to promote well-being.<br><span>
+					IV. FUNERAL SERVICES<br> 
+					<span>Providing guidance and support during bereavement.</span>
 						
 				</p>
 				<p></p>
 			</div>
 
+		</div>
+		</div>
 		</div>	
 	</div>
+	<script src="./js/jquery.wmuSlider.js"></script> 
+					<script>
+       				     $('.example1').wmuSlider();         
+   					</script> 	           	      
+
+
 	<?php include_once('includes/footer.php');?>
 								<script type="text/javascript">
 									$(document).ready(function() {
@@ -72,8 +78,11 @@
 										
 									});
 								</script>
-				<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-				
+					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+
+
 
 
 </body>

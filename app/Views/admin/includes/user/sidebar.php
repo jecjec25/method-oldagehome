@@ -62,17 +62,15 @@
 
              <nav class="top-nav">
               <ul class="top-nav">
-                <li class="active"><a href="booking">Event Reservartion</a></li>
-                <li><a href="/#">Events</a></li>
-                <li><a href="/#">Donation</a></li>
-                <li><a href="/#">Products</a></li>
+                <li class="active"><a href="booking">Event Reservation</a></li>
+                <li><a href="/userproduct">Products</a></li>
+                <li><a href="/userdonation">Donation</a></li>
+                <li><a href="/usereventpost">Post an Event</a></li>
+                <li><a href="/userViewpost">View Events</a></li>
                 <div class="clearfix"> </div>
-
               </ul>
               <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
-
             </nav>
-         
           <script>
             $(function() {
               var pull    = $('#pull');

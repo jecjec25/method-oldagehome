@@ -50,47 +50,47 @@
 					<?php if(session()->getFlashdata('success')): ?>
 					<div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
 					<?php endif; ?>
-				  	   <form action="<?= base_url("checkbooks") ?>" method="post" class="left_form">
+				  	   <form action="<?= base_url("checkbooks") ?>" method="post" class="left_form booking-form">
 						 <?php if(isset($book['bookingId'])){?>
                       		<input type="hidden" name="bookingId" value="<?=$book['bookingId']?>">
                     	 <?php }?>
 						    <div>
 
 								<input type="hidden" name="usersignsId" value="<?= session()->get('id')?>">
-						    	<span><label>Last Name<span class="required"></span>:</label></span>
-						    	<span><input required="true" name="lastname" type="text"  value="<?= isset($book['lastname']) ? $book['lastname'] : '' ?>" placeholder="Enter your last name" class="textbox"></span>
+						    	<span><label>Last Name<span class="required"></span></label></span>
+						    	<span><input required="true" name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
 						    </div>
 							<div>
-						    	<span><label>First Name<span class="required"></span>:</label></span>
-						    	<span><input required="true" name="firstname" type="text"  value="<?= isset($book['firstname']) ? $book['firstname'] :'' ?>" placeholder="Enter your first name" class="textbox"></span>
+						    	<span><label>First Name<span class="required"></span></label></span>
+						    	<span><input required="true" name="firstname" type="text"  placeholder="Enter your first name" class="textbox"></span>
 						    </div>
 							<div>
-						    	<span><label>Middle Name<span class="required"></span>:</label></span>
-						    	<span><input required="true" name="middlename" type="text"  value="<?= isset($book['middlename']) ? $book['middlename'] : '' ?>" placeholder="Enter your middle name" class="textbox"></span>
+						    	<span><label>Middle Name<span class="required"></span></label></span>
+						    	<span><input required="true" name="middlename" type="text" placeholder="Enter your middle name" class="textbox"></span>
 						    </div>
 							<div>
-						    	<span><label>Contact Number<span class="required"></span>:</label></span>
-						    	<span><input required="true" name="contactnum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" value="<?= isset($book['contactnum']) ? $book['contactnum'] : '' ?>" placeholder="Contact number" class="textbox"></span>
+						    	<span><label>Contact Number<span class="required"></span></label></span>
+						    	<span><input required="true" name="contactnum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" placeholder="Contact number" class="textbox"></span>
 						    </div>
 						    <div>
-						    	<span><label>Type of Event<span class="required"></span>:</label></span>
-						    	<span><input required="true" name="event" type="text" value="<?= isset($book['event']) ? $book['event'] : '' ?>" placeholder="Type of event" class="textbox"></span>
+						    	<span><label>Type of Event<span class="required"></span></label></span>
+						    	<span><input required="true" name="event" type="text"  placeholder="Type of event" class="textbox"></span>
 						    </div>
 						    <div>
-						    	<span><label>Preferred Date and Time<span class="required"></span>:</label></span>
-						    	<span><input required="true" id="start_date" name="prefferdate" type="datetime-local" value="<?= isset($book['prefferdate']) ? $book['prefferdate'] : '' ?>" class="textbox"></span>
+						    	<span><label>Preferred Date and Time<span class="required"></span></label></span>
+						    	<span><input required="true" id="start_date" name="prefferdate" type="datetime-local" class="textbox"></span>
 						    </div>
 					        <div>					    	
-						    	<span><label>Alternate Date and Time<span class="required"></span>:</label></span>
-						    	<span><input required="true" id="end_date" name="alterdate" type="datetime-local" value="<?= isset($book['alterdate']) ? $book['alterdate'] : '' ?>" class="textbox"> </span>
+						    	<span><label>Alternate Date and Time<span class="required"></span></label></span>
+						    	<span><input required="true" id="end_date" name="alterdate" type="datetime-local" class="textbox"> </span>
 						    </div>
 							<div>
-						    	<span><label>Specific Equipments Needed<span class="required"></span>:</label></span>
-						    	<span><input required="true" name="equipment" type="text" value="<?= isset($book['equipment']) ? $book['equipment'] : '' ?>" placeholder="e.g., sound system, projector..." class="textbox"></span>
+						    	<span><label>Specific Equipments Needed<span class="required"></span></label></span>
+						    	<span><input required="true" name="equipment" type="text" placeholder="e.g., sound system, projector..." class="textbox"></span>
 						    </div>
 							<div>
-						    	<span><label>Questions or Comments<span class="required"></span>:</label></span>
-						    	<span><input required="true" name="comments" type="text" value="<?= isset($book['comments']) ? $book['comments'] : '' ?>" placeholder="Enter your questions or comments" class="textbox"></span>
+						    	<span><label>Questions or Comments<span class="required"></span></label></span>
+						    	<span><input required="true" name="comments" type="text" placeholder="Enter your questions or comments" class="textbox"></span>
 						    </div>
 						   <div>
 						   		<input type="submit" value="Submit" name="bookcheck">
@@ -106,15 +106,61 @@
 	          </div>
 	
 	<?php include_once('includes/footer.php');?>
-								<script type="text/javascript">
-									$(document).ready(function() {
-										
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
-					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+					
+					$().UItoTop({ easingType: 'easeOutQuart' });
+					
+				});
+			</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.querySelector('.booking-form');
+        form.addEventListener('submit', function(event) {
+            var getdate = form.querySelector('input[name="prefferdate"]');
+            var appointmentDate = new Date(getdate.value);
+			var currentDate = new Date();
+
+            
+            // Fetch contact numbers from PHP
+            var myexist = <?php echo json_encode(array_column($book, 'prefferdate')); ?>;
+            
+            for (var i = 0; i < myexist.length; i++) {
+                var bookingDate = new Date(myexist[i]);
+                
+                if (appointmentDate.getTime() === bookingDate.getTime()) {
+                    event.preventDefault();
+                    alert('This Date is Already Taken');
+                    return; // Stop further checking if a match is found
+
+			
+			
+                }
+				
+			
+            }
+        });
+    });
+</script>
+
+
+<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					var form = document.querySelector('.booking-form');
+					form.addEventListener('submit', function(event) {
+						var appointmentDate = new Date(form.querySelector('input[name="prefferdate"]').value);
+						var currentDate = new Date();
+
+						if (appointmentDate <= currentDate || appointmentDate.getHours() < 9 || appointmentDate.getHours() >= 15) {
+							event.preventDefault();
+							alert('Please select a valid date and time for reservation. Reservations must be made for a future time between 9 AM and 3 PM only.');
+						}
+					});
+				});
+			</script>
+
+					<a href="#home" id="toTop" class="scroll" style="display: block;"> <	span id="toTopHover" style="opacity: 1;"> </span></a>
 
 
 					<script src="vendors/js/vendor.bundle.base.js"></script>
