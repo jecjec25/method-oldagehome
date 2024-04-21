@@ -101,7 +101,7 @@
                      <label for="Attachments">Attachments</label><br>
                     <input id="Attachments" name="Attachments" type="file" required="true" value="<?= $main['Attachments']?>" >
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to save changes?')">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">
                     <a href="/updatenews" class="btn btn-secondary">Back</a>

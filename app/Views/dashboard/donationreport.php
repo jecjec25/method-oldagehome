@@ -71,7 +71,7 @@
                     <input id="ProdPrice" name="project_supported" type="text"  class="form-control" required="true" >
                     </div>  
                   
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">Submit</button>
                   </form>
                 </div>
               </div>

@@ -8,6 +8,7 @@ use App\Models\BookingModel;
 use App\Models\ContactModel;
 use App\Models\NewsModel;
 use App\Models\EventsModel;
+use App\Models\AnnouncementModel;
 
 class ViewController extends BaseController
 {
@@ -16,12 +17,15 @@ class ViewController extends BaseController
     private $contact;
     private $newsevents;
     private $events;
+    private $announce;
+
     public function __construct()
     {
         $this->newsevents = new NewsModel();
-        $this->booing = new BookingModel();
+        $this->booking = new BookingModel();
         $this->contact = new ContactModel();
         $this->events = new EventsModel();
+        $this->announce = new AnnouncementModel();
         helper(['form']);
     }
     public function home()
@@ -54,6 +58,7 @@ class ViewController extends BaseController
     }
     public function news()
     {
+       
         $data['news'] = $this->newsevents->where('status', 'Published')->findAll();
         $data['events'] = $this->events->where('status', 'Published')->findAll();
  
@@ -67,8 +72,11 @@ class ViewController extends BaseController
     }
     public function announcement()
     {
-        return view('admin/announcement');
+        $data['announce'] = $this->announce->where('Status', 'Published')->findAll();
+        
+        return view('admin/announcement', $data);
     }
+
     public function products()
     {
         return view('admin/products');  
@@ -83,6 +91,7 @@ class ViewController extends BaseController
     }
     public function userbooking()
     {
+        
         return view('admin/userbooking');
     }
     public function addingcalendar()

@@ -74,7 +74,7 @@
                       <label for="exampleInputEmail1">Product Picture</label>
                     <p> <input type="file" name="ProdPic" > </p>
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to save changes?')">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">
                     <a href="/show" class="btn btn-secondary">Back</a>

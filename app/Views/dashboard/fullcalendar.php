@@ -75,13 +75,13 @@
                             
                             <input type="hidden" name="accept" value="<?= $even['bookingId']?>">
                               
-                            <button type="sumbit" class="btn btn-success btn-sm btn-icon-text mr-3">Accept<i class="typcn typcn-tick btn-icon-append"></i></button>
+                            <button type="sumbit" class="btn btn-success btn-sm btn-icon-text mr-3" onclick="return confirm('Are you sure you want to accept the event?')">Accept<i class="typcn typcn-tick btn-icon-append"></i></button>
                             </form>
                           <!-- Decline Button -->
                           <form action="<?= base_url('fullcalendar/decline')?>" method="post">
                           <input type="hidden" name="decline" value="<?= $even['bookingId']?>">
                               
-                          <button type="sumbit" class="btn btn-danger btn-sm btn-icon-text">Decline<i class="typcn typcn-times btn-icon-append"></i></i></button>
+                          <button type="sumbit" class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to decline the event?')">Decline<i class="typcn typcn-times btn-icon-append"></i></i></button>
                           </form>  
                        
                           </div>

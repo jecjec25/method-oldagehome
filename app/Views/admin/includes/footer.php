@@ -6,7 +6,7 @@
                        <ul class="bottom-icons">
                             <li><a class="home"><span></span></a>Managpi, Calapan City, Oriental Mindoro</li>
                             <li><a class="mail" ><span></span></a>aruga.kapatid@gmail.com</li>
-                            <li><a class="mbl"><span></span></a>0998-577-4919/ 0916-579-1919</li>   
+                            <li><a class="mbl"><span></span></a>288-7562/ 0998-577-4919/ 0916-579-1919</li>   
                             <div class="clearfix"> </div><?php  ?>   
                         </ul>
                      </div>

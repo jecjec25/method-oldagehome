@@ -41,7 +41,7 @@
                   <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
                     <div>
                       
-                      <h5 class="mb-0" style="color: blue;">Senior Citizen</h5>
+                      <h5 class="mb-0" style="color: blue;">Elders of Aruga Kapatid</h5>
                       <h1 class="mb-0"></h1>
                     </div>
                     <i class="typcn typcn-user icon-xl text-secondary"></i>
@@ -56,7 +56,7 @@
                   <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
                     <div>
                       
-                      <h5 class="mb-0" style="color: blue;">Product</h5>
+                      <h5 class="mb-0" style="color: blue;">Products of Aruga Kapatid</h5>
                       <h1 class="mb-0"></h1>
                     </div>
                     <i class="typcn typcn-shopping-bag icon-xl text-secondary"></i>
@@ -92,6 +92,35 @@
                     <i class="typcn typcn-clipboard icon-xl text-secondary"></i>
                   </div>
                    <a href="readenq" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <h5 class="mb-0" style="color: blue;">Events Calendar</h5>
+                      <h1 class="mb-0"></h1>
+                    </div>
+                    <i class="typcn typcn-calendar menu-icon icon-xl text-secondary"></i>
+                  </div>
+                  <a href="calendar" class="small-box-footer">More info <i class="fas fa-users-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      
+                      <h5 class="mb-0" style="color: blue;">Report of Donation</h5>
+                      <h1 class="mb-0"></h1>
+                    </div>
+                    <i class="typcn typcn-document-text menu-icon icon-xl text-secondary"></i>
+                  </div>
+                  <a href="viewDonation" class="small-box-footer">More info <i class="fas fa-users-circle-right"></i></a>
                 </div>
               </div>
             </div>

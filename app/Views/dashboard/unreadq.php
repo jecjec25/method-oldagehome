@@ -49,20 +49,22 @@
                     <?php }?>
                     <thead>
                         <tr>
-                          <th>S.No</th>
                           <th>Name</th>
+                          <th>Phone</th>
                           <th>Email</th>
                           <th>Enquiry Date</th>
+                          <th>Message</th>
                           <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php foreach($cont as $f): ?>
                     <tr>
-                      <td><?=$f['Id'] ?></td>
                       <td><?=$f['Name'] ?></td>
+                      <td><?=$f['Phone'] ?></td>
                       <td><?=$f['Email'] ?></td>
                       <td><?=$f['Enquiry_Date'] ?></td>
+                      <td><?=$f['Message'] ?></td>
                       <td>
                           <div class="d-flex align-items-center">
                             <form action="<?= base_url('updateToRead') ?>" method="post">

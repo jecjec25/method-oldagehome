@@ -70,7 +70,7 @@
 						    </div>
 							<div>
 						    	<span><label>Contact Number<span class="required"></span></label></span>
-						    	<span><input required="true" name="contactnum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" placeholder="Contact number" class="textbox"></span>
+						    	<span><input required="true" name="contactnum" id="contactnum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" placeholder="Contact number" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>Type of Event<span class="required"></span></label></span>
@@ -93,7 +93,7 @@
 						    	<span><input required="true" name="comments" type="text" placeholder="Enter your questions or comments" class="textbox"></span>
 						    </div>
 						   <div>
-						   		<input type="submit" value="Submit" name="bookcheck">
+						   		<input type="submit" value="Submit" onclick="return confirm('Are you sure you want to submit this form?')" name="bookcheck">
 						  </div>
 					    </form>
 					    <div class="clearfix"></div>
@@ -106,6 +106,13 @@
 	          </div>
 	
 	<?php include_once('includes/footer.php');?>
+	<script>
+			var inputs = document.getElementById("contactnum");
+        inputs.addEventListener("input", function(event) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+
 
 			<script type="text/javascript">
 				$(document).ready(function() {

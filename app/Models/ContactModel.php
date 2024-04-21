@@ -13,7 +13,7 @@ class ContactModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['Name', 'Phone', 'Email', 'Message', 'contact_status'];
+    protected $allowedFields    = ['Name', 'Phone', 'Email', 'Enquiry_Date', 'Message', 'contact_status'];
 
     // Dates
     protected $useTimestamps = false;

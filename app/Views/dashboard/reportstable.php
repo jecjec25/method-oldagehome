@@ -69,7 +69,7 @@
                     <td><?=$reg['Name'] ?></td>
                     <td><?=$reg['DateBirth'] ?></td>
                     <td><?=$reg['ContNum'] ?></td>
-                    <td><img src="<?php base_url();?>/eldersimage/<?=$reg['ProfPic'] ?>" alt="" style="width: 200px; height: 200px; border:box;"></td>
+                    <td><img src="<?php base_url();?>/eldersimage/<?=$reg['ProfPic'] ?>" alt="" style="width: 50px; height: 50px; border:box;"></td>
                     <td><?=$reg['ComAdd'] ?></td>
                     <td><?=$reg['EmergencyAdd'] ?></td>
                     <td><?=$reg['EmergencyContNum'] ?></td>
@@ -79,7 +79,7 @@
                         <a href="<?= base_url('edit/') .$reg['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
                         <form action="<?= base_url('Archivestat')?>" method="post">
                             <input type="hidden" name="update" value="<?= $reg['Id']?>">
-                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive</button>
+                            <button class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">Archive <i class="typcn typcn-archive btn-icon-append"></i></button>
                           </form>
                     </div>
                     </td>

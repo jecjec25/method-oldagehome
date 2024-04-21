@@ -47,16 +47,15 @@
                   <table class="table table-striped project-orders-table">
                     <thead>
                         <tr>
-                          <th>S.No</th>
                           <th>Name</th>
                           <th>Message</th>
+                          <th>Status</th>
                           <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php foreach($cont as $f): ?>
                       <tr>
-                        <td><?=$f['Id'] ?></td>
                         <td><?=$f['Name'] ?></td>
                         <td><?=$f['Message'] ?></td>
                         <td>Read</td>

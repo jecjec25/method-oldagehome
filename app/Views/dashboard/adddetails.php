@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-group">
                     <label for="ContNum">Contact Number</label>
-                    <input id="ContNum" name="ContNum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" class="form-control" required="true" value="<?= isset($d['ContNum']) ? $d['ContNum'] : '' ?>">
+                    <input id="ContNum" name="ContNum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" id="ContNum" class="form-control" required="true" value="<?= isset($d['ContNum']) ? $d['ContNum'] : '' ?>">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Communication Address</label>
@@ -76,8 +76,8 @@
                      <textarea class="form-control" id="EmergencyAdd" name="EmergencyAdd" rows="5" value="<?= isset($d['EmergencyAdd']) ? $d['EmergencyAdd'] : '' ?>"></textarea>
                     </div>
                     <div class="form-group">
-                    <label for="EmergencyContNum">Emergency Contact Number (Philippines)</label>
-                    <input id="EmergencyContNum" name="EmergencyContNum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" class="form-control" required="true" value="<?= isset($d['EmergencyContNum']) ? $d['EmergencyContNum'] : '' ?>">
+                    <label for="EmergencyContNum">Emergency Contact Number</label>
+                    <input id="EmergencyContNum" name="EmergencyContNum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" id="EmergencyContNum" class="form-control" required="true" value="<?= isset($d['EmergencyContNum']) ? $d['EmergencyContNum'] : '' ?>">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Registration Date</label>
@@ -94,6 +94,19 @@
       </div>
     </div>
   </div>
+
+  <script>
+			var inputs = document.getElementById("ContNum");
+        inputs.addEventListener("input", function(event) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+    <script>
+			var inputs = document.getElementById("EmergencyContNum");
+        inputs.addEventListener("input", function(event) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
   <script>
     if ($("#add_create").length > 0) {
       $("#add_create").validate({

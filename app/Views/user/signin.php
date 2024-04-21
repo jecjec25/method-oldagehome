@@ -9,7 +9,17 @@
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
   
 </head>
+<style>
+    .input-form {
+        border-color: #ced4da; /* Kulay ng border */
+        transition: border-color 0.3s, box-shadow 0.3s; /* Smooth na transition */
+    }
 
+    .password:hover {
+        border-color: #007bff; /* Asul na kulay */
+        box-shadow: 0 0 10px #007bff;
+    }
+</style>
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -30,16 +40,24 @@
                 <?php endif;?>
             <!-- sa login ito na message-->
               <h3 style="color:seagreen;">Senior Care</h3>
-              <h4>Hello! let's get started</h4>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
+              <h4>Hello! Let's get started</h4>
+              <h6 class="font-weight-light">Login to continue.</h6>
+              <br>
               <form action="<?= base_url('/UserController/loginAuth')?>" method="post">
               <div class="form-group">
+              <label for="Email">Email</label>
                 <input type="text" class="form-control form-control-lg border-left-2" id="Email" placeholder="Email" name="Email">
               </div>
               <div class="form-group">
-                <input type="password" name="Password" class="form-control form-control-lg border-left-2" id="Password" placeholder="Password">
+              <label for="Password">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control form-control-lg border-left-2 password" id="password" placeholder="Password" name="Password" required="true" >
+                  <div class="input-group-append">
+                        <button type="button" id="togglePassword" class="btn btn-outline-secondary"><i class="typcn typcn-eye"></i></button>
+                  </div>
               </div>
-              <div class="mt-3">
+                </div>
+                <div class="mt-3">
                 <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn">LOGIN</button>
               </div>
               </form> 
@@ -55,8 +73,18 @@
       </div>
     </div>
   </div>
-  <script src="login/vendors/js/vendor.bundle.base.js"></script>
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
 
+    togglePassword.addEventListener('click', function() {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.innerHTML = type === 'password' ? '<i class="typcn typcn-eye"></i>' : '<i class="typcn typcn-eye-outline"></i>';
+    });
+</script>
+
+  <script src="login/vendors/js/vendor.bundle.base.js"></script>
   <script src="login/js/off-canvas.js"></script>
   <script src="login/js/hoverable-collapse.js"></script>
   <script src="login/js/template.js"></script>

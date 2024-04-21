@@ -21,7 +21,6 @@ class ReportController extends BaseController
 
     }
 
-
     public function eventupdate($id) {
         $data = [
         
@@ -68,5 +67,12 @@ class ReportController extends BaseController
         $dnreport = new ReportdonationModel();
         $data['main'] = $dnreport->findAll();
         return view('dashboard/managedonrep', $data);
+    }
+
+    public function delete($donation_id = null)
+    {
+        $dreport = new ReportdonationModel();
+        $data = $dreport->where('donation_id', $donation_id)->delete($donation_id);
+        return $this->response->redirect(site_url('/viewDonation'));
     }
 }

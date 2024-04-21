@@ -62,11 +62,7 @@
                     </div>
                     <div class="form-group">
                       <label for="Date_created">Date Created</label>
-                     <input id="Date_created" name="Date_created" type="date" class="form-control" required="true" value="<?=$main['Date_created']?>" readonly='true'>
-                    </div>
-                    <div class="form-group">
-                      <label for="Date_modified">Date Modified</label>
-                     <input id="Date_modified" name="Date_modified" type="date" class="form-control" required="true" value="<?=$main['Date_modified']?>">
+                     <input id="Date_created" name="Date_created" disabled type="datetime-local" class="form-control" required="true" value="<?=$main['Date_created']?>" readonly='true'>
                     </div>
                     <div class="form-group">
                       <label for="Start_date">Start Date</label>
@@ -96,7 +92,7 @@
                     <input id="Attachments" name="Attachments" type="file" required="true" value="<?= $main['Attachments']?>" >
                     </div>
                     <div class="form-group">
-                      <label for="Atendees">Status</label>
+                      <label for="Status">Status</label>
                     <select name="Status" id="" class="form-control" >
                     <option value="<?= $main['Status']?>" selected ><?= $main['Status']?></option>
                     <option value="Published">Published</option>
@@ -119,10 +115,10 @@
                       <label for="Feedback">Feedback</label>
                      <input id="Feedback" name="Feedback" type="text" class="form-control" readonly='true' value="<?= $main['Feedback']; ?>" readonly='true'>
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to save changes?')">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">
-                    <a href="/updatenews" class="btn btn-secondary">Back</a>
+                    <a href="/updateannounce" class="btn btn-secondary">Back</a>
                   </form>
                 </div>
               </div>

@@ -83,7 +83,7 @@
                             <a href="<?= base_url('updatenews/') .$mnews['id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
                             <form action="<?= base_url('NewsArchive')?>" method="post">
                             <input type="hidden" name="update" value="<?= $mnews['id']?>">
-                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive<i class="typcn typcn-archive btn-icon-append"></i></button>
+                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit" onclick="return confirm('Are you sure you want to archive this form?')">Archive<i class="typcn typcn-archive btn-icon-append"></i></button>
                           </form>
                           </div>
                     </td>

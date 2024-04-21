@@ -13,6 +13,7 @@ class AnnouncementController extends BaseController
     {
         $this->admannouncement = new AnnouncementModel();
         helper(['form']);
+        helper('time');
     }
 
     public function Adannnouncement()
@@ -92,12 +93,13 @@ class AnnouncementController extends BaseController
     }
     public function EditAnnounce($id)
     {
-
+        date_default_timezone_set('UTC');
+        $currentTimestamp = date('Y-m-d H:i:s');
         $data = [
             'Title' => $this->request->getVar('Title'),
             'Content' => $this->request->getVar('Content'),
             'Author' => $this->request->getVar('Author'),
-            'Date_modified' => $this->request->getVar('Date_modified'),
+            'Date_modified' =>  $currentTimestamp,
             'Start_date' => $this->request->getVar('Start_date'),
             'End_date' => $this->request->getVar('End_date'),
             'Priority' => $this->request->getVar('Priority'),
@@ -118,10 +120,86 @@ class AnnouncementController extends BaseController
         $this->admannouncement->update($id, $data);
 
         return redirect()->to('/updateannounce')->with('success', 'Senior Citizen details updated successfully');
-
     }
 
+    public function publishedann()
+    {
+        $data['announce'] = $this->admannouncement->where('Status', 'published')->findAll();
+        return view('dashboard/publishedannounce', $data);
+    }
 
+    public function announceArchived()
+    {
+       $data['announce']= $this->admannouncement->where('Status','Archive')->findAll();
+        return view('dashboard/announceArchive', $data);
+    }
+
+    public function AnnouncePubArc()//main arch
+    {
+        $announce = $this->request->getVar('updateann');
+
+        $updateAnn = $this->AnnouncePublishedArch($announce);
+                        $this->updateMyAnnPublished($updateAnn);
+        return redirect()->to('/updateannounce');
+    }
+
+    private function AnnouncePublishedArch($announce)
+    {
+        $updateAnn = $this->admannouncement->where('AnnounceID', $announce)->first();
+        return $updateAnn;
+    }
+
+    private function updateMyAnnPublished($updateAnn)
+    {
+        $data = [
+            'Status' => 'Archive',
+        ];
+        $this->admannouncement->update($updateAnn, $data);
+    }
+
+    public function AnnouncePubArch()//published
+    {
+        $announces = $this->request->getVar('updateAnn');
+
+        $updateAnno = $this->AnnouncePublishedArchs($announces);
+                        $this->updateMyAnnPublisheds($updateAnno);
+        return redirect()->to('/publishedannounce');
+    }
+
+    private function AnnouncePublishedArchs($announces)
+    {
+        $updateAnno = $this->admannouncement->where('AnnounceID', $announces)->first();
+        return $updateAnno;
+    }
+
+    private function updateMyAnnPublisheds($updateAnno)
+    {
+        $data = [
+            'Status' => 'Archive',
+        ];
+        $this->admannouncement->update($updateAnno, $data);
+    }
+
+    public function searchannouncement()
+    {
+        $searchannounce = $this->request->getVar('searchannounce');
+        if($searchannounce)
+        {
+            $data = [
+                'main' => $this->admannouncement->like('Title', $searchannounce)->where('Status', 'Draft')->findAll()
+            ];
+            return view('dashboard/searchannounce',$data);
+        }
+    }
+
+    //view announcement sa public side
+    public function viewAnnouncement($id)
+    {
+        $data['announce'] = $this->admannouncement->where('AnnounceID', $id)->find();
+
+        return view('admin/viewannouncement', $data);
+        
+    }
 
 
 

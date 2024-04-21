@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>Senior Care Management System || Add Senior Details</title>
+  <title>Update Elder</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -34,9 +34,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Manage Senior Citizen Details</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Elder</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Manage Senior Citizen Details in old age home!!!
+                    Update an elder to Aruga Kapatid
                   </p>
                   <form action="searchdets" method="get">
                   <input name="searchsc" type="text">

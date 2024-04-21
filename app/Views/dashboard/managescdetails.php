@@ -83,7 +83,7 @@
                             <a href="<?= base_url('edit/') .$k['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
                             <form action="<?= base_url('Archive')?>" method="post">
                             <input type="hidden" name="update" value="<?= $k['Id']?>">
-                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive <i class="typcn typcn-archive btn-icon-append"></i></button>
+                            <button class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">Archive <i class="typcn typcn-archive btn-icon-append"></i></button>
                           </form>
                           </div>
                     </td>

@@ -200,59 +200,34 @@
 			border-color: #e91e63;
 		}
 	</style>
-</head>
+</head>	
 
 <body>
 <?php include_once('includes/header.php');?>
     <section>
         <div class="leftBox">
-            <div class="content">
+           	 <div class="content">
                 <h1>
                     News and Events
                 </h1>
                 <p>
-                    With the idea of imparting programming
-                    knowledge, Mr. Sandeep Jain, an IIT
-                    Roorkee alumnus started a dream,
-                    GeeksforGeeks. Whether programming
-                    excites you or you feel stifled,
-                    wondering how to prepare for
-                    interview questions or
-                    how to ace data structures and
-                    algorithms, GeeksforGeeks is a
-                    one-stop solution. With every
-                    tick of time, we are adding arrows
-                    in our quiver. From articles on
-                    various computer science subjects
-                    to programming problems for practice,
-                    from basic to premium courses, from
-                    technologies to entrance examinations,
-                    we have been building ample content
-                    with superior quality. In a short
-                    span, we have built a community of
-                    1 Million+ Geeks around the world, 20,000+
-                    Contributors and 500+ Campus Ambassadors
-                    in various colleges across the nation.
-                    Our success stories include a lot of
-                    students who benefitted in their
-                    placements and landed jobs at tech
-                    giants. Our vision is to build a gigantic
-                    network of geeks and we are only a
-                    fraction of it yet.
+				Aruga Kapatid Foundation Incorporated thrives as a compassionate center in the heart of the community.
                 </p>
             </div>
         </div>
         <div class="events">
-            <ul>
+			<ul>
+			<div>
+            
                 <li>
                 <?php foreach($news as $single_news):?>
             <?php if ($single_news['status'] != 'Archive'): ?>
-                    <div class="time">
-                        <h2>
-                            19 <br><span>April</span>
-                        </h2>
-                    </div>
-                    <div class="details" style="background:url(images/bgc1.jpg)">
+				<div class="time">
+					<h2>
+						<?= date('d', strtotime($single_news['date_published'])) ?> <br><span><?= date('F', strtotime($single_news['date_published'])) ?></span>
+					</h2>
+				</div>
+                    <div class="details" >
                         <h3>
                             <?= $single_news['title']?> <br>
                         </h3>
@@ -264,15 +239,15 @@
                     <?php endif; ?>
                     <?php endforeach; ?>
                 </li>
+				</div>
 				<li>
 				<?php foreach($events as $mevents): ?>
-        
                     <div class="time">
-                        <h2>
-                            19 <br><span>April</span>
-                        </h2>
-                    </div>
-                    <div class="details" style="background:url(images/bgc1.jpg)">
+					<h2>
+						<?= date('d', strtotime($mevents['Start_date'])) ?> <br><span><?= date('F', strtotime($mevents['Start_date'])) ?></span>
+					</h2>
+					</div>
+                    <div class="details">
                         <h3>
 						<?=$mevents['Title'] ?><br>
                         </h3>

@@ -97,7 +97,7 @@
                      <label for="Attachments">Attachments</label><br>
                     <input id="Attachments" name="Attachments" type="file" required="true" >
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">Submit</button>
                     <?= form_close() ?>
                 </div>
               </div>

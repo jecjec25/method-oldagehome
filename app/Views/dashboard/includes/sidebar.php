@@ -125,20 +125,19 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#announcement" aria-expanded="false" aria-controls="charts">
-              <i class="typcn typcn-news menu-icon"></i>
+              <i class="typcn typcn-microphone menu-icon"></i>
               <span class="menu-title">Announcement</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="announcement">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/Adannouncement">Announcement</a></li>
-              </ul>
-              <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/updateannounce">Update Announcement</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/publishedannounce">Published Announcement</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/announceArchived">Archive Announcement</a></li>
               </ul>
             </div>
           </li>
-
       </nav>
 
 

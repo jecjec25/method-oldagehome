@@ -52,31 +52,27 @@
                       		<input type="hidden" name="Id" value="<?=$cont['Id']?>">
                     	 <?php }?>
 						    <div>
-						    	<span><label>Full Name<span class="required"></span>:</label></span>
+						    	<span><label>Full Name<span class="required"></span></label></span>
 						    	<span><input required="true" name="Name" type="text"  value="<?= isset($cont['Name']) ? $cont['Name'] : '' ?>" class="textbox"></span>
 						    </div>
 						    <div>
-						    	<span><label>Contact Number<span class="required"></span>:</label></span>
-						    	<span><input required="true" name="Phone" pattern="(\+?63|0)9\d{9}" maxlength="13" type="text" value="<?= isset($cont['Phone']) ? $cont['Phone'] : '' ?>" class="textbox"></span>
+						    	<span><label>Contact Number<span class="required"></span></label></span>
+						    	<span><input required="true" name="Phone" id="Phone" pattern="(\+?63|0)9\d{9}" maxlength="13" type="text" value="<?= isset($cont['Phone']) ? $cont['Phone'] : '' ?>" class="textbox"></span>
 						    </div>
 						    <div>
-						    	<span><label>E-MAIL<span class="required"></span>:</label></span>
+						    	<span><label>E-MAIL<span class="required"></span></label></span>
 						    	<span><input required="true" name="Email" type="text" value="<?= isset($cont['Email']) ? $cont['Email'] : '' ?>" class="textbox"></span>
 						    </div>
-						   
-					   
 					        <div>					    	
-						    	<span><label>Message<span class="required"></span>:</label></span>
+						    	<span><label>Message<span class="required"></span></label></span>
 						    	<span><textarea required="true" name="Message" value="<?= isset($cont['Message']) ? $cont['Message'] : '' ?>" > </textarea></span>
 						    </div>
 						   <div>
-						   		<input type="submit" value="Submit" name="submitted" />
+						   		<input type="submit" value="Submit" name="submitted"  onclick="return confirm('Are you sure you want to submit this form?')" />
 						  </div>
 					    </form>
 					    <div class="clearfix"></div>
 				  </div>
-	
-	
 				      <div class="clearfix"></div>
 	                </div>	
 	             </div>  
@@ -92,7 +88,13 @@
 									});
 								</script>
 					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+				<script>
+		var inputs = document.getElementById("Phone");
 
+	inputs.addEventListener("input", function(event) {
+		this.value = this.value.replace(/[^0-9]/g, '');
+	});
+</script>
 
 
 </body>

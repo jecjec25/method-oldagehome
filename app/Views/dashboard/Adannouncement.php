@@ -112,7 +112,7 @@
                     <input type="checkbox" id="stakeholders" name="Target_audience[]" value="stakeholders">
                     <label for="stakeholders"> External Stakeholders</label><br>
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">Submit</button>
                     <?= form_close() ?>
                 </div>
               </div>

@@ -125,6 +125,7 @@ $routes->match(['post', 'get'], 'viewEvent/(:any)', 'ReportController::ViewRepor
 $routes->post('insertDonation', 'ReportController::donationreportadd');
 $routes->get('donationReps', 'ReportController::donation');
 $routes->get('viewDonation', 'ReportController::viewdonrep');
+$routes->get('/deletedonreport/(:any)', 'ReportController::delete/$1');
 
 $routes->post('Archivestat', 'Fullcalendar::Archive');
 
@@ -141,6 +142,7 @@ $routes->get('/newsarchive', 'NewsController::newsarchived');
 $routes->get('/newspublished', 'NewsController::published');
 $routes->post('/PubArchive', 'NewsController::PubArchive');
 $routes->get('newsvents/(:any)', 'ViewController::eventnews/$1');
+$routes->get('viewAnnounce/(:any)', 'AnnouncementController::viewAnnouncement/$1');
 
 $routes->get('/adevents', 'EventsController::adminevents');
 $routes->post('saveEvents', 'EventsController::saveEvents');
@@ -164,6 +166,11 @@ $routes->post('saveannounce', 'AnnouncementController::saveAnnouncement');
 $routes->get('/updateannounce', 'AnnouncementController::viewannounce');
 $routes->post('editAnnounce/(:any)', 'AnnouncementController::EditAnnounce/$1');
 $routes->get('/updateannouncement/(:any)', 'AnnouncementController::updateannouncement/$1');
+$routes->get('/publishedannounce', 'AnnouncementController::publishedann');
+$routes->post('/archiveannounce', 'AnnouncementController::AnnouncePubArc');
+$routes->get('/announceArchived', 'AnnouncementController::announceArchived');
+$routes->post('myAnnouncePubArch', 'AnnouncementController::AnnouncePubArch');
+$routes->get('searchannounce', 'AnnouncementController::searchannouncement');
 
 //user event post
 $routes->get('usereventpost', 'UserEvntPostController::userEventpost');
@@ -176,3 +183,6 @@ $routes->get('userdonation', 'UserDonationController::userdonation');
 
 //user products
 $routes->get('userproduct', 'UserProductController::userproduct');
+
+//menu what elders need
+$routes->get('menu', 'MenuController::seemenu');

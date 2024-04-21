@@ -142,7 +142,7 @@ class EventsController extends BaseController
         if($searchevents)
         {
             $data = [
-                'main' => $this->admevent->like('Title', $searchevents)->findAll()
+                'main' => $this->admevent->like('Title', $searchevents)->where('Status', 'Draft')->findAll()
             ];
             return view('dashboard/searchevents',$data);
         }
@@ -153,7 +153,7 @@ class EventsController extends BaseController
         $data['main'] = $this->admevent->where('Status', 'published')->findAll();
         return view('dashboard/eventspublished', $data);
     }
-    public function viewoublishevent($id)
+    public function viewpublishevent($id)
     {
             $data['event'] = $this->admevent->where('id', $id)->findAll();
             return view('dashboard/viewevent', $data);

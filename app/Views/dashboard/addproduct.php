@@ -55,7 +55,7 @@
                       <input id="ProdName" name="ProdName" type="text" class="form-control" required="true" value="<?= isset($a['Name']) ? $a['Name'] : '' ?>">
                     </div>
                   <div class="form-group">
-                      <label for="exampleInputEmail1">Quantity</label>
+                      <label for="exampleInputEmail1">Number of Stock</label>
                      <input id="Quantity" name="Quantity" type="text" class="form-control" required="true" max="1970-01-01" value="<?= isset($a['Quantity']) ? $a['Quantity'] : '' ?>">
                     </div>
 
@@ -72,7 +72,7 @@
                       <label for="exampleInputEmail1">Product Picture</label>
                      <input id="ProdPic" name="ProdPic" type="file" class="form-control" required="true" value="<?= isset($a['ProdPic']) ? $a['ProdPic'] : '' ?>">
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">Submit</button>
                   </form>
                 </div>
               </div>

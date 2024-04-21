@@ -57,6 +57,7 @@
                         <th>Donation Type</th>
                         <th>Amount</th>
                         <th>Project Supported</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -66,7 +67,12 @@
                     <td><?=$dreport['donor_name'] ?></td>
                     <td><?=$dreport['donation_type'] ?></td>
                     <td><?=$dreport['amount'] ?></td>
-                    <td><?=$dreport['project_supported'] ?></td>    
+                    <td><?=$dreport['project_supported'] ?></td>
+                    <td>
+                          <div class="d-flex align-items-center">
+                          <a href="<?= base_url("deletedonreport/".$dreport['donation_id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
+                          </div>
+                    </td>    
                 </tr>
                   <?php endforeach; ?>
                     </tbody>

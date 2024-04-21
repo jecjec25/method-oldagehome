@@ -57,7 +57,7 @@
               </div>
               <div class="form-group">
               <label for="ContNum">Contact Numbers</label>
-              <input id="ContNum" name="ContNum" maxlength="13" class="form-control" required="true" value="<?= $d['ContNum']?>" pattern="^(\+?63|0)9\d{9}$">
+              <input id="ContNum" name="ContNum" maxlength="13" class="form-control" id="ContNum" required="true" value="<?= $d['ContNum']?>" pattern="^(\+?63|0)9\d{9}$">
               </div>
               <div class="form-group">
                       <label for="exampleInputEmail1">Elder Picture</label>
@@ -75,13 +75,13 @@
               </div>
               <div class="form-group">
               <label for="EmergencyContNum">Emergency Contact Number</label>
-              <input id="EmergencyContNum" name="EmergencyContNum" maxlength="13" class="form-control" required="true" value="<?= $d['EmergencyContNum']; ?>" pattern="^(\+?63|0)9\d{9}$">
+              <input id="EmergencyContNum" name="EmergencyContNum" maxlength="13" class="form-control" id="EmergencyContNum" required="true" value="<?= $d['EmergencyContNum']; ?>" pattern="^(\+?63|0)9\d{9}$">
               </div>
               <div class="form-group">
               <label for="exampleInputEmail1">Registration Date</label>
               <input id="RegDate" name="RegDate" type="date" class="form-control" required="true" value="<?= $d['RegDate'] ?>">
               </div>
-              <button type="submit" class="btn btn-primary mr-2" name="submit" value="submit">Submit</button>
+              <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to save changes?')">Submit</button>
               <div class="row mt-3">
               <div class="col-md-12">
                   <a href="/test" class="btn btn-secondary">Back</a>
@@ -99,6 +99,18 @@
       </div>
     </div>
   </div>
+  <script>
+			var inputs = document.getElementById("ContNum");
+        inputs.addEventListener("input", function(event) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+    <script>
+			var inputs = document.getElementById("EmergencyContNum");
+        inputs.addEventListener("input", function(event) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
   <script src="login/vendors/js/vendor.bundle.base.js"></script>
   <script src="login/vendors/chart.js/Chart.min.js"></script>
   <script src="login/js/off-canvas.js"></script>

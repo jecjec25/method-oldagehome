@@ -43,14 +43,13 @@
                   <p class="card-description" style="padding-left: 20px;"> 
                     Update Announcement of Aruga Kapatid
                   </p>
-                  <form action="searchannounce" method="get">
+                  <form action="<?= base_url('searchannounce')?>" method="get">
                   <input  name="searchannounce" type="text">
-
                   <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
                   </form>  
                 <div class="table-responsive pt-3">
                   
-                  <table class="table table-striped project-orders-table" id="newsevents">
+                  <table class="table table-striped project-orders-table" id="announcement">
                     <thead>
                       <tr>
                         <th>Title</th>
@@ -87,9 +86,9 @@
                     <td>
                           <div class="d-flex align-items-center">
                             <a href="<?= base_url('updateannouncement/') .$mannounce['AnnounceID']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
-                            <form action="<?= base_url('ArchiveAnnounce')?>" method="post">
-                            <input type="hidden" name="update" value="<?= $mannounce['AnnounceID']?>">
-                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit">Archive<i class="typcn typcn-archive btn-icon-append"></i></button>
+                            <form action="<?= base_url('archiveannounce')?>" method="post">
+                            <input type="hidden" name="updateann" value="<?= $mannounce['AnnounceID']?>">
+                            <button class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">Archive<i class="typcn typcn-archive btn-icon-append"></i></button>
                           </form>
                           </div>
                     </td>
