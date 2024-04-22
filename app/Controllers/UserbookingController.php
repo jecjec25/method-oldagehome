@@ -46,7 +46,7 @@ class UserbookingController extends ResourceController
             'contactnum' => $this->request->getPost('contactnum'),
             'event' => $this->request->getPost('event'),
             'prefferdate' => $this->request->getPost('prefferdate'),
-            'alterdate' => $this->request->getPost('alterdate'),
+            'Time' => $this->request->getPost('Time'),
             'equipment' => $this->request->getPost('equipment'),
             'comments' => $this->request->getPost('comments'),
             'status' => 'pending'

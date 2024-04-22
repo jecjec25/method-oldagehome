@@ -54,7 +54,7 @@
                           <th>Contact Number</th>
                           <th>Event</th>
                           <th>Preffered Date</th>
-                          <th>Alternate Date</th>
+                          <th>Time</th>
                           <th>Equipment</th>
                           <th>Comments</th>
                           <th>STATUS</th>
@@ -69,7 +69,7 @@
                       <td><?=$even['contactnum'] ?></td>
                       <td><?=$even['event']?></td>
                       <td><?=$even['prefferdate'] ?></td>
-                      <td><?=$even['alterdate'] ?></td>
+                      <td><?=$even['Time'] ?></td>
                       <td><?=$even['equipment'] ?></td>
                       <td><?=$even['comments'] ?></td>
                       <td>

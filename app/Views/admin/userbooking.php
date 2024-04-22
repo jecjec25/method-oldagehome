@@ -76,14 +76,19 @@
 						    	<span><label>Type of Event<span class="required"></span></label></span>
 						    	<span><input required="true" name="event" type="text"  placeholder="Type of event" class="textbox"></span>
 						    </div>
-						    <div>
-						    	<span><label>Preferred Date and Time<span class="required"></span></label></span>
-						    	<span><input required="true" id="start_date" name="prefferdate" type="datetime-local" class="textbox"></span>
-						    </div>
-					        <div>					    	
-						    	<span><label>Alternate Date and Time<span class="required"></span></label></span>
-						    	<span><input required="true" id="end_date" name="alterdate" type="datetime-local" class="textbox"> </span>
-						    </div>
+							<div>
+								<label for="start_date">Preferred Date<span class="required">*</span></label>
+								<input required="true" id="start_date" name="prefferdate" type="date" class="textbox">
+							</div>
+							<div>
+								<label for="time">Preferred Time<span class="required">*</span></label>
+								<select name="Time" id="time">
+									<option value="9am-11am">9AM-11AM</option>
+									<option value="11am-1pm">11AM-1PM</option>
+									<option value="1pm-3pm">1PM-3PM</option>
+								</select>
+							</div>
+							
 							<div>
 						    	<span><label>Specific Equipments Needed<span class="required"></span></label></span>
 						    	<span><input required="true" name="equipment" type="text" placeholder="e.g., sound system, projector..." class="textbox"></span>
@@ -121,36 +126,28 @@
 					
 				});
 			</script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var form = document.querySelector('.booking-form');
         form.addEventListener('submit', function(event) {
-            var getdate = form.querySelector('input[name="prefferdate"]');
+            var getdate = form.querySelector('input[name="Time"]');
             var appointmentDate = new Date(getdate.value);
 			var currentDate = new Date();
 
             
             // Fetch contact numbers from PHP
-            var myexist = <?php echo json_encode(array_column($book, 'prefferdate')); ?>;
-            
-            for (var i = 0; i < myexist.length; i++) {
-                var bookingDate = new Date(myexist[i]);
+            var myexist = <?php echo json_encode(array_column($book, 'Time')); ?>;
+           
                 
-                if (appointmentDate.getTime() === bookingDate.getTime()) {
+                if (get.date === myexist) {
                     event.preventDefault();
                     alert('This Date is Already Taken');
                     return; // Stop further checking if a match is found
-
-			
-			
                 }
-				
-			
-            }
         });
     });
 </script>
-
 
 <script>
 				document.addEventListener('DOMContentLoaded', function() {
@@ -159,14 +156,13 @@
 						var appointmentDate = new Date(form.querySelector('input[name="prefferdate"]').value);
 						var currentDate = new Date();
 
-						if (appointmentDate <= currentDate || appointmentDate.getHours() < 9 || appointmentDate.getHours() >= 15) {
+						if (appointmentDate <= currentDate) {
 							event.preventDefault();
 							alert('Please select a valid date and time for reservation. Reservations must be made for a future time between 9 AM and 3 PM only.');
 						}
 					});
 				});
 			</script>
-
 					<a href="#home" id="toTop" class="scroll" style="display: block;"> <	span id="toTopHover" style="opacity: 1;"> </span></a>
 
 

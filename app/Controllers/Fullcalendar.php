@@ -23,8 +23,6 @@ class Fullcalendar extends BaseController
 
     public function Accept()
     {
-
-       
         $accept  = $this->request->getVar('accept');
         if(empty($accept))
         {
@@ -103,7 +101,7 @@ class Fullcalendar extends BaseController
             'contactnum' => $a['contactnum'],
             'event' => $a['event'],
             'prefferdate' => $a['prefferdate'],
-            'alterdate' => $a['alterdate'],
+            'Time' => $a['Time'],
             'equipment' => $a['equipment'],
             'comments' => $a['comments'],
             'status' => 'Accepted'
@@ -112,7 +110,6 @@ class Fullcalendar extends BaseController
         
         $this->book->InsertBatch($acceptBookings);
     } 
-
 
     private function removePending($accept)
     {
@@ -161,7 +158,7 @@ class Fullcalendar extends BaseController
             'contactnum' => $a['contactnum'],
             'event' => $a['event'],
             'prefferdate' => $a['prefferdate'],
-            'alterdate' => $a['alterdate'],
+            'Time' => $a['Time'],
             'equipment' => $a['equipment'],
             'comments' => $a['comments'],
             'status' => 'Declined'
