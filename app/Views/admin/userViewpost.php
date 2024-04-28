@@ -217,27 +217,7 @@
         </div>
         <div class="events">
             <ul>
-                <li>
-                <?php foreach($news as $single_news):?>
-            <?php if ($single_news['status'] != 'Archive'): ?>
-				<div class="time">
-					<h2>
-						<?= date('d', strtotime($single_news['date_published'])) ?> <br><span><?= date('F', strtotime($single_news['date_published'])) ?></span>
-					</h2>
-				</div>
-                    <div class="details" >
-                        <h3>
-                            <?= $single_news['title']?> <br>
-                        </h3>
-                            
-                            <?= $single_news['picture']?> <br>
-                        <a href="<?= base_url('newsvents/' . $single_news['id'])?>">View News</a>
-                    </div>
-                    <div style="clear: both;"></div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </li>
-				<li>
+               <li>
 				<?php foreach($events as $mevents): ?>
                     <div class="time">
 					<h2>

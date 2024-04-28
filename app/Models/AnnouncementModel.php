@@ -13,7 +13,7 @@ class AnnouncementModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['Title', 'Content', 'Author', 'Date_created', 'Date_modified', 'Start_date', 'End_date', 'Category', 'Priority', 'Attachments', 'Status', 'Target_audience', 'Feedback'];
+    protected $allowedFields    = ['Title', 'Content', 'Author', 'Date_created', 'Date_modified', 'Start_date', 'End_date', 'Category', 'Priority', 'Attachments', 'Status', 'Target_audience', 'Feedback', 'adminId'];
 
     // Dates
     protected $useTimestamps = false;

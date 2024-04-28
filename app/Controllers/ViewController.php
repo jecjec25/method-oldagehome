@@ -17,7 +17,7 @@ class ViewController extends BaseController
     private $contact;
     private $newsevents;
     private $events;
-    private $announce;
+        private $announce;
 
     public function __construct()
     {

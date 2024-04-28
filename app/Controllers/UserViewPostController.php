@@ -20,8 +20,7 @@ class UserViewPostController extends BaseController
 
     public function userViewpost()
     {
-        $data['news'] = $this->newevents->where('status', 'Published')->findAll();
-        $data['events'] = $this->events->where('status', 'Published')->findAll();
+        $data['events'] = $this->events->where('status', 'Published')->where('type', 'user')->findAll();
         return view('admin/userViewpost', $data);
     }
 

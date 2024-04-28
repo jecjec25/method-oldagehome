@@ -46,7 +46,7 @@ class UsersigninController extends BaseController
                         'ContactNo' => $user['ContactNo'],
                         'Password' => $user['Password']                 
                             ];
-                $session->set($ses_data);
+                    $session->set($ses_data);
 
                 return redirect()->to('/booking');
                         }

@@ -15,16 +15,14 @@
                   <h4 style="color: orange;">Senior Care Management System</h4>
               </div>
               <div class="top-log">
-                  <br>
-                  <br>
+                  
                 <ul>
                <li><h4>Welcome  <?= session()->get('Username')?> </h4></li> 
                <li>     <a class="dropdown-item" href="/userprofile">
                   <h4>Profile</h4>
               </a></li>
                <li>  <a class="dropdown-item" href="/usersignin"></li>
-               
-               <h4>   Logout </h4>
+               <h4>Logout</h4>
               </a>
          
                 </ul>
@@ -63,8 +61,9 @@
              <nav class="top-nav">
               <ul class="top-nav">
                 <li class="active"><a href="booking">Event Reservation</a></li>
-                <li><a href="/userproduct">Products</a></li>
+                <li><a href="/userIdonate">Donate to our Elders</a></li>
                 <li><a href="/userdonation">Donation</a></li>
+                <li><a href="/userproduct">Products</a></li>
                 <li><a href="/usereventpost">Post an Event</a></li>
                 <li><a href="/userViewpost">View Events</a></li>
                 <div class="clearfix"> </div>

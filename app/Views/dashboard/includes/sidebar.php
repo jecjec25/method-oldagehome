@@ -124,17 +124,29 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#announcement" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link" data-toggle="collapse" href="#Announcement" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-microphone menu-icon"></i>
               <span class="menu-title">Announcement</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="announcement">
+            <div class="collapse" id="Announcement">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/Adannouncement">Announcement</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/updateannounce">Update Announcement</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/publishedannounce">Published Announcement</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/announceArchived">Archive Announcement</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#donation" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-film menu-icon"></i>
+              <span class="menu-title">Donation</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="donation">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="userdonatedtable">Track Donation</a></li>
               </ul>
             </div>
           </li>

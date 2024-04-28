@@ -76,6 +76,7 @@ class NewsController extends BaseController
                     'Content' => $this->request->getVar('Content'),
                     'author' => $this->request->getVar('author'),
                     'status' => 'Draft',
+                    'adminId' => $this->request->getVar('adminId'),
                 ];
 
                 $categories = $this->request->getVar('Category');
@@ -91,6 +92,8 @@ class NewsController extends BaseController
             {
                 return redirect()->to('/newsAndevents')->with('error', 'Error uploading image.');
             }
+
+
         }
         else{
             $data['validation'] = $this->validator;
@@ -206,5 +209,8 @@ class NewsController extends BaseController
         $this->newsevent->update($update, $data);
         
     }
+
+    //for connection of user and event
+
 }
     

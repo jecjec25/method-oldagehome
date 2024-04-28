@@ -1,31 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News and Events</title>
+    <style>
+        /* Basic styling for demonstration purposes */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0; /* Light gray background */
+        }
+        .container {
+            background-color: #fff; /* White background */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+        }
+        h2 {
+            margin-top: 0; /* Remove default margin from heading */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue color */
+            color: #fff; /* White text color */
+            text-decoration: none; /* Remove underline */
+            border: none; /* Remove border */
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+    </style>
+</head>
+<body>
 
-<?php foreach($news as $single_news):?>
-        <ul>
+<div class="container">
+    <ul>
+        <?php foreach ($events as $mevents): ?>
             <li>
-                <?= $single_news['title'];?> <br>
-                <?= $single_news['Content']?> <br>
-                <?= $single_news['author']?> <br>
-                <?= $single_news['Category']?> <br>
-                <?= $single_news['picture']?> <br>
-                <?= $single_news['Feedback']?>
+                <h2>Events</h2>
+                <h3><?= $mevents['Title']; ?></h3>
+                <p><?= $mevents['Description']; ?></p>
+                <p><strong>Organizer:</strong> <?= $mevents['Organizer']; ?></p>
+                <p><strong>Start Date:</strong> <?= $mevents['Start_date']; ?></p>
+                <p><strong>End Date:</strong> <?= $mevents['End_date']; ?></p>
+                <p><strong>Category:</strong> <?= $mevents['Category']; ?></p>
+                <p><strong>Status:</strong> <?= $mevents['Status']; ?></p>
+                <p><strong>Attendees:</strong> <?= $mevents['Atendees']; ?></p>
+                <p><strong>Attachments:</strong> <?= $mevents['Attachments']; ?></p>
+                <p><strong>Feedback:</strong> <?= $mevents['Feedback']; ?></p>
+                <a href="/news" class="btn btn-secondary">Back</a>
             </li>
-        </ul>
-   <?php endforeach; ?>
-    </div>
-    <div>
-	<?php foreach($events as $mevents): ?>
-                <tr>
-					<ul>
-                    <li><?=$mevents['Title'] ?><br>
-                    <?=$mevents['Description'] ?><br>
-                    <?=$mevents['Organizer'] ?><br>
-                    <?=$mevents['Start_date'] ?><br>
-                    <?=$mevents['End_date'] ?><br>
-                    <?=$mevents['Category']?><br>
-                    <?=$mevents['Status'] ?><br>
-                    <?=$mevents['Atendees'] ?><br>
-                    <?=$mevents['Attachments'] ?><br>
-                    <?=$mevents['Feedback'] ?></li>
-				         </ul>
-                  <?php endforeach; ?>
-                  </div>                 
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+</body>
+</html>

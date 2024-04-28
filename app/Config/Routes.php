@@ -174,6 +174,7 @@ $routes->get('searchannounce', 'AnnouncementController::searchannouncement');
 
 //user event post
 $routes->get('usereventpost', 'UserEvntPostController::userEventpost');
+$routes->post('/usersavepost', 'UserEvntPostController::usersavepost');
 
 //user view event post
 $routes->get('userViewpost', 'UserViewPostController::userViewpost');
@@ -186,3 +187,11 @@ $routes->get('userproduct', 'UserProductController::userproduct');
 
 //menu what elders need
 $routes->get('menu', 'MenuController::seemenu');
+
+//idonate page
+$routes->get('userIdonate', 'UserIdonateController::userIdonate');
+$routes->post('/sbmtDonation', 'UserIdonateController::sbmtDonation');
+
+//admin userdonatedtable
+$routes->get('userdonatedtable', 'UserIdonateController::admdonatedtable');
+$routes->get('deletedonate/(:any)', 'UserIdonateController::deletedonation/$1');

@@ -47,7 +47,6 @@
                   <p class="card-description">
                     Edit News to Aruga Kapatid
                   </p>
-
                   <form class="forms-sample"  action="<?= base_url('editnews/' .$main['id'])?>"method="post">
                     <div class="form-group">
                       <label for="title">Title</label>

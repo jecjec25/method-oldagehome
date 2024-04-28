@@ -50,6 +50,7 @@
                     <?php if(isset($d['Id'])){?>
                       <input type="hidden" name="Id" value="<?=$d['Id']?>">
                     <?php }?>
+                    <input type="hidden" name="adminId" value="<?=session()->get('userID')?>">
                     <div class="form-group">
                        <label for="exampleInputUsername1">Name of Senior Citizen</label>
                       <input id="Name" name="Name" type="text" class="form-control" required="true" value="<?= isset($d['Name']) ? $d['Name'] : '' ?>">

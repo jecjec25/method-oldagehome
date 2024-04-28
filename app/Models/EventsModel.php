@@ -13,7 +13,7 @@ class EventsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['Title', 'Description', 'Organizer', 'Start_date', 'End_date', 'Category', 'Status', 'Atendees', 'Attachments', 'Feedback'];
+    protected $allowedFields    = ['Title', 'Description', 'Organizer', 'Start_date', 'End_date', 'Category', 'Status', 'Atendees', 'Attachments', 'Feedback', 'type', 'adminId', 'usersignsId'];
 
     // Dates
     protected $useTimestamps = false;
@@ -39,8 +39,5 @@ class EventsModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getExistingReservations()
-    {
-        return $this->findAll(); 
-    }
+   
 }

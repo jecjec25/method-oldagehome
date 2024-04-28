@@ -52,6 +52,7 @@ class AnnouncementController extends BaseController
                 'End_date' => $this->request->getVar('End_date'),
                 'Priority' => $this->request->getVar('Priority'),   
                 'Status' => 'Draft',
+                'adminId' => $this->request->getVar('adminId'),
             ];
 
             $categories = $this->request->getVar('Category');

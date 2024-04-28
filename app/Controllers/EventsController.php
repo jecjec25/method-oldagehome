@@ -51,6 +51,8 @@ class EventsController extends BaseController
                     'End_date' => $this->request->getVar('End_date'),
                     'Status' => 'Draft',
                     'Atendees' => $this->request->getVar('Atendees'),
+                    'adminId' => $this->request->getVar('adminId'),
+                    'type' => 'admin',
                 ];
 
                 $categories = $this->request->getVar('Category');

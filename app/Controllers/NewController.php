@@ -38,7 +38,8 @@ class NewController extends BaseController
             'EmergencyAdd' => $this->request->getPost('EmergencyAdd'),
             'EmergencyContNum' => $this->request->getPost('EmergencyContNum'),
             'RegDate' => $this->request->getPost('RegDate'),
-            'scstatus' => 'Unarchive'
+            'scstatus' => 'Unarchive',
+            'adminId' => $this->request->getPost('adminId')
 
         ];
         

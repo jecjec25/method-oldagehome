@@ -52,6 +52,7 @@
               <p><?= session('error') ?></p>
           <?php endif; ?>
           <?= form_open_multipart('saveEvents') ?>
+          <input type="hidden" name="adminId" value="<?=session()->get('userID')?>">
                     <div class="form-group">
                        <label for="Title">Title</label>
                       <input id="Title" name="Title" type="text" class="form-control" required="true" >
