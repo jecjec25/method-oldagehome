@@ -60,7 +60,6 @@
                         <th>Attachments</th>
                         <th>Status</th>
                         <th>Target Audience</th>
-                        <th>Feedback</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -78,7 +77,6 @@
                     <td><?=$pannounce['Attachments'] ?></td>
                     <td><?=$pannounce['Status'] ?></td>
                     <td><?=$pannounce['Target_audience'] ?></td>
-                    <td><?=$pannounce['Feedback'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">
                             <form action="<?= base_url('myAnnouncePubArch')?>" method="post">

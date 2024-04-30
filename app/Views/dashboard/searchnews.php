@@ -63,7 +63,6 @@
                         <th>Category</th>
                         <th>Pictures</th>
                         <th>Status</th>
-                        <th>Feedback</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -77,7 +76,6 @@
                     <td><?=$mnews['Category'] ?></td>
                     <td><img src="<?=$mnews['picture']?>" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$mnews['status'] ?></td>
-                    <td><?=$mnews['Feedback'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">
                             <a href="<?= base_url('updatenews/') .$mnews['id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 

@@ -58,6 +58,13 @@
                 <p><strong>Category:</strong> <?= $pannounce['Category']; ?></p>
                 <p><strong>Priority:</strong> <?= $pannounce['Priority']; ?></p>
                 <p><strong>Attachments:</strong> <?= $pannounce['Attachments']; ?></p>
+                <p><strong>Feedback:</strong> <?= $pannounce['Feedback']; ?></p>
+                <form action="<?= base_url('feedbackannounce')?>" method="post">
+                <input type="hidden" name="AnnounceID" value="<?= $pannounce['AnnounceID']?>">
+                <textarea name="Feedback" id="" cols="30" rows="10" placeholder="Feedback"></textarea>
+                <button type="submit">send</button>
+                </form>
+                <br>
                 <a href="/announcement" class="btn btn-secondary">Back</a>
             </li>
         <?php endforeach; ?>

@@ -4,14 +4,17 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\EventsModel;
+use App\Models\FeedbackModel;
 
 class EventsController extends BaseController
 {
     private $admevent;
+    private $feedback;
 
     public function __construct()
     {
         $this->admevent = new EventsModel();
+        $this->feedback = new FeedbackModel();
         helper(['form']);
     }
 
@@ -192,6 +195,21 @@ class EventsController extends BaseController
     public function reservations()
     {
       return view('dashboard/adminevents', $reservedDates);
+    }
+
+    public function savefeedbackevent()
+    {
+        $data = [
+            'feedback' => $this->request->getVar('Feedback'),
+            'usersignsId' => $this->request->getVar('usersignsId'),
+            'eventid' => $this->request->getVar('eventid')
+        ];
+
+
+        $this->feedback->save($data);
+        
+        return redirect()->to('/userViewpost');
+
     }
        
 }

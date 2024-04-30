@@ -54,7 +54,7 @@
                         <span><input required="true" name="nameofdonation" type="text" placeholder="I donate..." class="textbox"></span>
                     </div>
                     <button id="openCamera">Open Camera</button>
-                    <input type="file" name="picture">
+                    <input type="file" span class="required" name="picture">
                     <!-- Camera container -->
                     <div id="cameraContainer">
                         <video id="cameraFeed" autoplay></video>
@@ -64,11 +64,11 @@
                     </div>
 
                     <div>
-                        <span><label>Reference Number</label></span>
+                        <span><label>Reference Number</label><span class="required"></span>
                         <span><input required="true" name="referencenum" type="text" placeholder="Reference Number" class="textbox"></span>
                     </div>
                     <div>
-                        <span><label>Message</label></span>
+                        <span><label>Message</label><span class="required"></span>
                         <span><input required="true" name="message" type="text" placeholder="Message" class="textbox"></span>
                     </div>
 					<br>

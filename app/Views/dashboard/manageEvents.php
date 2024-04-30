@@ -62,7 +62,6 @@
                         <th>Status</th>
                         <th>Attendees</th>
                         <th>Attachments</th>
-                        <th>Feedback</th>
                         <th>Type</th>
                         <th>Actions</th>
                       </tr>
@@ -79,7 +78,6 @@
                     <td><?=$mevents['Status'] ?></td>
                     <td><?=$mevents['Atendees'] ?></td>
                     <td><?=$mevents['Attachments'] ?></td>
-                    <td><?=$mevents['Feedback'] ?></td>
                     <td><?=$mevents['type'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">

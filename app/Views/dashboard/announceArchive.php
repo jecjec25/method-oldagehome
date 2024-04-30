@@ -65,7 +65,6 @@
                         <th>Attachments</th>
                         <th>Status</th>
                         <th>Target Audience</th>
-                        <th>Feedback</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -83,7 +82,6 @@
                     <td><?=$archannounce['Attachments'] ?></td>
                     <td><?=$archannounce['Status'] ?></td>
                     <td><?=$archannounce['Target_audience'] ?></td>
-                    <td><?=$archannounce['Feedback'] ?></td>
                 </tr>
                   <?php endforeach; ?>
                     </tbody>

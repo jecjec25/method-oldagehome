@@ -64,7 +64,6 @@
                         <th>Attachments</th>
                         <th>Status</th>
                         <th>Target Audience</th>
-                        <th>Feedback</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -82,7 +81,6 @@
                     <td><?=$mannounce['Attachments'] ?></td>
                     <td><?=$mannounce['Status'] ?></td>
                     <td><?=$mannounce['Target_audience'] ?></td>
-                    <td><?=$mannounce['Feedback'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">
                             <a href="<?= base_url('updateannouncement/') .$mannounce['AnnounceID']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 

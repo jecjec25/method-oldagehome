@@ -21,7 +21,7 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/services', 'ViewController::service');
 
  $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
-$routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
+ $routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
 
 
 $routes->get('/signin', 'Home::try');
@@ -195,3 +195,15 @@ $routes->post('/sbmtDonation', 'UserIdonateController::sbmtDonation');
 //admin userdonatedtable
 $routes->get('userdonatedtable', 'UserIdonateController::admdonatedtable');
 $routes->get('deletedonate/(:any)', 'UserIdonateController::deletedonation/$1');
+
+//feedback for user event posting 
+$routes->post('feedback', 'EventsController::savefeedbackevent');
+$routes->get('eventfeedback', 'FeedbackController::viewfeedbackevent');
+//feedback for announcement
+$routes->post('feedbackannounce', 'AnnouncementController::savefeedbackannounce');
+$routes->get('announcefeedback', 'FeedbackController::viewfeedbackannounce');
+$routes->get('pdf', 'AnnouncementController::pdf');
+$routes->get('hello', 'AnnouncementController::hello');
+//elderneed sa admin side
+$routes->get('viewelderneed', 'ElderneedController::viewelderneed');
+$routes->post('saveneed', 'ElderneedController::saveneed');

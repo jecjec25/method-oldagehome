@@ -48,12 +48,32 @@
                 <input type="hidden" name="Id" value="<?= $d['Id']?>">
             
               <div class="form-group">
-                 <label for="exampleInputUsername1">Name of Senior Citizen</label>
-                <input id="Name" name="Name" type="text" class="form-control" required="true" value="<?= $d['Name'] ?>" />
+                 <label for="exampleInputUsername1">Last Name</label>
+                <input id="lastname" name="lastname" type="text" class="form-control" required="true" value="<?= $d['lastname'] ?>" />
+              </div>
+              <div class="form-group">
+                 <label for="exampleInputUsername1">First Name</label>
+                <input id="firstname" name="firstname" type="text" class="form-control" required="true" value="<?= $d['firstname'] ?>" />
+              </div>
+              <div class="form-group">
+                 <label for="exampleInputUsername1">Middle Name</label>
+                <input id="middlename" name="middlename" type="text" class="form-control" required="true" value="<?= $d['middlename'] ?>" />
+              </div>
+              <div class="form-group">
+                 <label for="exampleInputUsername1">Nickname</label>
+                <input id="nickname" name="nickname" type="text" class="form-control" required="true" value="<?= $d['nickname'] ?>" />
               </div>
               <div class="form-group">
               <label for="exampleInputEmail1">Date of Birth</label>
               <input id="DateBirth" name="DateBirth" type="date" class="form-control" required="true" value="<?= $d['DateBirth'] ?>" max="1970-01-01">
+              </div>
+              <div class="form-group">
+                 <label for="exampleInputUsername1">Sex</label>
+                <input id="sex" name="sex" type="text" class="form-control" required="true" value="<?= $d['sex'] ?>" />
+              </div>
+              <div class="form-group">
+                 <label for="exampleInputUsername1">Marital Status</label>
+                <input id="marital_stat" name="marital_stat" type="text" class="form-control" required="true" value="<?= $d['marital_stat'] ?>" />
               </div>
               <div class="form-group">
               <label for="ContNum">Contact Numbers</label>

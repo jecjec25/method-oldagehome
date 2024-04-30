@@ -111,10 +111,6 @@
                     <input type="checkbox" id="stakeholders" name="Target_audience[]" value="stakeholders">
                     <label for="stakeholders"> External Stakeholders</label><br>
                     </div>
-                    <div class="form-group">
-                      <label for="Feedback">Feedback</label>
-                     <input id="Feedback" name="Feedback" type="text" class="form-control" readonly='true' value="<?= $main['Feedback']; ?>" readonly='true'>
-                    </div>
                     <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to save changes?')">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">

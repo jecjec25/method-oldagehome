@@ -4,13 +4,17 @@ namespace App\Controllers;
 use App\Models\AnnouncementModel;
 
 use App\Controllers\BaseController;
+use App\Models\FeedbackModel;
+use Mpdf\Mpdf;
 
 class AnnouncementController extends BaseController
 {
     private $admannouncement;
+    private $Feedback;
 
     public function __construct()
     {
+        $this->Feedback = new FeedbackModel();
         $this->admannouncement = new AnnouncementModel();
         helper(['form']);
         helper('time');
@@ -20,7 +24,18 @@ class AnnouncementController extends BaseController
     {
         return view('dashboard/Adannouncement');
     }
+    public function pdf()
+    {
+        helper('File');
+        $mpdf = new Mpdf();
 
+        $mpdf->WriteHTML('Hello World');
+        return redirect()->to($mpdf->Output('filename.pdf', 'I'));
+
+        
+    }
+
+    
     public function saveAnnouncement()
     {
 
@@ -202,6 +217,17 @@ class AnnouncementController extends BaseController
         
     }
 
+    public function savefeedbackannounce()
+    {
+        $data = [
+            'feedback' => $this->request->getVar('Feedback'),
+            'announceid' => $this->request->getVar('AnnounceID')
+        ];
 
+        $this->Feedback->save($data);
+        
+        return redirect()->to('/announcement');
+
+    }
 
 }

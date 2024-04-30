@@ -104,7 +104,7 @@
                     <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to save changes?')">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">
-                    <a href="/updatenews" class="btn btn-secondary">Back</a>
+                    <a href="/Viewevents" class="btn btn-secondary">Back</a>
                   </form>
                 </div>
               </div>

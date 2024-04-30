@@ -35,7 +35,7 @@
                         <span><input required="true" name="Description" type="text"  placeholder="Description" class="textbox"></span>
                     </div>
                     <div>
-                        <span><label>Organizer</label></span>
+                        <span><label>Organizer<span class="required"></label></span>
                         <span><input required="true" name="Organizer" type="text" placeholder="Organizer" class="textbox"></span>
                     </div>
                     <div>
@@ -47,7 +47,7 @@
                         <input required="true" id="End_date" name="End_date" type="date" class="textbox">
                     </div>
                    <div>
-				   <label for="Category">Category</label><br>
+				   <label for="Category">Category<span class="required"></label><br>
                     <input type="checkbox" id="social" name="Category[]" value="Social">
                     <label for="social"> Social</label><br>
                     <input type="checkbox" id="recreational" name="Category[]" value="Recreational">
@@ -68,7 +68,7 @@
                         <span><input required="true" name="Atendees" type="text"  placeholder="Attendees" class="textbox"></span>
                     </div>
 					<div>
-					<label for="Attachments">Attachments</label><br>
+					<label for="Attachments">Attachments<span class="required"></label><br>
                     <input id="Attachments" name="Attachments" type="file" required="true" >
 					</div>
 					<br>

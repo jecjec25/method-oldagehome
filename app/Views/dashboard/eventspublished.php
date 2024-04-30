@@ -62,7 +62,6 @@
                         <th>Status</th>
                         <th>Attendees</th>
                         <th>Attachments</th>
-                        <th>Feedback</th>
                         <th>Type</th>
                         <th>Actions</th>
                       </tr>
@@ -79,7 +78,6 @@
                     <td><?=$events['Status'] ?></td>
                     <td><?=$events['Atendees'] ?></td>
                     <td><img src="<?=$events['Attachments']?>" style="width:50px; height:50px; border:box;"></td>
-                    <td><?=$events['Feedback'] ?></td>
                     <td><?=$events['type'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">

@@ -174,7 +174,7 @@ class NewsController extends BaseController
         if($searchnews)
         {
             $data = [
-                'news' => $this->newsevent->like('title', $searchnews)->findAll()
+                'news' => $this->newsevent->like('title', $searchnews)->where('status', 'Draft')->findAll()
             ];
             return view('dashboard/searchnews',$data);
         }

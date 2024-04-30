@@ -61,7 +61,6 @@
                         <th>Category</th>
                         <th>Atendees</th>
                         <th>Attachments</th>
-                        <th>Feedback</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -77,7 +76,6 @@
                     <td><?=$mevents['Status'] ?></td>
                     <td><?=$mevents['Atendees'] ?></td>
                     <td><?=$mevents['Attachments'] ?></td>
-                    <td><?=$mevents['Feedback'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">
                             <a href="<?= base_url('updateevents/') .$mevents['EventID']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 

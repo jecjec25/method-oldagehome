@@ -16,13 +16,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Donation for Elders</h4>
+            <h4 class="mb-0">Track Donation</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Donation for Elders</p>
+              <p class="mb-0">Donation</p>
             </div>
           </li>
         </ul>

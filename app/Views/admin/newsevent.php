@@ -36,7 +36,7 @@
             text-decoration: none; /* Remove underline */
             border: none; /* Remove border */
             border-radius: 5px;
-            transition: background-color 0.3s ease; /* Smooth transition */
+            transition: 0.3s ease; /* Smooth transition */
         }
         .btn:hover {
             background-color: #0056b3; /* Darker blue color on hover */
@@ -47,6 +47,18 @@
 
 <div class="container">
     <ul>
+        <?php foreach ($news as $mnews): ?>
+            <li>
+                <h2>News</h2>
+                <h3><?= $mnews['title']; ?></h3>
+                <p><?= $mnews['Content']; ?></p>
+                <p><strong>Organizer:</strong> <?= $mnews['author']; ?></p>
+                <p><strong>Start Date:</strong> <?= $mnews['date_published']; ?></p>
+                <p><strong>Category:</strong> <?= $mnews['Category']; ?></p>
+                <p><strong>Attachments:</strong> <?= $mnews['picture']; ?></p>
+                <a href="/news" class="btn btn-secondary">Back</a>
+            </li>
+        <?php endforeach; ?>
         <?php foreach ($events as $mevents): ?>
             <li>
                 <h2>Events</h2>
@@ -60,7 +72,16 @@
                 <p><strong>Attendees:</strong> <?= $mevents['Atendees']; ?></p>
                 <p><strong>Attachments:</strong> <?= $mevents['Attachments']; ?></p>
                 <p><strong>Feedback:</strong> <?= $mevents['Feedback']; ?></p>
+                <form action="<?= base_url('feedback')?>" method="post">
+                
+                <input type="hidden" name="usersignsId" value="<?= session()->get('id')?>">
+                <input type="hidden" name="eventid" value="<?= $mevents['EventID']?>">
+                <textarea name="Feedback" id="" cols="30" rows="10" placeholder="Feedback"></textarea>
+                <button type="submit">send</button>
+                </form>
+                <br>
                 <a href="/news" class="btn btn-secondary">Back</a>
+              
             </li>
         <?php endforeach; ?>
     </ul>

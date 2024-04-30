@@ -150,6 +150,28 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#Feedback" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-film menu-icon"></i>
+              <span class="menu-title">Feedback</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="Feedback">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="eventfeedback">Event Feedback</a></li>
+                <li class="nav-item"><a class="nav-link" href="announcefeedback">Announcement Feedback</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#elderneed" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-film menu-icon"></i>
+              <span class="menu-title">Elder Needs</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="elderneed">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="viewelderneed">Elder Need</a></li>
       </nav>
 
 

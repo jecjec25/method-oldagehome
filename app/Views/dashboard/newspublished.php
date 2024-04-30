@@ -60,7 +60,6 @@
                         <th>Category</th>
                         <th>Pictures</th>
                         <th>Status</th>
-                        <th>Feedback</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -74,7 +73,6 @@
                     <td><?=$news['Category'] ?></td>
                     <td><img src="<?=$news['picture']?>" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$news['status'] ?></td>
-                    <td><?=$news['Feedback'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">
                             <form action="<?= base_url('PubArchive')?>" method="post">

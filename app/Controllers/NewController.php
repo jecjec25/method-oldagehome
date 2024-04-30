@@ -28,10 +28,15 @@ class NewController extends BaseController
     }
     public function save()
     {
-        $Id = $this->request->getPost('Id');
+       
         $data = [
-            'Name' => $this->request->getPost('Name'),
+            'lastname' => $this->request->getPost('lastname'),
+            'firstname' => $this->request->getPost('firstname'),
+            'middlename' => $this->request->getPost('middlename'),
+            'nickname' => $this->request->getPost('nickname'),
             'DateBirth' => $this->request->getPost('DateBirth'),
+            'sex' => $this->request->getPost('sex'),
+            'marital_stat' => $this->request->getPost('marital_stat'),
             'ContNum' => $this->request->getPost('ContNum'),
             'ComAdd' => $this->request->getPost('ComAdd'),
             'ProfPic' => $this->request->getPost('ProfPic'),
@@ -45,13 +50,7 @@ class NewController extends BaseController
         
         $main = new MainModel();
 
-        if (!empty($Id)){
-            $main->update($Id, $data);
-        }
-        else 
-        {
-            $main->save($data);
-        }
+        $main->save($data);
         return redirect()->to('/test');
     }
     public function edit($Id)
@@ -115,8 +114,13 @@ class NewController extends BaseController
         $main = new MainModel();
 
             $data = [
-                'Name' => $this->request->getPost('Name'),
+                'lastname' => $this->request->getPost('lastname'),
+                'firstname' => $this->request->getPost('firstname'),
+                'middlename' => $this->request->getPost('middlename'),
+                'nickname' => $this->request->getPost('nickname'),
                 'DateBirth' => $this->request->getPost('DateBirth'),
+                'sex' => $this->request->getPost('sex'),
+                'marital_stat' => $this->request->getPost('marital_stat'),
                 'ContNum' => $this->request->getPost('ContNum'),
                 'ComAdd' => $this->request->getPost('ComAdd'),
                 'ProfPic' => $this->request->getPost('ProfPic'),
