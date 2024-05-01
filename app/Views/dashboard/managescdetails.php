@@ -12,6 +12,29 @@
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 </head>
 
+<style>
+          .table {
+            width: 100%;
+            margin-bottom: 20px;
+        }    
+
+        .table-striped tbody > tr:nth-child(odd) > td,
+        .table-striped tbody > tr:nth-child(odd) > th {
+            background-color: #f9f9f9;
+        }
+
+  @media print {
+            #PrintButton, #DatePrepared {
+                display: none;
+            }
+        }
+
+        @page {
+            size: auto;   /* auto is the initial value */
+            margin: 0;  /* this affects the margin in the printer settings */
+        }
+</style>
+
 <body>
 <div class="container-scroller">
   <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
@@ -91,9 +114,17 @@
                     <td>
                           <div class="d-flex align-items-center">
                             <a href="<?= base_url('edit/') .$k['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
+                            <a href="<?= base_url('reportElder/' .$k['Id'])?>" class="btn btn-warning btn-sm btn-icon-text mr-3">Report</a>
                             <form action="<?= base_url('Archive')?>" method="post">
                             <input type="hidden" name="update" value="<?= $k['Id']?>">
+                            <select name="status" id="">
+                            <option  selected disabled>Status</option>
+                            <option value="Left">Left</option>
+                            <option value="Deceased">Deceased</option>
+                          </select>
+
                             <button class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">Archive <i class="typcn typcn-archive btn-icon-append"></i></button>
+
                           </form>
                           </div>
                     </td>

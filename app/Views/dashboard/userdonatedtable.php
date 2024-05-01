@@ -75,7 +75,7 @@
                       <td><?=$dnt['message'] ?></td>
                       <td>
                           <div class="d-flex align-items-center">
-                            <a href="<?= base_url('deletedonate/' . $dnt['id'])?>" class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to submit this form?')">Delete</a>
+                            <a href="<?= base_url('deletedonate/' . $dnt['id'])?>" class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to submit this form?')">Delete <i class="typcn typcn-trash btn-icon-append"></i></a>
                           <input type="hidden" name="delete" value="<?= $dnt['id']?>">
                           </div>
                     </td>

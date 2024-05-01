@@ -172,6 +172,7 @@
             <div class="collapse" id="elderneed">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="viewelderneed">Elder Need</a></li>
+                <li class="nav-item"><a class="nav-link" href="manageneed ">Update Elder Need</a></li>
       </nav>
 
 

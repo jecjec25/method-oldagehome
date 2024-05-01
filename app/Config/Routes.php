@@ -207,3 +207,9 @@ $routes->get('hello', 'AnnouncementController::hello');
 //elderneed sa admin side
 $routes->get('viewelderneed', 'ElderneedController::viewelderneed');
 $routes->post('saveneed', 'ElderneedController::saveneed');
+$routes->get('manageneed', 'ElderneedController::displayelderneed');
+$routes->get('editNeed/(:any)', 'ElderneedController::viewToupdate/$1');
+$routes->post('updateElneed/(:any)', 'ElderneedController::editelderneed/$1');
+$routes->get('deleteneed/(:any)', 'ElderneedController::deleteneed/$1');
+
+$routes->get('reportElder/(:any)', 'ReportController::eldersreps/$1');

@@ -23,12 +23,11 @@ class NewController extends BaseController
 
     public function archives()
     {
-       $data['main']= $this->main->where('scstatus','Archive')->findAll();
+       $data['main']= $this->main->where('scstatus','Deceased')->orWhere('scstatus', 'Left')->findAll();
         return view('dashboard/scarchived', $data);
     }
     public function save()
     {
-       
         $data = [
             'lastname' => $this->request->getPost('lastname'),
             'firstname' => $this->request->getPost('firstname'),
@@ -77,7 +76,7 @@ class NewController extends BaseController
         if($search)
         {
             $data = [
-                'main' => $this->main->like('Name', $search)->where('scstatus','Unarchive')->findAll()
+                'main' => $this->main->like('firstname', $search)->where('scstatus','Unarchive')->findAll()
             ];
 
             return view('dashboard/search',$data);
@@ -101,13 +100,20 @@ class NewController extends BaseController
 
     private function updateMyVisibility($update)
     {
-        $data = [
-            'scstatus' => 'Archive',
+        if(empty($this->request->getVar('status')))
+        {
+            echo 'lagyan mo ng laman uy';
+        }
+
+        else{
+            $data = [
+            'scstatus' => $this->request->getVar('status'),
         ];
 
         $this->main->update($update, $data);
         
-    }
+           } 
+      }
 
     public function update($id)
     {

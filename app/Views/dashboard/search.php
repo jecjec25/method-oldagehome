@@ -51,8 +51,13 @@
                     <?php }?>
                     <thead>
                       <tr>
-                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Nickname</th>
                         <th>Date of Birth</th>
+                        <th>Sex</th>
+                        <th>Marital Status</th>
                         <th>Contact Number</th>
                         <th>Profile Picture</th>
                         <th>Communication Address</th>
@@ -65,8 +70,13 @@
                     <tbody>
                     <?php foreach($main as $k): ?>
                 <tr>
-                    <td><?=$k['Name'] ?></td>
+                    <td><?=$k['lastname'] ?></td>
+                    <td><?=$k['firstname'] ?></td>
+                    <td><?=$k['middlename'] ?></td>
+                    <td><?=$k['nickname'] ?></td>
                     <td><?=$k['DateBirth'] ?></td>
+                    <td><?=$k['sex'] ?></td>
+                    <td><?=$k['marital_stat'] ?></td>
                     <td><?=$k['ContNum'] ?></td>
                     <td><img src="<?php base_url();?>/eldersimage/<?=$k['ProfPic'] ?>" alt="" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$k['ComAdd'] ?></td>

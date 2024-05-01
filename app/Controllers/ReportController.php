@@ -6,18 +6,21 @@ use App\Controllers\BaseController;
 use App\Models\UserbookingModel;
 use App\Models\ReportdonationModel;
 use App\Models\BookingModel;
+use App\Models\MainModel;
 
 class ReportController extends BaseController
 {
     private $eventsModel;
     private $donationsModel;
     private $booking;
+    private $main;
 
     public function __construct()
     {
         $this->eventsModel = new UserbookingModel();
         $this->donationsModel = new ReportdonationModel();
         $this->booking = new BookingModel();
+        $this->main = new MainModel();
 
     }
 
@@ -74,5 +77,14 @@ class ReportController extends BaseController
         $dreport = new ReportdonationModel();
         $data = $dreport->where('donation_id', $donation_id)->delete($donation_id);
         return $this->response->redirect(site_url('/viewDonation'));
+    }
+
+
+    public function eldersreps($id)
+    {
+
+        $data['report'] = $this->main->where('Id', $id)->first();
+        
+        return view('dashboard/elderprint', $data);
     }
 }

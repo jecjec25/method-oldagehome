@@ -3,11 +3,21 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\ElderneedModel;
 
 class MenuController extends BaseController
 {
+
+    private $elneed;
+
+    public function __construct()
+    {
+        $this->elneed = new ElderneedModel();
+    }
+
     public function seemenu()
     {
-        return view('admin/menu');
+        $data['menu'] = $this->elneed->findAll();
+       return view('admin/menu', $data);
     }
 }

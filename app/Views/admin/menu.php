@@ -97,29 +97,16 @@
 
         </div>
         <div class="hello">
+         
         dignity, and compassion they deserve in their golden years.<br><br>
-                    <span class="how-to-make-difference">Here's how you can make a difference:<br><span>
+                    <span class="how-to-make-difference">What do our elders need:<br><span>
                     <br>
-                    <span><b>1. Offer Your Time: </b>Volunteer at local homes for the aged. Spend time chatting with seniors, playing games,
-                    or simply lending a listening ear. Your presence can brighten their day and alleviate feelings of loneliness.<br><span>
-                    <span><b>2. Share Your Skills: </b>Do you have a talent or hobby you can teach? Consider leading a workshop or class for seniors.
-                    Whether it's painting, gardening, or storytelling, your expertise can enrich their lives and foster a sense of accomplishment.<br><span>
-                    <span><b>3. Stay Connected: </b>Reach out to elderly neighbors or family friends regularly. A simple phone call, letter, or visit
-                    can make a world of difference in their day. Let them know they are valued and remembered.<br><span>
-                    <span><b>4. Support Caregivers: </b>Caregiving can be physically and emotionally demanding. Offer assistance to caregivers by providing
-                    respite care, running errands, or offering a listening ear. Your support can ease their burden and show appreciation for their dedication.<br><span>
-                    <span><b>5. Advocate for Senior Rights: </b>Be an advocate for policies and initiatives that support the well-being and rights of seniors. Raise awareness
-                    about issues such as elder abuse, healthcare access, and social isolation.<br><span>
-                    <span><b>6. Celebrate Their Contributions: </b>Recognize and celebrate the achievements and contributions of seniors in your community. Host events, share stories,
-                    and honor their legacy for future generations to appreciate.<br><span>
-                        <br>
-                    <span>Together, let's create a community where seniors are valued, respected, and cherished. Your kindness and compassion can make a meaningful difference
-                    in the lives of our beloved elders.<br><span>
-                        <br>
-                    <span>With gratitude,</span>
-                        <br>
-                    <span>Aruga Kapatid Foundation Incorporated <br>
-                    Home for the Aged</span>
+                    <?php foreach($menu as $menu):?>
+                        <ul>
+                    <span><b><li> <?= $menu['need'] ?>: </b><?= $menu['description'] ?></li><br><span>
+                    </ul>
+
+                    <?php endforeach;?>
                     </div>
         </div>
         </div>   

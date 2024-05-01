@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Feedback Announcement</title>
+  <title>Update Elder Needs</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -19,13 +19,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Announce Feedback</h4>
+            <h4 class="mb-0">Update Elder Need</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Feedback</p>
+              <p class="mb-0">Update Elder Need</p>
             </div>
           </li>
         </ul>
@@ -39,9 +39,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Feedback</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Elder Need</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Feedback of Announcement to Aruga Kapatid
+                    Update Elder Needs to Aruga Kapatid
                   </p>
                   <!-- <form action="searchdets" method="get">
                   <input  name="searchsc" type="text">
@@ -50,25 +50,29 @@
                   </form>   -->
                 <div class="table-responsive pt-3">
                   
-                  <table class="table table-striped project-orders-table" id="feedbacktbl">
+                  <table class="table table-striped project-orders-table" id="elderneed">
                     <thead>
                       <tr>
-                        <th>Admin Name</th>
-                        <th>Title</th>
-                        <th>Content</th>
-                        <th>Author</th>
-                        <th>Feedback</th>
-                        
+                        <th>Need</th>
+                        <th>Description</th>
+                        <th>Date Started</th>
+                        <th>Date Modified</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($feedannounce as $feedann): ?>
+                    <?php foreach($eneed as $needs): ?>
                 <tr>
-                      <td><?= session()->get('FirstName')?> <?= session()->get('LastName')?></td>
-                    <td><?=$feedann['Title'] ?></td>
-                    <td><?=$feedann['Content'] ?></td>
-                    <td><?=$feedann['Author'] ?></td>
-                    <td><?=$feedann['feedback'] ?></td>
+                    <td><?=$needs['need'] ?></td>
+                    <td><?=$needs['description'] ?></td>
+                    <td><?=$needs['date_started'] ?></td>
+                    <td><?=$needs['date_modified'] ?></td>
+                    <td>
+                          <div class="d-flex align-items-center">
+                            <a href="<?= base_url('editNeed/') .$needs['id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 
+                            <a href="<?= base_url('deleteneed/' . $needs['id'])?>" class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to submit this form?')">Delete <i class="typcn typcn-trash btn-icon-append"></i></a>
+                          </div>
+                    </td>
                 </tr>
                   <?php endforeach; ?>
                     </tbody>

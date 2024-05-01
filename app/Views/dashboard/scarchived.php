@@ -12,7 +12,54 @@
   <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 </head>
+<style>
+      .button-print{
+     float:left; 
+    }
+  .table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
+        .table-striped tbody > tr:nth-child(odd) > td,
+        .table-striped tbody > tr:nth-child(odd) > th {
+            background-color: #f9f9f9;
+        }
+
+        @media print {
+            #PrintButton, .navbar-breadcrumb, .sidebar, .header {
+                display: none !important;
+            }
+            .content-wrapper {
+                width: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .main-panel {
+                width: 100% !important;
+            }
+        }
+
+        @page {
+            size: auto;   /* auto is the initial value */
+            margin: 0;  /* this affects the margin in the printer settings */
+            
+
+        }
+        .button-print {
+            text-align: right;
+
+        }
+
+        .button-print button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
 <body>
 <div class="container-scroller">
   <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
@@ -44,6 +91,14 @@
                   <p class="card-description" style="padding-left: 20px;"> 
                     Archived elder of Aruga Kapatid
                   </p>
+                  <div class="button-print"><button id="PrintButton" onclick="PrintPage()">Print</button></div>
+
+                          <script type="text/javascript">
+                              function PrintPage() {
+                                  window.print();
+                              }
+                            
+                          </script>
                 <div class="table-responsive pt-3">
                   <table class="table table-striped project-orders-table" id="tblscdetails">
                   <?php if(isset($k['Id'])){?>
@@ -84,7 +139,7 @@
                     <td><?=$k['EmergencyContNum'] ?></td>
                     <td><?=$k['RegDate'] ?></td>
                     <td>
-                          <p>Archived</p>
+                    <?=$k['scstatus'] ?>
                     </td>
                 </tr>
                   <?php endforeach; ?>
