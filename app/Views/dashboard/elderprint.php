@@ -42,7 +42,7 @@
                         <th>Middle Name</th>
                         <th>Nickname</th>
                         <th>Date of Birth</th>
-                        <th>Sex</th>
+                        <th>Gender</th>
                         <th>Marital Status</th>
                         <th>Contact Number</th>
                         <th>Profile Picture</th>
@@ -60,7 +60,7 @@
                     <td><?=$report['middlename'] ?></td>
                     <td><?=$report['nickname'] ?></td>
                     <td><?=$report['DateBirth'] ?></td>
-                    <td><?=$report['sex'] ?></td>
+                    <td><?=$report['gender'] ?></td>
                     <td><?=$report['marital_stat'] ?></td>
                     <td><?=$report['ContNum'] ?></td>
                     <td><img src="<?php base_url();?>/eldersimage/<?=$report['ProfPic'] ?>" alt="" style="width:50px; height:50px; border:box;"></td>

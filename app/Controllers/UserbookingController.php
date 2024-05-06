@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\UserbookingModel;
 use App\Models\AcceptbookingModel;
 use App\Models\BookingModel;
+use App\Models\MainModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class UserbookingController extends ResourceController
@@ -13,11 +14,21 @@ class UserbookingController extends ResourceController
     private $userbooking;
     private $acceptbooking;
     private $booking;
+    private $main;
     public function __construct()
     {
         $this->userbooking = new UserbookingModel();
         $this->acceptbooking = new AcceptbookingModel();
         $this->booking = new BookingModel();
+        $this->main = new MainModel();
+    }
+
+
+    public function getDisabled()
+    {
+     $data['disableDates'] = $this->acceptbooking->getDisabledDates();
+
+
     }
     public function index()
     {
@@ -27,6 +38,16 @@ class UserbookingController extends ResourceController
         // Return the data as JSON
         return $this->respond($data);
     }
+
+    public function index2()
+    {
+        // Fetch data from the model
+        $data = $this->main->where('scstatus', 'Unarchive')->getGenderDistribution();
+
+        // Return the data as JSON
+        return $this->respond($data);
+    }
+
     public function bookinge()
     {
         $userbooking = new UserbookingModel();
@@ -64,7 +85,7 @@ class UserbookingController extends ResourceController
     }
     public function bookchecked()
     {
-       
+        $data['disableDates'] = $this->acceptbooking->getDisabledDates();  
         $data['book'] = $this->acceptbooking->where('status', 'Accepted')->findAll();
         return view('admin/userbooking', $data);
     }

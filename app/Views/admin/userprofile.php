@@ -55,7 +55,7 @@
                     <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">
-                    <a href="/userbooking" class="btn btn-secondary">Back</a>
+                    <a href="/booking" class="btn btn-secondary">Back</a>
                     </div>
                   </form>
                 </div>

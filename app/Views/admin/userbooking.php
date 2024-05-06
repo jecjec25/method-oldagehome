@@ -1,21 +1,41 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+
 <head>
-    <title>Event Booking</title>
+    <title>How To Disable Specific Dates In jQuery Datepicker</title>
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" >
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <style>
-        .required::after {
-            content: "*";
-            color: red;
-            margin-left: 5px;
+
+    <link href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <style type="text/css">
+        .containers {
+            border-radius: 5px;
+            padding: 50px 20px;
+            margin: 30px auto;
+            width: 40%;
+            border: 2px solid #bbb;
+            text-align: center;
+        }
+        
+        input {
+            padding: 5px;
+            background-color: #eeeeee;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-top: 100px;
+            font-weight: 600;
         }
     </style>
 </head>
+
 <body>
-    <div class="contact_desc">
+<div class="contact_desc">
         <?php include('includes/user/sidebar.php')?>		
         <div class="container">
             <br>
@@ -51,8 +71,8 @@
                     </div>
                     <div>
                         <label for="prefferdate">Preferred Date<span class="required">*</span></label>
-                        <input required="true" id="prefferdate" name="prefferdate" type="date" class="textbox">
-                    </div>
+                        <input required="true" id="prefferdate" name="prefferdate" type="text" class="dates">
+                       </div>
                     <div>
                         <label for="time">Preferred Time<span class="required">*</span></label>
                         <select name="Time" id="time">
@@ -81,47 +101,17 @@
         </div>
     </div>
 
-    <?php include_once('includes/footer.php');?>
     
-    <script src="js/jquery-1.8.3.min.js"></script>
-	<script>
-        var inputs = document.getElementById("contactnum");
-        inputs.addEventListener("input", function(event) {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var form = document.querySelector('.booking-form');
-            form.addEventListener('submit', function(event) {
-                var appointmentDate = new Date(form.querySelector('input[name="prefferdate"]').value);
-                var currentDate = new Date();
-
-                if (appointmentDate <= currentDate) {
-                    event.preventDefault();
-                    alert('Please select a valid date and time for reservation. Reservations must be made for a future time.');
-                    return;
-                }
-
-                var selectedTime = form.querySelector('select[name="Time"]').value;
-                var existingReservations = <?php echo json_encode($book); ?>;
-                
-                for (var i = 0; i < existingReservations.length; i++) {
-                    var reservedDate = new Date(existingReservations[i]['preferdate']);
-                    var reservedTime = existingReservations[i]['Time'];
-                    var status = existingReservations[i]['status'];
-
-                    if (reservedDate.getFullYear() === appointmentDate.getFullYear() &&
-                        reservedDate.getMonth() === appointmentDate.getMonth() &&
-                        reservedDate.getDate() === appointmentDate.getDate() &&
-                        reservedTime === selectedTime &&
-                        status === 'Accepted') {
-                        event.preventDefault();
-                        alert('This date and time is already reserved and accepted.');
-                        return;
-                    }
-                }
-            });
-        });
-    </script>
 </body>
+<script type="text/javascript">
+    var array = <?= json_encode($disableDates)?>;
+
+    $("input.dates").datepicker({
+        beforeShowDay: function(date) {
+            var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+            return [array.indexOf(string) == -1]
+        }
+    });
+</script>
+
 </html>

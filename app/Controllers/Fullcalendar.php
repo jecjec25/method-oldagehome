@@ -20,10 +20,9 @@ class Fullcalendar extends BaseController
         helper(['form']); 
     }
 
-
     public function Accept()
     {
-        $accept  = $this->request->getVar('accept');
+        $accept = $this->request->getVar('accept');
         if(empty($accept))
         {
             return redirect()->to('canlendar')->with('msg', 'No Data to Insert');
@@ -31,16 +30,49 @@ class Fullcalendar extends BaseController
         $acceptMe = $this->getBook($accept);
                     $this->acceptBooking($acceptMe);
                     $this->removePending($accept);
-            return redirect()->to('calendar')->with('msg', '');
+            return redirect()->to('calendar');
     }
-
 
     private function getBook($accept)
     {
         $acceptMe = $this->booking->where('bookingId', $accept)->get()->getResultArray();
-
         return $acceptMe;
     }
+
+    private function acceptBooking($acceptMe)
+    {
+
+        if (empty($acceptMe)) {
+            return redirect()->to('canlendar')->with('msg', 'No Data to Insert');
+        }
+    
+        $acceptBookings = [];
+
+        foreach($acceptMe as $a)
+        {
+            $acceptBookings[] = [
+            'usersignsId' => $a['usersignsId'],
+            'lastname' => $a['lastname'],
+            'firstname' => $a['firstname'],
+            'middlename' => $a['middlename'],
+            'contactnum' => $a['contactnum'],
+            'event' => $a['event'],
+            'prefferdate' => $a['prefferdate'],
+            'Time' => $a['Time'],
+            'equipment' => $a['equipment'],
+            'comments' => $a['comments'],
+            'status' => 'Accepted'
+            ];
+        }
+        
+        $this->book->InsertBatch($acceptBookings);
+    }
+    
+    private function removePending($accept)
+    {
+        $this->booking->where('bookingId', $accept)->delete();
+    }
+
 
     public function try()
     {
@@ -79,47 +111,8 @@ class Fullcalendar extends BaseController
         
     }
 
-
-
-    private function acceptBooking($acceptMe)
-    {
-
-        if (empty($acceptMe)) {
-            return redirect()->to('canlendar')->with('msg', 'No Data to Insert');
-        }
-    
-        $acceptBookings = [];
-
-
-        foreach($acceptMe as $a)
-        {
-            $acceptBookings[] = [
-            'usersignsId' => $a['usersignsId'],
-            'lastname' => $a['lastname'],
-            'firstname' => $a['firstname'],
-            'middlename' => $a['middlename'],
-            'contactnum' => $a['contactnum'],
-            'event' => $a['event'],
-            'prefferdate' => $a['prefferdate'],
-            'Time' => $a['Time'],
-            'equipment' => $a['equipment'],
-            'comments' => $a['comments'],
-            'status' => 'Accepted'
-            ];
-        }
-        
-        $this->book->InsertBatch($acceptBookings);
-    } 
-
-    private function removePending($accept)
-    {
-        $this->booking->where('bookingId', $accept)->delete();
-    }
-
     public function Decline()
     {
-
-       
         $decline  = $this->request->getVar('decline');
         if(empty($decline))
         {
@@ -167,10 +160,12 @@ class Fullcalendar extends BaseController
         
         $this->book->InsertBatch($declineBookings);
     }
+
     private function removedeclinePending($decline)
     {
         $this->booking->where('bookingId', $decline)->delete();
     } 
+
     public function Archive()
     {
         $contacts = $this->request->getVar('update');

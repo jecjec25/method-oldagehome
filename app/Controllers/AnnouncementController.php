@@ -220,7 +220,7 @@ class AnnouncementController extends BaseController
     public function savefeedbackannounce()
     {
         $data = [
-            'feedback' => $this->request->getVar('Feedback'),
+            'feedback' => $this->request->getVar('feedback'),
             'announceid' => $this->request->getVar('AnnounceID')
         ];
 

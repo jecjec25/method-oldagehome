@@ -70,6 +70,15 @@ class ViewController extends BaseController
         $data['events'] = $this->events->where('EventID', $id)->where('status', 'Published')->find();
         return view('admin/newsevent', $data);
     }
+
+    public function eventForUsers($id)
+    {
+        $data['news'] = $this->newsevents->where('id', $id)->where('status', 'Published')->find();
+        $data['events'] = $this->events->where('EventID', $id)->where('status', 'Published')->find();
+        return view('admin/eventslogin', $data);
+    
+    
+    }
     public function announcement()
     {
         $data['announce'] = $this->announce->where('Status', 'Published')->findAll();

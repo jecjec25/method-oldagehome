@@ -13,7 +13,7 @@ class MainModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [ 'lastname', 'firstname', 'middlename', 'nickname', 'DateBirth', 'sex', 'marital_stat', 'ContNum', 'ComAdd', 'ProfPic','EmergencyAdd','EmergencyContNum', 'RegDate', 'scstatus', 'adminId'];
+    protected $allowedFields    = [ 'lastname', 'firstname', 'middlename', 'nickname', 'DateBirth', 'gender', 'marital_stat', 'ContNum', 'ComAdd', 'ProfPic','EmergencyAdd','EmergencyContNum', 'RegDate', 'scstatus', 'adminId'];
 
     // Dates
     protected $useTimestamps = false;
@@ -38,4 +38,13 @@ class MainModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getGenderDistribution()
+    {
+        return $this->select('gender, COUNT(*) AS count')
+            ->groupBy('gender')
+            ->orderBy('gender')
+            ->findAll();
+    }
 }
+

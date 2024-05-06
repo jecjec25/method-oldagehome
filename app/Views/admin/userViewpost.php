@@ -230,7 +230,7 @@
                         </h3>
                             
 						<?=$mevents['Attachments'] ?><br>
-						<a href="<?= base_url('newsvents/' . $mevents['EventID'])?>">View Event</a>
+						<a href="<?= base_url('eventForUsers/' . $mevents['EventID'])?>">View Event</a>
                     </div>
                     <div style="clear: both;"></div>
                    

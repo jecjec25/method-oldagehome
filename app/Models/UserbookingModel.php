@@ -40,11 +40,34 @@ class UserbookingModel extends Model
     protected $afterDelete    = [];
 
 
+    public function getDisabledDates()
+    {
+        // Fetch disabled dates from the 'reservations' table
+        $query = $this->select('prefferdate')->distinct()->findAll();
+
+        // Extract the dates from the query result
+        $disabledDates = [];
+        foreach ($query as $row) {
+            $disabledDates[] = date('d-m-Y', strtotime($row['prefferdate']));
+        }
+
+        return $disabledDates;
+    }
+
+
     public function getBookingsByMonth()
     {
         return $this->select('YEAR(prefferdate) AS year, MONTH(prefferdate) AS month, COUNT(*) AS total_bookings')->where('status', 'Accepted')
             ->groupBy('YEAR(prefferdate), MONTH(prefferdate)')
             ->orderBy('year, month')
+            ->findAll();
+    }
+
+    public function getGenderDistribution()
+    {
+        return $this->select('gender, COUNT(*) AS count')
+            ->groupBy('gender')
+            ->orderBy('gender')
             ->findAll();
     }
 }

@@ -1,7 +1,6 @@
 <style>
-    .space
-    {
-        width: 116%;
+    .space {
+        width: 115%;
     }
 </style>
 
@@ -11,25 +10,26 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
-                        <div class="col-md-12 grid-margin stretch-card">
+                        <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-
                                     <canvas id="bookingsChart"></canvas>
                                 </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-                <div class="content-wrapper">
-                    <div class="row">
-                        <div class="col-md-12 grid-margin stretch-card">
+                        <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <canvas id="quantityChart"></canvas>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                <canvas id="genderChart" style="height:50px"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -37,13 +37,12 @@
         </div>
     </div>
     <script>
-        var ctx = document.getElementById('bookingsChart').getContext('2d');
         fetch('/bookings/by-month') // Make sure this URL points to your CI4 controller method
             .then(response => response.json())
             .then(data => {
                 var labels = data.map(item => `${new Date(item.year, item.month - 1).toLocaleString('default', { month: 'short' })} ${item.year}`);
                 var bookingCounts = data.map(item => parseInt(item.total_bookings));
-
+                const ctx = document.getElementById('bookingsChart').getContext('2d');
                 var bookingsChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
@@ -67,7 +66,6 @@
             })
             .catch(error => console.error('Error fetching data:', error));
     </script>
-
     <script>
         fetch('/products/quantities') // Make sure this is the correct API endpoint
             .then(response => response.json())
@@ -89,9 +87,21 @@
                                 'rgba(255, 206, 86, 0.2)',
                                 'rgba(75, 192, 192, 0.2)',
                                 'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
                                 'rgba(255, 159, 64, 0.2)'
                             ],
                             borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
                                 'rgba(255, 99, 132, 1)',
                                 'rgba(54, 162, 235, 1)',
                                 'rgba(255, 206, 86, 1)',
@@ -122,6 +132,44 @@
             })
             .catch(error => console.error('Error fetching data:', error));
     </script>
-</body>
+        <script>
+        var ctx = document.getElementById('genderChart').getContext('2d');
+        fetch('/gender/distribution') // Adjust this URL to point to the method you set up
+            .then(response => response.json())
+            .then(data => {
+                var labels = data.map(item => item.gender);
+                var counts = data.map(item => item.count);
 
-</html>
+                var genderChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Gender Distribution',
+                            data: counts,
+                           
+                            borderColor: [
+                               
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 99, 132, 0.6)',
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>

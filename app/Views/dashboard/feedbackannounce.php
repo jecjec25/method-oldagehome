@@ -58,7 +58,6 @@
                         <th>Content</th>
                         <th>Author</th>
                         <th>Feedback</th>
-                        
                       </tr>
                     </thead>
                     <tbody>

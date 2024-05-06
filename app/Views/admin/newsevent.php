@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News and Events</title>
     <style>
+        a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff; /* Button color */
+        color: #fff; /* Text color */
+        text-decoration: none;
+        border-radius: 5px;
+        border: 1px solid transparent; /* Remove border */
+        transition: background-color 0.3s;
+        }
+
+        a.button:hover {
+        background-color: #0056b3; /* Button color on hover */
+        }
+
         /* Basic styling for demonstration purposes */
         body {
             font-family: Arial, sans-serif;
@@ -71,13 +86,12 @@
                 <p><strong>Status:</strong> <?= $mevents['Status']; ?></p>
                 <p><strong>Attendees:</strong> <?= $mevents['Atendees']; ?></p>
                 <p><strong>Attachments:</strong> <?= $mevents['Attachments']; ?></p>
-                <p><strong>Feedback:</strong> <?= $mevents['Feedback']; ?></p>
                 <form action="<?= base_url('feedback')?>" method="post">
                 
                 <input type="hidden" name="usersignsId" value="<?= session()->get('id')?>">
                 <input type="hidden" name="eventid" value="<?= $mevents['EventID']?>">
-                <textarea name="Feedback" id="" cols="30" rows="10" placeholder="Feedback"></textarea>
-                <button type="submit">send</button>
+                <textarea disabled name="feedback" id="" cols="30" rows="10" placeholder="Please Login Before you write a Feedback"></textarea>
+                <a href="<?= base_url('usersignin')?>" class="button">Login</a>
                 </form>
                 <br>
                 <a href="/news" class="btn btn-secondary">Back</a>

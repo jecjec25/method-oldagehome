@@ -7,6 +7,7 @@ use App\Models\MainModel;
 use App\Models\ProductsModel;
 use App\Models\UserModel;
 use App\Controllers\ViewController;
+use CodeIgniter\RESTful\ResourceController;
 class NewController extends BaseController
 {
     private $main;
@@ -34,7 +35,7 @@ class NewController extends BaseController
             'middlename' => $this->request->getPost('middlename'),
             'nickname' => $this->request->getPost('nickname'),
             'DateBirth' => $this->request->getPost('DateBirth'),
-            'sex' => $this->request->getPost('sex'),
+            'gender' => $this->request->getPost('gender'),
             'marital_stat' => $this->request->getPost('marital_stat'),
             'ContNum' => $this->request->getPost('ContNum'),
             'ComAdd' => $this->request->getPost('ComAdd'),
@@ -125,7 +126,7 @@ class NewController extends BaseController
                 'middlename' => $this->request->getPost('middlename'),
                 'nickname' => $this->request->getPost('nickname'),
                 'DateBirth' => $this->request->getPost('DateBirth'),
-                'sex' => $this->request->getPost('sex'),
+                'gender' => $this->request->getPost('gender'),
                 'marital_stat' => $this->request->getPost('marital_stat'),
                 'ContNum' => $this->request->getPost('ContNum'),
                 'ComAdd' => $this->request->getPost('ComAdd'),
@@ -192,4 +193,6 @@ class NewController extends BaseController
         }
         return redirect()->to('/show');
     }
+
+    
 }

@@ -42,12 +42,21 @@ class ProductsController extends ResourceController
         $data['prod'] = $main->find($Id);
         return view('dashboard/editproduct', $data);
     }
-
     public function updateprod($Id)
     {
         $main = new ProductsModel();
-        $hello = $main->where('Id',$Id)->first();
-        $newQuantity = $hello['Quantity'] + $this->request->getVar('addQuantity');
+        $hello = $main->where('Id', $Id)->first();
+        
+        $newQuantity = $hello['Quantity'];
+    
+        if ($this->request->getVar('addQuantity')) {
+            $newQuantity += $this->request->getVar('addQuantity');
+        }
+    
+        if ($this->request->getVar('DeducQuantity')) {
+            $newQuantity -= $this->request->getVar('DeducQuantity');
+        }
+    
         $data = [
             'ProdName' => $this->request->getVar('ProdName'),
             'Quantity' => $newQuantity,
@@ -55,9 +64,11 @@ class ProductsController extends ResourceController
             'ProdDescription' => $this->request->getVar('ProdDescription'),
             'ProfPic' => $this->request->getVar('ProfPic'),
         ];
+    
         $main->update($Id, $data);
         return $this->response->redirect('/show');
     }
+    
 
     public function searchprod()
     {

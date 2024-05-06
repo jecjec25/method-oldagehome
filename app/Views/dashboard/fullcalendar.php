@@ -72,9 +72,8 @@
                       <td><?=$even['comments'] ?></td>
                       <td>
                           <div class="d-flex align-items-center">
-                            
+                            <form action="<?= base_url('fundamental/accept')?>" method="post">
                             <input type="hidden" name="accept" value="<?= $even['bookingId']?>">
-                              
                             <button type="sumbit" class="btn btn-success btn-sm btn-icon-text mr-3" onclick="return confirm('Are you sure you want to accept the event?')">Accept<i class="typcn typcn-tick btn-icon-append"></i></button>
                             </form>
                           <!-- Decline Button -->

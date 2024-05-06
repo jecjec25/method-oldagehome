@@ -116,7 +116,7 @@ $routes->get('/reportdetails', 'ViewController::viewreports');
 $routes->get('searchreps', 'Fullcalendar::searchRes');
 $routes->get('reports', 'Fullcalendar::try');
 
-$routes->get('userprofile', 'UsersigninController::userProfile', ['filter'  => 'userFilter']);
+$routes->get('userprofile', 'UsersigninController::userProfile');
 $routes->match(['get', 'post'], 'updateUserProfile/(:any)', 'UsersigninController::updateuserProfile/$1');
 $routes->get('userloguot', 'USersigninController::logout');
 
@@ -142,6 +142,7 @@ $routes->get('/newsarchive', 'NewsController::newsarchived');
 $routes->get('/newspublished', 'NewsController::published');
 $routes->post('/PubArchive', 'NewsController::PubArchive');
 $routes->get('newsvents/(:any)', 'ViewController::eventnews/$1');
+$routes->get('eventForUsers/(:any)', 'ViewController::eventForUsers/$1');
 $routes->get('viewAnnounce/(:any)', 'AnnouncementController::viewAnnouncement/$1');
 
 $routes->get('/adevents', 'EventsController::adminevents');
@@ -213,3 +214,5 @@ $routes->post('updateElneed/(:any)', 'ElderneedController::editelderneed/$1');
 $routes->get('deleteneed/(:any)', 'ElderneedController::deleteneed/$1');
 
 $routes->get('reportElder/(:any)', 'ReportController::eldersreps/$1');
+//piechart
+$routes->get('/gender/distribution', 'UserbookingController::index2');

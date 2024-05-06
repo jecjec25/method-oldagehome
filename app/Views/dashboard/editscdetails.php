@@ -68,12 +68,22 @@
               <input id="DateBirth" name="DateBirth" type="date" class="form-control" required="true" value="<?= $d['DateBirth'] ?>" max="1970-01-01">
               </div>
               <div class="form-group">
-                 <label for="exampleInputUsername1">Sex</label>
-                <input id="sex" name="sex" type="text" class="form-control" required="true" value="<?= $d['sex'] ?>" />
-              </div>
+                <label for="exampleInputGender">Gender</label>
+                <select id="gender" name="gender" class="form-control" required="true">
+                    <option value="" selected Disabled>Select Gender</option>
+                    <option value="Male" <?= isset($d['gender']) && $d['gender'] === 'Male' ? 'selected' : '' ?>>Male</option>
+                    <option value="Female" <?= isset($d['gender']) && $d['gender'] === 'Female' ? 'selected' : '' ?>>Female</option>
+                </select>
+            </div>
               <div class="form-group">
-                 <label for="exampleInputUsername1">Marital Status</label>
-                <input id="marital_stat" name="marital_stat" type="text" class="form-control" required="true" value="<?= $d['marital_stat'] ?>" />
+                  <label for="exampleInputMaritalStatus">Marital Status</label>
+                  <select id="marital_stat" name="marital_stat" class="form-control" required="true">
+                      <option value="" selected Disabled>Select Marital Status</option>
+                      <option value="Single" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'Single' ? 'selected' : '' ?>>Single</option>
+                      <option value="Married" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'Married' ? 'selected' : '' ?>>Married</option>
+                      <option value="Divorced" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'Divorced' ? 'selected' : '' ?>>Divorced</option>
+                      <option value="Widowed" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'Widowed' ? 'selected' : '' ?>>Widowed</option>
+                  </select>
               </div>
               <div class="form-group">
               <label for="ContNum">Contact Numbers</label>

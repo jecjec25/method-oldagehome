@@ -140,7 +140,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#donation" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-film menu-icon"></i>
+              <i class="typcn typcn-gift menu-icon"></i>
               <span class="menu-title">Donation</span>
               <i class="menu-arrow"></i>
             </a>
@@ -152,7 +152,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#Feedback" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-film menu-icon"></i>
+              <i class="typcn typcn-messages menu-icon"></i>
               <span class="menu-title">Feedback</span>
               <i class="menu-arrow"></i>
             </a>
@@ -165,7 +165,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#elderneed" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-film menu-icon"></i>
+              <i class="typcn typcn-pin menu-icon"></i>
               <span class="menu-title">Elder Needs</span>
               <i class="menu-arrow"></i>
             </a>
@@ -173,6 +173,9 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="viewelderneed">Elder Need</a></li>
                 <li class="nav-item"><a class="nav-link" href="manageneed ">Update Elder Need</a></li>
+                </ul>
+            </div>
+          </li>
       </nav>
 
 

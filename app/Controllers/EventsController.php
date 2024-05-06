@@ -200,7 +200,7 @@ class EventsController extends BaseController
     public function savefeedbackevent()
     {
         $data = [
-            'feedback' => $this->request->getVar('Feedback'),
+            'feedback' => $this->request->getVar('feedback'),
             'usersignsId' => $this->request->getVar('usersignsId'),
             'eventid' => $this->request->getVar('eventid')
         ];

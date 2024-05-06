@@ -59,7 +59,11 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Add Stock</label>
-                     <input id="Quantity" name="addQuantity" type="text" class="form-control" required="true" >
+                     <input id="Quantity" name="addQuantity" type="text" class="form-control"  >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Deduct Stock</label>
+                     <input id="Quantity" name="DeducQuantity" type="text" class="form-control"  >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Product's Price</label>

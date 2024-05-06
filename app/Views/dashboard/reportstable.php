@@ -110,7 +110,7 @@
                                         <th>Middle Name</th>
                                         <th>Nickname</th>
                                         <th>Date of Birth</th>
-                                        <th>Sex</th>
+                                        <th>Gender</th>
                                         <th>Marital Status</th>
                                         <th>Contact Number</th>
                                         <th>Profile Picture</th>
@@ -129,7 +129,7 @@
                                             <td><?=$reg['middlename'] ?></td>
                                             <td><?=$reg['nickname'] ?></td>
                                             <td><?=$reg['DateBirth'] ?></td>
-                                            <td><?=$reg['sex'] ?></td>
+                                            <td><?=$reg['gender'] ?></td>
                                             <td><?=$reg['marital_stat'] ?></td>
                                             <td><?=$reg['ContNum'] ?></td>
                                             <td><img src="<?php base_url();?>/eldersimage/<?=$reg['ProfPic'] ?>" alt="" style="width: 50px; height: 50px; border:box;"></td>
