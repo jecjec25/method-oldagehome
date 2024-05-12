@@ -27,14 +27,29 @@ class UserController extends BaseController
         $user = new UsersModel();
         $data = [
             'LastName'     => $this->request->getVar('LastName'),
+            'FirstName'    => $this->request->getVar('FirstName'),
+            'Username'     => $this->request->getVar('Username'),
+            'Email'        => $this->request->getVar('Email'),
+            'ContactNo'    => $this->request->getVar('ContactNo'),
+            'birthday'     => $this->request->getVar('birthday'),
+         ];
+         $user->update($id, $data);
+        return redirect()->to('dashboard')->with('msg', 'Profile has been Successfully Update');
+        
+    }
+    public function updateuserProfile($id)
+    {
+        
+        $data = [
+            'LastName'     => $this->request->getVar('LastName'),
             'FirstName'     => $this->request->getVar('FirstName'),
             'Username'     => $this->request->getVar('Username'),
             'Email'    => $this->request->getVar('Email'),
             'ContactNo'    => $this->request->getVar('ContactNo'),
             'birthday'    => $this->request->getVar('birthday'),
          ];
-         $user->update($id, $data);
-        return redirect()->to('profile');
+         $this->user->update($id, $data);
+        return redirect()->to('/userViewpost');
         
     }
     public function loginAuth()
@@ -55,18 +70,31 @@ class UserController extends BaseController
         if($authenticatePassword)
         {
             $ses_data = [
-                'userID' => $user['userID'],
-                'LastName' => $user['LastName'],
-                'FirstName' => $user['FirstName'],
-                'Username' => $user['Username'],
-                'Email' => $user['Email'],
-                'ContactNo' => $user['ContactNo'],
-                'birthday' => $user['birthday'],
+                'userID'     => $user['userID'],
+                'LastName'   => $user['LastName'],
+                'FirstName'  => $user['FirstName'],
+                'Username'   => $user['Username'],
+                'Email'      => $user['Email'],
+                'ContactNo'  => $user['ContactNo'],
+                'birthday'   => $user['birthday'],
+                'role'       => $user['role'],
                 'isLoggedIn' => TRUE,
             ];
             $session->set($ses_data);
 
-            return redirect()->to('/dashboard');
+            if($user['role'] === 'Admin' )
+            {
+                return redirect()->to('dashboard');
+            }
+            
+            elseif($user['role'] === 'MainAdmin' )
+            {
+                return redirect()->to('dashboard');
+            }
+            elseif($user['role'] === 'Booker')
+            {
+                return redirect()->to('userViewpost');
+            }
         }
 
         else

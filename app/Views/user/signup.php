@@ -31,7 +31,7 @@
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <h3 style="color:seagreen;">Senior Care</h3>
               <h4>Hello! Let's get started</h4>
-              <h6 class="font-weight-light">Register Admin</h6>
+              <h6 class="font-weight-light">Register Here!</h6>
               <form class="pt-3" action="<?= base_url('store'); ?>" method="post" id="tbladmin" >
                 <div class="form-group">
                 <label for="Lastname">Lastname</label>

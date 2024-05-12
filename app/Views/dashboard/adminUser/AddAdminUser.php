@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>User Register</title>
+  <title>Admin Register</title>
 
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
@@ -31,8 +31,10 @@
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <h3 style="color:seagreen;">Senior Care</h3>
               <h4>Hello! Let's get started</h4>
-              <h6 class="font-weight-light">Register User</h6>
-              <form class="pt-3" action="<?= base_url('usersignup'); ?>" method="post" id="tbladmin" >
+              <h6 class="font-weight-light">Register Admin</h6>
+
+              <?= session()->get('msg');?>
+              <form class="pt-3" action="<?= base_url('adminRegister'); ?>" method="post" id="tbladmin" >
                 <div class="form-group">
                 <label for="Lastname">Lastname</label>
                 <?php if(isset($validation)):?>
@@ -64,9 +66,13 @@
                 <div class="form-group">
                 <label for="ContactNo">Contact Number</label>
                 <?php if(isset($validation)):?>
-                <small class="text-danger"><?= $validation->getError('ContactNumber') ?></small>
+                <small class="text-danger"><?= $validation->getError('ContactNo') ?></small>
                 <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-2" maxlength="11"  id="ContactNo" placeholder="Contact Number" name="ContactNumber" >
+                  <input type="text" class="form-control form-control-lg border-left-2" id="ContactNo" placeholder="Contact Number" name="ContactNumber" >
+                </div>
+                <div class="form-group">
+                <label for="birthday">Birthday</label>
+                  <input type="date" class="form-control form-control-lg border-left-2"  placeholder="Birth Day" name="birthday" >
                 </div>
                 <div class="form-group">
                 <label for="Password">Password</label>
@@ -81,12 +87,9 @@
               </div>
                 </div>
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" onclick="return confirm('Are you sure you want to submit this form?')">REGISTER</button>
+                  <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">REGISTER</button>
                 </div>
               </form>
-              <div class="mt-3">
-                <p>Already have an account? <a href="/usersignin">Login here</a>.</p>
-              </div>
               <div class="mt-3">
                <a href="../index.php" class="auth-link text-black">Home Page!!!</a>
               </div>
@@ -104,8 +107,7 @@
             this.value = this.value.replace(/[^0-9]/g, '');
         });
     </script>
-
-<script>
+  <script>
     const togglePassword = document.getElementById('togglePassword');
     const password = document.getElementById('password');
 
@@ -115,9 +117,7 @@
         this.innerHTML = type === 'password' ? '<i class="typcn typcn-eye"></i>' : '<i class="typcn typcn-eye-outline"></i>';
     });
 </script>
-
   <script src="login/vendors/js/vendor.bundle.base.js"></script>
-
   <script src="login/js/off-canvas.js"></script>
   <script src="login/js/hoverable-collapse.js"></script>
   <script src="login/js/template.js"></script>

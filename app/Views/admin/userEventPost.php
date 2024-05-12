@@ -26,7 +26,7 @@
                 <?php endif; ?>
                 <form action="<?= base_url("usersavepost") ?>" method="post" class="left_form booking-form">
                     <div>
-                        <input type="hidden" name="usersignsId" value="<?= session()->get('id') ?>">
+                        <input type="hidden" name="usersignsId" value="<?= session()->get('userID') ?>">
                         <span><label>Title<span class="required"></span></label></span>
                         <span><input required="true" name="Title" type="text" placeholder="Title" class="textbox"></span>
                     </div>

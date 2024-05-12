@@ -32,14 +32,17 @@
     <div class="container-fluid page-body-wrapper">
   
      <?php include_once('includes/sidebar.php');?>
+    
       <div class="main-panel">
+    <br>  <?= session()->get('msg');?>
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                    <div>
+                 
+                  <div>
                       
                       <h5 class="mb-0" style="color: blue;">Elders of Aruga Kapatid</h5>
                       <h1 class="mb-0"></h1>

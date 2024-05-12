@@ -1,4 +1,11 @@
+<style>
+  .top-nav ul li a:hover,
+.top-nav ul li.active a {
+    color: orange; /* Change to desired highlight color */
+    /* Add any other styles you want for hover and active states */
+}
 
+</style>
   <div class="strip"> </div>
   <div class="header-top" id="home">
     <div class="container">
@@ -14,7 +21,7 @@
                   <br>
                   <br>
                 <ul>
-                <li><a href="/usersignin">Login Here</a></li>
+                <li><a href="/signin">Login Here</a></li>
                 
                  <li><a href="/contact">Contact</a></li>
                  <li><a href="/menu">Menu</a></li>
@@ -41,6 +48,7 @@
           </div>
             <div class="clearfix"></div>
       </div>
+      
         <div class="clearfix"></div>
     <div class="sub-header">
 
@@ -61,6 +69,29 @@
               <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
 
             </nav>
+
+            <script>
+                  $(document).ready(function() {
+                // Get the current URL
+                var currentUrl = window.location.href;
+
+                // Loop through each navigation link
+                $('.top-nav ul li a').each(function() {
+                    var linkUrl = $(this).attr('href');
+
+                    // Check if the link URL matches the current URL
+                    if (currentUrl.indexOf(linkUrl) !== -1) {
+                        $(this).parent().addClass('active'); // Add the 'active' class to the parent li
+                    }
+                });
+
+                // Remove the 'active' class from the 'Home' button when another button is clicked
+                $('.top-nav ul li a').click(function() {
+                    $('.top-nav ul li').removeClass('active');
+                    $(this).parent().addClass('active');
+                });
+                });
+            </script>
          
           <script>
             $(function() {

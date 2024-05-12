@@ -1,15 +1,21 @@
+  
   <style>
     .profile{
       margin-right:2000px;
     }
     .nav-list {
-    
 }
 
 .nav-list li {
     display: inline; /* Display list items inline */
     margin-right: 10px; /* Add some spacing between list items */
       }
+
+  .top-nav ul li a:hover,
+  .top-nav ul li.active a {
+    color: orange; /* Change to desired highlight color */
+    /* Add any other styles you want for hover and active states */
+}
   </style>
   <div class="strip"> </div>
     <div class="header-top" id="home">
@@ -33,7 +39,7 @@
                   <li>     <a class="dropdown-item" href="/userprofile">
                       <h4>Profile</h4>
                   </a></li>
-                  <li>  <a class="dropdown-item" href="/usersignin"></li>
+                  <li>  <a class="dropdown-item" href="/logout"></li>
                   <h4>Logout</h4>
                   </a>
             
@@ -52,7 +58,6 @@
                     <br>
                     
                     <ul>
-                  
                     <li><a class="fb" href="#"><span> </span></a></li>
                     <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
                     <li><a class="tw" href="#"><span> </span></a></li>
@@ -70,16 +75,41 @@
 
               <nav class="top-nav">
                 <ul class="top-nav">
-                  <li class="active"><a href="booking">Event Reservation</a></li>
+                  <li class="active"><a href="userViewpost">View Events</a></li>
+                  <li><a href="/booking">Event Reservation</a></li>
                   <li><a href="/userIdonate">Donate to our Elders</a></li>
                   <li><a href="/userdonation">Donation</a></li>
                   <li><a href="/userproduct">Products</a></li>
                   <li><a href="/usereventpost">Post an Event</a></li>
-                  <li><a href="/userViewpost">View Events</a></li>
                   <div class="clearfix"> </div>
                 </ul>
                 <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
+
               </nav>
+              <script>
+                  $(document).ready(function() {
+    // Get the current URL
+    var currentUrl = window.location.href;
+
+    // Loop through each navigation link
+    $('.top-nav ul li a').each(function() {
+        var linkUrl = $(this).attr('href');
+
+        // Check if the link URL matches the current URL
+        if (currentUrl.indexOf(linkUrl) !== -1) {
+            $(this).parent().addClass('active'); // Add the 'active' class to the parent li
+        }
+    });
+
+    // Add 'active' class to the clicked button and remove it from others
+    $('.top-nav ul li a').click(function() {
+        $('.top-nav ul li').removeClass('active');
+        $(this).parent().addClass('active');
+    });
+});
+
+            </script>
+
             <script>
               $(function() {
                 var pull    = $('#pull');

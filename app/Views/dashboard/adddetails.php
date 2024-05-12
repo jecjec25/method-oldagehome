@@ -81,10 +81,10 @@
                         <label for="exampleInputMaritalStatus">Marital Status</label>
                         <select id="marital_stat" name="marital_stat" class="form-control" required="true">
                             <option value="">Select Marital Status</option>
-                            <option value="single" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'single' ? 'selected' : '' ?>>Single</option>
-                            <option value="married" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'married' ? 'selected' : '' ?>>Married</option>
-                            <option value="divorced" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'divorced' ? 'selected' : '' ?>>Divorced</option>
-                            <option value="widowed" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'widowed' ? 'selected' : '' ?>>Widowed</option>
+                            <option value="Single" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'Single' ? 'selected' : '' ?>>Single</option>
+                            <option value="Married" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'Married' ? 'selected' : '' ?>>Married</option>
+                            <option value="Divorced" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'Divorced' ? 'selected' : '' ?>>Divorced</option>
+                            <option value="Widowed" <?= isset($d['marital_stat']) && $d['marital_stat'] === 'Widowed' ? 'selected' : '' ?>>Widowed</option>
                         </select>
                     </div>
                     <div class="form-group">

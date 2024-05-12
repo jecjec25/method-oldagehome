@@ -44,7 +44,7 @@
                 var bookingCounts = data.map(item => parseInt(item.total_bookings));
                 const ctx = document.getElementById('bookingsChart').getContext('2d');
                 var bookingsChart = new Chart(ctx, {
-                    type: 'bar',
+                    type: 'bar',    
                     data: {
                         labels: labels,
                         datasets: [{
@@ -150,12 +150,12 @@
                            
                             borderColor: [
                                
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 99, 132, 1)'
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)'
                             ],
                             backgroundColor: [
-                                'rgba(54, 162, 235, 0.6)',
                                 'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
                             ],
                             borderWidth: 1
                         }]

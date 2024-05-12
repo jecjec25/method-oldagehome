@@ -7,6 +7,12 @@ use App\Models\UsersModel;
 
 class SignupController extends BaseController
 {
+    private $user;
+
+    public function __construct()
+    {
+        $this->user = new UsersModel();
+    }
     public function index()
     {
         helper(['form']);
@@ -34,6 +40,7 @@ class SignupController extends BaseController
                 'Username'     => $this->request->getVar('Username'),
                 'Email'    => $this->request->getVar('Email'),
                 'ContactNo'    => $this->request->getVar('ContactNumber'),
+                'role'         => 'Booker',
                 'birthday'    => $this->request->getVar('birthday'),
                 'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
             ];
@@ -44,6 +51,50 @@ class SignupController extends BaseController
             $data['validation'] = $this->validator;
             return view('user/signup', $data);
         }
+    }
+
+    public function Register()
+    {
+        return view('dashboard/adminUser/AddAdminUser');
+    }
+    public function AdminRegister()
+    {
+        helper(['form']);
+        $rules = [
+            'LastName'   => 'required|max_length[30]',
+            'FirstName'  => 'required|max_length[30]',
+            'Username'   => 'required|max_length[30]',
+            'Email'      => 'required|max_length[254]|valid_email',
+            'ContactNumber' => 'required|max_length[13]|min_length[10]',
+            'Password'   => 'required|max_length[255]|min_length[10]',
+        ];
+          
+        if($this->validate($rules)){
+            $userModel = new UsersModel();
+            $data = [
+                'LastName'     => $this->request->getVar('LastName'),
+                'FirstName'     => $this->request->getVar('FirstName'),
+                'Username'     => $this->request->getVar('Username'),
+                'Email'    => $this->request->getVar('Email'),
+                'ContactNo'    => $this->request->getVar('ContactNumber'),
+                'role'         => 'Admin',
+                'birthday'    => $this->request->getVar('birthday'),
+                'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
+            ];
+            $userModel->save($data);
+            session()->setFlashdata('success', 'Saved successfully. You can now signin');
+            return redirect()->to('viewAdminRegister')->with('msg', 'You have Successfully Registered A new account');
+        }else{
+            $data['validation'] = $this->validator;
+            return view('dashboard/adminUser/AddAdminUser', $data);
+        }
+    }
+
+    public function viewUsers()
+    {
+       $data = [ 'user' => $this->user->findAll()];
+
+       return view('dashboard/adminUser/viewAdminUsers', $data);
     }
 }
 

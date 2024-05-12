@@ -47,7 +47,7 @@
 
 <div class="container">
     <ul>
-s        <?php foreach ($events as $mevents): ?>
+        <?php foreach ($events as $mevents): ?>
             <li>
                 <h2>Events</h2>
                 <h3><?= $mevents['Title']; ?></h3>
@@ -61,7 +61,7 @@ s        <?php foreach ($events as $mevents): ?>
                 <p><strong>Attachments:</strong> <?= $mevents['Attachments']; ?></p>
                 <form action="<?= base_url('feedback')?>" method="post">
                 
-                <input type="hidden" name="usersignsId" value="<?= session()->get('id')?>">
+                <input type="hidden" name="usersignsId" value="<?= session()->get('userID')?>">
                 <input type="hidden" name="eventid" value="<?= $mevents['EventID']?>">
                 <textarea name="feedback" id="" cols="30" rows="10" placeholder="Feedback"></textarea>
                 <button type="submit">send</button>

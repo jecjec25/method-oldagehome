@@ -68,12 +68,15 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="typcn typcn-th-small-outline menu-icon"></i>
-              <span class="menu-title">Elder Report</span>
+              <span class="menu-title">Report</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/reports">B/W dates Report</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/reports">B/W dates Report Elders</a></li>
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/reportevent">B/W dates Report Events</a></li>
               </ul>
             </div>
           </li>
@@ -176,6 +179,21 @@
                 </ul>
             </div>
           </li>
+          <?php if(session()->get('role') === 'MainAdmin'):?>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#user" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-pin menu-icon"></i>
+              <span class="menu-title">Users</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="user">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="viewAdminRegister">Add Admin Users</a></li>
+                <li class="nav-item"><a class="nav-link" href="viewUsers">View Admin User</a></li>
+                </ul>
+            </div>
+          </li>
+          <?php endif;?>
       </nav>
 
 

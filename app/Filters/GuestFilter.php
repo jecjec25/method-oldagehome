@@ -27,8 +27,21 @@ class GuestFilter implements FilterInterface
     {
         if (session()->get('isLoggedIn'))
         {
-            return redirect()
-                ->to('/dashboard');
+            if(session()->get('role') === 'Admin')
+            {
+            return redirect()->to('/dashboard');
+            
+            }
+            
+            elseif(session()->get('role') === 'MainAdmin')
+            {
+            return redirect()->to('/dashboard');
+            
+            }
+            elseif(session()->get('role') === 'Booker')
+            {
+                return redirect()->to('booking');
+            }
         }
     }
 

@@ -56,11 +56,11 @@ class UserIdonateController extends BaseController
     //for admin
     public function admdonatedtable()
     {
-        $data['donate'] = $this->uidm->select('usersigns.id, usersigns.Email, 
+        $data['donate'] = $this->uidm->select('user.userID, user.Email, 
         userdonation.id, userdonation.usersignsId, userdonation.lastname, userdonation.firstname, 
         userdonation.middlename, userdonation.contactnum, userdonation.donationdate, userdonation.nameofdonation, 
         userdonation.picture, userdonation.referencenum, userdonation.message')
-        ->join('usersigns', 'usersigns.id = userdonation.usersignsId')
+        ->join('user', 'user.userID = userdonation.usersignsId')
         ->findAll();
         // $data['donate'] = $this->uidm->findAll();
 

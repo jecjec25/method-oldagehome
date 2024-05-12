@@ -84,7 +84,7 @@ class UsersigninController extends BaseController
             'birthday'    => $this->request->getVar('birthday'),
          ];
          $user->update($id, $data);
-        return redirect()->to('booking');
+        return redirect()->to('/userViewpost');
         
     }
     public function usersignup()

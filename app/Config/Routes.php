@@ -13,25 +13,28 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/signup', 'SignupController::index', ['filter'  => 'guestFilter']);
  $routes->match(['get', 'post'], 'store', 'SignupController::store');
  $routes->match(['get', 'post'], 'UserController/loginAuth', 'UserController::loginAuth');
- $routes->get('/signin', 'UserController::index', ['filter' => 'userGuard']);
+ $routes->get('/signin', 'UserController::index', ['filter' => 'guestFilter']);
  $routes->get('/contact', 'ViewController::contact');
  $routes->get('/eligibility', 'ViewController::eligability');
  $routes->get('/about', 'ViewController::about');
  $routes->get('/rules', 'ViewController::rules');
  $routes->get('/services', 'ViewController::service');
+ $routes->match(['get', 'post'], 'viewAdminRegister', 'SignupController::Register');
+ $routes->match(['get', 'post'], 'adminRegister', 'SignupController::AdminRegister');
+ $routes->match(['get', 'post'], 'viewUsers', 'SignupController::viewUsers');
 
  $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
  $routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
 
 
-$routes->get('/signin', 'Home::try');
-$routes->get('/', 'ViewController::home', ['filter' => 'userGuard']);
-$routes->get('/contact', 'ViewController::contact');
+// $routes->get('/signin', 'Home::try');
+$routes->get('/', 'ViewController::home', ['filter' => 'guestFilter']);
+$routes->get('/contact', 'ViewController::contact', ['filter' => 'guestFilter']);
 $routes->get('/userbooking', 'ViewController::userbooking');
 $routes->match(['GET', 'POST'],'ContactController/contact', 'ContactController::submit');
 $routes->get('/donation', 'ViewController::donation');
-$routes->get('/about', 'ViewController::about', ['filter'  => 'authGuard']);
-$routes->get('/rules', 'ViewController::rules', ['filter'  => 'authGuard']);
+$routes->get('/about', 'ViewController::about', ['filter'  => 'guestFilter']);
+$routes->get('/rules', 'ViewController::rules', ['filter'  => 'guestFilter']);
 $routes->get('/services', 'ViewController::service', ['filter'  => 'authGuard']);
 $routes->get('/products', 'ViewController::products', ['filter'  => 'guestFilter']);
 $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
@@ -67,8 +70,8 @@ $routes->get('/addproduct', 'ViewController::addproduct');
 $routes->get('/mysearchproducts', 'ProductsController::searchproduct');
 $routes->get('/editscdetails', 'ViewController::editscdetails');
 $routes->get('/editproduct', 'ViewController::editproduct');
-$routes->get('/usersignin', 'ViewController::usersignin');
-$routes->get('/usersignup', 'ViewController::usersignup');
+// $routes->get('/usersignin', 'ViewController::usersignin');
+// $routes->get('/usersignup', 'ViewController::usersignup');
 $routes->post('/save', 'NewController::save');
 $routes->get('/test', 'NewController::test');
 $routes->get('searchdets', 'NewController::searchsc');
@@ -101,10 +104,10 @@ $routes->post('/checkbooks', 'UserbookingController::checkbook');
 $routes->post('/bookcheck', 'UserbookingController::bookcheck');
 // $routes->post('reservationeventdate', 'UserbookingController::reserveEventDate');
 
-$routes->get('usersignin','UsersigninController::usersignin');
+// $routes->get('usersignin','UsersigninController::usersignin');
 $routes->get('/usersign', 'UsersigninController::indexes');
 $routes->post('/UsersigninController/Auth', 'UsersigninController::UserLogin');
-$routes->post('usersignup', 'UsersigninController::usersignup');
+// $routes->post('usersignup', 'UsersigninController::usersignup');
 
 $routes->match(['post', 'get'], 'fundamental/accept', 'Fullcalendar::Accept');
 $routes->match(['post', 'get'], 'fullcalendar/decline', 'Fullcalendar::Decline');
@@ -117,7 +120,7 @@ $routes->get('searchreps', 'Fullcalendar::searchRes');
 $routes->get('reports', 'Fullcalendar::try');
 
 $routes->get('userprofile', 'UsersigninController::userProfile');
-$routes->match(['get', 'post'], 'updateUserProfile/(:any)', 'UsersigninController::updateuserProfile/$1');
+$routes->match(['get', 'post'], 'updateUserProfile/(:any)', 'UserController::updateuserProfile/$1');
 $routes->get('userloguot', 'USersigninController::logout');
 
 $routes->match(['post', 'get'], 'updateRecords/(:any)', 'ReportController::eventupdate/$1');
@@ -216,3 +219,7 @@ $routes->get('deleteneed/(:any)', 'ElderneedController::deleteneed/$1');
 $routes->get('reportElder/(:any)', 'ReportController::eldersreps/$1');
 //piechart
 $routes->get('/gender/distribution', 'UserbookingController::index2');
+
+//report generation of event
+$routes->get('reportevent', 'Fullcalendar::viewrepEvent');
+$routes->get('eventpermonth', 'Fullcalendar::searchRevent');

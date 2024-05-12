@@ -22,8 +22,8 @@ class FeedbackController extends BaseController
     public function viewfeedbackevent()
     {
         $data['feedevents'] = $this->feedback->select('feedbacktbl.id, feedbacktbl.usersignsId, feedbacktbl.eventid,
-        feedbacktbl.announceid, feedbacktbl.feedback, usersigns.id, usersigns.LastName, usersigns.FirstName, events.EventID, events.Title')
-        ->join('usersigns', 'usersigns.id = feedbacktbl.usersignsId')
+        feedbacktbl.announceid, feedbacktbl.feedback, user.userID, user.LastName, user.FirstName, events.EventID, events.Title')
+        ->join('user', 'user.userID = feedbacktbl.usersignsId')
         ->join('events', 'events.EventID = feedbacktbl.eventid')
         ->findAll();
 

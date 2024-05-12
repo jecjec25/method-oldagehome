@@ -6,17 +6,20 @@ use App\Controllers\BaseController;
 use App\Models\UserbookingModel;
 use App\Models\BookingModel;
 use App\Models\MainModel;
+use App\Models\AcceptbookingModel;
 class Fullcalendar extends BaseController
 {
 
     private $booking;
     private $book;
     private $main;
+    private $acceptev;
     public function __construct()
     {
         $this->booking = new UserbookingModel();
         $this->book = new BookingModel();
         $this->main = new MainModel();
+        $this->acceptev = new AcceptbookingModel();
         helper(['form']); 
     }
 
@@ -194,4 +197,35 @@ class Fullcalendar extends BaseController
         
     }
 
+    public function viewrepEvent()
+{
+    $data = [
+        'prefdate' => $this->acceptev->findAll(),
+    ];
+    return view('dashboard/reportevent', $data);
+}
+
+public function searchRevent()
+{
+    $searchRevent = $this->request->getVar('fromdate');
+    $searchR = $this->request->getVar('todate');
+    
+    // Fetching data where prefferdate falls between $searchRevent and $searchR and status is 'Accepted'
+    $data = [
+        'acceptev' => $this->acceptev->where('prefferdate >=', $searchRevent)
+                                     ->where('prefferdate <=', $searchR)
+                                     ->where('status', 'Accepted')
+                                     ->findAll(),
+    ];
+    
+    // Check if data is found
+    if (!empty($data['acceptev'])) {
+      
+    } else {
+        // No data found, handle this situation here
+        // For example, you can set a message to display in the view
+        $data['no_data_message'] = 'No data found.';
+    }
+    return view('dashboard/reportTableEvents', $data);
+}
 }

@@ -49,7 +49,7 @@
                     <input type="hidden" name="bookingId" value="<?= $book['bookingId'] ?>">
                     <?php endif; ?>
                     <div>
-                        <input type="hidden" name="usersignsId" value="<?= session()->get('id') ?>">
+                        <input type="hidden" name="usersignsId" value="<?= session()->get('userID') ?>">
                         <span><label>Last Name<span class="required"></span></label></span>
                         <span><input required="true" name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
                     </div>
@@ -112,6 +112,12 @@
             return [array.indexOf(string) == -1]
         }
     });
-</script>
+</script>x
+<script>
+			var inputs = document.getElementById("contactnum");
+        inputs.addEventListener("input", function(event) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
 
 </html>

@@ -15,7 +15,6 @@
 
 <body>
     <div class="container-fluid page-body-wrapper">     
-    <?php include('header.php')?>
 
 
     <!-- partial -->
@@ -29,9 +28,9 @@
                   <p class="card-description">
                     Update user profile.
                   </p>
-                  <form action="<?= base_url('updateUserProfile/') . session()->get('id')?>" class="forms-sample" method="post">
+                  <form action="<?= base_url('updateUserProfile/') . session()->get('userID')?>" class="forms-sample" method="post">
                     <div class="form-group">
-                      <p><?= session()->get('userID')?></p>
+                      <input type="hidden" value="<?= session()->get('userID')?>">
                        <label for="exampleInputUsername1">Last Name</label>
                       <input type="text" class="form-control" name="LastName" id="adminname" value="<?= session()->get('LastName')?>" required='true' />
                     </div>
