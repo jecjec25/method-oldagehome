@@ -4,8 +4,8 @@
     color: orange; /* Change to desired highlight color */
     /* Add any other styles you want for hover and active states */
 }
-
 </style>
+
   <div class="strip"> </div>
   <div class="header-top" id="home">
     <div class="container">

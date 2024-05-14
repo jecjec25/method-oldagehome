@@ -85,6 +85,16 @@ $routes->post('/saved', 'NewController::saved');
 $routes->get('searchproduct', 'ProductsController::searchproduct');
 $routes->get('/searchpdets', 'ProductsController::searchprod');
 
+$routes->group('Main', ['filter'=>'authGuard'], static function($routes){
+    $routes->get('', 'Main::index');
+    $routes->get('(:segment)', 'Main::$1');
+    $routes->get('(:segment)/(:any)', 'Main::$1/$2');
+    $routes->match(['post'], 'user_add', 'Main::user_add');
+    $routes->match(['post'], 'user_edit/(:num)', 'Main::user_edit/$1');
+    $routes->match(['post'], 'product_edit/(:num)', 'Main::product_edit/$1');
+    $routes->match(['post'], 'product_add', 'Main::product_add/$1');
+    $routes->match(['post'], 'save_transaction', 'Main::save_transaction');
+});
 
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
 $routes->get('/editproduct/(:num)', 'ProductsController::editprod/$1');
