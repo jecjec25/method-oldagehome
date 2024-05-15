@@ -4,16 +4,33 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ContactModel;
+use App\Models\UserbookingModel;
 class ContactController extends BaseController
 {
     private $contact;
+    private $userbooking;
     public function __construct()
     {
+        $this->userbooking = new UserbookingModel();
         $this->contact = new ContactModel();
         helper(['form']);
     }
     public function contactu()
     {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
         $data['cont'] = $this->contact->where('contact_status', 'Unread')->findAll();
         return view('dashboard/unreadq', $data);
     }

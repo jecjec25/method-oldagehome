@@ -4,18 +4,48 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UserIdonateModel;
+use App\Models\AcceptbookingModel;
+use App\Models\UserbookingModel;
+
 class UserIdonateController extends BaseController
 {
     private $uidm;
+    private $acceptbooking;
+    private $userbooking;
 
     public function __construct()
     {
+        $this->acceptbooking = new AcceptbookingModel();
         $this->uidm = new userIdonateModel();
+        $this->userbooking = new UserbookingModel();
     }
     //for user
     public function userIdonate()
     {
-        return view('admin/userIdonate');
+        $user = session()->get('userID');
+        $data = [
+            'notif' => $this->acceptbooking
+                ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+                acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+                acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+                acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+                user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = acceptbooking.usersignsId')
+                ->where('acceptbooking.status', 'Accepted')->orwhere('acceptbooking.status', 'Declined')->where('acceptbooking.usersignsId', $user )
+                ->findAll(),
+                
+        'notifs' => $this->acceptbooking
+            ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+            acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+            acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+            acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+            user.userID, user.LastName, user.FirstName')
+            ->join('user', 'user.userID = acceptbooking.usersignsId')
+            ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
+            ->first(),
+        'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first()
+        ];
+        return view('admin/userIdonate', $data);
     }
     
     public function sbmtDonation()
@@ -56,6 +86,21 @@ class UserIdonateController extends BaseController
     //for admin
     public function admdonatedtable()
     {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
         $data['donate'] = $this->uidm->select('user.userID, user.Email, 
         userdonation.id, userdonation.usersignsId, userdonation.lastname, userdonation.firstname, 
         userdonation.middlename, userdonation.contactnum, userdonation.donationdate, userdonation.nameofdonation, 

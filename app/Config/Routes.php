@@ -40,7 +40,7 @@ $routes->get('/products', 'ViewController::products', ['filter'  => 'guestFilter
 $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
 $routes->get('/register', 'UserController::register');
 $routes->get('/product', 'ProductsController::products', ['filter'  => 'authGuard']);
-$routes->get('/dashboard', 'ViewController::dash', ['filter'  => 'authGuard']);
+
 $routes->get('/search', 'ViewController::search');
 $routes->get('/searchs', 'ViewController::searchs');
 $routes->get('/rule', 'ViewController::rule');
@@ -53,15 +53,6 @@ $routes->get('/list', 'HomeController::index');
 $routes->get('/create', 'ViewController::create');
 $routes->post('/submit', 'ViewController::store');
 
-$routes->get('/delete/(:num)', 'HomeController::delete/$1');
-$routes->get('/withDeleted', 'NewController::withDeleted');
-$routes->get('/adddetails', 'ViewController::adddetails');
-$routes->get('/announcement', 'ViewController::announcement');
-$routes->get('/details', 'HomeController::details');
-$routes->post('/submit', 'HomeController::store');
-$routes->get('/manageservices', 'ViewController::manageservices');
-$routes->get('/managescdetails', 'ViewController::managescdetails');
-$routes->post('/Archive', 'NewController::Archive');
 
 $routes->get('/unreadq', 'ViewController::unreadq');
 $routes->get('/readenq', 'ViewController::readenq');
@@ -82,9 +73,29 @@ $routes->post('/update/(:num)', 'NewController::updates/$1');
 $routes->get('/edit/(:num)', 'NewController::edit/$1');
 $routes->get('/show', 'NewController::show');
 $routes->post('/saved', 'NewController::saved');
+
+if(session()->get('role') == 'Admin' || session()->get('role') == 'MainAdmin'){
+$routes->get('/delete/(:num)', 'HomeController::delete/$1');
+$routes->get('/withDeleted', 'NewController::withDeleted');
+$routes->get('/adddetails', 'ViewController::adddetails');
+
+$routes->get('/details', 'HomeController::details');
+$routes->post('/submit', 'HomeController::store');
+$routes->get('/manageservices', 'ViewController::manageservices');
+$routes->get('/managescdetails', 'ViewController::managescdetails');
+$routes->post('/Archive', 'NewController::Archive');
+
+
+$routes->get('gettoAccept/(:any)', 'UserbookingController::getNotifAccept/$1');
+
+$routes->get('eventfeedback', 'FeedbackController::viewfeedbackevent');
+
+$routes->get('/dashboard', 'ViewController::dash', ['filter'  => 'authGuard']);
 $routes->get('searchproduct', 'ProductsController::searchproduct');
 $routes->get('/searchpdets', 'ProductsController::searchprod');
-
+$routes->get('/calendar', 'UserbookingController::bookinge');
+$routes->get('/ADbooking', 'UserbookingController::bookingAD');
+$routes->get('/Dbooking', 'UserbookingController::bookingD');
 $routes->group('Main', ['filter'=>'authGuard'], static function($routes){
     $routes->get('', 'Main::index');
     $routes->get('(:segment)', 'Main::$1');
@@ -95,7 +106,7 @@ $routes->group('Main', ['filter'=>'authGuard'], static function($routes){
     $routes->match(['post'], 'product_add', 'Main::product_add/$1');
     $routes->match(['post'], 'save_transaction', 'Main::save_transaction');
 });
-
+}
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
 $routes->get('/editproduct/(:num)', 'ProductsController::editprod/$1');
 $routes->post('/updateprod/(:num)', 'ProductsController::updateprod/$1');
@@ -108,8 +119,28 @@ $routes->post('updateToRead', 'ContactController::updateRead');
 $routes->post('updateToUnread', 'ContactController::updateUnread');
 
 //calendar to`
-$routes->get('/calendar', 'UserbookingController::bookinge');
+if(session()->get('role') == 'Booker'){
 $routes->get('/booking', 'UserbookingController::bookchecked');
+
+$routes->get('userproduct', 'UserProductController::userproduct');
+$routes->get('userdonation', 'UserDonationController::userdonation');
+
+//idonate page
+$routes->get('userIdonate', 'UserIdonateController::userIdonate');
+$routes->post('/sbmtDonation', 'UserIdonateController::sbmtDonation');
+
+//user view event post
+$routes->get('userViewpost', 'UserViewPostController::userViewpost');
+
+
+//user event post
+$routes->get('usereventpost', 'UserEvntPostController::userEventpost');
+$routes->post('/usersavepost', 'UserEvntPostController::usersavepost');
+
+
+}
+$routes->get('/announcement', 'ViewController::announcement');
+
 $routes->post('/checkbooks', 'UserbookingController::checkbook');
 $routes->post('/bookcheck', 'UserbookingController::bookcheck');
 // $routes->post('reservationeventdate', 'UserbookingController::reserveEventDate');
@@ -121,9 +152,6 @@ $routes->post('/UsersigninController/Auth', 'UsersigninController::UserLogin');
 
 $routes->match(['post', 'get'], 'fundamental/accept', 'Fullcalendar::Accept');
 $routes->match(['post', 'get'], 'fullcalendar/decline', 'Fullcalendar::Decline');
-
-$routes->get('/ADbooking', 'UserbookingController::bookingAD');
-$routes->get('/Dbooking', 'UserbookingController::bookingD');
 
 $routes->get('/reportdetails', 'ViewController::viewreports');
 $routes->get('searchreps', 'Fullcalendar::searchRes');
@@ -186,25 +214,12 @@ $routes->get('/announceArchived', 'AnnouncementController::announceArchived');
 $routes->post('myAnnouncePubArch', 'AnnouncementController::AnnouncePubArch');
 $routes->get('searchannounce', 'AnnouncementController::searchannouncement');
 
-//user event post
-$routes->get('usereventpost', 'UserEvntPostController::userEventpost');
-$routes->post('/usersavepost', 'UserEvntPostController::usersavepost');
-
-//user view event post
-$routes->get('userViewpost', 'UserViewPostController::userViewpost');
-
 //user donation site
-$routes->get('userdonation', 'UserDonationController::userdonation');
-
 //user products
-$routes->get('userproduct', 'UserProductController::userproduct');
 
 //menu what elders need
 $routes->get('menu', 'MenuController::seemenu');
 
-//idonate page
-$routes->get('userIdonate', 'UserIdonateController::userIdonate');
-$routes->post('/sbmtDonation', 'UserIdonateController::sbmtDonation');
 
 //admin userdonatedtable
 $routes->get('userdonatedtable', 'UserIdonateController::admdonatedtable');
@@ -212,7 +227,7 @@ $routes->get('deletedonate/(:any)', 'UserIdonateController::deletedonation/$1');
 
 //feedback for user event posting 
 $routes->post('feedback', 'EventsController::savefeedbackevent');
-$routes->get('eventfeedback', 'FeedbackController::viewfeedbackevent');
+
 //feedback for announcement
 $routes->post('feedbackannounce', 'AnnouncementController::savefeedbackannounce');
 $routes->get('announcefeedback', 'FeedbackController::viewfeedbackannounce');
@@ -233,3 +248,7 @@ $routes->get('/gender/distribution', 'UserbookingController::index2');
 //report generation of event
 $routes->get('reportevent', 'Fullcalendar::viewrepEvent');
 $routes->get('eventpermonth', 'Fullcalendar::searchRevent');
+
+
+
+$routes->get('/getNotif/(:any)', 'UserViewPostController::getNotif/$1');

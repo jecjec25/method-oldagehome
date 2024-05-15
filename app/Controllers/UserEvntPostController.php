@@ -4,19 +4,52 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\EventsModel;
+use App\Models\AcceptbookingModel;
+
 
 class UserEvntPostController extends BaseController
 {
     private $userevent;
+    private $acceptbooking;
 
     public function __construct()
     {
         $this->userevent = new EventsModel();
+        $this->acceptbooking = new AcceptbookingModel();
     }
 
     public function userEventpost()
     {
-        return view ('admin/userEventPost');
+        $user = session()->get('userID');
+        $data = [
+           
+            'notif' => $this->acceptbooking
+                ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+                acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+                acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+                acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+                user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = acceptbooking.usersignsId')
+                ->where('acceptbooking.status', 'Accepted')->orwhere('acceptbooking.status', 'Declined')->where('acceptbooking.usersignsId', $user )
+                ->findAll(),
+                
+        'notifs' => $this->acceptbooking
+            ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+            acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+            acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+            acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+            user.userID, user.LastName, user.FirstName')
+            ->join('user', 'user.userID = acceptbooking.usersignsId')
+            ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
+            ->first(),
+        'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first()
+        ];
+
+        if(empty($data))
+        {
+            echo 'no data to show';
+        }
+        return view ('admin/userEventPost', $data);
     }
 
     public function usersavepost()

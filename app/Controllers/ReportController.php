@@ -10,6 +10,7 @@ use App\Models\MainModel;
 
 class ReportController extends BaseController
 {
+    private $userbooking;
     private $eventsModel;
     private $donationsModel;
     private $booking;
@@ -17,6 +18,7 @@ class ReportController extends BaseController
 
     public function __construct()
     {
+        $this->userbooking       = new UserbookingModel();
         $this->eventsModel = new UserbookingModel();
         $this->donationsModel = new ReportdonationModel();
         $this->booking = new BookingModel();
@@ -38,6 +40,22 @@ class ReportController extends BaseController
 
     public function ViewReports($id)
     {
+              $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
+
         $main = new UserbookingModel();
        
         $data['reports'] = $this->booking->where('id', $id)->first($id);
@@ -47,7 +65,9 @@ class ReportController extends BaseController
     }
 
     public function donationreportadd() {
+
         $data = [
+
         
             'date' => $this->request->getVar('date'),
             'donor_name' => $this->request->getVar('donor_name'),
@@ -59,14 +79,44 @@ class ReportController extends BaseController
         return $this->response->redirect(site_url('viewDonation'));
     }
    public function donation()
-   {
-    return view('dashboard/donationreport');
+   {        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
+    return view('dashboard/donationreport', $data);
    }
 
    //donation report controller
 
    public function viewdonrep()
     {
+              $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
+
         $dnreport = new ReportdonationModel();
         $data['main'] = $dnreport->findAll();
         return view('dashboard/managedonrep', $data);
@@ -82,7 +132,21 @@ class ReportController extends BaseController
 
     public function eldersreps($id)
     {
-
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
         $data['report'] = $this->main->where('Id', $id)->first();
         
         return view('dashboard/elderprint', $data);

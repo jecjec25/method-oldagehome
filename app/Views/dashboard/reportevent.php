@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
   <link rel="stylesheet" href="login/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
+  <script src="login/vendors/js/vendor.bundle.base.js"></script>
 
   <link href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
@@ -43,6 +44,7 @@
 
 <body>
 <div class="container-scroller">
+<?php include_once('includes/header.php') ?>
   <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
 &nbsp;
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
@@ -58,7 +60,6 @@
             </div>
           </li>
         </ul>
-        <?php include('includes/header.php') ?>
       </div>
     </nav>
     <div class="container-fluid page-body-wrapper">
@@ -113,5 +114,6 @@
         }
     });
 </script>
+
 
 </html>

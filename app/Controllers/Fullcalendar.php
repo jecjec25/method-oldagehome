@@ -7,15 +7,18 @@ use App\Models\UserbookingModel;
 use App\Models\BookingModel;
 use App\Models\MainModel;
 use App\Models\AcceptbookingModel;
+
+
 class Fullcalendar extends BaseController
 {
-
+    private $userbooking;
     private $booking;
     private $book;
     private $main;
     private $acceptev;
     public function __construct()
     {
+        $this->userbooking = new UserbookingModel();
         $this->booking = new UserbookingModel();
         $this->book = new BookingModel();
         $this->main = new MainModel();
@@ -79,9 +82,21 @@ class Fullcalendar extends BaseController
 
     public function try()
     {
-     
             $data = [
                 'reg' => $this->main->findALl(),
+                
+            'notif' => $this->booking->where('status', 'pending')->first(),
+            'getnotif' => $this->booking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->booking->where('status', 'pending')->countAllResults()
                    ];
        
         return view('dashboard/reports',$data);
@@ -89,16 +104,27 @@ class Fullcalendar extends BaseController
     }
 
     public function searchRes()
-    {$searchRes = $this->request->getVar('regdate');
-        $search = $this->request->getVar('todate');
+    {
+        $searchRes = $this->request->getVar('regdate');
         
         // Assuming $this->main is an instance of your model
         $data = [
             'booking' => $this->main->findAll(), // Fetching all data from the model
             'reg' => $this->main->where('RegDate <=', $searchRes)
-                                 ->where('RegDate >=', $search)
                                  ->where('scstatus', 'Unarchive')
-                                 ->findAll() // Fetching data where RegistrationDate falls between $searchRes and $search
+                                 ->findAll(),
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults() // Fetching data where RegistrationDate falls between $searchRes and $search
         ];
         
         if (!empty($query)) {
@@ -201,6 +227,18 @@ class Fullcalendar extends BaseController
 {
     $data = [
         'prefdate' => $this->acceptev->findAll(),
+        'notif' => $this->booking->where('status', 'pending')->first(),
+            'getnotif' => $this->booking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->booking->where('status', 'pending')->countAllResults()
     ];
     return view('dashboard/reportevent', $data);
 }
@@ -212,6 +250,20 @@ public function searchRevent()
     
     // Fetching data where prefferdate falls between $searchRevent and $searchR and status is 'Accepted'
     $data = [
+        
+        'prefdate' => $this->acceptev->findAll(),
+        'notif' => $this->booking->where('status', 'pending')->first(),
+            'getnotif' => $this->booking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->booking->where('status', 'pending')->countAllResults(),
         'acceptev' => $this->acceptev->where('prefferdate >=', $searchRevent)
                                      ->where('prefferdate <=', $searchR)
                                      ->where('status', 'Accepted')

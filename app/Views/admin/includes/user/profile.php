@@ -20,11 +20,11 @@
               </a> -->
               <a class="dropdown-item" href="/usersignin">
                 <i class="typcn typcn-eject text-primary"></i>
-                Logout
+                Logouts
               </a>
+              
             </div>
           </li>
-          
         </ul>
         
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">

@@ -47,12 +47,14 @@
               <div class="inner-text">
 				<h3>SERVICES</h3>
 				<p>I. MEDICAL NEEDS<br>
-					<span>1. Providing healthcare services, medication management, and emergency assistance.<br><span>
+					<span>Providing healthcare services, medication management, and emergency assistance.<br><span>
 					II. PERSONAL HYGIENE<br>
 					<span>Assisting with bathing, grooming, and maintaining cleanliness.<br><span>
-					III. PHYSICAL ACTIVITIES<br>
+					III. FEEDING<br>
+					<span>Ensuring proper nutrition by assisting with meal planning, preparation, and feeding.<br><span>
+					IV. PHYSICAL ACTIVITIES<br>
 					<span>Organizing exercises and games to promote well-being.<br><span>
-					IV. FUNERAL SERVICES<br> 
+					V. FUNERAL SERVICES<br> 
 					<span>Providing guidance and support during bereavement.</span>
 						
 				</p>

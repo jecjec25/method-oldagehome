@@ -4,14 +4,18 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ProductsModel;
+use App\Models\UserbookingModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class ProductsController extends ResourceController
 {
 
     private $pro;
+    private $userbooking;
+
     public function __construct()
     {
+        $this->userbooking = new UserbookingModel();
         $this->prod = new ProductsModel();
     }
     public function index()
@@ -36,7 +40,20 @@ class ProductsController extends ResourceController
     public function editprod($Id = null)
     {
         // Fetch the user data from the database
-
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
         $main  = new ProductsModel();
 
         $data['prod'] = $main->find($Id);
@@ -76,6 +93,18 @@ class ProductsController extends ResourceController
         $searchprod = $this->request->getVar('searchprod');
         if ($searchprod) {
             $data = [
+                'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
                 'product' => $main->like('ProdName', $searchprod)->findAll()
             ];
             return view('dashboard/searchprod', $data);

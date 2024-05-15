@@ -5,14 +5,16 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\EventsModel;
 use App\Models\FeedbackModel;
-
+use App\Models\UserbookingModel;
 class EventsController extends BaseController
 {
+    private $userbooking;
     private $admevent;
     private $feedback;
 
     public function __construct()
     {
+        $this->userbooking = new UserbookingModel();
         $this->admevent = new EventsModel();
         $this->feedback = new FeedbackModel();
         helper(['form']);
@@ -20,7 +22,22 @@ class EventsController extends BaseController
 
     public function adminevents()
     {
-        return view('dashboard/adminevents');
+            $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
+        return view('dashboard/adminevents', $data);
     }
 
     public function saveEvents()
@@ -80,6 +97,21 @@ class EventsController extends BaseController
 
     public function Viewevents()
     {
+            $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
       $data['main'] =  $this->admevent->where('Status', 'Draft')->findAll();
 
         return view('dashboard/manageEvents', $data);
@@ -87,6 +119,21 @@ class EventsController extends BaseController
 
     public function update($id)
     {
+            $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
         $data['main'] = $this->admevent->where('EventID', $id)->first();
 
         return view('dashboard/editevents', $data);
@@ -147,7 +194,19 @@ class EventsController extends BaseController
         if($searchevents)
         {
             $data = [
-                'main' => $this->admevent->like('Title', $searchevents)->where('Status', 'Draft')->findAll()
+                'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'main' => $this->admevent->like('Title', $searchevents)->where('Status', 'Draft')->findAll()
             ];
             return view('dashboard/searchevents',$data);
         }
@@ -155,16 +214,61 @@ class EventsController extends BaseController
 
     public function initialpublishedevent()
     {
+            $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
         $data['main'] = $this->admevent->where('Status', 'published')->findAll();
         return view('dashboard/eventspublished', $data);
     }
     public function viewpublishevent($id)
     {
+            $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
             $data['event'] = $this->admevent->where('id', $id)->findAll();
             return view('dashboard/viewevent', $data);
     }
     public function eventsarchived()
     {
+            $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
        $data['main']= $this->admevent->where('Status','Archive')->findAll();
         return view('dashboard/eventsarchived', $data);
     }
@@ -194,6 +298,7 @@ class EventsController extends BaseController
     }
     public function reservations()
     {
+        
       return view('dashboard/adminevents', $reservedDates);
     }
 

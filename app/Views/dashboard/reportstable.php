@@ -61,6 +61,7 @@
 <body>
   
 <div class="container-scroller">
+<?php include_once('includes/header.php') ?>
     <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
         &nbsp;
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
@@ -76,7 +77,6 @@
                     </div>
                 </li>
             </ul>
-            <?php include('includes/header.php') ?>
         </div>
     </nav>
     <div class="container-fluid page-body-wrapper">

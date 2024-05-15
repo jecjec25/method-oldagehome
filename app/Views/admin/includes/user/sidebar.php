@@ -1,21 +1,70 @@
-  
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  </head>
+  <body>
+    
+  </body>
+  </html>
   <style>
-    .profile{
-      margin-right:2000px;
-    }
-    .nav-list {
+   body {
+    font-family: Arial, sans-serif;
+}
+.notification-dropdown a {
+    text-decoration: none; /* This removes the underline */
+  }
+  
+.notification-container {
+    position: relative;
+    display: inline-block;
 }
 
-.nav-list li {
-    display: inline; /* Display list items inline */
-    margin-right: 10px; /* Add some spacing between list items */
-      }
-
-  .top-nav ul li a:hover,
-  .top-nav ul li.active a {
-    color: orange; /* Change to desired highlight color */
-    /* Add any other styles you want for hover and active states */
+.notification-button {
+    background-color: #C55B4B;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
 }
+
+.notification-button #notification-count {
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.notification-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-item:hover {
+    background-color: #f1f1f1;
+}
+
   </style>
   <div class="strip"> </div>
     <div class="header-top" id="home">
@@ -42,7 +91,23 @@
                   <li>  <a class="dropdown-item" href="/logout"></li>
                   <h4>Logout</h4>
                   </a>
-            
+                  <div class="notification-container">
+                  <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
+                  <div id="notification-dropdown" class="notification-dropdown">
+
+                  <?php if($notifs['status'] == 'Accepted'):?>
+                  <div class="notification-item"><small>Notif </small></div>
+
+                    <?php foreach($notif as $notif):?>
+
+                      <div class="notification-item"><a href="<?= base_url('getNotif/' .$notif['id'])?>"><?= $notif['event']?> has <?= $notif['status']?></a></div>
+                     <?php endforeach;?>
+                    
+                    
+                  </div>
+                  <?php endif;?>
+              </div>
+                      
                     </ul>
       
               </div> 
@@ -86,54 +151,49 @@
                 <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
 
               </nav>
-              <script>
-                  $(document).ready(function() {
-    // Get the current URL
-    var currentUrl = window.location.href;
+                          <script>
+                              $(document).ready(function() {
+                // Get the current URL
+                var currentUrl = window.location.href;
 
-    // Loop through each navigation link
-    $('.top-nav ul li a').each(function() {
-        var linkUrl = $(this).attr('href');
+                // Loop through each navigation link
+                $('.top-nav ul li a').each(function() {
+                    var linkUrl = $(this).attr('href');
 
-        // Check if the link URL matches the current URL
-        if (currentUrl.indexOf(linkUrl) !== -1) {
-            $(this).parent().addClass('active'); // Add the 'active' class to the parent li
-        }
-    });
-
-    // Add 'active' class to the clicked button and remove it from others
-    $('.top-nav ul li a').click(function() {
-        $('.top-nav ul li').removeClass('active');
-        $(this).parent().addClass('active');
-    });
-});
-
-            </script>
-
-            <script>
-              $(function() {
-                var pull    = $('#pull');
-                  menu    = $('nav ul');
-                  menuHeight  = menu.height();
-                $(pull).on('click', function(e) {
-                  e.preventDefault();
-                  menu.slideToggle();
+                    // Check if the link URL matches the current URL
+                    if (currentUrl.indexOf(linkUrl) !== -1) {
+                        $(this).parent().addClass('active'); // Add the 'active' class to the parent li
+                    }
                 });
-                $(window).resize(function(){
-                      var w = $(window).width();
-                      if(w > 320 && menu.is(':hidden')) {
-                        menu.removeAttr('style');
-                      }
-                  });
-              });
-            </script>
 
-          <script>
-            $(document).ready(function(){
-              $("span.menu").click(function(){
-                $(".top-nav ul").slideToggle(200);
-              });
+                // Add 'active' class to the clicked button and remove it from others
+                $('.top-nav ul li a').click(function() {
+                    $('.top-nav ul li').removeClass('active');
+                    $(this).parent().addClass('active');
+                });
             });
+
+                        </script>
+
+                        <script>
+                    function toggleDropdown() {
+                const dropdown = document.getElementById('notification-dropdown');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.notification-button')) {
+                    const dropdowns = document.getElementsByClassName('notification-dropdown');
+                    for (let i = 0; i < dropdowns.length; i++) {
+                        const openDropdown = dropdowns[i];
+                        if (openDropdown.style.display === 'block') {
+                            openDropdown.style.display = 'none';
+                        }
+                    }
+                }
+            }
+
           </script>
         <div class="clearfix"> </div>
       </div>

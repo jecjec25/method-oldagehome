@@ -15,6 +15,7 @@
 
 <body>
 <div class="container-scroller">
+<?php include_once('includes/header.php');?>
   <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
 &nbsp;
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
@@ -30,7 +31,6 @@
             </div>
           </li>
         </ul>
-        <?php include('includes/header.php') ?>
       </div>
     </nav>
     <div class="container-fluid page-body-wrapper">
@@ -47,10 +47,6 @@
                   </p>
                   <form class="forms-sample" method="get" action="<?= base_url('searchreps')?>">
                     
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">From Dates</label>
-                      <input class="form-control" id="fromdate" name="todate"  type="date" required="true">
-                    </div>
                      <div class="form-group">
                       <label for="exampleInputEmail1">To Dates</label>
                       <input class="form-control " id="todate" type="date" name="regdate" required="true">

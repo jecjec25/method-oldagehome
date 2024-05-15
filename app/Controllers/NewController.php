@@ -7,16 +7,34 @@ use App\Models\MainModel;
 use App\Models\ProductsModel;
 use App\Models\UserModel;
 use App\Controllers\ViewController;
+use App\Models\UserbookingModel;
 use CodeIgniter\RESTful\ResourceController;
 class NewController extends BaseController
 {
     private $main;
+    private $userbooking;
+
     public function __construct()
     {
+        $this->userbooking = new UserbookingModel();
         $this->main = new MainModel();
     }
     public function test()
     {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];  
         $main = new MainModel();
         $data['main'] = $this->main->where('scstatus', 'Unarchive')->findAll();
         return view('dashboard/managescdetails', $data);
@@ -24,6 +42,20 @@ class NewController extends BaseController
 
     public function archives()
     {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
        $data['main']= $this->main->where('scstatus','Deceased')->orWhere('scstatus', 'Left')->findAll();
         return view('dashboard/scarchived', $data);
     }
@@ -55,14 +87,29 @@ class NewController extends BaseController
     }
     public function edit($Id)
     {
+
          // Fetch the user data from the database
-         
-    $main['d'] = $this->main->find($Id);
+         $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+    $data['d'] = $this->main->find($Id);
 
     // Check if the user exists
-    if ($main) {
+    if ($data) {
+        
         // Load the edit view and pass the user data
-        return view('dashboard/editscdetails', $main);
+        return view('dashboard/editscdetails', $data);
     } else {
         // User not found
         throw new \CodeIgniter\Exceptions\PageNotFoundException('User not found');
@@ -77,9 +124,20 @@ class NewController extends BaseController
         if($search)
         {
             $data = [
-                'main' => $this->main->like('firstname', $search)->where('scstatus','Unarchive')->findAll()
+                'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
             ];
-
+            $data['main'] = $this->main->like('firstname', $search)->where('scstatus','Unarchive')->findAll();
             return view('dashboard/search',$data);
         }
     }
@@ -169,6 +227,20 @@ class NewController extends BaseController
     // }
     public function show(){
         $product = new ProductsModel();
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
         $data['product'] = $product->findAll();
         return view ('dashboard/manageproduct', $data);
     }

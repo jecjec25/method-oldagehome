@@ -48,8 +48,49 @@ class UserbookingController extends ResourceController
         return $this->respond($data);
     }
 
-    public function bookinge()
+    public function getNotifAccept($id)
     {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+        $data['even'] = $this->userbooking->where('bookingId', $id)->first();
+    
+        // Add a check for null value
+        if (is_null($data['even'])) {
+            // Handle the case where no record is found
+            $data['even'] = [];
+        }
+    
+        return view('dashboard/getNotif/forEvent', $data);
+    }
+    
+    public function bookinge()
+    {       $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
         $userbooking = new UserbookingModel();
         $data['calen'] = $userbooking->findAll();
         return view('dashboard/fullcalendar', $data);
@@ -85,19 +126,72 @@ class UserbookingController extends ResourceController
     }
     public function bookchecked()
     {
+
+        $user = session()->get('userID');
+        $data = [
+            'notif' => $this->acceptbooking
+                ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+                acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+                acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+                acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+                user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = acceptbooking.usersignsId')
+                ->where('acceptbooking.status', 'Accepted')->orwhere('acceptbooking.status', 'Declined')->where('acceptbooking.usersignsId', $user )
+                ->findAll(),
+                
+        'notifs' => $this->acceptbooking
+            ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+            acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+            acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+            acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+            user.userID, user.LastName, user.FirstName')
+            ->join('user', 'user.userID = acceptbooking.usersignsId')
+            ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
+            ->first(),
+        'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first()
+        ];
+     
         $data['disableDates'] = $this->acceptbooking->getDisabledDates();  
         $data['book'] = $this->acceptbooking->where('status', 'Accepted')->findAll();
         return view('admin/userbooking', $data);
     }
 
     public function bookingAD()
-    {
+    {       $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
         $data['calen'] = $this->booking->where('status', 'Accepted')->findAll();
 
         return view('dashboard/bookings', $data);
     }
     public function bookingD()
-    {
+    {       $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
         $data['calen'] = $this->booking->where('status', 'Declined')->findAll();
 
         return view('dashboard/bookingDec', $data);

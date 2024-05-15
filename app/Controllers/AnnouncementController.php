@@ -6,14 +6,17 @@ use App\Models\AnnouncementModel;
 use App\Controllers\BaseController;
 use App\Models\FeedbackModel;
 use Mpdf\Mpdf;
+use App\Models\UserbookingModel;
 
 class AnnouncementController extends BaseController
 {
+    private $userbooking;
     private $admannouncement;
     private $Feedback;
 
     public function __construct()
     {
+        $this->userbooking = new UserbookingModel();
         $this->Feedback = new FeedbackModel();
         $this->admannouncement = new AnnouncementModel();
         helper(['form']);
@@ -22,7 +25,22 @@ class AnnouncementController extends BaseController
 
     public function Adannnouncement()
     {
-        return view('dashboard/Adannouncement');
+               $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
+        return view('dashboard/Adannouncement', $data);
     }
     public function pdf()
     {
@@ -98,18 +116,60 @@ class AnnouncementController extends BaseController
     public function viewannounce()
         {
             $mannounce = new AnnouncementModel();
-            $data['main'] = $mannounce->where('status', 'Draft')->findAll();
+           
+            
+        $data = ['notif' => $this->userbooking->where('status', 'pending')->findAll(),
+        'getnotif' => $this->userbooking
+               ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+               userbooking.middlename, userbooking.contactnum, userbooking.event, 
+               userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+               userbooking.comments, userbooking.status, userbooking.usersignsId, 
+               user.userID, user.LastName, user.FirstName')
+               ->join('user', 'user.userID = userbooking.usersignsId')
+               ->where('userbooking.status', 'Accepted')->orwhere('userbooking.status', 'Pending')
+               ->findAll(),
+               'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+               'main' => $mannounce->where('status', 'Draft')->findAll()
+           ];
+
             return view('dashboard/manageAnnouncement', $data);
         }
     
     public function updateannouncement($id)
     {
-        $data['main'] = $this->admannouncement->where('AnnounceID', $id)->first();
+        $mannounce = new AnnouncementModel();
+        $data = ['notif' => $this->userbooking->where('status', 'pending')->findAll(),
+            'getnotif' => $this->userbooking
+                   ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                   userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                   userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                   userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                   user.userID, user.LastName, user.FirstName')
+                   ->join('user', 'user.userID = userbooking.usersignsId')
+                   ->where('userbooking.status', 'Accepted')->orwhere('userbooking.status', 'Pending')
+                   ->findAll(),
+                   'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+                   'main' => $this->admannouncement->where('AnnounceID', $id)->first(),
+               ];
+               
         return view('dashboard/editannounce', $data);
     }
     public function EditAnnounce($id)
     {
-        date_default_timezone_set('UTC');
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];        date_default_timezone_set('UTC');
         $currentTimestamp = date('Y-m-d H:i:s');
         $data = [
             'Title' => $this->request->getVar('Title'),
@@ -140,12 +200,42 @@ class AnnouncementController extends BaseController
 
     public function publishedann()
     {
-        $data['announce'] = $this->admannouncement->where('Status', 'published')->findAll();
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'announce'  => $this->admannouncement->where('Status', 'published')->findAll()
+          
+             ];
+     
         return view('dashboard/publishedannounce', $data);
     }
 
     public function announceArchived()
     {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
        $data['announce']= $this->admannouncement->where('Status','Archive')->findAll();
         return view('dashboard/announceArchive', $data);
     }
@@ -202,7 +292,19 @@ class AnnouncementController extends BaseController
         if($searchannounce)
         {
             $data = [
-                'main' => $this->admannouncement->like('Title', $searchannounce)->where('Status', 'Draft')->findAll()
+                    'notif'    => $this->userbooking->where('status', 'pending')->findAll(),
+                    'getnotif' => $this->userbooking
+                           ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                           userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                           userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                           userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                           user.userID, user.LastName, user.FirstName')
+                           ->join('user', 'user.userID = userbooking.usersignsId')
+                           ->where('userbooking.status', 'Accepted')->orwhere('userbooking.status', 'Pending')
+                           ->findAll(),
+        
+                    'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+                    'main' => $this->admannouncement->like('Title', $searchannounce)->where('Status', 'Draft')->findAll()
             ];
             return view('dashboard/searchannounce',$data);
         }
@@ -211,6 +313,21 @@ class AnnouncementController extends BaseController
     //view announcement sa public side
     public function viewAnnouncement($id)
     {
+               $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+ 
         $data['announce'] = $this->admannouncement->where('AnnounceID', $id)->find();
 
         return view('admin/viewannouncement', $data);

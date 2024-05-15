@@ -4,14 +4,17 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UsersModel;
+use App\Models\UserbookingModel;
 
 class SignupController extends BaseController
 {
     private $user;
+    private $userbooking;
 
     public function __construct()
     {
         $this->user = new UsersModel();
+        $this->userbooking = new UserbookingModel();
     }
     public function index()
     {
@@ -92,7 +95,21 @@ class SignupController extends BaseController
 
     public function viewUsers()
     {
-       $data = [ 'user' => $this->user->findAll()];
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'user' => $this->user->findAll()
+        ];
 
        return view('dashboard/adminUser/viewAdminUsers', $data);
     }
