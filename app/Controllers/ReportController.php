@@ -18,7 +18,7 @@ class ReportController extends BaseController
 
     public function __construct()
     {
-        $this->userbooking       = new UserbookingModel();
+        $this->userbooking = new UserbookingModel();
         $this->eventsModel = new UserbookingModel();
         $this->donationsModel = new ReportdonationModel();
         $this->booking = new BookingModel();

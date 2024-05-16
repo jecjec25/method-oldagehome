@@ -248,7 +248,7 @@ $routes->get('/gender/distribution', 'UserbookingController::index2');
 //report generation of event
 $routes->get('reportevent', 'Fullcalendar::viewrepEvent');
 $routes->get('eventpermonth', 'Fullcalendar::searchRevent');
-
-
-
 $routes->get('/getNotif/(:any)', 'UserViewPostController::getNotif/$1');
+
+$routes->get('generateElderlyReport/(:any)', 'Fullcalendar::generateElderlyReport/$1');
+$routes->get('generateEventReport/(:any)/(:any)', 'Fullcalendar::generateEventReport/$1/$2');

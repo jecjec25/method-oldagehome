@@ -46,10 +46,9 @@
                     Between Dates Report of Elder Registration
                   </p>
                   <form class="forms-sample" method="get" action="<?= base_url('searchreps')?>">
-                    
                      <div class="form-group">
                       <label for="exampleInputEmail1">To Dates</label>
-                      <input class="form-control " id="todate" type="date" name="regdate" required="true">
+                      <input class="form-control " id="todate" type="date" name="todate" required="true">
                     </div>
                      
                     <button type="submit" cl  ass="btn btn-primary mr-2" name="submit">Submit</button>
