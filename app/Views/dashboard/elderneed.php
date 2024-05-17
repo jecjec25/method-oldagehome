@@ -49,7 +49,7 @@
                   <form action="<?= base_url("saveneed") ?>" method="post">
                     <input type="hidden" name="adminId" value="<?=session()->get('userID')?>">
                     <div class="form-group">
-                       <label for="exampleInputUsername1">Need</label>
+                       <label for="exampleInputUsername1">Item</label>
                       <input id="need" name="need" type="text" class="form-control" required="true" value="<?= isset($d['need']) ? $d['need'] : '' ?>">
                     </div>
                     <div class="form-group">

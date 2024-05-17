@@ -46,7 +46,7 @@
       </div>
       <div class="gallery">
             <div class="content">
-              <a href="usersignin"><img name="Picture" src="images/bracelet2.jpg" alt="">
+              <a href="signin"><img name="Picture" src="images/bracelet2.jpg" alt="">
               <h3 name="ProductName"> Bracelet </h3>
               <p name="Description"></p>
               <h6 name="Price">20.00</h6>
@@ -67,7 +67,7 @@
             </div>
           <div class="gallery">
             <div class="content">
-            <a href="usersignin"> <img name="Picture" src="images/bracelet.jpg" alt="">
+            <a href="signin"> <img name="Picture" src="images/bracelet.jpg" alt="">
               <h3 name="ProductName"> Bracelet </h3>
               <p name="Description"></p>
               <h6 name="Price">10.00</h6>
@@ -86,7 +86,7 @@
               
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/bracelet name.jpg" alt="">
+            <a href="signin"><img src="images/bracelet name.jpg" alt="">
               <h3> Bracelet with Name</h3>
               <p></p>
               <h6>20.00</h6>
@@ -105,7 +105,7 @@
               
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/mamamary.jpg" alt="">
+            <a href="signin"><img src="images/mamamary.jpg" alt="">
               <h3> Mama Mary</h3>
               <p></p>
               <h6>100.00</h6>
@@ -124,7 +124,7 @@
               
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/patholder.jpg" alt="">
+            <a href="signin"><img src="images/patholder.jpg" alt="">
               <h3>Patholder</h3>
               <p></p>
               <h6>3pcs. 100.00</h6>
@@ -142,7 +142,7 @@
               </ul>
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/rectangle doormat.jpg" alt="">
+            <a href="signin"><img src="images/rectangle doormat.jpg" alt="">
               <h3> Doormat </h3>
               <p></p>
               <h6>50.00</h6>
@@ -161,7 +161,7 @@
               
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/round doormat.jpg" alt="">
+            <a href="signin"><img src="images/round doormat.jpg" alt="">
               <h3> Round Doormat</h3>
               <p></p>
               <h6>50.00</h6>
@@ -180,7 +180,7 @@
               
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/thick patholder.jpg" alt="">
+            <a href="signin"><img src="images/thick patholder.jpg" alt="">
               <h3> Damcloth</h3>
               <p></p>
               <h6>100.00</h6>
@@ -199,7 +199,7 @@
               
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/angel.jpg" alt="">
+            <a href="signin"><img src="images/angel.jpg" alt="">
               <h3> Angel </h3>
               <p></p>
               <h6>100.00</h6>
@@ -218,7 +218,7 @@
               
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/braceletrosary.jpg" alt="">
+            <a href="signin"><img src="images/braceletrosary.jpg" alt="">
               <h3> Rosary </h3>
               <p></p>
               <h6>20.00</h6>
@@ -237,7 +237,7 @@
               
             </div>
             <div class="content">
-            <a href="usersignin"><img src="images/blacknazaren.jpg" alt="">
+            <a href="signin"><img src="images/blacknazaren.jpg" alt="">
               <h3> Black Nazaren</h3>
               <p></p>
               <h6>100.00</h6>

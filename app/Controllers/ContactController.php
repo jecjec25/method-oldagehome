@@ -15,6 +15,7 @@ class ContactController extends BaseController
         $this->contact = new ContactModel();
         helper(['form']);
     }
+    
     public function contactu()
     {
         $data = [

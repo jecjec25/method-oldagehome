@@ -35,7 +35,8 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/adddetails">Register Elder</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/test">Update Elder</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/archives">Archived Elder</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/archives">Archived Left</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/archivesdeceased">Archived Deceased</a></li>
               </ul>
             </div>
           </li>
@@ -169,7 +170,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#elderneed" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-pin menu-icon"></i>
+              <i class="typcn typcn-folder-open menu-icon"></i>
               <span class="menu-title">Elder Needs</span>
               <i class="menu-arrow"></i>
             </a>
@@ -183,7 +184,7 @@
           <?php if(session()->get('role') === 'MainAdmin'):?>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#user" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-pin menu-icon"></i>
+              <i class="typcn typcn-user-add-outline menu-icon"></i>
               <span class="menu-title">Users</span>
               <i class="menu-arrow"></i>
             </a>
@@ -195,7 +196,7 @@
             </div>
           </li>
           <?php endif;?>
-          
+                
       </nav>
 
 

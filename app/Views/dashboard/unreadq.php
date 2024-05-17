@@ -71,7 +71,6 @@
                             <input type="hidden" name="update" value="<?=$f['Id']?>">
                             <button class="btn btn-success btn-sm btn-icon-text mr-3">Read <i class="typcn typcn-edit btn-icon-append"></i></button>
                           </form>
-                      
                           </div>
                     </td>
                     </tr>

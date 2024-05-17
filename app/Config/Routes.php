@@ -67,6 +67,7 @@ $routes->post('/save', 'NewController::save');
 $routes->get('/test', 'NewController::test');
 $routes->get('searchdets', 'NewController::searchsc');
 $routes->get('/archives', 'NewController::archives');
+$routes->get('/archivesdeceased', 'NewController::archivesdeceased');
 $routes->post('/update/(:any)', 'NewController::update/$1');
 $routes->post('/submit', 'NewController::submit');
 $routes->post('/update/(:num)', 'NewController::updates/$1');

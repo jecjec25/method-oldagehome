@@ -120,6 +120,7 @@
                 You can donate any In-Kind for our Senior Citizens at Aruga Kapatid Foundation Corporation in Managpi, Calapan City, Oriental Mindoro.
                 In donating, you can go to our place at Managpi, Calapan City, or you can also make a shipment package to our foundation.
             </p>
+
         </div>
     </div>
 

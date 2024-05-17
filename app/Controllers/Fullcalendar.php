@@ -104,8 +104,6 @@ class Fullcalendar extends BaseController
 
     public function searchRes()
     {
-       
-        
         $searchParams = [
             'todate' => $this->request->getVar('todate')
         ];
@@ -151,6 +149,14 @@ class Fullcalendar extends BaseController
                                  ->where('scstatus', 'Unarchive')
                                  ->find() // Fetching data where RegistrationDate falls between $searchRes and $search
         ];
+        $closestLowerRecord = $this->main->where('RegDate <=', $search)
+                                     ->where('scstatus', 'Unarchive')
+                                     ->orderBy('RegDate', 'ASC')
+                                     ->first(); // Getting the record with the closest lower date
+
+     $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A'; // Default to 'N/A' if no record found
+
+
 
         $count = $this->main->where('RegDate <=', $search)
                             ->where('scstatus', 'Unarchive')
@@ -180,7 +186,7 @@ class Fullcalendar extends BaseController
             <h4  style="text-align: center;">Elder Care Program Participant Report</h4>
 
             <p>Date: ' . $currentDate . '</p>
-            <p>Reporting Period: This is the reporting date less than ' . $search . '</p>
+            <p>Reporting Period: '. $closestLowerDate .'  -  ' . $search . '</p>
             
             <table border="1" style="border-collapse: collapse; border: 1px solid black;">
                 <thead>
@@ -268,12 +274,12 @@ class Fullcalendar extends BaseController
                 ->findAll(),
         ];
     
-        // Calculate the total amount raised
-        $totalAmountRaised = 0;
-        foreach ($data['acceptev'] as $acceptev) {
-            $totalAmountRaised += $acceptev['amount_raised'];
-        }
-    
+         // Calculate the total amount raised
+         $totalAmountRaised = 0;
+         foreach ($data['acceptev'] as $acceptev) {
+             $totalAmountRaised += $acceptev['amount_raised'];
+         }
+
         $dompdf = new Dompdf();
         $currentDate = date('Y-m-d'); // Get the current date in 'YYYY-MM-DD' format
         
@@ -294,7 +300,7 @@ class Fullcalendar extends BaseController
                 </div>
     
                 <h3 style="text-align: center;">Aruga Kapatid Foundation Incorporated</h3>
-                <h4 style="text-align: center;">Monthly Event Report '. $currentDate .'</h4>
+                <h4 style="text-align: center;">Monthly Event Report '. $searchRevent .' - '. $searchR .'</h4>
     
                 <p>Date: ' . $currentDate . '</p>
                 
@@ -333,7 +339,7 @@ class Fullcalendar extends BaseController
     
         // Close the HTML table and body
         $html .= '</tbody></table>
-            <p style="font-weight:600;>Total Amount Raised: '.number_format($totalAmountRaised, 2).'</p>
+            <p style="font-weight:600;">Total Amount Raised: '.number_format($totalAmountRaised, 2).'</p>
             <p style="font-weight:600;>Summary of Outcomes</p>
             <p>Health Awareness Workshop:Increased awareness on healthy lifestyle practices among participants.</p>
 

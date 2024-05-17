@@ -198,6 +198,16 @@
 			color: #fff;
 			border-color: #e91e63;
 		}
+		section .events {
+		position: relative;
+		width: 50%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		float: right;
+		box-sizing: border-box;
+		overflow-y: auto; /* Add scrollbar if content exceeds height */
+		padding-right: 15px; /* Add padding for scrollbar */
+}
 	</style>
 
 </head>
