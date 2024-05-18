@@ -142,6 +142,17 @@ class Fullcalendar extends BaseController
 
     public function generateElderlyReport($search)
     {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+
         // Fetch data from the model
         $data = [
             'booking' => $this->main->findAll(), // Fetching all data from the model
@@ -164,6 +175,10 @@ class Fullcalendar extends BaseController
 
         
         $dompdf = new Dompdf();
+        $options = $dompdf->getOptions();
+        $options->set('isRemoteEnabled', true); // Enable remote content
+        $options->set('isHtml5ParserEnabled', true); // Enable HTML5 parsing
+        $dompdf->setOptions($options);
         $currentDate = date('Y-m-d'); // Get the current date in 'YYYY-MM-DD' format
        
         // Define the HTML content
@@ -172,8 +187,8 @@ class Fullcalendar extends BaseController
         <head>
         </head>
         <body >
-            <div style="text-align: center;">
-           
+            <div style="text-align: center;position:relative;">
+                <img src="' . $imageSrc . '" alt="Logo" style="position:absolute;left:0;top:0;height:120px">
                 <h5 style="margin: 0;">Republic of the Philippines</h5>
                 <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
                 <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
@@ -264,6 +279,20 @@ class Fullcalendar extends BaseController
 
     public function generateEventReport($searchRevent, $searchR)
     {
+        set_time_limit(120);
+    
+        $searchRevent = str_replace('-', '/', $searchRevent);
+        $searchR = str_replace('-', '/', $searchR);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+
         $searchRevent = str_replace('-', '/', $searchRevent);
         $searchR = str_replace('-', '/', $searchR);
        
@@ -281,6 +310,11 @@ class Fullcalendar extends BaseController
          }
 
         $dompdf = new Dompdf();
+        $options = $dompdf->getOptions();
+        $options->set('isRemoteEnabled', true); // Enable remote content
+        $options->set('isHtml5ParserEnabled', true); // Enable HTML5 parsing
+        $dompdf->setOptions($options);
+
         $currentDate = date('Y-m-d'); // Get the current date in 'YYYY-MM-DD' format
         
     
@@ -290,7 +324,8 @@ class Fullcalendar extends BaseController
             <head>
             </head>
             <body>
-                <div style="text-align: center;">
+            <div style="text-align: center;position:relative;">
+                    <img src="' . $imageSrc . '" alt="Logo" style="position:absolute;left:0;top:0;height:120px">
                     <h5 style="margin: 0;">Republic of the Philippines</h5>
                     <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
                     <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>

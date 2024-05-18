@@ -253,3 +253,5 @@ $routes->get('/getNotif/(:any)', 'UserViewPostController::getNotif/$1');
 
 $routes->get('generateElderlyReport/(:any)', 'Fullcalendar::generateElderlyReport/$1');
 $routes->get('generateEventReport/(:any)/(:any)', 'Fullcalendar::generateEventReport/$1/$2');
+$routes->get('generateElderlyLeft', 'NewController::generateElderlyLeft');
+$routes->get('generateElderlyDeceased', 'NewController::generateElderlyDeceased');
