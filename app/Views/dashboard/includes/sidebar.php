@@ -151,7 +151,12 @@
             </a>
             <div class="collapse" id="donation">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="userdonatedtable">Track Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="userdonatedtable">Track Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="viewReceiveMonetary">Received Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="viewPostponedMonetary">Postponed Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="tableindkind">Track In-kind Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="viewReceiveInkind">Received Inkind Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="viewPostponedInkind">Posponed Inkind Donation</a></li>
               </ul>
             </div>
           </li>

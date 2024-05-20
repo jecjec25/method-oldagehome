@@ -3,14 +3,24 @@
 <head>
     <title>User Donation</title>
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
-    <link rel="stylesheet" >
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/bootstrap.css" type='text/css' />
+    <link rel="stylesheet" href="css/style.css" type='text/css' />
     <style>
         .required::after {
             content: "*";
             color: red;
             margin-left: 5px;
+        }
+        #cameraContainer {
+            display: none;
+        }
+        #photoCanvas {
+            display: none;
+        }
+        #imagePreview {
+            display: none;
+            max-width: 300px;
+            max-height: 300px;
         }
     </style>
 </head>
@@ -19,63 +29,73 @@
         <?php include('includes/user/sidebar.php')?>		
         <div class="container">
             <br>
-            <h2>User Donation</h2>
+            <h2>Monetary/Cash Donation</h2>
             <div class="contact-form">
                 <?php if(session()->getFlashdata('success')): ?>
                 <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
                 <?php endif; ?>
-                <form action="<?= base_url("sbmtDonation") ?>" method="post" class="left_form booking-form">
+                <form action="<?= base_url("sbmtDonation") ?>" method="post" class="left_form booking-form" enctype="multipart/form-data">
                     <?php if(isset($book['bookingId'])): ?>
                     <input type="hidden" name="bookingId" value="<?= $book['bookingId'] ?>">
                     <?php endif; ?>
                     <div>
                         <input type="hidden" name="usersignsId" value="<?= session()->get('userID') ?>">
+                        <label>Name Of Establishment</label>
+                        <span><input type="text" name="establishment" placeholder="Name of Establishment (Optional)" class="textbox"></span>
                         <span><label>Last Name<span class="required"></span></label></span>
-                        <span><input required="true" name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
+                        <span><input required name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
                     </div>
                     <div>
                         <span><label>First Name<span class="required"></span></label></span>
-                        <span><input required="true" name="firstname" type="text"  placeholder="Enter your first name" class="textbox"></span>
+                        <span><input required name="firstname" type="text" placeholder="Enter your first name" class="textbox"></span>
                     </div>
                     <div>
                         <span><label>Middle Name</label></span>
-                        <span><input required="true" name="middlename" type="text" placeholder="Enter your middle name" class="textbox"></span>
+                        <span><input name="middlename" type="text" placeholder="Enter your middle name" class="textbox"></span>
                     </div>
                     <div>
                         <span><label>Contact Number<span class="required"></span></label></span>
-                        <span><input required="true" name="contactnum" id="contactnum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" placeholder="Contact Number" class="textbox"></span>
+                        <span><input required name="contactnum" id="contactnum" type="text" pattern="(\+?63|0)9\d{9}" maxlength="13" placeholder="Contact Number" class="textbox"></span>
                     </div>
                     <div>
-                        <label for="donationdate">Schedule Date<span class="required">*</span></label>
-                        <input required="true" id="donationdate" name="donationdate" type="date" class="textbox">
+                        <span><label>Receipt Number<span class="required"></span></label></span>
+                        <span><input required name="referencenum" id="referencenum" type="text" placeholder="Reference Number" class="textbox"></span>
                     </div>
                     <div>
-                        <span><label>I donate...<span class="required"></span></label></span>
-                        <span><input required="true" name="nameofdonation" type="text" placeholder="I donate..." class="textbox"></span>
+                        <span><label>Cash Donation</label></span>
+                        <span><input name="cashDonation" id="cashDonation" type="text" placeholder="Amount" class="textbox"></span>
                     </div>
-                    <button id="openCamera">Open Camera</button>
-                    <input type="file" span class="required" name="picture">
-                    <!-- Camera container -->
-                    <div id="cameraContainer">
-                        <video id="cameraFeed" autoplay></video>
-                        <button id="capturePhoto">Capture Photo</button>
-                        <input type="hidden" id="imageData">
-                        <canvas id="photoCanvas"></canvas>
-                    </div>
+                    <div>
+                        <span><label>Cash Check </label></span>
+                        <span><input name="cashCheck" id="cashCheck" type="text" placeholder="Amount" class="textbox"></span>
+                       </div>
+                       <div>
+                        <label>For Cash Check</label><br>
+                        
+                        <button type="button" id="openCamera">Open Camera</button>
+                        <!-- Camera container -->
+                        <div id="cameraContainer">
+                            <video id="cameraFeed" autoplay></video>
+                            <button type="button" id="capturePhoto">Capture Photo</button>
+                            <input type="hidden" id="imageData" name="imageData">
+                            <canvas id="photoCanvas"></canvas>
+                        </div>
+                        <br>
+                        <input type="file" name="picture" id="picture">
+                        <!-- Image preview container -->
+                        <div>
+                            <img id="imagePreview" alt="Image Preview">
+                        </div>  
 
                     <div>
-                        <span><label>Reference Number</label><span class="required"></span>
-                        <span><input required="true" name="referencenum" type="text" placeholder="Reference Number" class="textbox"></span>
+                        <span><label>Message</label></span>
+                        <span><input name="message" type="text" placeholder="Message" class="textbox"></span>
                     </div>
-                    <div>
-                        <span><label>Message</label><span class="required"></span>
-                        <span><input required="true" name="message" type="text" placeholder="Message" class="textbox"></span>
-                    </div>
-					<br>
+                    <br>
                     <div>
                         <input type="submit" value="Submit" onclick="return confirm('Are you sure you want to submit this form?')">
                     </div>
-					<br>
+                    <br>
                 </form>
                 <div class="clearfix"></div>
             </div>
@@ -86,28 +106,22 @@
     <?php include_once('includes/footer.php');?>
     
     <script src="js/jquery-1.8.3.min.js"></script>
-    
-	<script>
-        var inputs = document.getElementById("contactnum");
-        inputs.addEventListener("input", function(event) {
+    <script>
+        document.getElementById("contactnum").addEventListener("input", function(event) {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
-    </script>
 
-    <script>
-        // Get references to DOM elements
+        // Camera script
         const openCameraButton = document.getElementById('openCamera');
         const cameraContainer = document.getElementById('cameraContainer');
         const cameraFeed = document.getElementById('cameraFeed');
         const capturePhotoButton = document.getElementById('capturePhoto');
         const photoCanvas = document.getElementById('photoCanvas');
-        const ImageDataInput = document.getElementById('imageData');
-        // Event listener for opening the camera
-        openCameraButton.addEventListener('click', function() {
-            // Show the camera container
-            cameraContainer.style.display = 'block';
+        const imageDataInput = document.getElementById('imageData');
+        const imagePreview = document.getElementById('imagePreview');
 
-            // Get user media (i.e., access the camera)
+        openCameraButton.addEventListener('click', function() {
+            cameraContainer.style.display = 'block';
             navigator.mediaDevices.getUserMedia({ video: true })
                 .then(function(stream) {
                     cameraFeed.srcObject = stream;
@@ -116,19 +130,39 @@
                     console.error('Error accessing camera:', error);
                 });
         });
-
-        // Event listener for capturing a photo
+        
         capturePhotoButton.addEventListener('click', function() {
-            // Draw the current video frame onto the canvas
             const context = photoCanvas.getContext('2d');
+            photoCanvas.width = cameraFeed.videoWidth;
+            photoCanvas.height = cameraFeed.videoHeight;
             context.drawImage(cameraFeed, 0, 0, photoCanvas.width, photoCanvas.height);
-
-            // Convert the canvas content to a data URL representing the image
             const imageDataURL = photoCanvas.toDataURL('image/jpeg');
             console.log('Captured photo data URL:', imageDataURL);
-            ImageDataInput.value = canvas.toDataURL('img/png');
-            // Here you can send the imageDataURL to the server for further processing, e.g., uploading to the server or saving to a database
+            imageDataInput.value = imageDataURL;
+
+            // Show the captured image in the image preview
+            imagePreview.src = imageDataURL;
+            imagePreview.style.display = 'block';
         });
-    </script>
-</body>
+
+        // Function to handle file input change event
+        function handleFileInputChange(event) {
+            const file = event.target.files[0]; // Get the selected file
+            const reader = new FileReader(); // Create a FileReader object
+
+            // Define the function to execute when FileReader finishes reading the file
+            reader.onload = function(e) {
+                // Set the source of the image preview to the read data URL
+                imagePreview.src = e.target.result;
+                // Show the image preview
+                imagePreview.style.display = 'block';
+            };
+
+            // Read the file as a data URL
+            reader.readAsDataURL(file);
+        }
+
+        // Add event listener to the file input element
+        document.getElementById('picture').addEventListener('change', handleFileInputChange);
+    </script></body>
 </html>

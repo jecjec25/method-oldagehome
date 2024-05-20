@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
   </head>
   <body>
     
   </body>
   </html>
   <style>
-   body {
+body {
     font-family: Arial, sans-serif;
 }
+
 .notification-dropdown a {
     text-decoration: none; /* This removes the underline */
   }
@@ -64,6 +66,12 @@
 .notification-item:hover {
     background-color: #f1f1f1;
 }
+.dropdown  .helloDrop li a {
+    color: black; /* Set the font color to black */
+
+  align:left;
+  }
+
 
   </style>
   <div class="strip"> </div>
@@ -138,19 +146,43 @@
           <div class="clearfix"></div>
       <div class="sub-header">
 
-              <nav class="top-nav">
-                <ul class="top-nav">
-                  <li class="active"><a href="userViewpost">View Events</a></li>
-                  <li><a href="/booking">Event Reservation</a></li>
-                  <li><a href="/userIdonate">Donate to our Elders</a></li>
-                  <li><a href="/userdonation">Donation</a></li>
-                  <li><a href="/userproduct">Products</a></li>
-                  <li><a href="/usereventpost">Post an Event</a></li>
-                  <div class="clearfix"> </div>
-                </ul>
-                <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
+      <nav class="top-nav">
+  <ul class="top-nav">
+    <li class="active"><a href="userViewpost">View Events</a></li>
+    <li><a href="/booking">Event Reservation</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders <b class="caret"></b></a>
+      <ul class="dropdown-menu helloDrop">
+        <!-- Add your dropdown items here -->
+        <li><a href="/donate-money">Monetary/Cash Donation</a></li>
+        <li><a href="/donate-items">In-kind Donation</a></li>
+      </ul>
+    </li>
+    <li><a href="/userdonation">Donation</a></li>
+    <li><a href="/userproduct">Products</a></li>
+    <li><a href="/usereventpost">Post an Event</a></li>
+    <div class="clearfix"></div>
+  </ul>
+  <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
+</nav>
 
-              </nav>
+<script>
+  // Add JavaScript to handle dropdown toggle
+  document.addEventListener("DOMContentLoaded", function() {
+    var dropdownToggle = document.querySelectorAll('.dropdown-toggle');
+    for (var i = 0; i < dropdownToggle.length; i++) {
+      dropdownToggle[i].addEventListener('click', function() {
+        var parent = this.parentElement;
+        if (parent.classList.contains('open')) {
+          parent.classList.remove('open');
+        } else {
+          parent.classList.add('open');
+        }
+      });
+    }
+  });
+</script>
+
                           <script>
                               $(document).ready(function() {
                 // Get the current URL

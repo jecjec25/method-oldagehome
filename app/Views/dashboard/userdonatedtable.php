@@ -45,39 +45,84 @@
                     <?php if(isset($calen['bookingId'])){?>
                       <input type="hidden" name="bookingId" value="<?=$calen['bookingId']?>">
                     <?php }?>
+              </form>
                     <thead>
                         <tr>
                           <th>Gmail Account</th>
+                          <th>Date</th>
+                          <th>Establishment</th>
                           <th>Last Name</th>
                           <th>First Name</th>
                           <th>Middle Name</th>
                           <th>Contact Number</th>
-                          <th>Donation Date</th>
-                          <th>Name of Donation</th>
-                          <th>Picture</th>
-                          <th>Reference Number</th>
+                          <th>Receipt Number</th>
+                          <th>Cash Donation</th>
+                          <th>Cash Check</th>
+                          <th>Image</th>
                           <th>Message</th>
                           <th>Action</th>
-                        </tr>
+                        </tr> 
                     </thead>
                     <tbody>
                     <?php foreach($donate as $dnt): ?>
                     <tr>
                     <td><?=$dnt['Email'] ?></td>
+                    <td>
+                    <?php
+                    $dateString = $dnt['donationdate'];
+                    $date = new DateTime($dateString);
+                    echo $date->format('F j, Y g:i A');
+                    ?>
+                </td>
+                      <td><?php if($dnt['establishment'] == null):?><p>No Establishment Inserted</p><?php else:?><?= $dnt['establishment']?><?php endif;?></td>
                       <td><?=$dnt['lastname'] ?></td>
                       <td><?=$dnt['firstname'] ?></td>
                       <td><?=$dnt['middlename'] ?></td>
                       <td><?=$dnt['contactnum'] ?></td>
-                      <td><?=$dnt['donationdate']?></td>
-                      <td><?=$dnt['nameofdonation'] ?></td>
-                      <td><?=$dnt['picture'] ?></td>
                       <td><?=$dnt['referencenum'] ?></td>
+                      <td><?php if($dnt['cashDonation'] == 0 || $dnt['cashDonation'] == NULL):?>
+                        <p>No Cash Donation</p>
+                        <?php else:?>
+                      <?=$dnt['cashDonation'] ?> <?php endif;?></td>
+                      <td><?php if($dnt['cashCheck'] == 0 || $dnt['cashCheck'] == NULL):?>
+                        <p>No Cash Check</p>
+                        <?php else:?>
+                      <?=$dnt['cashCheck'] ?> <?php endif;?></td>
+                      <td><?php if (!empty($dnt['picture'])): ?>
+                            <img src="<?="upload/monetary/" .$dnt['picture']?>" alt="Donation Image" style="width: 90px; height: 90px;">
+
+                        <?php else: ?>
+                            No Image
+                        <?php endif; ?></td>
+                      
                       <td><?=$dnt['message'] ?></td>
                       <td>
-                          <div class="d-flex align-items-center">
-                            <a href="<?= base_url('deletedonate/' . $dnt['id'])?>" class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to submit this form?')">Delete <i class="typcn typcn-trash btn-icon-append"></i></a>
-                          <input type="hidden" name="delete" value="<?= $dnt['id']?>">
-                          </div>
+                      <div class="d-flex align-items-center">
+                        
+                        <input type="hidden" name="delete" value="<?= $dnt['id'] ?>">
+                         <!-- Received Form -->
+                         <form action="<?= base_url('ReceivedMonetary') ?>" method="post">
+                            <input type="hidden" name="update" value="<?= $dnt['id'] ?>">
+                            <button class="btn btn-primary btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">
+                                Received <i class="typcn typcn-folder-open btn-icon-append"></i>
+                            </button>
+                        </form>
+                        <!-- Postpone Form -->
+                        <form action="<?= base_url('PosponedMonetary') ?>" method="post" class="me-2">
+                            <input type="hidden" name="update" value="<?= $dnt['id'] ?>">
+                            <button class="btn btn-warning btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">
+                                Postponed <i class="typcn typcn-archive btn-icon-append"></i>
+                            </button>
+                        </form>
+                           <!-- Delete Button -->
+                           <a href="<?= base_url('deletedonate/' . $dnt['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to submit this form?')">
+                            Delete <i class="typcn typcn-trash btn-icon-append"></i>
+                        </a>
+                     
+                       
+                    </div>
+
+                          </form>
                     </td>
                     </tr>
                     <?php endforeach; ?>

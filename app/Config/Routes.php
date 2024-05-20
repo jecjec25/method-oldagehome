@@ -107,6 +107,21 @@ $routes->group('Main', ['filter'=>'authGuard'], static function($routes){
     $routes->match(['post'], 'product_add', 'Main::product_add/$1');
     $routes->match(['post'], 'save_transaction', 'Main::save_transaction');
 });
+
+
+$routes->get('tableindkind','UserIdonateController::viewDonateInkind');
+$routes->post('PostponedInkind','UserIdonateController::PostponedInkind');
+$routes->post('ReceivedInkind','UserIdonateController::ReceivedInkind');
+$routes->get('deleteinkind/(:any)','UserIdonateController::dltInkinddonation/$1');
+$routes->post('ReceivedMonetary','UserIdonateController::ReceivedMonetary');
+$routes->post('PosponedMonetary','UserIdonateController::PosponedMonetary');
+
+
+$routes->get('viewReceiveMonetary','UserIdonateController::viewReceiveMonetary');
+$routes->get('viewPostponedMonetary','UserIdonateController::viewPostponedMonetary');
+$routes->get('viewReceiveInkind','UserIdonateController::viewReceiveInkind');
+$routes->get('viewPostponedInkind','UserIdonateController::viewPostponedInkind');
+
 }
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
 $routes->get('/editproduct/(:num)', 'ProductsController::editprod/$1');
@@ -121,13 +136,18 @@ $routes->post('updateToUnread', 'ContactController::updateUnread');
 
 //calendar to`
 if(session()->get('role') == 'Booker'){
+
+$routes->match(['get', 'post'], 'UserIdonateController/sbmtInkindDonation', 'UserIdonateController::sbmtInkindDonation');
+
+$routes->get('donate-items', 'UserIdonateController::inKind');
+
 $routes->get('/booking', 'UserbookingController::bookchecked');
 
 $routes->get('userproduct', 'UserProductController::userproduct');
 $routes->get('userdonation', 'UserDonationController::userdonation');
 
 //idonate page
-$routes->get('userIdonate', 'UserIdonateController::userIdonate');
+$routes->get('donate-money', 'UserIdonateController::userIdonate');
 $routes->post('/sbmtDonation', 'UserIdonateController::sbmtDonation');
 
 //user view event post
@@ -255,3 +275,9 @@ $routes->get('generateElderlyReport/(:any)', 'Fullcalendar::generateElderlyRepor
 $routes->get('generateEventReport/(:any)/(:any)', 'Fullcalendar::generateEventReport/$1/$2');
 $routes->get('generateElderlyLeft', 'NewController::generateElderlyLeft');
 $routes->get('generateElderlyDeceased', 'NewController::generateElderlyDeceased');
+
+
+
+
+$routes->match(['get', 'post'], 'sample', 'UserIdonateController::retrieve');
+$routes->match(['get', 'post'],'uploads/image', 'UserIdonateController::show');

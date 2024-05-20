@@ -59,7 +59,7 @@
                     </div>
                     <div>
                         <span><label>Middle Name</label></span>
-                        <span><input required="true" name="middlename" type="text" placeholder="Enter your middle name" class="textbox"></span>
+                        <span><input name="middlename" type="text" placeholder="Enter your middle name" class="textbox"></span>
                     </div>
                     <div>
                         <span><label>Contact Number<span class="required"></span></label></span>
@@ -70,11 +70,11 @@
                         <span><input required="true" name="event" type="text"  placeholder="Type of event" class="textbox"></span>
                     </div>
                     <div>
-                        <label for="prefferdate">Preferred Date<span class="required">*</span></label>
+                        <label for="prefferdate">Preferred Date<span class="required"></span></label>
                         <input required="true" id="prefferdate" name="prefferdate" type="text" class="dates">
                        </div>
                     <div>
-                        <label for="time">Preferred Time<span class="required">*</span></label>
+                        <label for="time">Preferred Time<span class="required"></span></label>
                         <select name="Time" id="time">
                             <option value="9am-11am">9AM-11AM</option>
                             <option value="11am-1pm">11AM-1PM</option>
