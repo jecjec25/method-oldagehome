@@ -189,6 +189,13 @@ $routes->get('donationReps', 'ReportController::donation');
 $routes->get('viewDonation', 'ReportController::viewdonrep');
 $routes->get('/deletedonreport/(:any)', 'ReportController::delete/$1');
 
+//edit left elder
+$routes->match(['post', 'get'], 'vieweditleft/(:any)', 'NewController::ViewEditLeft/$1');
+$routes->match(['post', 'get'], 'saveEditleft/(:any)', 'NewController::saveEditleft/$1');
+//edit deceased elder
+$routes->match(['post', 'get'], 'vieweditdeceased/(:any)', 'NewController::ViewEditDeceased/$1');
+$routes->match(['post', 'get'], 'saveEditdeceased/(:any)', 'NewController::saveEditdeceased/$1');
+
 $routes->post('Archivestat', 'Fullcalendar::Archive');
 
 //news and events sa admin side

@@ -77,7 +77,7 @@
                     <td><?=$mevents['Category']?></td>
                     <td><?=$mevents['Status'] ?></td>
                     <td><?=$mevents['Atendees'] ?></td>
-                    <td><?=$mevents['Attachments'] ?></td>
+                    <td><img src="<?="/upload/events/" .$mevents['Attachments'] ?>" alt="eventsba"></td>
                     <td><?=$mevents['type'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">

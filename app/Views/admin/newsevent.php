@@ -70,7 +70,7 @@
                 <p><strong>Organizer:</strong> <?= $mnews['author']; ?></p>
                 <p><strong>Start Date:</strong> <?= $mnews['date_published']; ?></p>
                 <p><strong>Category:</strong> <?= $mnews['Category']; ?></p>
-                <p><strong>Attachments:</strong> <?= $mnews['picture']; ?></p>
+                <p><strong>Attachments:</strong> <img src="<?="/upload/news/" . $mnews['picture'] ?>" alt="newsba" style="witdh:150px; height:150px;"></p>
                 <a href="/news" class="btn btn-secondary">Back</a>
             </li>
         <?php endforeach; ?>
@@ -85,7 +85,7 @@
                 <p><strong>Category:</strong> <?= $mevents['Category']; ?></p>
                 <p><strong>Status:</strong> <?= $mevents['Status']; ?></p>
                 <p><strong>Attendees:</strong> <?= $mevents['Atendees']; ?></p>
-                <p><strong>Attachments:</strong> <?= $mevents['Attachments']; ?></p>
+                <p><strong>Attachments:</strong> <img src="<?="/upload/events/" . $mevents['Attachments']?>" alt="eventsba" style="witdh:150px; height:150px;"></td></p>
                 <form action="<?= base_url('feedback')?>" method="post">
                 
                 <input type="hidden" name="usersignsId" value="<?= session()->get('id')?>">

@@ -58,7 +58,7 @@
                 <p><strong>Category:</strong> <?= $mevents['Category']; ?></p>
                 <p><strong>Status:</strong> <?= $mevents['Status']; ?></p>
                 <p><strong>Attendees:</strong> <?= $mevents['Atendees']; ?></p>
-                <p><strong>Attachments:</strong> <?= $mevents['Attachments']; ?></p>
+                <p><strong>Attachments:</strong> <img src="<?="/upload/events/" . $mevents['Attachments']?>" alt="eventsba" style="witdh:150px; height:150px;"></td></p>
                 <form action="<?= base_url('feedback')?>" method="post">
                 
                 <input type="hidden" name="usersignsId" value="<?= session()->get('userID')?>">

@@ -57,7 +57,7 @@
                 <p><strong>Author:</strong> <?= $pannounce['Author']; ?></p>
                 <p><strong>Category:</strong> <?= $pannounce['Category']; ?></p>
                 <p><strong>Priority:</strong> <?= $pannounce['Priority']; ?></p>
-                <p><strong>Attachments:</strong> <?= $pannounce['Attachments']; ?></p>
+                <p><strong>Attachments:</strong> <img src="<?="/upload/announcement/" . $pannounce['Attachments']?>" alt="announcementba" style="witdh:150px; height:150px;"></td></p>
                 <form action="<?= base_url('feedbackannounce')?>" method="post">
                 <input type="hidden" name="AnnounceID" value="<?= $pannounce['AnnounceID']?>">
                 <textarea name="feedback" id="" cols="30" rows="10" placeholder="Feedback"></textarea>

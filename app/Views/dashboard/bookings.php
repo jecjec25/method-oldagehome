@@ -9,6 +9,25 @@
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
   
 </head>
+<style>
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+</style>
 <body>
   
   <div class="container-scroller">
@@ -86,8 +105,9 @@
                     <td><?=$even['outcomes'] ?></td>
                     <td><?=$even['acknowledgement'] ?></td>
                     <td>
-                      <a href="<?= base_url('viewEvent/') .$even['id']?>">View Event</a>
+                        <a href="<?= base_url('viewEvent/') . $even['id']?>" class="btn">View Event</a>
                     </td>
+
                     </tr>
                     <?php endforeach; ?>
                     </tbody>

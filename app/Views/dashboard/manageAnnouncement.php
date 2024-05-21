@@ -78,7 +78,7 @@
                     <td><?=$mannounce['End_date'] ?></td>
                     <td><?=$mannounce['Category'] ?></td>
                     <td><?=$mannounce['Priority'] ?></td>
-                    <td><?=$mannounce['Attachments'] ?></td>
+                    <td><img src="<?="upload/announcement/" . $mannounce['Attachments'] ?>" alt=""></td>
                     <td><?=$mannounce['Status'] ?></td>
                     <td><?=$mannounce['Target_audience'] ?></td>
                     <td>

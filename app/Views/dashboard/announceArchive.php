@@ -79,7 +79,7 @@
                     <td><?=$archannounce['End_date'] ?></td>
                     <td><?=$archannounce['Category'] ?></td>
                     <td><?=$archannounce['Priority'] ?></td>
-                    <td><?=$archannounce['Attachments'] ?></td>
+                    <td><img src="<?="/upload/announcement/".$archannounce['Attachments']?>" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$archannounce['Status'] ?></td>
                     <td><?=$archannounce['Target_audience'] ?></td>
                 </tr>

@@ -45,12 +45,12 @@ class EventsController extends BaseController
 
             $rules = [
                 'Title'   => 'required|min_length[5]',
-                'Description'   => 'required|min_length[10]',
+                'Description'   => 'required|min_length[5]',
                 'Organizer'  => 'required|min_length[5]',
                 'Atendees'  => 'required|min_length[5]',
                 'Category'   => 'required',
             ];
-
+            $imagePath = $_SERVER['DOCUMENT_ROOT'];
             $image = $this->request->getFile('Attachments');
             if($this->validate($rules))
             {
@@ -59,11 +59,11 @@ class EventsController extends BaseController
             {
                 $myImage = $image->getRandomName();
 
-                $image->move(WRITEPATH . 'uploads', $myImage);
+                $image->move($imagePath . '/upload/events/', $myImage);
         
                 $data = [
                     'Attachments' => $image,
-                    'Attachments' => 'uploads/' . $myImage,
+                    'Attachments' => $myImage,
                     'Title' => $this->request->getVar('Title'),
                     'Description' => $this->request->getVar('Description'),
                     'Organizer' => $this->request->getVar('Organizer'),
@@ -142,24 +142,56 @@ class EventsController extends BaseController
     public function EditEvents($id)
     {
 
-        $data = [
-            'Title' => $this->request->getVar('Title'),
-            'Description' => $this->request->getVar('Description'),
-            'Organizer' => $this->request->getVar('Organizer'),
-            'Start_date' => $this->request->getVar('Start_date'),
-            'End_date' => $this->request->getVar('End_date'),
-            'Atendees' => $this->request->getVar('Atendees'),
-            'Status'   => $this->request->getVar('Status'),
-            'Attachments' => $this->request->getVar('Attachments'),
+        $rules = [
+            'Title'   => 'required|min_length[5]',
+            'Description'   => 'required|min_length[5]',
+            'Organizer'  => 'required|min_length[5]',
+            'Atendees'  => 'required|min_length[5]',
+            'Category'   => 'required',
         ];
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
+        $image = $this->request->getFile('Attachments');
+        if($this->validate($rules))
+        {
 
-        $categories = $this->request->getVar('Category');
-        if (!empty($categories)) {
-            $data['Category'] = implode(', ', $categories);
-        }
-        $this->admevent->update($id, $data);
+        if ($image && $image->isValid() && !$image->hasMoved()) 
+        {
+            $myImage = $image->getRandomName();
+
+            $image->move($imagePath . '/upload/events/', $myImage);
+    
+            $data = [
+                'Attachments' => $image,
+                'Attachments' => $myImage,
+                'Title' => $this->request->getVar('Title'),
+                'Description' => $this->request->getVar('Description'),
+                'Organizer' => $this->request->getVar('Organizer'),
+                'Start_date' => $this->request->getVar('Start_date'),
+                'End_date' => $this->request->getVar('End_date'),
+                'Status' => $this->request->getVar('Status'),
+                'Atendees' => $this->request->getVar('Atendees'),
+                'adminId' => $this->request->getVar('adminId'),
+                'type' => 'admin',
+            ];
+
+            $categories = $this->request->getVar('Category');
+            if (!empty($categories)) {
+                $data['Category'] = implode(', ', $categories);
+            }
+    
+            $this->admevent->update($id, $data);
 
         return redirect()->to('/Viewevents')->with('success', 'Senior Citizen details updated successfully');
+        }
+        else
+        {
+            return redirect()->to('/newsAndEvents')->with('error', 'Error uploading image.');
+        }
+    }
+    else{
+        $data['validation'] = $this->validator;
+        return view('dashboard/editevents', $data);
+    }
 
     }
     public function Archive()

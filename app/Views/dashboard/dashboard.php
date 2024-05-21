@@ -36,35 +36,46 @@
             </div>
         </div>
     </div>
+    
     <script>
-        fetch('/bookings/by-month') // Make sure this URL points to your CI4 controller method
-            .then(response => response.json())
-            .then(data => {
-                var labels = data.map(item => `${new Date(item.year, item.month - 1).toLocaleString('default', { month: 'short' })} ${item.year}`);
-                var bookingCounts = data.map(item => parseInt(item.total_bookings));
-                const ctx = document.getElementById('bookingsChart').getContext('2d');
-                var bookingsChart = new Chart(ctx, {
-                    type: 'bar',    
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Number of Bookings per Month',
-                            data: bookingCounts,
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
+     fetch('bookings/by-month')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Fetched data:', data);
+        var labels = data.map(item => {
+            if (item.year == null || item.month == null) {
+                console.error('Invalid data item:', item);
+                return 'Invalid Date';
+            }
+            let date = new Date(item.year, item.month - 1);
+            let formattedDate = `${item.month}/${item.year}`;
+            return formattedDate;
+        });
+        var bookingCounts = data.map(item => parseInt(item.total_bookings) || 0);
+        const ctx = document.getElementById('bookingsChart').getContext('2d');
+        var bookingsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Number of Bookings per Month',
+                    data: bookingCounts,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
                     }
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
+                }
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
     </script>
     <script>
         fetch('/products/quantities') // Make sure this is the correct API endpoint

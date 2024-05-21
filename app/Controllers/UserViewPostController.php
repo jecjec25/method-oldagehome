@@ -28,7 +28,7 @@ class UserViewPostController extends BaseController
         $data = [
             'events' => $this->events
                 ->where('status', 'Published')
-                ->where('type', 'user')
+               
                 ->findAll(),
             'notif' => $this->acBooking
                 ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 

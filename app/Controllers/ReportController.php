@@ -55,7 +55,6 @@ class ReportController extends BaseController
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];
  
-
         $main = new UserbookingModel();
        
         $data['reports'] = $this->booking->where('id', $id)->first($id);

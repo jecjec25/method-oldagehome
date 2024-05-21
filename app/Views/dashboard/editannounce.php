@@ -47,7 +47,7 @@
                     Edit Announcement to Aruga Kapatid
                   </p>
 
-                  <form class="forms-sample"  action="<?= base_url('editAnnounce/' .$main['AnnounceID'])?>"method="post">
+                  <?= form_open_multipart('editAnnounce/' .$main['AnnounceID']) ?>
                   <div class="form-group">
                        <label for="Title">Title</label>
                       <input id="Title" name="Title" type="text" class="form-control" required="true" value="<?= $main['Title']?>">
@@ -115,7 +115,7 @@
                     <div class="row mt-3">
                     <div class="col-md-12">
                     <a href="/updateannounce" class="btn btn-secondary">Back</a>
-                  </form>
+                    <?= form_close() ?>
                 </div>
               </div>
             </div>

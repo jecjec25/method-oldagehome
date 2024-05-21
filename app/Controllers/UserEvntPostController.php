@@ -45,37 +45,60 @@ class UserEvntPostController extends BaseController
         'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first()
         ];
 
-        if(empty($data))
-        {
-            echo 'no data to show';
-        }
         return view ('admin/userEventPost', $data);
     }
 
     public function usersavepost()
     {
       
-        $data = [
-            'usersignsId' => $this->request->getPost('usersignsId'),
-            'Title' => $this->request->getPost('Title'),
-            'Description' => $this->request->getPost('Description'),
-            'Organizer' => $this->request->getPost('Organizer'),
-            'Start_date' => $this->request->getPost('Start_date'),
-            'End_date' => $this->request->getPost('End_date'),
-            'Category' => $this->request->getPost('Category'),
-            'Atendees' => $this->request->getPost('Atendees'),
-            'Attachments' => $this->request->getPost('Attachments'),
-            'Status' => 'Draft',
-            'type' => 'user',
+        $rules = [
+            'Title'   => 'required|min_length[5]',
+            'Description'   => 'required|min_length[5]',
+            'Organizer'  => 'required|min_length[5]',
+            'Atendees'  => 'required|min_length[5]',
+            'Category'   => 'required',
         ];
-        $categories = $this->request->getVar('Category');
-        if (!empty($categories)) {
-            $data['Category'] = implode(', ', $categories);
-        }
-        $userevent = new EventsModel();
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
+        $image = $this->request->getFile('Attachments');
+        if($this->validate($rules))
+        {
 
-        $userevent->save($data);
-        session()->setFlashdata('success', 'The data has been saved sucessfully.');
-        return redirect()->to('/usereventpost');
+        if ($image && $image->isValid() && !$image->hasMoved()) 
+        {
+            $myImage = $image->getRandomName();
+
+            $image->move($imagePath . 'upload/event', $myImage);
+            $data = [
+                'Attachments' => $image,
+                'Attachments' => $myImage,
+                'usersignsid' => $this->request->getVar('usersignsId'),
+                'Title' => $this->request->getVar('Title'),
+                'Description' => $this->request->getVar('Description'),
+                'Organizer' => $this->request->getVar('Organizer'),
+                'Start_date' => $this->request->getVar('Start_date'),
+                'End_date' => $this->request->getVar('End_date'),
+                'Status' => 'Draft',
+                'Atendees' => $this->request->getVar('Atendees'),
+                'adminId' => $this->request->getVar('adminId'),
+                'type' => 'user',
+            ];
+            $categories = $this->request->getVar('Category');
+            if (!empty($categories)) {
+                $data['Category'] = implode(', ', $categories);
+            }
+    
+            $this->userevent->save($data);
+    
+            return redirect()->to('/usereventpost')->with('success', 'Data has been Uploaded');
+        }
+        else
+        {
+            return redirect()->to('/newsAndEvents')->with('error', 'Error uploading image.');
+        }
+    }
+    else{
+        $data['validation'] = $this->validator;
+        echo'Invalid, try again.';
+    }
     }
 }

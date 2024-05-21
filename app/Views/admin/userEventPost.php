@@ -24,8 +24,8 @@
                 <?php if(session()->getFlashdata('success')): ?>
                 <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
                 <?php endif; ?>
-                <form action="<?= base_url("usersavepost") ?>" method="post" class="left_form booking-form">
-                    <div>
+             <?= form_open_multipart('usersavepost')?>
+                <div>
                         <input type="hidden" name="usersignsId" value="<?= session()->get('userID') ?>">
                         <span><label>Title<span class="required"></span></label></span>
                         <span><input required="true" name="Title" type="text" placeholder="Title" class="textbox"></span>
@@ -76,7 +76,7 @@
                         <input type="submit" value="Submit" onclick="return confirm('Are you sure you want to submit this form?')">
                     </div>
 					<br>
-                </form>
+                <?= form_close()?>
                 <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>

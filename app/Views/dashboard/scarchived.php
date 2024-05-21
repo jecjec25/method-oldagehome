@@ -71,6 +71,24 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+.edit-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.edit-button:hover {
+    background-color: #45a049;
+}
 </style>
 
 <body>
@@ -130,7 +148,10 @@
                                                 <th>Emergency Address</th>
                                                 <th>Emergency Contact Number</th>
                                                 <th>Registration Date</th>
+                                                <th>Departure Date</th>
+                                                <th>Reason</th>
                                                 <th>Status</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -150,9 +171,17 @@
                                                 <td><?=$k['EmergencyAdd'] ?></td>
                                                 <td><?=$k['EmergencyContNum'] ?></td>
                                                 <td><?=$k['RegDate'] ?></td>
+                                                <td><?=$k['departuredate'] ?></td>
+                                                <td><?=$k['reasonleft'] ?></td>
                                                 <td>
                                                     <?=$k['scstatus'] ?>
                                                 </td>
+                                                <td>
+                                                    <a href="<?= base_url('/vieweditleft/') . $k['Id']?>">
+                                                        <button class="edit-button">Edit</button>
+                                                    </a>
+                                                </td>
+
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>

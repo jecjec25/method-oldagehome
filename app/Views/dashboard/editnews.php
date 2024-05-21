@@ -47,7 +47,7 @@
                   <p class="card-description">
                     Edit News to Aruga Kapatid
                   </p>
-                  <form class="forms-sample"  action="<?= base_url('editnews/' .$main['id'])?>"method="post">
+                  <?= form_open_multipart('editnews/' .$main['id']) ?>  
                     <div class="form-group">
                       <label for="title">Title</label>
                     <input id="title" name="title" type="text" class="form-control" required="true" value="<?= $main['title'];?>">
@@ -85,7 +85,7 @@
                     <div class="row mt-3">
                     <div class="col-md-12">
                     <a href="/updatenews" class="btn btn-secondary">Back</a>
-                  </form>
+                    <?= form_close() ?>
                 </div>
               </div>
             </div>

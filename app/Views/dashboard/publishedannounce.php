@@ -74,7 +74,7 @@
                     <td><?=$pannounce['End_date'] ?></td>
                     <td><?=$pannounce['Category'] ?></td>
                     <td><?=$pannounce['Priority'] ?></td>
-                    <td><?=$pannounce['Attachments'] ?></td>
+                    <td><img src="<?="/upload/announcement/".$pannounce['Attachments']?>" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$pannounce['Status'] ?></td>
                     <td><?=$pannounce['Target_audience'] ?></td>
                     <td>

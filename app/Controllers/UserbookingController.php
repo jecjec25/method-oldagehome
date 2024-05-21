@@ -32,10 +32,11 @@ class UserbookingController extends ResourceController
     }
     public function index()
     {
-        // Fetch data from the model
+        
         $data = $this->acceptbooking->getBookingsByMonth();
 
-        // Return the data as JSON
+
+
         return $this->respond($data);
     }
 

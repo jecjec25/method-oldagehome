@@ -64,7 +64,7 @@ class AnnouncementController extends BaseController
             'Priority'  => 'required|min_length[5]',
             
         ];
-
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
         $image = $this->request->getFile('Attachments');
         if($this->validate($rules))
         {
@@ -73,11 +73,11 @@ class AnnouncementController extends BaseController
         {
             $myImage = $image->getRandomName();
 
-            $image->move(WRITEPATH . 'uploads', $myImage);
+            $image->move($imagePath . '/upload/announcement/', $myImage);
     
             $data = [
                 'Attachments' => $image,
-                'Attachments' => 'uploads/' . $myImage,
+                'Attachments' => $myImage,
                 'Title' => $this->request->getVar('Title'),
                 'Content' => $this->request->getVar('Content'),
                 'Author' => $this->request->getVar('Author'),
@@ -171,31 +171,58 @@ class AnnouncementController extends BaseController
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];        date_default_timezone_set('UTC');
         $currentTimestamp = date('Y-m-d H:i:s');
-        $data = [
-            'Title' => $this->request->getVar('Title'),
-            'Content' => $this->request->getVar('Content'),
-            'Author' => $this->request->getVar('Author'),
-            'Date_modified' =>  $currentTimestamp,
-            'Start_date' => $this->request->getVar('Start_date'),
-            'End_date' => $this->request->getVar('End_date'),
-            'Priority' => $this->request->getVar('Priority'),
-            'Attachments' => $this->request->getVar('Attachments'),
-            'Status'   => $this->request->getVar('Status'),
+
+              $rules = [
+            'Title'   => 'required|min_length[5]',
+            'Content'   => 'required|min_length[10]',
+            'Author'  => 'required|min_length[5]',
+            'Priority'  => 'required|min_length[5]',
+            
         ];
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
+        $image = $this->request->getFile('Attachments');
+        if($this->validate($rules))
+        {
 
-        $categories = $this->request->getVar('Category');
-        if (!empty($categories)) {
-            $data['Category'] = implode(', ', $categories);
-        }
+        if ($image && $image->isValid() && !$image->hasMoved()) 
+        {
+            $myImage = $image->getRandomName();
 
-        $tAudience = $this->request->getVar('Target_audience');
-        if (!empty($tAudience)) {
-            $data['Target_audience'] = implode(', ', $tAudience);
-        }
+            $image->move($imagePath . '/upload/announcement/', $myImage);
+    
+            $data = [
+                'Attachments' => $image,
+                'Attachments' => $myImage,
+                'Title' => $this->request->getVar('Title'),
+                'Content' => $this->request->getVar('Content'),
+                'Author' => $this->request->getVar('Author'),
+                'Start_date' => $this->request->getVar('Start_date'),
+                'End_date' => $this->request->getVar('End_date'),
+                'Priority' => $this->request->getVar('Priority'),   
+                'Status' => $this->request->getVar('Status'),
+                'adminId' => $this->request->getVar('adminId'),
+            ];
 
+            $categories = $this->request->getVar('Category');
+            if (!empty($categories)) {
+                $data['Category'] = implode(', ', $categories);
+            }
+
+            $tAudience = $this->request->getVar('Target_audience');
+            if (!empty($tAudience)) {
+                $data['Target_audience'] = implode(', ', $tAudience);
+            }
+    
+          
         $this->admannouncement->update($id, $data);
 
         return redirect()->to('/updateannounce')->with('success', 'Senior Citizen details updated successfully');
+        }
+        else
+        {
+            return redirect()->to('/newsAndEvents')->with('error', 'Error uploading image.');
+        }   
+     }
     }
 
     public function publishedann()

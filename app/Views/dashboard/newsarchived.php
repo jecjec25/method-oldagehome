@@ -73,7 +73,7 @@
                     <td><?=$news['author'] ?></td>
                     <td><?=$news['date_published'] ?></td>
                     <td><?=$news['Category'] ?></td>
-                    <td><img src="<?=$news['picture']?>" style="width:50px; height:50px; border:box;"></td>
+                    <td><img src="<?="/upload/news/" .$news['picture']?>" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$news['status'] ?></td>
                 </tr>
                   <?php endforeach; ?>

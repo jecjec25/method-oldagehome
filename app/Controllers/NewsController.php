@@ -70,11 +70,11 @@ class NewsController extends BaseController
 
             $rules = [
                 'title'   => 'required|min_length[5]',
-                'Content'   => 'required|min_length[10]',
+                'Content'   => 'required|min_length[5]',
                 'author'  => 'required|min_length[5]',
                 'Category'   => 'required'
             ];
-
+                $imagePath = $_SERVER['DOCUMENT_ROOT'];
             $image = $this->request->getFile('picture');
             if($this->validate($rules))
             {
@@ -83,17 +83,17 @@ class NewsController extends BaseController
             {
                 $myImage = $image->getRandomName();
 
-                $image->move(WRITEPATH . 'uploads', $myImage);
+                $image->move($imagePath . '/upload/news/',  $myImage);
         
                 $data = [
                     'picture' => $image,
-                    'picture' => 'uploads/' . $myImage,
+                    'picture' => $myImage,
                     'title' => $this->request->getVar('title'),
                     'Content' => $this->request->getVar('Content'),
                     'author' => $this->request->getVar('author'),
                     'status' => 'Draft',
                     'adminId' => $this->request->getVar('adminId'),
-                ];
+                ];  
 
                 $categories = $this->request->getVar('Category');
                 if (!empty($categories)) {
@@ -172,23 +172,54 @@ class NewsController extends BaseController
                 ->findAll(),
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];
-         $data = [
-            'title' => $this->request->getVar('title'),
-            'Content' => $this->request->getVar('Content'),
-            'author' => $this->request->getVar('author'),
-            'picture' => $this->request->getVar('picture'),
-            'status' => $this->request->getVar('status')
+       
+        $rules = [
+            'title'   => 'required|min_length[5]',
+            'Content'   => 'required|min_length[5]',
+            'author'  => 'required|min_length[5]',
+            'Category'   => 'required'
         ];
+            $imagePath = $_SERVER['DOCUMENT_ROOT'];
+        $image = $this->request->getFile('picture');
+        if($this->validate($rules))
+        {
 
-        $categories = $this->request->getVar('Category');
-        if (!empty($categories)) {
-            $data['Category'] = implode(', ', $categories);
+        if ($image && $image->isValid() && !$image->hasMoved()) 
+        {
+            $myImage = $image->getRandomName();
+
+            $image->move($imagePath . '/upload/news/',  $myImage);
+    
+            $data = [
+                'picture' => $image,
+                'picture' => $myImage,
+                'title' => $this->request->getVar('title'),
+                'Content' => $this->request->getVar('Content'),
+                'author' => $this->request->getVar('author'),
+                'status' => $this->request->getVar('status'),
+                'adminId' => $this->request->getVar('adminId'),
+            ];  
+
+            $categories = $this->request->getVar('Category');
+            if (!empty($categories)) {
+                $data['Category'] = implode(', ', $categories);
+            }
+            $this->newsevent->update($id, $data);
+
+            return redirect()->to('/updatenews')->with('success', 'Senior Citizen details updated successfully');
+        }
+        else
+        {
+            return redirect()->to('/newsAndevents')->with('error', 'Error uploading image.');
         }
 
 
-        $this->newsevent->update($id, $data);
+    }
+    else{
+        $data['validation'] = $this->validator;
+        echo'Invalid, try again.';
+    }
 
-        return redirect()->to('/updatenews')->with('success', 'Senior Citizen details updated successfully');
     }
 
     public function newsarchived()
