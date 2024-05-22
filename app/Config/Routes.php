@@ -26,7 +26,6 @@ use CodeIgniter\Router\RouteCollection;
  $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
  $routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
 
-
 // $routes->get('/signin', 'Home::try');
 $routes->get('/', 'ViewController::home', ['filter' => 'guestFilter']);
 $routes->get('/contact', 'ViewController::contact', ['filter' => 'guestFilter']);
@@ -85,7 +84,6 @@ $routes->post('/submit', 'HomeController::store');
 $routes->get('/manageservices', 'ViewController::manageservices');
 $routes->get('/managescdetails', 'ViewController::managescdetails');
 $routes->post('/Archive', 'NewController::Archive');
-
 
 $routes->get('gettoAccept/(:any)', 'UserbookingController::getNotifAccept/$1');
 
@@ -282,9 +280,6 @@ $routes->get('generateElderlyReport/(:any)', 'Fullcalendar::generateElderlyRepor
 $routes->get('generateEventReport/(:any)/(:any)', 'Fullcalendar::generateEventReport/$1/$2');
 $routes->get('generateElderlyLeft', 'NewController::generateElderlyLeft');
 $routes->get('generateElderlyDeceased', 'NewController::generateElderlyDeceased');
-
-
-
 
 $routes->match(['get', 'post'], 'sample', 'UserIdonateController::retrieve');
 $routes->match(['get', 'post'],'uploads/image', 'UserIdonateController::show');

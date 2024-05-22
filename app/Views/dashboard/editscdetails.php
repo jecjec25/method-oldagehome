@@ -42,7 +42,7 @@
                   <p class="card-description">
                     Edit an Elder to Aruga Kapatid
                   </p>
-                 
+                  <?= form_open_multipart('update/'.$d['Id']) ?>
                   <form class="forms-sample" action="<?= site_url('update/' .$d['Id']) ?>" method="post">
                 
                 <input type="hidden" name="Id" value="<?= $d['Id']?>">
@@ -117,6 +117,7 @@
                   <a href="/test" class="btn btn-secondary">Back</a>
               </div>
               </form>
+              <?=form_close()?>
             </div>
           </div>
         </div>

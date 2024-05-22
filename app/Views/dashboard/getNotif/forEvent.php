@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <title>Admin Calendar</title>
-  <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="/login/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="/login/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="/login/css/vertical-layout-light/style.css">
 </head>
 <body>
   
@@ -102,13 +102,13 @@
     </div>
   </div>
 
-  <script src="login/vendors/js/vendor.bundle.base.js"></script>
-  <script src="login/vendors/chart.js/Chart.min.js"></script>
-  <script src="login/js/off-canvas.js"></script>
-  <script src="login/js/hoverable-collapse.js"></script>
-  <script src="login/js/template.js"></script>
-  <script src="login/js/settings.js"></script>
-  <script src="login/js/todolist.js"></script>
-  <script src="login/js/dashboard.js"></script>
+  <script src="/login/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/login/vendors/chart.js/Chart.min.js"></script>
+  <script src="/login/js/off-canvas.js"></script>
+  <script src="/login/js/hoverable-collapse.js"></script>
+  <script src="/login/js/template.js"></script>
+  <script src="/login/js/settings.js"></script>
+  <script src="/login/js/todolist.js"></script>
+  <script src="/login/js/dashboard.js"></script>
 </body>
 </html>

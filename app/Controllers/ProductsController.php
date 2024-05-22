@@ -61,11 +61,11 @@ class ProductsController extends ResourceController
     }
     public function updateprod($Id)
     {
+        $session = session();
+
         $main = new ProductsModel();
         $hello = $main->where('Id', $Id)->first();
-        
         $newQuantity = $hello['Quantity'];
-    
         if ($this->request->getVar('addQuantity')) {
             $newQuantity += $this->request->getVar('addQuantity');
         }
@@ -73,17 +73,33 @@ class ProductsController extends ResourceController
         if ($this->request->getVar('DeducQuantity')) {
             $newQuantity -= $this->request->getVar('DeducQuantity');
         }
-    
-        $data = [
-            'ProdName' => $this->request->getVar('ProdName'),
-            'Quantity' => $newQuantity,
-            'ProdPrice' => $this->request->getVar('ProdPrice'),
-            'ProdDescription' => $this->request->getVar('ProdDescription'),
-            'ProfPic' => $this->request->getVar('ProfPic'),
-        ];
-    
-        $main->update($Id, $data);
-        return $this->response->redirect('/show');
+
+                $data = [
+                    'ProdName' => $this->request->getVar('ProdName'),
+                    'Quantity' => $newQuantity,
+                    'ProdPrice' => $this->request->getVar('ProdPrice'),
+                    'ProdDescription' => $this->request->getVar('ProdDescription'),
+                    'ProfPic' => $this->request->getVar('ProfPic'),
+                ];
+                
+                $picture = $this->request->getFile('ProdPic');
+                $imagePath = $_SERVER['DOCUMENT_ROOT'];
+                
+                if ($picture && $picture->isValid() && !$picture->hasMoved()) {
+                    // Handle file upload
+                    $newFileName = $picture->getRandomName();
+                    $picture->move($imagePath . '/upload/product/', $newFileName);
+                    $data['ProdPic'] = $newFileName;
+                } 
+                
+                $products = new ProductsModel();
+
+
+                $main->update($Id, $data);
+                
+                return $this->response->redirect('/show');
+
+        
     }
     
 

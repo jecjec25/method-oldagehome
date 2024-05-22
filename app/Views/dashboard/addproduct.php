@@ -46,7 +46,7 @@
                   <p class="card-description">
                     Add a product to Aruga Kapatid
                   </p>
-                  <form method="post" id="add_create" name="add_create" action="<?= site_url('saved') ?>">
+                  <?= form_open_multipart('saved') ?>
                   <?php if(isset($a['Id'])){?>
                       <input type="hidden" name="Id" value="<?=$a['Id']?>">
                     <?php }?>
@@ -74,6 +74,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">Submit</button>
                   </form>
+                  <?=form_close()?>
                 </div>
               </div>
             </div>

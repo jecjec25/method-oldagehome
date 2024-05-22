@@ -47,9 +47,8 @@
                   <p class="card-description">
                     Edit a Product to Aruga Kapatid
                   </p>
-
-                  <form class="forms-sample"  action="<?= base_url('updateprod/' .$prod['Id'])?>"method="post">
-                                  <div class="form-group">
+                  <?= form_open_multipart('updateprod/' .$prod['Id']) ?>
+                       <div class="form-group">
                        <label for="exampleInputUsername1">Product Name</label>
                       <input id="ProdName" name="ProdName" type="text" class="form-control" required="true" value="<?= $prod['ProdName'];?>">
                     </div>
@@ -83,6 +82,7 @@
                     <div class="col-md-12">
                     <a href="/show" class="btn btn-secondary">Back</a>
                   </form>
+                  <?=form_close()?>
                 </div>
               </div>
             </div>

@@ -490,6 +490,10 @@ class NewController extends BaseController
 
     public function save()
     {
+        
+        $session = session();
+
+        $id = $this->request->getPost('Id');
         $data = [
             'lastname' => $this->request->getPost('lastname'),
             'firstname' => $this->request->getPost('firstname'),
@@ -500,19 +504,33 @@ class NewController extends BaseController
             'marital_stat' => $this->request->getPost('marital_stat'),
             'ContNum' => $this->request->getPost('ContNum'),
             'ComAdd' => $this->request->getPost('ComAdd'),
-            'ProfPic' => $this->request->getPost('ProfPic'),
             'EmergencyAdd' => $this->request->getPost('EmergencyAdd'),
             'EmergencyContNum' => $this->request->getPost('EmergencyContNum'),
             'RegDate' => $this->request->getPost('RegDate'),
             'scstatus' => 'Unarchive',
             'adminId' => $this->request->getPost('adminId')
-
         ];
         
+        $picture = $this->request->getFile('ProfPic');
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
+        
+        if ($picture && $picture->isValid() && !$picture->hasMoved()) {
+            // Handle file upload
+            $newFileName = $picture->getRandomName();
+            $picture->move($imagePath . '/upload/seniors/', $newFileName);
+            $data['ProfPic'] = $newFileName;
+        } 
+        
         $main = new MainModel();
-
+        if (!empty($id)) {
+            $main->update($id, $data);
+        } else {
+           
         $main->save($data);
         return redirect()->to('/test');
+        }
+
+
     }
     public function edit($Id)
     {
@@ -606,27 +624,43 @@ class NewController extends BaseController
     public function update($id)
     {
         $main = new MainModel();
+        
 
-            $data = [
-                'lastname' => $this->request->getPost('lastname'),
-                'firstname' => $this->request->getPost('firstname'),
-                'middlename' => $this->request->getPost('middlename'),
-                'nickname' => $this->request->getPost('nickname'),
-                'DateBirth' => $this->request->getPost('DateBirth'),
-                'gender' => $this->request->getPost('gender'),
-                'marital_stat' => $this->request->getPost('marital_stat'),
-                'ContNum' => $this->request->getPost('ContNum'),
-                'ComAdd' => $this->request->getPost('ComAdd'),
-                'ProfPic' => $this->request->getPost('ProfPic'),
-                'EmergencyAdd' => $this->request->getPost('EmergencyAdd'),
-                'EmergencyContNum' => $this->request->getPost('EmergencyContNum'),
-                'RegDate' => $this->request->getPost('RegDate'),
-            ];
+        $session = session();
 
-            $main->update($id, $data);
+        $id = $this->request->getPost('Id');
+        $data = [
+            'lastname' => $this->request->getPost('lastname'),
+            'firstname' => $this->request->getPost('firstname'),
+            'middlename' => $this->request->getPost('middlename'),
+            'nickname' => $this->request->getPost('nickname'),
+            'DateBirth' => $this->request->getPost('DateBirth'),
+            'gender' => $this->request->getPost('gender'),
+            'marital_stat' => $this->request->getPost('marital_stat'),
+            'ContNum' => $this->request->getPost('ContNum'),
+            'ComAdd' => $this->request->getPost('ComAdd'),
+            'EmergencyAdd' => $this->request->getPost('EmergencyAdd'),
+            'EmergencyContNum' => $this->request->getPost('EmergencyContNum'),
+            'RegDate' => $this->request->getPost('RegDate'),
+        ];
 
-            return redirect()->to('/test')->with('success', 'Senior Citizen details updated successfully');
+        $picture = $this->request->getFile('ProfPic');
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
+
+        if ($picture && $picture->isValid() && !$picture->hasMoved()) {
+            // Handle file upload
+            $newFileName = $picture->getRandomName();
+            $picture->move($imagePath . '/upload/seniors/', $newFileName);
+            $data['ProfPic'] = $newFileName;
+        } 
+        
+        
+        $main->update($id, $data);
+        
+        return redirect()->to('/test');
     }
+
+    
     // public function updatess()
     // {
     //     $data =[
@@ -674,25 +708,35 @@ class NewController extends BaseController
         return view ('dashboard/manageproduct', $data);
     }
     public function saved(){
+        $session = session();
+
         $Id = $this->request->getPost('Id');
         $data = [
-            'ProdName' => $this->request->getPost('ProdName'),
+         'ProdName' => $this->request->getPost('ProdName'),
             'Quantity' => $this->request->getPost('Quantity'),
             'ProdPrice' => $this->request->getPost('ProdPrice'),
             'ProdDescription' => $this->request->getPost('ProdDescription'),
             'ProdPic' => $this->request->getPost('ProdPic'),
         ];
         
-        $product= new ProductsModel();
-
-        if (!empty($Id)){
-            $product->update($Id, $data);
-        }
-        else 
-        {
-            $product->save($data);
-        }
+        $picture = $this->request->getFile('ProdPic');
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
+        
+        if ($picture && $picture->isValid() && !$picture->hasMoved()) {
+            // Handle file upload
+            $newFileName = $picture->getRandomName();
+            $picture->move($imagePath . '/upload/product/', $newFileName);
+            $data['ProdPic'] = $newFileName;
+        } 
+        
+        $products = new ProductsModel();
+        if (!empty($Id)) {
+            $products->update($Id, $data);
+        } else {
+           
+        $products->save($data);
         return redirect()->to('/show');
+        }
     }
 
     public function ViewEditLeft($id)

@@ -70,7 +70,7 @@
                         <td><?=$a['Quantity']?></td>
                         <td><?=$a['ProdPrice']?></td>
                         <td><?=$a['ProdDescription']?></td>
-                        <td><img src="<?php base_url();?>/productsimage/<?=$a['ProdPic'] ?>" alt="" style="width:50px; height:50px;"></td>
+                        <td><img src="<?="upload/product/" .$a['ProdPic']?>" alt="Product Image" style="width: 90px;height: 90px;"></td>
                         <td>
                           <div class="d-flex align-items-center">
                           <a href="<?= base_url('editproduct/') .$a['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a> 

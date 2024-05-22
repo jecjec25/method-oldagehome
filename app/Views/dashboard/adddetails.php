@@ -46,8 +46,7 @@
                   <p class="card-description">
                     Register an Elder to Aruga Kapatid
                   </p>
-                  <form action="<?= base_url("save") ?>" method="post">
-
+                  <?= form_open_multipart('save') ?>
                     <input type="hidden" name="adminId" value="<?=session()->get('userID')?>">
                     <div class="form-group">
                        <label for="exampleInputUsername1">Last Name</label>
@@ -94,7 +93,6 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Communication Address</label>
                      <textarea class="form-control" id="ComAdd" name="ComAdd" rows="5" value="<?= isset($d['ComAdd']) ? $d['ComAdd'] : '' ?>"></textarea>
-                     
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Profile Pic</label>
@@ -114,6 +112,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">Submit</button>
                   </form>
+                  <?=form_close()?>
                 </div>
               </div>
             </div>
