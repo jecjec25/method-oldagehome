@@ -80,6 +80,15 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/reportevent">B/W dates Report Events</a></li>
               </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/viewreportleft">B/W dates Report Left</a></li>
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/viewreportdeath">B/W dates Report Deceased</a></li>
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/reportMonetary">B/W dates Report Donation</a></li>
+              </ul>
             </div>
           </li>
           <li class="nav-item">

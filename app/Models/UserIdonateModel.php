@@ -13,7 +13,7 @@ class UserIdonateModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['usersignsId', 'status', 'lastname', 'firstname', 'establishment', 'middlename', 'contactnum', 'donationdate', 'cashDonation', 'cashCheck',  'picture', 'referencenum', 'message'];
+    protected $allowedFields    = ['usersignsId', 'status', 'lastname', 'firstname', 'establishment', 'middlename', 'contactnum', 'donationdate', 'cashDonation', 'cashCheck',  'picture', 'referencenum', 'message', 'mumosahapag'];
 
     // Dates
     protected $useTimestamps = false;

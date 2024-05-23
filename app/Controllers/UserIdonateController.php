@@ -7,6 +7,7 @@ use App\Models\UserIdonateModel;
 use App\Models\AcceptbookingModel;
 use App\Models\UserbookingModel;
 use App\Models\InKindModel;
+use Dompdf\Dompdf;
 class UserIdonateController extends BaseController
 {
     private $uidm;
@@ -206,7 +207,7 @@ class UserIdonateController extends BaseController
             'message' => $this->request->getPost('message'),
             'status' => 'pending'
         ];
-        $imagePath = $_SERVER['DOCUMENT_ROOT'];
+        
         $picture = $this->request->getFile('picture');
         $imageData = $this->request->getPost('imageData');
         
@@ -344,7 +345,7 @@ class UserIdonateController extends BaseController
         ];
  
         $data['donate'] = $this->uidm->select('user.userID, user.Email, 
-        userdonation.id, userdonation.usersignsId, userdonation.lastname, userdonation.firstname, 
+        userdonation.id, userdonation.usersignsId, userdonation.lastname, userdonation.firstname,userdonation.mumosahapag, 
         userdonation.middlename, userdonation.contactnum, userdonation.donationdate, userdonation.establishment, userdonation.cashDonation,userdonation.cashCheck, 
         userdonation.picture, userdonation.referencenum, userdonation.message,userdonation.status')
         ->join('user', 'user.userID = userdonation.usersignsId')
@@ -467,7 +468,111 @@ class UserIdonateController extends BaseController
         return view('admin/InKind', $data);
     }
 
+    public function getToeditMonetary($id)
+    {
+        
 
+        $data = [
+
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                    ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                        userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                        userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                        userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                        user.userID, user.LastName, user.FirstName')
+                    ->join('user', 'user.userID = userbooking.usersignsId')
+                    ->where('userbooking.status', 'Accepted')
+                    ->orWhere('userbooking.status', 'Pending')
+                    ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+                'mumo' =>  $this->uidm->where('id', $id)->first()
+
+
+        ];
+
+        
+        return view('dashboard/editMonetary', $data);
+    }
     
+    public function EditMonetary($id)
+    {
 
+        $getMonetary = $this->uidm->where('id', $id)->first();
+
+        $changeMumo = $getMonetary['mumosahapag'] + $this->request->getPost('mumosahapag');
+
+
+            
+            $data = [
+                'mumosahapag' => $changeMumo,
+            ];
+
+            $this->uidm->update($id, $data);
+
+            return redirect()->to('viewReceiveMonetary');
+    }
+
+
+    public function viewReportMonetary()
+    {
+        $data = [
+
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                    ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                        userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                        userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                        userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                        user.userID, user.LastName, user.FirstName')
+                    ->join('user', 'user.userID = userbooking.usersignsId')
+                    ->where('userbooking.status', 'Accepted')
+                    ->orWhere('userbooking.status', 'Pending')
+                    ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+
+
+        return view('dashboard/reportMonetary', $data);
+
+    }
+
+
+    public function searchMonetary()
+    {
+
+        $fromdate = $this->request->getVar('fromdate');
+        $todate = $this->request->getVar('todate');
+
+        $data = [
+            'fromdate' => $fromdate,
+            'todate'   => $todate, 
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                    ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                        userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                        userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                        userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                        user.userID, user.LastName, user.FirstName')
+                    ->join('user', 'user.userID = userbooking.usersignsId')
+                    ->where('userbooking.status', 'Accepted')
+                    ->orWhere('userbooking.status', 'Pending')
+                    ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+
+                'Monetary' =>  $this->uidm->select('user.userID, user.Email, 
+                userdonation.id, userdonation.usersignsId, userdonation.lastname, userdonation.firstname, userdonation.mumosahapag, 
+                userdonation.middlename, userdonation.contactnum, userdonation.donationdate, userdonation.establishment, userdonation.cashDonation,userdonation.cashCheck, 
+                userdonation.picture, userdonation.referencenum, userdonation.message,userdonation.status')
+                ->join('user', 'user.userID = userdonation.usersignsId')->where('DATE(donationdate) >=', $fromdate)
+                                         ->where('DATE(donationdate) <=', $todate)
+                                         ->findAll(),
+        ];
+
+        return view('dashboard/searchMonetary', $data);
+
+
+    }
+
+   
 }

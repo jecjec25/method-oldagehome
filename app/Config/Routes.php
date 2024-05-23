@@ -283,3 +283,19 @@ $routes->get('generateElderlyDeceased', 'NewController::generateElderlyDeceased'
 
 $routes->match(['get', 'post'], 'sample', 'UserIdonateController::retrieve');
 $routes->match(['get', 'post'],'uploads/image', 'UserIdonateController::show');
+
+
+$routes->get('viewreportleft', 'NewController::viewreportleft');
+$routes->get('viewSearchLeft', 'NewController::viewSearchLeft');
+$routes->match(['get', 'post'],'getReportsLeft/(:any)/(:any)', 'NewController::getReportsLeft/$1/$2');
+
+$routes->get('viewreportdeath', 'NewController::viewreportdeath');
+$routes->get('viewSearchDeath', 'NewController::viewSearchDeath');
+$routes->match(['get', 'post'],'getReportsDeath/(:any)/(:any)', 'NewController::getReportsDeath/$1/$2');
+
+$routes->match(['get', 'post'], 'getToeditMonetary/(:any)', 'UserIdonateController::getToeditMonetary/$1');
+$routes->match(['get', 'post'], 'EditMonetary/(:any)', 'UserIdonateController::EditMonetary/$1');
+
+$routes->get('reportMonetary', 'UserIdonateController::viewReportMonetary');
+$routes->get('searchmonetary','UserIdonateController::searchMonetary' );
+$routes->match(['get', 'post'], 'getReportsMonatary/(:any)/(:any)', 'NewController::getReportsMonatary/$1/$2');

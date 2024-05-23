@@ -47,21 +47,23 @@
                     <?php }?>
               </form>
                     <thead>
-                        <tr>
-                          <th>Gmail Account</th>
-                          <th>Date</th>
-                          <th>Establishment</th>
-                          <th>Last Name</th>
-                          <th>First Name</th>
-                          <th>Middle Name</th>
-                          <th>Contact Number</th>
-                          <th>Receipt Number</th>
-                          <th>Cash Donation</th>
-                          <th>Cash Check</th>
-                          <th>Image</th>
-                          <th>Message</th>
-                       
-                        </tr> 
+                          <tr>
+                            <th>Gmail Account</th>
+                            <th>Date</th>
+                            <th>Establishment</th>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Contact Number</th>
+                            <th>Receipt Number</th>
+                            <th>Cash Donation</th>
+                            <th>Cash Check</th>
+                            <th>Image</th>
+                            <th>Mumo sa Hapag</th>
+                            <th>Message</th>
+                            <th>Action</th>
+                          
+                          </tr> 
                     </thead>
                     <tbody>
                     <?php foreach($donate as $dnt): ?>
@@ -94,9 +96,18 @@
                         <?php else: ?>
                             No Image
                         <?php endif; ?></td>
-                      
+
+                        <td>
+
+                          <?php if($dnt['mumosahapag'] == 0):?>  
+                            <p>Mumo sa hapag is Empty</p>
+                            <?php else:?>
+                        <?= '₱'. number_format($dnt['mumosahapag'],2  ) ?>
+                        <?php endif; ?>
+                          
+                      </td>                      
                       <td><?=$dnt['message'] ?></td>
-                
+                <td>    <a href="<?= base_url('getToeditMonetary/' . $dnt['id'])?>" class="btn btn-primary">Edit</a></td>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\MainModel;
+use App\Models\UserIdonateModel;
 use App\Models\ProductsModel;
 use App\Models\UserModel;
 use App\Controllers\ViewController;
@@ -14,9 +15,11 @@ class NewController extends BaseController
 {
     private $main;
     private $userbooking;
+    private $uidm;
 
     public function __construct()
     {
+        $this->uidm = new userIdonateModel();
         $this->userbooking = new UserbookingModel();
         $this->main = new MainModel();
     }
@@ -807,5 +810,722 @@ class NewController extends BaseController
         return redirect()->to('archivesdeceased');
     }
 
+    public function viewreportleft()
+    {
+        $data = [
+
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                    ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                        userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                        userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                        userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                        user.userID, user.LastName, user.FirstName')
+                    ->join('user', 'user.userID = userbooking.usersignsId')
+                    ->where('userbooking.status', 'Accepted')
+                    ->orWhere('userbooking.status', 'Pending')
+                    ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+        return view('dashboard/searchreportleft', $data);
+    }
+
+
+    public function viewSearchLeft()
+    {
+
+       $fromdate = $this->request->getVar('fromdate');
+       $todate   =  $this->request->getVar('todate');
+        $data = [   
+            'Left' => $this->main                    
+                     ->where('scstatus', 'Left')
+                      ->where('departuredate >=', $fromdate)
+                      ->where('departuredate <=', $todate)
+                      ->findAll(),
+
+            'fromdate' => $fromdate,
+            'todate' => $todate,
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+
+
+        return view('dashboard/searchLeft', $data);
+    }
+
+
+    public function getReportsLeft($fromdate, $todate)
+    {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+       
+        $data['main']= $this->main->where('scstatus', 'Left')->where('departuredate >=', $fromdate)->where('departuredate <=', $todate)->findAll();
+        $closestLowerRecord = $this->main
+        ->where('scstatus', 'Left')
+        ->orderBy('RegDate', 'ASC')
+        ->first(); // Getting the record with the closest lower date
+
+        $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A'; 
+
+        $count = $this->main
+        ->where('departuredate >=', $fromdate)
+        ->where('departuredate <=', $todate)
+        ->countAllResults();
+
+        
+        $dompdf = new Dompdf();
+        $options = $dompdf->getOptions();
+        $options->set('isRemoteEnabled', true); // Enable remote content
+        $options->set('isHtml5ParserEnabled', true); // Enable HTML5 parsing
+        $dompdf->setOptions($options);
+        $currentDate = date('Y-m-d'); // Get the current date in 'YYYY-MM-DD' format
+       
+        // Define the HTML content
+        $html = '
+        <html>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
+                .header {
+                    text-align: center;
+                    position: relative;
+                }
+                .header img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 120px;
+                }
+                .header h5 {
+                    margin: 0;
+                }
+                .title {
+                    text-align: center;
+                }
+                .title h3, .title h4 {
+                    margin: 0;
+                }
+                .report-info {
+                    margin: 20px 0;
+                }
+                .table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                .table th, .table td {
+                    border: 1px solid black;
+                    padding: 8px;
+                    text-align: left;
+                }
+                .summary {
+                    font-weight: 600;
+                    margin-top: 20px;
+                }
+                .footer {
+                    margin-top: 40px;
+                }
+                .footer .signature-group {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 50px;
+                }
+                .footer .signature-section {
+                    width: 20%;
+                    text-align: center;
+                }
+                .footer .signature-section p {
+                    margin: 5px 0;
+                }
+                .footer .signature-line {
+                    border-top: 1px solid black;
+                    margin-top: 40px;
+                    margin-bottom: 5px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <img src="' . $imageSrc . '" alt="Logo">
+                <h5>Republic of the Philippines</h5>
+                <h5>Province of Oriental Mindoro</h5>
+                <h5>Barangay Managpi, Calapan City</h5>
+                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
+                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
+                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+            </div>
+                <br>
+            <div class="title">
+                <h3>Aruga Kapatid Foundation Incorporated</h3>
+                <h4>Elder Care Program Participant Report</h4>
+            </div>
+
+            <div class="report-info">
+                <p>Date: ' . $currentDate . '</p>
+                <p>Reporting Period: '. $fromdate .' - '. $todate . '</p>
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Nickname</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Marital Status</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
+                        <th>Registration Date</th>
+                        <th>Departure Date</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>';
+
+        foreach ($data['main'] as $reg) {
+            $html .= '<tr>
+                <td>' . $reg['lastname'] . '</td>
+                <td>' . $reg['firstname'] . '</td>
+                <td>' . $reg['middlename'] . '</td>
+                <td>' . $reg['nickname'] . '</td>
+                <td>' . $reg['DateBirth'] . '</td>
+                <td>' . $reg['gender'] . '</td>
+                <td>' . $reg['marital_stat'] . '</td>
+                <td>' . $reg['ContNum'] . '</td>
+                <td>' . $reg['EmergencyAdd'] . '</td>
+                <td>' . $reg['RegDate'] . '</td>
+                <td>' . $reg['departuredate'] . '</td>
+                <td>' . $reg['reasonleft'] . '</td>
+            </tr>';
+        }
+
+        $html .= '</tbody></table>
+
+        <p class="summary">Summary</p>
+        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+
+        <div class="footer">
+            <div class="signature-group">
+                <div class="signature-section">
+                    <p class="generated-by">
+                        <strong>Report Generated By:</strong>
+                        <div class="signature-line"></div>
+                        <br>HENRY A. DACANAY III
+                        <strong><br>ADMIN STAFF</strong>
+                    </p>
+                </div>
+                <br>
+                <div class="signature-section">
+                    <p class="approved-by">
+                        <strong>Approved By:</strong>
+                        <div class="signature-line"></div>
+                        <br>LITO C. VERGARA
+                        <strong><br>ADMINISTRATOR</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </body>
+        </html>';
+
+        // Load HTML content into Dompdf
+        $dompdf->loadHtml($html);
+
+        // Set paper size and orientation (optional)
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render PDF (optional: save to file or stream to browser)
+        $dompdf->render();
+
+        // Output the PDF as a string (inline display in the browser)
+        $dompdf->stream('Elderly_Left_Report.pdf', array('Attachment' => true));
+
+        // Stop CodeIgniter from further processing (optional, but good practice)
+        exit();
+    }
+
+    public function viewreportdeath()
+    {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                    ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                        userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                        userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                        userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                        user.userID, user.LastName, user.FirstName')
+                    ->join('user', 'user.userID = userbooking.usersignsId')
+                    ->where('userbooking.status', 'Accepted')
+                    ->orWhere('userbooking.status', 'Pending')
+                    ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+        return view('dashboard/searchreportdeath', $data);
+    }
+
+    public function viewSearchDeath()
+    {
+
+       $fromdate = $this->request->getVar('fromdate');
+       $todate   =  $this->request->getVar('todate');
+        $data = [   
+            'Deceased' => $this->main
+                      ->where('scstatus', 'Deceased')
+                      ->where('datedeath >=', $fromdate)
+                      ->where('datedeath <=', $todate)
+                      ->findAll(),
+
+            'fromdate' => $fromdate,
+            'todate' => $todate,
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+
+
+        return view('dashboard/searchdeath', $data);
+    }
+
+    public function getReportsDeath($fromdate, $todate)
+    {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+       
+        $data['main']= $this->main->where('scstatus', 'Deceased')->where('datedeath >=', $fromdate)->where('datedeath <=', $todate)->findAll();
+        $closestLowerRecord = $this->main
+        ->where('scstatus', 'Deceased')
+        ->orderBy('RegDate', 'ASC')
+        ->first(); // Getting the record with the closest lower date
+
+        $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A'; 
+
+        $count = $this->main
+        ->where('datedeath >=', $fromdate)
+        ->where('datedeath <=', $todate)
+        ->countAllResults();
+
+        
+        $dompdf = new Dompdf();
+        $options = $dompdf->getOptions();
+        $options->set('isRemoteEnabled', true); // Enable remote content
+        $options->set('isHtml5ParserEnabled', true); // Enable HTML5 parsing
+        $dompdf->setOptions($options);
+        $currentDate = date('Y-m-d'); // Get the current date in 'YYYY-MM-DD' format
+       
+        // Define the HTML content
+        $html = '
+        <html>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
+                .header {
+                    text-align: center;
+                    position: relative;
+                }
+                .header img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 120px;
+                }
+                .header h5 {
+                    margin: 0;
+                }
+                .title {
+                    text-align: center;
+                }
+                .title h3, .title h4 {
+                    margin: 0;
+                }
+                .report-info {
+                    margin: 20px 0;
+                }
+                .table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                .table th, .table td {
+                    border: 1px solid black;
+                    padding: 8px;
+                    text-align: left;
+                }
+                .summary {
+                    font-weight: 600;
+                    margin-top: 20px;
+                }
+                .footer {
+                    margin-top: 40px;
+                }
+                .footer .signature-group {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 50px;
+                }
+                .footer .signature-section {
+                    width: 20%;
+                    text-align: center;
+                }
+                .footer .signature-section p {
+                    margin: 5px 0;
+                }
+                .footer .signature-line {
+                    border-top: 1px solid black;
+                    margin-top: 40px;
+                    margin-bottom: 5px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <img src="' . $imageSrc . '" alt="Logo">
+                <h5>Republic of the Philippines</h5>
+                <h5>Province of Oriental Mindoro</h5>
+                <h5>Barangay Managpi, Calapan City</h5>
+                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
+                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
+                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+            </div>
+                <br>
+            <div class="title">
+                <h3>Aruga Kapatid Foundation Incorporated</h3>
+                <h4>Elder Care Program Participant Report</h4>
+            </div>
+
+            <div class="report-info">
+                <p>Date: ' . $currentDate . '</p>
+                <p>Reporting Period: '. $fromdate .' - '. $todate . '</p>
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Nickname</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Marital Status</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
+                        <th>Registration Date</th>
+                        <th>Date Of Death</th>
+                        <th>Cause Of Death</th>
+                    </tr>
+                </thead>
+                <tbody>';
+
+        foreach ($data['main'] as $reg) {
+            $html .= '<tr>
+                <td>' . $reg['lastname'] . '</td>
+                <td>' . $reg['firstname'] . '</td>
+                <td>' . $reg['middlename'] . '</td>
+                <td>' . $reg['nickname'] . '</td>
+                <td>' . $reg['DateBirth'] . '</td>
+                <td>' . $reg['gender'] . '</td>
+                <td>' . $reg['marital_stat'] . '</td>
+                <td>' . $reg['ContNum'] . '</td>
+                <td>' . $reg['EmergencyAdd'] . '</td>
+                <td>' . $reg['RegDate'] . '</td>
+                <td>' . $reg['datedeath'] . '</td>
+                <td>' . $reg['causedeath'] . '</td>
+            </tr>';
+        }
+
+        $html .= '</tbody></table>
+
+        <p class="summary">Summary</p>
+        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+
+        <div class="footer">
+            <div class="signature-group">
+                <div class="signature-section">
+                    <p class="generated-by">
+                        <strong>Report Generated By:</strong>
+                        <div class="signature-line"></div>
+                        <br>HENRY A. DACANAY III
+                        <strong><br>ADMIN STAFF</strong>
+                    </p>
+                </div>
+                <br>
+                <div class="signature-section">
+                    <p class="approved-by">
+                        <strong>Approved By:</strong>
+                        <div class="signature-line"></div>
+                        <br>LITO C. VERGARA
+                        <strong><br>ADMINISTRATOR</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </body>
+        </html>';
+
+        // Load HTML content into Dompdf
+        $dompdf->loadHtml($html);
+
+        // Set paper size and orientation (optional)
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render PDF (optional: save to file or stream to browser)
+        $dompdf->render();
+
+        // Output the PDF as a string (inline display in the browser)
+        $dompdf->stream('Elderly_Deceased_Report.pdf', array('Attachment' => true));
+
+        // Stop CodeIgniter from further processing (optional, but good practice)
+        exit();
+    }
+
+
+
+    public function  getReportsMonatary($fromdate, $todate)
+    {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+        
+        $data['main'] = $this->uidm->where('DATE(donationdate) >=', $fromdate)
+                                   ->where('DATE(donationdate) <=', $todate)
+                                   ->findAll();
+
+        $totals = $this->uidm
+        ->select('SUM(cashDonation) as total_cash_donation, SUM(cashCheck) as total_cash_check, SUM(mumosahapag) as total_mumosahapag')
+        ->where('DATE(donationdate) >=', $fromdate)
+        ->where('DATE(donationdate) <=', $todate)
+        ->first();
+    
+        $count = $this->uidm
+                      ->where('DATE(donationdate) >=', $fromdate)
+                      ->where('DATE(donationdate) <=', $todate)
+                      ->countAllResults();
+    
+        $dompdf = new \Dompdf\Dompdf();
+        $options = $dompdf->getOptions();
+        $options->set('isRemoteEnabled', true); // Enable remote content
+        $options->set('isHtml5ParserEnabled', true); // Enable HTML5 parsing
+        $dompdf->setOptions($options);
+        $currentDate = date('Y-m-d'); // Get the current date in 'YYYY-MM-DD' format
+    
+        // Define the HTML content
+        $html = '
+        <html>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
+                .header {
+                    text-align: center;
+                    position: relative;
+                }
+                .header img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 120px;
+                }
+                .header h5 {
+                    margin: 0;
+                }
+                .title {
+                    text-align: center;
+                }
+                .title h3, .title h4 {
+                    margin: 0;
+                }
+                .report-info {
+                    margin: 20px 0;
+                }
+                .table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                .table th, .table td {
+                    border: 1px solid black;
+                    padding: 8px;
+                    text-align: left;
+                }
+                .summary {
+                    font-weight: 600;
+                    margin-top: 20px;
+                }
+                .footer {
+                    margin-top: 40px;
+                }
+                .footer .signature-group {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 50px;
+                }
+                .footer .signature-section {
+                    width: 20%;
+                    text-align: center;
+                }
+                .footer .signature-section p {
+                    margin: 5px 0;
+                }
+                .footer .signature-line {
+                    border-top: 1px solid black;
+                    margin-top: 40px;
+                    margin-bottom: 5px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <img src="' . $imageSrc . '" alt="Logo">
+                <h5>Republic of the Philippines</h5>
+                <h5>Province of Oriental Mindoro</h5>
+                <h5>Barangay Managpi, Calapan City</h5>
+                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
+                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
+                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+            </div>
+            <br>
+            <div class="title">
+                <h3>Aruga Kapatid Foundation Incorporated</h3>
+                <h4>Monetary Donation Report</h4>
+            </div>
+    
+            <div class="report-info">
+                <p>Date: ' . $currentDate . '</p>
+                <p>Reporting Period: ' . $fromdate . ' - ' . $todate . '</p>
+            </div>
+            
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Establishment</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Contact Number</th>
+                    <th>Receipt Number</th>
+                    <th>Cash Donation</th>
+                    <th>Cash Check</th>
+                    <th>Mumo sa Hapag</th>
+                </tr>
+                </thead>
+                <tbody>';
+    
+        foreach ($data['main'] as $mntry) {
+            $dateString = $mntry['donationdate'];
+            $date = new \DateTime($dateString);
+            $formattedDate = $date->format('F j, Y g:i A');
+            $html .= '<tr>
+                <td>' . $formattedDate . '</td>
+                <td>' . $mntry['establishment'] . '</td>
+                <td>' . $mntry['lastname'] . '</td>
+                <td>' . $mntry['firstname'] . '</td>
+                <td>' . $mntry['middlename'] . '</td>
+                <td>' . $mntry['contactnum'] . '</td>
+                <td>' . $mntry['referencenum'] . '</td>
+                <td>' . $mntry['cashDonation'] . '</td>
+                <td>' . $mntry['cashCheck'] . '</td>
+                <td>' . $mntry['mumosahapag'] . '</td>
+            </tr>';
+        }
+    
+        $html .= '</tbody></table>
+    
+        <p class="summary">Summary</p>
+        <p>During the reporting period, a total of ' . $count . ' Donation Monetary of Aruga Kapatid Foundation Incorporated.</p>
+        <p>Total Cash Donation: '. number_format($totals['total_cash_donation'], 2).'</p>
+        <p>Total Cash Check: '. number_format($totals['total_cash_check'], 2).'</p>
+        <p>Total Cash Check: '. number_format($totals['total_mumosahapag'], 2).'</p>
+        <div class="footer">
+            <div class="signature-group">
+                <div class="signature-section">
+                    <p class="generated-by">
+                        <strong>Report Generated By:</strong>
+                        <div class="signature-line"></div>
+                        <br>HENRY A. DACANAY III
+                        <strong><br>ADMIN STAFF</strong>
+                    </p>
+                </div>
+                <br>
+                <div class="signature-section">
+                    <p class="approved-by">
+                        <strong>Approved By:</strong>
+                        <div class="signature-line"></div>
+                        <br>LITO C. VERGARA
+                        <strong><br>ADMINISTRATOR</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </body>
+        </html>';
+    
+        // Load HTML content into Dompdf
+        $dompdf->loadHtml($html);
+    
+        // Set paper size and orientation (optional)
+        $dompdf->setPaper('A4', 'landscape');
+    
+        // Render PDF (optional: save to file or stream to browser)
+        $dompdf->render();
+    
+        // Output the PDF as a string (inline display in the browser)
+        $dompdf->stream('Monetary_Donation_Report.pdf', array('Attachment' => true));
+    
+        // Stop CodeIgniter from further processing (optional, but good practice)
+        exit();
+    }
     
 }
