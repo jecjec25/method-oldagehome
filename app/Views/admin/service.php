@@ -45,20 +45,17 @@
             </div>
             <div class="col-md-8 service-images-text">
               <div class="inner-text">
-				<h3>SERVICES</h3>
-				<p>I. MEDICAL NEEDS<br>
-					<span>Providing healthcare services, medication management, and emergency assistance.<br><span>
-					II. PERSONAL HYGIENE<br>
-					<span>Assisting with bathing, grooming, and maintaining cleanliness.<br><span>
-					III. FEEDING<br>
-					<span>Ensuring proper nutrition by assisting with meal planning, preparation, and feeding.<br><span>
-					IV. PHYSICAL ACTIVITIES<br>
-					<span>Organizing exercises and games to promote well-being.<br><span>
-					V. FUNERAL SERVICES<br> 
+				<h4>SERVICES</h4>
+				<h3>I. MEDICAL NEEDS</h3>
+					<span>Providing healthcare services, medication management, and emergency assistance.<span>
+				<h3>II. PERSONAL HYGIENE</h3>
+					<span>Assisting with bathing, grooming, and maintaining cleanliness.<span>
+				<h3>III. FEEDING</h3>
+					<span>Ensuring proper nutrition by assisting with meal planning, preparation, and feeding.<span>
+				<h3>IV. PHYSICAL ACTIVITIES</h3>
+					<span>Organizing exercises and games to promote well-being.<span>
+				<h3>V. FUNERAL SERVICES</h3>
 					<span>Providing guidance and support during bereavement.</span>
-						
-				</p>
-				<p></p>
 			</div>
 
 		</div>

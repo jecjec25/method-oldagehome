@@ -1,0 +1,33 @@
+
+  .box-main {
+        width: 60%;
+        margin: auto;
+        background-color: bisque;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 5px solid;
+        border-radius: 4px;
+        justify-content: center;
+        display: flex;
+    }
+    .firsthalf, .secondhalf {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+		justify-content: center;
+
+    }
+    .text-big {
+        font-family: 'Piazzolla', serif;
+        font-weight: bold;
+        font-size: 35px;
+    }
+    .text-small {
+        font-size: 20px;
+        font-weight: bolder;
+        text-indent: 3em;
+    }
+    .image-qr {
+        width: 50vh;
+        height: 50vh;
+    }

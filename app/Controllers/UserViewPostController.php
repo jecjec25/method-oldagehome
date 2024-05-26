@@ -37,7 +37,7 @@ class UserViewPostController extends BaseController
                 acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
                 user.userID, user.LastName, user.FirstName')
                 ->join('user', 'user.userID = acceptbooking.usersignsId')
-                ->where('acceptbooking.status', 'Accepted')->orwhere('acceptbooking.status', 'Declined')->where('acceptbooking.usersignsId', $user )
+                ->where('acceptbooking.usersignsId', $user )
                 ->findAll(),
                 
         'notifs' => $this->acBooking

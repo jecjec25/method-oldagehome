@@ -4,59 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News and Events</title>
-    <style>
-        a.button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff; /* Button color */
-        color: #fff; /* Text color */
-        text-decoration: none;
-        border-radius: 5px;
-        border: 1px solid transparent; /* Remove border */
-        transition: background-color 0.3s;
-        }
-
-        a.button:hover {
-        background-color: #0056b3; /* Button color on hover */
-        }
-
-        /* Basic styling for demonstration purposes */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0; /* Light gray background */
-        }
-        .container {
-            background-color: #fff; /* White background */
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
-        }
-        h2 {
-            margin-top: 0; /* Remove default margin from heading */
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff; /* Blue color */
-            color: #fff; /* White text color */
-            text-decoration: none; /* Remove underline */
-            border: none; /* Remove border */
-            border-radius: 5px;
-            transition: 0.3s ease; /* Smooth transition */
-        }
-        .btn:hover {
-            background-color: #0056b3; /* Darker blue color on hover */
-        }
-    </style>
+    <link href="/css/news.css" rel='stylesheet' type='text/css' />
+    
 </head>
 <body>
 
@@ -66,7 +15,7 @@
             <li>
                 <h2>News</h2>
                 <h3><?= $mnews['title']; ?></h3>
-                <p><?= $mnews['Content']; ?></p>
+                <p><h1><?= $mnews['Content']; ?></h1></p>
                 <p><strong>Organizer:</strong> <?= $mnews['author']; ?></p>
                 <p><strong>Start Date:</strong> <?= $mnews['date_published']; ?></p>
                 <p><strong>Category:</strong> <?= $mnews['Category']; ?></p>
@@ -78,7 +27,7 @@
             <li>
                 <h2>Events</h2>
                 <h3><?= $mevents['Title']; ?></h3>
-                <p><?= $mevents['Description']; ?></p>
+                <p><h1><?= $mevents['Description']; ?></h1></p>
                 <p><strong>Organizer:</strong> <?= $mevents['Organizer']; ?></p>
                 <p><strong>Start Date:</strong> <?= $mevents['Start_date']; ?></p>
                 <p><strong>End Date:</strong> <?= $mevents['End_date']; ?></p>

@@ -4,6 +4,7 @@
     <title>Menu</title>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="/css/menu.css" rel='stylesheet' type='text/css' />
 
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script src="js/jquery-1.8.3.min.js"></script>
@@ -21,47 +22,6 @@
     </script>
 
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
-
-    <style>
-        .box-main {
-            background-color: beige;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: black;
-            margin: 0 auto; /* Center align content */
-        }
-        .secondhalf {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            margin-left: 100px;
-            justify-content: center;
-        }
-        .text-big {
-            font-family: 'Piazzolla', serif;
-            font-weight: bold;
-            font-size: 35px;
-        }
-        .text-small {
-            font-size: 18px;
-        }
-        .image-qr {
-            width: 60vh;
-            height: 60vh;
-        }
-        /* Add this style to align the text to the left */
-        .how-to-make-difference {
-            text-align: left;
-        }
-        .hello{
-            font-size:20px;
-            text-align:justify;
-            font:black;
-            color:black;
-            margin-left:10px;
-        }
-    </style>
 </head>
 <body>
 
@@ -80,7 +40,7 @@
               <img src="aruga_gallery/g21.jpg" class="img-responsive" alt=""/>
             </div>
             <div class="col-md-8 service-images-text">
-              <div class="inner-text" style="text-align:justify;">
+              <div class="inner-textes">
                 <h3>Dear Community Members,</h3>
                 <p>As we navigate through life, it's essential to remember the valued members of our
                     community—the seniors who have contributed so much wisdom, experience, and love over
@@ -98,16 +58,16 @@
         </div>
         <div class="hello">
          
-        dignity, and compassion they deserve in their golden years.<br><br>
-                    <span class="how-to-make-difference">What do our elders need:<br><span>
-                    <br>
-                    <?php foreach($menu as $menu):?>
-                        <ul>
-                    <span><b><li> <?= $menu['need'] ?>: </b><?= $menu['description'] ?></li><br><span>
-                    </ul>
-
-                    <?php endforeach;?>
+        dignity, and compassion they deserve in their golden years.
                     </div>
+        </div> 
+        <div class="clearfix"> </div> 
+        <br><br>
+        <div class="form">
+        <span class="how-to-make-difference">What do our elders need:</span>
+        <span><?php foreach($menu as $menu):?></span>
+        <ul><li><span class="middle"><?= $menu['need'] ?></span>:</b><span class="fins"><?= $menu['description'] ?></span></li></ul>
+                    <?php endforeach;?>
         </div>
         </div>   
     </div>

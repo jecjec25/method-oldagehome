@@ -1,0 +1,86 @@
+
+.firstsection, .secondsection {
+    border-style: outset;
+    margin: 20px auto;
+    padding: 20px;
+}
+.firstsection {
+    background-color: beige;
+    max-height: 300px;
+    overflow-y: auto; /* Add scrollbar if content exceeds height */
+}
+.secondsection {
+    background-color: cornsilk;
+    max-height: 300px;
+    overflow-y: auto; /* Add scrollbar if content exceeds height */
+}
+.box-main {
+    background-color: rgb(190, 250, 204);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin: auto; /* Center align content */
+    padding: 12 px 20px;
+    box-sizing: border-box;
+    border:solid;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(78, 38, 38, 0.1);
+}
+.firsthalf, .secondhalf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.secondhalf .text-small h3{
+    font-size:30px;
+    font-weight: bolder;
+}
+.text-big {
+    font-family: 'Lato', serif;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+}
+.text-small {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.image-qr {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.cute-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px auto;
+    display: block;
+}
+.cute-button:hover {
+    background-color: #f697cb;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.cute-button:active {
+    background-color: #ff1493;
+    transform: translateY(0);
+    text-decoration: none;
+}

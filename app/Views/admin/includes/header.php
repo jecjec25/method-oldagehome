@@ -1,7 +1,7 @@
 <style>
   .top-nav ul li a:hover,
 .top-nav ul li.active a {
-    color: orange; /* Change to desired highlight color */
+    color: white; /* Change to desired highlight color */
     /* Add any other styles you want for hover and active states */
 }
 </style>
@@ -15,7 +15,7 @@
               <div class="logo">
                   <img src="images/Alogo1.jpg"  alt="" style=" width: 100px; height: 100px;"/>
                   <img src="images/Alogo.jpg"  alt="" style=" width: 160px; height: 140px;"/>
-                  <h4 style="color: orange;">Senior Care Management System</h4>
+                  <h4 style="color: darkgreen;">Senior Care Management System</h4>
               </div>
               <div class="top-log">
                   <br>
@@ -39,7 +39,6 @@
                 <ul>
                   <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
                   <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
-                  <li><a class="tw" href="#"><span> </span></a></li>
                   <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
                   <div class="clearfix"> </div>
                 </ul>

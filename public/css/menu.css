@@ -1,0 +1,75 @@
+.box-main {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin: 0 auto; /* Center align content */
+}
+.secondhalf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    justify-content: center;
+}
+.text-big {
+    font-family: 'Piazzolla', serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+.text-small {
+    font-size: 18px;
+}
+.image-qr {
+    width: 60vh;
+    height: 60vh;
+}
+/* Add this style to align the text to the left */
+.how-to-make-difference {
+    text-align: left;
+}
+.hello{
+    font-size:20px;
+    text-align:justify;
+    font:black;
+    color:black;
+    margin-left:10px;
+}
+.inner-textes{
+    font-family: 'Poppins';
+    color: black;
+    font-size:20px;
+    text-align:justify;
+}
+.inner-textes h3{
+    font-size: 30px;
+    font-weight: bold;
+}
+.form{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: 400;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    letter-spacing: normal;
+}
+.how-to-make-difference{
+    color: black;
+    font-size: larger;
+    font-weight: bolder ;
+}
+.middle{
+    color: black;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.fins{
+    color: black;
+    font-size: 28px;
+}
+span li{    
+    line-height: 0.10;
+}

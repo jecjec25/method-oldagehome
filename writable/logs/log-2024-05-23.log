@@ -10226,3 +10226,6 @@ Page Not Found
 #4 {main}
 in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-23 16:43:13 --> Maximum execution time of 60 seconds exceeded
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 128.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

@@ -83,7 +83,7 @@ body {
                 <div class="logo">
                     <img src="images/Alogo1.jpg"  alt="" style=" width: 100px; height: 100px;"/>
                     <img src="images/Alogo.jpg"  alt="" style=" width: 160px; height: 140px;"/>
-                    <h4 style="color: orange;">Senior Care Management System</h4>
+                    <h4 style="color: darkgreen;">Senior Care Management System</h4>
                 </div>
                 <div class="top-log">
                     <div class="clearfix"> </div> 
@@ -103,7 +103,7 @@ body {
                   <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
                   <div id="notification-dropdown" class="notification-dropdown">
 
-                  <?php if($notifs['status'] == 'Accepted'):?>
+                  
                   <div class="notification-item"><small>Notif </small></div>
 
                     <?php foreach($notif as $notif):?>
@@ -113,7 +113,6 @@ body {
                     
                     
                   </div>
-                  <?php endif;?>
               </div>
                       
                     </ul>
@@ -133,7 +132,6 @@ body {
                     <ul>
                     <li><a class="fb" href="#"><span> </span></a></li>
                     <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
-                    <li><a class="tw" href="#"><span> </span></a></li>
                     <li><a class="you" href="#"><span> </span></a></li>
                     <div class="clearfix"> </div>
                   </ul>

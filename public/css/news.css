@@ -1,0 +1,81 @@
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button color */
+    color: #919fd7; /* Text color */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid transparent; /* Remove border */
+    transition: background-color 0.3s;
+    }
+
+    a.button:hover {
+    background-color: #0056b3; /* Button color on hover */
+    }
+
+    /* Basic styling for demonstration purposes */
+    body {
+        font-family: Arial, sans-serif;
+        font-size:large;
+        font-weight: bold;
+        margin: 0;
+        padding: 50px;
+        background-color: #133372 ; /* Light gray background */
+    }
+    .container {
+        background-color: whitesmoke; /* White background */
+        text-indent: 50px;
+        line-height: 0.7;
+        width: 65%;
+        margin-left: 16.5%;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    }
+    h2 {
+        margin-top: 0px; /* Remove default margin from heading */
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    ul li {
+        margin-bottom: 20px;
+    }
+    .container ul li h2{
+        font-size: 2.3em;
+        font-weight: 600;
+        text-align: center;
+        padding: auto;
+    }
+    .container ul li h1{
+        font-size: 2.0em;
+        font-weight: 600;
+        text-align: center;
+        padding: auto;
+    }
+    .container ul li h3{
+        font-size: 3.0em;
+        font-weight: bolder;
+        text-align: center;
+    }
+    .container ul li p{
+        font-size: larger;
+        font-weight: bolder;
+        padding-top: 0px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        text-align: center;
+        background-color: #007bff; /* Blue color */
+        color: #fff; /* White text color */
+        text-decoration: none; /* Remove underline */
+        border: none; /* Remove border */
+        border-radius: 5px;
+        transition: 0.3s ease; /* Smooth transition */
+    }
+    .btn:hover {
+        background-color: #0056b3; /* Darker blue color on hover */
+    }

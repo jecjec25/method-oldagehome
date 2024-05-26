@@ -30,19 +30,25 @@
 	</head>
 <body>
 	<?php include_once('includes/header.php');?>
-	<div class="banner-section">
-		<div class="container">
-			<div class="banner-head">
-				<h1 style="font-style:normal">Old age is just a record of one's whole life </h1>
-				<p>Old age is not a matter for sorrow. It is matter for thanks if we have left our work done behind us.<br> - Thomas Carlyle</p>
+	<div class="slider-frame">
+		<div class="slide-images">
+			<div class="img-container">
+				<img src="images/aruga.jpg">
+			</div>
+			<div class="img-container">
+				<img src="images/aruga1.jfif">
+			</div>
+			<div class="img-container">
+				<img src="images/aruga2.jfif">
+			</div>
+			<div class="img-container">
+				<img src="images/aruga3.jpg">
 			</div>
 		</div>
 	</div>
 	
-			 <div class="letest-section">
-	 			<div class="container">
-
-
+<div class="letest-section">
+	<div class="container">
 	<div class="Events">
 	<div class="wmuSlider example1">
 		 	<div class="container">

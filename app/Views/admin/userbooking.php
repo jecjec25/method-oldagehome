@@ -102,7 +102,7 @@
     </div>
 
     
-</body>
+    <?php include_once('includes/footer.php');?>
 <script type="text/javascript">
     var array = <?= json_encode($disableDates)?>;
 
@@ -119,5 +119,5 @@
             this.value = this.value.replace(/[^0-9]/g, '');
         });
     </script>
-
+</body>
 </html>
