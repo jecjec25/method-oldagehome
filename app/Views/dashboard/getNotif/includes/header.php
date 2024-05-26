@@ -14,8 +14,7 @@
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../login/images/faces/face5.jpg" alt="profile"/>
-              
+            <img src="<?="/upload/user_images/"  . session()->get('user_img') ?>" alt="Profile Image" />
               <span class="nav-profile-name"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -44,12 +43,19 @@
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
           <?php foreach($getnotif as $notif):?>
             <a class="dropdown-item" href="<?= base_url('gettoAccept/' .$notif['bookingId'])?>">
+            
                 <?= $notif['event']?> is <?= $notif['status']?>
+          
             </a>
             <?php endforeach;?>
           </div>
         </li>
       </ul>
+
+        
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="typcn typcn-th-menu"></span>
+        </button>
       </div>
     </nav><script type="text/javascript">
 $(document).ready(function() {
@@ -64,3 +70,15 @@ function runningTime() {
   });
 }
 </script>
+<style>
+  #notification-count {
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+</style>

@@ -78,7 +78,7 @@
                     <td><?=$k['gender'] ?></td>
                     <td><?=$k['marital_stat'] ?></td>
                     <td><?=$k['ContNum'] ?></td>
-                    <td><img src="<?php base_url();?>/eldersimage/<?=$k['ProfPic'] ?>" alt="" style="width:50px; height:50px; border:box;"></td>
+                    <td><img src="<?="upload/seniors/" .$k['ProfPic']?>" alt="Senior Image" style="width: 90px;height: 90px;"></td>
                     <td><?=$k['ComAdd'] ?></td>
                     <td><?=$k['EmergencyAdd'] ?></td>
                     <td><?=$k['EmergencyContNum'] ?></td>

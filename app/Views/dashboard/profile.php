@@ -48,6 +48,7 @@
                   <p class="card-description">
                     Update your information!!!
                   </p>
+                  <?= form_open_multipart(base_url('updateProfile/'. session()->get('userID')))?>
                   <form action="<?= base_url('updateProfile/') . session()->get('userID')?>" class="forms-sample" method="post">
                     <div class="form-group">
                 
@@ -58,6 +59,16 @@
                       <label for="exampleInputEmail1">First Name</label>
                       <input type="text" class="form-control" name="FirstName" id="username" value="<?= session()->get('FirstName')?>" required="true" />
                     </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Profile Image</label>
+                      <input type="file" class="form-control" name="user_img" value="<?= session()->get('user_img')?>" id="user_img_input" accept=".jpg, .img, .png, .jpeg"  onchange="previewImage(event)" />
+                      <?php if (session()->get('user_img')): ?>
+                    <img id="profile_image_preview"src="<?="/upload/user_images/"  . session()->get('user_img') ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />
+                      <?php else: ?>
+                          <img id="profile_image_preview" src="<?="/upload/user_images/"  . session()->get('user_img') ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />
+                      <?php endif; ?>
+                
+                  </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Contact Number</label>
                       <input type="text"  class="form-control" name="ContactNo" id="contactnumber" pattern="(\+?63|0)9\d{9}" maxlength="13" value="<?= session()->get('ContactNo')?>"/>
@@ -80,7 +91,7 @@
                     <div class="col-md-12">
                     <a href="/dashboard" class="btn btn-secondary">Back</a>
                     </div>
-                  </form>
+                  <?= form_close()?>
                 </div>
               </div>
             </div>
@@ -115,7 +126,27 @@
   <script src="js/file-upload.js"></script>
   <script src="js/typeahead.js"></script>
   <script src="js/select2.js"></script>   
+  
   <!-- End custom js for this page-->
+
+  <script>
+    function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('profile_image_preview').src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            // If no file is selected, keep the current profile image
+            const currentImage = document.getElementById('profile_image_preview').getAttribute('data-current-src');
+            document.getElementById('profile_image_preview').src = currentImage;
+        }
+    }
+</script>
+
+
 </body>
 
 </html>

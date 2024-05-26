@@ -155,8 +155,6 @@ $routes->get('userViewpost', 'UserViewPostController::userViewpost');
 //user event post
 $routes->get('usereventpost', 'UserEvntPostController::userEventpost');
 $routes->post('/usersavepost', 'UserEvntPostController::usersavepost');
-
-
 }
 $routes->get('/announcement', 'ViewController::announcement');
 

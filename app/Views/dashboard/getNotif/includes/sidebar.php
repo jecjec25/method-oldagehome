@@ -35,7 +35,8 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/adddetails">Register Elder</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/test">Update Elder</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/archives">Archived Elder</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/archives">Archived Left</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/archivesdeceased">Archived Deceased</a></li>
               </ul>
             </div>
           </li>
@@ -61,21 +62,32 @@
             </a>
             <div class="collapse" id="form-element">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="contactu">Unread Inquiry</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contactu">Unread Inquiry</a></li>
                 <li class="nav-item"><a class="nav-link" href="/readenq">Read Inquiry</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-element" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-film menu-icon"></i>
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
               <span class="menu-title">Report</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="form-element">
+            <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="/reports">B/W dates Report Elders</a></li>
-                <li class="nav-item"><a class="nav-link" href="/reportevent">B/W dates Report Events</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/reports">B/W dates Report Elders</a></li>
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/reportevent">B/W dates Report Events</a></li>
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/viewreportleft">B/W dates Report Left</a></li>
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/viewreportdeath">B/W dates Report Deceased</a></li>
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/reportMonetary">B/W dates Report Donation</a></li>
               </ul>
             </div>
           </li>
@@ -119,7 +131,7 @@
                 <li class="nav-item"> <a class="nav-link" href="/newspublished">Published News</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/newsarchive">Archived News</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/adevents">Events</a></li>
-                <li class="nav-item"> <a class="nav-link" href="Viewevents">Update Events</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Viewevents">Update Events</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/publishedevents  ">Published Events</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/eventsarchive ">Archived Events</a></li>
               </ul>
@@ -148,7 +160,12 @@
             </a>
             <div class="collapse" id="donation">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="userdonatedtable">Track Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/userdonatedtable">Track Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/viewReceiveMonetary">Received Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/viewPostponedMonetary">Postponed Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tableindkind">Track In-kind Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/viewReceiveInkind">Received Inkind Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/viewPostponedInkind">Posponed Inkind Donation</a></li>
               </ul>
             </div>
           </li>
@@ -160,35 +177,35 @@
             </a>
             <div class="collapse" id="Feedback">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="eventfeedback">Event Feedback</a></li>
-                <li class="nav-item"><a class="nav-link" href="announcefeedback">Announcement Feedback</a></li>
+                <li class="nav-item"><a class="nav-link" href="/eventfeedback">Event Feedback</a></li>
+                <li class="nav-item"><a class="nav-link" href="/announcefeedback">Announcement Feedback</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#elderneed" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-pin menu-icon"></i>
+              <i class="typcn typcn-folder-open menu-icon"></i>
               <span class="menu-title">Elder Needs</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="elderneed">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="viewelderneed">Elder Need</a></li>
-                <li class="nav-item"><a class="nav-link" href="manageneed ">Update Elder Need</a></li>
+                <li class="nav-item"><a class="nav-link" href="/viewelderneed">Elder Need</a></li>
+                <li class="nav-item"><a class="nav-link" href="/manageneed ">Update Elder Need</a></li>
                 </ul>
             </div>
           </li>
           <?php if(session()->get('role') === 'MainAdmin'):?>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#user" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-pin menu-icon"></i>
+              <i class="typcn typcn-user-add-outline menu-icon"></i>
               <span class="menu-title">Users</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="user">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="viewAdminRegister">Add Admin Users</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewUsers">View Admin User</a></li>
+                <li class="nav-item"><a class="nav-link" href="/viewAdminRegister">Add Admin Users</a></li>
+                <li class="nav-item"><a class="nav-link" href="/viewUsers">View Admin User</a></li>
                 </ul>
             </div>
           </li>

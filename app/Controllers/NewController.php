@@ -655,8 +655,28 @@ class NewController extends BaseController
             $newFileName = $picture->getRandomName();
             $picture->move($imagePath . '/upload/seniors/', $newFileName);
             $data['ProfPic'] = $newFileName;
+            $main->update($id, $data);
+
         } 
         
+        elseif(empty($picture)){
+            $data = [
+                'lastname' => $this->request->getPost('lastname'),
+                'firstname' => $this->request->getPost('firstname'),
+                'middlename' => $this->request->getPost('middlename'),
+                'nickname' => $this->request->getPost('nickname'),
+                'DateBirth' => $this->request->getPost('DateBirth'),
+                'gender' => $this->request->getPost('gender'),
+                'marital_stat' => $this->request->getPost('marital_stat'),
+                'ContNum' => $this->request->getPost('ContNum'),
+                'ComAdd' => $this->request->getPost('ComAdd'),
+                'EmergencyAdd' => $this->request->getPost('EmergencyAdd'),
+                'EmergencyContNum' => $this->request->getPost('EmergencyContNum'),
+                'RegDate' => $this->request->getPost('RegDate'),
+            ];
+        $main->update($id, $data);
+    
+        }
         
         $main->update($id, $data);
         
@@ -1482,12 +1502,11 @@ class NewController extends BaseController
         }
     
         $html .= '</tbody></table>
-    
+        <p><strong>Total Cash Donation:</strong> '. number_format($totals['total_cash_donation'], 2).'</p>
+        <p><strong>Total Cash Check:</strong> '. number_format($totals['total_cash_check'], 2).'</p>
+        <p><strong>Total Mumo sa Hapag:</strong> '. number_format($totals['total_mumosahapag'], 2).'</p>
         <p class="summary">Summary</p>
-        <p>During the reporting period, a total of ' . $count . ' Donation Monetary of Aruga Kapatid Foundation Incorporated.</p>
-        <p>Total Cash Donation: '. number_format($totals['total_cash_donation'], 2).'</p>
-        <p>Total Cash Check: '. number_format($totals['total_cash_check'], 2).'</p>
-        <p>Total Cash Check: '. number_format($totals['total_mumosahapag'], 2).'</p>
+        <p>During the reporting period, a total of ' . $count . ' monetary donations were received by Aruga Kapatid Foundation Incorporated.</p>
         <div class="footer">
             <div class="signature-group">
                 <div class="signature-section">

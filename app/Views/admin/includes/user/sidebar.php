@@ -103,7 +103,7 @@ body {
                   <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
                   <div id="notification-dropdown" class="notification-dropdown">
 
-                  
+                 
                   <div class="notification-item"><small>Notif </small></div>
 
                     <?php foreach($notif as $notif):?>
@@ -113,6 +113,7 @@ body {
                     
                     
                   </div>
+                 
               </div>
                       
                     </ul>

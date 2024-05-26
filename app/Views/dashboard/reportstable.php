@@ -144,8 +144,7 @@
                                                     <td><?=$reg['gender'] ?></td>
                                                     <td><?=$reg['marital_stat'] ?></td>
                                                     <td><?=$reg['ContNum'] ?></td>
-                                                    <td><img src="<?php base_url();?>/eldersimage/<?=$reg['ProfPic'] ?>"
-                                                            alt="" style="width: 50px; height: 50px; border:box;"></td>
+                                                    <td><img src="<?="upload/seniors/" .$reg['ProfPic']?>" alt="Senior Image" style="width: 90px;height: 90px;"></td>
                                                     <td><?=$reg['ComAdd'] ?></td>
                                                     <td><?=$reg['EmergencyAdd'] ?></td>
                                                     <td><?=$reg['EmergencyContNum'] ?></td>

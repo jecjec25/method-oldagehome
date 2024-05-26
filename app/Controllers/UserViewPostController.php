@@ -35,7 +35,7 @@ class UserViewPostController extends BaseController
                 acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
                 acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
                 acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
-                user.userID, user.LastName, user.FirstName')
+                user.userID, user.LastName, user.FirstName')                                                                        
                 ->join('user', 'user.userID = acceptbooking.usersignsId')
                 ->where('acceptbooking.usersignsId', $user )
                 ->findAll(),

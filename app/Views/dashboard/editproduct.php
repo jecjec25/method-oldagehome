@@ -74,9 +74,16 @@
                      
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Product Picture</label>
-                    <p> <input type="file" name="ProdPic" > </p>
-                    </div>
+                    <label for="exampleInputEmail1">Product Picture</label>
+                    <p> <input type="file" name="ProdPic" id="user_img_input" accept=".jpg, .img, .png, .jpeg"  onchange="previewImage(event)" value="<?= $prod['ProdPic']?>"/>
+                      <?php if ($prod['ProdPic']): ?>
+                        <p><?= $prod['ProdPic']?></p>
+                    <img id="profile_image_preview"src="<?="/upload/product/"  . $prod['ProdPic'] ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />
+                      <?php else: ?>
+                          <img id="profile_image_preview" src="<?="/upload/product/"  . $prod['ProdPic'] ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />
+                      <?php endif; ?>
+                
+                  </div>
                     <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to save changes?')">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">
@@ -116,6 +123,22 @@
     <script src="js/typeahead.js"></script>
     <script src="js/select2.js"></script>
     <!-- End custom js for this page-->
+    <script>
+    function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('profile_image_preview').src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            // If no file is selected, keep the current profile image
+            const currentImage = document.getElementById('profile_image_preview').getAttribute('data-current-src');
+            document.getElementById('profile_image_preview').src = currentImage;
+        }
+    }
+</script>
 </body>
 
 </html>

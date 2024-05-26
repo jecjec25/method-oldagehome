@@ -186,7 +186,7 @@
             <div class="collapse" id="user">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="viewAdminRegister">Add Admin Users</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewUsers">View Admin User</a></li>
+                <li class="nav-item"><a class="nav-link" href="/viewUsers">View Admin User</a></li>
                 </ul>
             </div>
           </li>

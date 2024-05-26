@@ -90,9 +90,18 @@
               <input id="ContNum" name="ContNum" maxlength="13" class="form-control" id="ContNum" required="true" value="<?= $d['ContNum']?>" pattern="^(\+?63|0)9\d{9}$">
               </div>
               <div class="form-group">
-                      <label for="exampleInputEmail1">Elder Picture</label>
-                    <p> <input type="file" name="ProfPic" > </p>
-                    </div>
+              <label for="exampleInputEmail1">Elder Picture</label>
+                     
+                    <p> <input type="file" name="ProfPic" id="user_img_input" accept=".jpg, .img, .png, .jpeg"  onchange="previewImage(event)" value="<?= $d['ProfPic']?>"/>
+                    
+                      <?php if ($d['ProfPic']): ?>
+                        <p><?= $d['ProfPic']?></p>
+                    <img id="profile_image_preview"src="<?="/upload/seniors/"  . $d['ProfPic'] ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />
+                      <?php else: ?>
+                          <img id="profile_image_preview" src="<?="/upload/seniors/"  . $d['ProfPic'] ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />
+                      <?php endif; ?>
+                
+                  </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Communication Address</label>
                <input class="form-control" id="ComAdd" name="ComAdd" value="<?= $d['ComAdd']?>" rows="5">                     
@@ -150,7 +159,22 @@
   <script src="login/js/settings.js"></script>
   <script src="login/js/todolist.js"></script>
   <script src="login/js/dashboard.js"></script>
-
+  <script>
+    function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('profile_image_preview').src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            // If no file is selected, keep the current profile image
+            const currentImage = document.getElementById('profile_image_preview').getAttribute('data-current-src');
+            document.getElementById('profile_image_preview').src = currentImage;
+        }
+    }
+</script>
 </body>
 
 </html>

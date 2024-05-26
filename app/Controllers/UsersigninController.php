@@ -83,8 +83,10 @@ class UsersigninController extends BaseController
             'ContactNo'    => $this->request->getVar('ContactNo'),
             'birthday'    => $this->request->getVar('birthday'),
          ];
-         $user->update($id, $data);
+         $user->update($id, $data);  
+        session()->set($data);
         return redirect()->to('/userViewpost');
+       
         
     }
     public function usersignup()

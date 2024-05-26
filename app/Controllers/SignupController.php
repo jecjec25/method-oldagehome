@@ -73,8 +73,18 @@ class SignupController extends BaseController
         ];
           
         if($this->validate($rules)){
+            $image = $this->request->getFile('User_profile');
+            $imagePath = $_SERVER['DOCUMENT_ROOT'];
+           
             $userModel = new UsersModel();
+            if ($image && $image->isValid() && !$image->hasMoved()) 
+            {
+                $myImage = $image->getRandomName();
+    
+                $image->move($imagePath . '/upload/user_images/',  $myImage);
             $data = [
+                'user_img' => $image,
+                'user_img' => $myImage,
                 'LastName'     => $this->request->getVar('LastName'),
                 'FirstName'     => $this->request->getVar('FirstName'),
                 'Username'     => $this->request->getVar('Username'),
@@ -87,6 +97,25 @@ class SignupController extends BaseController
             $userModel->save($data);
             session()->setFlashdata('success', 'Saved successfully. You can now signin');
             return redirect()->to('viewAdminRegister')->with('msg', 'You have Successfully Registered A new account');
+            }
+
+            else
+            {
+                $data = [
+                    'user_img' => 'default.jpg',
+                    'LastName'     => $this->request->getVar('LastName'),
+                    'FirstName'     => $this->request->getVar('FirstName'),
+                    'Username'     => $this->request->getVar('Username'),
+                    'Email'    => $this->request->getVar('Email'),
+                    'ContactNo'    => $this->request->getVar('ContactNumber'),
+                    'role'         => 'Admin',
+                    'birthday'    => $this->request->getVar('birthday'),
+                    'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
+                ];
+                $userModel->save($data);
+                session()->setFlashdata('success', 'Saved successfully. You can now signin');
+                return redirect()->to('viewAdminRegister')->with('msg', 'You have Successfully Registered A new account');
+            }
         }else{
             $data['validation'] = $this->validator;
             return view('dashboard/adminUser/AddAdminUser', $data);

@@ -34,8 +34,11 @@
               <h6 class="font-weight-light">Register Admin</h6>
 
               <?= session()->get('msg');?>
-              <form class="pt-3" action="<?= base_url('adminRegister'); ?>" method="post" id="tbladmin" >
-                <div class="form-group">
+
+              <?= form_open_multipart(base_url('adminRegister'))?>
+              
+              
+              <div class="form-group">
                 <label for="Lastname">Lastname</label>
                 <?php if(isset($validation)):?>
                  <small class="text-danger"><?= $validation->getError('LastName') ?></small>
@@ -48,6 +51,10 @@
                 <small class="text-danger"><?= $validation->getError('FirstName') ?></small>
                 <?php endif;?>
                   <input type="text" class="form-control form-control-lg border-left-2" placeholder="First Name" name="FirstName">
+                </div>
+                <div class="form-group">
+                <label for="Insert_Profile">Insert Profile</label>
+                  <input type="file" class="form-control form-control-lg border-left-2" name="User_profile">
                 </div>
                 <div class="form-group">
                 <label for="Username">Username</label>
@@ -89,7 +96,7 @@
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">REGISTER</button>
                 </div>
-              </form>
+              <?= form_close()?>
               <div class="mt-3">
                <a href="../index.php" class="auth-link text-black">Home Page!!!</a>
               </div>

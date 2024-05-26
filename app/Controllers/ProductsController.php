@@ -90,16 +90,25 @@ class ProductsController extends ResourceController
                     $newFileName = $picture->getRandomName();
                     $picture->move($imagePath . '/upload/product/', $newFileName);
                     $data['ProdPic'] = $newFileName;
+                    $main->update($Id, $data);
                 } 
+
+                elseif(empty($picture)){
+                    $data = [
+                        'ProdName' => $this->request->getVar('ProdName'),
+                        'Quantity' => $newQuantity,
+                        'ProdPrice' => $this->request->getVar('ProdPrice'),
+                        'ProdDescription' => $this->request->getVar('ProdDescription'),
+                        'ProfPic' => $this->request->getVar('ProfPic'),
+                    ];
+                    $main->update($Id, $data);
+                }
                 
                 $products = new ProductsModel();
-
 
                 $main->update($Id, $data);
                 
                 return $this->response->redirect('/show');
-
-        
     }
     
 
