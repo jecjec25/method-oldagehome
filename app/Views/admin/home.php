@@ -30,22 +30,7 @@
 	</head>
 <body>
 	<?php include_once('includes/header.php');?>
-	<div class="slider-frame">
-		<div class="slide-images">
-			<div class="img-container">
-				<img src="images/aruga.jpg">
-			</div>
-			<div class="img-container">
-				<img src="images/aruga1.jfif">
-			</div>
-			<div class="img-container">
-				<img src="images/aruga2.jfif">
-			</div>
-			<div class="img-container">
-				<img src="images/aruga3.jpg">
-			</div>
-		</div>
-	</div>
+
 	
 <div class="letest-section">
 	<div class="container">

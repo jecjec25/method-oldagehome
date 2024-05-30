@@ -125,8 +125,8 @@ ul.left-icons {
 }
 
 .sub-header {
-	background: #56c156;
-	border-top: 5px solid#4256f0;
+	background: #677beb;
+	border-top: 5px solid#1b2360;
 	padding-bottom: 5px ;
 }
 
@@ -391,7 +391,7 @@ font-family: 'Lato', sans-serif;
 	border-color: transparent transparent transparent #c7c7c7;
 }
 .letest-section h3{
-	color: #ff5a5f;
+	color: #53a249;
 	font-size: 2.5em;
 	margin: 0em 1em 1.5em 0.7em;
 	font-family: 'Lato', sans-serif;
@@ -438,7 +438,7 @@ a.read-btn:hover{
 
 }
 .wmuSlider.example1 h3 {
-color: #ff5a5f;
+color: #1c5126;
 	font-size: 2.5em;
 	margin: 0em 1em 1.5em 0.7em;
 	font-family: 'Lato', sans-serif;
@@ -1511,7 +1511,7 @@ width: 30%;
 }
 
 .footer {
-background: #56c156;
+background:#828ed4;
 padding: .5em 0;
 }
 .footer h3 {
@@ -1542,7 +1542,7 @@ padding: .5em 0;
 	text-decoration: none;
 	font-weight: bolder;
 	margin: .2em 0;
-	border-bottom: 3px solid #3d3583;
+	border-bottom: 3px solid #4b2525;
 	padding: 0px 0 18px 0;
 }
 .conatact-bottom input[type="text"],.conatact-bottom textarea {
