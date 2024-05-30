@@ -1,0 +1,16 @@
+.required::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+}
+#cameraContainer {
+    display: none;
+}
+#photoCanvas {
+    display: none;
+}
+#imagePreview {
+    display: none;
+    max-width: 300px;
+    max-height: 300px;
+}

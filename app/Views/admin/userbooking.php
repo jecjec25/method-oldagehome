@@ -7,31 +7,12 @@
     <link rel="stylesheet" >
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="/css/userbooking.css" rel='stylesheet' type='text/css' />
 
     <link href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <style type="text/css">
-        .containers {
-            border-radius: 5px;
-            padding: 50px 20px;
-            margin: 30px auto;
-            width: 40%;
-            border: 2px solid #bbb;
-            text-align: center;
-        }
-        
-        input {
-            padding: 5px;
-            background-color: #eeeeee;
-        }
-        
-        h2 {
-            text-align: center;
-            margin-top: 100px;
-            font-weight: 600;
-        }
-    </style>
+
 </head>
 
 <body>

@@ -5,6 +5,7 @@
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="/css/contact.css" rel='stylesheet' type='text/css' />
 
 
 
@@ -28,13 +29,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 	
 </head>
-<style>
-        .required::after {
-            content: "*";
-            color: red;
-            margin-left: 5px;
-        }
-    </style>
 <body>
 	<?php include_once('includes/header.php');?>
 		    <div class="contact_desc">

@@ -6,13 +6,8 @@
     <link rel="stylesheet" >
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <style>
-        .required::after {
-            content: "*";
-            color: red;
-            margin-left: 5px;
-        }
-    </style>
+    <link href="/css/eventpost.css" rel='stylesheet' type='text/css' />
+
 </head>
 <body>
     <div class="contact_desc">

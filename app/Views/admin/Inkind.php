@@ -5,24 +5,8 @@
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="css/bootstrap.css" type='text/css' />
     <link rel="stylesheet" href="css/style.css" type='text/css' />
-    <style>
-        .required::after {
-            content: "*";
-            color: red;
-            margin-left: 5px;
-        }
-        #cameraContainer {
-            display: none;
-        }
-        #photoCanvas {
-            display: none;
-        }
-        #imagePreview {
-            display: none;
-            max-width: 300px;
-            max-height: 300px;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/inkind.css" type='text/css' />
+   
 </head>
 <body>
     <div class="contact_desc">
