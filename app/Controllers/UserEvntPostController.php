@@ -59,6 +59,7 @@ class UserEvntPostController extends BaseController
             'Category'   => 'required',
         ];
         $imagePath = $_SERVER['DOCUMENT_ROOT'];
+
         $image = $this->request->getFile('Attachments');
         if($this->validate($rules))
         {
@@ -67,7 +68,7 @@ class UserEvntPostController extends BaseController
         {
             $myImage = $image->getRandomName();
 
-            $image->move($imagePath . 'upload/event', $myImage);
+            $image->move($imagePath . '/upload/events', $myImage);
             $data = [
                 'Attachments' => $image,
                 'Attachments' => $myImage,

@@ -74,7 +74,7 @@
                     <td><?=$mnews['author'] ?></td>
                     <td><?=$mnews['date_published'] ?></td>
                     <td><?=$mnews['Category'] ?></td>
-                    <td><img src="<?="upload/news/" . $mnews['picture'] ?>" alt=""></td>
+                    <td><img src="<?="upload/news/" . $mnews['picture'] ?>" alt="newspic" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$mnews['status'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">

@@ -32,7 +32,7 @@ class SignupController extends BaseController
             'Username'   => 'required|max_length[30]',
             'Email'      => 'required|max_length[254]|valid_email',
             'ContactNumber' => 'required|max_length[13]|min_length[10]',
-            'Password'   => 'required|max_length[255]|min_length[10]',
+            'Password'   => 'required|max_length[255]|min_length[8]',
         ];
           
         if($this->validate($rules)){

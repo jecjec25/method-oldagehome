@@ -210,7 +210,7 @@ class UserIdonateController extends BaseController
         
         $picture = $this->request->getFile('picture');
         $imageData = $this->request->getPost('imageData');
-        
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
         if ($picture && $picture->isValid() && !$picture->hasMoved()) {
             // Handle file upload
             $newFileName = $picture->getRandomName();

@@ -156,6 +156,9 @@ class AnnouncementController extends BaseController
     }
     public function EditAnnounce($id)
     {
+        // Fetch the existing announcement data
+        $existingAnnouncement = $this->admannouncement->find($id);
+    
         $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
@@ -169,62 +172,61 @@ class AnnouncementController extends BaseController
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
-        ];        date_default_timezone_set('UTC');
-        $currentTimestamp = date('Y-m-d H:i:s');
-
-              $rules = [
-            'Title'   => 'required|min_length[5]',
-            'Content'   => 'required|min_length[10]',
-            'Author'  => 'required|min_length[5]',
-            'Priority'  => 'required|min_length[5]',
-            
         ];
+    
+        date_default_timezone_set('UTC');
+        $currentTimestamp = date('Y-m-d H:i:s');
+    
+        $rules = [
+            'Title'   => 'required|min_length[5]',
+            'Content' => 'required|min_length[10]',
+            'Author'  => 'required|min_length[5]',
+            'Priority'=> 'required|min_length[5]',
+        ];
+    
         $imagePath = $_SERVER['DOCUMENT_ROOT'];
         $image = $this->request->getFile('Attachments');
-        if($this->validate($rules))
-        {
-
-        if ($image && $image->isValid() && !$image->hasMoved()) 
-        {
-            $myImage = $image->getRandomName();
-
-            $image->move($imagePath . '/upload/announcement/', $myImage);
+    
+        if ($this->validate($rules)) {
     
             $data = [
-                'Attachments' => $image,
-                'Attachments' => $myImage,
-                'Title' => $this->request->getVar('Title'),
-                'Content' => $this->request->getVar('Content'),
-                'Author' => $this->request->getVar('Author'),
-                'Start_date' => $this->request->getVar('Start_date'),
-                'End_date' => $this->request->getVar('End_date'),
-                'Priority' => $this->request->getVar('Priority'),   
-                'Status' => $this->request->getVar('Status'),
-                'adminId' => $this->request->getVar('adminId'),
+                'Title'       => $this->request->getVar('Title'),
+                'Content'     => $this->request->getVar('Content'),
+                'Author'      => $this->request->getVar('Author'),
+                'Start_date'  => $this->request->getVar('Start_date'),
+                'End_date'    => $this->request->getVar('End_date'),
+                'Priority'    => $this->request->getVar('Priority'),
+                'Status'      => $this->request->getVar('Status'),
             ];
-
+    
             $categories = $this->request->getVar('Category');
             if (!empty($categories)) {
                 $data['Category'] = implode(', ', $categories);
             }
-
+    
             $tAudience = $this->request->getVar('Target_audience');
             if (!empty($tAudience)) {
                 $data['Target_audience'] = implode(', ', $tAudience);
             }
     
-          
-        $this->admannouncement->update($id, $data);
-
-        return redirect()->to('/updateannounce')->with('success', 'Senior Citizen details updated successfully');
+            if ($image && $image->isValid() && !$image->hasMoved()) {
+                $myImage = $image->getRandomName();
+                $image->move($imagePath . '/upload/announcement/', $myImage);
+                $data['Attachments'] = $myImage;
+            } else {
+                // Use the existing image if no new image is uploaded
+                $data['Attachments'] = $existingAnnouncement['Attachments'];
+            }
+    
+            $this->admannouncement->update($id, $data);
+    
+            return redirect()->to('/updateannounce')->with('success', 'Announcement details updated successfully');
+        } else {
+            $data['validation'] = $this->validator;
+            return view('dashboard/editannounce', $data);
         }
-        else
-        {
-            return redirect()->to('/newsAndEvents')->with('error', 'Error uploading image.');
-        }   
-     }
     }
-
+    
     public function publishedann()
     {
         $data = [

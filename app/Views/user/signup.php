@@ -78,7 +78,7 @@
                 <small class="text-danger"><?= $validation->getError('Password') ?></small>
                 <?php endif;?>
                 <div class="input-group">
-                  <input type="password" class="form-control form-control-lg border-left-2 password" id="password" placeholder="Password" name="Password" required="true" >
+                  <input type="password" class="form-control form-control-lg border-left-2 password" id="password" placeholder="Password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required="true" >
                   <div class="input-group-append">
                         <button type="button" id="togglePassword" class="btn btn-outline-secondary"><i class="typcn typcn-eye"></i></button>
                   </div>

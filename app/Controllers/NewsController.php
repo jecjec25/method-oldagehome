@@ -156,71 +156,75 @@ class NewsController extends BaseController
             return view('dashboard/editnews', $data);
 
         }
-    public function EditNews($id)
-    {
-             $data = [
-            'notif' => $this->userbooking->where('status', 'pending')->first(),
-            'getnotif' => $this->userbooking
-                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
-                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
-                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
-                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
-                    user.userID, user.LastName, user.FirstName')
-                ->join('user', 'user.userID = userbooking.usersignsId')
-                ->where('userbooking.status', 'Accepted')
-                ->orWhere('userbooking.status', 'Pending')
-                ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
-        ];
-       
-        $rules = [
-            'title'   => 'required|min_length[5]',
-            'Content'   => 'required|min_length[5]',
-            'author'  => 'required|min_length[5]',
-            'Category'   => 'required'
-        ];
-            $imagePath = $_SERVER['DOCUMENT_ROOT'];
-        $image = $this->request->getFile('picture');
-        if($this->validate($rules))
+        public function EditNews($id)
         {
-
-        if ($image && $image->isValid() && !$image->hasMoved()) 
-        {
-            $myImage = $image->getRandomName();
-
-            $image->move($imagePath . '/upload/news/',  $myImage);
-    
             $data = [
-                'picture' => $image,
-                'picture' => $myImage,
-                'title' => $this->request->getVar('title'),
-                'Content' => $this->request->getVar('Content'),
-                'author' => $this->request->getVar('author'),
-                'status' => $this->request->getVar('status'),
-                'adminId' => $this->request->getVar('adminId'),
-            ];  
-
-            $categories = $this->request->getVar('Category');
-            if (!empty($categories)) {
-                $data['Category'] = implode(', ', $categories);
+                'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                    ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                        userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                        userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                        userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                        user.userID, user.LastName, user.FirstName')
+                    ->join('user', 'user.userID = userbooking.usersignsId')
+                    ->where('userbooking.status', 'Accepted')
+                    ->orWhere('userbooking.status', 'Pending')
+                    ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            ];
+           
+            $rules = [
+                'title'   => 'required|min_length[5]',
+                'Content' => 'required|min_length[5]',
+                'author'  => 'required|min_length[5]',
+                'Category' => 'required'
+            ];
+        
+            $imagePath = $_SERVER['DOCUMENT_ROOT'];
+            $image = $this->request->getFile('picture');
+            
+            if ($this->validate($rules)) {
+                // Fetch existing news data
+                $existingNews = $this->newsevent->find($id);
+                if (!$existingNews) {
+                    return redirect()->to('/newsAndevents')->with('error', 'News not found.');
+                }
+                
+                if ($image && $image->isValid() && !$image->hasMoved()) {
+                    $myImage = $image->getRandomName();
+                    $image->move($imagePath . '/upload/news/', $myImage);
+        
+                    $data = [
+                        'picture' => $myImage,
+                        'title' => $this->request->getVar('title'),
+                        'Content' => $this->request->getVar('Content'),
+                        'author' => $this->request->getVar('author'),
+                        'status' => $this->request->getVar('status'),
+                    ];  
+                } else {
+                    // Use existing image if no new image is uploaded
+                    $data = [
+                        'picture' => $existingNews['picture'],
+                        'title' => $this->request->getVar('title'),
+                        'Content' => $this->request->getVar('Content'),
+                        'author' => $this->request->getVar('author'),
+                        'status' => $this->request->getVar('status'),
+                    ];
+                }
+        
+                $categories = $this->request->getVar('Category');
+                if (!empty($categories)) {
+                    $data['Category'] = implode(', ', $categories);
+                }
+                
+                $this->newsevent->update($id, $data);
+                return redirect()->to('/updatenews')->with('success', 'News details updated successfully');
+            } else {
+                $data['validation'] = $this->validator;
+                return view('dashboard/editnews', $data); // Replace 'your_view' with the actual view name
             }
-            $this->newsevent->update($id, $data);
-
-            return redirect()->to('/updatenews')->with('success', 'Senior Citizen details updated successfully');
         }
-        else
-        {
-            return redirect()->to('/newsAndevents')->with('error', 'Error uploading image.');
-        }
-
-
-    }
-    else{
-        $data['validation'] = $this->validator;
-        echo'Invalid, try again.';
-    }
-
-    }
+        
 
     public function newsarchived()
     {         $data = [
