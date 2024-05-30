@@ -8,10 +8,12 @@ a.button {
     border-radius: 5px;
     border: 1px solid transparent; /* Remove border */
     transition: background-color 0.3s;
+    align-items: center;
     }
 
     a.button:hover {
     background-color: #0056b3; /* Button color on hover */
+    align-items: center;
     }
 
     /* Basic styling for demonstration purposes */
@@ -67,6 +69,7 @@ a.button {
     }
     .btn {
         display: inline-block;
+        text-align: center;
         padding: 10px 20px;
         text-align: center;
         background-color: #007bff; /* Blue color */
@@ -77,5 +80,6 @@ a.button {
         transition: 0.3s ease; /* Smooth transition */
     }
     .btn:hover {
+        text-align: center;
         background-color: #0056b3; /* Darker blue color on hover */
     }

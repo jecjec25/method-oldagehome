@@ -92,7 +92,7 @@ body {
                 <div class="clearfix">
                                   
                   <ul class="nav-list">
-                  <li><h4>Welcome  <?= session()->get('Username')?> </h4></li> 
+                  <li><h4>Welcome  <?= session()->get('Username')?> </h4> </li> 
                   <li>     <a class="dropdown-item" href="/userprofile">
                       <h4>Profile</h4>
                   </a></li>

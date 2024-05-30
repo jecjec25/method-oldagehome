@@ -30,3 +30,16 @@ in APPPATH\Controllers\UserController.php on line 131.
  4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-05-30 08:48:21 --> include(/includes/user/sidebar.php): Failed to open stream: No such file or directory
+in APPPATH\Views\admin\userEventPost.php on line 14.
+ 1 APPPATH\Views\admin\userEventPost.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(/includes/user/sidebar.php): Failed to open stream: No such file or directory', 'C:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userEventPost.php', 14)
+ 2 APPPATH\Views\admin\userEventPost.php(14): include()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userEventPost.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/userEventPost', [], true)
+ 6 APPPATH\Controllers\UserEvntPostController.php(48): view('admin/userEventPost', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserEvntPostController->userEventpost()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserEvntPostController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
