@@ -41,7 +41,7 @@
               <div class="card">
                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Elder Need</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Update Elder Needs to Aruga Kapatid
+                    Update Elder Needs to Aruga-Kapatid Foundation Incorporated
                   </p>
                   <!-- <form action="searchdets" method="get">
                   <input  name="searchsc" type="text">

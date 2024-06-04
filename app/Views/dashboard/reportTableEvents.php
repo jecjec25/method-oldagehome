@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Searched Between Dates Report of Accepted Evnet</title>
+    <title>Table Report of Events</title>
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -69,6 +69,24 @@
         border-radius: 4px;
         cursor: pointer;
     }
+
+    .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF; /* Blue background */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    }
+
     </style>
 </head>
 
@@ -81,13 +99,13 @@
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
                 <ul class="navbar-nav mr-lg-2">
                     <li class="nav-item ml-0">
-                        <h4 class="mb-0">Update Accepted Events</h4>
+                        <h4 class="mb-0">Table Report of Events</h4>
                     </li>
                     <li class="nav-item">
                         <div class="d-flex align-items-baseline">
                             <p class="mb-0">Home</p>
                             <i class="typcn typcn-chevron-right"></i>
-                            <p class="mb-0">Reports</p>
+                            <p class="mb-0">Reporting</p>
                         </div>
                     </li>
                 </ul>
@@ -100,10 +118,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Accepted
-                                    Events</h4>
+                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Table Report of Events</h4>
                                 <p class="card-description" style="padding-left: 20px;">
-                                    Update Accepted to Aruga Kapatid.
+                                    Table Report of Events of Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print"><a
                                         href="<?= base_url('/generateEventReport/' . str_replace('/', '-', $searchParams['regdate']) . '/' . str_replace('/', '-', $searchParams['todate'])) ?>"
@@ -128,6 +145,7 @@
                                                     <th>Amount Raised</th>
                                                     <th>Outcomes</th>
                                                     <th>Acknowledgement</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -147,7 +165,9 @@
                                                     <td><?=$acceptev['amount_raised'] ?></td>
                                                     <td><?=$acceptev['outcomes'] ?></td>
                                                     <td><?=$acceptev['acknowledgement'] ?></td>
-
+                                                    <td>
+                                                        <a href="<?= base_url('viewEvent/') . $acceptev['id']?>" class="btn">View Event</a>
+                                                    </td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                             </tbody>

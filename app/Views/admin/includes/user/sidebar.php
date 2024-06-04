@@ -9,7 +9,72 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   </head>
-  <body>
+ 
+  <style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.notification-dropdown a {
+    text-decoration: none; /* This removes the underline */
+  }
+  
+.notification-container {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-button {
+    background-color:  #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.notification-button #notification-count {
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.notification-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-item:hover {
+    background-color: #f1f1f1;
+}
+.dropdown  .helloDrop li a {
+    color: black; /* Set the font color to black */
+
+  align:left;
+  }
+
+
+  </style>
+   <body>
+    
   <div class="strip"> </div>
     <div class="header-top" id="home">
       <div class="container">

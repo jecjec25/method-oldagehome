@@ -64,7 +64,7 @@
               <div class="card">
                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">View Admin and User</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    View Admin and User of Aruga Kapatid
+                    View Admin and User of Aruga-Kapatid Foundation Incorporated
                   </p>
                   <!-- <form action="searchdets" method="get">
                   <input  name="searchsc" type="text">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Between Dates Report of Events</title>
+  <title>Report of Events</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -50,13 +50,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">B/W dates Report Event</h4>
+            <h4 class="mb-0">Report of Events</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Report</p>
+              <p class="mb-0">Reporting</p>
             </div>
           </li>
         </ul>
@@ -70,9 +70,9 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Reports</h4>
+                  <h4 class="card-title">Report of Events</h4>
                   <p class="card-description">
-                    Between Dates Report of Events
+                    Report of Events of Aruga-Kapatid Foundation Incorporated
                   </p>
                   <form class="forms-sample" method="get" action="<?= base_url('eventpermonth')?>">
                     

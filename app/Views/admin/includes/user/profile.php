@@ -20,7 +20,7 @@
               </a> -->
               <a class="dropdown-item" href="/usersignin">
                 <i class="typcn typcn-eject text-primary"></i>
-                Logouts
+                Logout
               </a>
               
             </div>

@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>Update Profile</title>
+  <title>Profile</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">

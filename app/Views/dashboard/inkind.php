@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admin Donation Tracking</title>
+  <title>In-Kind Donations</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
@@ -16,7 +16,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Track Donation</h4>
+            <h4 class="mb-0">In-Kind Donations</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
@@ -35,9 +35,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Donation for Elders</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">In-Kind Donations</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    User donation schedule has been received
+                    In-Kind Donations of Aruga-Kapatid Foundation Incorporated
                   </p>
                 <div class="table-responsive pt-3">
                   <table class="table table-striped project-orders-table" id="userbooking">

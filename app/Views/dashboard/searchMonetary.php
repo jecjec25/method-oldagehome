@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admin Donation Tracking</title>
+  <title>Table Report of Monetary Donations</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
@@ -92,13 +92,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Track Donation</h4>
+            <h4 class="mb-0">Table Report of Monetary Donations</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Donation</p>
+              <p class="mb-0">Reporting</p>
             </div>
           </li>
         </ul>
@@ -111,13 +111,13 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Donation for Elders</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Table Report of Monetary Donations</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    User donation schedule has been received
+                    Table Report of Monetary Donations of Aruga-Kapatid Foundation Incorporated
                   </p>
                   <div class="button-print">
                   <a class="btn btn-primary"
-                                        href="<?= base_url('getReportsMonatary/' .$fromdate. '/' . $todate ) ?>" id="PrintButton">Print</a>
+                    href="<?= base_url('getReportsMonatary/' .$fromdate. '/' . $todate ) ?>" id="PrintButton">Print</a>
                   </div>
                 <div class="table-responsive pt-3">
                 <form action="<?= base_url('fundamental/accept') ?>" method ="post">
@@ -197,7 +197,10 @@
               </div>
             </div>
           </div>
-                    </div>
+          <div class="col-md-12">
+            <a href="/reportMonetary" class="btn btn-secondary">Back</a>
+          </div>
+          </div>
          <?php include_once('includes/footer.php');?>
       </div>
     </div>
