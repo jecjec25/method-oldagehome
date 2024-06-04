@@ -3,77 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="/css/sidebar.css" rel='stylesheet' type='text/css' />
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   </head>
   <body>
-    
-  </body>
-  </html>
-  <style>
-body {
-    font-family: Arial, sans-serif;
-}
-
-.notification-dropdown a {
-    text-decoration: none; /* This removes the underline */
-  }
-  
-.notification-container {
-    position: relative;
-    display: inline-block;
-}
-
-.notification-button {
-    background-color: #C55B4B;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    position: relative;
-}
-
-.notification-button #notification-count {
-    background-color: red;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 50%;
-    font-size: 12px;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-}
-
-.notification-dropdown {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.notification-item {
-    padding: 12px 16px;
-    border-bottom: 1px solid #ddd;
-}
-
-.notification-item:hover {
-    background-color: #f1f1f1;
-}
-.dropdown  .helloDrop li a {
-    color: black; /* Set the font color to black */
-
-  align:left;
-  }
-
-
-  </style>
   <div class="strip"> </div>
     <div class="header-top" id="home">
       <div class="container">
@@ -131,9 +67,9 @@ body {
                     <br>
                     
                     <ul>
-                    <li><a class="fb" href="#"><span> </span></a></li>
+                    <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
                     <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
-                    <li><a class="you" href="#"><span> </span></a></li>
+                    <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
                     <div class="clearfix"> </div>
                   </ul>
                 </div>
@@ -150,8 +86,8 @@ body {
     <li class="active"><a href="userViewpost">View Events</a></li>
     <li><a href="/booking">Event Reservation</a></li>
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders <b class="caret"></b></a>
-      <ul class="dropdown-menu helloDrop">
+      <a class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders</a>
+      <ul class="dropdown-menu ">
         <!-- Add your dropdown items here -->
         <li><a href="/donate-money">Monetary/Cash Donation</a></li>
         <li><a href="/donate-items">In-kind Donation</a></li>
@@ -228,3 +164,5 @@ body {
           </script>
         <div class="clearfix"> </div>
       </div>
+      </body>
+  </html>

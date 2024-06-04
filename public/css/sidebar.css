@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.notification-dropdown a {
+    text-decoration: none; /* This removes the underline */
+  }
+  
+.notification-container {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-button {
+    background-color: #fd7651;
+    color: black;
+    font-weight: bolder;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.notification-button #notification-count {
+    background-color: rgb(242, 236, 236);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    background-color:whitesmoke;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.notification-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.notification-item:hover {
+    background-color: rgb(235, 228, 228);
+}
+.dropdown  .helloDrop li a {
+    color: black; /* Set the font color to black */
+    font-size: larger;
+    font-weight: bolder;
+  }
+  .top-nav ul li a:hover,
+  .top-nav ul li.active a {
+      color: white; /* Change to desired highlight color */
+      /* Add any other styles you want for hover and active states */
+  }
