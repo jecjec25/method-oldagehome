@@ -46,8 +46,6 @@
 
                       <div class="notification-item"><a href="<?= base_url('getNotif/' .$notif['id'])?>"><?= $notif['event']?> has <?= $notif['status']?></a></div>
                      <?php endforeach;?>
-                    
-                    
                   </div>
                  
               </div>
@@ -83,7 +81,7 @@
 
       <nav class="top-nav">
   <ul class="top-nav">
-    <li class="active"><a href="userViewpost">View Events</a></li>
+    <li class="active"><a href="userViewpost">View Event</a></li>
     <li><a href="/booking">Event Reservation</a></li>
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders</a>

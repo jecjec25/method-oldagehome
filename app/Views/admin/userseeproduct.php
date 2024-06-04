@@ -52,15 +52,6 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
               
             </div>
           <div class="gallery">
@@ -72,15 +63,7 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
+            
               
             </div>
             <div class="content">
@@ -91,15 +74,7 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
+            
               
             </div>
             <div class="content">
@@ -110,15 +85,6 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
               
             </div>
             <div class="content">
@@ -129,15 +95,7 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul>
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
+            
             </div>
             <div class="content">
               <img src="images/rectangle doormat.jpg" alt="">
@@ -147,15 +105,6 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
               
             </div>
             <div class="content">
@@ -166,15 +115,6 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
               
             </div>
             <div class="content">
@@ -185,15 +125,6 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class=" pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
               
             </div>
             <div class="content">
@@ -204,15 +135,6 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
               
             </div>
             <div class="content">
@@ -223,15 +145,6 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
               
             </div>
             <div class="content">
@@ -242,15 +155,7 @@
 			  <p style="color:black;">Walk-in Transaction</p>
               <p style="color:black;">For Pick-up only</p>
               <p style="color:black;">Available at Aruga Kapatid</p>
-              <ul class="pics">
-                <li>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star checked"></i>
-                  <i  class="fa fa-star"></i>
-                </li>
-              </ul>
+           
           </div>
           </div>
   </section>

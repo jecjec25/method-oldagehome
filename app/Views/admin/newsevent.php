@@ -40,7 +40,7 @@
                 <input type="hidden" name="usersignsId" value="<?= session()->get('id')?>">
                 <input type="hidden" name="eventid" value="<?= $mevents['EventID']?>">
                 <textarea disabled name="feedback" id="" cols="30" rows="10" placeholder="Please Login Before you write a Feedback"></textarea>
-                <a href="<?= base_url('usersignin')?>" class="button">Login</a>
+                <a href="<?= base_url('signin')?>" class="button">Login</a>
                 </form>
                 <br>
                 <a href="/news" class="btn btn-secondary">Back</a>

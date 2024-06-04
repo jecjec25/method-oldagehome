@@ -13,7 +13,7 @@ class EventsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['Title', 'Description', 'Organizer', 'Start_date', 'End_date', 'Category', 'Status', 'Atendees', 'Attachments', 'type', 'adminId', 'usersingsid'];
+    protected $allowedFields    = ['Title', 'Description', 'Organizer', 'Start_date', 'End_date', 'Category', 'Status', 'Atendees', 'Attachments', 'type', 'adminId', 'usersignsid'];
 
     // Dates
     protected $useTimestamps = false;
