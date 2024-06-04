@@ -1,7 +1,7 @@
 <style>
   .top-nav ul li a:hover,
 .top-nav ul li.active a {
-    color: white; /* Change to desired highlight color */
+    color: black; /* Change to desired highlight color */
     /* Add any other styles you want for hover and active states */
 }
 </style>

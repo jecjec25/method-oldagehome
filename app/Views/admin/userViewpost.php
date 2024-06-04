@@ -66,7 +66,7 @@
             </ul>
         </div>
     </section>
- 
+	<br>
 <?php include_once('includes/footer.php');?>	
 								<script type="text/javascript">
 									$(document).ready(function() {

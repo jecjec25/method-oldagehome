@@ -26,7 +26,7 @@
                 
                                   
                   <ul class="nav-list">
-                  <li><h4>Welcome  <?= session()->get('Username')?> </h4> </li> 
+                  <li><h4 class="b">Welcome  <?= session()->get('Username')?> </h4> </li> 
                   <li>     <a class="dropdown-item" href="/userprofile">
                       <h4>Profile</h4>
                   </a></li>
@@ -84,8 +84,8 @@
     <li class="active"><a href="userViewpost">View Event</a></li>
     <li><a href="/booking">Event Reservation</a></li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders</a>
-      <ul class="dropdown-menu ">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders <b class="caret"></b></a>
+      <ul class="dropdown-menu helloDrop">
         <!-- Add your dropdown items here -->
         <li><a href="/donate-money">Monetary/Cash Donation</a></li>
         <li><a href="/donate-items">In-kind Donation</a></li>

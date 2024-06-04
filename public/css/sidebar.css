@@ -57,13 +57,13 @@ body {
     background-color: rgb(235, 228, 228);
 }
 .dropdown  .helloDrop li a {
-    color: black; /* Set the font color to black */
+    color: salmon; /* Set the font color to black */
     font-size: larger;
     font-weight: bolder;
   }
-  .top-nav ul li a:hover,
-  .top-nav ul li.active a {
-      color: white; /* Change to desired highlight color */
+  .top-nav  ul li a:hover,
+  .top-nav  ul li.active a {
+      color: black; /* Change to desired highlight color */
       /* Add any other styles you want for hover and active states */
   }
   h4{
