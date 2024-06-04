@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Searched Between Dates Report of Elder Registration</title>
+    <title>Table Report of Elders</title>
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -81,13 +81,13 @@
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
                 <ul class="navbar-nav mr-lg-2">
                     <li class="nav-item ml-0">
-                        <h4 class="mb-0">Update Elder</h4>
+                        <h4 class="mb-0">Table Report of Elders</h4>
                     </li>
                     <li class="nav-item">
                         <div class="d-flex align-items-baseline">
                             <p class="mb-0">Home</p>
                             <i class="typcn typcn-chevron-right"></i>
-                            <p class="mb-0">Reports</p>
+                            <p class="mb-0">Reporting</p>
                         </div>
                     </li>
                 </ul>
@@ -100,9 +100,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Elder</h4>
+                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Table Report of Elders</h4>
                                 <p class="card-description" style="padding-left: 20px;">
-                                    Update an Elder to Aruga Kapatid.
+                                    Table Report of Elders in Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print"><a class="btn btn-primary text-decoration-none"
                                         href="<?= base_url('/generateElderlyReport/'.$searchParams['todate']) ?>"
@@ -150,23 +150,21 @@
                                                     <td><?=$reg['EmergencyContNum'] ?></td>
                                                     <td><?=$reg['RegDate'] ?></td>
                                                     <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <a href="<?= base_url('edit/') .$reg['Id']?>"
-                                                                class="btn btn-success btn-sm btn-icon-text mr-3">Edit
-                                                                <i class="typcn typcn-edit btn-icon-append"></i>
-                                                            </a>
-                                                            <a href="<?= base_url('reportElder/' .$reg['Id'])?>"
-                                                                class="btn btn-warning btn-sm btn-icon-text mr-3">Report</a>
-                                                            <form action="<?= base_url('Archivestat')?>" method="post">
-                                                                <input type="hidden" name="update"
-                                                                    value="<?= $reg['Id']?>">
-                                                                <button class="btn btn-danger btn-sm btn-icon-text"
-                                                                    onclick="return confirm('Are you sure you want to archive this form?')"
-                                                                    type="submit">Archive <i
-                                                                        class="typcn typcn-archive btn-icon-append"></i></button>
-                                                            </form>
-                                                        </div>
-                                                    </td>
+                                                    <div class="d-flex align-items-center">
+                                                        <a href="<?= base_url('edit/') .$reg['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a>
+                                                        <form action="<?= base_url('Archive')?>" method="post">
+                                                        <input type="hidden" name="update" value="<?= $reg['Id']?>">
+                                                        <select name="status" id="">
+                                                        <option  selected disabled>Status</option>
+                                                        <option value="Left">Left</option>
+                                                        <option value="Deceased">Deceased</option>
+                                                    </select>
+
+                                                        <button class="btn btn-danger btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">Archive <i class="typcn typcn-archive btn-icon-append"></i></button>
+
+                                                    </form>
+                                                    </div>
+                                                </td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                             </tbody>

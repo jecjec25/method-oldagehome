@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Elder Needs</title>
+  <title>Elder Need</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -22,7 +22,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Elder Needs</h4>
+            <h4 class="mb-0">Elder Need</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
@@ -44,7 +44,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Elder Needs</h4>
                   <p class="card-description">
-                    Elder Needs
+                    Elder Needs of Aruga-Kapatid Foundation Incorporated
                   </p>
                   <form action="<?= base_url("saveneed") ?>" method="post">
                     <input type="hidden" name="adminId" value="<?=session()->get('userID')?>">

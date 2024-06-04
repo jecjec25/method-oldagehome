@@ -40,7 +40,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Edit Elder Need</h4>
                   <p class="card-description">
-                    Edit an Elder Need to Aruga Kapatid
+                    Edit Elder Need to Aruga-Kapatid Foundation Incorporated
                   </p>
                  
                   <form class="forms-sample" action="<?= site_url('updateElneed/' .$viewneed['id']) ?>" method="post">

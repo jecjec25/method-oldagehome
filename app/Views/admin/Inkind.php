@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>User Donation</title>
+    <title>In-Kind Donation</title>
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="css/bootstrap.css" type='text/css' />
     <link rel="stylesheet" href="css/style.css" type='text/css' />

@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-
-    <title>Archived Elder</title>
+    <title>Table Report of Deceased Elders</title>
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -99,13 +98,13 @@
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
                 <ul class="navbar-nav mr-lg-2">
                     <li class="nav-item ml-0">
-                        <h4 class="mb-0">Archived Elder</h4>
+                        <h4 class="mb-0">Table Report of Deceased Elders</h4>
                     </li>
                     <li class="nav-item">
                         <div class="d-flex align-items-baseline">
                             <p class="mb-0">Home</p>
                             <i class="typcn typcn-chevron-right"></i>
-                            <p class="mb-0">Register Elder</p>
+                            <p class="mb-0">Reporting</p>
                         </div>
                     </li>
                 </ul>
@@ -118,10 +117,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Archived Elder
+                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Table Report of Deceased Elders
                                 </h4>
                                 <p class="card-description" style="padding-left: 20px;">
-                                    Archived elder of Aruga Kapatid
+                                    Table Report of Deceased Elders of Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print"><a class="btn btn-primary"
                                 href="<?= base_url('getReportsDeath/' .$fromdate. '/' . $todate ) ?>" id="PrintButton">Print</a>
@@ -181,12 +180,12 @@
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
-
-
                                 </div>
-
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="/viewreportdeath" class="btn btn-secondary">Back</a>
                     </div>
 
                 </div>
