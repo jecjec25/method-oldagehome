@@ -23,18 +23,18 @@
                 </div>
                 <div class="top-log">
                     <div class="clearfix"> </div> 
-                </div>  
-        
-                <div class="clearfix">
+                
                                   
                   <ul class="nav-list">
                   <li><h4>Welcome  <?= session()->get('Username')?> </h4> </li> 
                   <li>     <a class="dropdown-item" href="/userprofile">
                       <h4>Profile</h4>
                   </a></li>
-                  <li>  <a class="dropdown-item" href="/logout"></li>
+                  <li>  <a class="dropdown-item" href="/logout">
                   <h4>Logout</h4>
-                  </a>
+                  </a></li>
+                  </div> 
+                  
                   <div class="notification-container">
                   <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
                   <div id="notification-dropdown" class="notification-dropdown">
@@ -106,6 +106,7 @@
     for (var i = 0; i < dropdownToggle.length; i++) {
       dropdownToggle[i].addEventListener('click', function() {
         var parent = this.parentElement;
+        
         if (parent.classList.contains('open')) {
           parent.classList.remove('open');
         } else {
@@ -139,7 +140,6 @@
             });
 
                         </script>
-
                         <script>
                     function toggleDropdown() {
                 const dropdown = document.getElementById('notification-dropdown');
