@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="/css/sidebar.css" rel='stylesheet' type='text/css' />
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   </head>
-  <body>
-    
-  </body>
-  </html>
+ 
   <style>
 body {
     font-family: Arial, sans-serif;
@@ -74,6 +73,8 @@ body {
 
 
   </style>
+   <body>
+    
   <div class="strip"> </div>
     <div class="header-top" id="home">
       <div class="container">
@@ -87,18 +88,18 @@ body {
                 </div>
                 <div class="top-log">
                     <div class="clearfix"> </div> 
-                </div>  
-        
-                <div class="clearfix">
+                
                                   
                   <ul class="nav-list">
                   <li><h4>Welcome  <?= session()->get('Username')?> </h4> </li> 
                   <li>     <a class="dropdown-item" href="/userprofile">
                       <h4>Profile</h4>
                   </a></li>
-                  <li>  <a class="dropdown-item" href="/logout"></li>
+                  <li>  <a class="dropdown-item" href="/logout">
                   <h4>Logout</h4>
-                  </a>
+                  </a></li>
+                  </div> 
+                  
                   <div class="notification-container">
                   <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
                   <div id="notification-dropdown" class="notification-dropdown">
@@ -129,9 +130,9 @@ body {
                     <br>
                     
                     <ul>
-                    <li><a class="fb" href="#"><span> </span></a></li>
+                    <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
                     <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
-                    <li><a class="you" href="#"><span> </span></a></li>
+                    <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
                     <div class="clearfix"> </div>
                   </ul>
                 </div>
@@ -148,8 +149,8 @@ body {
     <li class="active"><a href="userViewpost">View Event</a></li>
     <li><a href="/booking">Event Reservation</a></li>
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders <b class="caret"></b></a>
-      <ul class="dropdown-menu helloDrop">
+      <a class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders</a>
+      <ul class="dropdown-menu ">
         <!-- Add your dropdown items here -->
         <li><a href="/donate-money">Monetary/Cash Donation</a></li>
         <li><a href="/donate-items">In-kind Donation</a></li>
@@ -170,6 +171,7 @@ body {
     for (var i = 0; i < dropdownToggle.length; i++) {
       dropdownToggle[i].addEventListener('click', function() {
         var parent = this.parentElement;
+        
         if (parent.classList.contains('open')) {
           parent.classList.remove('open');
         } else {
@@ -203,7 +205,6 @@ body {
             });
 
                         </script>
-
                         <script>
                     function toggleDropdown() {
                 const dropdown = document.getElementById('notification-dropdown');
@@ -226,3 +227,5 @@ body {
           </script>
         <div class="clearfix"> </div>
       </div>
+      </body>
+  </html>
