@@ -7190,3 +7190,1058 @@ Page Not Found
 #4 {main}
 in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:04:23 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p56qffghvr81ecb...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p56qffghvr81ecb...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:04:24 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p56qffghvr81ecb...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p56qffghvr81ecb...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:04:25 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p56qffghvr81ecb...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p56qffghvr81ecb...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:04:26 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p56qffghvr81ecb...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p56qffghvr81ecb...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:04:27 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p56qffghvr81ecb...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p56qffghvr81ecb...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:04:28 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p56qffghvr81ecb...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p56qffghvr81ecb...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:04:29 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p56qffghvr81ecb...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p56qffghvr81ecb...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:04:30 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p56qffghvr81ecb...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p56qffghvr81ecb...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-04 16:53:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'js', 'vendor.bundle.base.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'off-canvas.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'hoverable-collapse.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'template.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'settings.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'todolist.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'typeahead.js', 'typeahead.bundle.min.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:03 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'select2', 'select2.min.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:03 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'file-upload.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:03 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'typeahead.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 16:53:03 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'select2.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:07:32 --> Undefined variable $contact
+in APPPATH\Controllers\UserbookingController.php on line 184.
+ 1 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $contact', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserbookingController.php', 184)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('143')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:08:00 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('143')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:08:00 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `id` = :id:
+AND `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('143')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:08:32 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('143')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:08:32 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `id` = :id:
+AND `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('143')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:09:09 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('143')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:09:09 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `id` = :id:
+AND `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('143')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:09:52 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:09:52 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `id` = :id:
+AND `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:10:46 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:10:46 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `id` IS NULL
+AND `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:10:48 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:10:48 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `id` IS NULL
+AND `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:11:14 --> Undefined variable $id
+in APPPATH\Controllers\UserbookingController.php on line 184.
+ 1 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserbookingController.php', 184)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:11:51 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:11:51 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:12:08 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:12:08 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:12:44 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:12:44 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:13:21 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:13:21 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-04 17:13:37 --> mysqli_sql_exception: Unknown column 'bookingId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `ac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(1080): CodeIgniter\Model->doDelete(Array, false)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete(Array)
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-04 17:13:37 --> Unknown column 'bookingId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2790): CodeIgniter\Database\BaseConnection->query('DELETE FROM `acceptbooking`
+WHERE `bookingId` IN :bookingId:', [...], false)
+ 2 SYSTEMPATH\Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1080): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH\Controllers\UserbookingController.php(184): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->deleteAcceptedEvent('144')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:15 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'js', 'vendor.bundle.base.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:15 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'off-canvas.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'hoverable-collapse.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'template.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'settings.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'todolist.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'typeahead.js', 'typeahead.bundle.min.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'select2', 'select2.min.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'file-upload.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'typeahead.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:15:16 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'select2.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:01 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'js', 'vendor.bundle.base.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:01 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'off-canvas.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:01 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'hoverable-collapse.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'template.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'settings.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'todolist.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'typeahead.js', 'typeahead.bundle.min.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('vendors', 'select2', 'select2.min.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'file-upload.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'typeahead.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:19:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\viewBooking.php on line 49.
+ 1 APPPATH\Views\dashboard\viewBooking.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\viewBooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/viewBooking', [], true)
+ 5 APPPATH\Controllers\ReportController.php(63): view('dashboard/viewBooking', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ReportController->ViewReports('js', 'select2.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:27:06 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\bookingDec.php on line 79.
+ 1 APPPATH\Views\dashboard\bookingDec.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php', 79)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/bookingDec', [], true)
+ 5 APPPATH\Controllers\UserbookingController.php(207): view('dashboard/bookingDec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->bookingD()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:28:57 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\bookingDec.php on line 79.
+ 1 APPPATH\Views\dashboard\bookingDec.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php', 79)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/bookingDec', [], true)
+ 5 APPPATH\Controllers\UserbookingController.php(207): view('dashboard/bookingDec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->bookingD()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:29:34 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\bookingDec.php on line 79.
+ 1 APPPATH\Views\dashboard\bookingDec.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php', 79)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/bookingDec', [], true)
+ 5 APPPATH\Controllers\UserbookingController.php(207): view('dashboard/bookingDec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->bookingD()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:29:37 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\bookingDec.php on line 79.
+ 1 APPPATH\Views\dashboard\bookingDec.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php', 79)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/bookingDec', [], true)
+ 5 APPPATH\Controllers\UserbookingController.php(207): view('dashboard/bookingDec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->bookingD()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:29:37 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\bookingDec.php on line 79.
+ 1 APPPATH\Views\dashboard\bookingDec.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php', 79)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/bookingDec', [], true)
+ 5 APPPATH\Controllers\UserbookingController.php(207): view('dashboard/bookingDec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->bookingD()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 17:29:41 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\bookingDec.php on line 79.
+ 1 APPPATH\Views\dashboard\bookingDec.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php', 79)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\bookingDec.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/bookingDec', [], true)
+ 5 APPPATH\Controllers\UserbookingController.php(207): view('dashboard/bookingDec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserbookingController->bookingD()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserbookingController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 18:44:13 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\tablereceivedinkind.php on line 79.
+ 1 APPPATH\Views\dashboard\tablereceivedinkind.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\tablereceivedinkind.php', 79)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\tablereceivedinkind.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/tablereceivedinkind', [], true)
+ 5 APPPATH\Controllers\UserIdonateController.php(426): view('dashboard/tablereceivedinkind', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserIdonateController->viewReceiveInkind()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserIdonateController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 18:47:27 --> Undefined property: App\Controllers\UserIdonateController::$InKind
+in APPPATH\Controllers\UserIdonateController.php on line 431.
+ 1 APPPATH\Controllers\UserIdonateController.php(431): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UserIdonateController::$InKind', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserIdonateController.php', 431)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserIdonateController->deleteReceivedInkind('11')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserIdonateController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 18:58:47 --> Undefined array key "Description"
+in APPPATH\Views\dashboard\feedbackeven.php on line 72.
+ 1 APPPATH\Views\dashboard\feedbackeven.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Description"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\feedbackeven.php', 72)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\feedbackeven.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/feedbackeven', [], true)
+ 5 APPPATH\Controllers\FeedbackController.php(48): view('dashboard/feedbackeven', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->viewfeedbackevent()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 19:02:26 --> Undefined variable $item
+in APPPATH\Views\dashboard\feedbackeven.php on line 77.
+ 1 APPPATH\Views\dashboard\feedbackeven.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $item', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\feedbackeven.php', 77)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\feedbackeven.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/feedbackeven', [], true)
+ 5 APPPATH\Controllers\FeedbackController.php(48): view('dashboard/feedbackeven', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->viewfeedbackevent()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 19:09:27 --> Undefined variable $item
+in APPPATH\Views\dashboard\feedbackannounce.php on line 71.
+ 1 APPPATH\Views\dashboard\feedbackannounce.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $item', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\feedbackannounce.php', 71)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\feedbackannounce.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/feedbackannounce', [], true)
+ 5 APPPATH\Controllers\FeedbackController.php(73): view('dashboard/feedbackannounce', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->viewfeedbackannounce()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 19:13:02 --> Undefined variable $item
+in APPPATH\Views\dashboard\adminUser\viewAdminUsers.php on line 94.
+ 1 APPPATH\Views\dashboard\adminUser\viewAdminUsers.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $item', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\adminUser\\viewAdminUsers.php', 94)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\adminUser\\viewAdminUsers.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/adminUser/viewAdminUsers', [], true)
+ 5 APPPATH\Controllers\SignupController.php(143): view('dashboard/adminUser/viewAdminUsers', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->viewUsers()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 19:13:07 --> Undefined array key "id"
+in APPPATH\Views\dashboard\adminUser\viewAdminUsers.php on line 94.
+ 1 APPPATH\Views\dashboard\adminUser\viewAdminUsers.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\adminUser\\viewAdminUsers.php', 94)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\adminUser\\viewAdminUsers.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/adminUser/viewAdminUsers', [], true)
+ 5 APPPATH\Controllers\SignupController.php(143): view('dashboard/adminUser/viewAdminUsers', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->viewUsers()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-04 19:13:18 --> Undefined array key "id"
+in APPPATH\Views\dashboard\adminUser\viewAdminUsers.php on line 94.
+ 1 APPPATH\Views\dashboard\adminUser\viewAdminUsers.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\adminUser\\viewAdminUsers.php', 94)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\adminUser\\viewAdminUsers.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/adminUser/viewAdminUsers', [], true)
+ 5 APPPATH\Controllers\SignupController.php(143): view('dashboard/adminUser/viewAdminUsers', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->viewUsers()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

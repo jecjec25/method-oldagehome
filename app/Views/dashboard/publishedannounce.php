@@ -58,8 +58,9 @@
                         <th>Category</th>
                         <th>Priority</th>
                         <th>Attachments</th>
-                        <th>Status</th>
                         <th>Target Audience</th>
+                        <th>Status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -75,8 +76,8 @@
                     <td><?=$pannounce['Category'] ?></td>
                     <td><?=$pannounce['Priority'] ?></td>
                     <td><img src="<?="/upload/announcement/".$pannounce['Attachments']?>" style="width:50px; height:50px; border:box;"></td>
-                    <td><?=$pannounce['Status'] ?></td>
                     <td><?=$pannounce['Target_audience'] ?></td>
+                    <td><?=$pannounce['Status'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">
                             <form action="<?= base_url('myAnnouncePubArch')?>" method="post">

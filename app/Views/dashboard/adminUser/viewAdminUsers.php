@@ -81,6 +81,7 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -91,6 +92,9 @@
                     <td><?=$k['Username'] ?></td>
                     <td><?=$k['Email'] ?></td>
                     <td><?=$k['role'] ?></td>
+                    <td><a href="<?= base_url('deleteUser/' . $k['userID']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to delete this form?')">
+                        Delete <i class="typcn typcn-trash btn-icon-append"></i>
+                      </a></td>
                     
        
                 </tr>

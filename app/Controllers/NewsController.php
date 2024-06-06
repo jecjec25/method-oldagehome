@@ -191,7 +191,7 @@ class NewsController extends BaseController
                 }
                 
                 if ($image && $image->isValid() && !$image->hasMoved()) {
-                    $myImage = $image->getRandomName();
+                   $myImage = $image->getRandomName();
                     $image->move($imagePath . '/upload/news/', $myImage);
         
                     $data = [
@@ -243,6 +243,13 @@ class NewsController extends BaseController
         ];
         $data['main']= $this->newsevent->where('status','Archive')->findAll();
         return view('dashboard/newsarchived', $data);
+    }
+
+    public function deleteArchivedNews($Id = null)
+    {
+        $newsevent = new NewsModel();
+        $data = $newsevent->where('id', $Id)->delete($Id);
+        return $this->response->redirect(site_url('/newsarchive'));
     }
 
     public function Archive()

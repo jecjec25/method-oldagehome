@@ -8,7 +8,7 @@ class AcceptbookingModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'acceptbooking';
-    protected $primaryKey       = 'bookingId';
+    protected $primaryKey       = 'Id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
@@ -56,13 +56,9 @@ class AcceptbookingModel extends Model
 
     public function getBookingsByMonth()
     {
-        $data = $this->select('YEAR(prefferdate) AS year, MONTH(prefferdate) AS month, COUNT(*) AS total_bookings')
-        ->where('status', 'Accepted')
-        ->where('prefferdate IS NOT NULL')
-        ->groupBy('YEAR(prefferdate), MONTH(prefferdate)')
-        ->orderBy('YEAR(prefferdate), MONTH(prefferdate)')
-        ->findAll();
-
-        return $data;
+        return $this->select('YEAR(prefferdate) AS year, MONTH(prefferdate) AS month, COUNT(*) AS total_bookings')->where('status', 'Accepted')
+            ->groupBy('YEAR(prefferdate), MONTH(prefferdate)')
+            ->orderBy('year, month')
+            ->findAll();
     }
 }

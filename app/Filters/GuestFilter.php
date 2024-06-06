@@ -41,8 +41,18 @@ class GuestFilter implements FilterInterface
             elseif(session()->get('role') === 'Booker')
             {
                 return redirect()->to('booking');
+
+
+                $usersModel = new UserModel();
+                $user = $usersModel->find($session->get('userID'));
+
+                if ($user['is_verified'] == 0) {
+                    return redirect()->to('/verify-email');
+                }
             }
         }
+
+        
     }
 
     /**

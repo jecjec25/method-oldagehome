@@ -305,6 +305,7 @@ class UserIdonateController extends BaseController
           $this->updateTheInkindToReceived($update);
           return redirect()->to('/tableindkind');
       }
+
   
       private function viewToUpdateReceived($updateID)
       {
@@ -355,6 +356,13 @@ class UserIdonateController extends BaseController
         return view('dashboard/tableMonetary', $data);
 
       }
+
+      public function deleteReceiveMonetary($id = null)
+        {
+            $this->uidm->delete($id);
+            return $this->response->redirect(site_url('/viewReceiveMonetary'));
+        }
+
       public function viewPostponedMonetary()
       {
  
@@ -385,6 +393,12 @@ class UserIdonateController extends BaseController
 
       }
 
+      public function deletePostponedMonetary($id = null)
+        {
+            $this->uidm->delete($id);
+            return $this->response->redirect(site_url('/viewPostponedMonetary'));
+        }
+
       public function viewReceiveInkind()
     {
         $user = session()->get('userID');
@@ -412,6 +426,13 @@ class UserIdonateController extends BaseController
         return view('dashboard/tablereceivedinkind', $data);
     }
 
+    public function deleteReceivedInkind($id)
+    {
+        $this->Inkind->delete($id);
+     
+        return $this->response->redirect(site_url('/viewReceiveInkind'));
+    }
+
     public function viewPostponedInkind()
     {
         $user = session()->get('userID');
@@ -437,6 +458,13 @@ class UserIdonateController extends BaseController
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];
         return view('dashboard/tablepostponedinkind', $data);
+    }
+
+    public function deletePostponedInkind($id)
+    {
+        $this->Inkind->delete($id);
+     
+        return $this->response->redirect(site_url('/viewPostponedInkind'));
     }
 
     public function inKind()

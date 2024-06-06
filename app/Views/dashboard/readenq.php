@@ -64,6 +64,8 @@
                             <form action="<?= base_url('updateToUnread') ?>" method="post">
                             <input type="hidden" name="update" value="<?=$f['Id']?>">
                             <button class="btn btn-danger btn-sm btn-icon-text mr-3">Mark as unread<i class="typcn typcn-edit btn-icon-append"></i></button>
+                            <a href="<?= base_url("deletereadInq/".$f['Id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
+                            Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
                           </form>
                       
                       </tr>

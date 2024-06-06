@@ -86,6 +86,7 @@
                                 Received <i class="typcn typcn-folder-open btn-icon-append"></i>
                             </button>
                         </form>
+                        &nbsp;
                         <!-- Postpone Form -->
                         <form action="<?= base_url('PostponedInkind') ?>" method="post" class="me-2">
                             <input type="hidden" name="update" value="<?= $item['id'] ?>">
@@ -93,6 +94,7 @@
                                 Postponed <i class="typcn typcn-archive btn-icon-append"></i>
                             </button>
                         </form>
+                        &nbsp;
                            <!-- Delete Button -->
                            <a href="<?= base_url('deleteinkind/' . $item['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to submit this form?')">
                             Delete <i class="typcn typcn-trash btn-icon-append"></i>

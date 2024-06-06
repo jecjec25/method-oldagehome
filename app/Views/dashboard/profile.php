@@ -86,7 +86,7 @@
                       <input type="date" class="form-control" id="email" name="birthday" class="form-control" value="<?= session()->get('birthday')?>" required='true' />
                     </div>
                     <div class="form-group">
-                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">Submit</button>
                     <div class="row mt-3">
                     <div class="col-md-12">
                     <a href="/dashboard" class="btn btn-secondary">Back</a>

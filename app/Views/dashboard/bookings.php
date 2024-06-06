@@ -10,7 +10,7 @@
   
 </head>
 <style>
-  .btn {
+  .btnv {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -23,9 +23,6 @@
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
 
 </style>
 <body>
@@ -63,9 +60,7 @@
                 <div class="table-responsive pt-3">
                 <form action="<?= base_url('fundamental/accept') ?>" method ="post">
                   <table class="table table-striped project-orders-table" id="userbooking">
-                    <?php if(isset($calen['bookingId'])){?>
-                      <input type="hidden" name="bookingId" value="<?=$calen['bookingId']?>">
-                    <?php }?>
+           
                     <thead>
                         <tr>
                           <th>Last Name</th>
@@ -77,12 +72,12 @@
                           <th>Time</th>
                           <th>Equipment</th>
                           <th>Comments</th>
-                          <th>STATUS</th>
-                          <th>DESCRIPTION</th>
-                          <th>AMOUNT</th>
-                          <th>OUTCOMES</th>
-                          <th>ACKNOWLEDGEMENT</th>
-                          <th>ACTION</th>
+                          <th>Description</th>
+                          <th>Amount</th>
+                          <th>Outcomes</th>
+                          <th>Acknowledgement</th>
+                          <th>Status</th>
+                          <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -97,16 +92,18 @@
                       <td><?=$even['Time'] ?></td>
                       <td><?=$even['equipment'] ?></td>
                       <td><?=$even['comments'] ?></td>
+                      <td><?=$even['description'] ?></td>
+                      <td><?=$even['amount_raised'] ?></td>
+                      <td><?=$even['outcomes'] ?></td>
+                      <td><?=$even['acknowledgement'] ?></td>
+                      <td><?=$even['status']?></td>
                       <td>
-                          <?= $even['status']?>
-                    </td>
-                    <td><?=$even['description'] ?></td>
-                    <td><?=$even['amount_raised'] ?></td>
-                    <td><?=$even['outcomes'] ?></td>
-                    <td><?=$even['acknowledgement'] ?></td>
-                    <td>
-                        <a href="<?= base_url('viewEvent/') . $even['id']?>" class="btn">View Event</a>
-                    </td>
+                          <a href="<?= base_url('viewEvent/') . $even['id']?>" class="btnv">View Event</a>
+                      </td>
+                      <td>
+                      <a href="<?= base_url("deleteAcceptedEvent/" .$even['id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
+                      Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
+                      </td>
 
                     </tr>
                     <?php endforeach; ?>

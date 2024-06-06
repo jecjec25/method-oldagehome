@@ -17,11 +17,13 @@ namespace PhpCsFixer\Fixer\PhpUnit;
 use PhpCsFixer\DocBlock\Annotation;
 use PhpCsFixer\DocBlock\DocBlock;
 use PhpCsFixer\Fixer\AbstractPhpUnitFixer;
+use PhpCsFixer\Fixer\AttributeNotation\OrderedAttributesFixer;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\FixerDefinition\VersionSpecification;
 use PhpCsFixer\FixerDefinition\VersionSpecificCodeSample;
 use PhpCsFixer\Preg;
+use PhpCsFixer\Tokenizer\Analyzer\AttributeAnalyzer;
 use PhpCsFixer\Tokenizer\CT;
 use PhpCsFixer\Tokenizer\Processor\ImportProcessor;
 use PhpCsFixer\Tokenizer\Token;
@@ -120,6 +122,10 @@ final class PhpUnitAttributesFixer extends AbstractPhpUnitFixer
                 /** @phpstan-ignore-next-line */
                 $tokensToInsert = self::{$this->fixingMap[$annotationName]}($tokens, $index, $annotation);
 
+                if (self::isAttributeAlreadyPresent($tokens, $index, $tokensToInsert)) {
+                    continue;
+                }
+
                 if ([] === $tokensToInsert) {
                     continue;
                 }
@@ -197,6 +203,52 @@ final class PhpUnitAttributesFixer extends AbstractPhpUnitFixer
     }
 
     /**
+     * @param list<Token> $tokensToInsert
+     */
+    private static function isAttributeAlreadyPresent(Tokens $tokens, int $index, array $tokensToInsert): bool
+    {
+        $attributeIndex = $tokens->getNextMeaningfulToken($index);
+        if (!$tokens[$attributeIndex]->isGivenKind(T_ATTRIBUTE)) {
+            return false;
+        }
+
+        $insertedClassName = '';
+        foreach (\array_slice($tokensToInsert, 3) as $token) {
+            if ($token->equals('(') || $token->isGivenKind(CT::T_ATTRIBUTE_CLOSE)) {
+                break;
+            }
+            $insertedClassName .= $token->getContent();
+        }
+
+        // @TODO: refactor OrderedAttributesFixer::determineAttributeFullyQualifiedName to shared analyzer
+        static $determineAttributeFullyQualifiedName = null;
+        static $orderedAttributesFixer = null;
+        if (null === $determineAttributeFullyQualifiedName) {
+            $orderedAttributesFixer = new OrderedAttributesFixer();
+            $reflection = new \ReflectionObject($orderedAttributesFixer);
+            $determineAttributeFullyQualifiedName = $reflection->getMethod('determineAttributeFullyQualifiedName');
+            $determineAttributeFullyQualifiedName->setAccessible(true);
+        }
+
+        foreach (AttributeAnalyzer::collect($tokens, $attributeIndex) as $attributeAnalysis) {
+            foreach ($attributeAnalysis->getAttributes() as $attribute) {
+                $className = ltrim($determineAttributeFullyQualifiedName->invokeArgs(
+                    $orderedAttributesFixer,
+                    [$tokens,
+                        $attribute['name'],
+                        $attribute['start']],
+                ), '\\');
+
+                if ($insertedClassName === $className) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * @return list<Token>
      */
     private static function fixWithoutParameters(Tokens $tokens, int $index, Annotation $annotation): array
@@ -210,7 +262,7 @@ final class PhpUnitAttributesFixer extends AbstractPhpUnitFixer
     private static function fixWithSingleStringValue(Tokens $tokens, int $index, Annotation $annotation): array
     {
         Preg::match(
-            sprintf('/@%s\s+(.*\S)(?:\R|\s*\*+\\/$)/', $annotation->getTag()->getName()),
+            sprintf('/@%s\s+(.*\S)(?:\R|\s*\*+\/$)/', $annotation->getTag()->getName()),
             $annotation->getContent(),
             $matches,
         );
@@ -375,11 +427,13 @@ final class PhpUnitAttributesFixer extends AbstractPhpUnitFixer
                 new Token([T_WHITESPACE, ' ']),
                 self::createEscapedStringToken($method),
             ];
+        } elseif ('RequiresPhp' === $attributeName && isset($matches[3])) {
+            $attributeTokens = [self::createEscapedStringToken($matches[2].' '.$matches[3])];
         } else {
             $attributeTokens = [self::createEscapedStringToken($matches[2])];
         }
 
-        if (isset($matches[3])) {
+        if (isset($matches[3]) && 'RequiresPhp' !== $attributeName) {
             $attributeTokens[] = new Token(',');
             $attributeTokens[] = new Token([T_WHITESPACE, ' ']);
             $attributeTokens[] = self::createEscapedStringToken($matches[3]);
@@ -425,7 +479,7 @@ final class PhpUnitAttributesFixer extends AbstractPhpUnitFixer
         if (str_starts_with($matches[1], '::')) {
             $attributeName = 'UsesFunction';
             $attributeTokens = [self::createEscapedStringToken(substr($matches[1], 2))];
-        } elseif (Preg::match('/^[a-zA-Z\d\\\\]+$/', $matches[1])) {
+        } elseif (Preg::match('/^[a-zA-Z\d\\\]+$/', $matches[1])) {
             $attributeName = 'UsesClass';
             $attributeTokens = self::toClassConstant($matches[1]);
         } else {
@@ -436,15 +490,17 @@ final class PhpUnitAttributesFixer extends AbstractPhpUnitFixer
     }
 
     /**
-     * @return array<string>
+     * @return list<string>
      */
     private static function getMatches(Annotation $annotation): array
     {
         Preg::match(
-            sprintf('/@%s\s+(\S+)(?:\s+(\S+))?(?:\s+(.+\S))?\s*(?:\R|\*+\\/$)/', $annotation->getTag()->getName()),
+            sprintf('/@%s\s+(\S+)(?:\s+(\S+))?(?:\s+(.+\S))?\s*(?:\R|\*+\/$)/', $annotation->getTag()->getName()),
             $annotation->getContent(),
             $matches,
         );
+
+        \assert(array_is_list($matches)); // preg_match matches is not well typed, it depends on used regex, let's assure the type to instruct SCA
 
         return $matches;
     }

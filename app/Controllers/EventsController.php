@@ -163,8 +163,7 @@ class EventsController extends BaseController
                 'Start_date'  => $this->request->getVar('Start_date'),
                 'End_date'    => $this->request->getVar('End_date'),
                 'Status'      => $this->request->getVar('Status'),
-                'Atendees'    => $this->request->getVar('Atendees'),
-                'type'        => 'admin',
+                'Atendees'    => $this->request->getVar('Atendees'),    
             ];
     
             $categories = $this->request->getVar('Category');
@@ -301,6 +300,13 @@ class EventsController extends BaseController
         return view('dashboard/eventsarchived', $data);
     }
 
+    public function deleteEventArch($Id = null)
+    {
+        $admevent = new EventsModel();
+        $data = $admevent->where('EventID', $Id)->delete($Id);
+        return $this->response->redirect(site_url('/eventsarchive'));
+    }
+
     public function EventPubArc()
     {
         $events = $this->request->getVar('updateEve');
@@ -332,16 +338,18 @@ class EventsController extends BaseController
 
     public function savefeedbackevent()
     {
+        $id = $this->request->getVar('eventid');
         $data = [
             'feedback' => $this->request->getVar('feedback'),
             'usersignsId' => $this->request->getVar('usersignsId'),
-            'eventid' => $this->request->getVar('eventid')
+            'eventid' => $this->request->getVar('eventid'),
+            'status' => 'Pending'
         ];
 
-
         $this->feedback->save($data);
-        
-        return redirect()->to('/userViewpost');
+        session()->setFlashdata('feedback_message', 'Your data has been submitted as feedback');
+
+        return redirect()->to('/eventForUsers/'. $id);
 
     }
        

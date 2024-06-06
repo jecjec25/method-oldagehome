@@ -121,7 +121,7 @@
                                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Deceased Elder
                                 </h4>
                                 <p class="card-description" style="padding-left: 20px;">
-                                    Deceased elders of Aruga Kapatid
+                                    Deceased elders of Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print"><a class="btn btn-primary"
                                         href="<?= base_url('generateElderlyDeceased') ?>" id="PrintButton">Print</a>
@@ -176,6 +176,8 @@
                                                     <a href="<?= base_url('/vieweditdeceased/') . $k['Id']?>">
                                                         <button class="edit-button">Edit</button>
                                                     </a>
+                                                    <a href="<?= base_url("deletedeceasedElder/".$k['Id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
+                                                    Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
                                                 </td>
                                             </tr>
                                             <?php endforeach; ?>

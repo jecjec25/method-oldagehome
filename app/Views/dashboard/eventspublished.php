@@ -59,9 +59,9 @@
                         <th>Start_date</th>
                         <th>End_date</th>
                         <th>Category</th>
-                        <th>Status</th>
                         <th>Attendees</th>
                         <th>Attachments</th>
+                        <th>Status</th>
                         <th>Type</th>
                         <th>Actions</th>
                       </tr>
@@ -75,9 +75,9 @@
                     <td><?=$events['Start_date'] ?></td>
                     <td><?=$events['End_date'] ?></td>
                     <td><?=$events['Category'] ?></td>
-                    <td><?=$events['Status'] ?></td>
                     <td><?=$events['Atendees'] ?></td>
                     <td><img src="<?="/upload/events/" . $events['Attachments']?>" style="width:50px; height:50px; border:box;"></td>
+                    <td><?=$events['Status'] ?></td>
                     <td><?=$events['type'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">

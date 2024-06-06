@@ -10,10 +10,11 @@ use App\Models\NewsModel;
 use App\Models\EventsModel;
 use App\Models\AnnouncementModel;
 use App\Models\UserbookingModel;
+use App\Models\FeedbackModel;
 
 class ViewController extends BaseController
 {
-
+    private $feedback;
     private $booking;
     private $contact;
     private $newsevents;
@@ -23,6 +24,7 @@ class ViewController extends BaseController
 
     public function __construct()
     {
+        $this->feedback = new FeedbackModel();
         $this->newsevents = new NewsModel();
         $this->booking = new BookingModel();
         $this->contact = new ContactModel();
@@ -110,10 +112,17 @@ class ViewController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'events' => $this->events->where('EventID', $id)->where('status', 'Published')->find(),
+           'feedback' => $this->feedback->select('feedbacktbl.id, feedbacktbl.usersignsId, feedbacktbl.eventid,feedbacktbl.status,
+           feedbacktbl.announceid, feedbacktbl.feedback, user.userID, user.LastName,user.Username, user.FirstName, events.EventID, events.Title, events.Description, events.Organizer')
+           ->join('user', 'user.userID = feedbacktbl.usersignsId')
+           ->join('events', 'events.EventID = feedbacktbl.eventid')
+           ->where('feedbacktbl.eventid', $id)
+           ->where('feedbacktbl.status', 'Accepted')
+           ->findAll()
         ];
         $data['news'] = $this->newsevents->where('id', $id)->where('status', 'Published')->find();
-        $data['events'] = $this->events->where('EventID', $id)->where('status', 'Published')->find();
         return view('admin/newsevent', $data);
     }
 
@@ -131,10 +140,18 @@ class ViewController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+           'events' => $this->events->where('EventID', $id)->where('status', 'Published')->find(),
+           'feedback' => $this->feedback->select('feedbacktbl.id, feedbacktbl.usersignsId, feedbacktbl.eventid,feedbacktbl.status,
+           feedbacktbl.announceid, feedbacktbl.feedback, user.userID, user.LastName,user.Username, user.FirstName, events.EventID, events.Title, events.Description, events.Organizer')
+           ->join('user', 'user.userID = feedbacktbl.usersignsId')
+           ->join('events', 'events.EventID = feedbacktbl.eventid')
+           ->where('feedbacktbl.eventid', $id)
+           ->where('feedbacktbl.status', 'Accepted')
+           ->findAll()
         ];
-        $data['news'] = $this->newsevents->where('id', $id)->where('status', 'Published')->find();
-        $data['events'] = $this->events->where('EventID', $id)->where('status', 'Published')->find();
+        
+
         return view('admin/eventslogin', $data);
     
     

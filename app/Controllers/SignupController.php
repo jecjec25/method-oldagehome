@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UsersModel;
 use App\Models\UserbookingModel;
+use CodeIgniter\I18n\Time;
 
 class SignupController extends BaseController
 {
@@ -15,6 +16,7 @@ class SignupController extends BaseController
     {
         $this->user = new UsersModel();
         $this->userbooking = new UserbookingModel();
+        helper(['form', 'url']);
     }
     public function index()
     {
@@ -37,6 +39,7 @@ class SignupController extends BaseController
           
         if($this->validate($rules)){
             $userModel = new UsersModel();
+            $verificationToken = bin2hex(random_bytes(16));
             $data = [
                 'LastName'     => $this->request->getVar('LastName'),
                 'FirstName'     => $this->request->getVar('FirstName'),
@@ -44,16 +47,47 @@ class SignupController extends BaseController
                 'Email'    => $this->request->getVar('Email'),
                 'ContactNo'    => $this->request->getVar('ContactNumber'),
                 'role'         => 'Booker',
+                'verification_token' => $verificationToken,
                 'birthday'    => $this->request->getVar('birthday'),
                 'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
             ];
             $userModel->save($data);
+            $this->sendVerificationEmail($this->request->getVar('Email'), $verificationToken);
+
             session()->setFlashdata('success', 'Saved successfully. You can now signin');
             return redirect()->to('signin');
         }else{
             $data['validation'] = $this->validator;
             return view('user/signup', $data);
         }
+    }
+    public function verifyEmailReminder()
+    {
+        return view('admin/verify_email_reminder');
+    }
+    private function sendVerificationEmail($email, $token)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('delachicachristiaangelicam@gmail.com', 'MethodOldAgeHome');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Please click the link below to verify your email address:\n\n" . base_url() . "/verify/$token");
+
+        $emailService->send();
+    }
+
+    public function verify($token)
+    {
+        $userModel = new UsersModel();
+        $user = $userModel->where('verification_token', $token)->first();
+
+        if ($user) {
+            $userModel->update($user['userID'], ['is_verified' => true, 'verification_token' => null]);
+
+            return redirect()->to('/signin')->with('message', 'Email verified successfully. You can now login.');
+        }
+
+        return redirect()->to('/login')->with('error', 'Invalid verification token.');
     }
 
     public function Register()
@@ -141,6 +175,11 @@ class SignupController extends BaseController
         ];
 
        return view('dashboard/adminUser/viewAdminUsers', $data);
+    }
+    public function deleteUser($id){
+        $this->user->delete($id);
+
+        return redirect()->to('viewUsers');
     }
 }
 

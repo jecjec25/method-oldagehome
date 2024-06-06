@@ -122,4 +122,11 @@ class ContactController extends BaseController
 
         return view ('/contactu', $data);
     }
+
+    public function deletereadInq($Id = null)
+    {
+        $contact = new ContactModel();
+        $data = $contact->where('Id', $Id)->delete($Id);
+        return $this->response->redirect(site_url('/readenq'));
+    }
 }

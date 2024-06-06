@@ -177,6 +177,15 @@ class UserbookingController extends ResourceController
 
         return view('dashboard/bookings', $data);
     }
+
+    public function deleteAcceptedEvent($Id)
+    {
+        $acceptbooking = new AcceptbookingModel();
+        $acceptbooking->delete($Id);
+
+        return redirect()->to('ADbooking');
+    }
+    
     public function bookingD()
     {       $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
@@ -196,5 +205,12 @@ class UserbookingController extends ResourceController
         $data['calen'] = $this->booking->where('status', 'Declined')->findAll();
 
         return view('dashboard/bookingDec', $data);
+    }
+
+    public function deleteDeclinedEvent($Id)
+    {
+        $acceptbooking = new AcceptbookingModel();
+        $acceptbooking->delete($Id);
+        return redirect()->to('Dbooking');
     }
 }

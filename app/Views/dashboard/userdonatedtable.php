@@ -60,7 +60,7 @@
                           <th>Cash Check</th>
                           <th>Image</th>
                           <th>Message</th>
-                          <th>Action</th>
+                          <th>Actions</th>
                         </tr> 
                     </thead>
                     <tbody>
@@ -97,34 +97,38 @@
                       
                       <td><?=$dnt['message'] ?></td>
                       <td>
-                      <div class="d-flex align-items-center">
-                        
-                        <input type="hidden" name="delete" value="<?= $dnt['id'] ?>">
-                         <!-- Received Form -->
-                         <form action="<?= base_url('ReceivedMonetary') ?>" method="post">
-                            <input type="hidden" name="update" value="<?= $dnt['id'] ?>">
-                            <button class="btn btn-primary btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">
-                                Received <i class="typcn typcn-folder-open btn-icon-append"></i>
-                            </button>
-                        </form>
-                        <!-- Postpone Form -->
-                        <form action="<?= base_url('PosponedMonetary') ?>" method="post" class="me-2">
-                            <input type="hidden" name="update" value="<?= $dnt['id'] ?>">
-                            <button class="btn btn-warning btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">
-                                Postponed <i class="typcn typcn-archive btn-icon-append"></i>
-                            </button>
-                        </form>
-                           <!-- Delete Button -->
-                           <a href="<?= base_url('deletedonate/' . $dnt['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to submit this form?')">
-                            Delete <i class="typcn typcn-trash btn-icon-append"></i>
-                        </a>
-                     
-                       
-                    </div>
-
-                          </form>
-                    </td>
-                    </tr>
+    <div class="d-flex align-items-center">
+        <input type="hidden" name="delete" value="<?= $dnt['id'] ?>">
+        
+        <!-- Received Form -->
+        <form action="<?= base_url('ReceivedMonetary') ?>" method="post">
+            <input type="hidden" name="update" value="<?= $dnt['id'] ?>">
+            <button class="btn btn-primary btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">
+                Received <i class="typcn typcn-folder-open btn-icon-append"></i>
+            </button>
+        </form>
+        
+        <!-- Space between forms -->
+        &nbsp;
+        
+        <!-- Postpone Form -->
+        <form action="<?= base_url('PosponedMonetary') ?>" method="post" class="me-2">
+            <input type="hidden" name="update" value="<?= $dnt['id'] ?>">
+            <button class="btn btn-warning btn-sm btn-icon-text" onclick="return confirm('Are you sure you want to archive this form?')" type="submit">
+                Postponed <i class="typcn typcn-archive btn-icon-append"></i>
+            </button>
+        </form>
+        
+        <!-- Space between forms -->
+        &nbsp;
+        
+        <!-- Delete Button -->
+        <a href="<?= base_url('deletedonate/' . $dnt['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to delete this form?')">
+            Delete <i class="typcn typcn-trash btn-icon-append"></i>
+        </a>
+    </div>
+</td>
+    </tr>
                     <?php endforeach; ?>
                     </tbody>
                   </table>

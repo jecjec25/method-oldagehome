@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-
+ $routes->get('/trylangmagsend', 'SignupController::trylangmagsend');
  
  $routes->get('/profile', 'UserController::Admin');
  $routes->post('/updateProfile/(:any)', 'UserController::updateProfile/$1');
@@ -14,6 +14,7 @@ use CodeIgniter\Router\RouteCollection;
  $routes->match(['get', 'post'], 'store', 'SignupController::store');
  $routes->match(['get', 'post'], 'UserController/loginAuth', 'UserController::loginAuth');
  $routes->get('/signin', 'UserController::index', ['filter' => 'guestFilter']);
+ $routes->get('GoogleLoginAuth', 'UserController::GoogleAuthLogin');
  $routes->get('/contact', 'ViewController::contact');
  $routes->get('/eligibility', 'ViewController::eligability');
  $routes->get('/about', 'ViewController::about');
@@ -22,9 +23,13 @@ use CodeIgniter\Router\RouteCollection;
  $routes->match(['get', 'post'], 'viewAdminRegister', 'SignupController::Register');
  $routes->match(['get', 'post'], 'adminRegister', 'SignupController::AdminRegister');
  $routes->match(['get', 'post'], 'viewUsers', 'SignupController::viewUsers');
+ $routes->match(['get', 'post'], 'deleteUser/(:any)', 'SignupController::deleteUser/$1');
 
  $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
  $routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
+
+ $routes->get('verify/(:any)', 'SignupController::verify/$1');
+ $routes->get('/verify-email', 'SignupController::verifyEmailReminder');
 
 // $routes->get('/signin', 'Home::try');
 $routes->get('/', 'ViewController::home', ['filter' => 'guestFilter']);
@@ -66,7 +71,9 @@ $routes->post('/save', 'NewController::save');
 $routes->get('/test', 'NewController::test');
 $routes->get('searchdets', 'NewController::searchsc');
 $routes->get('/archives', 'NewController::archives');
+$routes->get('/deleteleftElder/(:any)', 'NewController::deleteleftElder/$1');
 $routes->get('/archivesdeceased', 'NewController::archivesdeceased');
+$routes->get('/deletedeceasedElder/(:any)', 'NewController::deletedeceasedElder/$1');
 $routes->post('/update/(:any)', 'NewController::update/$1');
 $routes->post('/submit', 'NewController::submit');
 $routes->post('/update/(:num)', 'NewController::updates/$1');
@@ -89,12 +96,19 @@ $routes->get('gettoAccept/(:any)', 'UserbookingController::getNotifAccept/$1');
 
 $routes->get('eventfeedback', 'FeedbackController::viewfeedbackevent');
 
+$routes->get('/deleteFeedEvents/(:any)', 'FeedbackController::deleteFeedEvents/$1');
+
+
+
 $routes->get('/dashboard', 'ViewController::dash', ['filter'  => 'authGuard']);
 $routes->get('searchproduct', 'ProductsController::searchproduct');
 $routes->get('/searchpdets', 'ProductsController::searchprod');
 $routes->get('/calendar', 'UserbookingController::bookinge');
 $routes->get('/ADbooking', 'UserbookingController::bookingAD');
+$routes->get('/deleteAcceptedEvent/(:any)', 'UserbookingController::deleteAcceptedEvent/$1');
 $routes->get('/Dbooking', 'UserbookingController::bookingD');
+$routes->get('/deleteDeclinedEvent/(:any)', 'UserbookingController::deleteDeclinedEvent/$1');
+
 $routes->group('Main', ['filter'=>'authGuard'], static function($routes){
     $routes->get('', 'Main::index');
     $routes->get('(:segment)', 'Main::$1');
@@ -116,9 +130,15 @@ $routes->post('PosponedMonetary','UserIdonateController::PosponedMonetary');
 
 
 $routes->get('viewReceiveMonetary','UserIdonateController::viewReceiveMonetary');
+$routes->get('deleteReceiveMonetary/(:any)', 'UserIdonateController::deleteReceiveMonetary/$1');
 $routes->get('viewPostponedMonetary','UserIdonateController::viewPostponedMonetary');
+$routes->get('deletePostponedMonetary/(:any)', 'UserIdonateController::deletePostponedMonetary/$1');
 $routes->get('viewReceiveInkind','UserIdonateController::viewReceiveInkind');
+$routes->get('deleteReceivedInkind/(:any)', 'UserIdonateController::deleteReceivedInkind/$1');
 $routes->get('viewPostponedInkind','UserIdonateController::viewPostponedInkind');
+$routes->get('deletePostponedInkind/(:any)', 'UserIdonateController::deletePostponedInkind/$1');
+$routes->post('/updatetoAccept', 'FeedbackController::updatetoAccept');
+$routes->post('updatetoAcceptAnn', 'FeedbackController::updatetoAcceptAnn');
 
 }
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
@@ -131,31 +151,40 @@ $routes->post('/check', 'ContactController::check');
 $routes->post('/checked', 'ContactController::checked');
 $routes->post('updateToRead', 'ContactController::updateRead');
 $routes->post('updateToUnread', 'ContactController::updateUnread');
+$routes->get('/deletereadInq/(:any)', 'ContactController::deletereadInq/$1');
+
 
 //calendar to`
-if(session()->get('role') == 'Booker'){
+if(session()->get('role') == 'Booker' && session()->get('is_verified') == 1){
+    // Routes for a logged-in and verified Booker user
 
-$routes->match(['get', 'post'], 'UserIdonateController/sbmtInkindDonation', 'UserIdonateController::sbmtInkindDonation');
+    // Route to submit in-kind donation
+    $routes->match(['get', 'post'], 'UserIdonateController/sbmtInkindDonation', 'UserIdonateController::sbmtInkindDonation');
 
-$routes->get('donate-items', 'UserIdonateController::inKind');
+    // Route to view in-kind donation page
+    $routes->get('donate-items', 'UserIdonateController::inKind');
 
-$routes->get('/booking', 'UserbookingController::bookchecked');
+    // Route to view bookings
+    $routes->get('/booking', 'UserbookingController::bookchecked');
 
-$routes->get('userproduct', 'UserProductController::userproduct');
-$routes->get('userdonation', 'UserDonationController::userdonation');
+    // Route to view user products
+    $routes->get('userproduct', 'UserProductController::userproduct');
 
-//idonate page
-$routes->get('donate-money', 'UserIdonateController::userIdonate');
-$routes->post('/sbmtDonation', 'UserIdonateController::sbmtDonation');
+    // Route to view user donations
+    $routes->get('userdonation', 'UserDonationController::userdonation');
 
-//user view event post
-$routes->get('userViewpost', 'UserViewPostController::userViewpost');
+    // Route to view donation page
+    $routes->get('donate-money', 'UserIdonateController::userIdonate');
+    $routes->post('/sbmtDonation', 'UserIdonateController::sbmtDonation');
 
+    // Route to view user's event posts
+    $routes->get('userViewpost', 'UserViewPostController::userViewpost');
 
-//user event post
-$routes->get('usereventpost', 'UserEvntPostController::userEventpost');
-$routes->post('/usersavepost', 'UserEvntPostController::usersavepost');
+    // Route to view and post events
+    $routes->get('usereventpost', 'UserEvntPostController::userEventpost');
+    $routes->post('/usersavepost', 'UserEvntPostController::usersavepost');
 }
+
 $routes->get('/announcement', 'ViewController::announcement');
 
 $routes->post('/checkbooks', 'UserbookingController::checkbook');
@@ -204,6 +233,7 @@ $routes->post('editnews/(:any)', 'NewsController::EditNews/$1');
 $routes->post('NewsArchive', 'NewsController::Archive');
 $routes->get('searchnews', 'NewsController::searchnews');
 $routes->get('/newsarchive', 'NewsController::newsarchived');
+$routes->get('/deleteArchivedNews/(:any)', 'NewsController::deleteArchivedNews/$1');
 $routes->get('/newspublished', 'NewsController::published');
 $routes->post('/PubArchive', 'NewsController::PubArchive');
 $routes->get('newsvents/(:any)', 'ViewController::eventnews/$1');
@@ -219,6 +249,7 @@ $routes->post('ArchiveEvents', 'EventsController::Archive');
 $routes->get('searchevents', 'EventsController::searchevents');
 $routes->get('/publishedevents', 'EventsController::initialpublishedevent');
 $routes->get('/eventsarchive', 'EventsController::eventsarchived');
+$routes->get('/deleteEventArch/(:any)', 'EventsController::deleteEventArch/$1');
 $routes->post('/EventPubArc', 'EventsController::EventPubArc');
 
 //visualization
@@ -235,6 +266,7 @@ $routes->get('/updateannouncement/(:any)', 'AnnouncementController::updateannoun
 $routes->get('/publishedannounce', 'AnnouncementController::publishedann');
 $routes->post('/archiveannounce', 'AnnouncementController::AnnouncePubArc');
 $routes->get('/announceArchived', 'AnnouncementController::announceArchived');
+$routes->get('/deleteAnnounceArch/(:any)', 'AnnouncementController::deleteAnnounceArch/$1');
 $routes->post('myAnnouncePubArch', 'AnnouncementController::AnnouncePubArch');
 $routes->get('searchannounce', 'AnnouncementController::searchannouncement');
 
@@ -247,7 +279,7 @@ $routes->get('menu', 'MenuController::seemenu');
 
 //admin userdonatedtable
 $routes->get('userdonatedtable', 'UserIdonateController::admdonatedtable');
-$routes->get('deletedonate/(:any)', 'UserIdonateController::deletedonation/$1');
+$routes->get('deleteReceivedInkind/(:any)', 'UserIdonateController::deletedonation/$1');
 
 //feedback for user event posting 
 $routes->post('feedback', 'EventsController::savefeedbackevent');
@@ -255,6 +287,7 @@ $routes->post('feedback', 'EventsController::savefeedbackevent');
 //feedback for announcement
 $routes->post('feedbackannounce', 'AnnouncementController::savefeedbackannounce');
 $routes->get('announcefeedback', 'FeedbackController::viewfeedbackannounce');
+$routes->get('/deleteFeedannounced/(:any)', 'FeedbackController::deleteFeedannounced/$1');
 $routes->get('pdf', 'AnnouncementController::pdf');
 $routes->get('hello', 'AnnouncementController::hello');
 //elderneed sa admin side
@@ -295,5 +328,5 @@ $routes->match(['get', 'post'], 'getToeditMonetary/(:any)', 'UserIdonateControll
 $routes->match(['get', 'post'], 'EditMonetary/(:any)', 'UserIdonateController::EditMonetary/$1');
 
 $routes->get('reportMonetary', 'UserIdonateController::viewReportMonetary');
-$routes->get('searchmonetary','UserIdonateController::searchMonetary' );
+$routes->get('searchmonetary','UserIdonateController::searchMonetary');
 $routes->match(['get', 'post'], 'getReportsMonatary/(:any)/(:any)', 'NewController::getReportsMonatary/$1/$2');

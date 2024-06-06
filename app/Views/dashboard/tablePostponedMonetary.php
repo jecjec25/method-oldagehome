@@ -51,7 +51,6 @@
                           <th>Gmail Account</th>
                           <th>Date</th>
                           <th>Establishment</th>
-                         
                           <th>Last Name</th>
                           <th>First Name</th>
                           <th>Middle Name</th>
@@ -61,7 +60,7 @@
                           <th>Cash Check</th>
                           <th>Image</th>
                           <th>Message</th>
-                        
+                          <th>Action</th>
                         </tr> 
                     </thead>
                     <tbody>
@@ -99,6 +98,9 @@
                         <?php endif; ?></td>
                       
                       <td><?=$dnt['message'] ?></td>
+                      <td><a href="<?= base_url('deletePostponedMonetary/' . $dnt['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to delete this form?')">
+                      Delete <i class="typcn typcn-trash btn-icon-append"></i>
+                      </a></td>
                 
                     </tr>
                     <?php endforeach; ?>

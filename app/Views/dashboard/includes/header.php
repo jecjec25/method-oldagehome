@@ -10,7 +10,7 @@
       </div>
   
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <h4>Welcome <?= session()->get('Username')?> </h4>
+        <h4>Welcome <?= session()->get('Username')?> </h4> &nbsp; &nbsp;&nbsp;&nbsp;
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">

@@ -59,9 +59,9 @@
                         <th>Date Published Start</th>
                         <th>Date Published End</th>
                         <th>Category</th>
-                        <th>Status</th>
                         <th>Attendees</th>
                         <th>Attachments</th>
+                        <th>Status</th>
                         <th>Type</th>
                         <th>Actions</th>
                       </tr>
@@ -75,9 +75,9 @@
                     <td><?=$mevents['Start_date'] ?></td>
                     <td><?=$mevents['End_date'] ?></td>
                     <td><?=$mevents['Category']?></td>
-                    <td><?=$mevents['Status'] ?></td>
                     <td><?=$mevents['Atendees'] ?></td>
                     <td><img src="<?="/upload/events/" .$mevents['Attachments'] ?>" alt="eventsba" style="width:50px; height:50px; border:box;"></td>
+                    <td><?=$mevents['Status'] ?></td>
                     <td><?=$mevents['type'] ?></td>
                     <td>
                           <div class="d-flex align-items-center">

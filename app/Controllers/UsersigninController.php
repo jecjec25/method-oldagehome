@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UsersignModel;
+use CodeIgniter\I18n\Time;
 
 class UsersigninController extends BaseController
 {
@@ -48,7 +49,13 @@ class UsersigninController extends BaseController
                             ];
                     $session->set($ses_data);
 
-                return redirect()->to('/booking');
+                    if ($user['is_verified'] == 0) {
+                        return redirect()->to('/verify-email');
+                    }
+                    elseif($user['is_verified'] == 1)
+                    {
+                        return redirect()->to('/booking');
+                    }
                         }
             else
             {
@@ -91,7 +98,7 @@ class UsersigninController extends BaseController
     }
     public function usersignup()
     {
-        helper(['form']);
+
         $rules = [
             'LastName'   => 'required|max_length[30]',
             'FirstName'  => 'required|max_length[30]',

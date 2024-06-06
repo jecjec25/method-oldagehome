@@ -210,7 +210,7 @@ abstract class AbstractCustomFixerTestCase extends TestCase
 
             self::assertFalse(
                 $duplicatedCodeSample,
-                sprintf('[%s] Sample #%d duplicates #%d.', $fixerName, $counter, (int) $duplicatedCodeSample + 1),
+                sprintf('[%s] Sample #%d duplicates #%d.', $fixerName, $counter, ++$duplicatedCodeSample),
             );
         }
 
@@ -274,7 +274,7 @@ abstract class AbstractCustomFixerTestCase extends TestCase
 
             $tokens->clearEmptyTokens();
 
-            /** @var list<Token> $tokensArray */
+            /** @var Token[] $tokensArray */
             $tokensArray = $tokens->toArray();
 
             self::assertCount(

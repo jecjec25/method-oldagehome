@@ -165,7 +165,7 @@
                 <li class="nav-item"><a class="nav-link" href="viewPostponedMonetary">Postponed Monetary Donation</a></li>
                 <li class="nav-item"><a class="nav-link" href="tableindkind">Track In-kind Donation</a></li>
                 <li class="nav-item"><a class="nav-link" href="viewReceiveInkind">Received Inkind Donation</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewPostponedInkind">Posponed Inkind Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="viewPostponedInkind">Postponed Inkind Donation</a></li>
               </ul>
             </div>
           </li>

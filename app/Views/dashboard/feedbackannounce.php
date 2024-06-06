@@ -64,10 +64,27 @@
                     <?php foreach($feedannounce as $feedann): ?>
                 <tr>
                       <td><?= session()->get('FirstName')?> <?= session()->get('LastName')?></td>
+
                     <td><?=$feedann['Title'] ?></td>
                     <td><?=$feedann['Content'] ?></td>
                     <td><?=$feedann['Author'] ?></td>
                     <td><?=$feedann['feedback'] ?></td>
+                    <td>
+                    
+                      <?php if($feedann['status'] == 'Pending'):?>
+                      <form action="<?= base_url('updatetoAcceptAnn')?>" method="post">
+                        
+                      <input type="hidden" name="accept[]" value="<?= $feedann['id']?>">
+                      <button class="btn btn-secondary" type="submit">Approve</button>
+                      
+                      </form>
+                      <?php elseif($feedann['status'] == 'Accepted'):?>
+                        <p>Is Now Approved</p>
+                      <?php endif;?>
+                      <br>
+                    <a href="<?= base_url('deleteFeedannounced/' . $feedann['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to delete this form?')">
+                        Delete <i class="typcn typcn-trash btn-icon-append"></i>
+                      </a></td>
                 </tr>
                   <?php endforeach; ?>
                     </tbody>

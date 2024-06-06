@@ -61,8 +61,7 @@
                             <th>Image</th>
                             <th>Mumo sa Hapag</th>
                             <th>Message</th>
-                            <th>Action</th>
-                          
+                            <th>Actions</th>
                           </tr> 
                     </thead>
                     <tbody>
@@ -107,7 +106,10 @@
                           
                       </td>                      
                       <td><?=$dnt['message'] ?></td>
-                <td>    <a href="<?= base_url('getToeditMonetary/' . $dnt['id'])?>" class="btn btn-primary">Edit</a></td>
+                      <td><a href="<?= base_url('getToeditMonetary/' . $dnt['id'])?>" class="btn btn-primary">Edit</a></td>
+                      <td><a href="<?= base_url('deleteReceiveMonetary/' . $dnt['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to delete this form?')">
+                      Delete <i class="typcn typcn-trash btn-icon-append"></i>
+                      </a></td>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>

@@ -64,6 +64,13 @@ class NewController extends BaseController
         return view('dashboard/scarchived', $data);
     }
 
+    public function deleteleftElder($Id = null)
+    {
+        $main = new MainModel();
+        $data = $main->where('Id', $Id)->delete($Id);
+        return $this->response->redirect(site_url('/archives'));
+    }
+
     public function generateElderlyLeft()
     {
         set_time_limit(120);
@@ -100,68 +107,82 @@ class NewController extends BaseController
         $html = '
         <html>
         <head>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                }
-                .header {
-                    text-align: center;
-                    position: relative;
-                }
-                .header img {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 120px;
-                }
-                .header h5 {
-                    margin: 0;
-                }
-                .title {
-                    text-align: center;
-                }
-                .title h3, .title h4 {
-                    margin: 0;
-                }
-                .report-info {
-                    margin: 20px 0;
-                }
-                .table {
-                    width: 100%;
-                    border-collapse: collapse;
-                }
-                .table th, .table td {
-                    border: 1px solid black;
-                    padding: 8px;
-                    text-align: left;
-                }
-                .summary {
-                    font-weight: 600;
-                    margin-top: 20px;
-                }
-                .footer {
-                    margin-top: 40px;
-                }
-                .footer .signature-group {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 50px;
-                }
-                .footer .signature-section {
-                    width: 20%;
-                    text-align: center;
-                }
-                .footer .signature-section p {
-                    margin: 5px 0;
-                }
-                .footer .signature-line {
-                    border-top: 1px solid black;
-                    margin-top: 40px;
-                    margin-bottom: 5px;
-                }
-            </style>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 120px;
+        }
+        .header h5 {
+            margin: 0;
+        }
+        .title {
+            text-align: center;
+        }
+        .title h3, .title h4 {
+            margin: 0;
+        }
+        .report-info {
+            margin: 20px 0;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            font-size: 10px;
+        }
+        .summary {
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 40px;
+        }
+        .footer .signature-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .footer .signature-section {
+            width: 20%;
+            text-align: center;
+        }
+        .footer .signature-section p {
+            margin: 5px 0;
+        }
+        .footer .signature-line {
+            border-top: 1px solid black;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+        
+        /* Add this CSS style for table cells */
+            .table td {
+                max-width: 150px; /* Adjust as needed */
+                overflow: hidden;
+                text-overflow: ellipsis;
+             
+            }
+        
+            .table th, .table td {
+                         font-size: 15px; /* Reduce font size for better fit */
+            }
+        
+        </style>
         </head>
         <body>
             <div class="header">
@@ -284,6 +305,13 @@ class NewController extends BaseController
         ];
        $data['main']= $this->main->where('scstatus','Deceased')->findAll();
         return view('dashboard/scarchivedeceased', $data);
+    }
+
+    public function deletedeceasedElder($Id = null)
+    {
+        $main = new MainModel();
+        $data = $main->where('Id', $Id)->delete($Id);
+        return $this->response->redirect(site_url('/archivesdeceased'));
     }
 
     public function generateElderlyDeceased()
@@ -978,31 +1006,6 @@ $html = '
         justify-content: space-between;
         margin-top: 50px;
     }
-    .footer .signature-section {
-        width: 20%;
-        text-align: center;
-    }
-    .footer .signature-section p {
-        margin: 5px 0;
-    }
-    .footer .signature-line {
-        border-top: 1px solid black;
-        margin-top: 40px;
-        margin-bottom: 5px;
-    }
-    
-    /* Add this CSS style for table cells */
-        .table td {
-            max-width: 150px; /* Adjust as needed */
-            overflow: hidden;
-            text-overflow: ellipsis;
-         
-        }
-
-        .table th, .table td {
-                     font-size: 15px; /* Reduce font size for better fit */
-        }
-
     </style>
 </head>
 <body>

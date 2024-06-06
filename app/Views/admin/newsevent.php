@@ -45,6 +45,13 @@
               
             </li>
         <?php endforeach; ?>
+        <?php foreach($feedback as $feed):?>
+            <ul>
+                <li>
+                   <?= $feed['Username']?>: <?= $feed['feedback']?>
+                </li>
+            </ul>
+        <?php endforeach;?>
     </ul>
 </div>
 

@@ -5,13 +5,27 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UsersModel;
 use App\Models\UserbookingModel;
+use CodeIgniter\I18n\Time;
+
 class UserController extends BaseController
 {
     private $user;
     private $userbooking;
+    private $googleClient;
     public function __construct(){
+        require_once APPPATH. "libraries/vendor/autoload.php";
+        $this->googleClient = new \Google_Client();
+        $this->googleClient->setClientId("752789167035-9dgclvsdq651rbg8oeinhg4jcccc20kd.apps.googleusercontent.com");
+        $this->googleClient->setClientSecret("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");
+        $this->googleClient->setRedirectUri("http://localhost:8080/GoogleLoginAuth");
+        $this->googleClient->addScope("email");
+        $this->googleClient->addScope("profile");
+
         $this->user = new UsersModel();
         $this->userbooking = new UserbookingModel();
+
+        helper(['form', 'url']);
+
     }
     public function signin(){
         
@@ -20,8 +34,46 @@ class UserController extends BaseController
     public function index()
     {
         helper(['form']);
-        return view('user/signin');
+        $data['GoogleLogin'] = '<a href="'. $this->googleClient->createAuthUrl() .'">Use Google</a>';
+        return view('user/signin', $data);
     }
+
+    public function GoogleAuthLogin()
+    {
+        $token = $this->googleClient->fetchAccessTokenWithAuthCode($this->request->getVar('code'));
+        if (!isset($token['error'])) {
+            $this->googleClient->setAccessToken($token['access_token']);
+            session()->set("AccessToken", $token['access_token']);
+    
+            $googleService = new \Google_Service_Oauth2($this->googleClient);
+            $data = $googleService->userinfo->get();
+            $currentDateTime = date("Y-m-d H:i:s");
+            
+            $userdata = [
+                'name' => $data['givenName'] . " " . $data['familyName'],
+                'email' => $data['email'],
+                'profile_img' => $data['picture'],
+                'updated_at' => $currentDateTime
+            ];
+    
+            if ($this->userModel->isAlreadyRegister($data['id'])) {
+                // User already registered
+                $this->userModel->updateUserData($userdata, $data['id']);
+            } else {
+                // New user registration
+                $userdata['oauth_id'] = $data['id'];
+                $userdata['created_at'] = $currentDateTime;
+                $this->userModel->insertUserData($userdata);
+            }
+    
+            session()->set("LoggedUserData", $userdata);
+            return redirect()->to(base_url() . "/profile");
+        } else {
+            session()->setFlashData("Error", "Something went wrong");
+            return redirect()->to(base_url());
+        }
+    }
+    
     public function Admin()
     {
         $data = [
@@ -128,6 +180,7 @@ class UserController extends BaseController
                 'ContactNo'  => $user['ContactNo'],
                 'birthday'   => $user['birthday'],
                 'role'       => $user['role'],
+                'is_verified'=> $user['is_verified'],
                 'user_img'       => $user['user_img'],
                 'isLoggedIn' => TRUE,
             ];
@@ -144,7 +197,13 @@ class UserController extends BaseController
             }
             elseif($user['role'] === 'Booker')
             {
-                return redirect()->to('userViewpost');
+                
+                if ($user['is_verified'] == 0) {
+                    return redirect()->to('/verify-email');
+                }
+                elseif ($user['is_verified'] == 1) {
+                    return redirect()->to('userViewpost');
+                }
             }
         }
 

@@ -28,6 +28,9 @@ use PhpCsFixer\Tokenizer\Tokens;
  */
 final class SpaceAfterCommentStartFixer extends AbstractCustomFixer implements DeprecatedFixerInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
@@ -39,11 +42,17 @@ final class SpaceAfterCommentStartFixer extends AbstractCustomFixer implements D
         );
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getSuccessorsNames(): array
     {
         return ['single_line_comment_spacing'];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function isCandidate(Tokens $tokens): bool
     {
         return $tokens->isTokenKindFound(T_COMMENT);
@@ -59,6 +68,9 @@ final class SpaceAfterCommentStartFixer extends AbstractCustomFixer implements D
         return 3;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function applyFix(\SplFileInfo $file, Tokens $tokens): void
     {
         for ($index = 1, $count = $tokens->count(); $index < $count; ++$index) {

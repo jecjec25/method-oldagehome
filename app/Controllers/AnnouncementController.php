@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 use App\Models\AnnouncementModel;
-
 use App\Controllers\BaseController;
 use App\Models\FeedbackModel;
 use Mpdf\Mpdf;
@@ -269,6 +268,13 @@ class AnnouncementController extends BaseController
         return view('dashboard/announceArchive', $data);
     }
 
+    public function deleteAnnounceArch($Id = null)
+    {
+        $admannouncement = new AnnouncementModel();
+        $data = $admannouncement->where('AnnounceID', $Id)->delete($Id);
+        return $this->response->redirect(site_url('/announceArchived'));
+    }
+
     public function AnnouncePubArc()//main arch
     {
         $announce = $this->request->getVar('updateann');
@@ -354,10 +360,19 @@ class AnnouncementController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            
+            'announce' => $this->admannouncement->where('AnnounceID', $id)->where('status', 'Published')->find(),
+           'feedback' => $this->Feedback->select('feedbacktbl.id, feedbacktbl.usersignsId,feedbacktbl.announceid, feedbacktbl.status,
+            feedbacktbl.feedback, announcement.AnnounceID, announcement.Title, announcement.Content, announcement.Author')
+           ->join('announcement', 'announcement.AnnounceID = feedbacktbl.announceid')
+           ->where('feedbacktbl.announceid', $id)
+           ->where('feedbacktbl.status', 'Accepted')
+           ->findAll()
+
+            
         ];
- 
-        $data['announce'] = $this->admannouncement->where('AnnounceID', $id)->find();
+
 
         return view('admin/viewannouncement', $data);
         
@@ -365,14 +380,19 @@ class AnnouncementController extends BaseController
 
     public function savefeedbackannounce()
     {
+
+        $id = $this->request->getVar('AnnounceID');
         $data = [
             'feedback' => $this->request->getVar('feedback'),
-            'announceid' => $this->request->getVar('AnnounceID')
+            'announceid' => $this->request->getVar('AnnounceID'),
+            'usersignsId'  => $this->request->getVar('userID'),
+            'status' => 'Pending' 
         ];
 
         $this->Feedback->save($data);
-        
-        return redirect()->to('/announcement');
+        session()->setFlashdata('feedback_message', 'Your data has been submitted as feedback');
+
+        return redirect()->to('/viewAnnounce/'. $id);
 
     }
 

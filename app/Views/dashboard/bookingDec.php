@@ -57,7 +57,8 @@
                           <th>Time</th>
                           <th>Equipment</th>
                           <th>Comments</th>
-                          <th>STATUS</th>
+                          <th>Status</th>
+                          <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,13 +74,14 @@
                       <td><?=$even['equipment'] ?></td>
                       <td><?=$even['comments'] ?></td>
                       <td>
-                        
                           <?= $even['status']?>
-                    </td>
-                    </tr>
-                    <?php endforeach; ?>
-                    </tbody>
-                  </table>
+                      </td>
+                      <td><a href="<?= base_url("deleteDeclinedEvent/".$even['id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
+                      Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a></td>
+                      </tr>
+                      <?php endforeach; ?>
+                      </tbody>
+                    </table>
                   
                 </div>
               </div>

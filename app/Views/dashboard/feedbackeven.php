@@ -59,7 +59,10 @@
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>Title</th>
+                        <th>Description</th>
+                        <th>Organizer</th>
                         <th>Feedback</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -68,7 +71,24 @@
                     <td><?=$feeds['LastName'] ?></td>
                     <td><?=$feeds['FirstName'] ?></td>
                     <td><?=$feeds['Title'] ?></td>
+                    <td><?= $feeds['Description']?></td>
+                    <td><?= $feeds['Organizer']?></td>
                     <td><?=$feeds['feedback'] ?></td>
+                    <td>
+                      <?php if($feeds['status'] == 'Pending'):?>
+                    <form action="updatetoAccept" method="post">
+                      
+                    <input type="hidden" name="accept[]" value="<?= $feeds['id']?>">
+                    <button class="btn btn-secondary" type="submit">Approve</button>
+                    
+                    </form>
+                    <?php elseif($feeds['status'] == 'Accepted'):?>
+                      <p>Is Now Approved</p>
+                    <?php endif;?>
+                    <br>
+                    <a href="<?= base_url('deleteFeedEvents/' . $feeds['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to delete this form?')">
+                        Delete <i class="typcn typcn-trash btn-icon-append"></i>
+                      </a></td>
                 </tr>
                   <?php endforeach; ?>
                     </tbody>

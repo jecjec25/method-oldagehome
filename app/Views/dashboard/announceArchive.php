@@ -63,8 +63,9 @@
                         <th>Category</th>
                         <th>Priority</th>
                         <th>Attachments</th>
-                        <th>Status</th>
                         <th>Target Audience</th>
+                        <th>Status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -80,8 +81,10 @@
                     <td><?=$archannounce['Category'] ?></td>
                     <td><?=$archannounce['Priority'] ?></td>
                     <td><img src="<?="/upload/announcement/".$archannounce['Attachments']?>" style="width:50px; height:50px; border:box;"></td>
-                    <td><?=$archannounce['Status'] ?></td>
                     <td><?=$archannounce['Target_audience'] ?></td>
+                    <td><?=$archannounce['Status'] ?></td>
+                    <td><a href="<?= base_url("deleteAnnounceArch/".$archannounce['AnnounceID']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
+                    Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a></td>
                 </tr>
                   <?php endforeach; ?>
                     </tbody>

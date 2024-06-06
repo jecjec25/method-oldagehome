@@ -66,7 +66,7 @@
         <div class="form">
         <span class="how-to-make-difference">What do our elders need:</span>
         <span><?php foreach($menu as $menu):?></span>
-        <ul><li><span class="middle"><?= $menu['need'] ?></span>:</b><span class="fins"><?= $menu['description'] ?></span></li></ul>
+        <ul><li><span class="middle"><?= $menu['need'] ?></span>: </b><span class="fins"><?= $menu['description'] ?></span></li></ul>
                     <?php endforeach;?>
         </div>
         </div>   

@@ -53,6 +53,7 @@
                           <th>Kind of Item to Donate</th>
                           <th>Image</th>
                           <th>Message</th>
+                          <th>Action</th>
                           </tr>
                     </thead>
                     <tbody>
@@ -75,6 +76,9 @@
                         <?php endif; ?></td>
                     
                       <td><?=$item['message'] ?></td>
+                      <td><a href="<?= base_url('deletePostponedInkind/' . $item['id']) ?>" class="btn btn-danger btn-sm btn-icon-text me-2" onclick="return confirm('Are you sure you want to delete this form?')">
+                        Delete <i class="typcn typcn-trash btn-icon-append"></i>
+                      </a></td>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>

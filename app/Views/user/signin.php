@@ -59,6 +59,7 @@
                 </div>
                 <div class="mt-3">
                 <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn">LOGIN</button>
+                <?= $GoogleLogin?>
               </div>
               </form> 
               <div class="mt-3">
