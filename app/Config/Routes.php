@@ -18,6 +18,7 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/contact', 'ViewController::contact');
  $routes->get('/eligibility', 'ViewController::eligability');
  $routes->get('/about', 'ViewController::about');
+ $routes->get('/example', 'ViewController::example');
  $routes->get('/rules', 'ViewController::rules');
  $routes->get('/services', 'ViewController::service');
  $routes->match(['get', 'post'], 'viewAdminRegister', 'SignupController::Register');

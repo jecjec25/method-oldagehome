@@ -22,6 +22,9 @@ class ViewController extends BaseController
     private $announce;
     private $userbooking;
 
+    public function example(){
+        return view('admin/example');
+    }
     public function __construct()
     {
         $this->feedback = new FeedbackModel();

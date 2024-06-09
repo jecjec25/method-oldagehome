@@ -28,53 +28,44 @@
 <body>
 <?php include_once('includes/header.php');?>
 
-<section>
-	<div class="leftBox">
-		<div class="content">
-			<h1>News and Events</h1>
-			<p>Aruga Kapatid Foundation Incorporated thrives as a compassionate center in the heart of the community.</p>
-		</div>
-	</div>
-	<div class="events">
-		<ul>
-			<?php foreach($news as $single_news): ?>
-				<?php if ($single_news['status'] != 'Archive'): ?>
-					<li>
-						<div class="time">
-							<h2>
-								<?= date('d', strtotime($single_news['date_published'])) ?> <br>
-								<span><?= date('F', strtotime($single_news['date_published'])) ?></span>
-							</h2>
-						</div>
-						<div class="details">
-							<h3><?= $single_news['title'] ?></h3>
-							<img src="<?="upload/news/" . $single_news['picture'] ?>" alt="newsba"> <br>
-							<a href="<?= base_url('newsvents/' . $single_news['id']) ?>">View News</a>
-						</div>
-						<div style="clear: both;"></div>
-					</li>
-				<?php endif; ?>
+<main>
+        <section class="news">
+            <h2>Latest News</h2>
+            <article>
+				<div class="row">
+				<div class="column">
+                <?php foreach($news as $single_news): ?>
+				    <?php if ($single_news['status'] != 'Archive'): ?>
+                            <h3><?= $single_news['title'] ?></h3>
+							<img class="thumb" src="<?="upload/news/" . $single_news['picture'] ?>">
+                            <div style="clear: both;"></div><br>
+							<a href="<?= base_url('newsvents/' . $single_news['id']) ?>" class="btn btn-secondary">View News</a>
+					 <?php endif; ?>
+			    <?php endforeach; ?>
+				</div>
+				</div>
+            </article>
+        </section>
+        
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <article>
+			<div class="row">
+				<div class="column">
+            <?php foreach($events as $mevents): ?>
+                
+                <h3><?= $mevents['Title'] ?></h3>
+				<img class="thumb" src="<?="/upload/events/" . $mevents['Attachments'] ?>">
+                <div style="clear: both;"></div><br>
+				<a href="<?= base_url('newsvents/' . $mevents['EventID']) ?>">View Event</a>
+				
 			<?php endforeach; ?>
-
-			<?php foreach($events as $mevents): ?>
-				<li>
-					<div class="time">
-						<h2>
-							<?= date('d', strtotime($mevents['Start_date'])) ?> <br>
-							<span><?= date('F', strtotime($mevents['Start_date'])) ?></span>
-						</h2>
-					</div>
-					<div class="details">
-						<h3><?= $mevents['Title'] ?></h3>
-						<img src="<?="/upload/events/" . $mevents['Attachments'] ?>" alt="eventsba"> <br>
-						<a href="<?= base_url('newsvents/' . $mevents['EventID']) ?>">View Event</a>
-					</div>
-					<div style="clear: both;"></div>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-	</div>
-</section>
+			</div>
+			</div>
+            </article>
+            
+        </section>
+    </main>
 
 <?php include_once('includes/footer.php');?>
 

@@ -465,6 +465,37 @@ article > div {
 	width: 358px;
 	height: 257px;
 }
+.slider{
+	width: 100%;
+	height: 1080px;
+}
+.text {
+	position: absolute;
+	color: #474747 ;
+	font-size: 5.6em;
+	font-weight: bolder;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.texts {
+	position: absolute;
+	color: #81ab85 ;
+	font-size: 5.6em;
+	font-weight: bolder;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.texted {
+	position: absolute;
+	color: #e94343 ;
+	font-size: 2.5em;
+	font-weight: bolder;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 .wmuGallery .wmuGalleryImage img {
 	max-width: 100%;
 	width: auto;

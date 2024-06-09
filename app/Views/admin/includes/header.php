@@ -85,9 +85,10 @@
                 });
 
                 // Remove the 'active' class from the 'Home' button when another button is clicked
-                $('.top-nav ul li a').click(function() {
-                    $('.top-nav ul li').removeClass('active');
+                $('.top-nav ul li a').clickon(function() {
+                   $('.top-nav ul li ').removeClass('active');
                     $(this).parent().addClass('active');
+                   inde
                 });
                 });
             </script>

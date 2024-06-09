@@ -30,8 +30,45 @@
 	</head>
 <body>
 	<?php include_once('includes/header.php');?>
-
-	
+	<div class="containered">
+<div class="letest-sections">
+	<div class="containers">
+		<div class="Event">
+			<div class="wmuSlider example1">
+				<article>
+				<div class="client-sections" >
+						<div class="event-sections">
+				 					<div class="client-img">
+					 					<img class="slider" src ="aslider/h2.png" title="" />
+										<div class="text">ARUGA-KAPATID FOUNDATION INCORPORATED</div>
+									</div>
+						</div>
+				</div>
+				</article>
+				<article>
+					<div class="client-sections">
+							<div class="event-sections">
+				 					<div class="client-img">
+					 					<img class="slider" src="aslider/h1.jpg" title="" />
+										 <div class="texts">You're never too old to begin again, and to create yourself a happy ending</div>
+									</div>
+							</div>
+					</div>
+				</article>
+				<article > 
+				   	<div class="client-sections">
+						<div class="event-sections">
+				 					<div class="client-img">
+					 					<img class="slider" src="aslider/h3.jpg" title="" />
+										 <div class="texted">"Your heart holds the wisdom of ages, and your spirit remains forever young. Keep spreading your warmth and love."</div>
+									</div>	
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="letest-section">
 	<div class="container">
 	<div class="Events">
