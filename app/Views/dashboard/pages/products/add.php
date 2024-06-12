@@ -38,6 +38,10 @@
                     <textarea rows="3" class="form-control rounded-0" id="description" name="description" ><?= !empty($request->getPost('description')) ? $request->getPost('description') : '' ?></textarea>
                 </div>
                 <div class="mb-3">
+                    <label for="quantity" class="control-label">Quantity</label>
+                    <input type="number" class="form-control rounded-0" id="quantity" name="quantity" value="<?= !empty($request->getPost('quantity')) ? $request->getPost('quantity') : '' ?>" required="required">
+                </div>
+                <div class="mb-3">
                     <label for="price" class="control-label">Price</label>
                     <input type="number" step="any" class="form-control rounded-0 text-end" id="price" name="price" value="<?= !empty($request->getPost('price')) ? $request->getPost('price') : '' ?>" required="required">
                 </div>

@@ -201,12 +201,12 @@ class Fullcalendar extends BaseController
             top: 0;
             height: 100px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            table-layout: fixed;
-        }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                table-layout: fixed;
+            }
         table, th, td {
             border: 1px solid black;
             word-wrap: break-word;
@@ -326,7 +326,43 @@ class Fullcalendar extends BaseController
         
         // Stop CodeIgniter from further processing (optional, but good practice)
         exit();
+
         
+    }
+
+
+    public function previewElders($search)
+    {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+        $closestLowerRecord = $this->main->where('RegDate <=', $search)
+            ->where('scstatus', 'Unarchive')
+            ->orderBy('RegDate', 'ASC')
+            ->first();  // Getting the record with the closest lower date
+        // Fetch data from the model
+        $data = [
+            'booking' => $this->main->findAll(), // Fetching all data from the model
+            'reg' => $this->main->where('RegDate <=', $search)
+                                 ->where('scstatus', 'Unarchive')
+                                 ->find(), // Fetching data where RegistrationDate falls between $searchRes and $search
+            
+            'closestLowerDate' =>  $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A',
+            'count' => $this->main->where('RegDate <=', $search)
+            ->where('scstatus', 'Unarchive')
+            ->countAllResults(),
+            'currentDate' => date('Y-m-d'),
+            'search' => $search
+        ];
+
+        return view('dashboard/preview', $data);
     }
 
     public function generateEventReport($searchRevent, $searchR)

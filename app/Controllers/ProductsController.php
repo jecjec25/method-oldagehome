@@ -3,10 +3,9 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\ProductsModel;
+use App\Models\Product;
 use App\Models\UserbookingModel;
 use CodeIgniter\RESTful\ResourceController;
-
 class ProductsController extends ResourceController
 {
 
@@ -16,11 +15,11 @@ class ProductsController extends ResourceController
     public function __construct()
     {
         $this->userbooking = new UserbookingModel();
-        $this->prod = new ProductsModel();
+        $this->prod = new Product();
     }
     public function index()
     {
-        $model = new ProductsModel();
+        $model = new Product();
         $products = $model->getProducts();  // Fetch all products
         return $this->respond($products);  // Return products as JSON
     }
@@ -32,7 +31,7 @@ class ProductsController extends ResourceController
 
     public function delete($Id = null)
     {
-        $main = new ProductsModel();
+        $main = new Product();
         $data = $main->where('Id', $Id)->delete($Id);
         return $this->response->redirect(site_url('/show'));
     }
@@ -54,7 +53,7 @@ class ProductsController extends ResourceController
                 ->findAll(),
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];
-        $main  = new ProductsModel();
+        $main  = new Product();
 
         $data['prod'] = $main->find($Id);
         return view('dashboard/editproduct', $data);
@@ -63,7 +62,7 @@ class ProductsController extends ResourceController
     {
         $session = session();
 
-        $main = new ProductsModel();
+        $main = new Product();
         $hello = $main->where('Id', $Id)->first();
         $newQuantity = $hello['Quantity'];
         if ($this->request->getVar('addQuantity')) {
@@ -104,7 +103,7 @@ class ProductsController extends ResourceController
                     $main->update($Id, $data);
                 }
                 
-                $products = new ProductsModel();
+                $products = new Product();
 
                 $main->update($Id, $data);
                 
@@ -114,7 +113,7 @@ class ProductsController extends ResourceController
 
     public function searchprod()
     {
-        $main = new ProductsModel();
+        $main = new Product();
         $searchprod = $this->request->getVar('searchprod');
         if ($searchprod) {
             $data = [

@@ -26,6 +26,7 @@
                     <th class="p-1 text-center">Code</th>
                     <th class="p-1 text-center">Product</th>
                     <th class="p-1 text-center">Description</th>
+                    <th class="p-1 text-center">Quantity</th>
                     <th class="p-1 text-center">Price</th>
                     <th class="p-1 text-center">Action</th>
                 </thead>
@@ -35,6 +36,7 @@
                             <td class="px-2 py-1 align-middle"><?= $row['code'] ?></td>
                             <td class="px-2 py-1 align-middle"><?= $row['name'] ?></td>
                             <td class="px-2 py-1 align-middle"><?= $row['description'] ?></td>
+                            <td class="px-2 py-1 align-middle"><?= $row['quantity'] ?></td>
                             <td class="px-2 py-1 align-middle text-end"><?= number_format($row['price'],2) ?></td>
                             <td class="px-2 py-1 align-middle text-center">
                                 <a href="<?= base_url('Main/product_edit/'.$row['id']) ?>" class="mx-2 text-decoration-none text-primary"><i class="fa fa-edit"></i></a>

@@ -25,7 +25,7 @@ class Main extends BaseController
     }
     public function products(){
         $this->data['page_title']="Products";
-        $this->data['page'] =  !empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1;
+        $this->data['page'] =  !empty($this->request->getVar('page')) ? $this->request->getVar('page') : 2 ;
         $this->data['perPage'] =  10;
         $this->data['total'] =  $this->prod_model->countAllResults();
         $this->data['products'] = $this->prod_model->paginate($this->data['perPage']);
@@ -40,6 +40,7 @@ class Main extends BaseController
             $udata['code'] = $code;
             $udata['name'] = $name;
             $udata['description'] = $description;
+            $udata['quantity'] = $quantity;
             $udata['price'] = $price;
             $checkCode = $this->prod_model->where('code',$code)->countAllResults();
             if($checkCode){
@@ -63,11 +64,14 @@ class Main extends BaseController
         return redirect()->to('Main/products');
         if($this->request->getMethod() == 'post'){
             extract($this->request->getPost());
+          $prod =  $this->prod_model->find($id);
             $udata= [];
             $udata['code'] = $code;
             $udata['name'] = $name;
             $udata['description'] = $description;
             $udata['price'] = $price;
+           $changequant = $addstock + $prod['quantity'];  
+           $udata['quantity'] = $changequant;
             $checkCode = $this->prod_model->where('code',$code)->where("id!= '{$id}'")->countAllResults();
             if($checkCode){
                 $this->session->setFlashdata('error',"Product Code Already Taken.");
@@ -107,20 +111,20 @@ class Main extends BaseController
         return view('dashboard/pages/pos/add', $this->data);
     }
 
-    public function save_transaction(){
+    public function save_transaction() {
         extract($this->request->getPost());
-        
+    
         $pref = date("Ymd");
         $code = sprintf("%'.05d", 1);
         while(true){
-            if($this->tran_model->where(" code = '{$pref}{$code}' ")->countAllResults() > 0){
+            if($this->tran_model->where("code = '{$pref}{$code}'")->countAllResults() > 0){
                 $code = sprintf("%'.05d", ceil($code) + 1);
-            }else{
+            } else {
                 $code = $pref.$code;
                 break;
             }
         }
-
+    
         $data['code'] = $code;
         foreach($this->request->getPost() as $k => $v){
             if(!is_array($this->request->getPost($k)) && !in_array($k, ['id'])){
@@ -130,17 +134,35 @@ class Main extends BaseController
         $save_transaction = $this->tran_model->save($data);
         if($save_transaction){
             $transaction_id = $this->tran_model->insertID();
-            foreach($product_id as $k=>$v){
+            foreach($product_id as $k => $v){
                 $data2['transaction_id'] = $transaction_id;
-                $data2['product_id'] = $v ;
+                $data2['product_id'] = $v;
                 $data2['price'] = $price[$k];
                 $data2['quantity'] = $quantity[$k];
                 $this->tran_item_model->save($data2);
+    
+                // Retrieve the current quantity from the database
+                $current_product = $this->prod_model->find($v);
+                if($current_product && isset($current_product['quantity'])){
+                    $prod_quantity = $current_product['quantity'];
+    
+                    // Calculate the new quantity
+                    $changequan = $prod_quantity - $quantity[$k];
+    
+                    // Update the product quantity
+                    $this->prod_model->update($v, ['quantity' => $changequan]);
+                } else {
+                    // Handle the case where the product is not found or the quantity is not set
+                    $this->session->setFlashdata('main_error', "Product with ID $v not found or quantity not set.");
+                    return redirect()->to('Main/pos');
+                }
             }
-            $this->session->setFlashdata('main_success',"Transaction has been saved successfully.");
+            
+            $this->session->setFlashdata('main_success', "Transaction has been saved successfully.");
             return redirect()->to('Main/pos');
         }
     }
+    
     public function transactions(){
         $this->data['page_title']="Transactions";
         $this->data['page'] =  !empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1;

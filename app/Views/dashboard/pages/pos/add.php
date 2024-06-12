@@ -30,7 +30,8 @@
                                     <?php
                                         foreach($products as $row):
                                     ?>
-                                        <option value="<?= $row['id'] ?>" data-price="<?= $row['price'] ?>"><?= $row['code']. " - " .$row['name'] ?></option>
+                                        <option value="<?= $row['id'] ?>" data-price="<?= $row['price'] ?>" data-quantity="<?= $row['quantity']?>"> <?= $row['code']. " - " .$row['name'] ?></option>
+                                       
                                     <?php endforeach; ?>
                                 </select>
                             </div>
@@ -109,7 +110,7 @@
         </div>
     </div>
     <div class="card-footer text-center">
-        <button class="btn btn-primary rounded-0" id="save_transaction" type="button"><i class="fa fa-save"></i> Save Transaction</button>
+        <button class="btn btn-primary rounded-0" id="save_transaction" type="button"><i class="fa fa-save"></i> Save   Transaction</button>
     </div>
 </div>
 <noscript id="item-clone">
@@ -117,6 +118,7 @@
         <td class="py-1 px-2 align-middle text-center">
             <input type="hidden" name="product_id[]">
             <input type="hidden" name="price[]" value="0">
+            <input type="hidden" name="prod_quantity[]" value="0">
             <button class="btn btn-outline-danger btn-sm rounded-0 rem_item" type="button"><i class="fa fa-times"></i></button>
         </td>
         <td class="py-1 px-2 align-middle">
@@ -160,10 +162,12 @@
             }
             var pname = $('#product option[value="'+pid+'"]').text()
             var price = $('#product option[value="'+pid+'"]').attr('data-price')
+            var quantity = $('#product option[value="'+pid+'"]').attr('data-quantity')
             var tr = $($('noscript#item-clone').html()).clone()
             tr.attr('data-id', pid)
             tr.find('[name="product_id[]"]').val(pid)
             tr.find('[name="price[]"]').val(price)
+            tr.find('[name="prod_quantity[]"]').val(quantity)
             tr.find('.product_item').text(pname)
             tr.find('.unit_price').text(parseFloat(price).toLocaleString('en-US', {style:'decimal', maximumFractionDigits:2, minimumFractionDigits:2}))
             tr.find('.total_price').text(parseFloat(price).toLocaleString('en-US', {style:'decimal', maximumFractionDigits:2, minimumFractionDigits:2}))

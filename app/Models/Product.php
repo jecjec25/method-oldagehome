@@ -14,7 +14,7 @@ class Product extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'code', 'name', 'description', 'price', 'prodpic'];
+    protected $allowedFields    = ['id', 'code', 'name', 'description', 'price', 'prodpic', 'quantity'];
 
     // Dates
     protected $useTimestamps = false;
@@ -39,4 +39,9 @@ class Product extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getProducts()
+    {
+        return $this->findAll();
+    }
 }

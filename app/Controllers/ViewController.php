@@ -27,6 +27,8 @@ class ViewController extends BaseController
     }
     public function __construct()
     {
+
+        date_default_timezone_set('Asia/Manila');
         $this->feedback = new FeedbackModel();
         $this->newsevents = new NewsModel();
         $this->booking = new BookingModel();
@@ -82,7 +84,16 @@ class ViewController extends BaseController
     }
     public function news()
     {
+        
         $data = [
+            'eventadmin' => $this->events
+            ->where('status', 'Published')
+            ->where('type', 'admin')
+            ->findAll(),
+            'eventuser' => $this->events
+            ->where('status', 'Published')
+            ->where('type', 'user')
+            ->findAll(),
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
                 ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
@@ -94,11 +105,11 @@ class ViewController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'currentDate' => date('Y-m-d H:i:s')
         ];
         $data['news'] = $this->newsevents->where('status', 'Published')->findAll();
-        $data['events'] = $this->events->where('status', 'Published')->findAll();
- 
+       
         return view('admin/news', $data);
     }
     public function eventnews($id)
@@ -173,7 +184,8 @@ class ViewController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'currentDate' => date('Y-m-d H:i:s')
         ];
         $data['announce'] = $this->announce->where('Status', 'Published')->findAll();
         

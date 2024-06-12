@@ -105,8 +105,8 @@
                                     Table Report of Elders in Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print"><a class="btn btn-primary text-decoration-none"
-                                        href="<?= base_url('/generateElderlyReport/'.$searchParams['todate']) ?>"
-                                        id="PrintButton">Print</a></div>
+                                        href="<?= base_url('/previewElders/'.$searchParams['todate']) ?>"
+                                        id="PrintButton">Preview</a></div>
 
 
                                 <div class="table-responsive pt-3">

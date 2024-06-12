@@ -15,6 +15,7 @@ class UserViewPostController extends BaseController
 
     public function __construct()
     {
+        date_default_timezone_set('Asia/Manila');
         $this->newevents = new NewsModel();
         $this->events = new EventsModel();
         $this->acBooking = new AcceptbookingModel();
@@ -53,7 +54,8 @@ class UserViewPostController extends BaseController
             ->join('user', 'user.userID = acceptbooking.usersignsId')
             ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
             ->first(),
-        'getCount' => $this->acBooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first()
+        'getCount' => $this->acBooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first(),
+        'currentDate' => date('Y-m-d H:i:s')
         ];
         
         return view('admin/userViewpost', $data);

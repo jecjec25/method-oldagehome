@@ -35,8 +35,9 @@
 		box-sizing: border-box;
 		display: flex;
 		align-items: center;
+		margin: 0 auto; /* Center the leftBox horizontally */
 	}
-
+	
 	/* Styling the background of 
 		left floating section */
 	.leftBox .content {
@@ -45,6 +46,7 @@
 		padding: 40px;
 		transition: .5s;
 	}
+	
 
 	/* Styling the hover effect 
 		of left floating section */
@@ -71,7 +73,7 @@
 	/* Styling the three events section */
 	.events {
 		position: relative;
-		width: 50%;
+		width: 100%;
 		background: rgba(0, 0, 0, 0.5);
 		box-sizing: border-box;
 		overflow-y: auto; /* Add scrollbar if content exceeds height */
@@ -82,8 +84,11 @@
 	the events section */
 	.events ul {
 		padding: 0;
-		margin: 0;
+		margin: 0 auto; /* Center the ul horizontally */
+		width: 100rem; /* Set a fixed width */
+		align-items: center; /* Center the list items within the ul */
 	}
+	
 
 	/* Styling the lists of the event section */
 	.events ul li {

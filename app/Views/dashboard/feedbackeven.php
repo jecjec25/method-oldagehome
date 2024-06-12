@@ -79,7 +79,7 @@
                     <form action="updatetoAccept" method="post">
                       
                     <input type="hidden" name="accept[]" value="<?= $feeds['id']?>">
-                    <button class="btn btn-secondary" type="submit">Approve</button>
+                    <button class="btn btn-secondary" type="submit" onclick="return confirm('Are you sure you want to approve the feedback for the event?')">Approve</button>
                     
                     </form>
                     <?php elseif($feeds['status'] == 'Accepted'):?>

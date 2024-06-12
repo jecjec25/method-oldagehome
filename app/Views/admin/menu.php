@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Menu</title>
+    <title>Necessity</title>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="/css/menu.css" rel='stylesheet' type='text/css' />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){        
-                event.preventDefault();
+                event.preventDefault();                                                     
                 $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
             });
         });

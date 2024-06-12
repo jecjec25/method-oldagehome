@@ -75,7 +75,7 @@
                       <form action="<?= base_url('updatetoAcceptAnn')?>" method="post">
                         
                       <input type="hidden" name="accept[]" value="<?= $feedann['id']?>">
-                      <button class="btn btn-secondary" type="submit">Approve</button>
+                      <button class="btn btn-secondary" type="submit" onclick="return confirm('Are you sure you want to approve the feedback for the announcement?')">Approve</button>
                       
                       </form>
                       <?php elseif($feedann['status'] == 'Accepted'):?>

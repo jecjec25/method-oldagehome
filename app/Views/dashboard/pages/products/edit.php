@@ -38,9 +38,15 @@
                     <textarea rows="3" class="form-control rounded-0" id="description" name="description" autofocus placeholder="(optional)" value="" ><?= !empty($product['description']) ? $product['description'] : '' ?></textarea>
                 </div>
                 <div class="mb-3">
+                    <label for="quantity" class="control-label">Quantity</label>
+                    <input type="number" class="form-control rounded-0" id="quantity" name="quantity" Disabled autofocus placeholder="Smith" value="<?= !empty($product['quantity']) ? $product['quantity'] : '' ?>" required="required">
+                    <input type="number" class="form-control rounded-0" id="addstock" name="addstock"  autofocus placeholder="Add Stock">
+                    
+                </div>
+                <div class="mb-3">
                     <label for="price" class="control-label">Price</label>
                     <input type="number" step="any" class="form-control rounded-0" id="price" name="price" autofocus placeholder="Smith" value="<?= !empty($product['price']) ? $product['price'] : '' ?>" required="required">
-                
+                </div>
                 <div class="d-grid gap-1">
                     <button class="btn rounded-0 btn-primary bg-gradient">Update</button>
                 </div>

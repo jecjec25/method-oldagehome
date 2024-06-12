@@ -1,24 +1,13 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="/css/sidebar.css" rel='stylesheet' type='text/css' />
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-  </head>
- 
-  <style>
+<style>
 body {
     font-family: Arial, sans-serif;
 }
 
 .notification-dropdown a {
     text-decoration: none; /* This removes the underline */
-  }
-  
+}
+
 .notification-container {
     position: relative;
     display: inline-block;
@@ -32,18 +21,25 @@ body {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
-    position: relative;
+    margin-top:300px;
+    margin-right:130px;
+    position: absolute;
 }
 
 .notification-button #notification-count {
     background-color: red;
     color: white;
-    padding: 2px 6px;
-    border-radius: 50%;
-    font-size: 12px;
+    font-size: 20px;
+    border-radius:30px;
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: -25px;
+    right: -1px;
+}
+
+.notification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .notification-dropdown {
@@ -55,177 +51,220 @@ body {
     border-radius: 5px;
     overflow: hidden;
     z-index: 1;
+    right: 0; /* Position the dropdown to the right */
+    top: 50px; /* Adjust the distance from the top */
 }
 
 .notification-item {
-    padding: 12px 16px;
+    padding: 10px 16px;
     border-bottom: 1px solid #ddd;
 }
 
-.notification-item:hover {
-    background-color: #f1f1f1;
+.notification-item.highlight {
+    background-color: #f1f1f1; /* Highlight color */
 }
+
 .dropdown  .helloDrop li a {
     color: black; /* Set the font color to black */
+    align:left;
+}
 
-  align:left;
-  }
+.top-nav ul li a:hover,
+.top-nav ul li.active a {
+    color: black; /* Change to desired highlight color */
+}
 
+.top-nav ul {
+    list-style: none;
+}
 
-  </style>
-   <body>
-    
-  <div class="strip"> </div>
-    <div class="header-top" id="home">
-      <div class="container">
-        <div class="head-section">
-          <div class="logo-content">
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
 
-                <div class="logo">
-                    <img src="images/Alogo1.jpg"  alt="" style=" width: 100px; height: 100px;"/>
-                    <img src="images/Alogo.jpg"  alt="" style=" width: 160px; height: 140px;"/>
-                    <h4 style="color: darkgreen;">Senior Care Management System</h4>
-                </div>
-                <div class="top-log">
-                    <div class="clearfix"> </div> 
-                
-                                  
-                  <ul class="nav-list">
-                  <li><h4 class="b">Welcome  <?= session()->get('Username')?> </h4> </li> 
-                  <li>     <a class="dropdown-item" href="/userprofile">
-                      <h4>Profile</h4>
-                  </a></li>
-                  <li>  <a class="dropdown-item" href="/logout">
-                  <h4>Logout</h4>
-                  </a></li>
-                  </div> 
-                  
-                  <div class="notification-container">
-                  <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
-                  <div id="notification-dropdown" class="notification-dropdown">
+.dropdown-menu li {
+    padding: 12px 16px;
+}
 
-                 
-                  <div class="notification-item"><small>Notif </small></div>
+.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+}
 
-                    <?php foreach($notif as $notif):?>
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
 
-                      <div class="notification-item"><a href="<?= base_url('getNotif/' .$notif['id'])?>"><?= $notif['event']?> has <?= $notif['status']?></a></div>
-                     <?php endforeach;?>
-                  </div>
-                 
-              </div>
-                      
-                    </ul>
-      
-              </div> 
-            </div>
-            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end profile">
-            </div>
-            <div class="social-content">
-          
-                <div class="top-icons">
-                    <br>
-                    <br>
-                
-                    <br>
-                    
-                    <ul>
-                    <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
-                    <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
-                    <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
-                    <div class="clearfix"> </div>
-                  </ul>
-                </div>
-              </div>
-            </div>
-              <div class="clearfix"></div>
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+</style>
+<body>
+<div class="strip"> </div>
+<div class="header-top" id="home">
+  <div class="container">
+    <div class="head-section">
+      <div class="logo-content">
+        <div class="logo">
+          <img src="images/Alogo1.jpg" alt="" style="width: 100px; height: 100px;"/>
+          <img src="images/Alogo.jpg" alt="" style="width: 160px; height: 140px;"/>
+          <h4 style="color: darkgreen;">Senior Care Management System</h4>
         </div>
-
-          <div class="clearfix"></div>
-      <div class="sub-header">
-
-      <nav class="top-nav">
-  <ul class="top-nav">
-    <li class="active"><a href="userViewpost">View Event</a></li>
-    <li><a href="/booking">Event Reservation</a></li>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Donate to our Elders <b class="caret"></b></a>
-      <ul class="dropdown-menu helloDrop">
-        <!-- Add your dropdown items here -->
-        <li><a href="/donate-money">Monetary/Cash Donation</a></li>
-        <li><a href="/donate-items">In-kind Donation</a></li>
+        <div class="top-log">
+          <div class="clearfix"> </div> 
+          <ul class="nav-list">
+            <li><h4 class="b">Welcome <?= session()->get('Username')?> </h4> </li> 
+            <li><a class="dropdown-item" href="/userprofile"><h4>Profile</h4></a></li>
+            <li><a class="dropdown-item" href="/logout"><h4>Logout</h4></a></li>
+          </ul>
+        </div>
+        <div class="notification-container">
+            <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
+            <div id="notification-dropdown" class="notification-dropdown">
+                <?php if (!empty($notif)): ?>
+                    <div class="notification-item"><small>Notifications</small></div>
+                    <?php foreach($notif as $notif): ?>
+                        <div class="notification-item highlight"><a href="<?= base_url('getNotif/' . $notif['id']) ?>"><?= $notif['event'] ?> has <?= $notif['status'] ?></a></div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="notification-item"><small>No notifications</small></div>
+                <?php endif; ?>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end profile"></div>
+    <div class="social-content">
+        <div class="top-icons">
+            <br><br><br>
+            <ul>
+                <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
+                <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
+                <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
+                <div class="clearfix"> </div>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="sub-header">
+    <nav class="top-nav">
+      <ul class="top-nav">
+        <li class="active"><a href="userViewpost">View Event</a></li>
+        <li><a href="/booking">Event Reservation</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Donate to our Elders</a>
+          <ul class="dropdown-menu helloDrop">
+            <li><a href="/donate-money">Monetary/Cash Donation</a></li>
+            <li><a href="/donate-items">In-kind Donation</a></li>
+          </ul>
+        </li>
+        <li><a href="/userdonation">Donation</a></li>
+        <li><a href="/userproduct">Products</a></li>
+        <li><a href="/usereventpost">Post an Event</a></li>
+        <div class="clearfix"></div>
       </ul>
-    </li>
-    <li><a href="/userdonation">Donation</a></li>
-    <li><a href="/userproduct">Products</a></li>
-    <li><a href="/usereventpost">Post an Event</a></li>
-    <div class="clearfix"></div>
-  </ul>
-  <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
-</nav>
+     
+      <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
+    </nav>
+  </div>
+</div>
 
 <script>
-  // Add JavaScript to handle dropdown toggle
-  document.addEventListener("DOMContentLoaded", function() {
-    var dropdownToggle = document.querySelectorAll('.dropdown-toggle');
-    for (var i = 0; i < dropdownToggle.length; i++) {
-      dropdownToggle[i].addEventListener('click', function() {
-        var parent = this.parentElement;
-        
-        if (parent.classList.contains('open')) {
-          parent.classList.remove('open');
-        } else {
-          parent.classList.add('open');
-        }
+document.addEventListener("DOMContentLoaded", function() {
+  // Handle dropdown toggle
+  var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  dropdownToggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function(event) {
+      event.preventDefault();
+      var parent = this.parentElement;
+      if (parent.classList.contains('open')) {
+        parent.classList.remove('open');
+      } else {
+        // Close other open dropdowns
+        document.querySelectorAll('.dropdown').forEach(function(drop) {
+          drop.classList.remove('open');
+        });
+        parent.classList.add('open');
+      }
+    });
+  });
+
+  // Highlight active link
+  var currentPath = window.location.pathname;
+  var foundActive = false;
+
+  // Check for exact matches first
+  document.querySelectorAll('.top-nav ul li a').forEach(function(link) {
+    var linkPath = link.getAttribute('href');
+    if (linkPath === currentPath) {
+      document.querySelectorAll('.top-nav ul li').forEach(function(li) {
+        li.classList.remove('active');
       });
+      link.parentElement.classList.add('active');
+      foundActive = true;
     }
   });
+
+  // If no exact match is found, check for partial matches (e.g., dropdown items)
+  if (!foundActive) {
+    document.querySelectorAll('.dropdown-menu li a').forEach(function(link) {
+      var linkPath = link.getAttribute('href');
+      if (currentPath.includes(linkPath)) {
+        document.querySelectorAll('.top-nav ul li').forEach(function(li) {
+          li.classList.remove('active');
+        });
+        link.closest('.dropdown').classList.add('active');
+      }
+    });
+  }
+});
+
+function toggleDropdown() {
+  const dropdown = document.getElementById('notification-dropdown');
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.notification-button')) {
+    const dropdowns = document.getElementsByClassName('notification-dropdown');
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') {
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Your existing JavaScript code
+  
+  // Handle notification click
+  const notificationItems = document.querySelectorAll('.notification-item a');
+  notificationItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      this.parentElement.classList.remove('highlight'); // Remove highlight
+      const count = document.getElementById('notification-count');
+      count.textContent = parseInt(count.textContent) - 1; // Decrease count
+    });
+  });
+
+  // Highlight new notifications
+  const newNotifications = document.querySelectorAll('.notification-item');
+  newNotifications.forEach(function(item) {
+    if (!item.classList.contains('clicked')) {
+      item.classList.add('highlight'); // Add highlight for new notifications
+    }
+  });
+});
 </script>
 
-                          <script>
-                              $(document).ready(function() {
-                // Get the current URL
-                var currentUrl = window.location.href;
 
-                // Loop through each navigation link
-                $('.top-nav ul li a').each(function() {
-                    var linkUrl = $(this).attr('href');
-
-                    // Check if the link URL matches the current URL
-                    if (currentUrl.indexOf(linkUrl) !== -1) {
-                        $(this).parent().addClass('active'); // Add the 'active' class to the parent li
-                    }
-                });
-
-                // Add 'active' class to the clicked button and remove it from others
-                $('.top-nav ul li a').click(function() {
-                    $('.top-nav ul li').removeClass('active');
-                    $(this).parent().addClass('active');
-                });
-            });
-
-                        </script>
-                        <script>
-                    function toggleDropdown() {
-                const dropdown = document.getElementById('notification-dropdown');
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-            }
-
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function(event) {
-                if (!event.target.matches('.notification-button')) {
-                    const dropdowns = document.getElementsByClassName('notification-dropdown');
-                    for (let i = 0; i < dropdowns.length; i++) {
-                        const openDropdown = dropdowns[i];
-                        if (openDropdown.style.display === 'block') {
-                            openDropdown.style.display = 'none';
-                        }
-                    }
-                }
-            }
-
-          </script>
-        <div class="clearfix"> </div>
-      </div>
-      </body>
-  </html>

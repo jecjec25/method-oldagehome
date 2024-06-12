@@ -81,8 +81,8 @@
         fetch('/products/quantities') // Make sure this is the correct API endpoint
             .then(response => response.json())
             .then(products => {
-                const productNames = products.map(product => product.ProdName);
-                const productQuantities = products.map(product => parseInt(product.Quantity, 10));
+                const productNames = products.map(product => product.name);
+                const productQuantities = products.map(product => parseInt(product.quantity, 10));
 
                 const ctx = document.getElementById('quantityChart').getContext('2d');
                 const quantityChart = new Chart(ctx, {
