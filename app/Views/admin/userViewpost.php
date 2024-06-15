@@ -26,37 +26,13 @@
 
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 
-<style>
-h2 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    color: #A3C9D2;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #f39c12;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-.leftBox {
-    text-align: center;
-}
-
-.events {
-    align-items: center;
-
-}
-section{
-	width:100%;
-}
-</style>
 </head>
 
 <body>
     <div>
         <?php include_once('includes/user/sidebar.php');?>
 
-        <section>
+        <section class="flashing-background">
             <div class="events">
                 <div class="leftBox">
                     <div class="content">

@@ -33,8 +33,7 @@
             <li>
                 <h2>Announcement</h2>
                 <h3><?= $pannounce['Title']; ?></h3>
-                <p><img src="<?="/upload/announcement/" . $pannounce['Attachments']?>" alt="announcementba" style="witdh:150px; height:150px;"></p>
-                <p><strong>Title:</strong> <?= $pannounce['Title']; ?></p>
+                <p ><img src="<?="/upload/announcement/" . $pannounce['Attachments']?>" alt="announcementba"></p>
                 <p><strong>Content:</strong> <?= $pannounce['Content']; ?></p>
                 <p><strong>Author:</strong> <?= $pannounce['Author']; ?></p>
                 <p><strong>Category:</strong> <?= $pannounce['Category']; ?></p>
@@ -43,9 +42,9 @@
                 <p><strong>End Date:</strong> <?= $pannounce['End_date']; ?></p>
                 <form action="<?= base_url('feedbackannounce')?>" method="post">
                 <input type="hidden" name="AnnounceID" value="<?= $pannounce['AnnounceID']?>">
-                <textarea name="feedback" id="" cols="30" rows="10" placeholder="Feedback"></textarea>
+                <textarea name="feedback" id="" cols="50" rows="10" placeholder="Feedback"></textarea>
                 
-                <button type="submit" onclick="return confirm('Are you sure you want to submit this form?')">Send</button>
+                <button  class="btn btn-secondary" type="submit" onclick="return confirm('Are you sure you want to submit this form?')">Send</button>
                 <?php if(session()->getFlashdata('feedback_message')): ?>
                 <div class="alert alert-success">
                     <?= session()->getFlashdata('feedback_message') ?>
@@ -62,6 +61,7 @@
                     </li>
                 </ul>
         <?php endforeach;?>
+        <br>
         <a href="/announcement" class="btn btn-secondary">Back</a>
         <?php endforeach; ?>
     </ul>

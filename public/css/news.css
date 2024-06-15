@@ -1,30 +1,15 @@
 
-a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff; /* Button color */
-    color: #919fd7; /* Text color */
-    text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid transparent; /* Remove border */
-    transition: background-color 0.3s;
-    }
-
-    a.button:hover {
-    background-color: #0056b3; /* Button color on hover */
-    }
-
     /* Basic styling for demonstration purposes */
     body {
+        background-image: url(/aslider/bgc.jpg);
         font-family: Arial, sans-serif;
         font-size:large;
         font-weight: bold;
         margin: 0;
         padding: 50px;
-        background-color: #133372 ; /* Light gray background */
     }
     .container {
-        background-color: whitesmoke; /* White background */
+        background-color: rgb(235, 227, 227); /* White background */
         text-indent: 50px;
         line-height: 0.7;
         width: 65%;
@@ -35,10 +20,24 @@ a.button {
     }
     h2 {
         margin-top: 0px; /* Remove default margin from heading */
+        line-height: 1.5;
     }
     ul {
         list-style: none;
         padding: 0;
+    }
+    .mean{
+        line-height: 0;
+    }
+    .dist{
+        margin-top: 5.0em;
+    }
+    .sinc{
+        margin-left: 135px;
+        margin-right: 0;
+        margin-top: 2.0em;
+        width:500px; 
+        height:500px;
     }
     ul li {
         margin-bottom: 20px;
@@ -49,8 +48,8 @@ a.button {
         text-align: center;
         padding: auto;
     }
-    .container ul li h1{
-        font-size: 2.0em;
+    .container ul li h4{
+        font-size: 1.5em;
         font-weight: 600;
         text-align: center;
         padding: auto;
@@ -65,17 +64,44 @@ a.button {
         font-weight: bolder;
         padding-top: 0px;
     }
-    .btn {
-        display: inline-block;
+    .container ul li a{
+        text-decoration: none;
+        background-color: #0056b3;
+        color: #e3e6f1; /* Text color */
         padding: 10px 20px;
-        text-align: center;
+        border-radius: 5px;
+        font-weight: bolder;
+        border: 1px solid transparent;
+        transition: background-color 0.3s;
+    }
+    .btn {
+        padding: 10px 10px;
         background-color: #007bff; /* Blue color */
         color: #fff; /* White text color */
         text-decoration: none; /* Remove underline */
         border: none; /* Remove border */
         border-radius: 5px;
+        border: 1px solid transparent; /* Remove border */
         transition: 0.3s ease; /* Smooth transition */
     }
     .btn:hover {
-        background-color: #0056b3; /* Darker blue color on hover */
+        background-color: #054f20; /* Darker blue color on hover */
+        color: #fff;
+		border-color: #fff;
+    }
+    
+a.button {
+    padding: 10px 20px;
+    background-color: #f23dd4; /* Button color */
+    color: #f1f2f6; /* Text color */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid transparent; /* Remove border */
+    transition: background-color 0.3s;
+    }
+
+    a.button:hover {
+        background-color: #3e41f7; /* Darker blue color on hover */
+        color: #fff;
+		border-color: #fff;
     }

@@ -99,7 +99,9 @@ body {
 .dropdown-menu li:hover {
     background-color: #f1f1f1;
 }
-
+b{
+  font-size: .2em;
+}
 .dropdown.open .dropdown-menu {
     display: block;
 }
@@ -118,11 +120,12 @@ body {
         <div class="top-log">
           <div class="clearfix"> </div> 
           <ul class="nav-list">
-            <li><h4 class="b">Welcome <?= session()->get('Username')?> </h4> </li> 
+            <li><h4 class="b" style="font-size: 1.2em;">Welcome <?= session()->get('Username')?> </h4> </li> 
             <li><a class="dropdown-item" href="/userprofile"><h4>Profile</h4></a></li>
             <li><a class="dropdown-item" href="/logout"><h4>Logout</h4></a></li>
           </ul>
         </div>
+     
         <div class="notification-container">
             <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
             <div id="notification-dropdown" class="notification-dropdown">
@@ -138,6 +141,7 @@ body {
         </div>
       </div>
     </div>
+ 
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end profile"></div>
     <div class="social-content">
         <div class="top-icons">

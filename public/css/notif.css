@@ -1,6 +1,5 @@
 
 a.button {
-    display: inline-block;
     padding: 10px 20px;
     background-color: #007bff; /* Button color */
     color: #919fd7; /* Text color */
@@ -18,12 +17,12 @@ a.button {
 
     /* Basic styling for demonstration purposes */
     body {
+        background-image: url(/aslider/accept.png);
         font-family: Arial, sans-serif;
         font-size:large;
         font-weight: bold;
         margin: 0;
         padding: 50px;
-        background-color: #133372 ; /* Light gray background */
     }
     .container {
         background-color: whitesmoke; /* White background */
@@ -46,14 +45,13 @@ a.button {
         margin-bottom: 20px;
     }
     .container p{
-        font-size: 2.3em;
+        font-size: 2.0em;
         font-weight: 600;
         text-align: center;
         padding: auto;
-        line-height: 200%;
+        line-height: 150%;
     }
     .btn {
-        display: inline-block;
         align-items: center;
         padding: 10px 20px;
         text-align: center;

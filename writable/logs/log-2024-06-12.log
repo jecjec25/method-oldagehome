@@ -915,3 +915,17 @@ ORDER BY `RegDate` ASC
  7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-12 10:28:31 --> Maximum execution time of 60 seconds exceeded
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 128.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-12 10:31:09 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-12 10:31:22 --> Invalid code
+in APPPATH\Libraries\vendor\google\apiclient\src\Client.php on line 281.
+ 1 APPPATH\Controllers\UserController.php(43): Google\Client->fetchAccessTokenWithAuthCode(null)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')

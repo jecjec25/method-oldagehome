@@ -52,7 +52,7 @@
                 <?php if(isset($validation)):?>
                 <small class="text-danger"><?= $validation->getError('Username') ?></small>
                 <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Username" name="Username" >
+                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Username" name="Username" title="Must contain at least 7 characters" required="true" >
                 </div>
                 <div class="form-group">
                 <label for="Email">Email</label>

@@ -1,0 +1,19 @@
+.containers {
+    border-radius: 5px;
+    padding: 50px 20px;
+    margin: 30px auto;
+    width: 40%;
+    border: 2px solid #bbb;
+    text-align: center;
+}
+
+input {
+    padding: 5px;
+    background-color: #eeeeee;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 100px;
+    font-weight: 600;
+}
