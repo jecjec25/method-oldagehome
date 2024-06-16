@@ -22,7 +22,7 @@
           </div>
           <div class="top-log">
             <br>
-            <br>
+            
             <ul>
               <li><a href="/signin">Login Here</a></li>
               <li><a href="/contact">Contact</a></li>
@@ -54,12 +54,11 @@
         <ul class="top-nav">
           <li class="active"><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="/products">Products</a></li>
+          <li><a href="/products">Product</a></li>
           <li><a href="/services">Services</a></li>
-          <li><a href="/news">News & Events</a></li>
+          <li><a href="/news">News&Events</a></li>
           <li><a href="/announcement">Announcement</a></li>
           <li><a href="/donation">Donation</a></li>
-          <li><a href="/contact">Contact</a></li>
           <li><a href="/menu">Necessity</a></li>
           <div class="clearfix"> </div>
         </ul>

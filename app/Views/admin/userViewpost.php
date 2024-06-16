@@ -55,7 +55,7 @@ section {
     <div>
         <?php include_once('includes/user/sidebar.php');?>
 
-        <section>
+        <section class="flashing-background">
             <div class="events">
                 <div class="leftBox">
                     <div class="content">

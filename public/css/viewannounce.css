@@ -1,6 +1,5 @@
 
 a.button {
-    display: inline-block;
     padding: 10px 20px;
     background-color: #007bff; /* Button color */
     color: #919fd7; /* Text color */
@@ -8,7 +7,6 @@ a.button {
     border-radius: 5px;
     border: 1px solid transparent; /* Remove border */
     transition: background-color 0.3s;
-    align-items: center;
     }
 
     a.button:hover {
@@ -18,12 +16,13 @@ a.button {
 
     /* Basic styling for demonstration purposes */
     body {
+        background-image: url(/aslider/h1.jpg);
         font-family: Arial, sans-serif;
         font-size:large;
         font-weight: bold;
         margin: 0;
         padding: 50px;
-        background-color: #133372 ; /* Light gray background */
+        
     }
     .container {
         background-color: whitesmoke; /* White background */
@@ -51,6 +50,12 @@ a.button {
         text-align: center;
         padding: auto;
     }
+    img{
+        margin-left: 100px;
+        margin-top:0;
+        width:500px; 
+        height:500px;
+    }
     .container ul li h1{
         font-size: 2.0em;
         font-weight: 600;
@@ -61,6 +66,7 @@ a.button {
         font-size: 3.0em;
         font-weight: bolder;
         text-align: center;
+        margin-bottom: 0.5em;
     }
     .container ul li p{
         font-size: larger;
@@ -68,7 +74,6 @@ a.button {
         padding-top: 0px;
     }
     .btn {
-        display: inline-block;
         text-align: center;
         padding: 10px 20px;
         text-align: center;

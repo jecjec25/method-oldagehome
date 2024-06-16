@@ -1,51 +1,5 @@
 
-  .material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-  
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-  
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-  
-    /* Support for IE. */
-    font-feature-settings: 'liga';
-  }
-
-    
-
-.carbon--calendar {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23000' d='M26 4h-4V2h-2v2h-8V2h-2v2H6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 22H6V12h20zm0-16H6V6h4v2h2V6h8v2h2V6h4z'/%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
-body{
-    margin: 0;
-    font-family: sans-serif;
-    background: whitesmoke;
-}
 h3{
-    text-align: center;
     font-size: 30px;
     margin: 0;
     padding-top: 10px;
@@ -83,7 +37,7 @@ a{
 img{
     width: 200px;
     height: 200px;
-    margin: 0 auto;
+    margin: auto;
     display: block;
 }
 p{
@@ -97,86 +51,15 @@ h6{
     color: #222f3e;
     margin: 0;
 }
-ul.pics{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
-li {
-    padding-top: 5px;
-}
+
 .fa{
     font-size: 26px;
     transition: .4s;
     margin: 3px;
 }
-.checked{
-    color: #ff9f43;
-}
 .fa:hover{
     transform: scale(1.3);
     transition: .6s;
-}
-button{
-    text-align: center;
-    font-size: 24px;
-    color: #fff;
-    width: 100%;
-    padding: 15px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    margin-top: 5px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-.buy-1{
-    background: #2183a2;
-}
-.buy-2{
-    background: #2183a2;
-}
-.buy-3{
-    background: #2183a2;
-}
-.buy-4{
-    background: #2183a2;
-}
-.buy-5{
-    background: #2183a2;
-}
-.buy-6{
-    background: #2183a2;
-}.buy-7{
-    background: #2183a2;
-}.buy-8{
-    background: #2183a2;
-}
-.buy-9{
-    background: #2183a2;
-}
-.buy-10{
-    background: #2183a2;
-}
-.buy-11{
-    background: #2183a2;
-}
-.buy-12{
-    background: #2183a2;
-}
-.buy-13{
-    background: #2183a2;
-}
-.buy-14{
-    background: #2183a2;
-}
-.buy-15{
-    background: #2183a2;
-}
-.buy-16{
-    background: #2183a2;
 }
 @media(max-width:1000px){
     .content{
