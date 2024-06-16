@@ -4,7 +4,6 @@
 <head>
     <title>Event Reservation</title>
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
-    <link rel="stylesheet">
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
@@ -74,7 +73,7 @@
                     <div>
                         <label for="time">Preferred Time<span class="required"></span></label>
                         <select name="Time" id="time">
-                          
+                            <option value="">Select a time</option>
                         </select>
                     </div>
                     <div>
@@ -101,12 +100,11 @@
         var bookings = <?= json_encode($disableDates) ?>;
 
         $("input.dates").datepicker({
-            dateFormat: 'dd-mm-yy',
+            dateFormat: 'yy-mm-dd', // Adjusted to match the format of the dates in disableDates
             beforeShowDay: function (date) {
-                var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
-                if (bookings[string] && bookings[string].length >= 3) { // Adjust if more time slots exist
-                
-                    return [array.indexOf(string) == -1]
+                var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+                if (bookings[string] && bookings[string].includes('WholeDay')) {
+                    return [false];
                 }
                 return [true];
             },
@@ -119,9 +117,12 @@
 
                 // Time slots
                 var times = [
-                    { value: "9:00", label: "9 AM" },
-                    { value: "11:00", label: "11 AM" },
-                    { value: "13:00", label: "1 PM" }
+                    { value: "WholeDay", label: "Whole Day" },
+                    { value: "HalfDay-morning", label: "Half Day in the morning" },
+                    { value: "HalfDay-afternoon", label: "Half Day in the afternoon" },
+                    { value: "9:00:00 - 11:00:00", label: "9:00 AM - 11:00 AM" },
+                    { value: "11:00:00 - 13:00:00", label: "11:00 AM - 1:00 PM" },
+                    { value: "13:00:00 - 15:00:00", label: "1:00 PM - 3:00 PM" }
                 ];
 
                 // If the selected date has bookings, disable the booked times
@@ -131,9 +132,32 @@
                         var option = document.createElement('option');
                         option.value = time.value;
                         option.text = time.label;
-                        if (booking.includes(time.value)) {
+
+                        if (booking.includes(time.value) || 
+                            (time.value === "9:00:00 - 11:00:00" && booking.includes("HalfDay-morning")) ||
+                            (time.value === "11:00:00 - 13:00:00" && booking.includes("HalfDay-morning")) ||
+                            (time.value === "13:00:00 - 15:00:00" && booking.includes("HalfDay-afternoon")) ||
+                            (time.value === "WholeDay") || 
+                            (booking.includes("HalfDay-morning") && booking.includes("HalfDay-afternoon"))) {
                             option.disabled = true;
+                            option.hidden = true;
                         }
+
+                        if (booking.includes(time.value = "9:00:00 - 11:00:00") || booking.includes(time.value = "11:00:00 - 13:00:00"))
+                        {
+                            if (option.value === "HalfDay-morning") {
+                        option.disabled = true;
+                        option.hidden = true;
+                    }     
+                        }
+                        if (booking.includes(time.value = "13:00:00 - 15:00:00"))
+                        {
+                            if (option.value === "HalfDay-afternoon") {
+                        option.disabled = true;
+                        option.hidden = true;
+                    }     
+                        }
+
                         timeSelect.appendChild(option);
                     });
                 } else {

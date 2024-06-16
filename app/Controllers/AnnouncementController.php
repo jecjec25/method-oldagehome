@@ -15,6 +15,7 @@ class AnnouncementController extends BaseController
 
     public function __construct()
     {
+        date_default_timezone_set('manila/asia');
         $this->userbooking = new UserbookingModel();
         $this->Feedback = new FeedbackModel();
         $this->admannouncement = new AnnouncementModel();
@@ -228,6 +229,7 @@ class AnnouncementController extends BaseController
     
     public function publishedann()
     {
+        $currentDate = date('Y-m-d H:i:s');
         $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
@@ -241,15 +243,19 @@ class AnnouncementController extends BaseController
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
-            'announce'  => $this->admannouncement->where('Status', 'published')->findAll()
-          
+            'announce'  => $this->admannouncement->where('Status', 'published')
+            ->where('End_date >=', $currentDate)->findAll(),
+            'currentDate' => date('Y-m-d H:i:s')
              ];
      
+    
+
         return view('dashboard/publishedannounce', $data);
     }
 
     public function announceArchived()
     {
+        $currentDate = date('Y-m-d H:i:s');
         $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
@@ -262,9 +268,10 @@ class AnnouncementController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'currentDate' => date('Y-m-d H:i:s')
         ];
-       $data['announce']= $this->admannouncement->where('Status','Archive')->findAll();
+       $data['announce']= $this->admannouncement->where('Status','Archive')->orwhere('End_date <=', $currentDate)->findAll();
         return view('dashboard/announceArchive', $data);
     }
 

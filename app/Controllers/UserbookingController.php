@@ -125,12 +125,38 @@ class UserbookingController extends ResourceController
         session()->setFlashdata('success', 'The data has been saved sucessfully.');
         return redirect()->to('/booking');
     }
-    public function bookchecked()
-    {
-        $user = session()->get('userID');
-    
-        // Fetch the accepted bookings for the user
-        $bookings = $this->acceptbooking
+public function bookchecked()
+{
+    $user = session()->get('userID');
+
+    // Fetch the accepted bookings for the user
+    $bookings = $this->acceptbooking
+        ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+                  acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+                  acceptbooking.Time, acceptbooking.prefferdate, acceptbooking.equipment, 
+                  acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+                  user.userID, user.LastName, user.FirstName')
+        ->join('user', 'user.userID = acceptbooking.usersignsId')
+        ->where('acceptbooking.status', 'Accepted')
+        ->findAll();
+
+    // Prepare disableDates array
+    $disableDates = [];
+    foreach ($bookings as $booking) {
+        $date = $booking['prefferdate'];
+        $time = $booking['Time'];
+        if (!isset($disableDates[$date])) {
+            $disableDates[$date] = [];
+        }
+        $disableDates[$date][] = $time;
+    }
+
+    // Debugging output
+    error_log(print_r($disableDates, true));
+
+    $data = [
+        'notif' => $bookings,
+        'notifs' => $this->acceptbooking
             ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
                       acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
                       acceptbooking.Time, acceptbooking.prefferdate, acceptbooking.equipment, 
@@ -139,40 +165,18 @@ class UserbookingController extends ResourceController
             ->join('user', 'user.userID = acceptbooking.usersignsId')
             ->where('acceptbooking.status', 'Accepted')
             ->where('acceptbooking.usersignsId', $user)
-            ->findAll();
-    
-        // Prepare disableDates array
-        $disableDates = [];
-        foreach ($bookings as $booking) {
-            $date = $booking['prefferdate'];
-            $time = $booking['Time'];
-            if (!isset($disableDates[$date])) {
-                $disableDates[$date] = [];
-            }
-            $disableDates[$date][] = $time;
-        }
-    
-        $data = [
-            'notif' => $bookings,
-            'notifs' => $this->acceptbooking
-                ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
-                          acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
-                          acceptbooking.Time, acceptbooking.prefferdate, acceptbooking.equipment, 
-                          acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
-                          user.userID, user.LastName, user.FirstName')
-                ->join('user', 'user.userID = acceptbooking.usersignsId')
-                ->where('acceptbooking.status', 'Accepted')
-                ->where('acceptbooking.usersignsId', $user)
-                ->first(),
-            'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.status', 'Accepted')
-                ->where('acceptbooking.usersignsId', $user)->first(),
-            'disableDates' => $disableDates,
-            'book' => $bookings
-        ];
-    
-        return view('admin/userbooking', $data);
-    }
-    
+            ->first(),
+        'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.status', 'Accepted')
+            ->where('acceptbooking.usersignsId', $user)->first(),
+        'disableDates' => $disableDates,
+        'book' => $bookings
+    ];
+
+    // Debugging output
+    error_log(print_r($data, true));
+
+    return view('admin/userbooking', $data);
+}
 
     public function bookingAD()
     {       $data = [

@@ -68,6 +68,8 @@
                     </thead>
                     <tbody>
                     <?php foreach($main as $events): ?>
+                      <?php if($events['End_date'] >= $currentDate):?>
+                      
                 <tr>
                     <td><?=$events['Title'] ?></td>
                     <td><?=$events['Description'] ?></td>
@@ -88,6 +90,7 @@
                           </div>
                     </td>
                 </tr>
+                <?php endif;?>
                   <?php endforeach; ?>
                     </tbody>
                   </table>

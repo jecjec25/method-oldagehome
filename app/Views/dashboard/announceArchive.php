@@ -70,6 +70,7 @@
                     </thead>
                     <tbody>
                     <?php foreach($announce as $archannounce): ?>
+
                 <tr>
                     <td><?=$archannounce['Title'] ?></td>
                     <td><?=$archannounce['Content'] ?></td>
@@ -82,10 +83,17 @@
                     <td><?=$archannounce['Priority'] ?></td>
                     <td><img src="<?="/upload/announcement/".$archannounce['Attachments']?>" style="width:50px; height:50px; border:box;"></td>
                     <td><?=$archannounce['Target_audience'] ?></td>
-                    <td><?=$archannounce['Status'] ?></td>
+                    <?php if($archannounce['End_date'] <= $currentDate && $archannounce['Status'] === 'Published'):?>
+                      <td>Up to Date</td>
+                      <?php elseif($archannounce['End_date'] <= $currentDate && $archannounce['Status'] === 'Archive'):?>
+                        <td>Up to Date And Archived</td>
+                      <?php else:?>
+                        <td><?=$archannounce['Status'] ?></td>
+                      <?php endif; ?>
                     <td><a href="<?= base_url("deleteAnnounceArch/".$archannounce['AnnounceID']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
                     Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a></td>
                 </tr>
+
                   <?php endforeach; ?>
                     </tbody>
                   </table>

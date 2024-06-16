@@ -369,9 +369,6 @@ class Fullcalendar extends BaseController
     {
         set_time_limit(120);
     
-        $searchRevent = str_replace('-', '/', $searchRevent);
-        $searchR = str_replace('-', '/', $searchR);
-        
         // Use local file path for the image
         $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
         if (file_exists($imagePath)) {
@@ -414,13 +411,15 @@ class Fullcalendar extends BaseController
                     }
                     .header {
                         text-align: center;
-                        position: relative;
+                        margin-bottom: 20px;
                     }
                     .header img {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
+                        display: block;
+                        margin: 0 auto 10px;
                         height: 100px;
+                    }
+                    .header h5, .header h4 {
+                        margin: 2px 0;
                     }
                     table {
                         width: 100%;
@@ -433,16 +432,12 @@ class Fullcalendar extends BaseController
                         word-wrap: break-word;
                     }
                     th, td {
-                        padding: 4px;
+                        padding: 8px;
                         text-align: left;
                     }
                     .footer {
-                        position: fixed;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
                         text-align: left;
-                        margin-top: 16px;
+                        margin-top: 20px;
                     }
                     .footer .report {
                         font-weight: 600;
@@ -450,10 +445,17 @@ class Fullcalendar extends BaseController
                     .signatures {
                         display: flex;
                         flex-direction: column;
+                        margin-top: 10px;
                     }
                     .signatures p {
                         margin: 2px 0;
-                        
+                    }
+                    .acknowledgement {
+                        margin-top: 20px;
+                    }
+                    .acknowledgement p {
+                        margin: 2px 0;
+                        font-weight: 600;
                     }
                     .content {
                         page-break-after: auto;
@@ -463,18 +465,18 @@ class Fullcalendar extends BaseController
             <body>
                 <div class="header">
                     <img src="' . $imageSrc . '" alt="Logo">
-                    <h5 style="margin: 0;">Republic of the Philippines</h5>
-                    <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
-                    <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
-                    <h5 style="margin: 0;">Company Registration Number: CN2011421030</h5>
-                    <h5 style="margin: 0;">Company TIN Number: 008-893-471</h5>
-                    <h4 style="margin: 0; padding-top: 5px;">ARUGA-KAPATID FOUNDATION INCORPORATED</h4>
+                    <h5>Republic of the Philippines</h5>
+                    <h5>Province of Oriental Mindoro</h5>
+                    <h5>Barangay Managpi, Calapan City</h5>
+                    <h5>Company Registration Number: CN2011421030</h5>
+                    <h5>Company TIN Number: 008-893-471</h5>
+                    <h4>ARUGA-KAPATID FOUNDATION INCORPORATED</h4>
                 </div>
     
                 <h3 style="text-align: center;">Aruga Kapatid Foundation Incorporated</h3>
-                <h4 style="text-align: center;">Monthly Event Report ' . $searchRevent . ' - ' . $searchR . '</h4>
+                <h4 style="text-align: center;">Monthly Event Report ' . htmlspecialchars($searchRevent) . ' - ' . htmlspecialchars($searchR) . '</h4>
     
-                <p>Date: ' . $currentDate . '</p>
+                <p>Date: ' . htmlspecialchars($currentDate) . '</p>
     
                 <table>
                     <thead>
@@ -516,18 +518,18 @@ class Fullcalendar extends BaseController
                 <p style="font-weight: 600;">Summary of Outcomes</p>
                 <p>Health Awareness Workshop: Increased awareness on healthy lifestyle practices among participants.</p>
     
-                <p style="font-weight: 600;">Acknowledgement</p>
-                <p>Thank you to all sponsors, volunteers, and attendees for their support and participation in the events.</p>
+                <div class="acknowledgement">
+                    <p>Acknowledgement</p>
+                    <p>Thank you to all sponsors, volunteers, and attendees for their support and participation in the events.</p>
+                </div>
     
                 <div class="footer">
                     <p class="report">Report Generated By:</p>
-                    <br>
                     <div class="signatures">
                         <p>Henry Dacanay III</p>
                         <p>Admin Staff</p>
                     </div>
                     <p class="report">Approved By:</p>
-                    <br>
                     <div class="signatures">
                         <p>Lito Vergara</p>
                         <p>Administrator</p>
@@ -551,7 +553,7 @@ class Fullcalendar extends BaseController
         // Stop CodeIgniter from further processing (optional, but good practice)
         exit();
     }
-    
+     
     
 
 
@@ -660,45 +662,58 @@ class Fullcalendar extends BaseController
 
 public function searchRevent()
 {
+    // Get the fromdate and todate parameters from the request
     $searchRevent = $this->request->getVar('fromdate');
     $searchR = $this->request->getVar('todate');
 
+    // Ensure the dates are in the correct format (YYYY-MM-DD) for database queries
+    $fromDate = date('Y-m-d', strtotime($searchRevent));
+    $toDate = date('Y-m-d', strtotime($searchR));
+
     $searchParams = [
-        'regdate' => $searchRevent,
-        'todate' => $searchR
+        'regdate' => $fromDate,
+        'todate' => $toDate
     ];
     
-    // Fetching data where prefferdate falls between $searchRevent and $searchR and status is 'Accepted'
+    // Fetching data where prefferdate falls between $fromDate and $toDate and status is 'Accepted'
+    $acceptevData = $this->acceptev
+        ->where('prefferdate >=', $fromDate)
+        ->where('prefferdate <=', $toDate)
+        ->where('status', 'Accepted')
+        ->findAll();
+
+    // Fetch other necessary data
+    $notif = $this->booking->where('status', 'pending')->first();
+    $getnotif = $this->booking
+        ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+            userbooking.middlename, userbooking.contactnum, userbooking.event, 
+            userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+            userbooking.comments, userbooking.status, userbooking.usersignsId, 
+            user.userID, user.LastName, user.FirstName')
+        ->join('user', 'user.userID = userbooking.usersignsId')
+        ->where('userbooking.status', 'Accepted')
+        ->orWhere('userbooking.status', 'Pending')
+        ->findAll();
+    $countNotifs = $this->booking->where('status', 'pending')->countAllResults();
+
+    // Prepare the data array
     $data = [
-        
         'prefdate' => $this->acceptev->findAll(),
-        'notif' => $this->booking->where('status', 'pending')->first(),
-            'getnotif' => $this->booking
-                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
-                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
-                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
-                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
-                    user.userID, user.LastName, user.FirstName')
-                ->join('user', 'user.userID = userbooking.usersignsId')
-                ->where('userbooking.status', 'Accepted')
-                ->orWhere('userbooking.status', 'Pending')
-                ->findAll(),
-            'countNotifs' => $this->booking->where('status', 'pending')->countAllResults(),
-        'acceptev' => $this->acceptev->where('prefferdate >=', $searchRevent)
-                                     ->where('prefferdate <=', $searchR)
-                                     ->where('status', 'Accepted')
-                                     ->findAll(),
-                                     'searchParams' => $searchParams
+        'notif' => $notif,
+        'getnotif' => $getnotif,
+        'countNotifs' => $countNotifs,
+        'acceptev' => $acceptevData,
+        'regdate' => $fromDate,
+        'todate' => $toDate
     ];
-    
+
     // Check if data is found
-    if (!empty($data['acceptev'])) {
-      
-    } else {
+    if (empty($data['acceptev'])) {
         // No data found, handle this situation here
-        // For example, you can set a message to display in the view
         $data['no_data_message'] = 'No data found.';
     }
+
     return view('dashboard/reportTableEvents', $data);
 }
+
 }

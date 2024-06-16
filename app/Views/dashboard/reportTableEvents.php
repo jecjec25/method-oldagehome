@@ -123,7 +123,7 @@
                                     Table Report of Events of Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print"><a
-                                        href="<?= base_url('/generateEventReport/' . str_replace('/', '-', $searchParams['regdate']) . '/' . str_replace('/', '-', $searchParams['todate'])) ?>"
+                                        href="<?= base_url('/generateEventReport/' . $regdate . '/' . $todate) ?>"
                                         id="PrintButton">Print</a>
                                 </div>
                                 <div class="table-responsive pt-3">

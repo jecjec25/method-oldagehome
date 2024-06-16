@@ -3,21 +3,21 @@
 <head>
 <title>View Event</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="/css/userview.css" rel='stylesheet' type='text/css' />
 
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="application/x-javascript"> 
+    addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); 
+    function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/modernizr.custom.js"></script>
-
-
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
-		
+
 <script type="text/javascript">
     jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){		
+        $(".scroll").click(function(event){        
             event.preventDefault();
             $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
         });
@@ -44,17 +44,16 @@ h2 {
 
 .events {
     align-items: center;
-
 }
-section{
-	width:100%;
+section {
+    width: 100%;
 }
 </style>
 </head>
 
 <body>
     <div>
-        <?php include_once('includes/header.php');?>
+        <?php include_once('includes/header.php'); ?>
 
         <section>
             <div class="events">
@@ -67,90 +66,92 @@ section{
 
                 <ul>
                     <h2>News</h2>
-					<?php foreach($news as $mnews):?>
-                <li>
-				<div class="time">
-					<h2>
-						<?= date('d', strtotime($mnews['date_published'])) ?> <br>
-                        <span><?= date('F', strtotime($mnews['date_published'])) ?></span>
-					</h2>
-				</div>
-                    <div class="details" >
-                        <h3><?= $mnews['title']?> <br></h3>
-                            
-                           <img src="<?="/upload/news/" . $mnews['picture'] ?>" alt="newsba">  <br>
-						   <a href="<?= base_url('newsvents/' . $mnews['id']) ?>" class="btn btn-secondary">View News</a>
-                    </div>
-                    <div style="clear: both;"></div>
-                </li>
+                    <?php foreach ($news as $mnews): ?>
+                        <li>
+                            <div class="time">
+                                <h2>
+                                    <?= date('d', strtotime($mnews['date_published'])) ?> <br>
+                                    <span><?= date('F', strtotime($mnews['date_published'])) ?></span>
+                                </h2>
+                            </div>
+                            <div class="details">
+                                <h3><?= $mnews['title'] ?> <br></h3>
+                                <img src="<?= "/upload/news/" . $mnews['picture'] ?>" alt="news"><br>
+                                <a href="<?= base_url('newsvents/' . $mnews['id']) ?>" class="btn btn-secondary">View News</a>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
 
-				<?php if(empty($eventadmin) && empty($eventuser)): ?>
-    <p>No upcoming events.</p>
-<?php else: ?>
-    <ul>
-        <!-- Main Event -->
-		<?php if(!empty($eventadmin)): ?>
-    <h2>Main Event</h2>
-    <ul>
-        <?php foreach($eventadmin as $mevents): ?>
-            <?php $existing = $mevents['End_date'] >= $currentDate; if($mevents['End_date'] >= $currentDate): ?>
-                <li>
-                    <div class="time">
-                        <h2><?= date('d', strtotime($mevents['Start_date'])) ?> <br><span><?= date('F', strtotime($mevents['Start_date'])) ?></span></h2>
-                    </div>
-                    <div class="details">
-                        <h3><?= $mevents['Title'] ?><br></h3>
-                        <img src="<?= "/upload/events/". $mevents['Attachments'] ?>" alt=""><br>
-				<a href="<?= base_url('newsvents/' . $mevents['EventID']) ?>">View Event</a>
-                    </div>
-                </li>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    
-    <?php if($existing == Null): ?>
-        <li><h2>We have No Main Events</h2></li>
-    <?php endif; ?>
-<?php endif; ?>
-</ul>
+                <?php
+                $hasMainEvents = false;
+                $hasUserEvents = false;
+                if (empty($eventadmin) && empty($eventuser)): ?>
+                    <p>No upcoming events.</p>
+                <?php else: ?>
+                    <!-- Main Event -->
+                    <?php if (!empty($eventadmin)): ?>
+                        <h2>Main Event</h2>
+                        <ul>
+                            <?php foreach ($eventadmin as $mevents): ?>
+                                <?php if ($mevents['End_date'] >= $currentDate): ?>
+                                    <?php $hasMainEvents = true; ?>
+                                    <li>
+                                        <div class="time">
+                                            <h2><?= date('d', strtotime($mevents['Start_date'])) ?> <br><span><?= date('F', strtotime($mevents['Start_date'])) ?></span></h2>
+                                        </div>
+                                        <div class="details">
+                                            <h3><?= $mevents['Title'] ?><br></h3>
+                                            <img src="<?= "/upload/events/" . $mevents['Attachments'] ?>" alt=""><br>
+                                            <a href="<?= base_url('newsvents/' . $mevents['EventID']) ?>">View Event</a>
+                                        </div>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                            <?php if (!$hasMainEvents): ?>
+                                <li><h2>We have No Main Events</h2></li>
+                            <?php endif; ?>
+                        </ul>
+                    <?php endif; ?>
 
-
-        <!-- User Event -->
-        <?php if(!empty($eventuser)): ?>
-            <h2>User Event</h2>
-            <?php foreach($eventuser as $mevents): ?>
-            <?php $existing = $mevents['End_date'] >= $currentDate; if($mevents['End_date'] >= $currentDate): ?>
-                    <li>
-                        <div class="time">
-                            <h2><?= date('d', strtotime($mevents['Start_date'])) ?> <br><span><?= date('F', strtotime($mevents['Start_date'])) ?></span></h2>
-                        </div>
-                        <div class="details">
-                            <h3><?= $mevents['Title'] ?><br></h3>
-                            <img src="<?= "/upload/events/". $mevents['Attachments'] ?>" alt=""><br>
-				<a href="<?= base_url('newsvents/' . $mevents['EventID']) ?>">View Event</a>
-                        </div>
-                    </li>
+                    <!-- User Event -->
+                    <?php if (!empty($eventuser)): ?>
+                        <h2>User Event</h2>
+                        <ul>
+                            <?php foreach ($eventuser as $mevents): ?>
+                                <?php if ($mevents['End_date'] >= $currentDate): ?>
+                                    <?php $hasUserEvents = true; ?>
+                                    <li>
+                                        <div class="time">
+                                            <h2><?= date('d', strtotime($mevents['Start_date'])) ?> <br><span><?= date('F', strtotime($mevents['Start_date'])) ?></span></h2>
+                                        </div>
+                                        <div class="details">
+                                            <h3><?= $mevents['Title'] ?><br></h3>
+                                            <img src="<?= "/upload/events/" . $mevents['Attachments'] ?>" alt=""><br>
+                                            <a href="<?= base_url('newsvents/' . $mevents['EventID']) ?>">View Event</a>
+                                        </div>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                            <?php if (!$hasUserEvents): ?>
+                                <li><h2>We have No User Events</h2></li>
+                            <?php endif; ?>
+                        </ul>
+                    <?php endif; ?>
                 <?php endif; ?>
-            <?php endforeach; ?>
-        <?php endif; ?>
-		<?php if($existing == Null): ?>
-        <li><h2>We have No Main Events</h2></li>
-    <?php endif; ?>
-
-<?php endif; ?>
-
-
-               </div>
+            </div>
         </section>
         <br>
-        <?php include_once('includes/footer.php');?>	
+        <?php include_once('includes/footer.php'); ?>
         <script type="text/javascript">
             $(document).ready(function() {
                 $().UItoTop({ easingType: 'easeOutQuart' });
             });
         </script>
-        <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        <a href="#home" id="toTop" class="scroll" style="display: block;"> 
+            <span id="toTopHover" style="opacity: 1;"> </span>
+        </a>
     </div>
 </body>
 </html>

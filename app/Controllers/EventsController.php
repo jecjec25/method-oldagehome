@@ -14,6 +14,7 @@ class EventsController extends BaseController
 
     public function __construct()
     {
+        date_default_timezone_set('Asia/Manila');
         $this->userbooking = new UserbookingModel();
         $this->admevent = new EventsModel();
         $this->feedback = new FeedbackModel();
@@ -241,6 +242,7 @@ class EventsController extends BaseController
 
     public function initialpublishedevent()
     {
+            
             $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
@@ -253,7 +255,8 @@ class EventsController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'currentDate' => date('Y-m-d H:i:s')
         ];
  
         $data['main'] = $this->admevent->where('Status', 'published')->findAll();
@@ -281,6 +284,7 @@ class EventsController extends BaseController
     }
     public function eventsarchived()
     {
+        $currentDate = date('Y-m-d H:i:s');
             $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
@@ -293,10 +297,11 @@ class EventsController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'currentDate' => date('Y-m-d H:i:s')
         ];
  
-       $data['main']= $this->admevent->where('Status','Archive')->findAll();
+       $data['main']= $this->admevent->where('Status','Archive')->orwhere('End_date <=', $currentDate)->findAll();
         return view('dashboard/eventsarchived', $data);
     }
 
