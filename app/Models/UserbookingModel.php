@@ -57,11 +57,27 @@ class UserbookingModel extends Model
 
     public function getBookingsByMonth()
     {
-        return $this->select('YEAR(prefferdate) AS year, MONTH(prefferdate) AS month, COUNT(*) AS total_bookings')->where('status', 'Accepted')
+        // // Log the query to debug
+        // $sql = $this->select('YEAR(prefferdate) AS year, MONTH(prefferdate) AS month, COUNT(*) AS total_bookings')
+        //     ->groupBy('YEAR(prefferdate), MONTH(prefferdate)')
+        //     ->orderBy('YEAR(prefferdate)', 'ASC')
+        //     ->orderBy('MONTH(prefferdate)', 'ASC')
+        //     ->getCompiledSelect();
+        // log_message('debug', 'SQL Query: ' . $sql);
+
+        // Execute the query
+        $result = $this->select('YEAR(prefferdate) AS year, MONTH(prefferdate) AS month, COUNT(*) AS total_bookings')
             ->groupBy('YEAR(prefferdate), MONTH(prefferdate)')
-            ->orderBy('year, month')
+            ->orderBy('YEAR(prefferdate)', 'ASC')
+            ->orderBy('MONTH(prefferdate)', 'ASC')
             ->findAll();
+
+        // // Log the result to debug
+        // log_message('debug', 'Query Result: ' . print_r($result, true));
+
+        return $result;
     }
+
 
     public function getGenderDistribution()
     {
@@ -70,4 +86,5 @@ class UserbookingModel extends Model
             ->orderBy('gender')
             ->findAll();
     }
+
 }

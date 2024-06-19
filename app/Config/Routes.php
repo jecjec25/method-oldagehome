@@ -256,9 +256,14 @@ $routes->get('/deleteEventArch/(:any)', 'EventsController::deleteEventArch/$1');
 $routes->post('/EventPubArc', 'EventsController::EventPubArc');
 
 //visualization
-$routes->get('bookings/by-month', 'UserbookingController::index');
+$routes->get('bookings/by-time-range', 'UserbookingController::index');
+$routes->get('bookings/by-month', 'UserbookingController::index1');
 $routes->get('products/quantities', 'ProductsController::index');
-$routes->get('/dash', 'ViewController::dashboard'); 
+$routes->get('/dash', 'ViewController::dashboard');
+$routes->get('donation', 'UserDonationController::index');
+$routes->get('donation/getDonations', 'UserDonationController::getDonations');
+$routes->get('in-kind-donation', 'ReportController::index');
+$routes->get('in-kind-donation/getInKindDonations', 'ReportController::getInKindDonations');
 
 //announcements
 $routes->get('Adannouncement', 'AnnouncementController::Adannnouncement');

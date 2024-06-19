@@ -4,15 +4,32 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\AcceptbookingModel;
+use App\Models\ReportdonationModel;
+use CodeIgniter\API\ResponseTrait;
 
 class UserDonationController extends BaseController
 {
+    use ResponseTrait;
     private $acceptbooking;
 
     public function __construct()
     {
         $this->acceptbooking = new AcceptbookingModel();
     }
+
+    public function getDonations()
+    {
+        $model = new ReportdonationModel();
+        $donations = $model->findAll();
+        
+        return $this->respond($donations);
+    }
+
+    public function index()
+    {
+        return view('donations_chart');
+    }
+
     public function userdonation()
     {
         $user = session()->get('userID');

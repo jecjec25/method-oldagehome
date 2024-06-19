@@ -54,11 +54,11 @@ class AcceptbookingModel extends Model
         return $disabledDates;
     }
 
-    public function getBookingsByMonth()
+    public function getBookingsByTimeRange()
     {
-        return $this->select('YEAR(prefferdate) AS year, MONTH(prefferdate) AS month, COUNT(*) AS total_bookings')->where('status', 'Accepted')
-            ->groupBy('YEAR(prefferdate), MONTH(prefferdate)')
-            ->orderBy('year, month')
+        return $this->select('Time AS time_range, COUNT(*) AS total_bookings')
+            ->groupBy('Time')
+            ->orderBy('time_range', 'ASC')
             ->findAll();
     }
 }

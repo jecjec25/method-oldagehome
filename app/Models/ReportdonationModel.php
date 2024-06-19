@@ -38,4 +38,12 @@ class ReportdonationModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function index()
+    {
+        $model = new ReportdonationModel();
+        $data['donations'] = $model->findAll();
+
+        return view('donations_chart', $data);
+    }
 }

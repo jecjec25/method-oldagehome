@@ -6,10 +6,13 @@ use App\Controllers\BaseController;
 use App\Models\UserbookingModel;
 use App\Models\ReportdonationModel;
 use App\Models\BookingModel;
+use App\Models\InKindModel;
 use App\Models\MainModel;
+use CodeIgniter\API\ResponseTrait;
 
 class ReportController extends BaseController
 {
+    use ResponseTrait;
     private $userbooking;
     private $eventsModel;
     private $donationsModel;
@@ -24,6 +27,19 @@ class ReportController extends BaseController
         $this->booking = new BookingModel();
         $this->main = new MainModel();
 
+    }
+
+    public function getInKindDonations()
+    {
+        $model = new InKindModel();
+        $donations = $model->where('status', 'Received')->findAll();
+
+        return $this->respond($donations);
+    }
+
+    public function index()
+    {
+        return view('in_kind_donations_chart');
     }
 
     public function eventupdate($id) {

@@ -1,8 +1,22 @@
-<style>
-    .space {
-        width: 115%;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations and Bookings Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .space {
+            width: 115%;
+        }
+
+        .chart-description {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
 
 <body>
     <div class="container-scroller">
@@ -14,6 +28,15 @@
                             <div class="card">
                                 <div class="card-body">
                                     <canvas id="bookingsChart"></canvas>
+                                    <div class="chart-description">Number of Bookings per Time Range</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <canvas id="bookingsChart99"></canvas>
+                                    <div class="chart-description">Number of Bookings per Month</div>
                                 </div>
                             </div>
                         </div>
@@ -21,13 +44,39 @@
                             <div class="card">
                                 <div class="card-body">
                                     <canvas id="quantityChart"></canvas>
+                                    <div class="chart-description">Product Quantities</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                <canvas id="genderChart" style="height:50px"></canvas>
+                                    <canvas id="donationsByMonthChart" style="height:100px"></canvas>
+                                    <div class="chart-description">Total Donations by Month</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <canvas id="donationTypesChart" style="height:100px"></canvas>
+                                    <div class="chart-description">Donation Types</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <canvas id="genderChart" style="height:50px"></canvas>
+                                    <div class="chart-description">Gender Distribution</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <canvas id="inKindDonationsChart"></canvas>
+                                    <div class="chart-description">Number of In-Kind Donations by Establishment</div>
                                 </div>
                             </div>
                         </div>
@@ -36,47 +85,97 @@
             </div>
         </div>
     </div>
-    
-    <script>
-     fetch('bookings/by-month')
-    .then(response => response.json())
-    .then(data => {
-        console.log('Fetched data:', data);
-        var labels = data.map(item => {
-            if (item.year == null || item.month == null) {
-                console.error('Invalid data item:', item);
-                return 'Invalid Date';
-            }
-            let date = new Date(item.year, item.month - 1);
-            let formattedDate = `${item.month}/${item.year}`;
-            return formattedDate;
-        });
-        var bookingCounts = data.map(item => parseInt(item.total_bookings) || 0);
-        const ctx = document.getElementById('bookingsChart').getContext('2d');
-        var bookingsChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Number of Bookings per Month',
-                    data: bookingCounts,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    })
-    .catch(error => console.error('Error fetching data:', error));
 
+    <script>
+        fetch('bookings/by-month')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Fetched data:', data);
+                var labels = data.map(item => {
+                    if (item.year == null || item.month == null) {
+                        console.error('Invalid data item:', item);
+                        return 'Invalid Date';
+                    }
+                    return `${String(item.month).padStart(2, '0')}/${item.year}`;
+                });
+                var bookingCounts = data.map(item => parseInt(item.total_bookings) || 0);
+                const ctx = document.getElementById('bookingsChart99').getContext('2d');
+                var bookingsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Number of Bookings per Month',
+                            data: bookingCounts,
+                            backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Bookings by Month'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
     </script>
+
+    <script>
+        fetch('bookings/by-time-range')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Fetched data:', data);
+                var labels = data.map(item => {
+                    if (!item.time_range) {
+                        console.error('Invalid data item:', item);
+                        return 'Invalid Time Range';
+                    }
+                    return item.time_range;
+                });
+
+                var bookingCounts = data.map(item => parseInt(item.total_bookings) || 0);
+
+                const ctx = document.getElementById('bookingsChart').getContext('2d');
+                var bookingsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Number of Bookings per Time Range',
+                            data: bookingCounts,
+                            backgroundColor: 'rgba(255, 159, 64, 0.8)',
+                            borderColor: 'rgba(255, 159, 64, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Bookings by Time Range'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+
     <script>
         fetch('/products/quantities') // Make sure this is the correct API endpoint
             .then(response => response.json())
@@ -93,18 +192,18 @@
                             label: 'Quantity',
                             data: productQuantities,
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)',
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                                'rgba(255, 99, 132, 0.8)',
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(255, 206, 86, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(153, 102, 255, 0.8)',
+                                'rgba(255, 159, 64, 0.8)',
+                                'rgba(255, 99, 132, 0.8)',
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(255, 206, 86, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(153, 102, 255, 0.8)',
+                                'rgba(255, 159, 64, 0.8)'
                             ],
                             borderColor: [
                                 'rgba(255, 99, 132, 1)',
@@ -124,18 +223,15 @@
                         }]
                     },
                     options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Product Quantities'
+                            }
+                        },
                         scales: {
                             y: {
                                 beginAtZero: true
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                display: true,
-                                position: 'top',
-                                labels: {
-                                    color: 'rgb(255, 99, 132)'
-                                }
                             }
                         }
                     }
@@ -143,7 +239,8 @@
             })
             .catch(error => console.error('Error fetching data:', error));
     </script>
-        <script>
+
+    <script>
         var ctx = document.getElementById('genderChart').getContext('2d');
         fetch('/gender/distribution') // Adjust this URL to point to the method you set up
             .then(response => response.json())
@@ -158,15 +255,13 @@
                         datasets: [{
                             label: 'Gender Distribution',
                             data: counts,
-                           
                             borderColor: [
-                               
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)'
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 159, 64, 1)'
                             ],
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.6)',
-                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(255, 159, 64, 0.8)'
                             ],
                             borderWidth: 1
                         }]
@@ -174,6 +269,10 @@
                     options: {
                         responsive: true,
                         plugins: {
+                            title: {
+                                display: true,
+                                text: 'Gender Distribution'
+                            },
                             legend: {
                                 position: 'top',
                             },
@@ -183,4 +282,164 @@
             })
             .catch(error => console.error('Error fetching data:', error));
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/donation/getDonations')
+                .then(response => response.json())
+                .then(donations => {
+                    // Prepare data for the bar chart (Total Donations by Month)
+                    const donationAmountsByMonth = {};
+                    const donationTypes = {};
+
+                    donations.forEach(donation => {
+                        const date = new Date(donation.date);
+                        const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
+
+                        if (!donationAmountsByMonth[monthYear]) {
+                            donationAmountsByMonth[monthYear] = 0;
+                        }
+                        donationAmountsByMonth[monthYear] += parseFloat(donation.amount) || 0;
+
+                        // Prepare data for the pie chart (Donation Types)
+                        if (!donationTypes[donation.donation_type]) {
+                            donationTypes[donation.donation_type] = 0;
+                        }
+                        donationTypes[donation.donation_type] += parseFloat(donation.amount) || 0;
+                    });
+
+                    const months = Object.keys(donationAmountsByMonth);
+                    const totalDonations = Object.values(donationAmountsByMonth);
+
+                    const donationTypeLabels = Object.keys(donationTypes);
+                    const donationTypeAmounts = Object.values(donationTypes);
+
+                    // Bar Chart for Total Donations by Month
+                    const ctxByMonth = document.getElementById('donationsByMonthChart').getContext('2d');
+                    new Chart(ctxByMonth, {
+                        type: 'bar',
+                        data: {
+                            labels: months,
+                            datasets: [{
+                                label: 'Total Donations by Month',
+                                data: totalDonations,
+                                backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Donations by Month'
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+                    // Pie Chart for Donation Types
+                    const ctxByType = document.getElementById('donationTypesChart').getContext('2d');
+                    new Chart(ctxByType, {
+                        type: 'pie',
+                        data: {
+                            labels: donationTypeLabels,
+                            datasets: [{
+                                label: 'Donation Types',
+                                data: donationTypeAmounts,
+                                backgroundColor: [
+                                    'rgba(153, 102, 255, 0.8)',
+                                    'rgba(255, 159, 64, 0.8)',
+                                    'rgba(75, 192, 192, 0.8)',
+                                    'rgba(54, 162, 235, 0.8)',
+                                    'rgba(255, 206, 86, 0.8)',
+                                    'rgba(255, 99, 132, 0.8)'
+                                ],
+                                borderColor: [
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(255, 99, 132, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Donation Types'
+                                },
+                                legend: {
+                                    position: 'top',
+                                },
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/in-kind-donation/getInKindDonations')
+                .then(response => response.json())
+                .then(donations => {
+                    // Prepare data for the bar chart
+                    const donationCountsByDate = {};
+
+                    donations.forEach(donation => {
+                        const date = donation.donationdate;
+
+                        if (!donationCountsByDate[date]) {
+                            donationCountsByDate[date] = 0;
+                        }
+                        donationCountsByDate[date] += 1;
+                    });
+
+                    const dates = Object.keys(donationCountsByDate);
+                    const donationCounts = Object.values(donationCountsByDate);
+
+                    const ctx = document.getElementById('inKindDonationsChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: dates,
+                            datasets: [{
+                                label: 'Number of In-Kind Donations (Received)',
+                                data: donationCounts,
+                                backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'In-Kind Donations by Date (Received)'
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
 </body>
+
+</html>
