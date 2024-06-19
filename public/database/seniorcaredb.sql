@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 16, 2024 at 10:12 AM
+-- Generation Time: Jun 19, 2024 at 01:25 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -29,22 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `acceptbooking` (
   `id` int NOT NULL,
-  `lastname` varchar(255) NOT NULL,
-  `firstname` varchar(255) NOT NULL,
-  `middlename` varchar(255) NOT NULL,
-  `contactnum` varchar(13) NOT NULL,
-  `event` varchar(255) NOT NULL,
-  `Time` text NOT NULL,
-  `prefferdate` text NOT NULL,
-  `equipment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `comments` varchar(255) NOT NULL,
-  `status` varchar(159) NOT NULL,
+  `lastname` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `firstname` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `middlename` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `contactnum` varchar(13) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `event` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Time` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `prefferdate` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `equipment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `comments` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` varchar(159) COLLATE utf8mb4_swedish_ci NOT NULL,
   `usersignsId` int DEFAULT NULL,
-  `description` varchar(255) NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `amount_raised` decimal(10,2) NOT NULL,
-  `outcomes` varchar(255) NOT NULL,
-  `acknowledgement` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `outcomes` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `acknowledgement` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `acceptbooking`
@@ -66,20 +66,20 @@ INSERT INTO `acceptbooking` (`id`, `lastname`, `firstname`, `middlename`, `conta
 
 CREATE TABLE `announcement` (
   `AnnounceID` int NOT NULL,
-  `Title` varchar(255) NOT NULL,
-  `Content` text NOT NULL,
-  `Author` varchar(255) NOT NULL,
+  `Title` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Content` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Author` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `Date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Start_date` date NOT NULL,
   `End_date` date NOT NULL,
-  `Category` varchar(255) NOT NULL,
-  `Priority` varchar(255) NOT NULL,
-  `Attachments` varchar(150) NOT NULL,
-  `Status` varchar(150) NOT NULL,
-  `Target_audience` text NOT NULL,
+  `Category` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Priority` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Attachments` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Status` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Target_audience` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `adminId` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `announcement`
@@ -106,11 +106,11 @@ INSERT INTO `announcement` (`AnnounceID`, `Title`, `Content`, `Author`, `Date_cr
 
 CREATE TABLE `elderneed` (
   `id` int NOT NULL,
-  `need` text NOT NULL,
-  `description` text NOT NULL,
+  `need` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `description` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `date_started` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `elderneed`
@@ -133,19 +133,19 @@ INSERT INTO `elderneed` (`id`, `need`, `description`, `date_started`, `date_modi
 
 CREATE TABLE `events` (
   `EventID` int NOT NULL,
-  `Title` varchar(255) NOT NULL,
-  `Description` text NOT NULL,
-  `Organizer` varchar(255) NOT NULL,
+  `Title` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Description` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Organizer` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `Start_date` date NOT NULL,
   `End_date` date NOT NULL,
-  `Category` varchar(255) NOT NULL,
-  `Status` varchar(255) NOT NULL,
-  `Atendees` text NOT NULL,
-  `Attachments` varchar(255) NOT NULL,
-  `type` varchar(50) NOT NULL,
+  `Category` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Status` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Atendees` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Attachments` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `type` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
   `usersignsid` int DEFAULT NULL,
   `adminId` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `events`
@@ -164,12 +164,12 @@ INSERT INTO `events` (`EventID`, `Title`, `Description`, `Organizer`, `Start_dat
 
 CREATE TABLE `feedbacktbl` (
   `id` int NOT NULL,
-  `status` text NOT NULL,
+  `status` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `usersignsId` int DEFAULT NULL,
   `eventid` int DEFAULT NULL,
   `announceid` int DEFAULT NULL,
-  `feedback` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `feedback` text COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `feedbacktbl`
@@ -204,17 +204,17 @@ INSERT INTO `feedbacktbl` (`id`, `status`, `usersignsId`, `eventid`, `announceid
 CREATE TABLE `inkinddonation_tbl` (
   `id` int NOT NULL,
   `usersignsId` int NOT NULL,
-  `Establishment` varchar(150) NOT NULL,
-  `lastname` varchar(150) NOT NULL,
-  `firstname` varchar(150) NOT NULL,
-  `middlename` varchar(150) NOT NULL,
+  `Establishment` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `lastname` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `firstname` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `middlename` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
   `contactnum` bigint NOT NULL,
-  `inKindDonationItem` varchar(150) NOT NULL,
-  `picture` varchar(150) NOT NULL,
+  `inKindDonationItem` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `picture` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
   `donationdate` date NOT NULL,
-  `status` varchar(150) NOT NULL,
-  `message` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `status` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `message` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `inkinddonation_tbl`
@@ -235,15 +235,15 @@ INSERT INTO `inkinddonation_tbl` (`id`, `usersignsId`, `Establishment`, `lastnam
 
 CREATE TABLE `newsevents` (
   `id` int NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `Content` text NOT NULL,
-  `author` varchar(255) NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Content` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `author` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `date_published` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `Category` varchar(150) NOT NULL,
-  `picture` varchar(150) NOT NULL,
-  `status` varchar(10) NOT NULL,
+  `Category` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `picture` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` varchar(10) COLLATE utf8mb4_swedish_ci NOT NULL,
   `adminId` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `newsevents`
@@ -263,15 +263,15 @@ INSERT INTO `newsevents` (`id`, `title`, `Content`, `author`, `date_published`, 
 
 CREATE TABLE `products` (
   `id` int UNSIGNED NOT NULL,
-  `code` varchar(100) NOT NULL,
-  `name` varchar(250) NOT NULL,
-  `description` text,
+  `code` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `name` varchar(250) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `description` mediumtext COLLATE utf8mb4_swedish_ci,
   `price` float(12,2) NOT NULL DEFAULT '0.00',
   `quantity` int NOT NULL,
-  `prodpic` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `prodpic` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `products`
@@ -301,11 +301,11 @@ INSERT INTO `products` (`id`, `code`, `name`, `description`, `price`, `quantity`
 CREATE TABLE `reportdonation` (
   `donation_id` int NOT NULL,
   `date` date NOT NULL,
-  `donor_name` varchar(255) NOT NULL,
-  `donation_type` varchar(255) NOT NULL,
-  `amount` varchar(255) NOT NULL,
-  `project_supported` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `donor_name` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `donation_type` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `amount` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `project_supported` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `reportdonation`
@@ -330,13 +330,13 @@ INSERT INTO `reportdonation` (`donation_id`, `date`, `donor_name`, `donation_typ
 
 CREATE TABLE `tblcontact` (
   `Id` int NOT NULL,
-  `Name` varchar(150) NOT NULL,
-  `Phone` varchar(13) NOT NULL,
-  `Email` varchar(150) NOT NULL,
+  `Name` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Phone` varchar(13) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Email` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
   `Enquiry_Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `Message` text NOT NULL,
-  `contact_status` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `Message` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `contact_status` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `tblcontact`
@@ -362,12 +362,12 @@ INSERT INTO `tblcontact` (`Id`, `Name`, `Phone`, `Email`, `Enquiry_Date`, `Messa
 
 CREATE TABLE `tblproduct` (
   `Id` int NOT NULL,
-  `ProdName` text NOT NULL,
+  `ProdName` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `Quantity` int NOT NULL,
-  `ProdPrice` varchar(150) NOT NULL,
-  `ProdDescription` text NOT NULL,
-  `ProdPic` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `ProdPrice` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `ProdDescription` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `ProdPic` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `tblproduct`
@@ -395,27 +395,27 @@ INSERT INTO `tblproduct` (`Id`, `ProdName`, `Quantity`, `ProdPrice`, `ProdDescri
 
 CREATE TABLE `tblscdetails` (
   `Id` int NOT NULL,
-  `lastname` varchar(150) NOT NULL,
-  `firstname` varchar(100) NOT NULL,
-  `middlename` varchar(100) NOT NULL,
-  `nickname` varchar(250) NOT NULL,
+  `lastname` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `firstname` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `middlename` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `nickname` varchar(250) COLLATE utf8mb4_swedish_ci NOT NULL,
   `DateBirth` date DEFAULT NULL,
-  `gender` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `marital_stat` varchar(100) NOT NULL,
-  `ContNum` varchar(20) DEFAULT NULL,
-  `ComAdd` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `ProfPic` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `EmergencyAdd` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `EmergencyContNum` varchar(20) DEFAULT NULL,
+  `gender` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `marital_stat` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `ContNum` varchar(20) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `ComAdd` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `ProfPic` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `EmergencyAdd` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `EmergencyContNum` varchar(20) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `RegDate` date NOT NULL,
-  `scstatus` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `scstatus` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `InputedDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `departuredate` text NOT NULL,
-  `reasonleft` text NOT NULL,
-  `datedeath` text NOT NULL,
-  `causedeath` text NOT NULL,
+  `departuredate` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `reasonleft` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `datedeath` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `causedeath` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `adminId` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `tblscdetails`
@@ -432,7 +432,8 @@ INSERT INTO `tblscdetails` (`Id`, `lastname`, `firstname`, `middlename`, `nickna
 (87, 'Marino', 'Michael', 'Manalo', 'Mikmik', '1951-01-03', 'Male', 'Single', '09123456789', 'Tagbungan, Baco, Oriental Mindoro', 'adan.jpg', 'Tagbungan, Baco, Oriental Mindoro<br>', '09123456789', '2024-05-09', 'Unarchive', '2024-05-09 12:48:56', '', '', '', '', 2),
 (93, 'pikachu', 'jjcknckk', 'kncknnc', 'kak,cjmkjcm', '1954-12-25', 'Female', 'Married', '09123456789', 'sfjsfniksjnk', '1716718667_c5ba22f280f49f5ab25a.jpg', 'sjnksnkvmn', '09123456789', '2024-05-19', 'Unarchive', '2024-05-19 09:20:39', '', '', '', '', 2),
 (94, 'adkadjdka', 'ksjcksj', 'kjcoskjc', 'akdjaodj', '1945-12-25', 'Female', 'Single', '09876543212', 'sjncsikjcsik', '1716362108_61c66708e0768c8b5108.jpg', 'sckscnskm', '09123456789', '2024-05-22', 'Deceased', '2024-05-22 15:15:08', '', '', '2024-05-26', 'tuberculosis', 2),
-(96, 'hncflskjvl', 'kjscskj', 'kjcsckjl', 'skjcsickj', '1942-12-25', 'Female', 'Married', '09876543212', 'shjcnjc', '1716445660_3a6024beca0943995377.jpg', 'mcnldkjcmdik', '09123456789', '2024-05-23', 'Left', '2024-05-23 14:27:40', '2024-05-23', 'hehehe', '', '', 2);
+(96, 'hncflskjvl', 'kjscskj', 'kjcsckjl', 'skjcsickj', '1942-12-25', 'Female', 'Married', '09876543212', 'shjcnjc', '1716445660_3a6024beca0943995377.jpg', 'mcnldkjcmdik', '09123456789', '2024-05-23', 'Left', '2024-05-23 14:27:40', '2024-05-23', 'hehehe', '', '', 2),
+(97, 'lkdmkd,mdk', 'kjd,mckc,jm', 'skjvdkvj', 'ooejfeijk', '1945-12-25', 'Male', 'Single', '09123456789', 'eckjwcojwic', '1718760076_23b4aa4a3fd5979e0d7e.jpg', 'ekcjekjmekjc,m', '09123456789', '2024-06-19', 'Deceased', '2024-06-19 09:21:16', '', '', '', '', 2);
 
 -- --------------------------------------------------------
 
@@ -443,8 +444,8 @@ INSERT INTO `tblscdetails` (`Id`, `lastname`, `firstname`, `middlename`, `nickna
 CREATE TABLE `time` (
   `Id` int NOT NULL,
   `Time` time NOT NULL,
-  `Status` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `Status` text COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `time`
@@ -463,13 +464,13 @@ INSERT INTO `time` (`Id`, `Time`, `Status`) VALUES
 
 CREATE TABLE `transactions` (
   `id` int UNSIGNED NOT NULL,
-  `code` varchar(100) NOT NULL,
-  `customer` varchar(250) NOT NULL,
+  `code` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `customer` varchar(250) COLLATE utf8mb4_swedish_ci NOT NULL,
   `total_amount` float(12,2) NOT NULL DEFAULT '0.00',
   `tendered` float(12,2) NOT NULL DEFAULT '0.00',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `transactions`
@@ -530,7 +531,7 @@ CREATE TABLE `transaction_items` (
   `quantity` int NOT NULL DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `transaction_items`
@@ -589,20 +590,20 @@ INSERT INTO `transaction_items` (`transaction_id`, `product_id`, `price`, `quant
 
 CREATE TABLE `user` (
   `userID` int NOT NULL,
-  `verification_token` text NOT NULL,
+  `verification_token` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `is_verified` tinyint(1) NOT NULL,
-  `LastName` varchar(150) NOT NULL,
-  `FirstName` varchar(150) NOT NULL,
-  `user_img` varchar(150) NOT NULL,
-  `Username` varchar(150) NOT NULL,
-  `ContactNo` varchar(50) NOT NULL,
-  `Email` varchar(150) NOT NULL,
-  `role` text NOT NULL,
+  `LastName` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `FirstName` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `user_img` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Username` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `ContactNo` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Email` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `role` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `birthday` date NOT NULL,
-  `Password` varchar(150) NOT NULL,
+  `Password` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
   `Created_At` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Update_At` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `user`
@@ -633,19 +634,19 @@ INSERT INTO `user` (`userID`, `verification_token`, `is_verified`, `LastName`, `
 --
 
 CREATE TABLE `userbooking` (
-  `lastname` varchar(255) NOT NULL,
-  `firstname` varchar(255) NOT NULL,
-  `middlename` varchar(255) NOT NULL,
-  `contactnum` varchar(13) NOT NULL,
-  `event` varchar(255) NOT NULL,
-  `prefferdate` varchar(150) NOT NULL,
-  `Time` text NOT NULL,
-  `equipment` varchar(255) NOT NULL,
-  `comments` varchar(255) NOT NULL,
+  `lastname` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `firstname` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `middlename` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `contactnum` varchar(13) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `event` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `prefferdate` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Time` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `equipment` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `comments` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `bookingId` int NOT NULL,
-  `status` varchar(159) NOT NULL,
+  `status` varchar(159) COLLATE utf8mb4_swedish_ci NOT NULL,
   `usersignsId` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `userbooking`
@@ -666,20 +667,20 @@ INSERT INTO `userbooking` (`lastname`, `firstname`, `middlename`, `contactnum`, 
 CREATE TABLE `userdonation` (
   `id` int NOT NULL,
   `usersignsId` int DEFAULT NULL,
-  `establishment` varchar(150) NOT NULL,
-  `lastname` varchar(250) NOT NULL,
-  `firstname` varchar(250) NOT NULL,
-  `middlename` varchar(250) NOT NULL,
+  `establishment` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `lastname` varchar(250) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `firstname` varchar(250) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `middlename` varchar(250) COLLATE utf8mb4_swedish_ci NOT NULL,
   `contactnum` bigint NOT NULL,
   `donationdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `cashDonation` float DEFAULT NULL,
   `cashCheck` float DEFAULT NULL,
-  `picture` varchar(250) NOT NULL,
-  `referencenum` varchar(50) NOT NULL,
-  `status` varchar(150) NOT NULL,
-  `message` text NOT NULL,
+  `picture` varchar(250) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `referencenum` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `message` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `mumosahapag` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `userdonation`
@@ -698,13 +699,13 @@ INSERT INTO `userdonation` (`id`, `usersignsId`, `establishment`, `lastname`, `f
 
 CREATE TABLE `usersigns` (
   `id` int NOT NULL,
-  `LastName` text NOT NULL,
-  `FirstName` text NOT NULL,
-  `Username` text NOT NULL,
-  `Email` text NOT NULL,
-  `ContactNo` varchar(13) NOT NULL,
-  `Password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `LastName` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `FirstName` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Username` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Email` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `ContactNo` varchar(13) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Password` text COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Dumping data for table `usersigns`
@@ -912,7 +913,7 @@ ALTER TABLE `tblproduct`
 -- AUTO_INCREMENT for table `tblscdetails`
 --
 ALTER TABLE `tblscdetails`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `time`
