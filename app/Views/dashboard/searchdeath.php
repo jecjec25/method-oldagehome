@@ -123,7 +123,7 @@
                                     Table Report of Deceased Elders of Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print"><a class="btn btn-primary"
-                                href="<?= base_url('getReportsDeath/' .$fromdate. '/' . $todate ) ?>" id="PrintButton">Print</a>
+                                href="<?= base_url('previewDeath/' .$fromdate. '/' . $todate ) ?>" id="PrintButton">Preview</a>
                                 </div>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-striped project-orders-table" id="tblscdetails">

@@ -142,6 +142,12 @@ $routes->post('/updatetoAccept', 'FeedbackController::updatetoAccept');
 $routes->post('updatetoAcceptAnn', 'FeedbackController::updatetoAcceptAnn');
 
 $routes->get('previewElders/(:any)', 'Fullcalendar::previewElders/$1');
+$routes->get('previewLeft/(:any)/(:any)', 'Fullcalendar::previewLeft/$1/$2');
+$routes->get('previewDeath/(:any)/(:any)', 'Fullcalendar::previewDeath/$1/$2');
+$routes->get('previewEvent/(:any)/(:any)', 'Fullcalendar::previewEvent/$1/$2');
+$routes->get('previewMonetary/(:any)/(:any)', 'Fullcalendar::previewMonetary/$1/$2');
+$routes->get('previewLeft', 'Fullcalendar::previewLeft2');
+$routes->get('previewDeath', 'Fullcalendar::previewDeath2');
 
 }
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
@@ -338,3 +344,4 @@ $routes->match(['get', 'post'], 'EditMonetary/(:any)', 'UserIdonateController::E
 $routes->get('reportMonetary', 'UserIdonateController::viewReportMonetary');
 $routes->get('searchmonetary','UserIdonateController::searchMonetary');
 $routes->match(['get', 'post'], 'getReportsMonatary/(:any)/(:any)', 'NewController::getReportsMonatary/$1/$2');
+

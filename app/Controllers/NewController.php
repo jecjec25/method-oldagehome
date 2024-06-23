@@ -351,69 +351,82 @@ class NewController extends BaseController
         $html = '
         <html>
         <head>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                }
-                .header {
-                    text-align: center;
-                    position: relative;
-                }
-                .header img {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 120px;
-                }
-                .header h5 {
-                    margin: 0;
-                }
-                .title {
-                    text-align: center;
-                }
-                .title h3, .title h4 {
-                    margin: 0;
-                }
-                .report-info {
-                    margin: 20px 0;
-                }
-                .table {
-                    width: 100%;
-                    border-collapse: collapse;
-                }
-                .table th, .table td {
-                    border: 1px solid black;
-                    padding: 8px;
-                    text-align: left;
-                }
-                .summary {
-                    font-weight: 600;
-                    margin-top: 20px;
-                }
-                .footer {
-                    margin-top: 40px;
-                    position: relative;
-                }
-                .footer .signature-group {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 50px;
-                }
-                .footer .signature-section {
-                    width: 20%;
-                    text-align: center;
-                }
-                .footer .signature-section p {
-                    margin: 5px 0;
-                }
-                .footer .signature-line {
-                    border-top: 1px solid black;
-                    margin-top: 40px;
-                    margin-bottom: 5px;
-                }
-            </style>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 120px;
+        }
+        .header h5 {
+            margin: 0;
+        }
+        .title {
+            text-align: center;
+        }
+        .title h3, .title h4 {
+            margin: 0;
+        }
+        .report-info {
+            margin: 20px 0;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            font-size: 10px;
+        }
+        .summary {
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 40px;
+        }
+        .footer .signature-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .footer .signature-section {
+            width: 20%;
+            text-align: center;
+        }
+        .footer .signature-section p {
+            margin: 5px 0;
+        }
+        .footer .signature-line {
+            border-top: 1px solid black;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+        
+        /* Add this CSS style for table cells */
+            .table td {
+                max-width: 150px; /* Adjust as needed */
+                overflow: hidden;
+                text-overflow: ellipsis;
+             
+            }
+        
+            .table th, .table td {
+                         font-size: 15px; /* Reduce font size for better fit */
+            }
+        
+        </style>
         </head>
         <body>
             <div class="header">
@@ -449,8 +462,8 @@ class NewController extends BaseController
                         <th>Contact Number</th>
                         <th>Address</th>
                         <th>Registration Date</th>
-                        <th>Date of Death</th>
-                        <th>Cause of Death</th>
+                        <th>Departure Date</th>
+                        <th>Reason</th>
                     </tr>
                 </thead>
                 <tbody>';
@@ -467,15 +480,15 @@ class NewController extends BaseController
                 <td>' . $reg['ContNum'] . '</td>
                 <td>' . $reg['EmergencyAdd'] . '</td>
                 <td>' . $reg['RegDate'] . '</td>
-                <td>' . $reg['datedeath'] . '</td>
-                <td>' . $reg['causedeath'] . '</td>
+                <td>' . $reg['departuredate'] . '</td>
+                <td>' . $reg['reasonleft'] . '</td>
             </tr>';
         }
 
         $html .= '</tbody></table>
 
         <p class="summary">Summary</p>
-        <p>During the reporting period, a total of '. $count.' elderly individuals passed away in the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
 
         <div class="footer">
             <div class="signature-group">
@@ -484,7 +497,7 @@ class NewController extends BaseController
                         <strong>Report Generated By:</strong>
                         <div class="signature-line"></div>
                         <br>HENRY A. DACANAY III
-                        <strong><br>ADMIN STAFF<strong>
+                        <strong><br>ADMIN STAFF</strong>
                     </p>
                 </div>
                 <br>
@@ -493,7 +506,7 @@ class NewController extends BaseController
                         <strong>Approved By:</strong>
                         <div class="signature-line"></div>
                         <br>LITO C. VERGARA
-                        <strong><br>ADMINISTRATOR<strong>
+                        <strong><br>ADMINISTRATOR</strong>
                     </p>
                 </div>
             </div>

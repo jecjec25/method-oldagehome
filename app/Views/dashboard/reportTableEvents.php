@@ -10,90 +10,89 @@
     <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
     <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
     <script type="text/javascript">
-    bkLib.onDomLoaded(nicEditors.allTextAreas);
+        bkLib.onDomLoaded(nicEditors.allTextAreas);
     </script>
     <style>
-    .button-print {
-        float: left;
-    }
-
-    .table {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .table-striped tbody>tr:nth-child(odd)>td,
-    .table-striped tbody>tr:nth-child(odd)>th {
-        background-color: #f9f9f9;
-    }
-
-    @media print {
-
-        #PrintButton,
-        .navbar-breadcrumb,
-        .sidebar,
-        .header {
-            display: none !important;
+        .button-print {
+            float: right;
+            margin-right: 20px;
         }
 
-        .content-wrapper {
-            width: auto !important;
-            margin: 0 !important;
-            padding: 0 !important;
+        .button-print a {
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
         }
 
-        .main-panel {
-            width: 100% !important;
+        .button-print a:hover {
+            background-color: #0056b3;
         }
-    }
 
-    @page {
-        size: auto;
-        /* auto is the initial value */
-        margin: 0;
-        /* this affects the margin in the printer settings */
+        .table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
+        .table-striped tbody>tr:nth-child(odd)>td,
+        .table-striped tbody>tr:nth-child(odd)>th {
+            background-color: #f9f9f9;
+        }
 
-    }
+        @media print {
+            #PrintButton,
+            .navbar-breadcrumb,
+            .sidebar,
+            .header {
+                display: none !important;
+            }
 
-    .button-print {
-        text-align: right;
+            .content-wrapper {
+                width: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
 
-    }
+            .main-panel {
+                width: 100% !important;
+            }
+        }
 
-    .button-print button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+        @page {
+            size: auto;
+            /* auto is the initial value */
+            margin: 0;
+            /* this affects the margin in the printer settings */
+        }
 
-    .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007BFF; /* Blue background */
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            /* Blue background */
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    .btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    }
-
+        .btn:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container-scroller">
-    <?php include_once('includes/header.php') ?>
+        <?php include_once('includes/header.php') ?>
         <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
             &nbsp;
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
@@ -118,16 +117,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Table Report of Events</h4>
-                                <p class="card-description" style="padding-left: 20px;">
-                                    Table Report of Events of Aruga-Kapatid Foundation Incorporated
-                                </p>
-                                <div class="button-print"><a
-                                        href="<?= base_url('/generateEventReport/' . $regdate . '/' . $todate) ?>"
-                                        id="PrintButton">Print</a>
-                                </div>
-                                <div class="table-responsive pt-3">
-                                    <table class="table table-striped project-orders-table" id="acceptbooking">
+                                <div class="card-body">
+                                    <h4 class="card-title">Table Report of Events</h4>
+                                    <p class="card-description">
+                                        Table Report of Events of Aruga-Kapatid Foundation Incorporated
+                                    </p>
+                                    <div class="button-print">
+                                        <a href="<?= base_url('/previewEvent/' . $regdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
+                                    </div>
+                                    <div class="table-responsive pt-3">
                                         <table class="table table-striped project-orders-table" id="acceptbooking">
                                             <thead>
                                                 <tr>
@@ -172,7 +170,7 @@
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>
-                                    </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -184,14 +182,16 @@
                 <?php include_once('includes/footer.php');?>
             </div>
         </div>
-        <script src="login/vendors/js/vendor.bundle.base.js"></script>
-        <script src="login/vendors/chart.js/Chart.min.js"></script>
-        <script src="login/js/off-canvas.js"></script>
-        <script src="login/js/hoverable-collapse.js"></script>
-        <script src="login/js/template.js"></script>
-        <script src="login/js/settings.js"></script>
-        <script src="login/js/todolist.js"></script>
-        <script src="login/js/dashboard.js"></script>
+    </div>
+
+    <script src="login/vendors/js/vendor.bundle.base.js"></script>
+    <script src="login/vendors/chart.js/Chart.min.js"></script>
+    <script src="login/js/off-canvas.js"></script>
+    <script src="login/js/hoverable-collapse.js"></script>
+    <script src="login/js/template.js"></script>
+    <script src="login/js/settings.js"></script>
+    <script src="login/js/todolist.js"></script>
+    <script src="login/js/dashboard.js"></script>
 </body>
 
 </html>

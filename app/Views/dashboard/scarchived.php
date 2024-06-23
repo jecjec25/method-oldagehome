@@ -17,6 +17,7 @@
 <style>
 .button-print {
     float: left;
+    margin-right:10px;
 }
 
 .table {
@@ -124,7 +125,7 @@
                                     Elders who left Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print"><a class="btn btn-primary"
-                                        href="<?= base_url('generateElderlyLeft') ?>" id="PrintButton">Print</a>
+                                        href="<?= base_url('previewLeft') ?>" id="PrintButton">Preview</a>
                                 </div>
 
 

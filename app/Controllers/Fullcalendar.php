@@ -7,16 +7,19 @@ use App\Models\UserbookingModel;
 use App\Models\BookingModel;
 use App\Models\MainModel;
 use App\Models\AcceptbookingModel;
+use App\Models\UserIdonateModel;
 use Dompdf\Dompdf;  
 class Fullcalendar extends BaseController
 {
     private $userbooking;
     private $booking;
+    private $uidm;
     private $book;
     private $main;
     private $acceptev;
     public function __construct()
     {
+        $this->uidm = new userIdonateModel();
         $this->userbooking = new UserbookingModel();
         $this->booking = new UserbookingModel();
         $this->book = new BookingModel();
@@ -365,6 +368,138 @@ class Fullcalendar extends BaseController
         return view('dashboard/preview', $data);
     }
 
+    public function previewleft2()
+    {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+        $closestLowerRecord = $this->main
+        ->where('scstatus', 'Left')
+        ->orderBy('RegDate', 'ASC')
+        ->first(); 
+        $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A'; 
+        // Fetch data from the model
+        $data = [
+            'booking' => $this->main->findAll(), // Fetching all data from the model
+            'reg' => $this->main
+                            ->where('scstatus', 'Left')
+                            ->find(), // Fetching data where RegistrationDate falls between $searchRes and $search
+            'closestLowerRecord' => $closestLowerDate,    
+            'count' => $this->main
+            ->where('scstatus', 'Left')
+            ->countAllResults(),
+            'currentDate' => date('Y-m-d'),
+           
+        ];
+
+        return view('dashboard/previewLeft2', $data);
+    }
+
+
+    public function previewLeft($search, $tosearch)
+    {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+        $closestLowerRecord = $this->main->where('RegDate <=', $search)
+            ->where('scstatus', 'Left')
+            ->orderBy('RegDate', 'ASC')
+            ->first();  // Getting the record with the closest lower date
+        // Fetch data from the model
+        $data = [
+            'booking' => $this->main->findAll(), // Fetching all data from the model
+            'reg' => $this->main->where('departuredate >=', $search)->where('departuredate <=', $tosearch)
+                                 ->where('scstatus', 'Left')
+                                 ->find(), // Fetching data where RegistrationDate falls between $searchRes and $search
+            
+            'closestLowerDate' =>  $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A',
+            'count' => $this->main->where('departuredate >=', $search)->where('departuredate <=', $tosearch)
+            ->where('scstatus', 'Left')
+            ->countAllResults(),
+            'currentDate' => date('Y-m-d'),
+            'search' => $search,
+            'tosearch' => $tosearch
+        ];
+
+        return view('dashboard/previewLeft', $data);
+    }
+
+    public function previewDeath2()
+    {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+        $closestLowerRecord = $this->main
+            ->where('scstatus', 'Deceased')
+            ->orderBy('RegDate', 'ASC')
+            ->first();  // Getting the record with the closest lower date
+        // Fetch data from the model
+        $data = [
+            'booking' => $this->main->findAll(), // Fetching all data from the model
+            'reg' => $this->main->where('scstatus', 'Deceased')->findAll(),
+            'closestLowerDate' =>  $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A',
+            'count' => $this->main->where('scstatus', 'Deceased')
+            ->countAllResults(),
+            'currentDate' => date('Y-m-d'),
+        ];
+
+        return view('dashboard/previewDeath2', $data);
+    }
+
+    public function previewDeath($search, $tosearch)
+    {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+        $closestLowerRecord = $this->main->where('datedeath <=', $search)
+            ->where('scstatus', 'Deceased')
+            ->orderBy('RegDate', 'ASC')
+            ->first();  // Getting the record with the closest lower date
+        // Fetch data from the model
+        $data = [
+            'booking' => $this->main->findAll(), // Fetching all data from the model
+            'reg' => $this->main->where('scstatus', 'Deceased')->where('datedeath >=', $search)->where('datedeath <=', $tosearch)->findAll(),
+            'closestLowerDate' =>  $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A',
+            'count' => $this->main->where('scstatus', 'Deceased')->where('datedeath >=', $search)->where('datedeath <=', $tosearch)
+            ->countAllResults(),
+            'currentDate' => date('Y-m-d'),
+            'search' => $search,
+            'tosearch' => $tosearch
+        ];
+
+        return view('dashboard/previewDeath', $data);
+    }
+
+
+
     public function generateEventReport($searchRevent, $searchR)
     {
         set_time_limit(120);
@@ -412,10 +547,12 @@ class Fullcalendar extends BaseController
                     .header {
                         text-align: center;
                         margin-bottom: 20px;
+                        position: relative;
                     }
                     .header img {
-                        display: block;
-                        margin: 0 auto 10px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
                         height: 100px;
                     }
                     .header h5, .header h4 {
@@ -553,6 +690,7 @@ class Fullcalendar extends BaseController
         // Stop CodeIgniter from further processing (optional, but good practice)
         exit();
     }
+    
      
     
 
@@ -658,6 +796,121 @@ class Fullcalendar extends BaseController
             'countNotifs' => $this->booking->where('status', 'pending')->countAllResults()
     ];
     return view('dashboard/reportevent', $data);
+}
+public function previewMonetary($fromdate, $todate)
+{
+    set_time_limit(120);
+        
+    // Use local file path for the image
+    $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+    if (file_exists($imagePath)) {
+        $imageData = base64_encode(file_get_contents($imagePath));
+        $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+    } else {
+        die('Image not found.');
+    }
+    
+   
+    $totals = $this->uidm
+    ->select('SUM(cashDonation) as total_cash_donation, SUM(cashCheck) as total_cash_check, SUM(mumosahapag) as total_mumosahapag')
+    ->where('DATE(donationdate) >=', $fromdate)
+    ->where('DATE(donationdate) <=', $todate)
+    ->first();
+
+    $count = $this->uidm
+                  ->where('DATE(donationdate) >=', $fromdate)
+                  ->where('DATE(donationdate) <=', $todate)
+                  ->countAllResults();
+
+    $data = [
+        'currentDate' => date('Y-m-d'),
+        'totals' => $totals,
+        'count' => $count,
+        'fromdate' => $fromdate,
+        'todate'   => $todate, 
+        'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+
+            'Monetary' =>  $this->uidm->select('user.userID, user.Email, 
+            userdonation.id, userdonation.usersignsId, userdonation.lastname, userdonation.firstname, userdonation.mumosahapag, 
+            userdonation.middlename, userdonation.contactnum, userdonation.donationdate, userdonation.establishment, userdonation.cashDonation,userdonation.cashCheck, 
+            userdonation.picture, userdonation.referencenum, userdonation.message,userdonation.status')
+            ->join('user', 'user.userID = userdonation.usersignsId')->where('DATE(donationdate) >=', $fromdate)
+                                     ->where('DATE(donationdate) <=', $todate)
+                                     ->findAll(),
+    ];
+
+    return view('dashboard/previewMonetary', $data);
+
+}
+
+public function previewEvent($fromDate, $toDate)
+{
+    set_time_limit(120);
+    
+    // Use local file path for the image
+    $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+    if (file_exists($imagePath)) {
+        $imageData = base64_encode(file_get_contents($imagePath));
+        $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+    } else {
+        die('Image not found.');
+    }
+    
+    // Format the dates
+    $fromDate = date('Y-m-d', strtotime($fromDate));
+    $toDate = date('Y-m-d', strtotime($toDate));
+    
+    // Fetch necessary data
+    $notif = $this->booking->where('status', 'pending')->first();
+    $getnotif = $this->booking
+        ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+            userbooking.middlename, userbooking.contactnum, userbooking.event, 
+            userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+            userbooking.comments, userbooking.status, userbooking.usersignsId, 
+            user.userID, user.LastName, user.FirstName')
+        ->join('user', 'user.userID = userbooking.usersignsId')
+        ->where('userbooking.status', 'Accepted')
+        ->orWhere('userbooking.status', 'Pending')
+        ->findAll();
+    
+    $countNotifs = $this->booking->where('status', 'pending')->countAllResults();
+
+    // Fetch accepted events between the specified dates
+    $acceptevData = $this->acceptev
+        ->where('prefferdate >=', $fromDate)
+        ->where('prefferdate <=', $toDate)
+        ->findAll();
+
+    $totalAmountRaised = 0;
+    foreach ($acceptevData as $acceptev) {
+        $totalAmountRaised += $acceptev['amount_raised'];
+    }
+    
+    $data = [
+        'prefdate' => $acceptevData,
+        'notif' => $notif,
+        'getnotif' => $getnotif,
+        'countNotifs' => $countNotifs,
+        'acceptev' => $acceptevData,
+        'search' => $fromDate,
+        'currentDate' => date('Y-m-d'),
+        'tosearch' => $toDate,
+        'totalAmountRaised' => $totalAmountRaised,
+        'imageSrc' => $imageSrc  // Add imageSrc to the data array
+    ];
+
+    return view('dashboard/previewEvent', $data);
 }
 
 public function searchRevent()
