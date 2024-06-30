@@ -1,95 +1,109 @@
+/* Basic styling for demonstration purposes */
+body {
+    font-family: Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+    padding: 50px;
+    background-color: #e3e6f1;
+}
 
-    /* Basic styling for demonstration purposes */
-    body {
-        background-image: url(/aslider/bgc.jpg);
-        font-family: Arial, sans-serif;
-        font-size:large;
-        font-weight: bold;
-        margin: 0;
-        padding: 50px;
-    }
-    .container {
-        background-color: rgb(235, 227, 227); /* White background */
-        text-indent: 50px;
-        line-height: 0.7;
-        width: 65%;
-        margin-left: 16.5%;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
-    }
-    h2 {
-        margin-top: 0px; /* Remove default margin from heading */
-        line-height: 1.5;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-    .mean{
-        line-height: 0;
-    }
-    .dist{
-        margin-top: 5.0em;
-    }
-    .sinc{
-        margin-left: 135px;
-        margin-right: 0;
-        margin-top: 2.0em;
-        width:500px; 
-        height:500px;
-    }
-    ul li {
-        margin-bottom: 20px;
-    }
-    .container ul li h2{
-        font-size: 2.3em;
-        font-weight: 600;
-        text-align: center;
-        padding: auto;
-    }
-    .container ul li h4{
-        font-size: 1.5em;
-        font-weight: 600;
-        text-align: center;
-        padding: auto;
-    }
-    .container ul li h3{
-        font-size: 3.0em;
-        font-weight: bolder;
-        text-align: center;
-    }
-    .container ul li p{
-        font-size: larger;
-        font-weight: bolder;
-        padding-top: 0px;
-    }
-    .container ul li a{
-        text-decoration: none;
-        background-color: #0056b3;
-        color: #e3e6f1; /* Text color */
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: bolder;
-        border: 1px solid transparent;
-        transition: background-color 0.3s;
-    }
-    .btn {
-        padding: 10px 10px;
-        background-color: #007bff; /* Blue color */
-        color: #fff; /* White text color */
-        text-decoration: none; /* Remove underline */
-        border: none; /* Remove border */
-        border-radius: 5px;
-        border: 1px solid transparent; /* Remove border */
-        transition: 0.3s ease; /* Smooth transition */
-    }
-    .btn:hover {
-        background-color: #054f20; /* Darker blue color on hover */
-        color: #fff;
-		border-color: #fff;
-    }
-    
+.container {
+    background-color: white; /* White background */
+    text-indent: 50px;
+    line-height: 0.7;
+    width: 65%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Soft shadow effect */
+}
+
+h2 {
+    margin-top: 0px; /* Remove default margin from heading */
+    line-height: 1.5;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mean {
+    line-height: 0;
+}
+
+.dist {
+    margin-top: 5.0em;
+}
+
+.sinc {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.0em;
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
+}
+
+ul li {
+    margin-bottom: 20px;
+}
+
+.container ul li h2 {
+    font-size: 2.3em;
+    font-weight: 600;
+    text-align: center;
+    padding: auto;
+}
+
+.container ul li h4 {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+    padding: auto;
+}
+
+.container ul li h3 {
+    font-size: 3.0em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.container ul li p {
+    font-size: larger;
+    font-weight: bolder;
+    padding-top: 0px;
+}
+
+.container ul li a {
+    text-decoration: none;
+    background-color: #0056b3;
+    color: #e3e6f1; /* Text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bolder;
+    border: 1px solid transparent;
+    transition: background-color 0.3s;
+}
+
+.btn {
+    padding: 10px 10px;
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 5px;
+    border: 1px solid transparent; /* Remove border */
+    transition: 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #3234d5; /* Darker blue color on hover */
+    color: #fff;
+    border-color: #fff;
+}
+
 a.button {
     padding: 10px 20px;
     background-color: #f23dd4; /* Button color */
@@ -98,10 +112,108 @@ a.button {
     border-radius: 5px;
     border: 1px solid transparent; /* Remove border */
     transition: background-color 0.3s;
+}
+
+a.button:hover {
+    background-color: #3e41f7; /* Darker blue color on hover */
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .container {
+        width: 80%;
     }
 
-    a.button:hover {
-        background-color: #3e41f7; /* Darker blue color on hover */
-        color: #fff;
-		border-color: #fff;
+    h2 {
+        font-size: 1.8em;
     }
+
+    .container ul li h2 {
+        font-size: 2em;
+    }
+
+    .container ul li h4 {
+        font-size: 1.3em;
+    }
+
+    .container ul li h3 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .container ul li h2 {
+        font-size: 1.8em;
+    }
+
+    .container ul li h4 {
+        font-size: 1.2em;
+    }
+
+    .container ul li h3 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .container ul li h2 {
+        font-size: 1.6em;
+    }
+
+    .container ul li h4 {
+        font-size: 1.1em;
+    }
+
+    .container ul li h3 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .container ul li h2 {
+        font-size: 1.4em;
+    }
+
+    .container ul li h4 {
+        font-size: 1em;
+    }
+
+    .container ul li h3 {
+        font-size: 1.8em;
+    }
+}

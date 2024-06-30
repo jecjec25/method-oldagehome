@@ -4,10 +4,11 @@
 	<br>
 		<div style="display:block;margin-left:auto;margin-right:auto;width:30%">
 			<div class="person" style="text-align: center;">
-				<img src="images/PADS.jpg" style="width: 100px;height: auto;">
-				<p style="color:black;font-size:larger;font-weight:bolder">REV. FR. NESTOR J. ADALIA</p>
+				<img src="" style="width: 100px;height: auto;">
+				<p style="color:black;font-size:larger;font-weight:bolder">Rev. Fr. ANDY PETER M. LUBI</p>
 				<p style="color:black;font-size:large;font-weight:bold">Apostolic Administrator</p>
 			</div>
+			<br>
 		</div>
 			<div class="row" style="padding-left: 300px">
 				<div class="column" style="float: left;width: 30%; padding:5px; text-align: center;">

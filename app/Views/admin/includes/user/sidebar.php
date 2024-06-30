@@ -14,23 +14,23 @@ body {
 }
 
 .notification-button {
-    background-color:  #0056b3;
+    background-color: #0056b3;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
-    margin-top:300px;
-    margin-right:130px;
     position: absolute;
+    margin-top: 300px;
+    margin-right: 130px;
 }
 
 .notification-button #notification-count {
     background-color: red;
     color: white;
     font-size: 20px;
-    border-radius:30px;
+    border-radius: 30px;
     position: absolute;
     top: -25px;
     right: -1px;
@@ -64,9 +64,9 @@ body {
     background-color: #f1f1f1; /* Highlight color */
 }
 
-.dropdown  .helloDrop li a {
+.dropdown .helloDrop li a {
     color: black; /* Set the font color to black */
-    align:left;
+    align: left;
 }
 
 .top-nav ul li a:hover,
@@ -99,12 +99,84 @@ body {
 .dropdown-menu li:hover {
     background-color: #f1f1f1;
 }
-b{
-  font-size: .2em;
+
+b {
+    font-size: .2em;
 }
+
 .dropdown.open .dropdown-menu {
     display: block;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .notification-button {
+        margin-top: 150px;
+        margin-right: 65px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .notification-button #notification-count {
+        font-size: 18px;
+    }
+
+    .notification-dropdown {
+        min-width: 160px;
+        top: 40px;
+    }
+
+    .notification-item {
+        padding: 8px 12px;
+    }
+
+    .top-nav ul li a {
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        min-width: 140px;
+    }
+
+    .dropdown-menu li {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notification-button {
+        margin-top: 100px;
+        margin-right: 50px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .notification-button #notification-count {
+        font-size: 16px;
+    }
+
+    .notification-dropdown {
+        min-width: 120px;
+        top: 30px;
+    }
+
+    .notification-item {
+        padding: 6px 8px;
+    }
+
+    .top-nav ul li a {
+        font-size: 12px;
+    }
+
+    .dropdown-menu {
+        min-width: 120px;
+    }
+
+    .dropdown-menu li {
+        padding: 8px 10px;
+    }
+}
+
 </style>
 <body>
 <div class="strip"> </div>
