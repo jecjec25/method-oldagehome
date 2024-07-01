@@ -82,7 +82,7 @@ $routes->get('/edit/(:num)', 'NewController::edit/$1');
 $routes->get('/show', 'NewController::show');
 $routes->post('/saved', 'NewController::saved');
 
-if(session()->get('role') == 'Admin' || session()->get('role') == 'MainAdmin'){
+if(session()->get('role') == 'Admin' || session()->get('role') == 'MainAdmin' && session()->get('is_verified') == 1){
 $routes->get('/delete/(:num)', 'HomeController::delete/$1');
 $routes->get('/withDeleted', 'NewController::withDeleted');
 $routes->get('/adddetails', 'ViewController::adddetails');

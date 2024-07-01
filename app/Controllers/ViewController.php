@@ -11,6 +11,9 @@ use App\Models\EventsModel;
 use App\Models\AnnouncementModel;
 use App\Models\UserbookingModel;
 use App\Models\FeedbackModel;
+use App\Models\ProdImgModel;
+use App\Models\VMModel;
+use App\Models\OrganizerModel;
 
 class ViewController extends BaseController
 {
@@ -21,6 +24,9 @@ class ViewController extends BaseController
     private $events;
     private $announce;
     private $userbooking;
+    private $prodImg;
+    private $Vm;
+    private $org;
 
     public function example(){
         return view('admin/example');
@@ -36,12 +42,20 @@ class ViewController extends BaseController
         $this->events = new EventsModel();
         $this->announce = new AnnouncementModel();
         $this->userbooking = new UserbookingModel();
+        $this->prodImg = new ProdImgModel();
+        $this->Vm = new VMModel();
+        $this->org = new OrganizerModel();
 
         helper(['form']);
     }
+
     public function home()
     {
-        return view('admin/home');
+        $data = [
+            'home' => $this->prodImg->where('other', 'homepage')->findAll(),
+            'gallery' => $this->prodImg->where('other', 'gallery')->findAll(),
+        ];
+        return view('admin/home', $data);
     }
     public function contact()
     {
@@ -53,7 +67,11 @@ class ViewController extends BaseController
     }
     public function about()
     {
-        return view('admin/about');
+        $data = [
+            'VM' => $this->Vm->findAll(),
+            'organization' => $this->org->findAll(),
+        ];
+        return view('admin/about', $data);
     }
     public function rules()
     {
@@ -61,7 +79,6 @@ class ViewController extends BaseController
     }
     public function service()
     {
-        
         return view('admin/service');
     }
     public function searchs()
@@ -206,7 +223,9 @@ class ViewController extends BaseController
                 ->where('userbooking.status', 'Accepted')
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'prodimg' => $this->prodImg->where('image !=', 'bracelet2.jpg')->where('type', 'prod')->findAll(),
+            'prods' => $this->prodImg->where('image', 'bracelet2.jpg')->where('type', 'prod')->first()
         ];
         return view('admin/products', $data);  
     }

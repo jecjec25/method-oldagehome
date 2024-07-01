@@ -114,8 +114,9 @@ class SignupController extends BaseController
             if ($image && $image->isValid() && !$image->hasMoved()) 
             {
                 $myImage = $image->getRandomName();
-    
+                $verificationToken = bin2hex(random_bytes(16));
                 $image->move($imagePath . '/upload/user_images/',  $myImage);
+
             $data = [
                 'user_img' => $image,
                 'user_img' => $myImage,
@@ -126,9 +127,12 @@ class SignupController extends BaseController
                 'ContactNo'    => $this->request->getVar('ContactNumber'),
                 'role'         => 'Admin',
                 'birthday'    => $this->request->getVar('birthday'),
+                'verification_token' => $verificationToken,
                 'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
             ];
             $userModel->save($data);
+            $this->sendVerificationEmail($this->request->getVar('Email'), $verificationToken);
+
             session()->setFlashdata('success', 'Saved successfully. You can now signin');
             return redirect()->to('viewAdminRegister')->with('msg', 'You have Successfully Registered A new account');
             }

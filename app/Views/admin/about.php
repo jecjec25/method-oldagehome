@@ -38,28 +38,26 @@
 	 		<h3>ABOUT US</h3>
 	 		<div class="about-part">
 		 		<div class="about-pic">
-		 			<img class="img-responsive" src="aruga_gallery/g21.jpg" alt="" />
+				 <?php foreach($VM as $VMitems):?>
+		 			<img class="img-responsive" src="aruga_gallery/<?= $VMitems['img']?>" alt="" />
+					 <?php endforeach;?>
 		 		</div>
+
 		 		<div class="about-textside">
 					
 					<h4>VISION</h4>
-					<p>A mission-oriented church-based organization composed of highly motivated volunteer lay persons, religious and clergy, moved by the charity of Christ for the poor, and committed to the ideals and spirits of the Hapag ng Pamilyang Mindoreno.</p>
+					<?php foreach($VM as $VMitems):?>
+					<p><?= $VMitems['Vision']?></p>
+					<?php endforeach;?>
 					<h4>CORE VALUES</h4>
-					<p>We fully adopt the core values of Hapag ng Pamilyang Mindoreno</p>
-					<p> - Kapatiran <br>
-						- Damayan <br>
-						- Tapungan  <br>
-						- Saknungan
-					</p>
+					<?php foreach($VM as $VMitems):?>
+						<?= $VMitems['CoreValues']?>
+					<?php endforeach;?>
 		</div>
 				<h4>MISSION</h4>
-					<p>Under the insperation of the Holy Spirit, and the following the prudent </p> <p> direction of the competent authority of the Apostolic Vicariate of Calapan, we,</p> <p> who are members of the Aruga Kapatid Foundation, Inc. commit ourselves to:</p>
-					<p>1. Live out evangelical poverty</p>
-					<p>2. Make Bahay-Ampunan in Managpi, Calapan City a home where the sick and the elderly can experience love and family spirit.</p>
-					<p>3. Promote the welfare and pastoral care of the poorest of the poor-the sick, the abandoned, the elderly, the deprived  be they at home or in institution.</p>
-					<p>4. Make linkages with NGO's, government offices, the church entitles to respond more adequately to the needs of the poor.</p>
-					<p>5. Promote social awareness among church groups, schools, and government entities regarding the different situations of the poor at the AVC.</p>
-					<p>6. Build up funds to support the program of AKFI.</p>
+				<?php foreach($VM as $VMitems):?>
+					<?= $VMitems['Mision']?>
+					<?php endforeach;?>
 					<div class="clearfix"> </div>  
 	 		</div>
 			 <?php include_once('includes/organization.php');?>

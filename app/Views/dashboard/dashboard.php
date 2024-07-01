@@ -48,22 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <canvas id="donationsByMonthChart" style="height:100px"></canvas>
-                                    <div class="chart-description">Total Donations by Month</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <canvas id="donationTypesChart" style="height:100px"></canvas>
-                                    <div class="chart-description">Donation Types</div>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
@@ -281,112 +266,6 @@
                 });
             })
             .catch(error => console.error('Error fetching data:', error));
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('/donation/getDonations')
-                .then(response => response.json())
-                .then(donations => {
-                    // Prepare data for the bar chart (Total Donations by Month)
-                    const donationAmountsByMonth = {};
-                    const donationTypes = {};
-
-                    donations.forEach(donation => {
-                        const date = new Date(donation.date);
-                        const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
-
-                        if (!donationAmountsByMonth[monthYear]) {
-                            donationAmountsByMonth[monthYear] = 0;
-                        }
-                        donationAmountsByMonth[monthYear] += parseFloat(donation.amount) || 0;
-
-                        // Prepare data for the pie chart (Donation Types)
-                        if (!donationTypes[donation.donation_type]) {
-                            donationTypes[donation.donation_type] = 0;
-                        }
-                        donationTypes[donation.donation_type] += parseFloat(donation.amount) || 0;
-                    });
-
-                    const months = Object.keys(donationAmountsByMonth);
-                    const totalDonations = Object.values(donationAmountsByMonth);
-
-                    const donationTypeLabels = Object.keys(donationTypes);
-                    const donationTypeAmounts = Object.values(donationTypes);
-
-                    // Bar Chart for Total Donations by Month
-                    const ctxByMonth = document.getElementById('donationsByMonthChart').getContext('2d');
-                    new Chart(ctxByMonth, {
-                        type: 'bar',
-                        data: {
-                            labels: months,
-                            datasets: [{
-                                label: 'Total Donations by Month',
-                                data: totalDonations,
-                                backgroundColor: 'rgba(255, 99, 132, 0.8)',
-                                borderColor: 'rgba(255, 99, 132, 1)',
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            plugins: {
-                                title: {
-                                    display: true,
-                                    text: 'Donations by Month'
-                                }
-                            },
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                    });
-
-                    // Pie Chart for Donation Types
-                    const ctxByType = document.getElementById('donationTypesChart').getContext('2d');
-                    new Chart(ctxByType, {
-                        type: 'pie',
-                        data: {
-                            labels: donationTypeLabels,
-                            datasets: [{
-                                label: 'Donation Types',
-                                data: donationTypeAmounts,
-                                backgroundColor: [
-                                    'rgba(153, 102, 255, 0.8)',
-                                    'rgba(255, 159, 64, 0.8)',
-                                    'rgba(75, 192, 192, 0.8)',
-                                    'rgba(54, 162, 235, 0.8)',
-                                    'rgba(255, 206, 86, 0.8)',
-                                    'rgba(255, 99, 132, 0.8)'
-                                ],
-                                borderColor: [
-                                    'rgba(153, 102, 255, 1)',
-                                    'rgba(255, 159, 64, 1)',
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(255, 99, 132, 1)'
-                                ],
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                title: {
-                                    display: true,
-                                    text: 'Donation Types'
-                                },
-                                legend: {
-                                    position: 'top',
-                                },
-                            }
-                        }
-                    });
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        });
     </script>
 
     <script>

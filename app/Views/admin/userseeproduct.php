@@ -4,8 +4,6 @@
 	<title>Products</title>
 	<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
 
-	<link href="./css/style.css" rel='stylesheet' type='text/css' />
-
 
 	<script src="./js/jquery-1.8.3.min.js"></script>
 	<script src="./js/modernizr.custom.js"></script>
@@ -17,7 +15,6 @@
   	<link href="css/font-awesome.min.css" rel="stylesheet" />
       <link href="css/style.css" rel="stylesheet" />
       <link href="css/styles.css" rel="stylesheet" />
-  	<link href="css/responsive.css" rel="stylesheet" />
 			
 			<script type="text/javascript">
 				jQuery(document).ready(function($) {
@@ -30,11 +27,12 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 
-	</head><body>
-	<?php include_once('includes/user/sidebar.php');?>
+	</head>
+  <body>
+  <?php include_once('includes/user/sidebar.php');?>
 	
 <section class="team_section layout_padding">
-    <div class="container">
+    <div class="containered">
       <div class="heading_container heading_center">
         <h2>
           Product
@@ -43,120 +41,33 @@
         Creating products for old age homes involves considering the unique needs and challenges faced by seniors.
         </p>
       </div>
-      <div class="gallery">
+        <div class="gallery">
             <div class="content">
-              <img name="Picture" src="images/bracelet2.jpg" alt="">
-              <h3 name="ProductName"> Bracelet </h3>
-              <p name="Description"></p>
-              <h6 name="Price">20.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-              
+              <img name="Picture" src="images/<?= $prods['image']?>" alt="">
+              <h3 name="ProductName"> <?= $prods['description']?> </h3>
+        
+              <h6 name="Price"><?= $prods['price']?></h6>
+              <?= $prods['other']?>         
+             
+              </a>  
             </div>
+
+   
           <div class="gallery">
+                        <?php foreach($prodimg as $prods):?>
             <div class="content">
-              <img name="Picture" src="images/bracelet.jpg" alt="">
-              <h3 name="ProductName"> Bracelet </h3>
-              <p name="Description"></p>
-              <h6 name="Price">10.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-            
-              
+             
+              <img name="Picture" src="images/<?= $prods['image']?>" alt="">
+              <h3 name="ProductName"> <?= $prods['description']?> </h3>
+        
+              <h6 name="Price"><?= $prods['price']?></h6>
+              <?= $prods['other']?>         
+             
             </div>
-            <div class="content">
-              <img src="images/bracelet name.jpg" alt="">
-              <h3> Bracelet with Name</h3>
-              <p></p>
-              <h6>20.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-            
-              
-            </div>
-            <div class="content">
-              <img src="images/mamamary.jpg" alt="">
-              <h3> Mama Mary</h3>
-              <p></p>
-              <h6>100.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-              
-            </div>
-            <div class="content">
-              <img src="images/patholder.jpg" alt="">
-              <h3>Patholder</h3>
-              <p></p>
-              <h6>3pcs. 100.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-            
-            </div>
-            <div class="content">
-              <img src="images/rectangle doormat.jpg" alt="">
-              <h3> Doormat </h3>
-              <p></p>
-              <h6>50.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-              
-            </div>
-            <div class="content">
-              <img src="images/round doormat.jpg" alt="">
-              <h3> Round Doormat</h3>
-              <p></p>
-              <h6>50.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-              
-            </div>
-            <div class="content">
-              <img src="images/thick patholder.jpg" alt="">
-              <h3> Damcloth</h3>
-              <p></p>
-              <h6>100.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-              
-            </div>
-            <div class="content">
-              <img src="images/angel.jpg" alt="">
-              <h3> Angel </h3>
-              <p></p>
-              <h6>100.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-              
-            </div>
-            <div class="content">
-              <img src="images/braceletrosary.jpg" alt="">
-              <h3> Rosary </h3>
-              <p></p>
-              <h6>20.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-              
-            </div>
-            <div class="content">
-              <img src="images/blacknazaren.jpg" alt="">
-              <h3> Black Nazaren</h3>
-              <p></p>
-              <h6>100.00</h6>
-			  <p style="color:black;">Walk-in Transaction</p>
-              <p style="color:black;">For Pick-up only</p>
-              <p style="color:black;">Available at Aruga Kapatid</p>
-           
+          
+            <?php endforeach;?>
           </div>
+          
           </div>
   </section>
   <?php include_once('includes/footer.php');?>

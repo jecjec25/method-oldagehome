@@ -188,7 +188,13 @@ class UserController extends BaseController
 
             if($user['role'] === 'Admin' )
             {
-                return redirect()->to('dashboard');
+                if ($user['is_verified'] == 0) {
+                    return redirect()->to('/verify-email');
+                }
+                elseif ($user['is_verified'] == 1) {
+                    return redirect()->to('dashboard');
+                }
+               
             }
             
             elseif($user['role'] === 'MainAdmin' )
