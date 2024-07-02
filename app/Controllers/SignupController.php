@@ -54,7 +54,7 @@ class SignupController extends BaseController
             $userModel->save($data);
             $this->sendVerificationEmail($this->request->getVar('Email'), $verificationToken);
 
-            session()->setFlashdata('success', 'Saved successfully. You can now signin');
+            session()->setFlashdata('success', 'Saved. Please verify your email address in your email account.');
             return redirect()->to('signin');
         }else{
             $data['validation'] = $this->validator;
@@ -69,9 +69,9 @@ class SignupController extends BaseController
     {
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
-        $emailService->setFrom('delachicachristiaangelicam@gmail.com', 'MethodOldAgeHome');
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
         $emailService->setSubject('Email Verification');
-        $emailService->setMessage("Please click the link below to verify your email address:\n\n" . base_url() . "/verify/$token");
+        $emailService->setMessage("Thank you for registering your account to Aruga Kapatid Foundation. Please click the link below to verify your email address:\n\n" . base_url() . "/verify/$token");
 
         $emailService->send();
     }
@@ -133,8 +133,8 @@ class SignupController extends BaseController
             $userModel->save($data);
             $this->sendVerificationEmail($this->request->getVar('Email'), $verificationToken);
 
-            session()->setFlashdata('success', 'Saved successfully. You can now signin');
-            return redirect()->to('viewAdminRegister')->with('msg', 'You have Successfully Registered A new account');
+            session()->setFlashdata('success', 'Saved. Please verify your email address in your email account.');
+            return redirect()->to('viewAdminRegister');
             }
 
             else
@@ -151,7 +151,7 @@ class SignupController extends BaseController
                     'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
                 ];
                 $userModel->save($data);
-                session()->setFlashdata('success', 'Saved successfully. You can now signin');
+                session()->setFlashdata('success', 'Saved. Please verify your email address in your email account.');
                 return redirect()->to('viewAdminRegister')->with('msg', 'You have Successfully Registered A new account');
             }
         }else{

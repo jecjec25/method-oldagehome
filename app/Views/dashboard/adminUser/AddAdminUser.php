@@ -33,8 +33,9 @@
               <h4>Hello! Let's get started</h4>
               <h6 class="font-weight-light">Register Admin</h6>
 
-              <?= session()->get('msg');?>
-
+              <?php if(session()->getFlashdata('success')): ?>
+                  <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+              <?php endif; ?>
               <?= form_open_multipart(base_url('adminRegister'))?>
               
               

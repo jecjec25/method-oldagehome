@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 19, 2024 at 01:25 AM
+-- Generation Time: Jul 02, 2024 at 06:05 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `seniorcaredb`
+-- Database: `u262559041_homeforaged_db`
 --
 
 -- --------------------------------------------------------
@@ -46,18 +46,6 @@ CREATE TABLE `acceptbooking` (
   `acknowledgement` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
---
--- Dumping data for table `acceptbooking`
---
-
-INSERT INTO `acceptbooking` (`id`, `lastname`, `firstname`, `middlename`, `contactnum`, `event`, `Time`, `prefferdate`, `equipment`, `comments`, `status`, `usersignsId`, `description`, `amount_raised`, `outcomes`, `acknowledgement`) VALUES
-(163, 'Manalo', 'Beatriz', 'Bornales', '09876532345', 'sheshe events', '9:00:00 - 11:00:00', '2024-06-17', 'jshsjhfskjf', 'skksksfmnks', 'Accepted', 38, 'Panget na event', 20000.00, '20000', '20000'),
-(164, 'sjhskfnk', 'KJSFSKJF', 'ksfnsklfmhnk,', '09085353978', 'charity events', '11:00:00 - 13:00:00', '2024-06-17', 'giugbhguyjhn', 'jhiujghiuj', 'Accepted', 38, '', 0.00, '', ''),
-(165, 'sfnskfmnsfkm', 'sfnksfn', 'sjfksjfnkf', '09085353978', 'skkfnksmfnmf', '13:00:00 - 15:00:00', '2024-06-17', 'speaker', 'efodhgiodgj', 'Accepted', 38, '', 0.00, '', ''),
-(166, 'adljkdajmakd', 'sfjsfn', 'skslmlsk', '09123456789', 'skjfsjfmlk,sk', 'HalfDay-morning', '2024-06-18', 'kghdighnkdjghn', 'ljfkjdlkgjdogv', 'Accepted', 38, '', 0.00, '', ''),
-(167, 'sfjsfknfhsifhsf', 'kghorihgijkm', 'sjsksknv', '09085353978', 'kahit ano na event', 'HalfDay-afternoon', '2024-06-18', 'speaker', 'questions and comments', 'Accepted', 38, '', 0.00, '', ''),
-(168, 'wkfjkcwjoc', 'skjckjckw', 'ksjcskcjmlk', '09085353978', 'event mo ano', 'WholeDay', '2024-06-19', 'skjcsjmoslm', 'skcjsocjiskj', 'Accepted', 38, '', 0.00, '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -81,23 +69,6 @@ CREATE TABLE `announcement` (
   `adminId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
---
--- Dumping data for table `announcement`
---
-
-INSERT INTO `announcement` (`AnnounceID`, `Title`, `Content`, `Author`, `Date_created`, `Date_modified`, `Start_date`, `End_date`, `Category`, `Priority`, `Attachments`, `Status`, `Target_audience`, `adminId`) VALUES
-(13, 'egkngkengkwn', 'kjgdldjmglm', 'ejgeljgmlemg', '2024-04-22 13:23:17', '2024-04-21 07:23:36', '2024-04-21', '2024-06-30', 'events', 'hgihojoljo', '1716252924_cbc3c4f25c76f499ffbb.jpg', 'Archive', 'residents', NULL),
-(18, 'jkahsdkjhaskjdhaskjdhaskjd', 'khjsahdjhjdhasjkdhsakjdhs', 'jhsjkahdasjkdjkashd', '2024-05-21 00:28:22', '2024-05-21 00:28:22', '2024-12-24', '2024-12-24', 'facilityupd', 'jksahdjkasjkhdjkashdasd', '1716252850_629c400f9353c2a98a2e.jpg', 'Draft', 'family, caregivers', NULL),
-(19, 'ashdkjhabsjdhjk', 'hsakdhjhkhasak', 'jakshdjashdajksdhakjh', '2024-05-21 00:30:34', '2024-05-21 00:30:34', '2024-12-22', '2024-12-23', 'activities, healthtips', 'aksjhdjkahsdjk', '1716251434_3f0bf7bf15eeb04bda47.jpg', 'Draft', 'family', 2),
-(20, 'akshdjkhjh', 'jasahdkjhakjh', 'jsahdjkh', '2024-05-21 00:31:37', '2024-05-21 00:31:37', '2023-12-24', '2023-12-24', 'activities, healthtips', ' sjsijfkjhdsfhjksd', '1716253011_ee57fbccff7a00918e8e.jpg', 'Archive', 'residents, family', NULL),
-(21, 'title for announcement', 'wjwosjkcsickh', 'ksjciscksik', '2024-05-21 01:01:18', '2024-05-21 01:01:18', '2024-05-21', '2024-05-21', 'activities, healthtips', 'snkscjkc', '1716253312_b354854bcd6e0ded6fed.jpg', 'Published', 'caregivers, volunteers', NULL),
-(22, 'announce ko pi', 'slfklsjmslfjm', 'sjfmljmdkvjm', '2024-05-21 04:39:15', '2024-05-21 04:39:15', '2024-05-21', '2024-05-21', 'activities, healthtips', 's,jmsjdksj', '1716266385_04a7ddcdfc438255e3f9.jpg', 'Published', 'family, caregivers', NULL),
-(23, 'jahnjscnjnxj', 'sjhcjscnjskvsk', 'shcnjschnsjc', '2024-05-30 07:17:13', '2024-05-30 07:17:13', '2024-05-30', '2024-06-08', 'activities, healthtips', 'schcksskskhn', '1717053473_1acb65fd61f1465c68f1.jpg', 'Published', 'residents, family', NULL),
-(24, 'sjchkscnjm', 'kssjcsikcn', 'ksjcksjcnk', '2024-05-30 07:19:15', '2024-05-30 07:19:15', '2024-05-30', '2024-06-08', 'events, activities', 'shscihncjms', '1717053605_15f43fabe7fca0af0906.jpg', 'Archive', 'residents, family', 2),
-(25, 'announcement for today', 'djdkhnvjdvhn', 'ksjcshhnck', '2024-06-12 04:26:25', '2024-06-12 04:26:25', '2024-06-12', '2024-06-13', 'events, healthtips', 'dkvjdlkv,jldkv', '1718166385_8c00ef4f7284829732ff.jpg', 'Published', 'family, caregivers', 2),
-(26, 'title ng announcement admin', 'skfjsliksvihvkj', 'kwjdslikjsiv', '2024-06-16 08:02:45', '2024-06-16 08:02:45', '2024-06-16', '2024-06-14', 'events', 'sfkkjfknvlks', '1718524965_3d0d9e8d56465f99a56b.jpg', 'Published', 'residents', 2),
-(27, 'sdjvhdkivhli', 'ksjc.lsikjcslik', 'kjcskcjslik', '2024-06-16 08:53:52', '2024-06-16 08:53:52', '2024-06-16', '2024-06-17', 'events', 'dvhnekmvhik', '1718528032_96d0268e2fc41a5a79a4.jpg', 'Published', 'residents', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -111,19 +82,6 @@ CREATE TABLE `elderneed` (
   `date_started` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
---
--- Dumping data for table `elderneed`
---
-
-INSERT INTO `elderneed` (`id`, `need`, `description`, `date_started`, `date_modified`) VALUES
-(3, 'damit ng lola', 'need ko po ng mga damit', '2024-05-01 02:09:21', '2024-04-30 18:09:57'),
-(6, 'Need ni Tia', 'Donations for aruga', '2024-05-06 02:58:37', '2024-05-06 02:58:37'),
-(7, 'need ni elder', 'diaper', '2024-05-06 06:00:57', '2024-05-06 06:00:57'),
-(8, 'Needs ng lolo at lola', 'mga needs', '2024-05-06 06:31:55', '2024-05-06 06:31:55'),
-(9, 'Diaper', 'Large, small, and medium', '2024-05-09 06:07:53', '2024-05-09 06:07:53'),
-(10, 'diaper', 'wlfklskjvmd', '2024-06-05 01:13:31', '2024-06-05 01:13:31'),
-(11, 'dlmdlvm', 'dvjmdlvmdl,v', '2024-06-05 01:13:40', '2024-06-05 01:13:40');
 
 -- --------------------------------------------------------
 
@@ -147,15 +105,6 @@ CREATE TABLE `events` (
   `adminId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
---
--- Dumping data for table `events`
---
-
-INSERT INTO `events` (`EventID`, `Title`, `Description`, `Organizer`, `Start_date`, `End_date`, `Category`, `Status`, `Atendees`, `Attachments`, `type`, `usersignsid`, `adminId`) VALUES
-(72, 'ksnsknsvknvsk', 'kjskjvisknvsk', 'ksjkjsksks', '2024-06-16', '2024-06-15', 'Social', 'Published', 'hdgihgkhdnkd', '1718523408_74c17c78ea8d3df7d35a.jpg', 'admin', NULL, 2),
-(73, 'jfnkjshfnks,jh', 'ksjfskfjski', 'kshfnskjfhwkjs', '2024-06-16', '2024-06-17', 'Social', 'Published', 'sjhfskhfnsikf', '1718523446_82a4d5192918e8059bc3.jpg', 'admin', NULL, 2),
-(75, 'Post ni use para sa event', 'Users', 'asdbjhasdjhasd', '2024-06-16', '2024-06-15', 'Social, Recreational', 'Published', 'mga pusher', '1718524097_56bc744bdd26b9728191.jpg', 'user', 38, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -170,30 +119,6 @@ CREATE TABLE `feedbacktbl` (
   `announceid` int DEFAULT NULL,
   `feedback` text COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
---
--- Dumping data for table `feedbacktbl`
---
-
-INSERT INTO `feedbacktbl` (`id`, `status`, `usersignsId`, `eventid`, `announceid`, `feedback`) VALUES
-(89, 'Accepted', 38, NULL, NULL, 'Hello'),
-(90, 'Accepted', 39, NULL, NULL, 'Feedback sa post ni admin'),
-(91, 'Accepted', NULL, NULL, 22, 'feedback ni announce'),
-(92, '', NULL, NULL, 13, 'feedback ko sa announcement'),
-(93, '', NULL, NULL, 23, 'hjhahahahha'),
-(94, 'Pending', 38, NULL, NULL, 'qwertyuiop'),
-(95, '', NULL, NULL, 22, 'announcement sa feedback'),
-(96, 'Pending', NULL, NULL, 23, 'feedback announcement'),
-(97, 'Accepted', NULL, NULL, 23, 'announcing si jen'),
-(98, 'Pending', NULL, NULL, 22, 'hjdfdshfjksd\r\n'),
-(99, 'Accepted', NULL, NULL, 22, 'asdbsadbas'),
-(100, 'Accepted', NULL, NULL, 13, 'ansldksalkd'),
-(101, 'Accepted', 38, NULL, NULL, 'feedback ko to sa naka yellow na damit'),
-(102, 'Accepted', 38, NULL, NULL, 'feedback ko sa lola nakangiti'),
-(103, 'Accepted', 16, NULL, NULL, 'feedback ni jen sa angelica aaaa'),
-(104, 'Accepted', 16, NULL, NULL, 'feedback ni jen sa yellow na damit'),
-(105, 'Accepted', NULL, NULL, 25, 'boriinggggg'),
-(106, 'Accepted', 38, 73, NULL, 'lalalalala');
 
 -- --------------------------------------------------------
 
@@ -216,17 +141,6 @@ CREATE TABLE `inkinddonation_tbl` (
   `message` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
---
--- Dumping data for table `inkinddonation_tbl`
---
-
-INSERT INTO `inkinddonation_tbl` (`id`, `usersignsId`, `Establishment`, `lastname`, `firstname`, `middlename`, `contactnum`, `inKindDonationItem`, `picture`, `donationdate`, `status`, `message`) VALUES
-(14, 16, 'kjkdjvkvniks', 'sjksjsjv', 'sjfclsjslk', 'sjfsjfsij', 9123456789, 'skjfsifsoj', '1716225980_33a915e2f15289667b21.jpg', '2024-05-22', 'Received', 'sjfmlsj,fmsl.f,msf'),
-(17, 16, 'wellow', 'iskjciskjck', 'kjscks,cjik', 'ksjcsikjcsk', 9987655656, 'damit pagkain na masarap', '1716228224_f5adc71d2c28ddc1ad79.jpg', '2024-05-23', 'Postponed', 'hehehhe'),
-(18, 16, 'shehshe', 'skfhsjclk', 'dvnkdjnvxk', 'shnckd,jck,', 9633895646, 'scskcjks', '1716261988_48dd0e6df2c2578df4c3.jpg', '2024-05-22', 'pending', 'ljfemdfkemd'),
-(19, 16, 'vnfkjvfkfkv', 'dknckdnck', 'ksjshjh', 'kkcksjckm', 9987655656, 'djchndjcndjmc', '1717054315_739da18647c358841a17.jpg', '2024-05-30', 'pending', 'cjhdjcndjmc'),
-(20, 16, 'hnhehnek', 'vjevkjek', 'skjkdjvk', 'dvkjdkjmv', 9085353978, 'fhdvhnvjm', '1717054351_453c8a149e63136b3061.jpg', '2024-05-30', 'pending', 'jhfkvnfvjhn');
-
 -- --------------------------------------------------------
 
 --
@@ -245,15 +159,32 @@ CREATE TABLE `newsevents` (
   `adminId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `newsevents`
+-- Table structure for table `organizationtable`
 --
 
-INSERT INTO `newsevents` (`id`, `title`, `Content`, `author`, `date_published`, `Category`, `picture`, `status`, `adminId`) VALUES
-(37, 'dmvnkdnvdkm', 'dmndkvndkm', 'mvndk,vjkem', '2024-05-30 07:03:47', 'Health, Community', '1717052627_b9b57fee39c47dbb6040.jpg', 'Published', 2),
-(38, 'jvksnvknvsxkjm', 'ksjvksmvnjvm', 'ksjcskchnskmcn', '2024-05-30 07:12:46', 'Community, Staff', '1717053193_42d587a3778238bab1da.jpg', 'Published', NULL),
-(39, 'kchskcnksjmc', 'smhckschnjm', 'mchnksmchn', '2024-05-30 07:14:47', 'Community, Staff', '1717053313_659a74b65311facc553b.jpg', 'Archive', 2),
-(41, 'agjhd', 'jhgajhdsg', 'hjasdjhag', '2024-05-30 09:01:38', 'Health, Community', '1717059698_124da0dff5bdcaf7e45a.jpg', 'Draft', 2);
+CREATE TABLE `organizationtable` (
+  `id` int NOT NULL,
+  `img` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `name` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `position` text COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `organizationtable`
+--
+
+INSERT INTO `organizationtable` (`id`, `img`, `name`, `position`) VALUES
+(1, 'icon.jpg', 'Rev. Fr. ANDY PETER M. LUBI', 'Apostolic Administrator'),
+(2, 'popoy.jpg', 'LITO C. VERGARA', 'Administrator'),
+(3, 'louie.jpg', 'HENRY N. DACANAY III', 'Admin Staff'),
+(4, 'analyn.jpg', 'ANALYN C. ZAPATA', 'Caregiver'),
+(5, 'axel.jpg', 'AXEL MICO CAPOL', 'Caregiver'),
+(6, 'manalO_1.jpg', 'JOSE DELMAR MANALO', 'Caregiver'),
+(7, 'zamora.jpg', 'EDUARDO D. ZAMORA', 'Driver/Maintenance'),
+(8, 'arnold.jpg', 'ARNOLD S. SAMSOM', 'Kitchen Staff/Helper');
 
 -- --------------------------------------------------------
 
@@ -278,8 +209,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `name`, `description`, `price`, `quantity`, `prodpic`, `created_at`, `updated_at`) VALUES
-(1, '112233', 'Sabon Panlaba', 'Product ni tia', 50.00, 14, '', '2024-06-12 01:35:57', '2024-06-15 12:12:21'),
-(18, '1112', 'Bracelet', 'Bracelet for yous', 20.00, 49, '', '2024-05-08 23:09:13', '2024-06-16 18:05:19'),
+(18, '1112', 'Bracelet', 'Bracelet for yous', 20.00, 19, '', '2024-05-08 23:09:13', '2024-06-19 11:00:37'),
 (19, '1121', 'Thick Bracelet', 'Bracelet na makapal', 20.00, 9, '', '2024-05-08 23:31:37', '2024-06-12 00:42:03'),
 (20, '1211', 'Thin Bracelet', 'A colorful bracelet that is thin', 10.00, 8, '', '2024-05-09 00:10:25', '2024-06-12 00:42:03'),
 (21, '1212', 'Bracelet with Name', 'A bracelet with a name on it', 20.00, 9, '', '2024-05-09 00:11:17', '2024-06-12 00:40:57'),
@@ -291,6 +221,66 @@ INSERT INTO `products` (`id`, `code`, `name`, `description`, `price`, `quantity`
 (27, '1313', 'Angel', 'Angel statue for the your altar', 100.00, 10, '', '2024-05-09 00:17:23', '2024-06-11 23:52:41'),
 (28, '1331', 'Rosary', 'A simple rosary for you', 20.00, 10, '', '2024-05-09 00:18:17', '2024-06-11 23:52:45'),
 (29, '1333', 'Black Nazaren', 'Black Nazaren statue for your altar', 100.00, 8, '', '2024-05-09 00:19:02', '2024-06-12 00:57:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_image`
+--
+
+CREATE TABLE `product_image` (
+  `id` int NOT NULL,
+  `image` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `price` decimal(10,2) DEFAULT NULL,
+  `other` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `type` text COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `product_image`
+--
+
+INSERT INTO `product_image` (`id`, `image`, `description`, `price`, `other`, `type`) VALUES
+(1, 'bracelet2.jpg', 'Bracelet', 20.00, '              <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>', 'prod'),
+(3, 'bracelet.jpg', 'Bracelet', 10.00, '              <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>', 'prod'),
+(5, 'bracelet name.jpg', 'Bracelet with name', 20.00, '              <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>', 'prod'),
+(6, 'mamamary.jpg', 'Mama mary', 100.00, '              <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>', 'prod'),
+(7, 'patholder.jpg', 'Patholder', 100.00, '              <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>', 'prod'),
+(8, 'rectangle doormat.jpg', 'Doormat', 50.00, '              <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>', 'prod'),
+(9, 'round doormat.jpg', 'Round Doormat', 50.00, '              <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>', 'prod'),
+(10, 'thick patholder.jpg', 'Damcloth', 100.00, '              <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>', 'prod'),
+(11, 'angel.jpg', 'Angel', 100.00, ' <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>\r\n             ', 'prod'),
+(12, 'braceletrosary.jpg', 'Rosary', 20.00, ' <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>\r\n             ', 'prod'),
+(13, 'blacknazaren.jpg', 'Black Nazaren', 100.00, ' <p style=\"color:black;\">Walk-in Transaction</p>\r\n              <p style=\"color:black;\">For Pick-up only</p>\r\n              <p style=\"color:black;\">Available at Aruga Kapatid</p>\r\n             ', 'prod'),
+(14, 'h2.png', 'ARUGA-KAPATID FOUNDATION INCORPORATED', 0.00, 'homepage', ''),
+(15, 'h1.jpg', 'You\'re never too old to begin again, and to create yourself a happy ending', NULL, 'homepage', ''),
+(16, 'h3.jpg', '\"Your heart holds the wisdom of ages, and your spirit remains forever young. Keep spreading your warmth and love.\"', NULL, 'homepage', ''),
+(17, 'g1.jfif', NULL, NULL, 'gallery', ''),
+(18, 'g2.jfif', NULL, NULL, 'gallery', ''),
+(19, 'g3.jfif', NULL, NULL, 'gallery', ''),
+(20, 'g4.jfif', NULL, NULL, 'gallery', ''),
+(21, 'g5.jfif', NULL, NULL, 'gallery', ''),
+(22, 'g6.jfif', NULL, NULL, 'gallery', ''),
+(23, 'g7.jfif', NULL, NULL, 'gallery', ''),
+(24, 'g8.jfif', NULL, NULL, 'gallery', ''),
+(25, 'g9.jfif', NULL, NULL, 'gallery', ''),
+(26, 'g10.jfif', NULL, NULL, 'gallry', ''),
+(27, 'g11.jfif', NULL, NULL, 'gallery', ''),
+(28, 'g12.jfif', NULL, NULL, 'gallery', ''),
+(29, 'g13.jfif', NULL, NULL, 'gallery', ''),
+(30, 'g14.jfif', NULL, NULL, 'gallery', ''),
+(31, 'g15.jfif', NULL, NULL, 'gallery', ''),
+(32, 'g16.jfif', NULL, NULL, 'gallery', ''),
+(33, 'g17.jfif', NULL, NULL, 'gallery', ''),
+(34, 'g18.jfif', NULL, NULL, 'gallery', ''),
+(35, 't2.jpg', NULL, NULL, 'gallery', ''),
+(36, 't7.jpg', NULL, NULL, 'gallery', ''),
+(37, 't8.jpg', NULL, NULL, 'gallery', ''),
+(38, 't9.jpg', NULL, NULL, 'gallery', ''),
+(39, 't10.jpg', NULL, NULL, 'gallery', ''),
+(40, 't1.jpg', NULL, NULL, 'gallery', ''),
+(41, 't11.jpg', NULL, NULL, 'gallery\r\n', '');
 
 -- --------------------------------------------------------
 
@@ -312,9 +302,6 @@ CREATE TABLE `reportdonation` (
 --
 
 INSERT INTO `reportdonation` (`donation_id`, `date`, `donor_name`, `donation_type`, `amount`, `project_supported`) VALUES
-(1, '2024-03-06', 'shadgh', 'hasdghf', '12312', 'qhsadhvadh'),
-(2, '2024-03-12', 'Dan', 'Senior', '150000', 'hello'),
-(3, '2024-03-08', 'Shello Manalo', 'Monetary', '50000', 'Aruga Kapatid'),
 (4, '2024-03-21', 'Christia Angelica Dela Chica', 'Monetary', '200000', 'Aruga'),
 (5, '2024-03-20', 'Dan Keneth Rontale ', 'In-kind', 'pede ba word', 'Go fund me'),
 (6, '2000-11-07', 'Shellow Manalo', 'In-Kind', 'shoes', 'Shoes of Elders'),
@@ -337,22 +324,6 @@ CREATE TABLE `tblcontact` (
   `Message` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `contact_status` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
---
--- Dumping data for table `tblcontact`
---
-
-INSERT INTO `tblcontact` (`Id`, `Name`, `Phone`, `Email`, `Enquiry_Date`, `Message`, `contact_status`) VALUES
-(3, 'Shellow Manalo', '09085353978', 'shellomanalo@gmail.com', '2024-03-07 07:41:46', 'kumain ka na ng catfood', 'Read'),
-(4, 'Dan Keneth Rontale', '09568319369', 'rontale@gmail.com', '2024-03-07 07:42:19', 'Ang pogi mo kuya\r\n\r\n ', 'Read'),
-(5, 'Christiia Angelica Dela Chica', '09261454009', 'changeldc11@gmail.com', '2024-04-08 05:11:38', ' parang isang panaginip', 'Read'),
-(6, 'hay nako', '09158524165', 'jekjek@gmail.com', '2024-04-08 05:13:14', ' iyong iyo', 'Read'),
-(7, 'dan keneth', '09876543212', 'dalandan@gmail.com', '2024-04-08 05:14:51', ' di ko na ililihim pa\r\n', 'Read'),
-(8, 'Jennifer Ramirez', '09876543212', 'jenramirez@gmail.com', '2024-04-08 05:16:04', ' akoy iyong iyo', 'Read'),
-(9, 'Rosela Manalo', '09085353978', 'asjhdhh', '2024-04-08 05:17:02', 'sadguhsadg\r\n\r\n\r\n ', 'Read'),
-(10, 'Cynthia Herilla Manalo', '09986532451', 'hello@gmail.com', '2024-04-08 05:21:21', 'shdfuhjs ', 'Unread'),
-(11, 'Christia', '09876543212', 'christia25@gmail.com', '2024-04-09 03:26:21', ' haaksks', 'Unread'),
-(12, 'amdnkadkad', '09764345678', 'christia25@gmail.com', '2024-04-21 09:08:34', ' hyfujhiihitujojo', 'Read');
 
 -- --------------------------------------------------------
 
@@ -417,45 +388,6 @@ CREATE TABLE `tblscdetails` (
   `adminId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
---
--- Dumping data for table `tblscdetails`
---
-
-INSERT INTO `tblscdetails` (`Id`, `lastname`, `firstname`, `middlename`, `nickname`, `DateBirth`, `gender`, `marital_stat`, `ContNum`, `ComAdd`, `ProfPic`, `EmergencyAdd`, `EmergencyContNum`, `RegDate`, `scstatus`, `InputedDate`, `departuredate`, `reasonleft`, `datedeath`, `causedeath`, `adminId`) VALUES
-(78, 'Manalo', 'Cynthia', 'Herilla', 'Set', '1960-06-05', 'Female', 'Single', '09123456789', 'Camansihan, Calapan City', 'areno.jpg', 'Camansihan, Calapan City', '09123456789', '2024-05-01', 'Unarchive', '2024-05-01 15:54:56', '', '', '2024-05-21', 'tuberculosis', 2),
-(79, 'Atienzas', 'Helens', 'Ramirez', 'Helen', '1950-12-25', 'Female', 'Married', '09123456789', 'Bayanan 2, Calapan City, Oriental Mindoro', 'adan.jpg', 'Bayanan 2, Calapan City, Oriental Mindoro', '09123456789', '2024-01-01', 'Unarchive', '2024-05-01 15:56:24', '', '', '', '', 2),
-(80, 'Rontale', 'Dan Keneth', 'Madrigal', 'Kenchin', '1950-07-06', 'Male', 'Single', '09123456789', 'Tawiran, Calapan City', 'boongaling.jpg', 'Tawiran, Calapan City<br>', '09123456789', '2024-05-01', 'Unarchive', '2024-05-01 15:57:59', '', '', '2024-05-21', 'tb', 2),
-(81, 'Ramirez', 'Jennifer', 'Melendez', 'Jen', '1967-01-25', 'Female', 'Single', '09123456789', 'Canubing, Calapan City', 'boongaling.jpg', 'Canubing, Calapan City<br>', '09123456789', '2024-05-03', 'Unarchive', '2024-05-03 22:29:16', '', '', '', '', 2),
-(83, 'Manalo', 'Santiago', 'Herilla', 'Manoy', '1959-02-14', 'Male', 'Married', '09123456789', 'Camansihan, Calapan City', 'adan.jpg', 'Camansihan, Calapan City<br>', '09123456789', '2024-05-06', 'Unarchive', '2024-05-06 11:09:50', '', '', '', '', 2),
-(85, 'Manalo', 'Bianca', 'Gonzales', 'ninay', '1960-12-25', 'female', 'Widowed', '09876543212', 'Lapaz', 'axel.jpg', 'Calapan', '09158524161', '2023-05-07', 'Unarchive', '2024-05-07 00:57:46', '2024-05-21', 'family member came to take', '', '', 2),
-(86, 'Dela Chica', 'Shellow', 'Marasa', 'Shell', '1960-12-25', 'Male', 'Divorced', '09876543212', 'saoidj', 'gusto.jpg', 'asndkjn', '09085353978', '2024-07-05', 'Unarchive', '2024-05-07 01:00:05', '2024-05-21', 'today i left', '', '', 2),
-(87, 'Marino', 'Michael', 'Manalo', 'Mikmik', '1951-01-03', 'Male', 'Single', '09123456789', 'Tagbungan, Baco, Oriental Mindoro', 'adan.jpg', 'Tagbungan, Baco, Oriental Mindoro<br>', '09123456789', '2024-05-09', 'Unarchive', '2024-05-09 12:48:56', '', '', '', '', 2),
-(93, 'pikachu', 'jjcknckk', 'kncknnc', 'kak,cjmkjcm', '1954-12-25', 'Female', 'Married', '09123456789', 'sfjsfniksjnk', '1716718667_c5ba22f280f49f5ab25a.jpg', 'sjnksnkvmn', '09123456789', '2024-05-19', 'Unarchive', '2024-05-19 09:20:39', '', '', '', '', 2),
-(94, 'adkadjdka', 'ksjcksj', 'kjcoskjc', 'akdjaodj', '1945-12-25', 'Female', 'Single', '09876543212', 'sjncsikjcsik', '1716362108_61c66708e0768c8b5108.jpg', 'sckscnskm', '09123456789', '2024-05-22', 'Deceased', '2024-05-22 15:15:08', '', '', '2024-05-26', 'tuberculosis', 2),
-(96, 'hncflskjvl', 'kjscskj', 'kjcsckjl', 'skjcsickj', '1942-12-25', 'Female', 'Married', '09876543212', 'shjcnjc', '1716445660_3a6024beca0943995377.jpg', 'mcnldkjcmdik', '09123456789', '2024-05-23', 'Left', '2024-05-23 14:27:40', '2024-05-23', 'hehehe', '', '', 2),
-(97, 'lkdmkd,mdk', 'kjd,mckc,jm', 'skjvdkvj', 'ooejfeijk', '1945-12-25', 'Male', 'Single', '09123456789', 'eckjwcojwic', '1718760076_23b4aa4a3fd5979e0d7e.jpg', 'ekcjekjmekjc,m', '09123456789', '2024-06-19', 'Deceased', '2024-06-19 09:21:16', '', '', '', '', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `time`
---
-
-CREATE TABLE `time` (
-  `Id` int NOT NULL,
-  `Time` time NOT NULL,
-  `Status` text COLLATE utf8mb4_swedish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
---
--- Dumping data for table `time`
---
-
-INSERT INTO `time` (`Id`, `Time`, `Status`) VALUES
-(1, '09:00:00', 'Available'),
-(2, '11:00:00', 'Avaible'),
-(3, '13:00:00', 'Available');
-
 -- --------------------------------------------------------
 
 --
@@ -477,31 +409,6 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`id`, `code`, `customer`, `total_amount`, `tendered`, `created_at`, `updated_at`) VALUES
-(5, '2024050800002', 'Jennifer Ramirez', 40.00, 50.00, '2024-05-08 23:13:08', '2024-05-08 23:13:08'),
-(6, '2024050800001', 'Kyle Curba', 220.00, 250.00, '2024-05-09 00:21:00', '2024-05-09 00:21:00'),
-(7, '2024050900001', 'Nicolle Gutierrez', 20.00, 50.00, '2024-05-09 10:26:14', '2024-05-09 10:26:14'),
-(8, '2024051000001', 'nics', 60.00, 100.00, '2024-05-10 11:52:59', '2024-05-10 11:52:59'),
-(9, '2024051300001', 'Dan', 40.00, 50.00, '2024-05-13 21:54:49', '2024-05-13 21:54:49'),
-(14, '2024051300002', 'jekjek', 30.00, 100.00, '2024-05-13 22:02:28', '2024-05-13 22:02:28'),
-(15, '2024051300003', 'Shellow', 10.00, 20.00, '2024-05-13 23:56:46', '2024-05-13 23:56:46'),
-(16, '2024052100001', 'jenny ruby', 40.00, 200.00, '2024-05-21 12:30:01', '2024-05-21 12:30:01'),
-(17, '2024052100002', 'cpp', 60.00, 500.00, '2024-05-21 12:57:04', '2024-05-21 12:57:04'),
-(18, '2024061100001', '', 20.00, 0.00, '2024-06-12 00:25:47', '2024-06-12 00:25:47'),
-(19, '2024061100002', '', 20.00, 0.00, '2024-06-12 00:26:18', '2024-06-12 00:26:18'),
-(20, '2024061100003', '', 20.00, 0.00, '2024-06-12 00:27:28', '2024-06-12 00:27:28'),
-(21, '2024061100004', '', 20.00, 0.00, '2024-06-12 00:27:59', '2024-06-12 00:27:59'),
-(22, '2024061100005', '', 20.00, 0.00, '2024-06-12 00:28:48', '2024-06-12 00:28:48'),
-(23, '2024061100006', '', 20.00, 0.00, '2024-06-12 00:29:13', '2024-06-12 00:29:13'),
-(24, '2024061100007', '', 20.00, 0.00, '2024-06-12 00:29:33', '2024-06-12 00:29:33'),
-(25, '2024061100008', '', 20.00, 0.00, '2024-06-12 00:30:37', '2024-06-12 00:30:37'),
-(26, '2024061100009', '', 20.00, 0.00, '2024-06-12 00:30:55', '2024-06-12 00:30:55'),
-(27, '2024061100010', '', 20.00, 0.00, '2024-06-12 00:31:13', '2024-06-12 00:31:13'),
-(28, '2024061100011', '', 20.00, 0.00, '2024-06-12 00:31:24', '2024-06-12 00:31:24'),
-(29, '2024061100012', '', 20.00, 0.00, '2024-06-12 00:31:29', '2024-06-12 00:31:29'),
-(30, '2024061100013', '', 20.00, 0.00, '2024-06-12 00:32:55', '2024-06-12 00:32:55'),
-(31, '2024061100014', '', 20.00, 0.00, '2024-06-12 00:34:03', '2024-06-12 00:34:03'),
-(32, '2024061100015', '', 20.00, 0.00, '2024-06-12 00:34:15', '2024-06-12 00:34:15'),
-(33, '2024061100016', '', 20.00, 0.00, '2024-06-12 00:34:19', '2024-06-12 00:34:19'),
 (34, '2024061100017', '', 20.00, 0.00, '2024-06-12 00:35:11', '2024-06-12 00:35:11'),
 (35, '2024061100018', '', 20.00, 0.00, '2024-06-12 00:35:22', '2024-06-12 00:35:22'),
 (36, '2024061100019', '', 20.00, 0.00, '2024-06-12 00:35:30', '2024-06-12 00:35:30'),
@@ -516,7 +423,8 @@ INSERT INTO `transactions` (`id`, `code`, `customer`, `total_amount`, `tendered`
 (45, '2024061200001', 'Shellow', 150.00, 200.00, '2024-06-12 13:22:43', '2024-06-12 13:22:43'),
 (46, '2024061500001', 'jenny jane', 150.00, 200.00, '2024-06-15 12:12:20', '2024-06-15 12:12:20'),
 (47, '2024061500002', 'jekjek', 160.00, 200.00, '2024-06-15 12:13:33', '2024-06-15 12:13:33'),
-(48, '2024061600001', 'shantal', 200.00, 200.00, '2024-06-16 18:05:19', '2024-06-16 18:05:19');
+(48, '2024061600001', 'shantal', 200.00, 200.00, '2024-06-16 18:05:19', '2024-06-16 18:05:19'),
+(49, '2024061900001', 'shantal', 600.00, 1000.00, '2024-06-19 11:00:36', '2024-06-19 11:00:36');
 
 -- --------------------------------------------------------
 
@@ -580,7 +488,8 @@ INSERT INTO `transaction_items` (`transaction_id`, `product_id`, `price`, `quant
 (45, 1, 50.00, 3, '2024-06-12 13:22:43', '2024-06-12 13:22:43'),
 (46, 1, 50.00, 3, '2024-06-15 12:12:21', '2024-06-15 12:12:21'),
 (47, 18, 20.00, 8, '2024-06-15 12:13:34', '2024-06-15 12:13:34'),
-(48, 18, 20.00, 10, '2024-06-16 18:05:19', '2024-06-16 18:05:19');
+(48, 18, 20.00, 10, '2024-06-16 18:05:19', '2024-06-16 18:05:19'),
+(49, 18, 20.00, 30, '2024-06-19 11:00:37', '2024-06-19 11:00:37');
 
 -- --------------------------------------------------------
 
@@ -611,21 +520,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`userID`, `verification_token`, `is_verified`, `LastName`, `FirstName`, `user_img`, `Username`, `ContactNo`, `Email`, `role`, `birthday`, `Password`, `Created_At`, `Update_At`) VALUES
 (2, '', 1, 'Dela Chica', 'Christia', '1716714625_23ec69030b0b83ea20fc.jpg', 'christia25', '09633895626', 'christia25@gmail.com', 'MainAdmin', '2002-12-25', '$2y$10$mCyCYd2b6efQiKMj.z30mONbP2yrTGubK3s.tKJrlVq9OxUud4TfC', '2024-02-18 06:40:43', '2024-02-18 06:40:43'),
-(14, '', 0, 'Yuya', 'Sakaki', '', 'Yuya21', '09876542212', 'Yuya@gmail.com', 'Booker', '2003-05-21', '$2y$10$jtKylCBYV6mayI0V8Jtmyem.rNeMdMm1nOPq49RsR06YuEmLKyEL.', '2024-05-07 05:42:12', '2024-05-07 05:42:12'),
-(15, '', 0, 'pogi', 'si ako', '', 'pogi123', '09876543212', 'pogi@gmail.com', 'Admin', '2003-12-25', '$2y$10$fhIvqYZrA2k9N89Bem5k3ODfl8ohCImXaJWJEmzDCsE4pa5Docyj2', '2024-05-07 06:15:40', '2024-05-07 06:15:40'),
 (16, '', 1, 'Ramirezs', 'Jenny ', '', 'Jenny', '09876543212', 'jenny@gmail.com', 'Booker', '0000-00-00', '$2y$10$WAyNwAbWdz/wSwJ8THuZ2ebt5mAha6FZTaV2MeC1NeFy0Bv./BZMy', '2024-05-07 06:28:03', '2024-05-07 06:28:03'),
-(19, '', 0, 'Herilla', 'Jovelle', '', 'jovelle123', '09876543212', 'jovelleherilla123@gmail.com', 'Booker', '1999-12-24', '$2y$10$Kz9ydona34ob1Fu/0Ph56eG3ExUPKrfMI2LJOJ3LxZoZWoMbXNile', '2024-05-25 08:38:58', '2024-05-25 08:38:58'),
-(20, '', 0, 'Rontale', 'Danna', '', 'danna123', '09876543212', 'dannarontale@gmail.com', 'Booker', '1998-07-06', '$2y$10$dT4cz1VLbzeV2PPS8D8i.uLJ2ruP5HaKiWOmqhGRxZs1KFcbkBgDi', '2024-05-25 08:58:12', '2024-05-25 08:58:12'),
-(21, '', 0, 'Manalo', 'Christia', '', 'christia123', '09876542212', 'christia123@gmail.com', 'Admin', '2022-12-25', '$2y$10$BqC79JdMnb/HBPTGFciN4OC8lbdd3LUA1ppM0Hte9UiG4BrduQb76', '2024-05-25 09:05:29', '2024-05-25 09:05:29'),
-(22, '', 0, 'Manalo', 'Jekjek', '', 'jekjek05', '09876542212', 'jekjek05@gmail.com', 'Booker', '2002-12-25', '$2y$10$nM4k3fCeUfJfrx25617FJed5dTKdskajx9zHjaPagJgT7qtFn/8dy', '2024-05-26 09:18:50', '2024-05-26 09:18:50'),
-(23, '', 0, 'Manalo', 'Angelica', '1716727402_fd0b29ec69fc609e17cb.jpg', 'angelica25', '09876543212', 'angelicamanalo@gmail.com', 'Admin', '2002-12-25', '$2y$10$5l1nEs1SLCuXfGy.uS6liehjG5IL1UT7/sYofAxQS2EoCGKg7EOM6', '2024-05-26 12:42:22', '2024-05-26 12:42:22'),
-(24, '', 0, 'Rontale', 'Dan Keneth', '1716729215_a6257e83d696237889db.jpg', 'Rontale12', '09876435732', 'rontale@gmail.com', 'Admin', '2003-12-03', '$2y$10$1igxmCnq.VrP0SgSOT.sreCgPwK4/p5HoSRB3AprN6wRIr4FHVo8e', '2024-05-26 13:13:35', '2024-05-26 13:13:35'),
-(25, '', 0, 'Mendoza', 'Francheska', '1716731563_94df9161481a20c20322.jpg', 'cheska06', '09876543212', 'cheskamendoza@gmail.com', 'Admin', '2000-12-06', '$2y$10$3jPQ/3WO7JCS4DcPVhO1uOZfGqlDPgmRvqrm.SfDN6/ajRJW2NhWO', '2024-05-26 13:30:15', '2024-05-26 13:30:15'),
-(27, '', 0, 'Manalo', 'Dan Keneth', '', 'dankeneth06', '09876543212', 'dankenethrontale@gmail.com', 'Booker', '2003-07-06', '$2y$10$y9jCN8XcIADaN56XlARquuGh4.ldUgKFiZGsS51oUfFD5H8rYKvlG', '2024-05-30 04:24:51', '2024-05-30 04:24:51'),
-(28, '', 0, 'Manalo', 'Arman', '1717043468_629cd3af76ecae7aa4c5.jpg', 'arman123', '09876543212', 'armanmanalo@gmail.com', 'Admin', '2002-05-22', '$2y$10$UzZ.NzPDAfm2GMhJ20d3G.upFbzhoQUECiB5ncfbkcrnylYDtI8ZK', '2024-05-30 04:31:08', '2024-05-30 04:31:08'),
-(37, '', 1, 'Rontale', 'Dan Keneth', '', 'DanDan', '09876543212', 'rontaledankeneth@gmail.com', 'Booker', '2024-06-05', '$2y$10$d7VEBDX.yQ5f2baJWz8bweotllgEseAQ5EHhpc2AFYoSqk46t88Me', '2024-06-05 12:49:40', '2024-06-05 12:49:40'),
-(38, '', 1, 'Dela Chica', 'Christia Angelica', '', 'chaje', '09261454009', 'changeldc11@gmail.com', 'Booker', '0000-00-00', '$2y$10$zsROHudedXg3LJH7riJrhuhYwL9qeMKfioPXE9wgP7kmRGi124lCC', '2024-06-06 06:42:27', '2024-06-06 06:42:27'),
-(39, '', 1, 'Ramirez', 'Jennifer', '', 'jenjen', '09876543212', 'jenniferramirez0201@gmail.com', 'Booker', '0000-00-00', '$2y$10$NtFHxJ/kv57J1wFeT5wELewsVJZC5tvEHM0yjyzeXKO/wBXGtsgeC', '2024-06-06 08:29:08', '2024-06-06 08:29:08');
+(58, '', 1, 'Foundation Incorporated', 'Aruga-Kapatid', 'default.jpg', 'Home4dAged', '09985774919', 'aruga.kapatid@gmail.com', 'MainAdmin', '2000-01-01', '$2y$10$DWTzweTrivkAQH84Dw6Owu6SL46rdRdMUBStGEeX6H/d7emFMa9U6', '2024-07-02 05:44:39', '2024-07-02 05:44:39');
 
 -- --------------------------------------------------------
 
@@ -647,16 +543,6 @@ CREATE TABLE `userbooking` (
   `status` varchar(159) COLLATE utf8mb4_swedish_ci NOT NULL,
   `usersignsId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
---
--- Dumping data for table `userbooking`
---
-
-INSERT INTO `userbooking` (`lastname`, `firstname`, `middlename`, `contactnum`, `event`, `prefferdate`, `Time`, `equipment`, `comments`, `bookingId`, `status`, `usersignsId`) VALUES
-('Ramirez', 'Christia', 'Curba', '09085353978', 'walang magawa event', '06/20/2024', '09:00:00', 'Mga sound effects', 'HEllo World', 205, 'pending', 38),
-('sadasd', 'sfas', 'sdfsfd', '09987655656', 'dsfdsf', '06/29/2024', '09:00:00', 'sdfsdf', 'dsfsd', 206, 'pending', 38),
-('asdaws', 'edsfsaf', 'dsfasf', '09987655656', 'sadasd', '06/26/2024', '09:00:00', 'dsfsdf', 'dsfdsf', 207, 'pending', 38),
-('ashdjkh', 'jkshdfjksh', 'sdhfjkh', '09123456789', 'sjdfhjksdh', '06/11/2024', '09:00:00', 'hdskjfhsjdkf', 'hdsjfkhj', 209, 'pending', 38);
 
 -- --------------------------------------------------------
 
@@ -682,15 +568,6 @@ CREATE TABLE `userdonation` (
   `mumosahapag` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
---
--- Dumping data for table `userdonation`
---
-
-INSERT INTO `userdonation` (`id`, `usersignsId`, `establishment`, `lastname`, `firstname`, `middlename`, `contactnum`, `donationdate`, `cashDonation`, `cashCheck`, `picture`, `referencenum`, `status`, `message`, `mumosahapag`) VALUES
-(36, 16, 'Hello', 'Manalo', 'Christia Angelica', 'Manalo', 9123456789, '2024-05-20 17:38:45', 0, 38000, '1716226725_e99edecb5b3ed8a0010c.jpg', '2213142A', 'Postponed', 'hello', 0),
-(38, 22, 'ihoiekjfeoifk', 'sjcjcjc', 'idkjikvdjik', 'jscjsoco', 9085353978, '2024-05-26 09:19:47', 20000, 0, '', '12341A', 'Received', 'ldkldc.kmclkd;dl', 0),
-(40, 16, 'shashasjmckjc', 'kskjcslcj', 'oscjcmlsck', 'olscjksklc', 9085353978, '2024-06-04 18:10:42', 0, 0, '', '2213142A', 'pending', 'iujdikjdikv', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -707,13 +584,26 @@ CREATE TABLE `usersigns` (
   `Password` text COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `usersigns`
+-- Table structure for table `vm`
 --
 
-INSERT INTO `usersigns` (`id`, `LastName`, `FirstName`, `Username`, `Email`, `ContactNo`, `Password`) VALUES
-(15, 'Santiago', 'Manalo', 'santiago15', 'santiagomanalo@gmail.com', '09876543212', '$2y$10$jRYWnrYcOCPjPxKdhO1ftugVN4oHHxmPWz4h3vCWMBqDTMSXrr9ce'),
-(16, 'Ramirez jr', 'Jenny jr', 'Jenny023', 'jenny@gmail.com', '09876543212', '$2y$10$8WRUiEuiEDwT9J/qu0i5MugpAZK/lV469v9SgOzLZ6AJZITfi9qr6');
+CREATE TABLE `vm` (
+  `id` int NOT NULL,
+  `Vision` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `CoreValues` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Mision` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `img` text COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `vm`
+--
+
+INSERT INTO `vm` (`id`, `Vision`, `CoreValues`, `Mision`, `img`) VALUES
+(1, 'A mission-oriented church-based organization composed of highly motivated volunteer lay persons, religious and clergy, moved by the charity of Christ for the poor, and committed to the ideals and spirits of the Hapag ng Pamilyang Mindoreno.', '<p>We fully adopt the core values of Hapag ng Pamilyang Mindoreno</p>\r\n					<p> - Kapatiran <br>\r\n						- Damayan <br>\r\n						- Tapungan  <br>\r\n						- Saknungan\r\n					</p>', '<p>Under the insperation of the Holy Spirit, and the following the prudent </p> <p> direction of the competent authority of the Apostolic Vicariate of Calapan, we,</p> <p> who are members of the Aruga Kapatid Foundation, Inc. commit ourselves to:</p>\r\n					<p>1. Live out evangelical poverty</p>\r\n					<p>2. Make Bahay-Ampunan in Managpi, Calapan City a home where the sick and the elderly can experience love and family spirit.</p>\r\n					<p>3. Promote the welfare and pastoral care of the poorest of the poor-the sick, the abandoned, the elderly, the deprived  be they at home or in institution.</p>\r\n					<p>4. Make linkages with NGO\'s, government offices, the church entitles to respond more adequately to the needs of the poor.</p>\r\n					<p>5. Promote social awareness among church groups, schools, and government entities regarding the different situations of the poor at the AVC.</p>\r\n					<p>6. Build up funds to support the program of AKFI.</p>', 'g21.jpg');
 
 --
 -- Indexes for dumped tables
@@ -771,9 +661,21 @@ ALTER TABLE `newsevents`
   ADD KEY `adminId` (`adminId`);
 
 --
+-- Indexes for table `organizationtable`
+--
+ALTER TABLE `organizationtable`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_image`
+--
+ALTER TABLE `product_image`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -800,12 +702,6 @@ ALTER TABLE `tblproduct`
 ALTER TABLE `tblscdetails`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `adminId` (`adminId`);
-
---
--- Indexes for table `time`
---
-ALTER TABLE `time`
-  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `transactions`
@@ -840,6 +736,12 @@ ALTER TABLE `usersigns`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `vm`
+--
+ALTER TABLE `vm`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -847,7 +749,7 @@ ALTER TABLE `usersigns`
 -- AUTO_INCREMENT for table `acceptbooking`
 --
 ALTER TABLE `acceptbooking`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT for table `announcement`
@@ -865,7 +767,7 @@ ALTER TABLE `elderneed`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `EventID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `EventID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `feedbacktbl`
@@ -886,10 +788,22 @@ ALTER TABLE `newsevents`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
+-- AUTO_INCREMENT for table `organizationtable`
+--
+ALTER TABLE `organizationtable`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `product_image`
+--
+ALTER TABLE `product_image`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `reportdonation`
@@ -913,31 +827,25 @@ ALTER TABLE `tblproduct`
 -- AUTO_INCREMENT for table `tblscdetails`
 --
 ALTER TABLE `tblscdetails`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
-
---
--- AUTO_INCREMENT for table `time`
---
-ALTER TABLE `time`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `userID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `bookingId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `bookingId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
 
 --
 -- AUTO_INCREMENT for table `userdonation`
@@ -950,6 +858,12 @@ ALTER TABLE `userdonation`
 --
 ALTER TABLE `usersigns`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `vm`
+--
+ALTER TABLE `vm`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

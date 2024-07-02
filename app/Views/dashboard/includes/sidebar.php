@@ -105,7 +105,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#reports" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-document-text menu-icon"></i>
               <span class="menu-title">Report of Donation</span>
@@ -117,8 +117,8 @@
                 <li class="nav-item"> <a class="nav-link" href="/viewDonation">Update Donation Report</a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
+          </li>-->
+          <li class="nav-item"> 
             <a class="nav-link" data-toggle="collapse" href="#news" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-news menu-icon"></i>
               <span class="menu-title">News and Events</span>
