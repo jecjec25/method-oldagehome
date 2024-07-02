@@ -2,17 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Responsive Navbar</title>
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
     <link rel="stylesheet" href="login/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
     <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
-    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        bkLib.onDomLoaded(nicEditors.allTextAreas);
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         .table {
             width: 100%;

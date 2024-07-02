@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <title>Report of Events</title>
+<title>Report of Events</title>
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
@@ -15,6 +16,8 @@
   <link href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    
+    
     <style type="text/css">
         .containers {
             border-radius: 5px;
@@ -40,11 +43,11 @@
   
   <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-</head>
-
+      </head>
 <body>
-<div class="container-scroller">
+  <div class="container-scroller">
 <?php include_once('includes/header.php') ?>
+
   <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
 &nbsp;
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
@@ -95,7 +98,7 @@
        <?php include_once('includes/footer.php');?>
       </div>
     </div>
-  </div>
+  </div>        
 </body>
 
 <script type="text/javascript">
@@ -107,6 +110,7 @@
             return [array.indexOf(string) == -1]
         }
     });
+
     $("input.to").datepicker({
         beforeShowDay: function(date) {
             var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
@@ -114,6 +118,4 @@
         }
     });
 </script>
-
-
 </html>
