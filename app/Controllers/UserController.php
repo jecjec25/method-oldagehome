@@ -13,11 +13,11 @@ class UserController extends BaseController
     private $userbooking;
     private $googleClient;
     public function __construct(){
-        require_once APPPATH. "libraries/vendor/autoload.php";
+        require_once APPPATH. "Libraries/vendor/autoload.php";
         $this->googleClient = new \Google_Client();
         $this->googleClient->setClientId("752789167035-9dgclvsdq651rbg8oeinhg4jcccc20kd.apps.googleusercontent.com");
         $this->googleClient->setClientSecret("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");
-        $this->googleClient->setRedirectUri("http://localhost:8080/GoogleLoginAuth");
+        $this->googleClient->setRedirectUri("https://homeforaged.online/GoogleLoginAuth");
         $this->googleClient->addScope("email");
         $this->googleClient->addScope("profile");
 
