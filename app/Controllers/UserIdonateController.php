@@ -493,7 +493,7 @@ class UserIdonateController extends BaseController
         'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first()
         ];
 
-        return view('admin/InKind', $data);
+        return view('admin/Inkind', $data);
     }
 
     public function getToeditMonetary($id)

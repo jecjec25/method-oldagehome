@@ -18346,3 +18346,201 @@ Page Not Found
 #4 {main}
 in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:02:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:03:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:04:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:05:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:06:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:07:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:08:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:09:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-02 07:10:05 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'mjkruoj7o20sabi...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
