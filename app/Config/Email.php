@@ -7,7 +7,7 @@ use CodeIgniter\Config\BaseConfig;
 class Email extends BaseConfig
 {
     public string $fromEmail  = 'aruga.kapatid@gmail.com';
-    public string $fromName   = 'methodOldAgeHome';
+    public string $fromName   = 'ArugaEmailVerification';
     public string $recipients = '';
 
     /**
