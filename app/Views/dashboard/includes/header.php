@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
+    
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
     <link rel="stylesheet" href="login/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
     <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
+ 
     <style>
         .table {
             width: 100%;

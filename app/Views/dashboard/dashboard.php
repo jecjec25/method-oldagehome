@@ -32,14 +32,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 grid-margin stretch-card">
+                        <!-- <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <canvas id="bookingsChart99"></canvas>
                                     <div class="chart-description">Number of Bookings per Month</div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">

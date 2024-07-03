@@ -4,6 +4,7 @@
 <head>
   
   <title>Signin</title>
+  <link rel="icon" type="image/png" href="/picture2.png">
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
@@ -59,7 +60,7 @@
                 </div>
                 <div class="mt-3">
                 <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn">LOGIN</button>
-                <?= $GoogleLogin?>
+             
               </div>
               </form> 
               <div class="mt-3">

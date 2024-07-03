@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <title>Edit Elder</title>
+<link rel="icon" type="image/png" href="/picture2.png">
 <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../login/css/vertical-layout-light/style.css">
@@ -43,7 +44,6 @@
                     Edit an Elder to Aruga Kapatid
                   </p>
                   <?= form_open_multipart('update/'.$d['Id']) ?>
-                  <form class="forms-sample" action="<?= site_url('update/' .$d['Id']) ?>" method="post">
                 
                 <input type="hidden" name="Id" value="<?= $d['Id']?>">
             
@@ -93,7 +93,7 @@
               <label for="exampleInputEmail1">Elder Picture</label>
                      
                     <p> <input type="file" name="ProfPic" id="user_img_input" accept=".jpg, .img, .png, .jpeg"  onchange="previewImage(event)" value="<?= $d['ProfPic']?>"/>
-                    
+                      
                       <?php if ($d['ProfPic']): ?>
                         <p><?= $d['ProfPic']?></p>
                     <img id="profile_image_preview"src="<?="/upload/seniors/"  . $d['ProfPic'] ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />

@@ -11,15 +11,7 @@ class UserController extends BaseController
 {
     private $user;
     private $userbooking;
-    private $googleClient;
     public function __construct(){
-        require_once APPPATH. "Libraries/vendor/autoload.php";
-        $this->googleClient = new \Google_Client();
-        $this->googleClient->setClientId("561772717218-231ui9cp99fs64v7q1hm27hhkcj1ushk.apps.googleusercontent.com");
-        $this->googleClient->setClientSecret("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1");
-        $this->googleClient->setRedirectUri("https://homeforaged.online/GoogleLoginAuth");
-        $this->googleClient->addScope("email");
-        $this->googleClient->addScope("profile");
 
         $this->user = new UsersModel();
         $this->userbooking = new UserbookingModel();
@@ -34,45 +26,47 @@ class UserController extends BaseController
     public function index()
     {
         helper(['form']);
-        $data['GoogleLogin'] = '<a href="'. $this->googleClient->createAuthUrl() .'">Use Google</a>';
-        return view('user/signin', $data);
+        // $data['GoogleLogin'] = '<a href="'. $this->googleClient->createAuthUrl() .'">Use Google</a>';
+        return view('user/signin');
     }
 
-    public function GoogleAuthLogin()
-    {
-        $token = $this->googleClient->fetchAccessTokenWithAuthCode($this->request->getVar('code'));
-        if (!isset($token['error'])) {
-            $this->googleClient->setAccessToken($token['access_token']);
-            session()->set("AccessToken", $token['access_token']);
+    // public function GoogleAuthLogin()
+    // {
+    //     $token = $this->googleClient->fetchAccessTokenWithAuthCode($this->request->getVar('code'));
+    //     if (!isset($token['error'])) {
+    //         $this->googleClient->setAccessToken($token['access_token']);
+    //         session()->set("AccessToken", $token['access_token']);
+
+
     
-            $googleService = new \Google_Service_Oauth2($this->googleClient);
-            $data = $googleService->userinfo->get();
-            $currentDateTime = date("Y-m-d H:i:s");
+    //         $googleService = new \Google_Service_Oauth2($this->googleClient);
+    //         $data = $googleService->userinfo->get();
+    //         echo "<pre> "; print_r($data); die;
+    //     //     $currentDateTime = date("Y-m-d H:i:s");
             
-            $userdata = [
-                'name' => $data['givenName'] . " " . $data['familyName'],
-                'email' => $data['email'],
-                'profile_img' => $data['picture'],
-                'updated_at' => $currentDateTime
-            ];
+    //     //     $userdata = [
+    //     //         'name' => $data['givenName'] . " " . $data['familyName'],
+    //     //         'email' => $data['email'],
+    //     //         'profile_img' => $data['picture'],
+    //     //         'updated_at' => $currentDateTime
+    //     //     ];
     
-            if ($this->userModel->isAlreadyRegister($data['id'])) {
-                // User already registered
-                $this->userModel->updateUserData($userdata, $data['id']);
-            } else {
-                // New user registration
-                $userdata['oauth_id'] = $data['id'];
-                $userdata['created_at'] = $currentDateTime;
-                $this->userModel->insertUserData($userdata);
-            }
+    //     //     if ($this->userModel->isAlreadyRegister($data['id'])) {
+    //     //         $this->userModel->updateUserData($userdata, $data['id']);
+    //     //     } else {
+    //     //         // New user registration
+    //     //         $userdata['oauth_id'] = $data['id'];
+    //     //         $userdata['created_at'] = $currentDateTime;
+    //     //         $this->userModel->insertUserData($userdata);
+    //     //     }
     
-            session()->set("LoggedUserData", $userdata);
-            return redirect()->to(base_url() . "/profile");
-        } else {
-            session()->setFlashData("Error", "Something went wrong");
-            return redirect()->to(base_url());
-        }
-    }
+    //     //     session()->set("LoggedUserData", $userdata);
+    //     //     return redirect()->to(base_url() . "/profile");
+    //     // } else {
+    //     //     session()->setFlashData("Error", "Something went wrong");
+    //     //     return redirect()->to(base_url());
+    //      }
+    // }
     
     public function Admin()
     {

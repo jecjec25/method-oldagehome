@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="css/bootstrap.css" type='text/css' />
     <link rel="stylesheet" href="css/style.css" type='text/css' />
+    <link rel="icon" type="image/png" href="/picture2.png">
     <link rel="stylesheet" href="/css/inkind.css" type='text/css' />
    
 </head>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event</title>
+    <link rel="icon" type="image/png" href="/picture2.png">
     <link href="/css/eventslogin.css" rel='stylesheet' type='text/css' />
 </head>
 <style>

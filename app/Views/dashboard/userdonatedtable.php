@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <title>Monetary Donations</title>
+  <link rel="icon" type="image/png" href="/picture2.png">
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">

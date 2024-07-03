@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News and Events</title>
+    <link rel="icon" type="image/png" href="/picture2.png">
     <link href="/css/news.css" rel='stylesheet' type='text/css'/>
 </head>
 <body>

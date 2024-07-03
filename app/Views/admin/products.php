@@ -2,6 +2,7 @@
 	<html>
 	<head>
 	<title>Products</title>
+  <link rel="icon" type="image/png" href="/picture2.png">
 	<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 

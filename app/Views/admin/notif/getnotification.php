@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Notification</title>
+    <link rel="icon" type="image/png" href="/picture2.png">
    <link href="/css/notif.css" rel='stylesheet' type='text/css' />
 
 </head>
