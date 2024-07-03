@@ -15,8 +15,8 @@ class UserController extends BaseController
     public function __construct(){
         require_once APPPATH. "Libraries/vendor/autoload.php";
         $this->googleClient = new \Google_Client();
-        $this->googleClient->setClientId("752789167035-9dgclvsdq651rbg8oeinhg4jcccc20kd.apps.googleusercontent.com");
-        $this->googleClient->setClientSecret("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");
+        $this->googleClient->setClientId("561772717218-231ui9cp99fs64v7q1hm27hhkcj1ushk.apps.googleusercontent.com");
+        $this->googleClient->setClientSecret("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1");
         $this->googleClient->setRedirectUri("https://homeforaged.online/GoogleLoginAuth");
         $this->googleClient->addScope("email");
         $this->googleClient->addScope("profile");
