@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class VMModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'VM';
+    protected $table            = 'vm';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
