@@ -55,7 +55,7 @@
 					GCASH NUMBER
 				</p>
 				<p>
-				<img src="images/sirpoygcashnum.jpg" class="image-qr"alt="">
+				<img src="images/<?= $donation[0]['img'] ?>" class="image-qr"alt="">
 				</p>
 				<p class="text-small">
 					Account Number: 09985774919

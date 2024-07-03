@@ -38,7 +38,7 @@
             <br>
             <p class="text-small"><b>GCASH NUMBER</b></p>
             <p>
-                <img src="images/sirpoygcashnum.jpg" class="image-qr" alt="Gcash QR Code">
+                <img src="images/<?= $donation[0]['img'] ?>" class="image-qr" alt="Gcash QR Code">
             </p>
             <p class="text-small">Account Number: 09985774919</p>
             <p class="text-small">Account Holder: Lito C. Vergara</p>

@@ -14,6 +14,7 @@ use App\Models\FeedbackModel;
 use App\Models\ProdImgModel;
 use App\Models\VMModel;
 use App\Models\OrganizerModel;
+use App\Models\DonationModel;
 
 class ViewController extends BaseController
 {
@@ -27,6 +28,7 @@ class ViewController extends BaseController
     private $prodImg;
     private $Vm;
     private $org;
+    private $donation;
 
     public function example(){
         return view('admin/example');
@@ -44,6 +46,7 @@ class ViewController extends BaseController
         $this->userbooking = new UserbookingModel();
         $this->prodImg = new ProdImgModel();
         $this->Vm = new VMModel();
+        $this->donation  = new DonationModel();
         $this->org = new OrganizerModel();
 
         helper(['form']);
@@ -63,7 +66,9 @@ class ViewController extends BaseController
     }
     public function donation()
     {
-        return view('admin/donation');
+
+      $data = ['donation' =>  $this->donation->findAll()];
+        return view('admin/donation', $data);
     }
     public function about()
     {
@@ -75,11 +80,13 @@ class ViewController extends BaseController
     }
     public function rules()
     {
+        
         return view('admin/rules');
     }
     public function service()
     {
-        return view('admin/service');
+        $data = ['service' =>  $this->donation->findAll()];
+        return view('admin/service', $data);
     }
     public function searchs()
     {

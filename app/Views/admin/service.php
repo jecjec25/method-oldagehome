@@ -42,7 +42,7 @@
 
     <div class="col-md-12" style="margin-top:4%;padding-top:4%;padding-bottom:4%;border:solid;border-radius:28px;color:rgb(201, 68, 103);;background-color:#c9c7c1">
             <div class="col-md-4 service-images">
-              <img src="aruga_gallery/g21.jpg" class="img-responsive" alt=""/>
+              <img src="aruga_gallery/<?= $service[1]['img'] ?>" class="img-responsive" alt=""/>
             </div>
             <div class="col-md-8 service-images-text">
               <div class="inner-text">
