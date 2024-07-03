@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>About</title>
-<link rel="icon" type="image/png" href="/picture2.png">
+<link rel="icon" type="image/png" href="/picture.png">
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <link href="css/style.css" rel='stylesheet' type='text/css' />

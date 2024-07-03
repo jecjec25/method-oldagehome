@@ -4,7 +4,7 @@
 <head>
   
   <title>Update Donation Report</title>
-  <link rel="icon" type="image/png" href="/picture2.png">
+  <link rel="icon" type="image/png" href="/picture.png">
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">

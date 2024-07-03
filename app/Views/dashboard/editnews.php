@@ -3,7 +3,7 @@
 
 <head>
   <title>Edit News</title>
-  <link rel="icon" type="image/png" href="/picture2.png">
+  <link rel="icon" type="image/png" href="/picture.png">
   <!-- base:css -->
   <link rel="stylesheet" href="/login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="/login/vendors/css/vendor.bundle.base.css">

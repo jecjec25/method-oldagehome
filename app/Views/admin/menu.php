@@ -2,11 +2,10 @@
 <html>
 <head>
     <title>Necessity</title>
-    <link rel="icon" type="image/png" href="/picture2.png">
+    <link rel="icon" type="image/png" href="/picture.png">
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="/css/menu.css" rel='stylesheet' type='text/css' />
-    <link rel="icon" type="image/png" href="/picture2.png">
 
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script src="js/jquery-1.8.3.min.js"></script>

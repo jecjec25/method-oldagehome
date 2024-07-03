@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Post Event</title>
-    <link rel="icon" type="image/png" href="/picture2.png">
+    <link rel="icon" type="image/png" href="/picture.png">
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
     <link rel="stylesheet" >
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
