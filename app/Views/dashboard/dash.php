@@ -50,9 +50,9 @@
                       <h5 class="mb-0" style="color: blue;">Elders of Aruga Kapatid</h5>
                       <h1 class="mb-0"></h1>
                     </div>
-                    <i class="typcn typcn-user icon-xl text-secondary"></i>
+                    <a href="test" class="typcn typcn-user icon-xl text-secondary" ></a>
                   </div>
-                  <a href="test" class="small-box-footer">More info <i class="fas fa-users-circle-right"></i></a>
+                  <a href="test" class="small-box-footer">More info</a>
                 </div>
               </div>
             </div>
@@ -65,9 +65,9 @@
                       <h5 class="mb-0" style="color: blue;">Point of Sale (POS)</h5>
                       <h1 class="mb-0"></h1>
                     </div>
-                    <i class="typcn typcn-shopping-bag icon-xl text-secondary"></i>
+                    <a href="/Main/pos" class="typcn typcn-shopping-bag icon-xl text-secondary"></a>
                   </div>
-                  <a href="/Main/pos" class="small-box-footer">More info <i class="fas fa-users-circle-right"></i></a>
+                  <a href="/Main/pos" class="small-box-footer">More info</a>
                 </div>
               </div>
             </div>
@@ -80,9 +80,9 @@
                       <h5 class="mb-0" style="color: blue;">Report of Elders</h5>
                       <h1 class="mb-0"></h1>
                     </div>
-                    <i class="typcn typcn-th-small-outline menu-icon icon-xl text-secondary"></i>
+                    <a href="reports" class="typcn typcn-th-small-outline menu-icon icon-xl text-secondary"></a>
                   </div>
-                  <a href="reports" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="reports" class="small-box-footer">More info</a>
                 </div>
               </div>
             </div>
@@ -91,13 +91,12 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
                     <div>
-                      
                       <h5 class="mb-0" style="color: blue;">Report of Monetary Donations</h5>
                       <h1 class="mb-0"></h1>
                     </div>
-                    <i class="typcn typcn-th-small-outline menu-icon icon-xl text-secondary"></i>
+                    <a href="reportMonetary" class="typcn typcn-th-small-outline menu-icon icon-xl text-secondary"></a>
                   </div>
-                   <a href="reportMonetary" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                   <a href="reportMonetary" class="small-box-footer">More info</a>
                 </div>
               </div>
             </div>
@@ -109,9 +108,9 @@
                       <h5 class="mb-0" style="color: blue;">Event Calendar</h5>
                       <h1 class="mb-0"></h1>
                     </div>
-                    <i class="typcn typcn-calendar menu-icon icon-xl text-secondary"></i>
+                    <a href="calendar" class="typcn typcn-calendar menu-icon icon-xl text-secondary"></a>
                   </div>
-                  <a href="calendar" class="small-box-footer">More info <i class="fas fa-users-circle-right"></i></a>
+                  <a href="calendar" class="small-box-footer">More info</a>
                 </div>
               </div>
             </div>
@@ -123,9 +122,9 @@
                       <h5 class="mb-0" style="color: blue;">Track Monetary Donations</h5>
                       <h1 class="mb-0"></h1>
                     </div>
-                    <i class="typcn typcn-gift menu-icon icon-xl text-secondary"></i>
+                    <a href="userdonatedtable" class="typcn typcn-gift menu-icon icon-xl text-secondary"></a>
                   </div>
-                  <a href="userdonatedtable" class="small-box-footer">More info <i class="fas fa-users-circle-right"></i></a>
+                  <a href="userdonatedtable" class="small-box-footer">More info</a>
                 </div>
               </div>
             </div>

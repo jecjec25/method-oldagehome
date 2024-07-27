@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 02, 2024 at 06:05 AM
+-- Generation Time: Jul 03, 2024 at 10:38 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u262559041_homeforaged_db`
+-- Database: `seniorcaredb`
 --
 
 -- --------------------------------------------------------
@@ -68,6 +68,25 @@ CREATE TABLE `announcement` (
   `Target_audience` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `adminId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donationdets`
+--
+
+CREATE TABLE `donationdets` (
+  `id` int NOT NULL,
+  `img` text COLLATE utf8mb4_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `donationdets`
+--
+
+INSERT INTO `donationdets` (`id`, `img`) VALUES
+(1, 'sirpoygcashnum.jpg'),
+(2, 'g21.jpg');
 
 -- --------------------------------------------------------
 
@@ -182,7 +201,7 @@ INSERT INTO `organizationtable` (`id`, `img`, `name`, `position`) VALUES
 (3, 'louie.jpg', 'HENRY N. DACANAY III', 'Admin Staff'),
 (4, 'analyn.jpg', 'ANALYN C. ZAPATA', 'Caregiver'),
 (5, 'axel.jpg', 'AXEL MICO CAPOL', 'Caregiver'),
-(6, 'manalO_1.jpg', 'JOSE DELMAR MANALO', 'Caregiver'),
+(6, 'manalo_1.jpg', 'JOSE DELMAR MANALO', 'Caregiver'),
 (7, 'zamora.jpg', 'EDUARDO D. ZAMORA', 'Driver/Maintenance'),
 (8, 'arnold.jpg', 'ARNOLD S. SAMSOM', 'Kitchen Staff/Helper');
 
@@ -325,6 +344,13 @@ CREATE TABLE `tblcontact` (
   `contact_status` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
+--
+-- Dumping data for table `tblcontact`
+--
+
+INSERT INTO `tblcontact` (`Id`, `Name`, `Phone`, `Email`, `Enquiry_Date`, `Message`, `contact_status`) VALUES
+(14, 'jshclsvujlosjvo', '09085353978', 'shantal@gmail.com', '2024-07-03 02:09:21', ' jhfkkisvliusjvlslvkjslkv', 'Unread');
+
 -- --------------------------------------------------------
 
 --
@@ -387,6 +413,13 @@ CREATE TABLE `tblscdetails` (
   `causedeath` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `adminId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `tblscdetails`
+--
+
+INSERT INTO `tblscdetails` (`Id`, `lastname`, `firstname`, `middlename`, `nickname`, `DateBirth`, `gender`, `marital_stat`, `ContNum`, `ComAdd`, `ProfPic`, `EmergencyAdd`, `EmergencyContNum`, `RegDate`, `scstatus`, `InputedDate`, `departuredate`, `reasonleft`, `datedeath`, `causedeath`, `adminId`) VALUES
+(101, 'jvkjvdkvk', 'kndkjdk n', 'dkjvdljelk', 'ksjvdkvjdvj', '1945-12-25', 'Female', 'Married', '09876543212', 'nkjidkjvrkdv', '1719971596_6e8de9bd7eae7a9f216f.jpg', 'dvjodvjmdovj', '09876543212', '2024-07-03', 'Unarchive', '2024-07-03 09:53:16', '', '', '', '', 58);
 
 -- --------------------------------------------------------
 
@@ -624,6 +657,12 @@ ALTER TABLE `announcement`
   ADD KEY `adminId` (`adminId`);
 
 --
+-- Indexes for table `donationdets`
+--
+ALTER TABLE `donationdets`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `elderneed`
 --
 ALTER TABLE `elderneed`
@@ -758,6 +797,12 @@ ALTER TABLE `announcement`
   MODIFY `AnnounceID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
+-- AUTO_INCREMENT for table `donationdets`
+--
+ALTER TABLE `donationdets`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `elderneed`
 --
 ALTER TABLE `elderneed`
@@ -815,7 +860,7 @@ ALTER TABLE `reportdonation`
 -- AUTO_INCREMENT for table `tblcontact`
 --
 ALTER TABLE `tblcontact`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tblproduct`
@@ -827,7 +872,7 @@ ALTER TABLE `tblproduct`
 -- AUTO_INCREMENT for table `tblscdetails`
 --
 ALTER TABLE `tblscdetails`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `transactions`
