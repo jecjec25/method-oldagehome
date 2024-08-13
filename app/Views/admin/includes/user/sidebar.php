@@ -240,7 +240,7 @@ b {
             <li><a href="/donate-items">In-kind Donation</a></li>
           </ul>
         </li>
-        <li><a href="/userdonation">Donation</a></li>
+        <li><a href="/userdonation">How to Donate</a></li>
         <li><a href="/userproduct">Products</a></li>
         <li><a href="/usereventpost">Post an Event</a></li>
         <div class="clearfix"></div>

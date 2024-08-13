@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 03, 2024 at 10:38 AM
+-- Generation Time: Aug 13, 2024 at 05:06 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -196,7 +196,7 @@ CREATE TABLE `organizationtable` (
 --
 
 INSERT INTO `organizationtable` (`id`, `img`, `name`, `position`) VALUES
-(1, 'icon.jpg', 'Rev. Fr. ANDY PETER M. LUBI', 'Apostolic Administrator'),
+(1, 'frandy.jpg', 'Rev. Fr. ANDY PETER M. LUBI', 'Apostolic Administrator'),
 (2, 'popoy.jpg', 'LITO C. VERGARA', 'Administrator'),
 (3, 'louie.jpg', 'HENRY N. DACANAY III', 'Admin Staff'),
 (4, 'analyn.jpg', 'ANALYN C. ZAPATA', 'Caregiver'),
@@ -419,7 +419,7 @@ CREATE TABLE `tblscdetails` (
 --
 
 INSERT INTO `tblscdetails` (`Id`, `lastname`, `firstname`, `middlename`, `nickname`, `DateBirth`, `gender`, `marital_stat`, `ContNum`, `ComAdd`, `ProfPic`, `EmergencyAdd`, `EmergencyContNum`, `RegDate`, `scstatus`, `InputedDate`, `departuredate`, `reasonleft`, `datedeath`, `causedeath`, `adminId`) VALUES
-(101, 'jvkjvdkvk', 'kndkjdk n', 'dkjvdljelk', 'ksjvdkvjdvj', '1945-12-25', 'Female', 'Married', '09876543212', 'nkjidkjvrkdv', '1719971596_6e8de9bd7eae7a9f216f.jpg', 'dvjodvjmdovj', '09876543212', '2024-07-03', 'Unarchive', '2024-07-03 09:53:16', '', '', '', '', 58);
+(101, 'jvkjvdkvk', 'kndkjdk n', 'dkjvdljelk', 'ksjvdkvjdvj', '1945-12-25', 'Female', 'Married', '09876543212', 'nkjidkjvrkdv', '1719971596_6e8de9bd7eae7a9f216f.jpg', 'dvjodvjmdovj', '09876543212', '2024-07-03', 'Deceased', '2024-07-03 09:53:16', '', '', '', '', 58);
 
 -- --------------------------------------------------------
 
@@ -553,8 +553,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`userID`, `verification_token`, `is_verified`, `LastName`, `FirstName`, `user_img`, `Username`, `ContactNo`, `Email`, `role`, `birthday`, `Password`, `Created_At`, `Update_At`) VALUES
 (2, '', 1, 'Dela Chica', 'Christia', '1716714625_23ec69030b0b83ea20fc.jpg', 'christia25', '09633895626', 'christia25@gmail.com', 'MainAdmin', '2002-12-25', '$2y$10$mCyCYd2b6efQiKMj.z30mONbP2yrTGubK3s.tKJrlVq9OxUud4TfC', '2024-02-18 06:40:43', '2024-02-18 06:40:43'),
-(16, '', 1, 'Ramirezs', 'Jenny ', '', 'Jenny', '09876543212', 'jenny@gmail.com', 'Booker', '0000-00-00', '$2y$10$WAyNwAbWdz/wSwJ8THuZ2ebt5mAha6FZTaV2MeC1NeFy0Bv./BZMy', '2024-05-07 06:28:03', '2024-05-07 06:28:03'),
-(58, '', 1, 'Foundation Incorporated', 'Aruga-Kapatid', 'default.jpg', 'Home4dAged', '09985774919', 'aruga.kapatid@gmail.com', 'MainAdmin', '2000-01-01', '$2y$10$DWTzweTrivkAQH84Dw6Owu6SL46rdRdMUBStGEeX6H/d7emFMa9U6', '2024-07-02 05:44:39', '2024-07-02 05:44:39');
+(58, '', 1, 'Foundation Incorporated', 'Aruga-Kapatid', 'default.jpg', 'Home4dAged', '09985774919', 'aruga.kapatid@gmail.com', 'MainAdmin', '2000-01-01', '$2y$10$DWTzweTrivkAQH84Dw6Owu6SL46rdRdMUBStGEeX6H/d7emFMa9U6', '2024-07-02 05:44:39', '2024-07-02 05:44:39'),
+(59, '', 1, 'Ramirez', 'Jennirfer', '', 'jennifer', '09876543212', 'jenniferramirez25@gmail.com', 'Booker', '2002-01-25', '$2y$10$x9jqA6X6CKxJQGC6gRbuSukg0dEV7rS58VcBgPi..LPmzE8otC8SK', '2024-08-13 04:09:58', '2024-08-13 04:09:58');
 
 -- --------------------------------------------------------
 
@@ -884,7 +884,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `userID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `userbooking`

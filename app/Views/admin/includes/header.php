@@ -58,7 +58,7 @@
           <li><a href="/services">Services</a></li>
           <li><a href="/news">News&Events</a></li>
           <li><a href="/announcement">Announcement</a></li>
-          <li><a href="/donation">Donation</a></li>
+          <li><a href="/donation">How to Donate</a></li>
           <li><a href="/menu">Necessity</a></li>
           <div class="clearfix"> </div>
         </ul>

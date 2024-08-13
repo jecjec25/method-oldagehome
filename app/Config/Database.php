@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => 'u262559041_homeforaged',
-        'password'     => 'Arugakapatid@2024',
-        'database'     => 'u262559041_homeforaged_db',
+        'hostname'     => 'u262559041_homeforaged',
+        'username'     => 'Arugakapatid@2024',
+        'password'     => 'u262559041_homeforaged_db',
+        'database'     => 'seniorcaredb',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,

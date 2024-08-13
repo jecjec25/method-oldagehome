@@ -628,7 +628,7 @@ class NewController extends BaseController
                 ->findAll(),
                 'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
             ];
-            $data['main'] = $this->main->like('firstname', $search)->where('scstatus','Unarchive')->findAll();
+            $data['main'] = $this->main->like('lastname', $search)->where('scstatus','Unarchive')->findAll();
             return view('dashboard/search',$data);
         }
     }
@@ -650,9 +650,12 @@ class NewController extends BaseController
 
     private function updateMyVisibility($update)
     {
-        if(empty($this->request->getVar('status')))
-        {
-            echo 'lagyan mo ng laman uy';
+        if (empty($this->request->getVar('status'))) {
+            // Set flashdata with an error message
+            session()->setFlashdata('error', 'Please select status');
+    
+            // Redirect back to the previous page (or a specific page)
+            return redirect()->back();
         }
 
         else{

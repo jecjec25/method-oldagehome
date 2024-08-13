@@ -127,6 +127,17 @@
                                     <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
                                 </form>
                                 <div class="table-responsive pt-3">
+                                <?php if (session()->getFlashdata('error')): ?>
+                                <div class="alert alert-danger">
+                                    <?= session()->getFlashdata('error') ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if (session()->getFlashdata('success')): ?>
+                                    <div class="alert alert-success">
+                                        <?= session()->getFlashdata('success') ?>
+                                    </div>
+                                <?php endif; ?>
                                     <table class="table table-striped project-orders-table" id="tblscdetails">
                                         <?php if(isset($k['Id'])){?>
                                         <input type="hidden" name="Id" value="<?=$k['Id']?>">
