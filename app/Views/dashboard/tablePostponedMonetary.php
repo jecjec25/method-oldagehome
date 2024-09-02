@@ -23,7 +23,9 @@
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Donation</p>
+              <p class="mb-0">
+                <a href="userdonatedtable" style="color: white;">Donation</a>
+              </p>
             </div>
           </li>
         </ul>

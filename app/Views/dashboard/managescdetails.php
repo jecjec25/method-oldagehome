@@ -105,7 +105,9 @@
                         <div class="d-flex align-items-baseline">
                             <p class="mb-0">Home</p>
                             <i class="typcn typcn-chevron-right"></i>
-                            <p class="mb-0">Register Elder</p>
+                            <p class="mb-0">
+                                <a href="adddetails" style="color: white;">Register Elder</a>
+                            </p>
                         </div>
                     </li>
                 </ul>

@@ -27,7 +27,9 @@
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Announcement</p>
+              <p class="mb-0">
+                <a href="Adannouncement" style="color: white;">Announcement</a>
+              </p>
             </div>
           </li>
         </ul>

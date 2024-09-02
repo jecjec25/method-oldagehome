@@ -26,7 +26,9 @@
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Handmade Product</p>
+              <p class="mb-0">
+                <a href="/Main/pos" style="color: white;">Handmade Product</a>
+              </p>
             </div>
           </li>
         </ul>

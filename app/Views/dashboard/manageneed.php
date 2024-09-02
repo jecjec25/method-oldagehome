@@ -27,7 +27,9 @@
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Elder Needs</p>
+              <p class="mb-0">
+                <a href="viewelderneed" style="color: white;">Elder Needs</a>
+              </p>
             </div>
           </li>
         </ul>

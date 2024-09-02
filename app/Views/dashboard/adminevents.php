@@ -29,7 +29,7 @@
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">News and Events</p>
+              <p class="mb-0">Events</p>
             </div>
           </li>
         </ul>
