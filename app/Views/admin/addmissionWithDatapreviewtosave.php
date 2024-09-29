@@ -1,10 +1,11 @@
+<!-- save_data_view.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
     <title>Preview Admission Slip</title>
     <link rel="icon" type="image/png" href="/picture.png">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -181,11 +182,13 @@
     </style>
 </head>
 <body>
-    <form action="<?= base_url('saveToPdfSlip/' . $elder['Id'])?>" method="GET">
+    
+<form action="<?= base_url('saveToPdfSlip/' . $elder['Id'])?>" method="GET">
     <div class="button-download">
     </div>
     <div class="button-print">
-            <button type="submit">Print</button>
+    <button id="saveButton">Save</button>
+
     </div>
     
     <div class="button-back">
@@ -249,52 +252,55 @@
 <input value="<?= $socialworker?>" type="hidden" class="inputer" name="socialworker">
 </form>
 
-<input type="hidden" name="casenum" id="casenum" value="<?= $casenum?>">
-<input type="hidden" name="birthplace" id="birthplace" value="<?= $birthplace?>">
-<input type="hidden" name="nameCom" id="nameCom" value="<?= $nameCom?>">                 
-<input type="hidden" name="contactCom" id="contactCom" value="<?= $contactCom?>">
-<input type="hidden" name="addressCom" id="addressCom" value="<?= $addressCom?>">      
-<input type="hidden" name="RelatinClient" id="RelatinClient" value="<?=$RelatinClient?>">
-<input type="hidden" class="inputer" name="nameRef" id="nameRef" value="<?= $nameRef?> ">
-<input type="hidden" class="inputer" name="addressRef" id="addressRef" value="<?= $addressRef?>">
-<input type="hidden" name="contactRef" class="inputer" id="contactRef" value ="<?= $contactRef?>">
-<input type="hidden" class="inputer" name="num1Admision" id="num1Admision" value="<?= $num1Admision?>">
-<input type="hidden" class="inputer" name="num1Discharge" id="num1Discharge" value="<?= $num1Discharge?>">
-<input type="hidden" class="inputer" name="num2Admision" id="num2Admision" value="<?= $num2Admision?>">
-<input type="hidden" class="inputer" name="num2Discharge" id="num2Discharge" value="<?= $num2Discharge?>">
-<input type="hidden" class="inputer" name="num3Admision" id="num3Admision" value="<?= $num3Admision?>"> 
-<input type="hidden" class="inputer" name="num3Discharge" id="num3Discharge" value="<?= $num3Discharge?>">
-<input type="hidden" class="inputer" name="num4Admision" id="num4Admision" value="<?= $num4Admision?>">
-<input type="hidden" class="inputer" name="num4Discharge" id="num4Discharge" value="<?= $num4Discharge?>">
-<input type="hidden" class="inputer" name="num5Admision" id="num5Admision" value="<?= $num5Admision?>">
-<input type="hidden" class="inputer" name="num5Discharge" id="num5Discharge" value="<?= $num5Discharge?>">
-<input value="<?= $num6Admision?>" type="hidden" class="inputer" name="num6Admision" id="num6Admision">
-<input value="<?= $num6Discharge?>" type="hidden" class="inputer" name="num6Discharge" id="num6Discharge">
-<input value="<?= $num7Admision?>" type="hidden" class="inputer" name="num7Admision" id="num7Admision">
-<input value="<?= $num7Discharge?>" type="hidden" class="inputer" name="num7Discharge" id="num7Discharge">
-<input value="<?= $num8Admision?>" type="hidden" class="inputer" name="num8Admision" id="num8Admision">
-<input value="<?= $num8Discharge?>" type="hidden" class="inputer" name="num8Discharge" id="num8Discharge">
-<input value="<?= $num9Admision?>" type="hidden" class="inputer" name="num9Admision" id="num9Admision">
-<input value="<?= $num9Discharge?>" type="hidden" class="inputer" name="num9Discharge" id="num9Discharge">
-<input value="<?= $num10Admision?>" type="hidden" class="inputer" name="num10Admision" id="num10Admision">
-<input value="<?= $num10Discharge?>" type="hidden" class="inputer" name="num10Discharge" id="num10Discharge">
-<input value="<?= $num11Admision?>" type="hidden" class="inputer" name="num11Admision" id="num11Admision">
-<input value="<?= $num11Discharge?>" type="hidden" class="inputer" name="num11Discharge" id="num11Discharge">
-<input value="<?= $num12Admision?>" type="hidden" class="inputer" name="num12Admision" id="num12Admision">
-<input value="<?= $num12Discharge?>" type="hidden" class="inputer" name="num12Discharge" id="num12Discharge">
-<input value="<?= $num13Admision?>" type="hidden" class="inputer" name="num13Admision" id="num13Admision">
-<input value="<?= $num13Discharge?>" type="hidden" class="inputer" name="num13Discharge" id="num13Discharge">
-<input value="<?= $num14Admision?>" type="hidden" class="inputer" name="num14Admision" id="num14Admision">
-<input value="<?= $num14Discharge?>" type="hidden" class="inputer" name="num14Discharge" id="num14Discharge">
-<input value="<?= $num15Admision?>" type="hidden" class="inputer" name="num15Admision" id="num15Admision">
-<input value="<?= $num15Discharge?>" type="hidden" class="inputer" name="num15Discharge" id="num15Discharge">
-<input value="<?= $inventoriedby?>" type="hidden" class="inputer" name="inventoriedby" id="inventoriedby">
-<input value="<?= $turnoverto?>" type="hidden" class="inputer" name="turnoverto" id="turnoverto">
-<input value="<?= $receivedby?>" type="hidden" class="inputer" name="receivedby" id="receivedby">
-<input value="<?= $referringparty?>" type="hidden" class="inputer" name="referringparty" id="referringparty">
-<input value="<?= $socialworker?>" type="hidden" class="inputer" name="socialworker" id="socialworker">
+    <input type="hidden" name="casenum" id="casenum" value="<?= htmlspecialchars($casenum, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" name="birthplace" id="birthplace" value="<?= htmlspecialchars($birthplace, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" name="nameCom" id="nameCom" value="<?= htmlspecialchars($nameCom, ENT_QUOTES, 'UTF-8') ?>">                 
+    <input type="hidden" name="contactCom" id="contactCom" value="<?= htmlspecialchars($contactCom, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" name="addressCom" id="addressCom" value="<?= htmlspecialchars($addressCom, ENT_QUOTES, 'UTF-8') ?>">      
+    <input type="hidden" name="RelatinClient" id="RelatinClient" value="<?= htmlspecialchars($RelatinClient, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="nameRef" id="nameRef" value="<?= htmlspecialchars($nameRef, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="addressRef" id="addressRef" value="<?= htmlspecialchars($addressRef, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" name="contactRef" class="inputer" id="contactRef" value="<?= htmlspecialchars($contactRef, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num1Admision" id="Num1A" value="<?= htmlspecialchars($num1Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num1Discharge" id="Num1D" value="<?= htmlspecialchars($num1Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num2Admision" id="Num2A" value="<?= htmlspecialchars($num2Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num2Discharge" id="Num2D" value="<?= htmlspecialchars($num2Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num3Admision" id="Num3A" value="<?= htmlspecialchars($num3Admision, ENT_QUOTES, 'UTF-8') ?>"> 
+    <input type="hidden" class="inputer" name="num3Discharge" id="Num3D" value="<?= htmlspecialchars($num3Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num4Admision" id="Num4" value="<?= htmlspecialchars($num4Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num4Discharge" id="Num4D" value="<?= htmlspecialchars($num4Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num5Admision" id="Num5A" value="<?= htmlspecialchars($num5Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num5Discharge" id="Num5D" value="<?= htmlspecialchars($num5Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num6Admision" id="Num6A" value="<?= htmlspecialchars($num6Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num6Discharge" id="Num6D" value="<?= htmlspecialchars($num6Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num7Admision" id="Num7A" value="<?= htmlspecialchars($num7Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num7Discharge" id="Num7D" value="<?= htmlspecialchars($num7Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num8Admision" id="Num8A" value="<?= htmlspecialchars($num8Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num8Discharge" id="Num8D" value="<?= htmlspecialchars($num8Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num9Admision" id="Num9A" value="<?= htmlspecialchars($num9Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num9Discharge" id="Num9D" value="<?= htmlspecialchars($num9Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num10Admision" id="Num10A" value="<?= htmlspecialchars($num10Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num10Discharge" id="Num10D" value="<?= htmlspecialchars($num10Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num11Admision" id="Num11A" value="<?= htmlspecialchars($num11Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num11Discharge" id="Num11" value="<?= htmlspecialchars($num11Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num12Admision" id="Num12A" value="<?= htmlspecialchars($num12Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num12Discharge" id="Num12D" value="<?= htmlspecialchars($num12Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num13Admision" id="Num13A" value="<?= htmlspecialchars($num13Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num13Discharge" id="Num13D" value="<?= htmlspecialchars($num13Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num14Admision" id="Num14A" value="<?= htmlspecialchars($num14Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num14Discharge" id="Num14D" value="<?= htmlspecialchars($num14Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num15Admision" id="Num15A" value="<?= htmlspecialchars($num15Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num15Discharge" id="Num15D" value="<?= htmlspecialchars($num15Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="inventoriedby" id="inventoriedby" value="<?= htmlspecialchars($inventoriedby, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="turnoverto" id="turnoverto" value="<?= htmlspecialchars($turnoverto, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="receivedby" id="receivedby" value="<?= htmlspecialchars($receivedby, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="referringparty" id="referringparty" value="<?= htmlspecialchars($referringparty, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="socialworker" id="socialworker" value="<?= htmlspecialchars($socialworker, ENT_QUOTES, 'UTF-8') ?>">
 
-       <table>
+
+
+    <div id="responseMessage"></div>
+    <table>
                 <tr>
                     <th colspan="10" width="60%">Date of Admision: <?= date('F d, Y', strtotime($elder['InputedDate'])) ?></th>
                     <th colspan="8">Case No. <?= $casenum?></th>   
@@ -438,7 +444,6 @@
 
 </tr>
 
-</form>
 
         </table>
         <div style="display: flex; justify-content: space-between; margin-top: 40px;">
@@ -457,10 +462,10 @@
         </div>
     </div>
 
+    <!-- JavaScript Code -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Fetch CSRF token from meta tags or a hidden input
-            // For this example, we'll assume it's available as a meta tag
+            // Ensure this script is in a PHP file to interpret PHP tags
             const csrfName = '<?= csrf_token() ?>';
             let csrfHash = '<?= csrf_hash() ?>';
 
@@ -469,66 +474,39 @@
                 csrfHash = newHash;
             }
 
+            // Array of all input field IDs
+            const fieldIds = [
+                'casenum', 'birthplace', 'nameCom', 'contactCom', 'addressCom',
+                'RelatinClient', 'nameRef', 'addressRef', 'contactRef',
+                'Num1A', 'Num1D', 'Num2A', 'Num2D',
+                'Num3A', 'Num3D', 'Num4A', 'Num4D',
+                'Num5A', 'Num5D', 'Num6A', 'Num6D',
+                'Num7A', 'Num7D', 'Num8A', 'Num8D',
+                'Num9A', 'Num9D', 'Num10A', 'Num10D',
+                'Num11A', 'Num11D', 'Num12A', 'Num12D',
+                'Num13A', 'Num13D', 'Num14A', 'Num14D',
+                'Num15Admision', 'Num15D', 'inventoriedby', 'turnoverto',
+                'receivedby', 'referringparty', 'socialworker'
+            ];
+
             document.getElementById('saveButton').addEventListener('click', function() {
                 // Collect data from input fields
-                const data = {
-                    field1: document.getElementById('casenum').value,
-                    field2: document.getElementById('birthplace').value,
-                    field3: document.getElementById('nameCom').value,
-                    field4: document.getElementById('contactCom').value,
-                    field5: document.getElementById('addressCom').value,
-                    field6: document.getElementById('RelatinClient').value,
-                    field7: document.getElementById('nameRef').value,
-                    field8: document.getElementById('addressRef').value,
-                    field9: document.getElementById('contactRef').value,
-                    field10: document.getElementById('num1Admision').value,
-                    field11: document.getElementById('num1Discharge').value,
-                    field12: document.getElementById('num2Admision').value,
-                    field13: document.getElementById('num2Discharge').value,
-                    field14: document.getElementById('num3Admision').value,
-                    field15: document.getElementById('num3Discharge').value,
-                    field16: document.getElementById('num4Admision').value,
-                    field17: document.getElementById('num4Discharge').value,
-                    field18: document.getElementById('num5Admision').value,
-                    field19: document.getElementById('num5Discharge').value,
-                    field20: document.getElementById('num6Admision').value,
-                    field21: document.getElementById('num6Discharge').value,
-                    field22: document.getElementById('num7Admision').value,
-                    field23: document.getElementById('num7Discharge').value,
-                    field24: document.getElementById('num8Admision').value,
-                    field25: document.getElementById('num8Discharge').value,
-                    field26: document.getElementById('num9Admision').value,
-                    field27: document.getElementById('num9Discharge').value,
-                    field28: document.getElementById('num10Admision').value,
-                    field29: document.getElementById('num10Discharge').value,
-                    field30: document.getElementById('num11Admision').value,
-                    field31: document.getElementById('num11Discharge').value,
-                    field32: document.getElementById('num12Admision').value,
-                    field33: document.getElementById('num12Discharge').value,
-                    field34: document.getElementById('num13Admision').value,
-                    field35: document.getElementById('num13Discharge').value,
-                    field36: document.getElementById('num14Admision').value,
-                    field37: document.getElementById('num14Discharge').value,
-                    field38: document.getElementById('num15Admision').value,
-                    field39: document.getElementById('num15Discharge').value,
-                    field40: document.getElementById('inventoriedby').value,
-                    field41: document.getElementById('turnoverto').value,
-                    field42: document.getElementById('receivedby').value,
-                    field43: document.getElementById('referringparty').value,
-                    field44: document.getElementById('socialworker').value,
+                const data = {};
 
-                };
+                fieldIds.forEach(function(id) {
+                    const element = document.getElementById(id);
+                    data[id] = element ? element.value : '';
+                });
 
                 // Include CSRF token
                 data[csrfName] = csrfHash;
 
                 // Send data via Axios
-                axios.post('/datacontroller/savedata', data, {
+                axios.post('/NewController/savedata', data, {
                     headers: {
                         'X-Requested-With': 'XMLHttpRequest',
                         'Content-Type': 'application/json',
-                        // CSRF token can also be sent via headers if preferred
-                        // 'X-CSRF-Token': csrfHash
+                        // 'X-CSRF-Token': csrfHash // Optional: If you prefer sending CSRF token via headers
                     }
                 })
                 .then(function (response) {
@@ -538,57 +516,21 @@
                     if (res.status === 'success') {
                         messageDiv.style.color = 'green';
                         messageDiv.textContent = res.message;
-                        // Optionally, clear input fields
-                        document.getElementById('casenum').value = '';
-                        document.getElementById('birthplace').value = '';
-                        document.getElementById('nameCom').value = '';
-                        document.getElementById('contactCom').value = '';
-                        document.getElementById('addressCom').value = '';
-                        document.getElementById('RelatinClient').value = '';
-                        document.getElementById('addressRef').value = '';
-                        document.getElementById('contactRef').value = '';
-                        document.getElementById('num1Admision').value = '';
-                        document.getElementById('num1Discharge').value = '';
-                        document.getElementById('num2Admision').value = '';
-                        document.getElementById('num2Discharge').value = '';
-                        document.getElementById('num3Admision').value = '';
-                        document.getElementById('num3Discharge').value = '';
-                        document.getElementById('num4Admision').value = '';
-                        document.getElementById('num4Discharge').value = '';
-                        document.getElementById('num5Admision').value = '';
-                        document.getElementById('num5Discharge').value = '';
-                        document.getElementById('num6Admision').value = '';
-                        document.getElementById('num6Discharge').value = '';
-                        document.getElementById('num7Admision').value = '';
-                        document.getElementById('num7Discharge').value = '';
-                        document.getElementById('num8Admision').value = '';
-                        document.getElementById('num8Discharge').value = '';
-                        document.getElementById('num9Admision').value = '';
-                        document.getElementById('num9Discharge').value = '';
-                        document.getElementById('num10Admision').value = '';
-                        document.getElementById('num10Discharge').value = '';
-                        document.getElementById('num11Admision').value = '';
-                        document.getElementById('num11Discharge').value = '';
-                        document.getElementById('num12Admision').value = '';
-                        document.getElementById('num12Discharge').value = '';
-                        document.getElementById('num13Admision').value = '';
-                        document.getElementById('num13Discharge').value = '';
-                        document.getElementById('num14Admision').value = '';
-                        document.getElementById('num14Discharge').value = '';
-                        document.getElementById('num15Admision').value = '';
-                        document.getElementById('num15Discharge').value = '';
-                        document.getElementById('inventoriedby').value = '';
-                        document.getElementById('turnoverto').value = '';
-                        document.getElementById('receivedby').value = '';
-                        document.getElementById('referringparty').value = '';
-                        document.getElementById('socialworker').value = '';
+
+                        // Clear input fields using loop
+                        fieldIds.forEach(function(id) {
+                            const element = document.getElementById(id);
+                            if (element) {
+                                element.value = '';
+                            }
+                        });
                     } else {
                         messageDiv.style.color = 'red';
                         if (typeof res.message === 'object') {
                             // Display validation errors
                             let errorMessages = 'Errors:<ul>';
                             for (const [key, value] of Object.entries(res.message)) {
-                                errorMessages += <li>${value}</li>;
+                                errorMessages += `<li>${value}</li>`; // Use backticks for template literals
                             }
                             errorMessages += '</ul>';
                             messageDiv.innerHTML = errorMessages;
@@ -609,11 +551,7 @@
                 });
             });
         });
-
     </script>
 
 </body>
 </html>
-
-
-                    

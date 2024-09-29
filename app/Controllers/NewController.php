@@ -1960,7 +1960,7 @@ $mydata = date('F d, Y', strtotime($elder['InputedDate']));
                     <th colspan="18" style="text-align: center;">Client</th>
                 </tr>
                 <tr>
-                    <th colspan="10">Name: ' . $elder['firstname'] . $elder['middlename'] .  $elder['lastname'] .'</th>
+                    <th colspan="10">Name: ' . $elder['firstname'] . " " . $elder['middlename'] . " " . $elder['lastname'] .'</th>
                     <th colspan="3">Sex: ' . $elder['gender'] . '</th>
                     <th colspan="5">Civil Status: ' . $elder['marital_stat']. '</th>
                 </tr>
@@ -2135,119 +2135,80 @@ $dompdf->stream('Admission_Slip.pdf', array('Attachment' => true));
 exit();
     }   
 
-    public function saveData()
+    public function savedata()
     {
         // Ensure the request is an AJAX request
         if ($this->request->isAJAX()) {
             // Retrieve JSON data from the request body
-            $json = $this->request->getJSON();
+            $json = $this->request->getJSON(true); // 'true' returns as an associative array
 
             if ($json) {
-                $data = [
-                    'casenum' => $json->field1 ?? null,
-                    'birthplace' => $json->field2 ?? null,
-                    'nameCom' => $json->field3 ?? null,
-                    'addressCom' => $json->field4 ?? null,
-                    'contactCom' => $json->field5 ?? null,
-                    'RelationClient' => $json->field6 ?? null,
-                    'nameRef' => $json->field7 ?? null,
-                    'addressRef' => $json->field8 ?? null,
-                    'contactRef' => $json->field9 ?? null,
-                    'Num1A' => $json->field10 ?? null,
-                    'Num1D' => $json->field11 ?? null,
-                    'Num2A' => $json->field12 ?? null,
-                    'Num2D' => $json->field13 ?? null,
-                    'Num3A' => $json->field14 ?? null,
-                    'Num3D' => $json->field15 ?? null,
-                    'Num4A' => $json->field16 ?? null,
-                    'Num4D' => $json->field17 ?? null,
-                    'Num5A' => $json->field18 ?? null,
-                    'Num5D' => $json->field19 ?? null,
-                    'Num6A' => $json->field20 ?? null,
-                    'Num6D' => $json->field21 ?? null,
-                    'Num7A' => $json->field22 ?? null,
-                    'Num7D' => $json->field23 ?? null,
-                    'Num8A' => $json->field24 ?? null,
-                    'Num8D' => $json->field25 ?? null,
-                    'Num9A' => $json->field26 ?? null,
-                    'Num9D' => $json->field27 ?? null,
-                    'Num10A' => $json->field28 ?? null,
-                    'Num10D' => $json->field29 ?? null,
-                    'Num11A' => $json->field30 ?? null,
-                    'Num11D' => $json->field31 ?? null,
-                    'Num12A' => $json->field32 ?? null,
-                    'Num12D' => $json->field33 ?? null,
-                    'Num13A' => $json->field34 ?? null,
-                    'Num13D' => $json->field35 ?? null,
-                    'Num14A' => $json->field36 ?? null,
-                    'Num14D' => $json->field37 ?? null,
-                    'Num15A' => $json->field38 ?? null,
-                    'Num15D' => $json->field39 ?? null,
-                    'inventoriedby' => $json->field40 ?? null,
-                    'turnoverto' => $json->field41 ?? null,
-                    'receivedby' => $json->field42 ?? null,
-                    'referringparty' => $json->field43 ?? null,
-                    'socialworker' => $json->field44 ?? null,
-                ];
+                // Extract CSRF token from data
+                $csrfName = $json[csrf_token()] ?? null;
+                $csrfHash = $json[$csrfName] ?? null;
 
-                // Validate data
+                // Remove CSRF token from data to prevent it from being saved
+                if ($csrfName && isset($json[$csrfName])) {
+                    unset($json[$csrfName]);
+                }
+
+                // Define validation rules
                 $validation = \Config\Services::validation();
-
                 $validation->setRules([
-                    'field1' => 'required',
-                    'field2' => 'required',
-                    'field3' => 'required',
-                    'field4' => 'required',
-                    'field5' => 'required',
-                    'field6' => 'required',
-                    'field7' => 'required',
-                    'field8' => 'required',
-                    'field9' => 'required',
-                    'field10' => 'required',
-                ]);
+                    'casenum' => 'required',
+                    'birthplace' => 'required',
+                    'nameCom' => 'required',
+                    'contactCom' => 'required',
+                    'addressCom' => 'required',
+                    'RelatinClient' => 'required',
+                    'nameRef' => 'required',
+                    'addressRef' => 'required',
+                    'contactRef' => 'required',
+                    ]);
 
-                if ($validation->run($data)) {
+                // Validate the data
+                if ($validation->run($json)) {
                     // Save data to the database
-                    if ($this->dataModel->insert($data)) {
-                        // Optionally, generate a new CSRF hash
+                    if ($this->admissionslip->insert($json)) {
+                        // Generate a new CSRF hash
                         $newCsrfHash = csrf_hash();
 
                         return $this->response->setJSON([
-                            'status'    => 'success',
-                            'message'   => 'Data saved successfully.',
-                            'csrfHash'  => $newCsrfHash, // Send new CSRF hash
+                            'status' => 'success',
+                            'message' => 'Data saved successfully.',
+                            'csrfHash' => $newCsrfHash
                         ]);
                     } else {
+                        // Failed to save data
                         return $this->response->setJSON([
-                            'status'    => 'error',
-                            'message'   => 'Failed to save data.',
-                            'csrfHash'  => csrf_hash(),
+                            'status' => 'error',
+                            'message' => 'Failed to save data.',
+                            'csrfHash' => csrf_hash()
                         ]);
                     }
                 } else {
-                    // Return validation errors
+                    // Validation failed
                     return $this->response->setJSON([
-                        'status'    => 'error',
-                        'message'   => $validation->getErrors(),
-                        'csrfHash'  => csrf_hash(),
+                        'status' => 'error',
+                        'message' => $validation->getErrors(),
+                        'csrfHash' => csrf_hash()
                     ]);
                 }
             } else {
+                // No data received
                 return $this->response->setJSON([
-                    'status'    => 'error',
-                    'message'   => 'No data received.',
-                    'csrfHash'  => csrf_hash(),
+                    'status' => 'error',
+                    'message' => 'No data received.',
+                    'csrfHash' => csrf_hash()
                 ]);
             }
         } else {
             // Invalid request type
             return $this->response->setJSON([
-                'status'    => 'error',
-                'message'   => 'Invalid request type.',
-                'csrfHash'  => csrf_hash(),
+                'status' => 'error',
+                'message' => 'Invalid request type.',
+                'csrfHash' => csrf_hash()
             ]);
         }
+    }
 }
-}
-
-    
