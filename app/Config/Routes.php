@@ -344,4 +344,8 @@ $routes->match(['get', 'post'], 'EditMonetary/(:any)', 'UserIdonateController::E
 $routes->get('reportMonetary', 'UserIdonateController::viewReportMonetary');
 $routes->get('searchmonetary','UserIdonateController::searchMonetary');
 $routes->match(['get', 'post'], 'getReportsMonatary/(:any)/(:any)', 'NewController::getReportsMonatary/$1/$2');
-
+$routes->match(['get','post'], 'admisionslip', 'NewController::admisionslip');
+$routes->match(['get', 'post'], 'admissionwithdata/(:any)', 'NewController::admisionWithData/$1');
+$routes->match(['get', 'post'], 'addmissionWithDatapreviewtosave/(:any)', 'NewController::addmissionWithDatapreviewtosave/$1');
+$routes->get('saveToPdfSlip/(:any)', 'NewController::printSlip/$1');
+$routes->match(['get', 'post'], 'NewController/savedata', 'NewController::saveData');

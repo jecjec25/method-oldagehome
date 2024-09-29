@@ -180,6 +180,8 @@
                                                 <td><?=$k['RegDate'] ?></td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
+                                                        
+                                                    <a href="<?= base_url('admissionwithdata/') .$k['Id']?>" class="btn btn-primary btn-sm btn-icon-text mr-3">SLIP <i class="typcn typcn-edit btn-icon-append"></i> </a>
                                                         <a href="<?= base_url('edit/') .$k['Id']?>" class="btn btn-success btn-sm btn-icon-text mr-3">Edit <i class="typcn typcn-edit btn-icon-append"></i> </a>
                                                         <form action="<?= base_url('Archive')?>" method="post">
                                                             <input type="hidden" name="update" value="<?= $k['Id']?>">

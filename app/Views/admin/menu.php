@@ -50,17 +50,14 @@
                     <br>
                     <br>
                     Each senior has a unique story to tell, a lifetime of memories to cherish, and a wealth of knowledge to share.
-                    Let's come together to ensure they receive the respect, 
+                    Let's come together to ensure they receive the respect, dignity, and compassion they deserve in their golden years.
                         
                 </p>
                 <p></p>
             </div>
 
         </div>
-        <div class="hello">
-         
-        dignity, and compassion they deserve in their golden years.
-                    </div>
+
         </div> 
         <div class="clearfix"> </div> 
         <br><br>

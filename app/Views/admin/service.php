@@ -47,16 +47,13 @@
             <div class="col-md-8 service-images-text">
               <div class="inner-text">
 				<h4>SERVICES</h4>
-				<h3>I. MEDICAL NEEDS</h3>
-					<span>Providing healthcare services, medication management, and emergency assistance.<span>
-				<h3>II. PERSONAL HYGIENE</h3>
-					<span>Assisting with bathing, grooming, and maintaining cleanliness.<span>
-				<h3>III. FEEDING</h3>
-					<span>Ensuring proper nutrition by assisting with meal planning, preparation, and feeding.<span>
-				<h3>IV. PHYSICAL ACTIVITIES</h3>
-					<span>Organizing exercises and games to promote well-being.<span>
-				<h3>V. FUNERAL SERVICES</h3>
-					<span>Providing guidance and support during bereavement.</span>
+				<h3>I. Food</h3>
+				<h3>II. Shelter</h3>
+				<h3>III. Clothing</h3>
+				<h3>IV. Medicine</h3>
+				<h3>V. Hospitalization</h3>
+				<h3>VI. Provision of Free Coffin</h3>
+				<h3>VII. Burial Services</h3>
 			</div>
 
 		</div>

@@ -1,0 +1,34 @@
+CRITICAL - 2024-09-17 08:22:02 --> Invalid file: "admin/admisionslip.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/admisionslip.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admisionslip', [], true)
+ 3 APPPATH\Controllers\NewController.php(1595): view('admin/admisionslip')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionslip()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-17 08:30:56 --> Undefined variable $currentDate
+in APPPATH\Views\admin\adminsionslip.php on line 147.
+ 1 APPPATH\Views\admin\adminsionslip.php(147): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $currentDate', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\adminsionslip.php', 147)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\adminsionslip.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/adminsionslip', [], true)
+ 5 APPPATH\Controllers\NewController.php(1595): view('admin/adminsionslip')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionslip()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-17 08:31:13 --> Undefined variable $currentDate
+in APPPATH\Views\admin\adminsionslip.php on line 145.
+ 1 APPPATH\Views\admin\adminsionslip.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $currentDate', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\adminsionslip.php', 145)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\adminsionslip.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/adminsionslip', [], true)
+ 5 APPPATH\Controllers\NewController.php(1595): view('admin/adminsionslip')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionslip()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

@@ -50,16 +50,19 @@
 					<?php foreach($VM as $VMitems):?>
 					<p><?= $VMitems['Vision']?></p>
 					<?php endforeach;?>
-					<h4>CORE VALUES</h4>
-					<?php foreach($VM as $VMitems):?>
-						<?= $VMitems['CoreValues']?>
-					<?php endforeach;?>
-		</div>
-				<h4>MISSION</h4>
+
+					<h4>MISSION</h4>
 				<?php foreach($VM as $VMitems):?>
-					<?= $VMitems['Mision']?>
+					<p><?= $VMitems['Mision']?></p>
 					<?php endforeach;?>
 					<div class="clearfix"> </div>  
+					
+		</div>
+					<h4>CORE VALUES</h4>
+					<?php foreach($VM as $VMitems):?>
+					<p><?= $VMitems['CoreValues']?></p>
+					<?php endforeach;?>
+
 	 		</div>
 			 <?php include_once('includes/organization.php');?>
 	
