@@ -1601,17 +1601,38 @@ exit();
     public function admisionWithData($elderData)
     {
         $data = [
-            'elder' =>    $this->main->where('Id', $elderData)->first(), 
+
+            'elder' =>  $this->admissionslip->select('tblscdetails.Id, adminsionsliptbl.slipId, adminsionsliptbl.scId, adminsionsliptbl.casenum, adminsionsliptbl.birthplace, adminsionsliptbl.nameCom
+                                                    , adminsionsliptbl.addressCom , adminsionsliptbl.contactCom , adminsionsliptbl.RelationClient , adminsionsliptbl.nameRef
+                                                      , adminsionsliptbl.addressRef , adminsionsliptbl.contactRef , adminsionsliptbl.Num1A , adminsionsliptbl.Num1D
+                                                      , adminsionsliptbl.Num2A , adminsionsliptbl.Num2D , adminsionsliptbl.Num3A , adminsionsliptbl.Num3D , adminsionsliptbl.Num4A , adminsionsliptbl.Num4D
+                                    , adminsionsliptbl.Num5A , adminsionsliptbl.Num5D , adminsionsliptbl.Num6A , adminsionsliptbl.Num6D , adminsionsliptbl.Num7A 
+                                    , adminsionsliptbl.Num7D , adminsionsliptbl.Num8A , adminsionsliptbl.Num8D , adminsionsliptbl.Num9A , adminsionsliptbl.Num9D , adminsionsliptbl.Num10A , adminsionsliptbl.Num10D 
+                                    , adminsionsliptbl.Num11A , adminsionsliptbl.Num11D , adminsionsliptbl.Num12A , adminsionsliptbl.Num12D , adminsionsliptbl.Num13A 
+                                    , adminsionsliptbl.Num13D , adminsionsliptbl.Num14A , adminsionsliptbl.Num14D , adminsionsliptbl.Num15A , adminsionsliptbl.Num15D 
+                                    , adminsionsliptbl.inventoriedby , adminsionsliptbl.turnoverto , adminsionsliptbl.receivedby , adminsionsliptbl.referringparty , adminsionsliptbl.socialworker, tblscdetails.lastname , tblscdetails.firstname 
+                                    , tblscdetails.middlename , tblscdetails.nickname , tblscdetails.DateBirth , tblscdetails.gender , tblscdetails.marital_stat , tblscdetails.ContNum 
+                                    , tblscdetails.ComAdd , tblscdetails.ProfPic , tblscdetails.EmergencyAdd , tblscdetails.EmergencyContNum , tblscdetails.RegDate , tblscdetails.scstatus , tblscdetails.departuredate 
+                                    , tblscdetails.reasonleft , tblscdetails.datedeath , tblscdetails.causedeath , tblscdetails.InputedDate , tblscdetails.adminId')
+                                    ->join('tblscdetails', 'tblscdetails.Id = adminsionsliptbl.scId')->where('adminsionsliptbl.scId', $elderData)->first(),
+
+
+            // 'elder' =>    $this->main->where('Id', $elderData)->first(), 
         ];   
         
-
-        if($data['elder'] === NULL)
+        if(isset($data['elder']))
         {
-            return view("admin/admisionslip");
+        return view("admin/admissionwithdata", $data);
+
         }
         else{
-        return view("admin/admissionwithdata", $data);
+
+            
+             $data['elder'] =   $this->main->where('Id', $elderData)->first();
+
+            return view("admin/admissionwithdata", $data);
         }
+        // return view("admin/admissionwithdata", $data);
     }
 
     public function addmissionWithDatapreviewtosave($elderData)
@@ -1705,7 +1726,6 @@ exit();
             'turnoverto' => $turnoverto,
             'receivedby' => $receivedby,
             'referringparty' => $referringparty,
-            'receivedby' => $receivedby,
             'socialworker' => $socialworker,
 
             'elder' =>    $this->main->where('Id', $elderData)->first(), 
@@ -1718,6 +1738,18 @@ exit();
 
     public function printSlip($elderData)
     {
+        set_time_limit(120);
+        
+        // Use local file path for the image
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        if (file_exists($imagePath)) {
+            $imageData = base64_encode(file_get_contents($imagePath));
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+        } else {
+            die('Image not found.');
+        }
+      
+
         $dompdf = new \Dompdf\Dompdf();
         $options = $dompdf->getOptions();
         $options->set('isRemoteEnabled', true); 
@@ -1820,310 +1852,226 @@ exit();
 
        $elder = $data['elder'];
 $mydata = date('F d, Y', strtotime($elder['InputedDate']));
-        $html = '<html lang="en">
+$html = '<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview Deceased</title>
-    <link rel="icon" type="image/png" href="/picture.png">
     <style>
-       body {
-        font-family: Arial, sans-serif;
-        font-size: 12px; /* Reduce overall font size */
-        margin: 0;
-        padding: 0;
-        background-color: #EDEEF1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+        body {
+            font-family: Arial, sans-serif;
+           
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    .button-download, .button-back {
-        position: absolute;
-        top: 10px; /* Reduce the top margin */
-    }
+        .size {
+            width: 8.5in; /* Long bond paper width */
+            height: auto; /* Allow for dynamic height */
+            background-color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
-    .button-download {
-        right: 10px; /* Reduce right margin */
-    }
+         .header {
+                    text-align: center;
+                    position: relative;
+                }
+                .header img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 120px;
+                }
+                .header h5 {
+                    margin: 0;
+                }
 
-    .button-back {
-        left: 10px; /* Reduce left margin */
-    }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 12px;
+            margin-left:40px;
+        }
 
-    .button-download a, .button-back a {
-        padding: 8px 15px; /* Reduce padding */
-        font-size: 12px; /* Reduce button font size */
-        background-color: #007BFF;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+        table, th, td {
+            border: 1px solid black;
+            word-wrap: break-word;
+        }
 
-    .button-download a:hover, .button-back a:hover {
-        background-color: #0056b3;
-    }
+        th, td {
+            padding: 4px;
+            text-align: left;
+        }
 
-    .size {
-        width: 210mm; /* Keep width */
-        background-color: #fff;
-        padding: 10px; /* Reduce padding */
-        box-sizing: border-box;
-    }
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
 
-    .header {
-        text-align: center;
-        position: relative;
-        margin-bottom: 10px; /* Reduce bottom margin */
-    }
+        .signature-box {
+            text-align: center;
+            width: 45%; /* Adjust width to fit within the section */
+        
+        }
 
-    .header img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 80px; /* Reduce image size */
-    }
+        .signature-line {
+            border-bottom: 1px solid black;
+            width: 200px;
+            margin: 0 auto;
+        }
+                    .signature-lines {
+            border-bottom: 2px solid black;
+            width:200px;
+            margin: 0 auto;
+        }
 
-    table {
-        width: 90%;
-        border-collapse: collapse;
-        table-layout: fixed;
-        font-size: 12px; /* Reduce font size for table */
-    }
-
-    table, th, td {
-        border: 1px solid black;
-        word-wrap: break-word;
-    }
-
-    th, td {
-        padding: 4px; /* Reduce padding */
-        text-align: left;
-    }
-
-    .footer {
-        margin-top: 20px; /* Reduce margin */
-    }
-
-    .footer .report {
-        font-weight: 600;
-    }
-
-    .signatures {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .signatures p {
-        margin: 2px 0;
-    }
-
-    .content {
-        page-break-after: auto;
-    }
-
-    .table-small-padding th, .table-small-padding td {
-        padding: 2px; /* Minimize padding inside tables */
-    }
-
-    .page-break {
-        page-break-before: always;
-    }
-       </style>
+        .signature-section .social
+        {
+            margin-left:400px;
+        
+        }
+        
+    </style>
 </head>
 <body>
-    <div class="button-download">
-    </div>
+
     <div class="size">
-        <div class="header">
-            <h5 style="margin: 0;">Republic of the Philippines</h5>
-            <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
-            <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
-            <h5 style="margin: 0;">Company Registration Number: CN2011421030</h5>
-            <h5 style="margin: 0;">Company TIN Number: 008-893-471</h5>
-            <h4 style="margin: 0; padding-top: 5px;">ARUGA-KAPATID FOUNDATION INCORPORATED</h4>
-        </div>
+       <div class="header">
+                <img src="' . $imageSrc . '" alt="Logo">
+                <h5>Republic of the Philippines</h5>
+                <h5>Province of Oriental Mindoro</h5>
+                <h5>Barangay Managpi, Calapan City</h5>
+                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
+                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
+                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+            </div>
 
-        <h4 style="text-align: center;">ADMISION SLIP</h4>
+        <br> <br>
 
-           
-        
-       <table>
-                <tr>
-                    <th colspan="10" width="60%">Date of Admision: ' . $mydata .'</th>
-                    <th colspan="8">Case No. '.$casenum .' </th>   
-                </tr>
-                <tr>
-                    <th colspan="18" style="text-align: center;">Client</th>
-                </tr>
-                <tr>
-                    <th colspan="10">Name: ' . $elder['firstname'] . " " . $elder['middlename'] . " " . $elder['lastname'] .'</th>
-                    <th colspan="3">Sex: ' . $elder['gender'] . '</th>
-                    <th colspan="5">Civil Status: ' . $elder['marital_stat']. '</th>
-                </tr>
-                <tr>
-                    <th colspan="18">Address: ' . $elder['ComAdd']. '</th>
-                </tr>
-                <tr>
-                    <th colspan="3">Birth Date </th>
-                  <th colspan="7">' . date('F d, Y', strtotime($elder['DateBirth'])) . '</th>
+        <h4 style="text-align: center;">ADMISSION SLIP</h4>
 
-                    <th colspan="8">Birth Place '.$birthplace .' </th>
-                </tr>
-                <tr>
-                    <th colspan="18" style="text-align: center;">COMPANION UPON ADMISION</th>
-                </tr>
-                <tr>
-                    <th colspan="8">Name: ' .$nameCom. '</th>
-                    <th colspan="10">Contact No. ' . $contactCom. '</th>
-                </tr>
-                <tr>
-                    <th colspan="8">Address:  ' . $addressCom. '</th>
-                    <th colspan="10">Relation to the Client ' .$RelatinClient. '</th>
-                </tr>
-                <tr>
-                    <th colspan="18" style="text-align: center;">REFFERING PARTY</th>
-                </tr>
-                <tr>
-                    <th colspan="18">Name: ' . $nameRef. '  </th>
-                </tr>
-                <tr>
-                    <th colspan="18">Address: ' . $addressRef. '</th>
-                </tr>
-                <tr>
-                    <th colspan="18">Contact no. ' . $contactRef. '</th>
-                </tr>
-
-          
+        <!-- Admission Data -->
+        <table>
+            <tr>
+                <th colspan="10">Date of Admission:  ' . $mydata. ' </th>
+                <th colspan="8">Case No.  '. $casenum .'  </th>
+            </tr>
+            <tr>
+                <th colspan="18" style="text-align: center;">Client</th>
+            </tr>
+            <tr>
+                <th colspan="10">Name:  '. $elder['firstname'] . " " . $elder['middlename'] . " " . $elder['lastname'] .' </th>
+                <th colspan="3">Sex:  '. $elder['gender'] .' </th>
+                <th colspan="5">Civil Status:  '. $elder['marital_stat'].' </th>
+            </tr>
+            <tr>
+                <th colspan="18">Address:  '. $elder['ComAdd'] .' </th>
+            </tr>
+            <tr>
+                <th colspan="3">Birth Date </th>
+                <th colspan="7"> '. date('F d, Y', strtotime($elder['DateBirth'])) .' </th>
+                <th colspan="8">Birth Place  '. $birthplace .'  </th>
+            </tr>
+            <tr>
+                <th colspan="18" style="text-align: center;">COMPANION UPON ADMISSION</th>
+            </tr>
+            <tr>
+                <th colspan="8">Name:  '. $nameCom .'  </th>
+                <th colspan="10">Contact No.  '. $contactCom .' </th>
+            </tr>
+            <tr>
+                <th colspan="8">Address:  '. $addressCom .' </th>
+                <th colspan="10">Relation to the Client:  '. $RelatinClient .' </th>
+            </tr>
+            <tr>
+                <th colspan="18" style="text-align: center;">REFERRING PARTY</th>
+            </tr>
+            <tr>
+                <th colspan="18">Name:  '. $nameRef .' </th>
+            </tr>
+            <tr>
+                <th colspan="18">Address:  '. $addressRef .' </th>
+            </tr>
+            <tr>
+                <th colspan="18">Contact no.:  '. $contactRef .' </th>
+            </tr>
         </table>
-        <h3 style="text-align: center;">BELONGINGS</h1>
-        <table >
-                <tr>
-                    <th colspan="2">No.</th>
-                    <th colspan="9">Upon admision</th>
-                    <th colspan="9">Upon Discharge</th>
-                </tr>
-                <tr>
-                    <th colspan="2">1.</th>
-                    <th colspan="9">' . $num1Admision. '</th>
-                    <th colspan="9">' . $num1Discharge. '</th>
-                </tr>
-                <tr>
-                    <th colspan="2">2.</th>
-                    <th colspan="9">' . $num2Admision. '</th>
-                    <th colspan="9">' . $num2Discharge. '</th>
-                </tr>
-                <tr>
-                    <th colspan="2">3.</th>
-                    <th colspan="9">' . $num3Admision. '</th>
-                    <th colspan="9">' . $num3Discharge. '</th>
-                </tr>
-                <tr>
-                    <th colspan="2">4.</th>
-                    <th colspan="9">' . $num4Admision. '</th>
-                    <th colspan="9">' . $num4Discharge. '</th>
-                </tr>
-                <tr> 
-                    <th colspan="2">5.</th>
-                   <th colspan="9">' . $num5Admision. '</th>
-                    <th colspan="9">' . $num5Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">6.</th>
-                   <th colspan="9">' . $num6Admision. '</th>
-                    <th colspan="9">' . $num6Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">7.</th>
-                   <th colspan="9">' . $num7Admision. '</th>
-                    <th colspan="9">' . $num7Discharge. '</th>
-                </tr>
-                <tr>                
-                <th colspan="2">8.</th>
-                   <th colspan="9">' . $num8Admision. '</th>
-                    <th colspan="9">' . $num8Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">9.</th>
-                   <th colspan="9">' . $num9Admision. '</th>
-                    <th colspan="9">' . $num9Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">10.</th>
-                   <th colspan="9">' . $num10Admision. '</th>
-                    <th colspan="9">' . $num10Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">11.</th>
-                   <th colspan="9">' . $num11Admision. '</th>
-                    <th colspan="9">' . $num11Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">12.</th>
-                   <th colspan="9">' . $num12Admision. '</th>
-                    <th colspan="9">' . $num12Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">13.</th>
-                   <th colspan="9">' . $num13Admision. '</th>
-                    <th colspan="9">' . $num13Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">14.</th>
-                   <th colspan="9">' . $num14Admision. '</th>
-                    <th colspan="9">' . $num14Discharge. '</th>
-                </tr>
-                <tr>
-                <th colspan="2">15.</th>
-                   <th colspan="9">' . $num15Admision. '</th>
-                    <th colspan="9">' . $num15Discharge. '</th>
-                </tr>
-              <tr>
 
-              <th colspan="11" style="text-align: center;">
-    <h4 style="margin: 10px 0 0 0; text-align: center;">Inventoried by: _____________________________ '. $inventoriedby. ' </h4>
-    <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-    <h4 style="margin: 20px 0 0 0; text-align: center;">Turn Over to: _____________________________ '. $turnoverto. '</h4>
-    <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-</th>
-<th colspan="9" style="text-align: center;">
-    <h4 style="margin: 0; text-align: center;">Received By: _____________________________ '. $receivedby. '</h4>
-    <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-</th>
-
-</tr>
-</form>
-
+        <h3 style="text-align: center;">BELONGINGS</h3>
+        <table>
+            <tr>
+                <th colspan="2">No.</th>
+                <th colspan="9">Upon Admission</th>
+                <th colspan="9">Upon Discharge</th>
+            </tr>';
+            
+            for ($i = 1; $i <= 15; $i++) {
+                $html .= '<tr>
+                            <th colspan="2">' . $i . '.</th>
+                            <th colspan="9">' . ${"num{$i}Admision"} . '</th>
+                            <th colspan="9">' . ${"num{$i}Discharge"} . '</th>
+                        </tr>';
+            };
+         
+           $html .='       <tr>
+                    <th colspan="11" style="text-align: center;">
+                        <h4 style="margin: 10px 0 0 0; text-align: center;">
+                        Inventoried by: 
+                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
+                            <span style="position: relative; top: 3px; margin-left:20px;"> ' .$inventoriedby .'</span>
+                        </span>
+                        </h4>
+                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
+                        <h4 style="margin: 20px 0 0 0; text-align: center;">
+                        Turn Over to: 
+                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
+                            <span style="position: relative; top: 3px; margin-left:20px;"> '. $turnoverto .'</span>
+                        </span>
+                        </h4>
+                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
+                    </th>
+                    
+                    <th colspan="9" style="text-align: center;">
+                        <h4 style="margin: 0; text-align: center;">
+                        Received By: 
+                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
+                            <span style="position: relative; top: 3px; margin-left:20px;"> '. $receivedby .'</span>
+                        </span>
+                        </h4>
+                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
+                    </th>
+                </tr>
+            
         </table>
-        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-    <div style="text-align: center;">
-        <div style="border-bottom: 1px solid black; left:10px; width: 200px; margin: 0 auto;">'. $referringparty. '</div>
-        <p style="margin: 5px 0 0 0; font-size: 14px;">Name & Signature of Referring Party</p>
-    </div>
-    <div style="text-align: center;">
-    <br>
-        <div style="border-bottom: 1px solid black; right:10px; width: 200px; margin: 0 auto;">'. $socialworker. '</div>
-        <p style="margin: 1px 0 0 0; font-size: 14px;">Social Worker </p>
-    </div>
-</div>
 
+        <div class="signature-section">
+            <div class="signature-box Name-Sig">
+                <div class="signature-line">  '. $referringparty .'  </div>
+                <p class="signature-text">Name & Signature of Referring Party  </p>
+            </div>
 
+            <div class="signature-box social">
+                <div class="signature-line"> '. $socialworker .' </div>
+                <p class="signature-text">Social Worker</p>
             </div>
         </div>
     </div>
-
 
 </body>
 </html>';
 
 // Load HTML content into Dompdf
 $dompdf->loadHtml($html);
-    
+
 // Set paper size and orientation (optional)
-$dompdf->setPaper('A4', 'portrait');
+$dompdf->setPaper('Legal', 'portrait'); // Change to 'Legal' for long bond paper
 
 // Render PDF (optional: save to file or stream to browser)
 $dompdf->render();
@@ -2133,6 +2081,7 @@ $dompdf->stream('Admission_Slip.pdf', array('Attachment' => true));
 
 // Stop CodeIgniter from further processing (optional, but good practice)
 exit();
+
     }   
 
     public function savedata()
@@ -2141,17 +2090,17 @@ exit();
         if ($this->request->isAJAX()) {
             // Retrieve JSON data from the request body
             $json = $this->request->getJSON(true); // 'true' returns as an associative array
-
+    
             if ($json) {
                 // Extract CSRF token from data
-                $csrfName = $json[csrf_token()] ?? null;
-                $csrfHash = $json[$csrfName] ?? null;
-
+                $csrfName = csrf_token();
+                $csrfHash = csrf_hash();
+    
                 // Remove CSRF token from data to prevent it from being saved
-                if ($csrfName && isset($json[$csrfName])) {
+                if (isset($json[$csrfName])) {
                     unset($json[$csrfName]);
                 }
-
+    
                 // Define validation rules
                 $validation = \Config\Services::validation();
                 $validation->setRules([
@@ -2159,39 +2108,59 @@ exit();
                     'birthplace' => 'required',
                     'nameCom' => 'required',
                     'contactCom' => 'required',
+                    'RelationClient' => 'required',
                     'addressCom' => 'required',
-                    'RelatinClient' => 'required',
                     'nameRef' => 'required',
                     'addressRef' => 'required',
                     'contactRef' => 'required',
-                    ]);
-
-                // Validate the data
+                ]);
+    
+                // If validation passes
                 if ($validation->run($json)) {
-                    // Save data to the database
-                    if ($this->admissionslip->insert($json)) {
-                        // Generate a new CSRF hash
-                        $newCsrfHash = csrf_hash();
-
-                        return $this->response->setJSON([
-                            'status' => 'success',
-                            'message' => 'Data saved successfully.',
-                            'csrfHash' => $newCsrfHash
-                        ]);
+                    // Check if the record with the given casenum exists
+                    $existingRecord = $this->admissionslip->where('scId', $json['scId'])->first();
+    
+                    if ($existingRecord) {
+                        // Update the existing record
+                        if ($this->admissionslip->update($existingRecord['slipId'], $json)) {
+                            // Return success message with new CSRF hash
+                            return $this->response->setJSON([
+                                'status' => 'success',
+                                'message' => 'Data updated successfully.',
+                                'csrfHash' => $csrfHash
+                            ]);
+                        } else {
+                            // Return error message if update fails
+                            return $this->response->setJSON([
+                                'status' => 'error',
+                                'message' => 'Failed to update data.',
+                                'csrfHash' => $csrfHash
+                            ]);
+                        }
                     } else {
-                        // Failed to save data
-                        return $this->response->setJSON([
-                            'status' => 'error',
-                            'message' => 'Failed to save data.',
-                            'csrfHash' => csrf_hash()
-                        ]);
+                        // Insert a new record
+                        if ($this->admissionslip->insert($json)) {
+                            // Return success message with new CSRF hash
+                            return $this->response->setJSON([
+                                'status' => 'success',
+                                'message' => 'Data saved successfully.',
+                                'csrfHash' => $csrfHash
+                            ]);
+                        } else {
+                            // Return error message if insertion fails
+                            return $this->response->setJSON([
+                                'status' => 'error',
+                                'message' => 'Failed to save data.',
+                                'csrfHash' => $csrfHash
+                            ]);
+                        }
                     }
                 } else {
-                    // Validation failed
+                    // Return validation errors
                     return $this->response->setJSON([
                         'status' => 'error',
                         'message' => $validation->getErrors(),
-                        'csrfHash' => csrf_hash()
+                        'csrfHash' => $csrfHash
                     ]);
                 }
             } else {
@@ -2211,4 +2180,4 @@ exit();
             ]);
         }
     }
-}
+    }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 13, 2024 at 05:06 AM
+-- Generation Time: Sep 29, 2024 at 01:59 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -45,6 +45,79 @@ CREATE TABLE `acceptbooking` (
   `outcomes` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `acknowledgement` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `acceptbooking`
+--
+
+INSERT INTO `acceptbooking` (`id`, `lastname`, `firstname`, `middlename`, `contactnum`, `event`, `Time`, `prefferdate`, `equipment`, `comments`, `status`, `usersignsId`, `description`, `amount_raised`, `outcomes`, `acknowledgement`) VALUES
+(174, 'skjksjfksjf', 'sjkskjcckj', 'sjskjcscjk', '09876543212', 'kdjdkxvjdk', 'HalfDay-morning', '2024-09-01', 'ksjksj,cksc', 'skjcsckj,mc', 'Accepted', 59, '', 0.00, '', ''),
+(175, 'fshnkfnk', 'skjskskv', 'snsivhsiKSJ', '09085353978', 'mxnkxmnck', 'HalfDay-afternoon', '2024-09-01', 'CXJMC;K,JXMC', 'SKJCS;KCJ', 'Accepted', 59, '', 0.00, '', ''),
+(176, 'scjsocjcsikJC', 'sjcjscskjc', 'ajcjskjcsic', '09987655656', 'dkjnlksnc', 'WholeDay', '2024-09-02', 'ksmclscl', 'scsoxckso', 'Accepted', 60, '', 0.00, '', ''),
+(177, 'cksjcksjc', 'skclkcl', 'lscscl', '09085353978', 'scjlskcjmlsk', 'WholeDay', '2024-09-03', 'chckj,sm', 'sjcmsc,jmsc', 'Accepted', 60, '', 0.00, '', ''),
+(178, 'cksjcksjc', 'skclkcl', 'lscscl', '09085353978', 'scjlskcjmlsk', 'WholeDay', '2024-09-03', 'chckj,sm', 'sjcmsc,jmsc', 'Declined', 60, '', 0.00, '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adminsionsliptbl`
+--
+
+CREATE TABLE `adminsionsliptbl` (
+  `slipId` int NOT NULL,
+  `scId` int DEFAULT NULL,
+  `casenum` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `birthplace` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `nameCom` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `addressCom` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `contactCom` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `RelationClient` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `nameRef` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `addressRef` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `contactRef` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num1A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num1D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num2A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num2D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num3A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num3D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num4A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num4D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num5A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num5D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num6A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num6D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num7A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num7D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num8A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num8D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num9A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num9D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num10A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num10D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num11A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num11D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num12A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num12D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num13A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num13D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num14A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num14D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num15A` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `Num15D` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `inventoriedby` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `turnoverto` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `receivedby` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `referringparty` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `socialworker` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `adminsionsliptbl`
+--
+
+INSERT INTO `adminsionsliptbl` (`slipId`, `scId`, `casenum`, `birthplace`, `nameCom`, `addressCom`, `contactCom`, `RelationClient`, `nameRef`, `addressRef`, `contactRef`, `Num1A`, `Num1D`, `Num2A`, `Num2D`, `Num3A`, `Num3D`, `Num4A`, `Num4D`, `Num5A`, `Num5D`, `Num6A`, `Num6D`, `Num7A`, `Num7D`, `Num8A`, `Num8D`, `Num9A`, `Num9D`, `Num10A`, `Num10D`, `Num11A`, `Num11D`, `Num12A`, `Num12D`, `Num13A`, `Num13D`, `Num14A`, `Num14D`, `Num15A`, `Num15D`, `inventoriedby`, `turnoverto`, `receivedby`, `referringparty`, `socialworker`) VALUES
+(1, NULL, 'sksksk21', 'dsdksdkdk', 'dslkslkd', 'ladkladk,', 'llkadladk', NULL, 'alldkldm', 'sdlsdkl', 'skjslksl.', 'ladkaldk,', 'ldkszdlks,d', 's,mls,cmsl,', 'ksjsk,jcms', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -201,7 +274,7 @@ INSERT INTO `organizationtable` (`id`, `img`, `name`, `position`) VALUES
 (3, 'louie.jpg', 'HENRY N. DACANAY III', 'Admin Staff'),
 (4, 'analyn.jpg', 'ANALYN C. ZAPATA', 'Caregiver'),
 (5, 'axel.jpg', 'AXEL MICO CAPOL', 'Caregiver'),
-(6, 'manalo_1.jpg', 'JOSE DELMAR MANALO', 'Caregiver'),
+(6, 'epitacia.jpg', 'EPITACIA A. EVANGELISTA', 'Caregiver/Cook'),
 (7, 'zamora.jpg', 'EDUARDO D. ZAMORA', 'Driver/Maintenance'),
 (8, 'arnold.jpg', 'ARNOLD S. SAMSOM', 'Kitchen Staff/Helper');
 
@@ -419,7 +492,9 @@ CREATE TABLE `tblscdetails` (
 --
 
 INSERT INTO `tblscdetails` (`Id`, `lastname`, `firstname`, `middlename`, `nickname`, `DateBirth`, `gender`, `marital_stat`, `ContNum`, `ComAdd`, `ProfPic`, `EmergencyAdd`, `EmergencyContNum`, `RegDate`, `scstatus`, `InputedDate`, `departuredate`, `reasonleft`, `datedeath`, `causedeath`, `adminId`) VALUES
-(101, 'jvkjvdkvk', 'kndkjdk n', 'dkjvdljelk', 'ksjvdkvjdvj', '1945-12-25', 'Female', 'Married', '09876543212', 'nkjidkjvrkdv', '1719971596_6e8de9bd7eae7a9f216f.jpg', 'dvjodvjmdovj', '09876543212', '2024-07-03', 'Deceased', '2024-07-03 09:53:16', '', '', '', '', 58);
+(101, 'jvkjvdkvk', 'kndkjdk n', 'dkjvdljelk', 'ksjvdkvjdvj', '1945-12-25', 'Female', 'Married', '09876543212', 'nkjidkjvrkdv', '1719971596_6e8de9bd7eae7a9f216f.jpg', 'dvjodvjmdovj', '09876543212', '2024-07-03', 'Deceased', '2024-07-03 09:53:16', '', '', '', '', 58),
+(102, 'fhjfhsjhfsjhf ', 'skfshfnsif', 'hfshfskufhjn', 'jhfnjfhskfjh', '1950-12-25', 'Female', 'Married', '09878744466', 'skfmnslkfnslkfn&nbsp;', '1726816133_76b69e3dc9d19f48139e.png', 'akdjakdjadkjc', '09876543212', '2024-09-20', 'Unarchive', '2024-09-20 15:08:53', '', '', '', '', 58),
+(103, 'Manalo', 'Christia Angelica', 'Herilla', 'Jekjek', '1945-12-25', 'Female', 'Single', '09939469530', 'Camansihan, Calapan City, Oriental Mindoro', '1727589439_be7e52894cb7aa187e11.jpg', 'Camansihan, Calapan City, Oriental Mindoro', '09939469530', '2024-09-29', 'Unarchive', '2024-09-29 13:57:19', '', '', '', '', 58);
 
 -- --------------------------------------------------------
 
@@ -554,7 +629,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`userID`, `verification_token`, `is_verified`, `LastName`, `FirstName`, `user_img`, `Username`, `ContactNo`, `Email`, `role`, `birthday`, `Password`, `Created_At`, `Update_At`) VALUES
 (2, '', 1, 'Dela Chica', 'Christia', '1716714625_23ec69030b0b83ea20fc.jpg', 'christia25', '09633895626', 'christia25@gmail.com', 'MainAdmin', '2002-12-25', '$2y$10$mCyCYd2b6efQiKMj.z30mONbP2yrTGubK3s.tKJrlVq9OxUud4TfC', '2024-02-18 06:40:43', '2024-02-18 06:40:43'),
 (58, '', 1, 'Foundation Incorporated', 'Aruga-Kapatid', 'default.jpg', 'Home4dAged', '09985774919', 'aruga.kapatid@gmail.com', 'MainAdmin', '2000-01-01', '$2y$10$DWTzweTrivkAQH84Dw6Owu6SL46rdRdMUBStGEeX6H/d7emFMa9U6', '2024-07-02 05:44:39', '2024-07-02 05:44:39'),
-(59, '', 1, 'Ramirez', 'Jennirfer', '', 'jennifer', '09876543212', 'jenniferramirez25@gmail.com', 'Booker', '2002-01-25', '$2y$10$x9jqA6X6CKxJQGC6gRbuSukg0dEV7rS58VcBgPi..LPmzE8otC8SK', '2024-08-13 04:09:58', '2024-08-13 04:09:58');
+(59, '', 1, 'Ramirez', 'Jennirfer', '', 'jennifer', '09876543212', 'jenniferramirez25@gmail.com', 'Booker', '2002-01-25', '$2y$10$x9jqA6X6CKxJQGC6gRbuSukg0dEV7rS58VcBgPi..LPmzE8otC8SK', '2024-08-13 04:09:58', '2024-08-13 04:09:58'),
+(60, '', 1, 'Dela Chica', 'Christia Angel', '', 'Chris25', '09876542212', 'changeldc11@gmail.com', 'Booker', '2002-12-24', '$2y$10$wIf4aIc9wTqkqr5.sx.G8eFgh3f6gBc1F0lN8WxcWUlqVzZd8g1Ne', '2024-08-31 11:56:07', '2024-08-31 11:56:07');
 
 -- --------------------------------------------------------
 
@@ -636,7 +712,7 @@ CREATE TABLE `vm` (
 --
 
 INSERT INTO `vm` (`id`, `Vision`, `CoreValues`, `Mision`, `img`) VALUES
-(1, 'A mission-oriented church-based organization composed of highly motivated volunteer lay persons, religious and clergy, moved by the charity of Christ for the poor, and committed to the ideals and spirits of the Hapag ng Pamilyang Mindoreno.', '<p>We fully adopt the core values of Hapag ng Pamilyang Mindoreno</p>\r\n					<p> - Kapatiran <br>\r\n						- Damayan <br>\r\n						- Tapungan  <br>\r\n						- Saknungan\r\n					</p>', '<p>Under the insperation of the Holy Spirit, and the following the prudent </p> <p> direction of the competent authority of the Apostolic Vicariate of Calapan, we,</p> <p> who are members of the Aruga Kapatid Foundation, Inc. commit ourselves to:</p>\r\n					<p>1. Live out evangelical poverty</p>\r\n					<p>2. Make Bahay-Ampunan in Managpi, Calapan City a home where the sick and the elderly can experience love and family spirit.</p>\r\n					<p>3. Promote the welfare and pastoral care of the poorest of the poor-the sick, the abandoned, the elderly, the deprived  be they at home or in institution.</p>\r\n					<p>4. Make linkages with NGO\'s, government offices, the church entitles to respond more adequately to the needs of the poor.</p>\r\n					<p>5. Promote social awareness among church groups, schools, and government entities regarding the different situations of the poor at the AVC.</p>\r\n					<p>6. Build up funds to support the program of AKFI.</p>', 'g21.jpg');
+(1, 'We envision that the poor , abandoned, neglected and/or any other elders in disadvantaged situation will be able to restore their dignity in life, living with the fullness of life in Christ.', 'We Fully adopt the core values of Hapag ng Pamilyang Mindoreño.\n<p>• Kapatiran</p>\n<p>• Damayan</p>\n<p>• Tapungan</p>\n<p>• Saknungan</p>', 'Our Home for the aged is elderly care program which provide the poor, neglected, sick and abandoned elders the ambience of a real home. We offer them the best care while they are with us, secured life as they approach their twilight  years. The institution witll basically provide residential care to elders whereinthey will be provide their their basic needs. (food, shelter, clothing, medicine, hospitalization, provision of free coffin and burial services).', 'g21.jpg');
 
 --
 -- Indexes for dumped tables
@@ -648,6 +724,13 @@ INSERT INTO `vm` (`id`, `Vision`, `CoreValues`, `Mision`, `img`) VALUES
 ALTER TABLE `acceptbooking`
   ADD PRIMARY KEY (`id`),
   ADD KEY `usersignsId` (`usersignsId`);
+
+--
+-- Indexes for table `adminsionsliptbl`
+--
+ALTER TABLE `adminsionsliptbl`
+  ADD PRIMARY KEY (`slipId`),
+  ADD KEY `scId` (`scId`);
 
 --
 -- Indexes for table `announcement`
@@ -788,7 +871,13 @@ ALTER TABLE `vm`
 -- AUTO_INCREMENT for table `acceptbooking`
 --
 ALTER TABLE `acceptbooking`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+
+--
+-- AUTO_INCREMENT for table `adminsionsliptbl`
+--
+ALTER TABLE `adminsionsliptbl`
+  MODIFY `slipId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `announcement`
@@ -872,7 +961,7 @@ ALTER TABLE `tblproduct`
 -- AUTO_INCREMENT for table `tblscdetails`
 --
 ALTER TABLE `tblscdetails`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `transactions`
@@ -884,13 +973,13 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `userID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `bookingId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `bookingId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=238;
 
 --
 -- AUTO_INCREMENT for table `userdonation`
@@ -919,6 +1008,12 @@ ALTER TABLE `vm`
 --
 ALTER TABLE `acceptbooking`
   ADD CONSTRAINT `acceptbooking_ibfk_1` FOREIGN KEY (`usersignsId`) REFERENCES `user` (`userID`) ON DELETE SET NULL ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `adminsionsliptbl`
+--
+ALTER TABLE `adminsionsliptbl`
+  ADD CONSTRAINT `adminsionsliptbl_ibfk_1` FOREIGN KEY (`scId`) REFERENCES `tblscdetails` (`Id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `announcement`

@@ -1,0 +1,671 @@
+CRITICAL - 2024-09-30 05:54:24 --> Undefined property: App\Controllers\NewController::$admisionslip
+in APPPATH\Controllers\NewController.php on line 1605.
+ 1 APPPATH\Controllers\NewController.php(1605): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\NewController::$admisionslip', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 1605)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-09-30 05:54:47 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'u262559041_homeforaged'@'localhost' (using password: YES) in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'u262559041_home...', 'Arugakapatid@20...', 'u262559041_home...', 3306, '', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsi...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 D:\laragon\www\method-oldagehome\app\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsi...', Array, false)
+#3 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 D:\laragon\www\method-oldagehome\app\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+#6 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2024-09-30 05:54:47 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsionsliptbl`.`Id`, `adminsionsliptbl`.`casenum`, `adminsionsliptbl`.`birthplace`, `adminsionsliptbl`.`nameCom`, `adminsionsliptbl`.`addressCom`, `adminsionsliptbl`.`contactCom`, `adminsionsliptbl`.`RelationClient`, `adminsionsliptbl`.`nameRef`, `adminsionsliptbl`.`addressRef`, `adminsionsliptbl`.`contactRef`, `adminsionsliptbl`.`Num1A`, `adminsionsliptbl`.`Num1D`, `adminsionsliptbl`.`Num2A`, `adminsionsliptbl`.`Num2D`, `adminsionsliptbl`.`Num3A`, `adminsionsliptbl`.`Num3D`, `adminsionsliptbl`.`Num4A`, `adminsionsliptbl`.`Num4D`, `adminsionsliptbl`.`Num5A`, `adminsionsliptbl`.`Num5D`, `adminsionsliptbl`.`Num6A`, `adminsionsliptbl`.`Num6D`, `adminsionsliptbl`.`Num7A`, `adminsionsliptbl`.`Num7D`, `adminsionsliptbl`.`Num8A`, `adminsionsliptbl`.`Num8D`, `adminsionsliptbl`.`Num9A`, `adminsionsliptbl`.`Num9D`, `adminsionsliptbl`.`Num10A`, `adminsionsliptbl`.`Num10D`, `adminsionsliptbl`.`Num11A`, `adminsionsliptbl`.`Num11D`, `adminsionsliptbl`.`Num12A`, `adminsionsliptbl`.`Num12D`, `adminsionsliptbl`.`Num13A`, `adminsionsliptbl`.`Num13D`, `adminsionsliptbl`.`Num14A`, `adminsionsliptbl`.`Num14D`, `adminsionsliptbl`.`Num15A`, `adminsionsliptbl`.`Num15D`, `adminsionsliptbl`.`inventoriedby`, `adminsionsliptbl`.`turnoverto`, `adminsionsliptbl`.`receivedby`, `adminsionsliptbl`.`referringparty`, `adminsionsliptbl`.`socialworker`, `tblscdetails`.`lastname`, `tblscdetails`.`firstname`, `tblscdetails`.`middlename`, `tblscdetails`.`nickname`, `tblscdetails`.`DateBirth`, `tblscdetails`.`gender`, `tblscdetails`.`marital_stat`, `tblscdetails`.`ContNum`, `tblscdetails`.`ComAdd`, `tblscdetails`.`ProfPic`, `tblscdetails`.`EmergencyAdd`, `tblscdetails`.`EmergencyContNum`, `tblscdetails`.`RegDate`, `tblscdetails`.`scstatus`, `tblscdetails`.`departuredate`, `tblscdetails`.`reasonleft`, `tblscdetails`.`datedeath`, `tblscdetails`.`causedeath`, `tblscdetails`.`InputedDate`, `tblscdetails`.`adminId`
+FROM `adminsionsliptbl`
+JOIN `tblscdetails` ON `tblscdetails`.`Id` = `adminsionslip`.`Id`
+WHERE `adminsionslip`.`slipId` = :adminsionslip.slipId:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-09-30 05:57:27 --> mysqli_sql_exception: Unknown column 'adminsionslip.slipId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `adminsi...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `adminsi...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `adminsi...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsi...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 D:\laragon\www\method-oldagehome\app\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-09-30 05:57:27 --> Unknown column 'adminsionslip.slipId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsionsliptbl`.`Id`, `adminsionsliptbl`.`casenum`, `adminsionsliptbl`.`birthplace`, `adminsionsliptbl`.`nameCom`, `adminsionsliptbl`.`addressCom`, `adminsionsliptbl`.`contactCom`, `adminsionsliptbl`.`RelationClient`, `adminsionsliptbl`.`nameRef`, `adminsionsliptbl`.`addressRef`, `adminsionsliptbl`.`contactRef`, `adminsionsliptbl`.`Num1A`, `adminsionsliptbl`.`Num1D`, `adminsionsliptbl`.`Num2A`, `adminsionsliptbl`.`Num2D`, `adminsionsliptbl`.`Num3A`, `adminsionsliptbl`.`Num3D`, `adminsionsliptbl`.`Num4A`, `adminsionsliptbl`.`Num4D`, `adminsionsliptbl`.`Num5A`, `adminsionsliptbl`.`Num5D`, `adminsionsliptbl`.`Num6A`, `adminsionsliptbl`.`Num6D`, `adminsionsliptbl`.`Num7A`, `adminsionsliptbl`.`Num7D`, `adminsionsliptbl`.`Num8A`, `adminsionsliptbl`.`Num8D`, `adminsionsliptbl`.`Num9A`, `adminsionsliptbl`.`Num9D`, `adminsionsliptbl`.`Num10A`, `adminsionsliptbl`.`Num10D`, `adminsionsliptbl`.`Num11A`, `adminsionsliptbl`.`Num11D`, `adminsionsliptbl`.`Num12A`, `adminsionsliptbl`.`Num12D`, `adminsionsliptbl`.`Num13A`, `adminsionsliptbl`.`Num13D`, `adminsionsliptbl`.`Num14A`, `adminsionsliptbl`.`Num14D`, `adminsionsliptbl`.`Num15A`, `adminsionsliptbl`.`Num15D`, `adminsionsliptbl`.`inventoriedby`, `adminsionsliptbl`.`turnoverto`, `adminsionsliptbl`.`receivedby`, `adminsionsliptbl`.`referringparty`, `adminsionsliptbl`.`socialworker`, `tblscdetails`.`lastname`, `tblscdetails`.`firstname`, `tblscdetails`.`middlename`, `tblscdetails`.`nickname`, `tblscdetails`.`DateBirth`, `tblscdetails`.`gender`, `tblscdetails`.`marital_stat`, `tblscdetails`.`ContNum`, `tblscdetails`.`ComAdd`, `tblscdetails`.`ProfPic`, `tblscdetails`.`EmergencyAdd`, `tblscdetails`.`EmergencyContNum`, `tblscdetails`.`RegDate`, `tblscdetails`.`scstatus`, `tblscdetails`.`departuredate`, `tblscdetails`.`reasonleft`, `tblscdetails`.`datedeath`, `tblscdetails`.`causedeath`, `tblscdetails`.`InputedDate`, `tblscdetails`.`adminId`
+FROM `adminsionsliptbl`
+JOIN `tblscdetails` ON `tblscdetails`.`Id` = `adminsionslip`.`Id`
+WHERE `adminsionslip`.`slipId` = :adminsionslip.slipId:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-09-30 05:58:09 --> mysqli_sql_exception: Unknown column 'adminsionslip.slipId' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `adminsi...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `adminsi...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `adminsi...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsi...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 D:\laragon\www\method-oldagehome\app\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-09-30 05:58:09 --> Unknown column 'adminsionslip.slipId' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsionsliptbl`.`Id`, `adminsionsliptbl`.`casenum`, `adminsionsliptbl`.`birthplace`, `adminsionsliptbl`.`nameCom`, `adminsionsliptbl`.`addressCom`, `adminsionsliptbl`.`contactCom`, `adminsionsliptbl`.`RelationClient`, `adminsionsliptbl`.`nameRef`, `adminsionsliptbl`.`addressRef`, `adminsionsliptbl`.`contactRef`, `adminsionsliptbl`.`Num1A`, `adminsionsliptbl`.`Num1D`, `adminsionsliptbl`.`Num2A`, `adminsionsliptbl`.`Num2D`, `adminsionsliptbl`.`Num3A`, `adminsionsliptbl`.`Num3D`, `adminsionsliptbl`.`Num4A`, `adminsionsliptbl`.`Num4D`, `adminsionsliptbl`.`Num5A`, `adminsionsliptbl`.`Num5D`, `adminsionsliptbl`.`Num6A`, `adminsionsliptbl`.`Num6D`, `adminsionsliptbl`.`Num7A`, `adminsionsliptbl`.`Num7D`, `adminsionsliptbl`.`Num8A`, `adminsionsliptbl`.`Num8D`, `adminsionsliptbl`.`Num9A`, `adminsionsliptbl`.`Num9D`, `adminsionsliptbl`.`Num10A`, `adminsionsliptbl`.`Num10D`, `adminsionsliptbl`.`Num11A`, `adminsionsliptbl`.`Num11D`, `adminsionsliptbl`.`Num12A`, `adminsionsliptbl`.`Num12D`, `adminsionsliptbl`.`Num13A`, `adminsionsliptbl`.`Num13D`, `adminsionsliptbl`.`Num14A`, `adminsionsliptbl`.`Num14D`, `adminsionsliptbl`.`Num15A`, `adminsionsliptbl`.`Num15D`, `adminsionsliptbl`.`inventoriedby`, `adminsionsliptbl`.`turnoverto`, `adminsionsliptbl`.`receivedby`, `adminsionsliptbl`.`referringparty`, `adminsionsliptbl`.`socialworker`, `tblscdetails`.`lastname`, `tblscdetails`.`firstname`, `tblscdetails`.`middlename`, `tblscdetails`.`nickname`, `tblscdetails`.`DateBirth`, `tblscdetails`.`gender`, `tblscdetails`.`marital_stat`, `tblscdetails`.`ContNum`, `tblscdetails`.`ComAdd`, `tblscdetails`.`ProfPic`, `tblscdetails`.`EmergencyAdd`, `tblscdetails`.`EmergencyContNum`, `tblscdetails`.`RegDate`, `tblscdetails`.`scstatus`, `tblscdetails`.`departuredate`, `tblscdetails`.`reasonleft`, `tblscdetails`.`datedeath`, `tblscdetails`.`causedeath`, `tblscdetails`.`InputedDate`, `tblscdetails`.`adminId`
+FROM `adminsionsliptbl`
+JOIN `tblscdetails` ON `tblscdetails`.`Id` = `adminsionslip`.`Id`
+WHERE `adminsionslip`.`slipId` = :adminsionslip.slipId:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:40:05 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:40:11 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:40:14 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:40:17 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1010')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:40:18 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:40:20 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('3')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:40:21 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:42:26 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:42:27 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 06:42:36 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 09:53:56 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1634): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 09:54:40 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1634): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('4')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 09:55:47 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('4')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 09:56:36 --> Undefined array key "casenum"
+in APPPATH\Views\admin\admissionwithdata.php on line 346.
+ 1 APPPATH\Views\admin\admissionwithdata.php(346): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "casenum"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 346)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('103')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 09:59:22 --> Undefined array key "adressCom"
+in APPPATH\Views\admin\admissionwithdata.php on line 215.
+ 1 APPPATH\Views\admin\admissionwithdata.php(215): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "adressCom"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 215)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1625): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 10:00:48 --> Undefined array key "casenum"
+in APPPATH\Views\admin\admissionwithdata.php on line 188.
+ 1 APPPATH\Views\admin\admissionwithdata.php(188): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "casenum"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 188)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('103')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 10:13:03 --> Undefined array key "id"
+in APPPATH\Controllers\NewController.php on line 2195.
+ 1 APPPATH\Controllers\NewController.php(2195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 2195)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->savedata()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 10:13:23 --> Undefined array key "id"
+in APPPATH\Controllers\NewController.php on line 2196.
+ 1 APPPATH\Controllers\NewController.php(2196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 2196)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->savedata()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 10:16:52 --> Undefined array key "id"
+in APPPATH\Controllers\NewController.php on line 2196.
+ 1 APPPATH\Controllers\NewController.php(2196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 2196)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->savedata()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 10:32:23 --> Undefined array key "slipId"
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "slipId"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('102')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:13:15 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('2024-09-20 15:08:53')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-09-30 11:20:44 --> mysqli_sql_exception: Unknown column 'adminsionsliptbl.scId' in 'field list' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `adminsi...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `adminsi...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `adminsi...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsi...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 D:\laragon\www\method-oldagehome\app\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-09-30 11:20:44 --> Unknown column 'adminsionsliptbl.scId' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsionsliptbl`.`Id`, `adminsionsliptbl`.`scId`, `adminsionsliptbl`.`casenum`, `adminsionsliptbl`.`birthplace`, `adminsionsliptbl`.`nameCom`, `adminsionsliptbl`.`addressCom`, `adminsionsliptbl`.`contactCom`, `adminsionsliptbl`.`RelationClient`, `adminsionsliptbl`.`nameRef`, `adminsionsliptbl`.`addressRef`, `adminsionsliptbl`.`contactRef`, `adminsionsliptbl`.`Num1A`, `adminsionsliptbl`.`Num1D`, `adminsionsliptbl`.`Num2A`, `adminsionsliptbl`.`Num2D`, `adminsionsliptbl`.`Num3A`, `adminsionsliptbl`.`Num3D`, `adminsionsliptbl`.`Num4A`, `adminsionsliptbl`.`Num4D`, `adminsionsliptbl`.`Num5A`, `adminsionsliptbl`.`Num5D`, `adminsionsliptbl`.`Num6A`, `adminsionsliptbl`.`Num6D`, `adminsionsliptbl`.`Num7A`, `adminsionsliptbl`.`Num7D`, `adminsionsliptbl`.`Num8A`, `adminsionsliptbl`.`Num8D`, `adminsionsliptbl`.`Num9A`, `adminsionsliptbl`.`Num9D`, `adminsionsliptbl`.`Num10A`, `adminsionsliptbl`.`Num10D`, `adminsionsliptbl`.`Num11A`, `adminsionsliptbl`.`Num11D`, `adminsionsliptbl`.`Num12A`, `adminsionsliptbl`.`Num12D`, `adminsionsliptbl`.`Num13A`, `adminsionsliptbl`.`Num13D`, `adminsionsliptbl`.`Num14A`, `adminsionsliptbl`.`Num14D`, `adminsionsliptbl`.`Num15A`, `adminsionsliptbl`.`Num15D`, `adminsionsliptbl`.`inventoriedby`, `adminsionsliptbl`.`turnoverto`, `adminsionsliptbl`.`receivedby`, `adminsionsliptbl`.`referringparty`, `adminsionsliptbl`.`socialworker`, `tblscdetails`.`lastname`, `tblscdetails`.`firstname`, `tblscdetails`.`middlename`, `tblscdetails`.`nickname`, `tblscdetails`.`DateBirth`, `tblscdetails`.`gender`, `tblscdetails`.`marital_stat`, `tblscdetails`.`ContNum`, `tblscdetails`.`ComAdd`, `tblscdetails`.`ProfPic`, `tblscdetails`.`EmergencyAdd`, `tblscdetails`.`EmergencyContNum`, `tblscdetails`.`RegDate`, `tblscdetails`.`scstatus`, `tblscdetails`.`departuredate`, `tblscdetails`.`reasonleft`, `tblscdetails`.`datedeath`, `tblscdetails`.`causedeath`, `tblscdetails`.`InputedDate`, `tblscdetails`.`adminId`
+FROM `adminsionsliptbl`
+JOIN `tblscdetails` ON `tblscdetails`.`Id` = `adminsionsliptbl`.`scId`
+WHERE `adminsionsliptbl`.`Id` = :adminsionsliptbl.Id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\NewController.php(1617): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('1')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-09-30 11:24:36 --> mysqli_sql_exception: Unknown column 'adminsionsliptbl.scId' in 'field list' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `adminsi...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `adminsi...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `adminsi...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsi...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 D:\laragon\www\method-oldagehome\app\Controllers\NewController.php(1619): CodeIgniter\BaseModel->first()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('103')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-09-30 11:24:36 --> Unknown column 'adminsionsliptbl.scId' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `adminsionsliptbl`.`Id`, `adminsionsliptbl`.`scId`, `adminsionsliptbl`.`casenum`, `adminsionsliptbl`.`birthplace`, `adminsionsliptbl`.`nameCom`, `adminsionsliptbl`.`addressCom`, `adminsionsliptbl`.`contactCom`, `adminsionsliptbl`.`RelationClient`, `adminsionsliptbl`.`nameRef`, `adminsionsliptbl`.`addressRef`, `adminsionsliptbl`.`contactRef`, `adminsionsliptbl`.`Num1A`, `adminsionsliptbl`.`Num1D`, `adminsionsliptbl`.`Num2A`, `adminsionsliptbl`.`Num2D`, `adminsionsliptbl`.`Num3A`, `adminsionsliptbl`.`Num3D`, `adminsionsliptbl`.`Num4A`, `adminsionsliptbl`.`Num4D`, `adminsionsliptbl`.`Num5A`, `adminsionsliptbl`.`Num5D`, `adminsionsliptbl`.`Num6A`, `adminsionsliptbl`.`Num6D`, `adminsionsliptbl`.`Num7A`, `adminsionsliptbl`.`Num7D`, `adminsionsliptbl`.`Num8A`, `adminsionsliptbl`.`Num8D`, `adminsionsliptbl`.`Num9A`, `adminsionsliptbl`.`Num9D`, `adminsionsliptbl`.`Num10A`, `adminsionsliptbl`.`Num10D`, `adminsionsliptbl`.`Num11A`, `adminsionsliptbl`.`Num11D`, `adminsionsliptbl`.`Num12A`, `adminsionsliptbl`.`Num12D`, `adminsionsliptbl`.`Num13A`, `adminsionsliptbl`.`Num13D`, `adminsionsliptbl`.`Num14A`, `adminsionsliptbl`.`Num14D`, `adminsionsliptbl`.`Num15A`, `adminsionsliptbl`.`Num15D`, `adminsionsliptbl`.`inventoriedby`, `adminsionsliptbl`.`turnoverto`, `adminsionsliptbl`.`receivedby`, `adminsionsliptbl`.`referringparty`, `adminsionsliptbl`.`socialworker`, `tblscdetails`.`lastname`, `tblscdetails`.`firstname`, `tblscdetails`.`middlename`, `tblscdetails`.`nickname`, `tblscdetails`.`DateBirth`, `tblscdetails`.`gender`, `tblscdetails`.`marital_stat`, `tblscdetails`.`ContNum`, `tblscdetails`.`ComAdd`, `tblscdetails`.`ProfPic`, `tblscdetails`.`EmergencyAdd`, `tblscdetails`.`EmergencyContNum`, `tblscdetails`.`RegDate`, `tblscdetails`.`scstatus`, `tblscdetails`.`departuredate`, `tblscdetails`.`reasonleft`, `tblscdetails`.`datedeath`, `tblscdetails`.`causedeath`, `tblscdetails`.`InputedDate`, `tblscdetails`.`adminId`
+FROM `tblscdetails`
+JOIN `adminsionsliptbl` ON `adminsionsliptbl`.`Id` = `tblscdetails`.`slipId`
+WHERE `tblscdetails`.`slipId` = :tblscdetails.slipId:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\NewController.php(1619): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('103')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:27:06 --> Undefined array key "casenum"
+in APPPATH\Views\admin\admissionwithdata.php on line 187.
+ 1 APPPATH\Views\admin\admissionwithdata.php(187): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "casenum"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 187)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1635): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('102')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:27:14 --> Undefined array key "casenum"
+in APPPATH\Views\admin\admissionwithdata.php on line 187.
+ 1 APPPATH\Views\admin\admissionwithdata.php(187): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "casenum"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 187)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1635): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('103')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:27:18 --> Undefined array key "casenum"
+in APPPATH\Views\admin\admissionwithdata.php on line 187.
+ 1 APPPATH\Views\admin\admissionwithdata.php(187): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "casenum"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 187)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1635): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('102')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:27:39 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1625): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('102')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:27:49 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1625): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('102')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:28:10 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1625): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('102')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:28:27 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1625): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('102')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:29:17 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\addmissionWithDatapreviewtosave.php on line 186.
+ 1 APPPATH\Views\admin\addmissionWithDatapreviewtosave.php(186): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php', 186)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/addmissionWithDatapreviewtosave', [], true)
+ 5 APPPATH\Controllers\NewController.php(1725): view('admin/addmissionWithDatapreviewtosave', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->addmissionWithDatapreviewtosave('6')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:29:28 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\addmissionWithDatapreviewtosave.php on line 186.
+ 1 APPPATH\Views\admin\addmissionWithDatapreviewtosave.php(186): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php', 186)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/addmissionWithDatapreviewtosave', [], true)
+ 5 APPPATH\Controllers\NewController.php(1725): view('admin/addmissionWithDatapreviewtosave', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->addmissionWithDatapreviewtosave('6')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:30:28 --> Undefined array key "Id"
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1624): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('102')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:31:14 --> Undefined array key "Id"
+in APPPATH\Controllers\NewController.php on line 2188.
+ 1 APPPATH\Controllers\NewController.php(2188): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 2188)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->savedata()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:44:07 --> Undefined array key "Id"
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1625): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('103')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:44:40 --> Undefined array key "Id"
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1625): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('103')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:45:03 --> Undefined array key "scId"
+in APPPATH\Views\admin\addmissionWithDatapreviewtosave.php on line 186.
+ 1 APPPATH\Views\admin\addmissionWithDatapreviewtosave.php(186): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scId"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php', 186)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/addmissionWithDatapreviewtosave', [], true)
+ 5 APPPATH\Controllers\NewController.php(1734): view('admin/addmissionWithDatapreviewtosave', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->addmissionWithDatapreviewtosave('103')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:45:10 --> Undefined array key "scId"
+in APPPATH\Views\admin\addmissionWithDatapreviewtosave.php on line 186.
+ 1 APPPATH\Views\admin\addmissionWithDatapreviewtosave.php(186): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scId"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php', 186)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/addmissionWithDatapreviewtosave', [], true)
+ 5 APPPATH\Controllers\NewController.php(1734): view('admin/addmissionWithDatapreviewtosave', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->addmissionWithDatapreviewtosave('103')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:46:59 --> Undefined array key "scId"
+in APPPATH\Controllers\NewController.php on line 2193.
+ 1 APPPATH\Controllers\NewController.php(2193): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scId"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 2193)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->savedata()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:47:01 --> Undefined array key "scId"
+in APPPATH\Controllers\NewController.php on line 2193.
+ 1 APPPATH\Controllers\NewController.php(2193): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scId"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 2193)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->savedata()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:50:28 --> Undefined array key "scId"
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scId"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('105')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:53:21 --> Undefined array key "Id"
+in APPPATH\Controllers\NewController.php on line 2193.
+ 1 APPPATH\Controllers\NewController.php(2193): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 2193)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->savedata()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:55:04 --> Undefined array key "casenum"
+in APPPATH\Views\admin\admissionwithdata.php on line 188.
+ 1 APPPATH\Views\admin\admissionwithdata.php(188): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "casenum"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 188)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1633): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('105')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 11:59:53 --> Undefined array key "Id"
+in APPPATH\Views\admin\admissionwithdata.php on line 166.
+ 1 APPPATH\Views\admin\admissionwithdata.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php', 166)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\admissionwithdata.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/admissionwithdata', [], true)
+ 5 APPPATH\Controllers\NewController.php(1625): view('admin/admissionwithdata', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->admisionWithData('103')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 12:00:29 --> Undefined array key "scId"
+in APPPATH\Controllers\NewController.php on line 2193.
+ 1 APPPATH\Controllers\NewController.php(2193): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scId"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\NewController.php', 2193)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->savedata()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-09-30 14:02:12 --> Undefined variable $mydata
+in APPPATH\Views\admin\addmissionWithDatapreviewtosave.php on line 125.
+ 1 APPPATH\Views\admin\addmissionWithDatapreviewtosave.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $mydata', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php', 125)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\addmissionWithDatapreviewtosave.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/addmissionWithDatapreviewtosave', [], true)
+ 5 APPPATH\Controllers\NewController.php(1734): view('admin/addmissionWithDatapreviewtosave', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\NewController->addmissionWithDatapreviewtosave('105')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

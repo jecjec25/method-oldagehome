@@ -188,6 +188,7 @@
     </div>
     <div class="button-print">
     <button id="saveButton">Save</button>
+    <div id="responseMessage"></div>
 
     </div>
     
@@ -251,13 +252,13 @@
 <input value="<?= $referringparty?>" type="hidden" class="inputer" name="referringparty">
 <input value="<?= $socialworker?>" type="hidden" class="inputer" name="socialworker">
 </form>
-
+    <input type="hidden" name="casenum" id="scId" value="<?= htmlspecialchars($elder['Id'], ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="casenum" id="casenum" value="<?= htmlspecialchars($casenum, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="birthplace" id="birthplace" value="<?= htmlspecialchars($birthplace, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="nameCom" id="nameCom" value="<?= htmlspecialchars($nameCom, ENT_QUOTES, 'UTF-8') ?>">                 
     <input type="hidden" name="contactCom" id="contactCom" value="<?= htmlspecialchars($contactCom, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="addressCom" id="addressCom" value="<?= htmlspecialchars($addressCom, ENT_QUOTES, 'UTF-8') ?>">      
-    <input type="hidden" name="RelatinClient" id="RelatinClient" value="<?= htmlspecialchars($RelatinClient, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" name="RelatinClient" id="RelationClient" value="<?= htmlspecialchars($RelatinClient, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="nameRef" id="nameRef" value="<?= htmlspecialchars($nameRef, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="addressRef" id="addressRef" value="<?= htmlspecialchars($addressRef, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="contactRef" class="inputer" id="contactRef" value="<?= htmlspecialchars($contactRef, ENT_QUOTES, 'UTF-8') ?>">
@@ -267,7 +268,7 @@
     <input type="hidden" class="inputer" name="num2Discharge" id="Num2D" value="<?= htmlspecialchars($num2Discharge, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num3Admision" id="Num3A" value="<?= htmlspecialchars($num3Admision, ENT_QUOTES, 'UTF-8') ?>"> 
     <input type="hidden" class="inputer" name="num3Discharge" id="Num3D" value="<?= htmlspecialchars($num3Discharge, ENT_QUOTES, 'UTF-8') ?>">
-    <input type="hidden" class="inputer" name="num4Admision" id="Num4" value="<?= htmlspecialchars($num4Admision, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num4Admision" id="Num4A" value="<?= htmlspecialchars($num4Admision, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num4Discharge" id="Num4D" value="<?= htmlspecialchars($num4Discharge, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num5Admision" id="Num5A" value="<?= htmlspecialchars($num5Admision, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num5Discharge" id="Num5D" value="<?= htmlspecialchars($num5Discharge, ENT_QUOTES, 'UTF-8') ?>">
@@ -282,7 +283,7 @@
     <input type="hidden" class="inputer" name="num10Admision" id="Num10A" value="<?= htmlspecialchars($num10Admision, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num10Discharge" id="Num10D" value="<?= htmlspecialchars($num10Discharge, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num11Admision" id="Num11A" value="<?= htmlspecialchars($num11Admision, ENT_QUOTES, 'UTF-8') ?>">
-    <input type="hidden" class="inputer" name="num11Discharge" id="Num11" value="<?= htmlspecialchars($num11Discharge, ENT_QUOTES, 'UTF-8') ?>">
+    <input type="hidden" class="inputer" name="num11Discharge" id="Num11D" value="<?= htmlspecialchars($num11Discharge, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num12Admision" id="Num12A" value="<?= htmlspecialchars($num12Admision, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num12Discharge" id="Num12D" value="<?= htmlspecialchars($num12Discharge, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" class="inputer" name="num13Admision" id="Num13A" value="<?= htmlspecialchars($num13Admision, ENT_QUOTES, 'UTF-8') ?>">
@@ -299,7 +300,7 @@
 
 
 
-    <div id="responseMessage"></div>
+
     <table>
                 <tr>
                     <th colspan="10" width="60%">Date of Admision: <?= date('F d, Y', strtotime($elder['InputedDate'])) ?></th>
@@ -429,21 +430,34 @@
                    <th colspan="9"><?= $num15Admision?></th>
                     <th colspan="9"><?= $num15Discharge?></th>
                 </tr>
-              <tr>
-
-              <th colspan="11" style="text-align: center;">
-    <h4 style="margin: 10px 0 0 0; text-align: center;">Inventoried by: _____________________________ <?= $inventoriedby?></h4>
-    <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-    <h4 style="margin: 20px 0 0 0; text-align: center;">Turn Over to: _____________________________ <?= $turnoverto?></h4>
-    <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-</th>
-<th colspan="9" style="text-align: center;">
-    <h4 style="margin: 0; text-align: center;">Received By: _____________________________ <?= $receivedby?></h4>
-    <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-</th>
-
-</tr>
-
+                <tr>
+                    <th colspan="11" style="text-align: center;">
+                        <h4 style="margin: 10px 0 0 0; text-align: center;">
+                        Inventoried by: 
+                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
+                            <span style="position: relative; top: -10px;"><?= $inventoriedby ?></span>
+                        </span>
+                        </h4>
+                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
+                        <h4 style="margin: 20px 0 0 0; text-align: center;">
+                        Turn Over to: 
+                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
+                            <span style="position: relative; top: -10px;"><?= $turnoverto ?></span>
+                        </span>
+                        </h4>
+                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
+                    </th>
+                    
+                    <th colspan="9" style="text-align: center;">
+                        <h4 style="margin: 0; text-align: center;">
+                        Received By: 
+                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
+                            <span style="position: relative; top: -10px;"><?= $receivedby ?></span>
+                        </span>
+                        </h4>
+                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
+                    </th>
+                </tr>
 
         </table>
         <div style="display: flex; justify-content: space-between; margin-top: 40px;">
@@ -476,8 +490,9 @@
 
             // Array of all input field IDs
             const fieldIds = [
-                'casenum', 'birthplace', 'nameCom', 'contactCom', 'addressCom',
-                'RelatinClient', 'nameRef', 'addressRef', 'contactRef',
+                
+                'scId', 'casenum', 'birthplace', 'nameCom', 'contactCom', 'addressCom',
+                'RelationClient', 'nameRef', 'addressRef', 'contactRef',
                 'Num1A', 'Num1D', 'Num2A', 'Num2D',
                 'Num3A', 'Num3D', 'Num4A', 'Num4D',
                 'Num5A', 'Num5D', 'Num6A', 'Num6D',

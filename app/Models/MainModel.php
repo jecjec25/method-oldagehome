@@ -13,13 +13,13 @@ class MainModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [ 'lastname', 'firstname', 'middlename', 'nickname', 'DateBirth', 'gender', 'marital_stat', 'ContNum', 'ComAdd', 'ProfPic','EmergencyAdd','EmergencyContNum', 'RegDate', 'scstatus', 'departuredate', 'reasonleft', 'datedeath', 'causedeath', 'adminId'];
+    protected $allowedFields    = ['slipId', 'lastname', 'firstname', 'middlename', 'nickname', 'DateBirth', 'gender', 'marital_stat', 'ContNum', 'ComAdd', 'ProfPic','EmergencyAdd','EmergencyContNum', 'RegDate', 'scstatus', 'departuredate', 'reasonleft', 'datedeath', 'InputedDate', 'causedeath', 'adminId'];
 
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
+    protected $updatedField  = 'updated_at';    
     protected $deletedField  = 'deleted_at';
 
     // Validation
