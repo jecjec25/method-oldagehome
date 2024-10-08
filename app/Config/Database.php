@@ -27,9 +27,9 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'seniorcaredb',
+        'username'     => 'u262559041_homeforaged',
+        'password'     => 'Arugakapatid@2024',
+        'database'     => 'u262559041_homeforaged_db',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
