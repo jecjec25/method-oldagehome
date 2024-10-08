@@ -1,0 +1,667 @@
+ERROR - 2024-04-29 00:54:22 --> mysqli_sql_exception: Table 'seniorcaredb.event' doesn't exist in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:54:22 --> Table 'seniorcaredb.event' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventsid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `event`.`EventID`, `event`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `event` ON `event`.`EventID` = `feedback`.`eventsid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:54:50 --> mysqli_sql_exception: Unknown column 'feedbacktbl.eventsid' in 'field list' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:54:50 --> Unknown column 'feedbacktbl.eventsid' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventsid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventsid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:11 --> mysqli_sql_exception: Unknown column 'feedback.eventsid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:11 --> Unknown column 'feedback.eventsid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventsid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:13 --> mysqli_sql_exception: Unknown column 'feedback.eventsid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:13 --> Unknown column 'feedback.eventsid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventsid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:15 --> mysqli_sql_exception: Unknown column 'feedback.eventsid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:15 --> Unknown column 'feedback.eventsid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventsid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:16 --> mysqli_sql_exception: Unknown column 'feedback.eventsid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:16 --> Unknown column 'feedback.eventsid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventsid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:16 --> mysqli_sql_exception: Unknown column 'feedback.eventsid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:16 --> Unknown column 'feedback.eventsid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventsid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:25 --> mysqli_sql_exception: Unknown column 'feedback.eventid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:25 --> Unknown column 'feedback.eventid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:26 --> mysqli_sql_exception: Unknown column 'feedback.eventid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:26 --> Unknown column 'feedback.eventid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:26 --> mysqli_sql_exception: Unknown column 'feedback.eventid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:26 --> Unknown column 'feedback.eventid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:26 --> mysqli_sql_exception: Unknown column 'feedback.eventid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:26 --> Unknown column 'feedback.eventid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:26 --> mysqli_sql_exception: Unknown column 'feedback.eventid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:26 --> Unknown column 'feedback.eventid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 00:55:27 --> mysqli_sql_exception: Unknown column 'feedback.eventid' in 'on clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-29 00:55:27 --> Unknown column 'feedback.eventid' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`newsid`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `usersigns`.`id`, `usersigns`.`LastName`, `usersigns`.`FirstName`, `events`.`EventID`, `events`.`Title`
+FROM `feedbacktbl`
+JOIN `usersigns` ON `usersigns`.`id` = `feedback`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedback`.`eventid`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\FeedbackController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 00:56:10 --> Invalid file: "admin/feedback.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/feedback.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/feedback', [], true)
+ 3 APPPATH\Controllers\FeedbackController.php(26): view('admin/feedback', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->feedbackEvents()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 03:29:57 --> Undefined variable $feedevents
+in APPPATH\Views\admin\feedbackeven.php on line 9.
+ 1 APPPATH\Views\admin\feedbackeven.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $feedevents', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\feedbackeven.php', 9)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\feedbackeven.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/feedbackeven', [], true)
+ 5 APPPATH\Controllers\FeedbackController.php(31): view('admin/feedbackeven')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->viewfeedbackevent()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 03:30:07 --> Undefined variable $feedevents
+in APPPATH\Views\admin\feedbackeven.php on line 9.
+ 1 APPPATH\Views\admin\feedbackeven.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $feedevents', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\feedbackeven.php', 9)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\feedbackeven.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/feedbackeven', [], true)
+ 5 APPPATH\Controllers\FeedbackController.php(31): view('admin/feedbackeven')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->viewfeedbackevent()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 03:31:00 --> Invalid file: "admin/feedbackeven.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/feedbackeven.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/feedbackeven', [], true)
+ 3 APPPATH\Controllers\FeedbackController.php(31): view('admin/feedbackeven')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\FeedbackController->viewfeedbackevent()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FeedbackController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 03:45:38 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`seniorcaredb`.`feedbacktbl`, CONSTRAINT `feedbacktbl_ibfk_4` FOREIGN KEY (`usersignsId`) REFERENCES `usersigns` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT) in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `fe...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `fe...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `fe...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `fe...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 D:\laragon\www\method-oldagehome\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\laragon\www\method-oldagehome\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 D:\laragon\www\method-oldagehome\app\Controllers\EventsController.php(209): CodeIgniter\BaseModel->save(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\EventsController->savefeedbackevent()
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-04-29 03:45:38 --> Cannot add or update a child row: a foreign key constraint fails (`seniorcaredb`.`feedbacktbl`, CONSTRAINT `feedbacktbl_ibfk_4` FOREIGN KEY (`usersignsId`) REFERENCES `usersigns` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT)
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `feedbacktbl` (`feedback`, `usersignsId`, `eventid`) VALUES (:feedback:, :usersignsId:, :eventid:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\EventsController.php(209): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->savefeedbackevent()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:21 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('vendors', 'js', 'vendor.bundle.base.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('js', 'off-canvas.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('js', 'hoverable-collapse.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('js', 'template.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('js', 'settings.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('js', 'todolist.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('vendors', 'typeahead.js', 'typeahead.bundle.min.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('vendors', 'select2', 'select2.min.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('js', 'file-upload.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('js', 'typeahead.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 04:04:22 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 51.
+ 1 APPPATH\Views\dashboard\editevents.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(92): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('js', 'select2.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 04:17:46 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`seniorcaredb`.`feedbacktbl`, CONSTRAINT `feedbacktbl_ibfk_4` FOREIGN KEY (`usersignsId`) REFERENCES `usersigns` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT) in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `fe...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `fe...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `fe...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `fe...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 D:\laragon\www\method-oldagehome\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\laragon\www\method-oldagehome\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 D:\laragon\www\method-oldagehome\app\Controllers\EventsController.php(209): CodeIgniter\BaseModel->save(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\EventsController->savefeedbackevent()
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-04-29 04:17:46 --> Cannot add or update a child row: a foreign key constraint fails (`seniorcaredb`.`feedbacktbl`, CONSTRAINT `feedbacktbl_ibfk_4` FOREIGN KEY (`usersignsId`) REFERENCES `usersigns` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT)
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `feedbacktbl` (`feedback`, `usersignsId`, `eventid`) VALUES (:feedback:, :usersignsId:, :eventid:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\EventsController.php(209): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->savefeedbackevent()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-04-29 04:18:19 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`seniorcaredb`.`feedbacktbl`, CONSTRAINT `feedbacktbl_ibfk_4` FOREIGN KEY (`usersignsId`) REFERENCES `usersigns` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT) in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `fe...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `fe...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `fe...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `fe...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 D:\laragon\www\method-oldagehome\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\laragon\www\method-oldagehome\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 D:\laragon\www\method-oldagehome\app\Controllers\EventsController.php(209): CodeIgniter\BaseModel->save(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\EventsController->savefeedbackevent()
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-04-29 04:18:19 --> Cannot add or update a child row: a foreign key constraint fails (`seniorcaredb`.`feedbacktbl`, CONSTRAINT `feedbacktbl_ibfk_4` FOREIGN KEY (`usersignsId`) REFERENCES `usersigns` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT)
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `feedbacktbl` (`feedback`, `usersignsId`, `eventid`) VALUES (:feedback:, :usersignsId:, :eventid:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\EventsController.php(209): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->savefeedbackevent()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 05:15:54 --> Undefined variable $book
+in APPPATH\Views\admin\userbooking.php on line 106.
+ 1 APPPATH\Views\admin\userbooking.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $book', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userbooking.php', 106)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userbooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/userbooking', [], true)
+ 5 APPPATH\Controllers\ViewController.php(95): view('admin/userbooking')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->userbooking()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-04-29 05:15:58 --> Undefined variable $book
+in APPPATH\Views\admin\userbooking.php on line 106.
+ 1 APPPATH\Views\admin\userbooking.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $book', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userbooking.php', 106)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userbooking.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/userbooking', [], true)
+ 5 APPPATH\Controllers\ViewController.php(95): view('admin/userbooking')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->userbooking()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

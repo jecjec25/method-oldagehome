@@ -1,0 +1,362 @@
+CRITICAL - 2024-06-05 02:53:57 --> Undefined array key "id"
+in APPPATH\Views\admin\eventslogin.php on line 29.
+ 1 APPPATH\Views\admin\eventslogin.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\eventslogin.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\eventslogin.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/eventslogin', [], true)
+ 5 APPPATH\Controllers\ViewController.php(138): view('admin/eventslogin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->eventForUsers('58')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 02:59:58 --> Undefined array key "id"
+in APPPATH\Views\admin\eventslogin.php on line 25.
+ 1 APPPATH\Views\admin\eventslogin.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\eventslogin.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\eventslogin.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/eventslogin', [], true)
+ 5 APPPATH\Controllers\ViewController.php(138): view('admin/eventslogin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->eventForUsers('51')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 03:00:05 --> Undefined array key "Id"
+in APPPATH\Views\admin\eventslogin.php on line 25.
+ 1 APPPATH\Views\admin\eventslogin.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\eventslogin.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\eventslogin.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/eventslogin', [], true)
+ 5 APPPATH\Controllers\ViewController.php(138): view('admin/eventslogin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->eventForUsers('51')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 03:00:25 --> Undefined array key "EventsID"
+in APPPATH\Views\admin\eventslogin.php on line 25.
+ 1 APPPATH\Views\admin\eventslogin.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "EventsID"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\eventslogin.php', 25)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\eventslogin.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/eventslogin', [], true)
+ 5 APPPATH\Controllers\ViewController.php(138): view('admin/eventslogin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->eventForUsers('51')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 03:10:29 --> Undefined variable $id
+in APPPATH\Controllers\AnnouncementController.php on line 381.
+ 1 APPPATH\Controllers\AnnouncementController.php(381): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\AnnouncementController.php', 381)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AnnouncementController->savefeedbackannounce()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AnnouncementController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 03:11:10 --> Undefined variable $id
+in APPPATH\Controllers\AnnouncementController.php on line 381.
+ 1 APPPATH\Controllers\AnnouncementController.php(381): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\AnnouncementController.php', 381)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AnnouncementController->savefeedbackannounce()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AnnouncementController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 03:22:45 --> Undefined property: App\Controllers\EventsController::$Feedback
+in APPPATH\Controllers\EventsController.php on line 349.
+ 1 APPPATH\Controllers\EventsController.php(349): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\EventsController::$Feedback', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\EventsController.php', 349)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->savefeedbackevent()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 03:51:09 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 47.
+ 1 APPPATH\Views\dashboard\editevents.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 47)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(139): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('vendors', 'js', 'vendor.bundle.base.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 03:51:23 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editevents.php on line 47.
+ 1 APPPATH\Views\dashboard\editevents.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php', 47)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editevents.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editevents', [], true)
+ 5 APPPATH\Controllers\EventsController.php(139): view('dashboard/editevents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EventsController->update('vendors', 'js', 'vendor.bundle.base.js')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:14:59 --> require_once(libraries/vendor/autoload.php): Failed to open stream: No such file or directory
+in APPPATH\Controllers\UserController.php on line 14.
+ 1 APPPATH\Controllers\UserController.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(libraries/vendor/autoload.php): Failed to open stream: No such file or directory', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserController.php', 14)
+ 2 APPPATH\Controllers\UserController.php(14): require_once()
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:15:08 --> require_once(libraries/vendor/autoload.php): Failed to open stream: No such file or directory
+in APPPATH\Controllers\UserController.php on line 14.
+ 1 APPPATH\Controllers\UserController.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(libraries/vendor/autoload.php): Failed to open stream: No such file or directory', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserController.php', 14)
+ 2 APPPATH\Controllers\UserController.php(14): require_once()
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:18:41 --> Undefined variable $dat
+in APPPATH\Controllers\UserController.php on line 34.
+ 1 APPPATH\Controllers\UserController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dat', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserController.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:28:30 --> Undefined variable $tokenp
+in APPPATH\Controllers\UserController.php on line 43.
+ 1 APPPATH\Controllers\UserController.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tokenp', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserController.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:28:46 --> Undefined array key "access_token"
+in APPPATH\Controllers\UserController.php on line 43.
+ 1 APPPATH\Controllers\UserController.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "access_token"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserController.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:28:55 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:29:44 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:31:19 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:31:33 --> Undefined array key "access_token"
+in APPPATH\Controllers\UserController.php on line 43.
+ 1 APPPATH\Controllers\UserController.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "access_token"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserController.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:31:38 --> Undefined array key "access_token"
+in APPPATH\Controllers\UserController.php on line 43.
+ 1 APPPATH\Controllers\UserController.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "access_token"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserController.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:32:06 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:32:28 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:32:48 --> Undefined variable $token
+in APPPATH\Controllers\UserController.php on line 41.
+ 1 APPPATH\Controllers\UserController.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $token', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserController.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:33:05 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:36:07 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:37:42 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:44:25 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:46:32 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:46:46 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:48:48 --> Cannot assign int to property Monolog\Handler\AbstractHandler::$level of type Monolog\Level
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Handler\AbstractHandler.php on line 60.
+ 1 APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Handler\AbstractHandler.php(38): Monolog\Handler\AbstractHandler->setLevel(250)
+ 2 APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Handler\StreamHandler.php(49): Monolog\Handler\AbstractHandler->__construct(250, true)
+ 3 APPPATH\Libraries\vendor\google\apiclient\src\Client.php(1182): Monolog\Handler\StreamHandler->__construct('php://stderr', 250)
+ 4 APPPATH\Libraries\vendor\google\apiclient\src\Client.php(1170): Google\Client->createDefaultLogger()
+ 5 APPPATH\Libraries\vendor\google\apiclient\src\Service\Resource.php(187): Google\Client->getLogger()
+ 6 APPPATH\Libraries\vendor\google\apiclient-services\src\Oauth2\Resource\Userinfo.php(43): Google\Service\Resource->call('get', [...], 'Google\\Service\\Oauth2\\Userinfo')
+ 7 APPPATH\Controllers\UserController.php(45): Google\Service\Oauth2\Resource\Userinfo->get()
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:49:31 --> Cannot assign int to property Monolog\Handler\AbstractHandler::$level of type Monolog\Level
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Handler\AbstractHandler.php on line 60.
+ 1 APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Handler\AbstractHandler.php(38): Monolog\Handler\AbstractHandler->setLevel(250)
+ 2 APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Handler\StreamHandler.php(49): Monolog\Handler\AbstractHandler->__construct(250, true)
+ 3 APPPATH\Libraries\vendor\google\apiclient\src\Client.php(1182): Monolog\Handler\StreamHandler->__construct('php://stderr', 250)
+ 4 APPPATH\Libraries\vendor\google\apiclient\src\Client.php(1170): Google\Client->createDefaultLogger()
+ 5 APPPATH\Libraries\vendor\google\apiclient\src\Service\Resource.php(187): Google\Client->getLogger()
+ 6 APPPATH\Libraries\vendor\google\apiclient-services\src\Oauth2\Resource\Userinfo.php(43): Google\Service\Resource->call('get', [...], 'Google\\Service\\Oauth2\\Userinfo')
+ 7 APPPATH\Controllers\UserController.php(45): Google\Service\Oauth2\Resource\Userinfo->get()
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 08:51:18 --> Declaration of Monolog\Handler\AbstractHandler::isHandling(array $record): bool must be compatible with Monolog\Handler\HandlerInterface::isHandling(Monolog\LogRecord $record): bool
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Handler\AbstractHandler.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:51:47 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:52:44 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:55:22 --> Declaration of Monolog\Logger::alert(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::alert($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 668.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:56:05 --> Declaration of Monolog\Logger::critical(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::critical($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 655.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:56:43 --> Declaration of Monolog\Logger::error(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::error($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 642.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:57:37 --> Declaration of Monolog\Logger::log($level, Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::log($level, $message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 565.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 08:59:03 --> Class Monolog\Logger contains 2 abstract methods and must therefore be declared abstract or implement the remaining methods (Psr\Log\LoggerInterface::alert, Psr\Log\LoggerInterface::critical)
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 35.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 09:00:11 --> Class Monolog\Logger contains 2 abstract methods and must therefore be declared abstract or implement the remaining methods (Psr\Log\LoggerInterface::alert, Psr\Log\LoggerInterface::critical)
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 35.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-05 11:38:18 --> Class "App\Controllers\UserModel" not found
+in APPPATH\Controllers\SignupController.php on line 78.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->verify('3dcb0db08236c28eb8f3053924517fc2')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 11:38:39 --> Undefined array key "id"
+in APPPATH\Controllers\SignupController.php on line 82.
+ 1 APPPATH\Controllers\SignupController.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\SignupController.php', 82)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->verify('3dcb0db08236c28eb8f3053924517fc2')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 11:53:50 --> Undefined variable $emailService
+in APPPATH\Controllers\SignupController.php on line 59.
+ 1 APPPATH\Controllers\SignupController.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $emailService', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\SignupController.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 12:16:53 --> Undefined variable $emailService
+in APPPATH\Controllers\SignupController.php on line 195.
+ 1 APPPATH\Controllers\SignupController.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $emailService', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\SignupController.php', 195)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->trylangmagsend()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 12:17:22 --> Call to undefined function Config\Services()
+in APPPATH\Controllers\SignupController.php on line 194.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->trylangmagsend()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 12:20:24 --> Call to undefined method CodeIgniter\Email\Email::sendTo()
+in APPPATH\Controllers\SignupController.php on line 195.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->trylangmagsend()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-05 12:30:46 --> mysqli_sql_exception: Table 'seniorcaredb.users' doesn't exist in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('rontaledankenet...', 'email', Array, NULL, 'Email')
+#6 D:\laragon\www\method-oldagehome\system\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('Email', 'Email', 'rontaledankenet...', Array, Array)
+#7 D:\laragon\www\method-oldagehome\system\Controller.php(150): CodeIgniter\Validation\Validation->run()
+#8 D:\laragon\www\method-oldagehome\app\Controllers\SignupController.php(40): CodeIgniter\Controller->validate(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\SignupController->store()
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-06-05 12:30:46 --> Table 'seniorcaredb.users' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('rontaledankeneth@gmail.com', 'email', [...], null, 'Email')
+ 4 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('Email', 'Email', 'rontaledankeneth@gmail.com', [...], [...])
+ 5 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\SignupController.php(40): CodeIgniter\Controller->validate([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 12:42:03 --> Invalid file: "auth/verify_email_reminder.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/verify_email_reminder.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('auth/verify_email_reminder', [], true)
+ 3 APPPATH\Controllers\SignupController.php(66): view('auth/verify_email_reminder')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\SignupController->verifyEmailReminder()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SignupController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 22:35:50 --> Undefined variable $events
+in APPPATH\Views\admin\userViewpost.php on line 49.
+ 1 APPPATH\Views\admin\userViewpost.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $events', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userViewpost.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userViewpost.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/userViewpost', [], true)
+ 5 APPPATH\Controllers\UserViewPostController.php(51): view('admin/userViewpost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserViewPostController->userViewpost()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserViewPostController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-05 22:39:18 --> Undefined variable $eventuser
+in APPPATH\Views\admin\userViewpost.php on line 70.
+ 1 APPPATH\Views\admin\userViewpost.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $eventuser', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userViewpost.php', 70)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userViewpost.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/userViewpost', [], true)
+ 5 APPPATH\Controllers\UserViewPostController.php(59): view('admin/userViewpost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserViewPostController->userViewpost()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserViewPostController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

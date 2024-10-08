@@ -1,0 +1,139 @@
+CRITICAL - 2024-06-09 04:38:39 --> Maximum execution time of 60 seconds exceeded
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 128.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-06-09 08:04:15 --> mysqli_sql_exception: Unknown column 'feedbacktbl.status' in 'field list' in C:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 C:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 C:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 C:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 C:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\method-oldagehome\app\Controllers\ViewController.php(126): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\ViewController->eventnews('34')
+#8 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+#9 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-09 08:04:15 --> Unknown column 'feedbacktbl.status' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`status`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `user`.`userID`, `user`.`LastName`, `user`.`Username`, `user`.`FirstName`, `events`.`EventID`, `events`.`Title`, `events`.`Description`, `events`.`Organizer`
+FROM `feedbacktbl`
+JOIN `user` ON `user`.`userID` = `feedbacktbl`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedbacktbl`.`eventid`
+WHERE `feedbacktbl`.`eventid` = :feedbacktbl.eventid:
+AND `feedbacktbl`.`status` = :feedbacktbl.status:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ViewController.php(126): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->eventnews('34')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-09 08:06:08 --> syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+in APPPATH\Views\admin\news.php on line 130.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/news', [], true)
+ 3 APPPATH\Controllers\ViewController.php(102): view('admin/news', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->news()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-06-09 08:07:13 --> mysqli_sql_exception: Unknown column 'feedbacktbl.status' in 'field list' in C:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `feedbac...', 0)
+#1 C:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `feedbac...')
+#2 C:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `feedbac...')
+#3 C:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbac...', Array, false)
+#4 C:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\method-oldagehome\app\Controllers\ViewController.php(126): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\ViewController->eventnews('34')
+#8 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+#9 C:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-06-09 08:07:13 --> Unknown column 'feedbacktbl.status' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `feedbacktbl`.`id`, `feedbacktbl`.`usersignsId`, `feedbacktbl`.`eventid`, `feedbacktbl`.`status`, `feedbacktbl`.`announceid`, `feedbacktbl`.`feedback`, `user`.`userID`, `user`.`LastName`, `user`.`Username`, `user`.`FirstName`, `events`.`EventID`, `events`.`Title`, `events`.`Description`, `events`.`Organizer`
+FROM `feedbacktbl`
+JOIN `user` ON `user`.`userID` = `feedbacktbl`.`usersignsId`
+JOIN `events` ON `events`.`EventID` = `feedbacktbl`.`eventid`
+WHERE `feedbacktbl`.`eventid` = :feedbacktbl.eventid:
+AND `feedbacktbl`.`status` = :feedbacktbl.status:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ViewController.php(126): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->eventnews('34')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-09 08:41:56 --> Undefined variable $news
+in APPPATH\Views\admin\example.php on line 21.
+ 1 APPPATH\Views\admin\example.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $news', 'C:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\example.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\example.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/example', [], true)
+ 5 APPPATH\Controllers\ViewController.php(26): view('admin/example')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->example()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-09 08:47:32 --> Undefined variable $news
+in APPPATH\Views\admin\example.php on line 26.
+ 1 APPPATH\Views\admin\example.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $news', 'C:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\example.php', 26)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\example.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/example', [], true)
+ 5 APPPATH\Controllers\ViewController.php(26): view('admin/example')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->example()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-09 10:29:36 --> Invalid file: "admin/example.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/example.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/example', [], true)
+ 3 APPPATH\Controllers\ViewController.php(26): view('admin/example')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->example()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-09 10:29:37 --> Invalid file: "admin/example.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/example.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/example', [], true)
+ 3 APPPATH\Controllers\ViewController.php(26): view('admin/example')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->example()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-09 10:30:28 --> Invalid file: "admin/example.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/example.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/example', [], true)
+ 3 APPPATH\Controllers\ViewController.php(26): view('admin/example')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->example()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-06-09 10:30:29 --> Invalid file: "admin/example.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/example.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/example', [], true)
+ 3 APPPATH\Controllers\ViewController.php(26): view('admin/example')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->example()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\method-oldagehome\\public\\index.php')
