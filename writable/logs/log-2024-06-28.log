@@ -1,3 +1,0 @@
-CRITICAL - 2024-06-28 09:25:15 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
-in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
- 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
