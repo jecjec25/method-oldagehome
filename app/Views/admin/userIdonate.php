@@ -27,12 +27,12 @@
                         <input type="hidden" name="usersignsId" value="<?= session()->get('userID') ?>">
                         <label>Name Of Establishment</label>
                         <span><input type="text" name="establishment" placeholder="Name of Establishment (Optional)" class="textbox"></span>
-                        <span><label>Last Name<span class="required"></span></label></span>
-                        <span><input required name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
+                        <span><label>Last Name</span></label></span>
+                        <span><input name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
                     </div>
                     <div>
-                        <span><label>First Name<span class="required"></span></label></span>
-                        <span><input required name="firstname" type="text" placeholder="Enter your first name" class="textbox"></span>
+                        <span><label>First Name</span></label></span>
+                        <span><input name="firstname" type="text" placeholder="Enter your first name" class="textbox"></span>
                     </div>
                     <div>
                         <span><label>Middle Name</label></span>

@@ -28,9 +28,9 @@ class UserEvntPostController extends BaseController
                 acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
                 acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
                 acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
-                user.userID, user.LastName, user.FirstName')
+                user.userID, user.LastName, user.FirstName')                                                                        
                 ->join('user', 'user.userID = acceptbooking.usersignsId')
-                ->where('acceptbooking.status', 'Accepted')->orwhere('acceptbooking.status', 'Declined')->where('acceptbooking.usersignsId', $user )
+                ->where('acceptbooking.usersignsId', $user )
                 ->findAll(),
                 
         'notifs' => $this->acceptbooking
@@ -42,7 +42,8 @@ class UserEvntPostController extends BaseController
             ->join('user', 'user.userID = acceptbooking.usersignsId')
             ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
             ->first(),
-        'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first()
+        'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first(),
+        
         ];
 
         return view ('admin/userEventPost', $data);

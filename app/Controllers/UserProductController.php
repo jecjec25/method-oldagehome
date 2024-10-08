@@ -21,15 +21,15 @@ class UserProductController extends BaseController
         $user = session()->get('userID');
         $data = [
             'notif' => $this->acceptbooking
-                ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
-                acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
-                acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
-                acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
-                user.userID, user.LastName, user.FirstName')
-                ->join('user', 'user.userID = acceptbooking.usersignsId')
-                ->where('acceptbooking.status', 'Accepted')->orwhere('acceptbooking.status', 'Declined')->where('acceptbooking.usersignsId', $user )
-                ->findAll(),
-                
+            ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+            acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+            acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+            acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+            user.userID, user.LastName, user.FirstName')                                                                        
+            ->join('user', 'user.userID = acceptbooking.usersignsId')
+            ->where('acceptbooking.usersignsId', $user )
+            ->findAll(),
+            
         'notifs' => $this->acceptbooking
             ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
             acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
@@ -40,8 +40,8 @@ class UserProductController extends BaseController
             ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
             ->first(),
         'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first(),
-        'prodimg' => $this->prodImg->where('image !=', 'bracelet2.jpg')->where('type', 'prod')->findAll(),
-        'prods' => $this->prodImg->where('image', 'bracelet2.jpg')->where('type', 'prod')->first()
+    
+        'prodimg' => $this->prodImg->where('type', 'prod')->findAll(),
         ];
         return view('admin/userseeproduct', $data);
     }

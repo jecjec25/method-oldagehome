@@ -60,6 +60,7 @@ class Fullcalendar extends BaseController
         {
             $acceptBookings[] = [
             'usersignsId' => $a['usersignsId'],
+            'establishment' => $a['establishment'],
             'lastname' => $a['lastname'],
             'firstname' => $a['firstname'],
             'middlename' => $a['middlename'],
@@ -729,6 +730,7 @@ class Fullcalendar extends BaseController
         {
             $declineBookings[] = [
             'usersignsId' => $a['usersignsId'],
+            'establishment' => $a['establishment'],
             'lastname' => $a['lastname'],
             'firstname' => $a['firstname'],
             'middlename' => $a['middlename'],

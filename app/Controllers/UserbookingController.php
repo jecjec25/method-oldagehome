@@ -64,7 +64,7 @@ class UserbookingController extends ResourceController
         $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
-                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                ->select('userbooking.bookingId, userbooking.establishment, userbooking.lastname, userbooking.firstname, 
                     userbooking.middlename, userbooking.contactnum, userbooking.event, 
                     userbooking.time, userbooking.prefferdate, userbooking.equipment, 
                     userbooking.comments, userbooking.status, userbooking.usersignsId, 
@@ -90,7 +90,7 @@ class UserbookingController extends ResourceController
     {       $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
-                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                ->select('userbooking.bookingId,userbooking.establishment, userbooking.lastname, userbooking.firstname, 
                     userbooking.middlename, userbooking.contactnum, userbooking.event, 
                     userbooking.time, userbooking.prefferdate, userbooking.equipment, 
                     userbooking.comments, userbooking.status, userbooking.usersignsId, 
@@ -113,6 +113,7 @@ class UserbookingController extends ResourceController
         $Id = $this->request->getPost('bookingId');
         $data = [
             'usersignsId' => $this->request->getPost('usersignsId'),
+            'establishment' => $this->request->getPost('establishment'),
             'lastname' => $this->request->getPost('lastname'),
             'firstname' => $this->request->getPost('firstname'),
             'middlename' => $this->request->getPost('middlename'),
@@ -165,19 +166,27 @@ public function bookchecked()
     error_log(print_r($disableDates, true));
 
     $data = [
-        'notif' => $bookings,
-        'notifs' => $this->acceptbooking
-            ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
-                      acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
-                      acceptbooking.Time, acceptbooking.prefferdate, acceptbooking.equipment, 
-                      acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
-                      user.userID, user.LastName, user.FirstName')
-            ->join('user', 'user.userID = acceptbooking.usersignsId')
-            ->where('acceptbooking.status', 'Accepted')
-            ->where('acceptbooking.usersignsId', $user)
-            ->first(),
-        'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.status', 'Accepted')
-            ->where('acceptbooking.usersignsId', $user)->first(),
+        'notif' => $this->acceptbooking
+        ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+        acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+        acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+        acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+        user.userID, user.LastName, user.FirstName')                                                                        
+        ->join('user', 'user.userID = acceptbooking.usersignsId')
+        ->where('acceptbooking.usersignsId', $user )
+        ->findAll(),
+        
+'notifs' => $this->acceptbooking
+    ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+    acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+    acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+    acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+    user.userID, user.LastName, user.FirstName')
+    ->join('user', 'user.userID = acceptbooking.usersignsId')
+    ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
+    ->first(),
+'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first(),
+
         'disableDates' => $disableDates,
         'book' => $bookings
     ];
@@ -192,7 +201,7 @@ public function bookchecked()
     {       $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
-                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                ->select('userbooking.bookingId, userbooking.establishment, userbooking.lastname, userbooking.firstname, 
                     userbooking.middlename, userbooking.contactnum, userbooking.event, 
                     userbooking.time, userbooking.prefferdate, userbooking.equipment, 
                     userbooking.comments, userbooking.status, userbooking.usersignsId, 
@@ -221,7 +230,7 @@ public function bookchecked()
     {       $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking
-                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                ->select('userbooking.bookingId, userbooking.establishment, userbooking.lastname, userbooking.firstname, 
                     userbooking.middlename, userbooking.contactnum, userbooking.event, 
                     userbooking.time, userbooking.prefferdate, userbooking.equipment, 
                     userbooking.comments, userbooking.status, userbooking.usersignsId, 

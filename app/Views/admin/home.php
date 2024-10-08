@@ -25,6 +25,17 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 </head>
  
+<style>
+.text {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-weight: bold; 
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 2px 5px; 
+    display: inline; 
+}
+
+</style>
 <body>
     <?php include_once('includes/header.php'); ?>
     <div class="containered">

@@ -231,8 +231,8 @@ class ViewController extends BaseController
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
-            'prodimg' => $this->prodImg->where('image !=', 'bracelet2.jpg')->where('type', 'prod')->findAll(),
-            'prods' => $this->prodImg->where('image', 'bracelet2.jpg')->where('type', 'prod')->first()
+            'prodimg' => $this->prodImg->where('type', 'prod')->findAll(),
+          
         ];
         return view('admin/products', $data);  
     }

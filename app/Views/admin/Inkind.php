@@ -24,12 +24,12 @@
                     <div>
                         <label>Name Of Establishment</label>
                         <span><input type="text" name="Establishment" placeholder="Name of Establishment (Optional)" class="textbox"></span>
-                        <span><label>Last Name<span class="required"></span></label></span>
-                        <span><input required name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
+                        <span><label>Last Name</span></label></span>
+                        <span><input name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
                     </div>
                     <div>
-                        <span><label>First Name<span class="required"></span></label></span>
-                        <span><input required name="firstname" type="text" placeholder="Enter your first name" class="textbox"></span>
+                        <span><label>First Name</label></span>
+                        <span><input name="firstname" type="text" placeholder="Enter your first name" class="textbox"></span>
                     </div>
                     <div>
                         <span><label>Middle Name</label></span>
@@ -65,8 +65,8 @@
                         <input required id="donationdate" name="donationdate" type="date" class="textbox">
                     </div>
                     <div>
-                        <span><label>Message<span class="required"></span></label></span>
-                        <span><input required name="message" type="text" placeholder="Message" class="textbox"></span>
+                        <span><label>Message</label></span>
+                        <span><input name="message" type="text" placeholder="Message" class="textbox"></span>
                     </div>
                     <br>
                     <div>

@@ -66,6 +66,7 @@
            
                     <thead>
                         <tr>
+                          <th>Establishment</th>
                           <th>Last Name</th>
                           <th>First Name</th>
                           <th>Middle Name</th>
@@ -86,6 +87,7 @@
                     <tbody>
                     <?php foreach($calen as $even): ?>
                     <tr>
+                      <td><?=$even['establishment'] ?></td>
                       <td><?=$even['lastname'] ?></td>
                       <td><?=$even['firstname'] ?></td>
                       <td><?=$even['middlename'] ?></td>

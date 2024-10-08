@@ -38,15 +38,15 @@ class UserDonationController extends BaseController
         $user = session()->get('userID');
         $data = [
             'notif' => $this->acceptbooking
-                ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
-                acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
-                acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
-                acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
-                user.userID, user.LastName, user.FirstName')
-                ->join('user', 'user.userID = acceptbooking.usersignsId')
-                ->where('acceptbooking.status', 'Accepted')->orwhere('acceptbooking.status', 'Declined')->where('acceptbooking.usersignsId', $user )
-                ->findAll(),
-                
+            ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
+            acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
+            acceptbooking.time, acceptbooking.prefferdate, acceptbooking.equipment, 
+            acceptbooking.comments, acceptbooking.status, acceptbooking.usersignsId, 
+            user.userID, user.LastName, user.FirstName')                                                                        
+            ->join('user', 'user.userID = acceptbooking.usersignsId')
+            ->where('acceptbooking.usersignsId', $user )
+            ->findAll(),
+            
         'notifs' => $this->acceptbooking
             ->select('acceptbooking.id, acceptbooking.lastname, acceptbooking.firstname, 
             acceptbooking.middlename, acceptbooking.contactnum, acceptbooking.event, 
@@ -57,6 +57,7 @@ class UserDonationController extends BaseController
             ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
             ->first(),
         'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first(),
+    
         'donation' =>  $this->donation->findAll()
         ];
         return view('admin/userdonationsite', $data);

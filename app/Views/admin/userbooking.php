@@ -8,6 +8,7 @@
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="/css/userbooking.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="/css/userdonate.css" type='text/css' />
     <link href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
@@ -49,12 +50,16 @@
                     <?php endif; ?>
                     <div>
                         <input type="hidden" name="usersignsId" value="<?= session()->get('userID') ?>">
-                        <span><label>Last Name<span class="required"></span></label></span>
-                        <span><input required="true" name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
+                        <span><label>Establishment</label></span>
+                        <span><input name="establishment" type="text" placeholder="Name of Establishment (Optional)" class="textbox"></span>
                     </div>
                     <div>
-                        <span><label>First Name<span class="required"></span></label></span>
-                        <span><input required="true" name="firstname" type="text" placeholder="Enter your first name" class="textbox"></span>
+                        <span><label>Last Name</label></span>
+                        <span><input name="lastname" type="text" placeholder="Enter your last name" class="textbox"></span>
+                    </div>
+                    <div>
+                        <span><label>First Name</label></span>
+                        <span><input name="firstname" type="text" placeholder="Enter your first name" class="textbox"></span>
                     </div>
                     <div>
                         <span><label>Middle Name</label></span>
@@ -79,12 +84,12 @@
                         </select>
                     </div>
                     <div>
-                        <span><label>Specific Equipments Needed<span class="required"></span></label></span>
-                        <span><input required="true" name="equipment" type="text" placeholder="e.g., sound system, projector..." class="textbox"></span>
+                        <span><label>Specific Equipments Needed</label></span>
+                        <span><input name="equipment" type="text" placeholder="e.g., sound system, projector..." class="textbox"></span>
                     </div>
                     <div>
-                        <span><label>Questions or Comments<span class="required"></span></label></span>
-                        <span><input required="true" name="comments" type="text" placeholder="Enter your questions or comments" class="textbox"></span>
+                        <span><label>Questions or Comments</span></label></span>
+                        <span><input name="comments" type="text" placeholder="Enter your questions or comments" class="textbox"></span>
                     </div>
                     <br>
                     <div>
@@ -99,86 +104,86 @@
     </div>
     <?php include_once('includes/footer.php');?>	
     <script type="text/javascript">
-        var bookings = <?= json_encode($disableDates) ?>;
+    var bookings = <?= json_encode($disableDates) ?>;
 
-        $("input.dates").datepicker({
-            dateFormat: 'yy-mm-dd', // Adjusted to match the format of the dates in disableDates
-            beforeShowDay: function (date) {
-                var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-                if (bookings[string] && bookings[string].includes('WholeDay')) {
-                    return [false];
-                }
-                return [true];
-            },
-            onSelect: function (dateText, inst) {
-                var selectedDate = dateText;
-                var timeSelect = document.getElementById('time');
+    $("input.dates").datepicker({
+        dateFormat: 'yy-mm-dd', // Adjusted to match the format of the dates in disableDates
+        minDate: 0, // This disables all past dates, making the minimum selectable date today
+        beforeShowDay: function (date) {
+            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+            if (bookings[string] && bookings[string].includes('WholeDay')) {
+                return [false]; // Disable the date if it's fully booked
+            }
+            return [true]; // Enable other dates
+        },
+        onSelect: function (dateText, inst) {
+            var selectedDate = dateText;
+            var timeSelect = document.getElementById('time');
 
-                // Clear existing options
-                timeSelect.innerHTML = '';
+            // Clear existing options
+            timeSelect.innerHTML = '';
 
-                // Time slots
-                var times = [
-                    { value: "WholeDay", label: "Whole Day" },
-                    { value: "HalfDay-morning", label: "Half Day in the morning" },
-                    { value: "HalfDay-afternoon", label: "Half Day in the afternoon" },
-                    { value: "9:00:00 - 11:00:00", label: "9:00 AM - 11:00 AM" },
-                    { value: "11:00:00 - 13:00:00", label: "11:00 AM - 1:00 PM" },
-                    { value: "13:00:00 - 15:00:00", label: "1:00 PM - 3:00 PM" }
-                ];
+            // Time slots
+            var times = [
+                { value: "WholeDay", label: "Whole Day" },
+                { value: "HalfDay-morning", label: "Half Day in the morning" },
+                { value: "HalfDay-afternoon", label: "Half Day in the afternoon" },
+                { value: "9:00:00 - 11:00:00", label: "9:00 AM - 11:00 AM" },
+                { value: "11:00:00 - 13:00:00", label: "11:00 AM - 1:00 PM" },
+                { value: "13:00:00 - 15:00:00", label: "1:00 PM - 3:00 PM" }
+            ];
 
-                // If the selected date has bookings, disable the booked times
-                var booking = bookings[selectedDate];
-                if (booking) {
-                    times.forEach(time => {
-                        var option = document.createElement('option');
-                        option.value = time.value;
-                        option.text = time.label;
+            // If the selected date has bookings, disable the booked times
+            var booking = bookings[selectedDate];
+            if (booking) {
+                times.forEach(time => {
+                    var option = document.createElement('option');
+                    option.value = time.value;
+                    option.text = time.label;
 
-                        if (booking.includes(time.value) || 
-                            (time.value === "9:00:00 - 11:00:00" && booking.includes("HalfDay-morning")) ||
-                            (time.value === "11:00:00 - 13:00:00" && booking.includes("HalfDay-morning")) ||
-                            (time.value === "13:00:00 - 15:00:00" && booking.includes("HalfDay-afternoon")) ||
-                            (time.value === "WholeDay") || 
-                            (booking.includes("HalfDay-morning") && booking.includes("HalfDay-afternoon"))) {
+                    if (booking.includes(time.value) ||
+                        (time.value === "9:00:00 - 11:00:00" && booking.includes("HalfDay-morning")) ||
+                        (time.value === "11:00:00 - 13:00:00" && booking.includes("HalfDay-morning")) ||
+                        (time.value === "13:00:00 - 15:00:00" && booking.includes("HalfDay-afternoon")) ||
+                        (time.value === "WholeDay") ||
+                        (booking.includes("HalfDay-morning") && booking.includes("HalfDay-afternoon"))) {
+                        option.disabled = true;
+                        option.hidden = true;
+                    }
+
+                    if (booking.includes(time.value = "9:00:00 - 11:00:00") || booking.includes(time.value = "11:00:00 - 13:00:00")) {
+                        if (option.value === "HalfDay-morning") {
                             option.disabled = true;
                             option.hidden = true;
                         }
+                    }
 
-                        if (booking.includes(time.value = "9:00:00 - 11:00:00") || booking.includes(time.value = "11:00:00 - 13:00:00"))
-                        {
-                            if (option.value === "HalfDay-morning") {
-                        option.disabled = true;
-                        option.hidden = true;
-                    }     
+                    if (booking.includes(time.value = "13:00:00 - 15:00:00")) {
+                        if (option.value === "HalfDay-afternoon") {
+                            option.disabled = true;
+                            option.hidden = true;
                         }
-                        if (booking.includes(time.value = "13:00:00 - 15:00:00"))
-                        {
-                            if (option.value === "HalfDay-afternoon") {
-                        option.disabled = true;
-                        option.hidden = true;
-                    }     
-                        }
+                    }
 
-                        timeSelect.appendChild(option);
-                    });
-                } else {
-                    // If no bookings, enable all time slots
-                    times.forEach(time => {
-                        var option = document.createElement('option');
-                        option.value = time.value;
-                        option.text = time.label;
-                        timeSelect.appendChild(option);
-                    });
-                }
+                    timeSelect.appendChild(option);
+                });
+            } else {
+                // If no bookings, enable all time slots
+                times.forEach(time => {
+                    var option = document.createElement('option');
+                    option.value = time.value;
+                    option.text = time.label;
+                    timeSelect.appendChild(option);
+                });
             }
-        });
+        }
+    });
 
-        var inputs = document.getElementById("contactnum");
-        inputs.addEventListener("input", function (event) {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
-    </script>
+    var inputs = document.getElementById("contactnum");
+    inputs.addEventListener("input", function (event) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+</script>
 </body>
 
 </html>

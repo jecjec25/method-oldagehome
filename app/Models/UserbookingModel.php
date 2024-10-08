@@ -13,7 +13,7 @@ class UserbookingModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['lastname', 'firstname','Time', 'middlename', 'contactnum', 'status', 'event', 'prefferdate', 'Time', 'equipment', 'comments', 'usersignsId', 'description', 'amount_raised', 'outcomes', 'acknowledgement'];
+    protected $allowedFields    = ['establishment', 'lastname', 'firstname','Time', 'middlename', 'contactnum', 'status', 'event', 'prefferdate', 'Time', 'equipment', 'comments', 'usersignsId', 'description', 'amount_raised', 'outcomes', 'acknowledgement'];
 
     // Dates
     protected $useTimestamps = false;

@@ -42,18 +42,7 @@
         Creating products for old age homes involves considering the unique needs and challenges faced by seniors.
         </p>
       </div>
-        <div class="gallery">
-            <div class="content">
-              <a href="signin"><img name="Picture" src="images/<?= $prods['image']?>" alt="">
-              <h3 name="ProductName"> <?= $prods['description']?> </h3>
-        
-              <h6 name="Price"><?= $prods['price']?></h6>
-              <?= $prods['other']?>         
-             
-              </a>  
-            </div>
-
-   
+       
           <div class="gallery">
                         <?php foreach($prodimg as $prods):?>
             <div class="content">
