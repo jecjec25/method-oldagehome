@@ -31,8 +31,14 @@
                 </div>
                 <div class="mb-3">
                     <label for="name" class="control-label">Name</label>
-                    <input type="text" class="form-control rounded-0" id="name" name="name" autofocus placeholder="John" value="<?= !empty($product['name']) ? $product['name'] : '' ?>" required="required">
+                    <input type="text" class="form-control rounded-0" id="name" name="name" autofocus placeholder="Product Name" value="<?= !empty($product['name']) ? $product['name'] : '' ?>" required="required">
                 </div>
+
+                <div class="mb-3">
+                    <label for="Pic" class="control-label">Product Pic</label>
+                    <input type="file" class="form-control rounded-0" id="Prodpic" name="Prodpic" autofocus placeholder="Image" value="<?= !empty($product['name']) ? $product['prodpic'] : '' ?>" required="required">
+                </div>
+                
                 <div class="mb-3">
                     <label for="description" class="control-label">Description</label>
                     <textarea rows="3" class="form-control rounded-0" id="description" name="description" autofocus placeholder="(optional)" value="" ><?= !empty($product['description']) ? $product['description'] : '' ?></textarea>

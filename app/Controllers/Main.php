@@ -59,7 +59,7 @@ class Main extends BaseController
         $this->data['page_title']="Add New Product";
         return view('dashboard/pages/products/add', $this->data);
     }
-    public function product_edit($id=''){
+    public function product_edit($id){
         if(empty($id))
         return redirect()->to('Main/products');
         if($this->request->getMethod() == 'post'){
@@ -69,17 +69,18 @@ class Main extends BaseController
             $udata['code'] = $code;
             $udata['name'] = $name;
             $udata['description'] = $description;
+            $udata['Prodpic'] = $Prodpic;
             $udata['price'] = $price;
-           $changequant = $addstock + $prod['quantity'];  
+           $changequant = $addstock =+ $prod['quantity'];  
            $udata['quantity'] = $changequant;
             $checkCode = $this->prod_model->where('code',$code)->where("id!= '{$id}'")->countAllResults();
             if($checkCode){
                 $this->session->setFlashdata('error',"Product Code Already Taken.");
             }else{
-                $update = $this->prod_model->where('id',$id)->set($udata)->update();
+                $update = $this->prod_model->update($id, $udata);
                 if($update){
                     $this->session->setFlashdata('success',"Product Details has been updated successfully.");
-                    return redirect()->to('Main/product_edit/'.$id);
+                    return redirect()->to('Main/product_edit/' .$id);
                 }else{
                     $this->session->setFlashdata('error',"Product Details has failed to update.");
                 }

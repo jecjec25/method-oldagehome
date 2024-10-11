@@ -71,7 +71,7 @@ class SignupController extends BaseController
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
         $emailService->setSubject('Email Verification');
-        $emailService->setMessage("Thank you for registering your account to Aruga Kapatid Foundation. Please click the link below to verify your email address:\n\n" . base_url() . "/verify/$token");
+        $emailService->setMessage("Thank you for registering your account to Hapag Aruga Foundation Incorporated. Please click the link below to verify your email address:\n\n" . base_url() . "/verify/$token");
 
         $emailService->send();
     }

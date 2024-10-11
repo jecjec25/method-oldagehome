@@ -56,14 +56,27 @@ class UserIdonateController extends BaseController
     public function ReceivedMonetary()
     {
         $updateID = $this->request->getVar('update');
-    
+        $receivedDon  = $this->uidm->select('user.Email, user.FirstName')->join('user','user.userID = userdonation.usersignsId')->where('userdonation.id', $updateID)->first();
+        $email = $receivedDon['Email'];
+        $name = $receivedDon['FirstName'];
+
+        $this->sendEmailReceived($email, $name);
         $update = $this->viewToUpdateReceivedMonetary($updateID);
 
             $this->updateTheInkindToReceivedMonetary($updateID);
         
         return redirect()->to('/userdonatedtable');
     }
-    
+    private function sendEmailReceived($email, $name)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Hello, " . $name . "Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nYour Donation has Already Confirmed God Bless We Aprreciate it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
+
+        $emailService->send();
+    }
     private function viewToUpdateReceivedMonetary($updateID)
     {
         $update = $this->uidm->where('id', $updateID)->first();
@@ -83,12 +96,26 @@ class UserIdonateController extends BaseController
     public function PosponedMonetary()
     {
         $updateID = $this->request->getVar('update');
-    
+        $PosponedDon  = $this->uidm->select('user.Email, user.FirstName')->join('user','user.userID = userdonation.usersignsId')->where('userdonation.id', $updateID)->first();
+        $email = $PosponedDon['Email'];
+        $name = $PosponedDon['FirstName'];
+        $this->sendEmailPosponed($email, $name);
         $update = $this->viewToUpdatePosponedMonetary($updateID);
 
             $this->updateThePosponedMonetary($updateID);
         
         return redirect()->to('/userdonatedtable');
+    }
+
+    private function sendEmailPosponed($email, $name)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Hello, " . $name . " Apologies. Unfortunately we didn't receive your donation. More Blessings to come! \n\nDonation has been Postponed. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
+
+        $emailService->send();
     }
     
     private function viewToUpdatePosponedMonetary($updateID)
@@ -113,6 +140,9 @@ class UserIdonateController extends BaseController
         $userSesion = session()->get('userID');
 
         $email = $this->user->where('userID', $userSesion)->first();
+
+
+        $name = $email['FirstName'];
 
         $myEmail = $email['Email'];
 
@@ -158,7 +188,7 @@ class UserIdonateController extends BaseController
         } else {
             $uidm->save($data);
 
-            $this->sendEmailForDonation($myEmail);
+            $this->sendEmailForDonation($myEmail, $name);
         }
         
         session()->setFlashdata('success', 'The data has been saved sucessfully.');
@@ -166,13 +196,13 @@ class UserIdonateController extends BaseController
     }
 
 
-    private function sendEmailForDonation($myEmail)
+    private function sendEmailForDonation($myEmail, $name)
     {
         $emailService = \Config\Services::email();
         $emailService->setTo($myEmail);
-        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
-        $emailService->setSubject('Email Verification');
-        $emailService->setMessage("Thank you for registering your account to Aruga Kapatid Foundation. Please click the link below to verify your email address:\n\n" . base_url());
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
+        $emailService->setSubject('Donation');
+        $emailService->setMessage("Hello, " . $name . " Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nPlease wait for the confirmation. We will email it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
 
         $emailService->send();
     }
@@ -215,7 +245,11 @@ class UserIdonateController extends BaseController
     public function sbmtInkindDonation()
     {
         $session = session();
+        $user = $session->get('userID');
 
+        $getUser = $this->user->where('userID', $user)->first();
+        $email = $getUser['Email'];
+        $name = $getUser['FirstName'];
         $id = $this->request->getPost('id');
         $data = [
             'usersignsId' => $this->request->getPost('usersignsId'),
@@ -253,9 +287,20 @@ class UserIdonateController extends BaseController
             $this->Inkind->update($id, $data);
         } else {
             $this->Inkind->save($data);
+            $this->sendInkindUser($email, $name);
         }
         session()->setFlashdata('success', 'The data has been saved sucessfully.');
         return redirect()->to('/donate-items');
+    }
+    private function sendInkindUser($email, $name)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
+        $emailService->setSubject('Donation');
+        $emailService->setMessage("Hello, " . $name . " Thank you for your in-kind donation to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nPlease wait for the confirmation. We will email it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
+
+        $emailService->send();
     }
 
     public function viewDonateInkind()
@@ -294,12 +339,25 @@ class UserIdonateController extends BaseController
     public function PostponedInkind()
     {
         $updateID = $this->request->getVar('update');
+        $PostponedIn  = $this->Inkind->select('user.Email, user.FirstName')->join('user','user.userID = inkinddonation_tbl.usersignsId')->where('inkinddonation_tbl.id', $updateID)->first();
+        $email = $PostponedIn['Email'];
+        $name = $PostponedIn['FirstName'];
+        $this->sendEmailPostponedInkind($email, $name);
 
         $update = $this->viewToUpdate($updateID);
         $this->updatePostponed($update);
         return redirect()->to('/tableindkind');
     }
+    private function sendEmailPostponedInkind($email, $name)
+    {
+      $emailService = \Config\Services::email();
+      $emailService->setTo($email);
+      $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+      $emailService->setSubject('Email Verification');
+      $emailService->setMessage("Hello, " . $name . " Apologies. Unfortunately, we didn't receive your In-kind donation to Hapag Aruga. It has been postponed. More Blessings to come! \n\nYour Donation has been postponed. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
 
+      $emailService->send();
+    }
     private function viewToUpdate($updateID)
     {
         $update = $this->Inkind->where('id', $updateID)->first();
@@ -322,12 +380,25 @@ class UserIdonateController extends BaseController
       public function ReceivedInkind()
       {
           $updateID = $this->request->getVar('update');
-  
+          $receivedIn  = $this->Inkind->select('user.Email, user.FirstName')->join('user','user.userID = inkinddonation_tbl.usersignsId')->where('inkinddonation_tbl.id', $updateID)->first();
+          $email = $receivedIn['Email'];
+          $name = $receivedIn['FirstName'];
+          $this->sendEmailReceivedInkind($email, $name);
           $update = $this->viewToUpdateReceived($updateID);
           $this->updateTheInkindToReceived($update);
           return redirect()->to('/tableindkind');
       }
 
+      private function sendEmailReceivedInkind($email, $name)
+      {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Hello, " . $name . " Thank you for your in-kind donation to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nYour Donation has Already Confirmed God Bless We Appreciate it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
+
+        $emailService->send();
+      }
   
       private function viewToUpdateReceived($updateID)
       {
