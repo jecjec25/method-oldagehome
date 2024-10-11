@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 29, 2024 at 01:59 PM
+-- Generation Time: Oct 09, 2024 at 05:26 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `acceptbooking` (
   `id` int NOT NULL,
+  `establishment` text COLLATE utf8mb4_swedish_ci,
   `lastname` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `firstname` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `middlename` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -50,12 +51,17 @@ CREATE TABLE `acceptbooking` (
 -- Dumping data for table `acceptbooking`
 --
 
-INSERT INTO `acceptbooking` (`id`, `lastname`, `firstname`, `middlename`, `contactnum`, `event`, `Time`, `prefferdate`, `equipment`, `comments`, `status`, `usersignsId`, `description`, `amount_raised`, `outcomes`, `acknowledgement`) VALUES
-(174, 'skjksjfksjf', 'sjkskjcckj', 'sjskjcscjk', '09876543212', 'kdjdkxvjdk', 'HalfDay-morning', '2024-09-01', 'ksjksj,cksc', 'skjcsckj,mc', 'Accepted', 59, '', 0.00, '', ''),
-(175, 'fshnkfnk', 'skjskskv', 'snsivhsiKSJ', '09085353978', 'mxnkxmnck', 'HalfDay-afternoon', '2024-09-01', 'CXJMC;K,JXMC', 'SKJCS;KCJ', 'Accepted', 59, '', 0.00, '', ''),
-(176, 'scjsocjcsikJC', 'sjcjscskjc', 'ajcjskjcsic', '09987655656', 'dkjnlksnc', 'WholeDay', '2024-09-02', 'ksmclscl', 'scsoxckso', 'Accepted', 60, '', 0.00, '', ''),
-(177, 'cksjcksjc', 'skclkcl', 'lscscl', '09085353978', 'scjlskcjmlsk', 'WholeDay', '2024-09-03', 'chckj,sm', 'sjcmsc,jmsc', 'Accepted', 60, '', 0.00, '', ''),
-(178, 'cksjcksjc', 'skclkcl', 'lscscl', '09085353978', 'scjlskcjmlsk', 'WholeDay', '2024-09-03', 'chckj,sm', 'sjcmsc,jmsc', 'Declined', 60, '', 0.00, '', '');
+INSERT INTO `acceptbooking` (`id`, `establishment`, `lastname`, `firstname`, `middlename`, `contactnum`, `event`, `Time`, `prefferdate`, `equipment`, `comments`, `status`, `usersignsId`, `description`, `amount_raised`, `outcomes`, `acknowledgement`) VALUES
+(174, NULL, 'skjksjfksjf', 'sjkskjcckj', 'sjskjcscjk', '09876543212', 'kdjdkxvjdk', 'HalfDay-morning', '2024-09-01', 'ksjksj,cksc', 'skjcsckj,mc', 'Accepted', 59, '', 0.00, '', ''),
+(175, NULL, 'fshnkfnk', 'skjskskv', 'snsivhsiKSJ', '09085353978', 'mxnkxmnck', 'HalfDay-afternoon', '2024-09-01', 'CXJMC;K,JXMC', 'SKJCS;KCJ', 'Accepted', 59, '', 0.00, '', ''),
+(176, NULL, 'scjsocjcsikJC', 'sjcjscskjc', 'ajcjskjcsic', '09987655656', 'dkjnlksnc', 'WholeDay', '2024-09-02', 'ksmclscl', 'scsoxckso', 'Accepted', 60, '', 0.00, '', ''),
+(177, NULL, 'cksjcksjc', 'skclkcl', 'lscscl', '09085353978', 'scjlskcjmlsk', 'WholeDay', '2024-09-03', 'chckj,sm', 'sjcmsc,jmsc', 'Accepted', 60, '', 0.00, '', ''),
+(178, NULL, 'cksjcksjc', 'skclkcl', 'lscscl', '09085353978', 'scjlskcjmlsk', 'WholeDay', '2024-09-03', 'chckj,sm', 'sjcmsc,jmsc', 'Declined', 60, '', 0.00, '', ''),
+(179, 'testing lang', '', '', '', '09876543212', 'Christia event', 'WholeDay', '2024-10-14', '', '', 'Accepted', 60, '', 0.00, '', ''),
+(180, NULL, '', '', '', '09876543212', 'Charity Events', 'WholeDay', '2024-10-15', '', '', 'Accepted', 59, '', 0.00, '', ''),
+(181, 'testing for establisment', 'sjsivjik', '', '', '09085353978', 'Hahaha', 'WholeDay', '2024-10-16', '', '', 'Accepted', 59, '', 0.00, '', ''),
+(182, 'name of establis', '', '', '', '09085353978', 'charity events', 'WholeDay', '2024-10-20', '', '', 'Declined', 59, '', 0.00, '', ''),
+(183, 'Name of establishments ni Tia', '', '', '', '09876543212', 'Mind Games', 'HalfDay-morning', '2024-10-18', '', '', 'Accepted', 60, '', 0.00, '', '');
 
 -- --------------------------------------------------------
 
@@ -117,7 +123,11 @@ CREATE TABLE `adminsionsliptbl` (
 --
 
 INSERT INTO `adminsionsliptbl` (`slipId`, `scId`, `casenum`, `birthplace`, `nameCom`, `addressCom`, `contactCom`, `RelationClient`, `nameRef`, `addressRef`, `contactRef`, `Num1A`, `Num1D`, `Num2A`, `Num2D`, `Num3A`, `Num3D`, `Num4A`, `Num4D`, `Num5A`, `Num5D`, `Num6A`, `Num6D`, `Num7A`, `Num7D`, `Num8A`, `Num8D`, `Num9A`, `Num9D`, `Num10A`, `Num10D`, `Num11A`, `Num11D`, `Num12A`, `Num12D`, `Num13A`, `Num13D`, `Num14A`, `Num14D`, `Num15A`, `Num15D`, `inventoriedby`, `turnoverto`, `receivedby`, `referringparty`, `socialworker`) VALUES
-(1, NULL, 'sksksk21', 'dsdksdkdk', 'dslkslkd', 'ladkladk,', 'llkadladk', NULL, 'alldkldm', 'sdlsdkl', 'skjslksl.', 'ladkaldk,', 'ldkszdlks,d', 's,mls,cmsl,', 'ksjsk,jcms', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '', '', '', '');
+(1, 103, 'sksksk21', 'dsdksdkdk', 'dslkslkd', 'ladkladk,', 'llkadladk', 'asdasda', 'alldkldm', 'sdlsdkl', 'skjslksl.', 'ladkaldk,', 'ldkszdlks,d', 's,mls,cmsl,', 'ksjsk,jcms', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '', '', '', ''),
+(6, NULL, 'asdjh', 'Hakdog City', 'hjhjksadhkh', 'hkjhsdkjahjk', '09085353978', 'hjkhsakdhk', 'hjkhsdajk', 'hjkhdajshdjk', 'hjkdhsajkdhjk', 'hhhjkshdk', 'hhjkadhkh', 'hjkashdjkhhj', 'hhdsjkd', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '', '', '', ''),
+(7, 105, 'asda', 'sdsdfsasd', 'sds', 'sad', '09085353978', 'dsa', 'sdd', 'dsfdsfsd', 'sdgdsgds', 'dsfsafq', 'sdf', 'sdfsdf', 'sdf', 'sdf', 'dsfsdf', 'asdasdas', 'sadasd', 'sdfs', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '', '', '', ''),
+(8, 106, '1234testing', 'Bayanan 2, Calapan City', 'Bjfsijsoijoi test', 'skjxkdjv', 'chsjhjshci', 'ksjkdnvkn', 'dkjkvkdjv', 'ksjskvj', 'ksjskv,j', 'ksjcskc,j', 'kcs,jskjcm', 'skfmhsilkj', 'ksf,jmskv,j', 'kkfjdjodvj', 'olsikfvd;ovl', 'olsikf;os.jfm', 'olw,fskvmd.vjm', 'osl,jfmvd;o.vlk', 'osfl,jmsvj', 'osfjso;vj', 'skjvdivkj', 'kjesmfvdvj', 'kjsfmoksjf', 'kwjfmosfj', 'skfjsfkjm', 'kwjfmosfj', 'fsjmosfjm', 'osffjmslfikj', 'skfjmslfijk', 'skjfmspf.j', 'slkjs;kms;olks', 'sfjmspof;l', 'skjfsojfm', 'sjfmspfj', 'fkjmskjfm', 'fkjmsfkj,m', 'jfmiskjfmsif', NULL, 'osfl,jmsvj', 'Jennifer Ramirez', 'Christia Dela Chica', 'Kyle Curba', 'Christia Dela Chica', 'Juana Manalo'),
+(9, 107, '102342415', 'Camansihan, Calapan City', 'Christia', 'testing', '09876654322', 'testing', 'test', 'for test', 'fortesting', 'hjkhdaksjhdkjh', 'jkhdjksahdjh', 'jkhdjkashsjdhjk', 'hjkahsjdkhajksh', 'jkhdjkhasjkdhjk', 'hjkdhajkshdjksahdj', 'hdjkhajkshdh', 'jkdhjkshdjahdjkhjk', 'hjwhdajhdhadjk', 'hjkashdjksahdkajhdjk', 'hdjkashdjkahdjkashdjk', 'hdjkhasjdhsajkdh', 'jkhdajsdhsajkdhj', 'hdjkhasjkdhakj', 'hkashsajdh', 'jkhdkjashdkjashdjk', 'hkashsajdh', 'jhkahkjahdk', 'jhajkdhasjdkhsfjkasjkvbxznvbzb', 'nbbmbvxcbvmnx', 'hsdhfdshfjJJH', 'jkddsfhdsjfkh', 'jkhkjhdfjksdhfkskfjsnvnsjh', 'hjsjdkfhsdjkh', 'jddsfjkhsdjkjhj', 'jdsjfhsjkfhj', 'hsdjfhsdjkh', 'hsdfdsfjkdshfjk', NULL, 'hjkashdjksahdkajhdjk', 'jkhjkhfjkdshfjkh', 'jhkjhdjkfhjk', 'hjkhjkfhsdjkfhkj', 'hjkshdfjkhsdkjfhsjkh', 'hjkshdfjkshdfjkh');
 
 -- --------------------------------------------------------
 
@@ -197,6 +207,13 @@ CREATE TABLE `events` (
   `adminId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`EventID`, `Title`, `Description`, `Organizer`, `Start_date`, `End_date`, `Category`, `Status`, `Atendees`, `Attachments`, `type`, `usersignsid`, `adminId`) VALUES
+(77, 'sjksjskn', 'asjsjcm', 'admalkdmal', '2024-12-25', '2024-12-26', 'Recreational', 'Published', 'iufjoeujfeoiuj', '1728369496_901726ad53ee09280184.png', 'user', 60, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -232,6 +249,13 @@ CREATE TABLE `inkinddonation_tbl` (
   `status` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL,
   `message` varchar(150) COLLATE utf8mb4_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `inkinddonation_tbl`
+--
+
+INSERT INTO `inkinddonation_tbl` (`id`, `usersignsId`, `Establishment`, `lastname`, `firstname`, `middlename`, `contactnum`, `inKindDonationItem`, `picture`, `donationdate`, `status`, `message`) VALUES
+(21, 60, 'skjskjcsj', 'llskcllsm', 'loslcmslckm', 'scslkcsljcm', 9085353978, 'jdsljls,kcmls,m', '1728365221_ee98307626a22afb2859.png', '2024-12-25', 'pending', 'skfjsjfksl');
 
 -- --------------------------------------------------------
 
@@ -493,8 +517,12 @@ CREATE TABLE `tblscdetails` (
 
 INSERT INTO `tblscdetails` (`Id`, `lastname`, `firstname`, `middlename`, `nickname`, `DateBirth`, `gender`, `marital_stat`, `ContNum`, `ComAdd`, `ProfPic`, `EmergencyAdd`, `EmergencyContNum`, `RegDate`, `scstatus`, `InputedDate`, `departuredate`, `reasonleft`, `datedeath`, `causedeath`, `adminId`) VALUES
 (101, 'jvkjvdkvk', 'kndkjdk n', 'dkjvdljelk', 'ksjvdkvjdvj', '1945-12-25', 'Female', 'Married', '09876543212', 'nkjidkjvrkdv', '1719971596_6e8de9bd7eae7a9f216f.jpg', 'dvjodvjmdovj', '09876543212', '2024-07-03', 'Deceased', '2024-07-03 09:53:16', '', '', '', '', 58),
-(102, 'fhjfhsjhfsjhf ', 'skfshfnsif', 'hfshfskufhjn', 'jhfnjfhskfjh', '1950-12-25', 'Female', 'Married', '09878744466', 'skfmnslkfnslkfn&nbsp;', '1726816133_76b69e3dc9d19f48139e.png', 'akdjakdjadkjc', '09876543212', '2024-09-20', 'Unarchive', '2024-09-20 15:08:53', '', '', '', '', 58),
-(103, 'Manalo', 'Christia Angelica', 'Herilla', 'Jekjek', '1945-12-25', 'Female', 'Single', '09939469530', 'Camansihan, Calapan City, Oriental Mindoro', '1727589439_be7e52894cb7aa187e11.jpg', 'Camansihan, Calapan City, Oriental Mindoro', '09939469530', '2024-09-29', 'Unarchive', '2024-09-29 13:57:19', '', '', '', '', 58);
+(102, 'fhjfhsjhfsjhf ', 'skfshfnsif', 'hfshfskufhjn', 'jhfnjfhskfjh', '1950-12-25', 'Female', 'Married', '09878744466', 'skfmnslkfnslkfn&nbsp;', '1726816133_76b69e3dc9d19f48139e.png', 'akdjakdjadkjc', '09876543212', '2024-09-20', 'Left', '2024-09-20 15:08:53', '', '', '', '', 58),
+(103, 'Manalo', 'Christia Angelica', 'Herilla', 'Jekjek', '1945-12-25', 'Female', 'Single', '09939469530', 'Camansihan, Calapan City, Oriental Mindoro', '1727589439_be7e52894cb7aa187e11.jpg', 'Camansihan, Calapan City, Oriental Mindoro', '09939469530', '2024-09-29', 'Left', '2024-09-29 13:57:19', '', '', '', '', 58),
+(104, 'sad', 'sadasd', 'sda', 'sdsf', '2024-09-30', 'sdfdsf', 'dsfsf', '09085353878', 'sdfsdfsdf', 'sadsf', NULL, '0908636387', '2024-09-30', 'asdasd', '2024-09-30 19:34:00', '', '', 'sdfsdf', 'sdfsdfsdf', NULL),
+(105, 'sdjhfjk', 'hhjksfhjkdshfjkh', 'jkhjkhdsfjkhsdkhf', 'jkhjkdhsjkfhsjkh', '1969-07-08', 'Male', 'Single', '09123456789', 'sadadas', '1727696109_0e28ad89b7a84a31e838.jpg', 'sadad', '09085353978', '1999-12-12', 'Left', '2024-09-30 19:35:09', '', '', '', '', 58),
+(106, 'Dela Cruz', 'Juan', 'Manalo', 'Juancho', '1935-12-25', 'Male', 'Married', '09633895647', 'Bayanan, Calapan City', '1727748661_a7c0090787a4dbb3151c.jpg', 'Bayanan, Calapan City', '09633895647', '2024-10-01', 'Left', '2024-10-01 10:11:01', '', '', '', '', 58),
+(107, 'asd', 'asdjhgjh', 'gjhsadjhg', 'jhgjhgasjhdghj', '1969-12-09', 'Female', 'Single', '09876543212', 'asdasd', '1727769605_57504814f6edf766a4ff.jpg', 'asdasd', '09633895647', '2024-12-12', 'Unarchive', '2024-10-01 16:00:05', '', '', '', '', 58);
 
 -- --------------------------------------------------------
 
@@ -639,6 +667,7 @@ INSERT INTO `user` (`userID`, `verification_token`, `is_verified`, `LastName`, `
 --
 
 CREATE TABLE `userbooking` (
+  `establishment` text COLLATE utf8mb4_swedish_ci,
   `lastname` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `firstname` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
   `middlename` varchar(255) COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -652,6 +681,16 @@ CREATE TABLE `userbooking` (
   `status` varchar(159) COLLATE utf8mb4_swedish_ci NOT NULL,
   `usersignsId` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `userbooking`
+--
+
+INSERT INTO `userbooking` (`establishment`, `lastname`, `firstname`, `middlename`, `contactnum`, `event`, `prefferdate`, `Time`, `equipment`, `comments`, `bookingId`, `status`, `usersignsId`) VALUES
+(NULL, 'sjsksjfsjk', '', '', '09085353978', 'siskjfsikjfm', '2024-10-09', 'WholeDay', '', '', 238, 'pending', 60),
+(NULL, '', '', '', '09123456789', 'Mind Games', '2024-10-11', 'WholeDay', '', '', 239, 'pending', 60),
+(NULL, 'skjkj', 'skjmsljfm', 'kadjmlsljm', '09085353978', 'charity events', '2024-10-17', 'HalfDay-morning', '', '', 240, 'pending', 60),
+(NULL, '', '', '', '09085353978', 'snfhskfhnk', '2024-10-09', 'WholeDay', '', '', 241, 'pending', 60);
 
 -- --------------------------------------------------------
 
@@ -676,6 +715,14 @@ CREATE TABLE `userdonation` (
   `message` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `mumosahapag` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `userdonation`
+--
+
+INSERT INTO `userdonation` (`id`, `usersignsId`, `establishment`, `lastname`, `firstname`, `middlename`, `contactnum`, `donationdate`, `cashDonation`, `cashCheck`, `picture`, `referencenum`, `status`, `message`, `mumosahapag`) VALUES
+(41, 60, 'skjfsfmosjfm', '', '', '', 9085353978, '2024-10-08 05:02:54', 12234000, 0, '', 'sjksdj123322', 'pending', '', 0),
+(42, 60, 'skjskvnikn', 'ksj,msvjn', 'sjlsoljvo', 'osjlfsofj', 9123456789, '2024-10-08 05:27:53', 122233000, 0, '', '21234342A', 'pending', '', 0);
 
 -- --------------------------------------------------------
 
@@ -730,7 +777,7 @@ ALTER TABLE `acceptbooking`
 --
 ALTER TABLE `adminsionsliptbl`
   ADD PRIMARY KEY (`slipId`),
-  ADD KEY `scId` (`scId`);
+  ADD KEY `Id` (`scId`);
 
 --
 -- Indexes for table `announcement`
@@ -871,13 +918,13 @@ ALTER TABLE `vm`
 -- AUTO_INCREMENT for table `acceptbooking`
 --
 ALTER TABLE `acceptbooking`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 
 --
 -- AUTO_INCREMENT for table `adminsionsliptbl`
 --
 ALTER TABLE `adminsionsliptbl`
-  MODIFY `slipId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `slipId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `announcement`
@@ -901,7 +948,7 @@ ALTER TABLE `elderneed`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `EventID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `EventID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `feedbacktbl`
@@ -913,7 +960,7 @@ ALTER TABLE `feedbacktbl`
 -- AUTO_INCREMENT for table `inkinddonation_tbl`
 --
 ALTER TABLE `inkinddonation_tbl`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `newsevents`
@@ -961,7 +1008,7 @@ ALTER TABLE `tblproduct`
 -- AUTO_INCREMENT for table `tblscdetails`
 --
 ALTER TABLE `tblscdetails`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `transactions`
@@ -979,13 +1026,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `bookingId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=238;
+  MODIFY `bookingId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
 
 --
 -- AUTO_INCREMENT for table `userdonation`
 --
 ALTER TABLE `userdonation`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `usersigns`
@@ -1013,7 +1060,7 @@ ALTER TABLE `acceptbooking`
 -- Constraints for table `adminsionsliptbl`
 --
 ALTER TABLE `adminsionsliptbl`
-  ADD CONSTRAINT `adminsionsliptbl_ibfk_1` FOREIGN KEY (`scId`) REFERENCES `tblscdetails` (`Id`) ON DELETE SET NULL;
+  ADD CONSTRAINT `adminsionsliptbl_ibfk_1` FOREIGN KEY (`scId`) REFERENCES `tblscdetails` (`Id`) ON DELETE SET NULL ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `announcement`

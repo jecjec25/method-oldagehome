@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UserIdonateModel;
 use App\Models\AcceptbookingModel;
+use App\Models\UsersModel;
 use App\Models\UserbookingModel;
 use App\Models\InKindModel;
 use Dompdf\Dompdf;
@@ -14,8 +15,10 @@ class UserIdonateController extends BaseController
     private $acceptbooking;
     private $userbooking;
     private $Inkind;
+    private $user;
     public function __construct()
     {
+        $this->user = new UsersModel();
         $this->acceptbooking = new AcceptbookingModel();
         $this->uidm = new userIdonateModel();
         $this->userbooking = new UserbookingModel();
@@ -107,6 +110,11 @@ class UserIdonateController extends BaseController
     public function sbmtDonation()
     {
         $session = session();
+        $userSesion = session()->get('userID');
+
+        $email = $this->user->where('userID', $userSesion)->first();
+
+        $myEmail = $email['Email'];
 
         $data = [
             'usersignsId' => $this->request->getPost('usersignsId'),
@@ -149,12 +157,25 @@ class UserIdonateController extends BaseController
             $uidm->update($id, $data);
         } else {
             $uidm->save($data);
+
+            $this->sendEmailForDonation($myEmail);
         }
         
         session()->setFlashdata('success', 'The data has been saved sucessfully.');
         return redirect()->to('/donate-money');
     }
 
+
+    private function sendEmailForDonation($myEmail)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($myEmail);
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Thank you for registering your account to Aruga Kapatid Foundation. Please click the link below to verify your email address:\n\n" . base_url());
+
+        $emailService->send();
+    }
     public function deletedonation($id = null)
     {
         $this->uidm->delete($id);
