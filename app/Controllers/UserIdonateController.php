@@ -71,7 +71,7 @@ class UserIdonateController extends BaseController
     {
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
-        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Email Verification');
         $emailService->setMessage("Hello, " . $name . "Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nYour Donation has Already Confirmed God Bless We Aprreciate it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
 
@@ -111,7 +111,7 @@ class UserIdonateController extends BaseController
     {
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
-        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Email Verification');
         $emailService->setMessage("Hello, " . $name . " Apologies. Unfortunately we didn't receive your donation. More Blessings to come! \n\nDonation has been Postponed. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
 
@@ -352,7 +352,7 @@ class UserIdonateController extends BaseController
     {
       $emailService = \Config\Services::email();
       $emailService->setTo($email);
-      $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+      $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
       $emailService->setSubject('Email Verification');
       $emailService->setMessage("Hello, " . $name . " Apologies. Unfortunately, we didn't receive your In-kind donation to Hapag Aruga. It has been postponed. More Blessings to come! \n\nYour Donation has been postponed. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
 
@@ -393,7 +393,7 @@ class UserIdonateController extends BaseController
       {
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
-        $emailService->setFrom('aruga.kapatid@gmail.com', 'Aruga Kapatid Foundation');
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Email Verification');
         $emailService->setMessage("Hello, " . $name . " Thank you for your in-kind donation to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nYour Donation has Already Confirmed God Bless We Appreciate it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
 
