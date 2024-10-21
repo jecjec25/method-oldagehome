@@ -231,7 +231,7 @@ b {
   <div class="sub-header">
     <nav class="top-nav">
       <ul class="top-nav">
-        <li class="active"><a href="userViewpost">View Event</a></li>
+        <li class="active"><a href="/userViewpost">View Event</a></li>
         <li><a href="/booking">Event Reservation</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle">Donate to our Elders</a>

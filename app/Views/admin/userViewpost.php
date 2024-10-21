@@ -1,61 +1,87 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
+
 <head>
-<title>View Event</title>
-<link rel="icon" type="image/png" href="/picture.png">
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Event</title>
 
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href="/css/userview.css" rel='stylesheet' type='text/css' />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/picture.png">
 
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+    <!-- CSS Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/userview.css" rel="stylesheet" type="text/css" />
 
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-		
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){		
-            event.preventDefault();
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+    <!-- jQuery -->
+    <script src="js/jquery-1.8.3.min.js"></script>
+
+    <!-- Modernizr -->
+    <script src="js/modernizr.custom.js"></script>
+
+    <!-- Move Top and Easing Scripts -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+
+    <!-- Hide URL Bar on Load -->
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <!-- Scroll Animation Script -->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
         });
-    });
-</script>
+    </script>
 
-<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
+    <!-- Custom Styles -->
+    <style>
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #A3C9D2;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+            text-align: center;
+        }
 
-<style>
-h2 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    color: #A3C9D2;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #f39c12;
-    padding-bottom: 10px;
-    text-align: center;
-}
+        .leftBox {
+            text-align: center;
+        }
 
-.leftBox {
-    text-align: center;
-}
+        .events {
+            align-items: center;
+        }
 
-.events {
-    align-items: center;
-}
-section {
-    width: 100%;
-}
-</style>
+        section {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
     <div>
         <?php include_once('includes/user/sidebar.php');?>
-
+        <br>
+        <br>
         <section class="flashing-background">
             <div class="events">
                 <div class="leftBox">

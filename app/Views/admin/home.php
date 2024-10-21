@@ -1,7 +1,10 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+   
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="/picture.png">
@@ -22,9 +25,8 @@
             });
         });
     </script>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 </head>
- 
+
 <style>
 .text {
     color: white;
@@ -38,6 +40,8 @@
 </style>
 <body>
     <?php include_once('includes/header.php'); ?>
+    <br>
+    <br>
     <div class="containered">
         <div class="letest-sections">
             <div class="containers">
@@ -96,14 +100,14 @@
     <script>
         $('.example1').wmuSlider();         
     </script>
-    <?php include_once('includes/footer.php'); ?>
+    <?php include_once('includes/footer.php');?>
+
+    
     <script type="text/javascript">
         $(document).ready(function() {
             $().UItoTop({ easingType: 'easeOutQuart' });
         });
     </script>
-    <a href="#home" id="toTop" class="scroll" style="display: block;"> 
-        <span id="toTopHover" style="opacity: 1;"> </span>
-    </a>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
 </html>

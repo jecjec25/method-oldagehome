@@ -1,34 +1,55 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Necessity</title>
-    <link rel="icon" type="image/png" href="/picture.png">
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="/css/menu.css" rel='stylesheet' type='text/css' />
 
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/picture.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Styles -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/menu.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
     <script src="js/jquery-1.8.3.min.js"></script>
+
+    <!-- Modernizr -->
     <script src="js/modernizr.custom.js"></script>
+
+    <!-- Move Top and Easing Scripts -->
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
-            
+
+    <!-- Hide URL Bar on Load -->
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar() { window.scrollTo(0, 1); }
+    </script>
+
+    <!-- Scroll Animation Script -->
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){        
-                event.preventDefault();                                                     
+                event.preventDefault();
                 $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
             });
         });
     </script>
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 
-<?php include_once('includes/header.php');?> 
-   
 
+<?php include_once('includes/header.php');?> 
     <div class="content">
     <div class="blog">
         <div class="container">    

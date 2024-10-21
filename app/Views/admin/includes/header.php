@@ -62,7 +62,7 @@
           <li><a href="/menu">Necessity</a></li>
           <div class="clearfix"> </div>
         </ul>
-        <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
+        <a href="#" id="pull"><h6>Menu</h6><img src="images/menu-icon.png" title="menu" /></a>
       </nav>
     </div>
     <div class="clearfix"> </div>

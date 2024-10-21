@@ -1,39 +1,33 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-<title>About</title>
-<link rel="icon" type="image/png" href="/picture.png">
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-</script>
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
-
-
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-		
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-		</script>
-
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic|Niconne' rel='stylesheet' type='text/css'>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+   
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="/picture.png">
+    <script type="application/x-javascript">
+        
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="./js/move-top.js"></script>
+    <script type="text/javascript" src="./js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){        
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
 </head>
 <body>
 <?php include_once('includes/header.php');?>
-	</div>	
-</div>
-
-
 	<div class="About-section">
 	 	<div class="container">
 	 		<h3>ABOUT US</h3>
@@ -70,15 +64,12 @@
 	 </div>
 	
 	<?php include_once('includes/footer.php');?>
-								<script type="text/javascript">
-									$(document).ready(function() {
-										
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
-					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 
 
