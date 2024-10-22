@@ -1,0 +1,598 @@
+CRITICAL - 2024-10-22 03:14:36 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\editproduct.php on line 51.
+ 1 APPPATH\Views\dashboard\editproduct.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editproduct', [], true)
+ 5 APPPATH\Controllers\ProductsController.php(59): view('dashboard/editproduct', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductsController->editprod('18')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:14:51 --> Undefined array key "Id"
+in APPPATH\Views\dashboard\editproduct.php on line 51.
+ 1 APPPATH\Views\dashboard\editproduct.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Id"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editproduct', [], true)
+ 5 APPPATH\Controllers\ProductsController.php(59): view('dashboard/editproduct', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductsController->editprod('19')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:16:36 --> Undefined array key "ProdName"
+in APPPATH\Views\dashboard\editproduct.php on line 54.
+ 1 APPPATH\Views\dashboard\editproduct.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ProdName"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php', 54)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editproduct', [], true)
+ 5 APPPATH\Controllers\ProductsController.php(59): view('dashboard/editproduct', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductsController->editprod('19')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:18:31 --> Undefined array key "ProdName"
+in APPPATH\Views\dashboard\editproduct.php on line 54.
+ 1 APPPATH\Views\dashboard\editproduct.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ProdName"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php', 54)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editproduct', [], true)
+ 5 APPPATH\Controllers\ProductsController.php(59): view('dashboard/editproduct', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductsController->editprod('19')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:19:26 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editproduct.php on line 51.
+ 1 APPPATH\Views\dashboard\editproduct.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editproduct', [], true)
+ 5 APPPATH\Controllers\ProductsController.php(59): view('dashboard/editproduct', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductsController->editprod('30')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:19:42 --> Trying to access array offset on value of type null
+in APPPATH\Views\dashboard\editproduct.php on line 51.
+ 1 APPPATH\Views\dashboard\editproduct.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php', 51)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\dashboard\\editproduct.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/editproduct', [], true)
+ 5 APPPATH\Controllers\ProductsController.php(59): view('dashboard/editproduct', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductsController->editprod('18')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:39:30 --> Undefined variable $prodpic
+in APPPATH\Controllers\Main.php on line 44.
+ 1 APPPATH\Controllers\Main.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prodpic', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:40:31 --> Undefined variable $prodpic
+in APPPATH\Controllers\Main.php on line 44.
+ 1 APPPATH\Controllers\Main.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prodpic', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:40:55 --> Undefined variable $prodpic
+in APPPATH\Controllers\Main.php on line 44.
+ 1 APPPATH\Controllers\Main.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prodpic', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:42:01 --> Undefined variable $prodpic
+in APPPATH\Controllers\Main.php on line 44.
+ 1 APPPATH\Controllers\Main.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prodpic', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:43:57 --> Undefined variable $Prodpic
+in APPPATH\Controllers\Main.php on line 44.
+ 1 APPPATH\Controllers\Main.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Prodpic', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 03:44:17 --> Undefined variable $prodpic
+in APPPATH\Controllers\Main.php on line 44.
+ 1 APPPATH\Controllers\Main.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $prodpic', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 03:47:15 --> mysqli_sql_exception: Column 'prodpic' cannot be null in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 D:\laragon\www\method-oldagehome\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\laragon\www\method-oldagehome\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 D:\laragon\www\method-oldagehome\app\Controllers\Main.php(52): CodeIgniter\BaseModel->save(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-10-22 03:47:15 --> Column 'prodpic' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`code`, `name`, `description`, `quantity`, `prodpic`, `price`) VALUES (:code.1:, :name:, :description:, :quantity:, :prodpic:, :price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Main.php(52): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 04:21:01 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Main.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 04:22:19 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Main.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 04:31:33 --> mysqli_sql_exception: Column 'prodpic' cannot be null in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 D:\laragon\www\method-oldagehome\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\laragon\www\method-oldagehome\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 D:\laragon\www\method-oldagehome\app\Controllers\Main.php(73): CodeIgniter\BaseModel->save(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-10-22 04:31:33 --> Column 'prodpic' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`code`, `name`, `description`, `quantity`, `prodpic`, `price`) VALUES (:code.1:, :name:, :description:, :quantity:, :prodpic:, :price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Main.php(73): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 04:31:49 --> Call to a member function isValid() on string
+in APPPATH\Controllers\Main.php on line 51.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 04:32:01 --> mysqli_sql_exception: Column 'prodpic' cannot be null in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 D:\laragon\www\method-oldagehome\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\laragon\www\method-oldagehome\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 D:\laragon\www\method-oldagehome\app\Controllers\Main.php(73): CodeIgniter\BaseModel->save(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-10-22 04:32:01 --> Column 'prodpic' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`code`, `name`, `description`, `quantity`, `prodpic`, `price`) VALUES (:code.1:, :name:, :description:, :quantity:, :prodpic:, :price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Main.php(73): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 04:32:56 --> mysqli_sql_exception: Column 'prodpic' cannot be null in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 D:\laragon\www\method-oldagehome\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\laragon\www\method-oldagehome\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 D:\laragon\www\method-oldagehome\app\Controllers\Main.php(73): CodeIgniter\BaseModel->save(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-10-22 04:32:56 --> Column 'prodpic' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`code`, `name`, `description`, `quantity`, `prodpic`, `price`) VALUES (:code.1:, :name:, :description:, :quantity:, :prodpic:, :price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Main.php(73): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 04:33:57 --> mysqli_sql_exception: Column 'prodpic' cannot be null in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 D:\laragon\www\method-oldagehome\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\laragon\www\method-oldagehome\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 D:\laragon\www\method-oldagehome\app\Controllers\Main.php(73): CodeIgniter\BaseModel->save(Array)
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+#11 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2024-10-22 04:33:57 --> Column 'prodpic' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `products` (`code`, `name`, `description`, `quantity`, `prodpic`, `price`) VALUES (:code.1:, :name:, :description:, :quantity:, :prodpic:, :price:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Main.php(73): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 04:37:46 --> Undefined variable $currentProfileImg
+in APPPATH\Controllers\Main.php on line 55.
+ 1 APPPATH\Controllers\Main.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $currentProfileImg', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 05:08:27 --> Unsupported operand types: string + string
+in APPPATH\Controllers\Main.php on line 110.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_edit('19')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 05:15:38 --> Undefined array key "Prodpic"
+in APPPATH\Controllers\Main.php on line 110.
+ 1 APPPATH\Controllers\Main.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Prodpic"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 110)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_edit('19')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 05:15:43 --> Undefined array key "Prodpic"
+in APPPATH\Controllers\Main.php on line 110.
+ 1 APPPATH\Controllers\Main.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Prodpic"', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\Main.php', 110)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_edit('19')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 05:22:46 --> Unsupported operand types: string + string
+in APPPATH\Controllers\Main.php on line 115.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_edit('19')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 13:40:20 --> Class "App\Controllers\Product" not found
+in APPPATH\Controllers\ViewController.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\ViewController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 13:40:37 --> mysqli_sql_exception: Unknown column 'type' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\ViewController.php(234): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\ViewController->products()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-10-22 13:40:37 --> Unknown column 'type' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`
+WHERE `type` = :type:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ViewController.php(234): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->products()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 13:41:03 --> Undefined array key "image"
+in APPPATH\Views\admin\products.php on line 58.
+ 1 APPPATH\Views\admin\products.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php', 58)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/products', [], true)
+ 5 APPPATH\Controllers\ViewController.php(237): view('admin/products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->products()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 13:41:20 --> Undefined array key "other"
+in APPPATH\Views\admin\products.php on line 62.
+ 1 APPPATH\Views\admin\products.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "other"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php', 62)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/products', [], true)
+ 5 APPPATH\Controllers\ViewController.php(237): view('admin/products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->products()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 13:43:57 --> Undefined array key "Name"
+in APPPATH\Views\admin\products.php on line 87.
+ 1 APPPATH\Views\admin\products.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Name"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php', 87)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/products', [], true)
+ 5 APPPATH\Controllers\ViewController.php(237): view('admin/products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->products()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 13:47:27 --> mysqli_sql_exception: Unknown column 'other' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\ViewController.php(58): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\ViewController->home()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-10-22 13:47:27 --> Unknown column 'other' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`
+WHERE `other` = :other:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ViewController.php(58): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 13:48:28 --> Undefined array key "image"
+in APPPATH\Views\admin\home.php on line 57.
+ 1 APPPATH\Views\admin\home.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\home.php', 57)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\home.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/home', [], true)
+ 5 APPPATH\Controllers\ViewController.php(61): view('admin/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 13:48:54 --> mysqli_sql_exception: Unknown column 'other' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\ViewController.php(58): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\ViewController->home()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-10-22 13:48:54 --> Unknown column 'other' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`
+WHERE `other` = :other:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ViewController.php(58): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 14:02:39 --> Undefined variable $getCount
+in APPPATH\Views\admin\includes\user\sidebar.php on line 202.
+ 1 APPPATH\Views\admin\includes\user\sidebar.php(202): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $getCount', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\includes\\user\\sidebar.php', 202)
+ 2 APPPATH\Views\admin\products.php(37): include_once('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\includes\\user\\sidebar.php')
+ 3 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/products', [], true)
+ 6 APPPATH\Controllers\ViewController.php(239): view('admin/products', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->products()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 14:03:23 --> Undefined array key "image"
+in APPPATH\Views\admin\products.php on line 58.
+ 1 APPPATH\Views\admin\products.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php', 58)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/products', [], true)
+ 5 APPPATH\Controllers\ViewController.php(239): view('admin/products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->products()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 06:05:08 --> Undefined array key "prodpic"
+in APPPATH\Views\admin\userseeproduct.php on line 93.
+ 1 APPPATH\Views\admin\userseeproduct.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "prodpic"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userseeproduct.php', 93)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userseeproduct.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/userseeproduct', [], true)
+ 5 APPPATH\Controllers\UserProductController.php(46): view('admin/userseeproduct', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserProductController->userproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 06:05:20 --> Undefined array key "prodpic"
+in APPPATH\Views\admin\userseeproduct.php on line 93.
+ 1 APPPATH\Views\admin\userseeproduct.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "prodpic"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userseeproduct.php', 93)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userseeproduct.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/userseeproduct', [], true)
+ 5 APPPATH\Controllers\UserProductController.php(46): view('admin/userseeproduct', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserProductController->userproduct()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 06:31:00 --> finfo_file(C:\Users\delac\AppData\Local\Temp\php29DA.tmp): Failed to open stream: No such file or directory
+in SYSTEMPATH\Files\File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'finfo_file(C:\\Users\\delac\\AppData\\Local\\Temp\\php29DA.tmp): Failed to open stream: No such file or directory', 'D:\\laragon\\www\\method-oldagehome\\system\\Files\\File.php', 115)
+ 2 SYSTEMPATH\Files\File.php(115): finfo_file(Object(finfo), 'C:\\Users\\delac\\AppData\\Local\\Temp\\php29DA.tmp')
+ 3 SYSTEMPATH\HTTP\Files\UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH\HTTP\Files\UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH\Files\File.php(127): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 APPPATH\Controllers\Main.php(64): CodeIgniter\Files\File->getRandomName()
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Main->product_add('$1')
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-10-22 16:10:47 --> Undefined array key "Mission"
+in APPPATH\Views\admin\about.php on line 56.
+ 1 APPPATH\Views\admin\about.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Mission"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\about.php', 56)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\about.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/about', [], true)
+ 5 APPPATH\Controllers\ViewController.php(81): view('admin/about', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->about()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 16:35:14 --> mysqli_sql_exception: Unknown column 'image' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\ViewController.php(78): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\ViewController->about()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-10-22 16:35:14 --> Unknown column 'image' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `vm`
+WHERE `image` = :image:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ViewController.php(78): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->about()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-10-22 16:36:44 --> mysqli_sql_exception: Unknown column 'image' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\ViewController.php(78): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\ViewController->about()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-10-22 16:36:44 --> Unknown column 'image' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `vm`
+WHERE `image` = :image:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ViewController.php(78): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->about()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

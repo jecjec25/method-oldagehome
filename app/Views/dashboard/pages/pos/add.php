@@ -17,7 +17,7 @@
     </div>
     <div class="card-body">
         <div class="container-fluid">
-            <form action="<?= base_url("Main/save_transaction") ?>" id="transaction-form" method="POST" onkeydown="return event.key != 'Enter';">
+            <form action="<?= base_url("Main/save_transaction") ?>" id="transaction-form" method="POST" onkeydown="return event.key != 'Enter';" enctype="multipart/form-data">
                 <input type="hidden" name="total_amount" value="0">
                 <fieldset class="border pb-3 rounded-0 mb-3">
                     <legend class="px-3 mx-3">Add Product</legend>

@@ -48,7 +48,7 @@
                   <p class="card-description">
                     Edit a Product to Aruga Kapatid
                   </p>
-                  <?= form_open_multipart('updateprod/' .$prod['Id']) ?>
+                  <?= form_open_multipart('updateprod/' .$prod['id']) ?>
                        <div class="form-group">
                        <label for="exampleInputUsername1">Product Name</label>
                       <input id="ProdName" name="ProdName" type="text" class="form-control" required="true" value="<?= $prod['ProdName'];?>">

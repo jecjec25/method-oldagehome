@@ -49,8 +49,8 @@
             <div class="collapse" id="product">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link <?= isset($page_title) && $page_title == 'POS' ? 'active' : '' ?>" href="<?= base_url('Main/pos') ?>">POS</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/addproduct">Add Product</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/show">Update Product</a></li>
+               <!-- <li class="nav-item"> <a class="nav-link" href="/addproduct">Add Product</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/show">Update Product</a></li> -->
               </ul>
             </div>
           </li>

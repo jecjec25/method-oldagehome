@@ -33,64 +33,122 @@ class Main extends BaseController
         $this->data['pager'] = $this->prod_model->pager;
         return view('dashboard/pages/products/list', $this->data);
     }
-    public function product_add(){
-        if($this->request->getMethod() == 'post'){
-            extract($this->request->getPost());
-            $udata= [];
-            $udata['code'] = $code;
-            $udata['name'] = $name;
-            $udata['description'] = $description;
-            $udata['quantity'] = $quantity;
-            $udata['price'] = $price;
-            $checkCode = $this->prod_model->where('code',$code)->countAllResults();
-            if($checkCode){
-                $this->session->setFlashdata('error',"Product Code Already Taken.");
-            }else{
-                $save = $this->prod_model->save($udata);
-                if($save){
-                    $this->session->setFlashdata('main_success',"Product Details has been updated successfully.");
+    public function product_add() {
+        if ($this->request->getMethod() === 'post') {
+            // Access post data directly
+            $code = $this->request->getPost('code');
+            $name = $this->request->getPost('name');
+            $description = $this->request->getPost('description');
+            $quantity = $this->request->getPost('quantity');
+            $price = $this->request->getPost('price');
+            
+            // Get uploaded file
+            $prodpic = $this->request->getFile('prodpic');
+            $udata = [
+                'code' => $code,
+                'name' => $name,
+                'description' => $description,
+                'quantity' => $quantity,
+                'price' => $price,
+            ];
+    
+            // Check for existing product code
+            $checkCode = $this->prod_model->where('code', $code)->countAllResults();
+    
+            // File upload handling
+            if ($prodpic->isValid() && !$prodpic->hasMoved()) {
+                $newName = $prodpic->getRandomName(); // Use random name for uniqueness
+                if ($prodpic->move(ROOTPATH . 'public/upload/product', $newName)) {
+                    $udata['prodpic'] = $newName;
+                } else {
+                    $this->session->setFlashdata('error', "Failed to move the uploaded file.");
+                    return redirect()->back()->withInput(); // Redirect back with input
+                }
+            }
+    
+            // Check if code is already taken
+            if ($checkCode) {
+                $this->session->setFlashdata('error', "Product Code Already Taken.");
+            } else {
+                // Save product data
+                if ($this->prod_model->save($udata)) {
+                    $this->session->setFlashdata('main_success', "Product Details have been updated successfully.");
                     return redirect()->to('Main/products/');
-                }else{
-                    $this->session->setFlashdata('error',"Product Details has failed to update.");
+                } else {
+                    $this->session->setFlashdata('error', "Product Details failed to update.");
                 }
             }
         }
-
-        $this->data['page_title']="Add New Product";
+    
+        $this->data['page_title'] = "Add New Product";
         return view('dashboard/pages/products/add', $this->data);
     }
-    public function product_edit($id){
-        if(empty($id))
+    
+public function product_edit($id)
+{
+    if (empty($id)) {
         return redirect()->to('Main/products');
-        if($this->request->getMethod() == 'post'){
-            extract($this->request->getPost());
-          $prod =  $this->prod_model->find($id);
-            $udata= [];
-            $udata['code'] = $code;
-            $udata['name'] = $name;
-            $udata['description'] = $description;
-            $udata['Prodpic'] = $Prodpic;
-            $udata['price'] = $price;
-           $changequant = $addstock =+ $prod['quantity'];  
-           $udata['quantity'] = $changequant;
-            $checkCode = $this->prod_model->where('code',$code)->where("id!= '{$id}'")->countAllResults();
-            if($checkCode){
-                $this->session->setFlashdata('error',"Product Code Already Taken.");
-            }else{
-                $update = $this->prod_model->update($id, $udata);
-                if($update){
-                    $this->session->setFlashdata('success',"Product Details has been updated successfully.");
-                    return redirect()->to('Main/product_edit/' .$id);
-                }else{
-                    $this->session->setFlashdata('error',"Product Details has failed to update.");
-                }
+    }
+
+    // Fetch the existing product
+    $prod = $this->prod_model->find($id);
+
+    $currentProfileImg = $prod['prodpic'];
+
+    if (!$prod) {
+        // Handle case where product does not exist
+        $this->session->setFlashdata('error', 'Product not found.');
+        return redirect()->to('Main/products');
+    }
+
+    if ($this->request->getMethod() === 'post') {
+        $postData = $this->request->getPost();
+        
+        // Prepare data for update
+        $prodpic = $this->request->getFile('Prodpic');
+        
+        $udata = [
+            'code' => $postData['code'],
+            'name' => $postData['name'],
+            'description' => $postData['description'],
+            'price' => $postData['price'],
+            'quantity' => $prod['quantity'] + ($postData['addstock'] ?? 0) // Add stock to current quantity
+        ];
+
+        if ($prodpic->isValid() && !$prodpic->hasMoved()) {
+            $newName = $prodpic->getName();
+            $prodpic->move(ROOTPATH . 'public/upload/product', $newName);
+            $udata['prodpic'] = $newName;
+
+            // Delete the old profile image if it's not the default image
+            if ($currentProfileImg !== $prod['prodpic'] && file_exists(ROOTPATH . 'public/upload/product' . $currentProfileImg)) {
+                unlink(ROOTPATH . 'public/upload/product' . $currentProfileImg);
             }
         }
 
-        $this->data['page_title']="Edit Product";
-        $this->data['product'] = $this->prod_model->where("id ='{$id}'")->first();
-        return view('dashboard/pages/products/edit', $this->data);
+
+      
+        // Check if the code already exists
+        $checkCode = $this->prod_model->where('code', $udata['code'])->where('id !=', $id)->countAllResults();
+        if ($checkCode) {
+            $this->session->setFlashdata('error', "Product Code Already Taken.");
+        } else {
+            // Update product details
+            $update = $this->prod_model->update($id, $udata);
+            if ($update) {
+                $this->session->setFlashdata('success', "Product Details have been updated successfully.");
+                return redirect()->to('Main/product_edit/' . $id);
+            } else {
+                $this->session->setFlashdata('error', "Product Details failed to update.");
+            }
+        }
     }
+
+    $this->data['page_title'] = "Edit Product";
+    $this->data['product'] = $prod; // Use the fetched product
+    return view('dashboard/pages/products/edit', $this->data);
+}
+
     
     public function product_delete($id=''){
         if(empty($id)){

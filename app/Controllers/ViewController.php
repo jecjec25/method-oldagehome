@@ -11,6 +11,7 @@ use App\Models\EventsModel;
 use App\Models\AnnouncementModel;
 use App\Models\UserbookingModel;
 use App\Models\FeedbackModel;
+use App\Models\Product;
 use App\Models\ProdImgModel;
 use App\Models\VMModel;
 use App\Models\OrganizerModel;
@@ -29,7 +30,7 @@ class ViewController extends BaseController
     private $Vm;
     private $org;
     private $donation;
-
+    private $prodImge;
     public function example(){
         return view('admin/example');
     }
@@ -44,7 +45,8 @@ class ViewController extends BaseController
         $this->events = new EventsModel();
         $this->announce = new AnnouncementModel();
         $this->userbooking = new UserbookingModel();
-        $this->prodImg = new ProdImgModel();
+        $this->prodImg = new Product();
+        $this->prodImge= new ProdImgModel();
         $this->Vm = new VMModel();
         $this->donation  = new DonationModel();
         $this->org = new OrganizerModel();
@@ -55,8 +57,8 @@ class ViewController extends BaseController
     public function home()
     {
         $data = [
-            'home' => $this->prodImg->where('other', 'homepage')->findAll(),
-            'gallery' => $this->prodImg->where('other', 'gallery')->findAll(),
+            'home' => $this->prodImge->where('other', 'homepage')->findAll(),
+            'gallery' => $this->prodImge->where('other', 'gallery')->findAll(),
         ];
         return view('admin/home', $data);
     }
@@ -73,7 +75,7 @@ class ViewController extends BaseController
     public function about()
     {
         $data = [
-            'VM' => $this->Vm->findAll(),
+            'VM' => $this->Vm->where('img', 'g11.jpg')->findAll(),
             'organization' => $this->org->findAll(),
         ];
         return view('admin/about', $data);
@@ -231,7 +233,7 @@ class ViewController extends BaseController
                 ->orWhere('userbooking.status', 'Pending')
                 ->findAll(),
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
-            'prodimg' => $this->prodImg->where('type', 'prod')->findAll(),
+            'prodimg' => $this->prodImg->findAll(),
           
         ];
         return view('admin/products', $data);  

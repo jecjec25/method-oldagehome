@@ -14,7 +14,7 @@
     </div>
     <div class="card-body">
         <div class="container-fluid">
-            <form action="<?= base_url('Main/product_add') ?>" method="POST">
+            <form action="<?= base_url('Main/product_add') ?>" method="POST" enctype="multipart/form-data">
                 <?php if($session->getFlashdata('error')): ?>
                     <div class="alert alert-danger rounded-0">
                         <?= $session->getFlashdata('error') ?>
@@ -41,9 +41,14 @@
                     <label for="quantity" class="control-label">Quantity</label>
                     <input type="number" class="form-control rounded-0" id="quantity" name="quantity" value="<?= !empty($request->getPost('quantity')) ? $request->getPost('quantity') : '' ?>" required="required">
                 </div>
+              
                 <div class="mb-3">
                     <label for="price" class="control-label">Price</label>
                     <input type="number" step="any" class="form-control rounded-0 text-end" id="price" name="price" value="<?= !empty($request->getPost('price')) ? $request->getPost('price') : '' ?>" required="required">
+                </div>
+                <div class="mb-3">
+                    <label for="prodPic" class="control-label">Product Image</label>
+                    <input type="file" class="form-control rounded-0" id="prodpic" name="prodpic" accept= "image/*" value="<?= !empty($request->getPost('prodpic')) ? $request->getPost('prodpic') : '' ?>" required="required">
                 </div>
                 <div class="d-grid gap-1">
                     <button class="btn rounded-0 btn-primary bg-gradient">Save</button>

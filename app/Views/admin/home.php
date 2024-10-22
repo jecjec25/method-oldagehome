@@ -81,7 +81,7 @@
                                         <?php foreach($chunk as $image): ?>
                                         <div class="col-md-4">
                                             <div class="client-img">
-                                                <img class="arugaGallery" src="aruga_gallery/<?= $image['image']?>" title="" />
+                                                <img class="arugaGallery" src="aruga_gallery/<?= $image['image']?>" alt="image" title="" style="padding-top:10px;"/>
                                             </div>
                                         </div>
                                         <?php endforeach; ?>

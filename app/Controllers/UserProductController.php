@@ -5,16 +5,19 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\AcceptbookingModel;
 use App\Models\ProdImgModel;
+use App\Models\Product;
 
 class UserProductController extends BaseController
 {
     private $acceptbooking;
     private $prodImg;
+    private $product;
 
     public function __construct()
     {
         $this->acceptbooking = new AcceptbookingModel();
         $this->prodImg = new ProdImgModel();
+        $this->product = new Product();
     }
     public function userproduct()
     {
@@ -41,7 +44,7 @@ class UserProductController extends BaseController
             ->first(),
         'getCount' => $this->acceptbooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first(),
     
-        'prodimg' => $this->prodImg->where('type', 'prod')->findAll(),
+        'prodimg' => $this->product->findAll(),
         ];
         return view('admin/userseeproduct', $data);
     }
