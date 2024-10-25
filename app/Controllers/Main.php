@@ -58,7 +58,7 @@ class Main extends BaseController
             // File upload handling
             if ($prodpic->isValid() && !$prodpic->hasMoved()) {
                 $newName = $prodpic->getRandomName(); // Use random name for uniqueness
-                if ($prodpic->move(ROOTPATH . 'public/upload/product', $newName)) {
+                if ($prodpic->move(ROOTPATH . base_url(). 'upload/product', $newName)) {
                     $udata['prodpic'] = $newName;
                 } else {
                     $this->session->setFlashdata('error', "Failed to move the uploaded file.");
@@ -117,7 +117,7 @@ public function product_edit($id)
 
         if ($prodpic->isValid() && !$prodpic->hasMoved()) {
             $newName = $prodpic->getName();
-            $prodpic->move(ROOTPATH . 'public/upload/product', $newName);
+            $prodpic->move(ROOTPATH . base_url().'upload/product', $newName);
             $udata['prodpic'] = $newName;
 
             // Delete the old profile image if it's not the default image
