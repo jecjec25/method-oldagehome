@@ -86,5 +86,11 @@ class UserbookingModel extends Model
             ->orderBy('gender')
             ->findAll();
     }
-
+    public function getBookings()
+    {
+        return $this->select('userbooking.*, user.LastName, user.FirstName')
+            ->join('user', 'user.userID = userbooking.usersignsId')
+            ->whereIn('userbooking.status', ['Accepted', 'Pending'])
+            ->findAll();
+    }
 }

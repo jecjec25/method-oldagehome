@@ -197,26 +197,42 @@ public function bookchecked()
     return view('admin/userbooking', $data);
 }
 
-    public function bookingAD()
-    {       $data = [
-            'notif' => $this->userbooking->where('status', 'pending')->first(),
-            'getnotif' => $this->userbooking
-                ->select('userbooking.bookingId, userbooking.establishment, userbooking.lastname, userbooking.firstname, 
-                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
-                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
-                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
-                    user.userID, user.LastName, user.FirstName')
-                ->join('user', 'user.userID = userbooking.usersignsId')
-                ->where('userbooking.status', 'Accepted')
-                ->orWhere('userbooking.status', 'Pending')
-                ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
-        ];
- 
-        $data['calen'] = $this->booking->where('status', 'Accepted')->findAll();
+public function bookingAD()
+{
+    $data = [
+        'notif' => $this->userbooking->where('status', 'pending')->first(),
+        'getnotif' => $this->userbooking
+            ->select('userbooking.bookingId, userbooking.establishment, userbooking.lastname, userbooking.firstname, 
+                userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                user.userID, user.LastName, user.FirstName')
+            ->join('user', 'user.userID = userbooking.usersignsId')
+            ->where('userbooking.status', 'Accepted')
+            ->orWhere('userbooking.status', 'Pending')
+            ->findAll(),
+        'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+      
+    ];
 
-        return view('dashboard/bookings', $data);
+    // Fetching all accepted bookings from the database
+    $data['calen'] = $this->booking->where('status', 'Accepted')->findAll();
+    
+    $events = []; // Initialize an empty array to hold event data
+
+    // Loop through each booking event and populate the events array
+    foreach ($data['calen'] as $event) {
+        $events[] = [ // Append each event to the events array
+            'title' => $event['event'], // Assuming 'event' field contains the title
+            'start' => $event['prefferdate'], // Assuming 'prefferdate' is the start date
+            'end' => isset($event['enddate']) ? $event['enddate'] : $event['prefferdate'], // Use 'enddate' if available, else use 'prefferdate'
+        ];
     }
+
+    $data['events'] = $events;
+    return view('dashboard/bookings', $data);
+}
+
 
     public function deleteAcceptedEvent($Id)
     {
