@@ -350,3 +350,13 @@ $routes->match(['get', 'post'], 'admissionwithdata/(:any)', 'NewController::admi
 $routes->match(['get', 'post'], 'addmissionWithDatapreviewtosave/(:any)', 'NewController::addmissionWithDatapreviewtosave/$1');
 $routes->get('saveToPdfSlip/(:any)', 'NewController::printSlip/$1');
 $routes->match(['get', 'post'], 'NewController/savedata', 'NewController::saveData');
+
+$routes->match(['get','post'], 'ResetPassword', 'UserController::resetpassword');
+$routes->match(['get','post'], 'getEmail', 'UserController::resetEmail');
+$routes->match(['get','post'], 'ResetPassword', 'UserController::resetpassword');
+$routes->match(['get','post'], 'emailAuth', 'UserController::validEmail');
+$routes->match(['get','post'], 'codeAuth', 'UserController::codeAuth');
+$routes->match(['get','post'], 'AuthCode', 'UserController::codeCheck');
+$routes->match(['get','post'], 'PasswordAuth', 'UserController::PasswordAuth');
+
+

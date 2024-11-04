@@ -78,6 +78,7 @@
               </form>
               <div class="mt-3">
                 <p>Don't have an account yet? <a href="/signup">Register here</a>.</p>
+                <p>Don't Remember Account? <a href="/emailAuth">Forget Password</a>.</p>
               </div>
               <div class="mt-3">
                 <a href="../index.php" class="auth-link text-black">Home Page!!!</a>

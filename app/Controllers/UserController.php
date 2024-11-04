@@ -34,6 +34,95 @@ class UserController extends BaseController
         return view('user/signin');
     }
 
+    public function resetpassword()
+    {
+        return view('user/resetpassword');
+    }
+
+    public function resetEmail()
+    {
+        return view('user/getuserbyemail');
+    }
+
+    public function validEmail()
+    {
+        $email = $this->request->getVar('email');
+    
+        // Fetch user by email
+        $user = $this->user->where('Email', $email)->first();
+    
+        if ($user) {
+            $verificationToken = bin2hex(random_bytes(8));
+            // Redirect to authentication code page with a message
+            $udata = ['verification_token' => $verificationToken,      
+                    ];
+            $data = ['email' => $email];
+
+            $this->user->update($user['userID'], $udata);
+
+            $this->sendVerificationEmail($email, $verificationToken);
+
+          return view('user/authenticationcode', $data);
+            
+
+        } else {
+            // Redirect to getEmail page with a "no user found" message
+            return redirect()->to('/getEmail')->with('msg', 'No user found with that email address.');
+        }
+    }
+    
+    private function sendVerificationEmail($email, $token)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Hapag Aruga Foundation Incorporated. This is your verification code:\n\n $token");
+
+        $emailService->send();
+    }
+
+    
+
+    public function codeAuth()
+    {
+        return view('user/authenticationcode');
+    }
+
+    public function codeCheck()
+    {
+           $email = $this->request->getVar('email');
+           $code = $this->request->getVar('code');
+           $user = $this->user->where('Email', $email)->first();
+    
+           $data = ['email' => $email];
+        if($user['verification_token'] == $code)
+        {
+            return view('user/resetpassword', $data);
+        }
+        else
+        {
+            return view('user/authenticationcode', $data);
+        }
+    }
+
+
+    public function PasswordAuth()
+    {
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('Password');
+        $user = $this->user->where('Email', $email)->first();
+
+        $data = ['Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT),
+                    'verification_token' => null];
+
+
+        $this->user->update($user['userID'], $data);
+        
+        return redirect()->to('/signin')->with('success', 'Password Change Successfully');
+        // var_dump($data);
+ 
+    }
 //     public function GoogleAuthLogin()
 //     {
 //       $token = $this->googleClient->fetchAccessTokenWithAuthCode($this->request->getVar('code'));
