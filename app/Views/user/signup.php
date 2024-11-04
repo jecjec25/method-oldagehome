@@ -2,129 +2,142 @@
 <html lang="en">
 
 <head>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport meta tag for responsive design -->
   <title>Signup</title>
   <link rel="icon" type="image/png" href="/picture.png">
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
- 
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
+  <style>
+    body {
+      background-color: #f8f9fa; /* Light background for better contrast */
+    }
 
-</head>
-<style>
     .input-form {
-        border-color: #ced4da; /* Kulay ng border */
-        transition: border-color 0.3s, box-shadow 0.3s; /* Smooth na transition */
+      border-color: #ced4da; /* Border color */
+      transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
     }
 
     .password:hover {
-        border-color: #007bff; /* Asul na kulay */
-        box-shadow: 0 0 10px #007bff;
+      border-color: #007bff; /* Blue color on hover */
+      box-shadow: 0 0 10px #007bff;
     }
-</style>
+
+    /* Media queries for responsive design */
+    @media (max-width: 576px) {
+      .auth-form-light {
+        padding: 2rem; /* Adjust padding for mobile */
+      }
+
+      .auth-link {
+        font-size: 14px; /* Adjust link font size for mobile */
+      }
+    }
+  </style>
+</head>
+
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper d-flex align-items-center auth px-0">
         <div class="row w-100 mx-0">
-          <div class="col-lg-4 mx-auto">
+          <div class="col-lg-4 col-md-6 col-sm-8 mx-auto"> <!-- Responsive column sizing -->
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <h3 style="color:seagreen;">Senior Care</h3>  
+              <h3 style="color:seagreen;">Senior Care</h3>
               <h4>Hello! Let's get started</h4>
               <h6 class="font-weight-light">Register Here!</h6>
-              <form class="pt-3" action="<?= base_url('store'); ?>" method="post" id="tbladmin" >
+              <form class="pt-3" action="<?= base_url('store'); ?>" method="post" id="tbladmin">
                 <div class="form-group">
-                <label for="Lastname">Lastname</label>
-                <?php if(isset($validation)):?>
-                 <small class="text-danger"><?= $validation->getError('LastName') ?></small>
-                <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Lastname" name="LastName" >
-                </div>  
+                  <label for="Lastname">Lastname</label>
+                  <?php if(isset($validation)):?>
+                    <small class="text-danger"><?= $validation->getError('LastName') ?></small>
+                  <?php endif;?>
+                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Lastname" name="LastName">
+                </div>
                 <div class="form-group">
-                <label for="Firstname">Firstname</label>
-                <?php if(isset($validation)):?>
-                <small class="text-danger"><?= $validation->getError('FirstName') ?></small>
-                <?php endif;?>
+                  <label for="Firstname">Firstname</label>
+                  <?php if(isset($validation)):?>
+                    <small class="text-danger"><?= $validation->getError('FirstName') ?></small>
+                  <?php endif;?>
                   <input type="text" class="form-control form-control-lg border-left-2" placeholder="First Name" name="FirstName">
                 </div>
                 <div class="form-group">
-                <label for="Username">Username</label>
-                <?php if(isset($validation)):?>
-                <small class="text-danger"><?= $validation->getError('Username') ?></small>
-                <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Username" name="Username" title="Must contain at least 7 characters" required="true" >
+                  <label for="Username">Username</label>
+                  <?php if(isset($validation)):?>
+                    <small class="text-danger"><?= $validation->getError('Username') ?></small>
+                  <?php endif;?>
+                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Username" name="Username" title="Must contain at least 7 characters" required="true">
                 </div>
                 <div class="form-group">
-                <label for="Email">Email</label>
-                <?php if(isset($validation)):?>
-                <small class="text-danger"><?= $validation->getError('Email') ?></small>
-                <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-2" placeholder="Email" name="Email" >
+                  <label for="Email">Email</label>
+                  <?php if(isset($validation)):?>
+                    <small class="text-danger"><?= $validation->getError('Email') ?></small>
+                  <?php endif;?>
+                  <input type="email" class="form-control form-control-lg border-left-2" placeholder="Email" name="Email" required>
                 </div>
                 <div class="form-group">
-                <label for="ContactNo">Contact Number</label>
-                <?php if(isset($validation)):?>
-                <small class="text-danger"><?= $validation->getError('ContactNo') ?></small>
-                <?php endif;?>
-                  <input type="text" class="form-control form-control-lg border-left-2" id="ContactNo" placeholder="Contact Number" name="ContactNumber" >
+                  <label for="ContactNo">Contact Number</label>
+                  <?php if(isset($validation)):?>
+                    <small class="text-danger"><?= $validation->getError('ContactNo') ?></small>
+                  <?php endif;?>
+                  <input type="text" class="form-control form-control-lg border-left-2" id="ContactNo" placeholder="Contact Number" name="ContactNumber" required>
                 </div>
                 <div class="form-group">
-                <label for="birthday">Birthday</label>
-                  <input type="date" class="form-control form-control-lg border-left-2"  placeholder="Birth Day" name="birthday" >
+                  <label for="birthday">Birthday</label>
+                  <input type="date" class="form-control form-control-lg border-left-2" placeholder="Birth Day" name="birthday" required>
                 </div>
                 <div class="form-group">
-                <label for="Password">Password</label>
-                <?php if(isset($validation)):?>
-                <small class="text-danger"><?= $validation->getError('Password') ?></small>
-                <?php endif;?>
-                <div class="input-group">
-                  <input type="password" class="form-control form-control-lg border-left-2 password" id="password" placeholder="Password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required="true" >
-                  <div class="input-group-append">
-                        <button type="button" id="togglePassword" class="btn btn-outline-secondary"><i class="typcn typcn-eye"></i></button>
+                  <label for="Password">Password</label>
+                  <?php if(isset($validation)):?>
+                    <small class="text-danger"><?= $validation->getError('Password') ?></small>
+                  <?php endif;?>
+                  <div class="input-group">
+                    <input type="password" class="form-control form-control-lg border-left-2 password" id="password" placeholder="Password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="true">
+                    <div class="input-group-append">
+                      <button type="button" id="togglePassword" class="btn btn-outline-secondary"><i class="typcn typcn-eye"></i></button>
+                    </div>
                   </div>
-              </div>
                 </div>
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" name="submit" onclick="return confirm('Are you sure you want to submit this form?')">REGISTER</button>
                 </div>
               </form>
               <div class="mt-3">
-                <p>Already have an account? <a href="/signin">Login here.</a>.</p>
+                <p>Already have an account? <a href="/signin">Login here.</a></p>
               </div>
               <div class="mt-3">
-               <a href="../index.php" class="auth-link text-black">Home Page!!!</a>
+                <a href="../index.php" class="auth-link text-black">Home Page!!!</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
   <script>
-			var inputs = document.getElementById("ContactNo");
-        inputs.addEventListener("input", function(event) {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
-    </script>
+    var inputs = document.getElementById("ContactNo");
+    inputs.addEventListener("input", function(event) {
+      this.value = this.value.replace(/[^0-9]/g, ''); // Allow only numeric input
+    });
+  </script>
   <script>
     const togglePassword = document.getElementById('togglePassword');
     const password = document.getElementById('password');
 
     togglePassword.addEventListener('click', function() {
-        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-        password.setAttribute('type', type);
-        this.innerHTML = type === 'password' ? '<i class="typcn typcn-eye"></i>' : '<i class="typcn typcn-eye-outline"></i>';
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      this.innerHTML = type === 'password' ? '<i class="typcn typcn-eye"></i>' : '<i class="typcn typcn-eye-outline"></i>';
     });
-</script>
+  </script>
   <script src="login/vendors/js/vendor.bundle.base.js"></script>
   <script src="login/js/off-canvas.js"></script>
   <script src="login/js/hoverable-collapse.js"></script>
   <script src="login/js/template.js"></script>
   <script src="login/js/settings.js"></script>
   <script src="login/js/todolist.js"></script>
-
 </body>
 
 </html>

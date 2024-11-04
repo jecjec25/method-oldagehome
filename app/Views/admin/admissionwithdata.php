@@ -314,32 +314,32 @@
                     <th colspan="9"><input type="text" class="inputer" name="num15Admision" value="<?= $elder['Num15A']?>"></th>
                     <th colspan="9"><input type="text" class="inputer" name="num15Discharge" value="<?= $elder['Num15D']?>"></th>
                     <tr>
-                        <th colspan="11" style="text-align: center;">
-                            <h4 style="margin: 0;">Inventoried by: 
-                                <span style="text-decoration: underline; display: inline-block; width: 200px;">
-                                    <input type="text" class="inputer" name="inventoriedby" value="<?= $elder['inventoriedby'] ?>" 
-                                    style="border: none; border-bottom: 1px solid black; width: 100%; text-align: center; position: relative; top: -5px;">
-                                </span>
-                            </h4>
-                            <p style="margin: 0; font-size: 12px;">Printed Name over Signature</p>
-                            <h4 style="margin: 0;">Turn Over to: 
-                                <span style="text-decoration: underline; display: inline-block; width: 200px;">
-                                    <input type="text" class="inputer" name="turnoverto" value="<?= $elder['turnoverto'] ?>" 
-                                    style="border: none; border-bottom: 1px solid black; width: 100%; text-align: center; position: relative; top: -5px;">
-                                </span>
-                            </h4>
-                            <p style="margin: 0; font-size: 12px;">Printed Name over Signature</p>
-                        </th>
-                        <th colspan="9" style="text-align: center;">
-                            <h4 style="margin: 0;">Received By: 
-                                <span style="text-decoration: underline; display: inline-block; width: 200px;">
-                                    <input type="text" class="inputer" name="receivedby" value="<?= $elder['receivedby'] ?>" 
-                                    style="border: none; border-bottom: 1px solid black; width: 100%; text-align: center; position: relative; top: -5px;">
-                                </span>
-                            </h4>
-                            <p style="margin: 0; font-size: 12px;">Printed Name over Signature</p>
-                        </th>
-                    </tr>
+    <th colspan="11" style="text-align: center;">
+        <h4 style="margin: 0;">Inventoried by: 
+            <span style="text-decoration: underline; display: inline-block; width: 200px;">
+                <input type="text" class="inputer" name="inventoriedby" value="<?= $elder['inventoriedby'] ?>" 
+                style="border: none; border-bottom: 1px solid black; width: 100%; text-align: center; position: relative; top: -5px;">
+            </span>
+        </h4>
+        <p style="margin: 0; font-size: 12px;">Printed Name over Signature</p>
+        <h4 style="margin: 0;">Turn Over to: 
+            <span style="text-decoration: underline; display: inline-block; width: 200px;">
+                <input type="text" class="inputer" name="turnoverto" value="<?= $elder['turnoverto'] ?>" 
+                style="border: none; border-bottom: 1px solid black; width: 100%; text-align: center; position: relative; top: -5px;">
+            </span>
+        </h4>
+        <p style="margin: 0; font-size: 12px;">Printed Name over Signature</p>
+    </th>
+    <th colspan="9" style="text-align: center;">
+        <h4 style="margin: 0;">Received By: 
+            <span style="text-decoration: underline; display: inline-block; width: 200px;">
+                <input type="text" class="inputer" name="receivedby" value="<?= $elder['receivedby'] ?>" 
+                style="border: none; border-bottom: 1px solid black; width: 100%; text-align: center; position: relative; top: -5px;">
+            </span>
+        </h4>
+        <p style="margin: 0; font-size: 12px;">Printed Name over Signature</p>
+    </th>
+</tr>
 
         </table>
      

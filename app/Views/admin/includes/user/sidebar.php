@@ -139,9 +139,12 @@
                 display: none; /* Hide the navigation items */
                 flex-direction: column; /* Stack items vertically */
                 width: 100%; /* Full width */
+                background-color: #677beb;
+                
             }
             .top-nav ul.active {
                 display: flex; /* Show items when active */
+                
             }
 
             #hamburger {
@@ -273,7 +276,7 @@
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
-                <ul class="top-nav">
+                <ul class="top-nav" >
         <li class="active"><a href="/userViewpost">View Event</a></li>
         <li><a href="/booking">Event Reservation</a></li>
         <li class="dropdown">

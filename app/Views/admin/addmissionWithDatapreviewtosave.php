@@ -212,7 +212,7 @@
 <input type="hidden" name="nameCom" value="<?= $nameCom?>">                 
 <input type="hidden" name="contactCom" value="<?= $contactCom?>">          
 <input type="hidden" name="addressCom" value="<?= $addressCom?>">          
-<input type="hidden" name="RelatinClient" value="<?=$RelatinClient?>">
+<input type="hidden" name="RelationClient" value="<?=$RelatinClient?>">
 <input type="hidden" class="inputer" name="nameRef" value="<?= $nameRef?> ">
 <input type="hidden" class="inputer" name="addressRef" value="<?= $addressRef?>">
 <input type="hidden" name="contactRef" class="inputer" value ="<?= $contactRef?>">
