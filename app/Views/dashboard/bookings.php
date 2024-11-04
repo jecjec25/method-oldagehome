@@ -73,6 +73,8 @@
         if (selectedDateEvents.length > 0) {
           selectedDateEvents.forEach(function(event) {
             modalBody.innerHTML += `
+              <p><strong>Establishment:</strong> ${event.establishment}</p>
+              <p><strong>Name:</strong> ${event.firstname} ${event.middlename} ${event.lastname}</p>
               <p><strong>Title:</strong> ${event.title}</p>
               <p><strong>Date:</strong> ${formatDate(event.start)}</p>
               <p><strong>Time:</strong> ${event.time ? event.time : 'N/A'}</p>

@@ -223,6 +223,10 @@ public function bookingAD()
     // Loop through each booking event and populate the events array
     foreach ($data['calen'] as $event) {
         $events[] = [ // Append each event to the events array
+            'establishment' => $event['establishment'],
+            'firstname' => $event['firstname'],
+            'middlename' => $event['middlename'],
+            'lastname' => $event['lastname'],
             'title' => $event['event'], // Assuming 'event' field contains the title
             'start' => $event['prefferdate'], // Assuming 'prefferdate' is the start date
             'time' => $event['Time'],
