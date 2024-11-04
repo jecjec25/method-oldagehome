@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\UsersModel;
 use App\Models\UserbookingModel;
 use CodeIgniter\I18n\Time;
+use Google\Auth\Credentials\ServiceAccountCredentials;
+use Google\Auth\HttpHandler\HttpHandlerFactory;
 
 class UserController extends BaseController
 {
@@ -13,8 +15,10 @@ class UserController extends BaseController
     private $userbooking;
     public function __construct(){
 
+
         $this->user = new UsersModel();
         $this->userbooking = new UserbookingModel();
+        
 
         helper(['form', 'url']);
 
@@ -30,43 +34,22 @@ class UserController extends BaseController
         return view('user/signin');
     }
 
-    // public function GoogleAuthLogin()
-    // {
-    //     $token = $this->googleClient->fetchAccessTokenWithAuthCode($this->request->getVar('code'));
-    //     if (!isset($token['error'])) {
-    //         $this->googleClient->setAccessToken($token['access_token']);
-    //         session()->set("AccessToken", $token['access_token']);
+//     public function GoogleAuthLogin()
+//     {
+//       $token = $this->googleClient->fetchAccessTokenWithAuthCode($this->request->getVar('code'));
 
+// if (isset($token['access_token'])) { // Check if access token is set
+//     $this->googleClient->setAccessToken($token['access_token']);
+//     session()->set('AccessToken', $token['access_token']);
 
-    
-    //         $googleService = new \Google_Service_Oauth2($this->googleClient);
-    //         $data = $googleService->userinfo->get();
-    //         echo "<pre> "; print_r($data); die;
-    //     //     $currentDateTime = date("Y-m-d H:i:s");
-            
-    //     //     $userdata = [
-    //     //         'name' => $data['givenName'] . " " . $data['familyName'],
-    //     //         'email' => $data['email'],
-    //     //         'profile_img' => $data['picture'],
-    //     //         'updated_at' => $currentDateTime
-    //     //     ];
-    
-    //     //     if ($this->userModel->isAlreadyRegister($data['id'])) {
-    //     //         $this->userModel->updateUserData($userdata, $data['id']);
-    //     //     } else {
-    //     //         // New user registration
-    //     //         $userdata['oauth_id'] = $data['id'];
-    //     //         $userdata['created_at'] = $currentDateTime;
-    //     //         $this->userModel->insertUserData($userdata);
-    //     //     }
-    
-    //     //     session()->set("LoggedUserData", $userdata);
-    //     //     return redirect()->to(base_url() . "/profile");
-    //     // } else {
-    //     //     session()->setFlashData("Error", "Something went wrong");
-    //     //     return redirect()->to(base_url());
-    //      }
-    // }
+//     $googleService = new \Google_Service_Oauth2($this->googleClient);
+//     $data = $googleService->userinfo->get();
+// } else {
+//     // Log or handle the error
+//     log_message('error', 'Google OAuth failed: ' . $token['error_description']);
+// }
+
+//     }
     
     public function Admin()
     {
