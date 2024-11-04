@@ -1,219 +1,92 @@
-/* Basic styling for demonstration purposes */
-body {
-    font-family: Arial, sans-serif;
-    font-size: large;
-    font-weight: bold;
+/* news.css */
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 50px;
-    background-color: #e3e6f1;
-}
-
-.container {
-    background-color: white; /* White background */
-    text-indent: 50px;
-    line-height: 0.7;
-    width: 65%;
-    margin: auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Soft shadow effect */
-}
-
-h2 {
-    margin-top: 0px; /* Remove default margin from heading */
-    line-height: 1.5;
-}
-
-ul {
-    list-style: none;
     padding: 0;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center the container */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #ccc; /* Optional: add border */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space between items */
+    padding: 15px;
+}
+
 .mean {
-    line-height: 0;
+    color: #333; /* Color for headings */
 }
 
 .dist {
-    margin-top: 5.0em;
+    margin: 10px 0; /* Space between paragraphs */
 }
 
+/* Image styles */
 .sinc {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2.0em;
-    width: 100%;
-    max-width: 500px; 
-    height: auto;
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: rounded corners */
 }
 
-ul li {
-    margin-bottom: 20px;
-}
-
-.container ul li h2 {
-    font-size: 2.3em;
-    font-weight: 600;
-    text-align: center;
-    padding: auto;
-}
-
-.container ul li h4 {
-    font-size: 1.5em;
-    font-weight: 600;
-    text-align: center;
-    padding: auto;
-}
-
-.container ul li h3 {
-    font-size: 3.0em;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.container ul li p {
-    font-size: larger;
-    font-weight: bolder;
-    padding-top: 0px;
-}
-
-.container ul li a {
-    text-decoration: none;
-    background-color: #0056b3;
-    color: #e3e6f1; /* Text color */
+/* Button styles */
+.btn, .button {
+    display: inline-block;
     padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bolder;
-    border: 1px solid transparent;
-    transition: background-color 0.3s;
-}
-
-.btn {
-    padding: 10px 10px;
-    background-color: #007bff; /* Blue color */
-    color: #fff; /* White text color */
-    text-decoration: none; /* Remove underline */
-    border: none; /* Remove border */
-    border-radius: 5px;
-    border: 1px solid transparent; /* Remove border */
-    transition: 0.3s ease; /* Smooth transition */
-}
-
-.btn:hover {
-    background-color: #3234d5; /* Darker blue color on hover */
-    color: #fff;
-    border-color: #fff;
-}
-
-a.button {
-    padding: 10px 20px;
-    background-color: #f23dd4; /* Button color */
-    color: #f1f2f6; /* Text color */
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
     text-decoration: none;
     border-radius: 5px;
-    border: 1px solid transparent; /* Remove border */
-    transition: background-color 0.3s;
+    margin-top: 10px; /* Space above buttons */
 }
 
-a.button:hover {
-    background-color: #3e41f7; /* Darker blue color on hover */
-    color: #fff;
-    border-color: #fff;
+.btn:hover, .button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-    .container {
-        width: 80%;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    .container ul li h2 {
-        font-size: 2em;
-    }
-
-    .container ul li h4 {
-        font-size: 1.3em;
-    }
-
-    .container ul li h3 {
-        font-size: 2.5em;
-    }
-}
-
-@media (max-width: 992px) {
-    .container {
-        width: 90%;
-    }
-
-    h2 {
-        font-size: 1.6em;
-    }
-
-    .container ul li h2 {
-        font-size: 1.8em;
-    }
-
-    .container ul li h4 {
-        font-size: 1.2em;
-    }
-
-    .container ul li h3 {
-        font-size: 2.2em;
-    }
-}
-
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
-    body {
-        padding: 20px;
+    li {
+        padding: 10px; /* Less padding on smaller screens */
     }
 
-    .container {
-        width: 100%;
-        padding: 15px;
+    .mean {
+        font-size: 1.5em; /* Larger headings */
     }
 
-    h2 {
-        font-size: 1.4em;
+    .dist {
+        font-size: 0.9em; /* Smaller text for details */
     }
 
-    .container ul li h2 {
-        font-size: 1.6em;
+    textarea {
+        width: 100%; /* Full width on small screens */
+        margin-top: 10px; /* Space above textarea */
     }
 
-    .container ul li h4 {
-        font-size: 1.1em;
-    }
-
-    .container ul li h3 {
-        font-size: 2em;
+    input[type="hidden"] {
+        display: none; /* Hide hidden fields on mobile */
     }
 }
 
-@media (max-width: 576px) {
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    .container ul li h2 {
-        font-size: 1.4em;
-    }
-
-    .container ul li h4 {
-        font-size: 1em;
-    }
-
-    .container ul li h3 {
-        font-size: 1.8em;
+@media (max-width: 480px) {
+    .btn, .button {
+        padding: 8px 15px; /* Smaller buttons */
+        font-size: 0.9em; /* Smaller text */
     }
 }

@@ -225,6 +225,7 @@ public function bookingAD()
         $events[] = [ // Append each event to the events array
             'title' => $event['event'], // Assuming 'event' field contains the title
             'start' => $event['prefferdate'], // Assuming 'prefferdate' is the start date
+            'time' => $event['Time'],
             'end' => isset($event['enddate']) ? $event['enddate'] : $event['prefferdate'], // Use 'enddate' if available, else use 'prefferdate'
         ];
     }

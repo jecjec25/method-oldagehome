@@ -1,4 +1,4 @@
-
+/* Button styling */
 a.button {
     display: inline-block;
     padding: 10px 20px;
@@ -8,86 +8,139 @@ a.button {
     border-radius: 5px;
     border: 1px solid transparent; /* Remove border */
     transition: background-color 0.3s;
-    }
+}
 
-    a.button:hover {
+a.button:hover {
     background-color: #0056b3; /* Button color on hover */
+}
+
+/* Body styling */
+body {
+    background-image: url(/aslider/event.png);
+    font-family: Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+    padding: 50px;
+}
+
+.container {
+    background-color: whitesmoke; /* White background */
+    text-indent: 50px;
+    line-height: 1.5; /* Adjust line height for readability */
+    width: 90%; /* Use percentage for responsive width */
+    max-width: 800px; /* Set a maximum width */
+    margin: 0 auto; /* Center container */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+h2 {
+    margin-top: 0px; /* Remove default margin from heading */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 20px;
+}
+
+.mean {
+    line-height: 0;
+}
+
+.dist {
+    margin-top: 4.0em;
+}
+
+.sinc {
+    margin: 2.0em auto; /* Center image horizontally with auto margins */
+    width: 100%; /* Use percentage for responsive width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 500px; /* Set a maximum width for images */
+}
+
+.container ul li h2 {
+    font-size: 2.3em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container ul li h1 {
+    font-size: 2.0em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container ul li h3 {
+    font-size: 3.0em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.container ul li p {
+    font-size: larger;
+    font-weight: bolder;
+    padding-top: 0px;
+}
+
+/* Button styles */
+.btn {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 5px;
+    transition: 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 20px; /* Reduce padding on smaller screens */
     }
 
-    /* Basic styling for demonstration purposes */
-    body {
-        background-image: url(/aslider/event.png);
-        font-family: Arial, sans-serif;
-        font-size:large;
-        font-weight: bold;
-        margin: 0;
-        padding: 50px;
-    }
     .container {
-        background-color: whitesmoke; /* White background */
-        text-indent: 50px;
-        line-height: 0.7;
-        width: 65%;
-        margin-left: 16.5%;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+        width: 95%; /* Full width on smaller screens */
+        padding: 15px; /* Less padding */
     }
-    h2 {
-        margin-top: 0px; /* Remove default margin from heading */
+
+    h2, h1, h3 {
+        font-size: 1.5em; /* Reduce font size for headings */
     }
-    ul {
-        list-style: none;
-        padding: 0;
+
+    .sinc {
+        width: 90%; /* Responsive image width */
+        max-width: 100%; /* Ensure it doesn't exceed screen width */
     }
-    ul li {
-        margin-bottom: 20px;
-    }
-    .mean{
-        line-height: 0;
-    }
-    .dist{
-        margin-top: 4.0em;
-    }
-    .sinc{
-        margin-left: 135px;
-        margin-right: 0;
-        margin-top: 2.0em;
-        width:500px; 
-        height:500px;
-    }
-    .container ul li h2{
-        font-size: 2.3em;
-        font-weight: 600;
-        text-align: center;
-        padding: auto;
-    }
-    .container ul li h1{
-        font-size: 2.0em;
-        font-weight: 600;
-        text-align: center;
-        padding: auto;
-    }
-    .container ul li h3{
-        font-size: 3.0em;
-        font-weight: bolder;
-        text-align: center;
-    }
-    .container ul li p{
-        font-size: larger;
-        font-weight: bolder;
-        padding-top: 0px;
-    }
+
     .btn {
-        padding: 10px 20px;
-        text-align: center;
-        background-color: #007bff; /* Blue color */
-        color: #fff; /* White text color */
-        text-decoration: none; /* Remove underline */
-        border: none; /* Remove border */
-        border-radius: 5px;
-        transition: 0.3s ease; /* Smooth transition */
+        width: 100%; /* Full width buttons */
+        padding: 12px; /* Slightly larger padding */
     }
-    .btn:hover {
-        background-color: #0056b3; /* Darker blue color on hover */
+}
+
+@media (max-width: 480px) {
+    h2, h1, h3 {
+        font-size: 1.2em; /* Further reduce font size for mobile */
     }
+
+    .sinc {
+        max-height: 300px; /* Limit height for very small screens */
+    }
+
+    .btn {
+        padding: 10px; /* Adjust button padding */
+        font-size: 0.9em; /* Smaller button text */
+    }
+}

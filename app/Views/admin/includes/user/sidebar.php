@@ -1,10 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Care Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-}
-
-.notification-dropdown a {
+        .notification-dropdown a {
     text-decoration: none; /* This removes the underline */
 }
 
@@ -64,173 +71,209 @@ body {
     background-color: #f1f1f1; /* Highlight color */
 }
 
-.dropdown .helloDrop li a {
-    color: black; /* Set the font color to black */
-    align: left;
-}
+        .dropdown .helloDrop li a {
+            color: black; /* Set the font color to black */
+            align: left;
+        }
 
-.top-nav ul li a:hover,
-.top-nav ul li.active a {
-    color: black; /* Change to desired highlight color */
-}
+        .top-nav ul li a:hover,
+        .top-nav ul li.active a {
+            color: black; /* Change to desired highlight color */
+        }
 
-.top-nav ul {
-    list-style: none;
-}
+        .top-nav ul {
+            list-style: none;
+        }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
 
-.dropdown-menu li {
-    padding: 12px 16px;
-}
+        .dropdown-menu li {
+            padding: 12px 16px;
+        }
 
-.dropdown-menu li a {
-    color: black;
-    text-decoration: none;
-}
+        .dropdown-menu li a {
+            color: black;
+            text-decoration: none;
+        }
 
-.dropdown-menu li:hover {
-    background-color: #f1f1f1;
-}
+        .dropdown-menu li:hover {
+            background-color: #f1f1f1;
+        }
 
-b {
-    font-size: .2em;
-}
+        b {
+            font-size: .2em;
+        }
 
-.dropdown.open .dropdown-menu {
-    display: block;
-}
+        .dropdown.open .dropdown-menu {
+            display: block;
+        }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .notification-button {
-        margin-top: 150px;
-        margin-right: 65px;
-        padding: 8px 16px;
-        font-size: 14px;
-    }
+        /* Hamburger Menu Styles */
+        #hamburger {
+            cursor: pointer;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px; /* Width of the hamburger icon */
+            height: 25px; /* Height of the hamburger icon */
+            margin: 20px; /* Add some space around it */
+        }
 
-    .notification-button #notification-count {
-        font-size: 18px;
-    }
+        .bar {
+            height: 3px; /* Thickness of the hamburger bars */
+            background-color: #333; /* Color of the bars */
+            border-radius: 5px; /* Rounded corners */
+            transition: all 0.3s; /* Smooth transition */
+        }
 
-    .notification-dropdown {
-        min-width: 160px;
-        top: 40px;
-    }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .top-nav ul {
+                display: none; /* Hide the navigation items */
+                flex-direction: column; /* Stack items vertically */
+                width: 100%; /* Full width */
+            }
+            .top-nav ul.active {
+                display: flex; /* Show items when active */
+            }
 
-    .notification-item {
-        padding: 8px 12px;
-    }
+            #hamburger {
+                display: flex; /* Show hamburger icon */
+            }
 
-    .top-nav ul li a {
-        font-size: 14px;
-    }
+            .notification-button {
+                margin-top: 150px;
+                margin-right: 65px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
 
-    .dropdown-menu {
-        min-width: 140px;
-    }
+            .notification-button #notification-count {
+                font-size: 18px;
+            }
 
-    .dropdown-menu li {
-        padding: 10px 12px;
-    }
-}
+            .notification-dropdown {
+                min-width: 160px;
+                top: 40px;
+            }
 
-@media (max-width: 480px) {
-    .notification-button {
-        margin-top: 100px;
-        margin-right: 50px;
-        padding: 6px 12px;
-        font-size: 12px;
-    }
+            .notification-item {
+                padding: 8px 12px;
+            }
 
-    .notification-button #notification-count {
-        font-size: 16px;
-    }
+            .top-nav ul li a {
+                font-size: 14px;
+            }
 
-    .notification-dropdown {
-        min-width: 120px;
-        top: 30px;
-    }
+            .dropdown-menu {
+                min-width: 140px;
+            }
 
-    .notification-item {
-        padding: 6px 8px;
-    }
+            .dropdown-menu li {
+                padding: 10px 12px;
+            }
+        }
 
-    .top-nav ul li a {
-        font-size: 12px;
-    }
+        @media (max-width: 480px) {
+            .notification-button {
+                margin-top: 100px;
+                margin-right: 50px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
 
-    .dropdown-menu {
-        min-width: 120px;
-    }
+            .notification-button #notification-count {
+                font-size: 16px;
+            }
 
-    .dropdown-menu li {
-        padding: 8px 10px;
-    }
-}
+            .notification-dropdown {
+                min-width: 120px;
+                top: 30px;
+            }
 
-</style>
+            .notification-item {
+                padding: 6px 8px;
+            }
+
+            .top-nav ul li a {
+                font-size: 12px;
+            }
+
+            .dropdown-menu {
+                min-width: 120px;
+            }
+
+            .dropdown-menu li {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
 <body>
-<div class="strip"> </div>
-<div class="header-top" id="home">
-  <div class="container">
-    <div class="head-section">
-      <div class="logo-content">
-        <div class="logo">
-          <img src="images/Alogo1.jpg" alt="" style="width: 100px; height: 100px;"/>
-          <img src="images/Alogo.jpg" alt="" style="width: 160px; height: 140px;"/>
-          <h4 style="color: darkgreen;">Senior Care Management System</h4>
-        </div>
-        <div class="top-log">
-          <div class="clearfix"> </div> 
-          <ul class="nav-list">
-            <li><h4 class="b" style="font-size: 1.2em;">Welcome <?= session()->get('Username')?> </h4> </li> 
-            <li><a class="dropdown-item" href="/userprofile"><h4>Profile</h4></a></li>
-            <li><a class="dropdown-item" href="/logout"><h4>Logout</h4></a></li>
-          </ul>
-        </div>
-     
-        <div class="notification-container">
-            <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif']?></span></button>
-            <div id="notification-dropdown" class="notification-dropdown">
-                <?php if (!empty($notif)): ?>
-                    <div class="notification-item"><small>Notifications</small></div>
-                    <?php foreach($notif as $notif): ?>
-                        <div class="notification-item highlight"><a href="<?= base_url('getNotif/' . $notif['id']) ?>"><?= $notif['event'] ?> has <?= $notif['status'] ?></a></div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <div class="notification-item"><small>No notifications</small></div>
-                <?php endif; ?>
+    <div class="strip"></div>
+    <div class="header-top" id="home">
+        <div class="container">
+            <div class="head-section">
+                <div class="logo-content">
+                    <div class="logo">
+                        <img src="images/Alogo1.jpg" alt="" style="width: 100px; height: 100px;" />
+                        <img src="images/Alogo.jpg" alt="" style="width: 160px; height: 140px;" />
+                        <h4 style="color: darkgreen;">Senior Care Management System</h4>
+                    </div>
+                    <div class="top-log">
+                        <div class="clearfix"></div>
+                        <ul class="nav-list">
+                            <li><h4 class="b" style="font-size: 1.2em;">Welcome <?= session()->get('Username') ?> </h4></li>
+                            <li><a class="dropdown-item" href="/userprofile"><h4>Profile</h4></a></li>
+                            <li><a class="dropdown-item" href="/logout"><h4>Logout</h4></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="notification-container">
+                        <button class="notification-button" onclick="toggleDropdown()">Notifications <span id="notification-count"><?= $getCount['notif'] ?></span></button>
+                        <div id="notification-dropdown" class="notification-dropdown">
+                            <?php if (!empty($notif)): ?>
+                                <div class="notification-item"><small>Notifications</small></div>
+                                <?php foreach($notif as $notif): ?>
+                                    <div class="notification-item highlight"><a href="<?= base_url('getNotif/' . $notif['id']) ?>"><?= $notif['event'] ?> has <?= $notif['status'] ?></a></div>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <div class="notification-item"><small>No notifications</small></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end profile"></div>
+            <div class="social-content">
+                <div class="top-icons">
+                    <br><br><br>
+                    <ul>
+                        <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
+                        <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
+                        <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
             </div>
         </div>
-      </div>
-    </div>
- 
-    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end profile"></div>
-    <div class="social-content">
-        <div class="top-icons">
-            <br><br><br>
-            <ul>
-                <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
-                <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
-                <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
-                <div class="clearfix"> </div>
-            </ul>
-        </div>
-    </div>
-  </div>
-  <div class="clearfix"></div>
-  <div class="sub-header">
-    <nav class="top-nav">
-      <ul class="top-nav">
+        <div class="clearfix"></div>
+        <div class="sub-header">
+            <nav class="top-nav">
+                <div id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="top-nav">
         <li class="active"><a href="/userViewpost">View Event</a></li>
         <li><a href="/booking">Event Reservation</a></li>
         <li class="dropdown">
@@ -246,101 +289,86 @@ b {
         <div class="clearfix"></div>
       </ul>
      
-      <a href="#" id="pull"><h6>MENU</h6><img src="images/menu-icon.png" title="menu" /></a>
-    </nav>
-  </div>
-</div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Handle dropdown toggle
-  var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-  dropdownToggles.forEach(function(toggle) {
-    toggle.addEventListener('click', function(event) {
-      event.preventDefault();
-      var parent = this.parentElement;
-      if (parent.classList.contains('open')) {
-        parent.classList.remove('open');
-      } else {
-        // Close other open dropdowns
-        document.querySelectorAll('.dropdown').forEach(function(drop) {
-          drop.classList.remove('open');
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Handle dropdown menu toggles
+            var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var parent = this.parentElement;
+                    if (parent.classList.contains('open')) {
+                        parent.classList.remove('open');
+                    } else {
+                        // Close other open dropdowns
+                        document.querySelectorAll('.dropdown').forEach(function (drop) {
+                            drop.classList.remove('open');
+                        });
+                        parent.classList.add('open');
+                    }
+                });
+            });
+
+            // Handle hamburger menu toggle
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.querySelector('.top-nav ul');
+            hamburger.addEventListener('click', function (event) {
+                event.preventDefault();
+                navMenu.classList.toggle('active'); // Toggle the active class
+            });
+
+            // Highlight active link
+            var currentPath = window.location.pathname;
+            var foundActive = false;
+
+            // Check for exact matches first
+            document.querySelectorAll('.top-nav ul li a').forEach(function (link) {
+                var linkPath = link.getAttribute('href');
+                if (linkPath === currentPath) {
+                    document.querySelectorAll('.top-nav ul li').forEach(function (li) {
+                        li.classList.remove('active');
+                    });
+                    link.parentElement.classList.add('active');
+                    foundActive = true;
+                }
+            });
+
+            // If no exact match is found, check for partial matches (e.g., dropdown items)
+            if (!foundActive) {
+                document.querySelectorAll('.dropdown-menu li a').forEach(function (link) {
+                    var linkPath = link.getAttribute('href');
+                    if (currentPath.includes(linkPath)) {
+                        document.querySelectorAll('.top-nav ul li').forEach(function (li) {
+                            li.classList.remove('active');
+                        });
+                        link.closest('.dropdown').classList.add('active');
+                    }
+                });
+            }
         });
-        parent.classList.add('open');
-      }
-    });
-  });
 
-  // Highlight active link
-  var currentPath = window.location.pathname;
-  var foundActive = false;
+        function toggleDropdown() {
+            const dropdown = document.getElementById('notification-dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
 
-  // Check for exact matches first
-  document.querySelectorAll('.top-nav ul li a').forEach(function(link) {
-    var linkPath = link.getAttribute('href');
-    if (linkPath === currentPath) {
-      document.querySelectorAll('.top-nav ul li').forEach(function(li) {
-        li.classList.remove('active');
-      });
-      link.parentElement.classList.add('active');
-      foundActive = true;
-    }
-  });
-
-  // If no exact match is found, check for partial matches (e.g., dropdown items)
-  if (!foundActive) {
-    document.querySelectorAll('.dropdown-menu li a').forEach(function(link) {
-      var linkPath = link.getAttribute('href');
-      if (currentPath.includes(linkPath)) {
-        document.querySelectorAll('.top-nav ul li').forEach(function(li) {
-          li.classList.remove('active');
-        });
-        link.closest('.dropdown').classList.add('active');
-      }
-    });
-  }
-});
-
-function toggleDropdown() {
-  const dropdown = document.getElementById('notification-dropdown');
-  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.notification-button')) {
-    const dropdowns = document.getElementsByClassName('notification-dropdown');
-    for (let i = 0; i < dropdowns.length; i++) {
-      const openDropdown = dropdowns[i];
-      if (openDropdown.style.display === 'block') {
-        openDropdown.style.display = 'none';
-      }
-    }
-  }
-}
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Your existing JavaScript code
-  
-  // Handle notification click
-  const notificationItems = document.querySelectorAll('.notification-item a');
-  notificationItems.forEach(function(item) {
-    item.addEventListener('click', function() {
-      this.parentElement.classList.remove('highlight'); // Remove highlight
-      const count = document.getElementById('notification-count');
-      count.textContent = parseInt(count.textContent) - 1; // Decrease count
-    });
-  });
-
-  // Highlight new notifications
-  const newNotifications = document.querySelectorAll('.notification-item');
-  newNotifications.forEach(function(item) {
-    if (!item.classList.contains('clicked')) {
-      item.classList.add('highlight'); // Add highlight for new notifications
-    }
-  });
-});
-</script>
-
-
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.notification-button')) {
+                const dropdowns = document.getElementsByClassName('notification-dropdown');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

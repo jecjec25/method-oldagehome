@@ -7,34 +7,15 @@
     <link rel="icon" type="image/png" href="/picture.png">
     <link href="/css/viewannounce.css" rel='stylesheet' type='text/css' />
 </head>
-<style>
-    .alert {
-    padding: 20px;
-    margin-bottom: 15px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    opacity: 1;
-    transition: opacity 2s ease-in-out;
-    width: 30rem;
-}
-.alert.fade-out {
-    opacity: 0;
-}
-
-</style>
 <body>
 
 <div class="container">
-
     <ul>
         <?php foreach ($announce as $pannounce): ?>
             <li>
                 <h2>Announcement</h2>
                 <h3><?= $pannounce['Title']; ?></h3>
-                <p ><img src="<?="/upload/announcement/" . $pannounce['Attachments']?>" alt="announcementba"></p>
+                <p><img src="<?="/upload/announcement/" . $pannounce['Attachments']?>" alt="announcement image"></p>
                 <p><strong>Content:</strong> <?= $pannounce['Content']; ?></p>
                 <p><strong>Author:</strong> <?= $pannounce['Author']; ?></p>
                 <p><strong>Category:</strong> <?= $pannounce['Category']; ?></p>
@@ -42,28 +23,23 @@
                 <p><strong>Start Date:</strong> <?= $pannounce['Start_date']; ?></p>
                 <p><strong>End Date:</strong> <?= $pannounce['End_date']; ?></p>
                 <form action="<?= base_url('feedbackannounce')?>" method="post">
-                <input type="hidden" name="AnnounceID" value="<?= $pannounce['AnnounceID']?>">
-                <textarea name="feedback" id="" cols="50" rows="10" placeholder="Feedback"></textarea>
-                
-                <button  class="btn btn-secondary" type="submit" onclick="return confirm('Are you sure you want to submit this form?')">Send</button>
-                <?php if(session()->getFlashdata('feedback_message')): ?>
-                <div class="alert alert-success">
-                    <?= session()->getFlashdata('feedback_message') ?>
-                </div>
-                <?php endif; ?>
+                    <input type="hidden" name="AnnounceID" value="<?= $pannounce['AnnounceID']?>">
+                    <textarea name="feedback" cols="50" rows="5" placeholder="Feedback"></textarea>
+                    <button class="btn" type="submit" onclick="return confirm('Are you sure you want to submit this form?')">Send</button>
+                    <?php if(session()->getFlashdata('feedback_message')): ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('feedback_message') ?>
+                    </div>
+                    <?php endif; ?>
                 </form>
-                <br>
-            
                 <p>Feedback(Unknown):</p>
-                <?php foreach($feedback as $feed):?>
-                <ul>
-                    <li>
-                        <?= $feed['feedback']?>
-                    </li>
-                </ul>
-        <?php endforeach;?>
-        <br>
-        <a href="/announcement" class="btn btn-secondary">Back</a>
+                <?php foreach($feedback as $feed): ?>
+                    <ul>
+                        <li><?= $feed['feedback']?></li>
+                    </ul>
+                <?php endforeach; ?>
+                <a href="/announcement" class="btn">Back</a>
+            </li>
         <?php endforeach; ?>
     </ul>
 </div>

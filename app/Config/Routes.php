@@ -14,7 +14,8 @@ use CodeIgniter\Router\RouteCollection;
  $routes->match(['get', 'post'], 'store', 'SignupController::store');
  $routes->match(['get', 'post'], 'UserController/loginAuth', 'UserController::loginAuth');
  $routes->get('/signin', 'UserController::index', ['filter' => 'guestFilter']);
- $routes->get('GoogleLoginAuth', 'UserController::GoogleAuthLogin');
+ $routes->get('GoogleAuth', 'UserController::GoogleAuthLogin');
+ 
  $routes->get('/contact', 'ViewController::contact');
  $routes->get('/eligibility', 'ViewController::eligability');
  $routes->get('/about', 'ViewController::about');

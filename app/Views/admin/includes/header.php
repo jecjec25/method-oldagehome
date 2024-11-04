@@ -1,16 +1,23 @@
-  <style>
+  <style> 
       .top-nav ul li a:hover,
       .top-nav ul li.active a {
         color: black; /* Change to desired highlight color */
-        /* Add any other styles you want for hover and active states */
       }
       .top-nav ul {
         list-style: none;
       }
-    </style>
-</head>
-<body>
-  <div class="strip"> </div>
+      #pull img {
+        width: 30px; /* Adjust icon size */
+        height: auto; /* Maintain aspect ratio */
+      }
+      /* Add responsive styles for mobile */
+      @media (max-width: 768px) {
+          .top-nav ul {
+              display: none; /* Hide menu by default on mobile */
+          }
+      }
+  </style>
+  <div class="strip"></div>
   <div class="header-top" id="home">
     <div class="container">
       <div class="head-section">
@@ -22,26 +29,22 @@
           </div>
           <div class="top-log">
             <br>
-            
             <ul>
               <li><a href="/signin">Login Here</a></li>
               <li><a href="/contact">Contact</a></li>
               <li><a href="/menu">Necessity</a></li>
             </ul>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
           </div>
-          <div class="clearfix"> </div>
+          <div class="clearfix"></div>
         </div>
         <div class="social-content">
           <div class="top-icons">
             <br>
-            <br>
-            <br>
             <ul>
-              <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span> </span></a></li>
-              <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span> </span></a></li>
-              <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span> </span></a></li>
-              <div class="clearfix"> </div>
+              <li><a class="fb" href="https://www.facebook.com/profile.php?id=100068869003335&mibextid=ZbWKwL"><span></span></a></li>
+              <li><a class="gp" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mail&to=aruga.kapatid@gmail.com"><span></span></a></li>
+              <li><a class="you" href="https://youtu.be/nkXEh7hicZs?si=bdyub5fL4ZF__WWv"><span></span></a></li>
             </ul>
           </div>
         </div>
@@ -60,13 +63,13 @@
           <li><a href="/announcement">Announcement</a></li>
           <li><a href="/donation">How to Donate</a></li>
           <li><a href="/menu">Necessity</a></li>
-          <div class="clearfix"> </div>
         </ul>
-        <a href="#" id="pull"><h6>Menu</h6><img src="images/menu-icon.png" title="menu" /></a>
+        <a href="#" id="pull"><h6>Menu</h6><img src="images/menu-icon.png" title="menu" alt="Menu Icon" /></a>
       </nav>
     </div>
-    <div class="clearfix"> </div>
+    <div class="clearfix"></div>
   </div>
+
   <script>
     $(document).ready(function() {
       // Get the current URL path
@@ -99,15 +102,9 @@
       });
       $(window).resize(function() {
         var w = $(window).width();
-        if (w > 320 && menu.is(':hidden')) {
+        if (w > 768 && menu.is(':hidden')) {
           menu.removeAttr('style');
         }
-      });
-    });
-
-    $(document).ready(function() {
-      $("span.menu").click(function() {
-        $(".top-nav ul").slideToggle(200);
       });
     });
   </script>

@@ -1,69 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <title>Event Accepted</title>
   <link rel="icon" type="image/png" href="/picture.png">
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+  
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      var events = <?php echo json_encode($events); ?>;
+  <script src="login/vendors/js/vendor.bundle.base.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        events: events,
-        dateClick: function(info) {
-          var title = prompt('Event Title:');
-          if (title) {
-            var eventData = {
-              title: title,
-              start: info.dateStr,
-              end: info.dateStr
-            };
-            calendar.addEvent(eventData);
-          }
-        }
+  <style>
+    .btnv {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #007BFF;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #calendars {
+      width: 100%; 
+      height:auto;
+      transition: max-height 0.3s ease, opacity 0.3s ease; 
+      overflow: hidden;
+      max-height: 0; 
+      opacity: 0; 
+    }
+    #calendars.show {
+      max-height: 500px;
+      opacity: 1; 
+    }
+    .main-content {
+      padding: 20px;
+    }
+  </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendars');
+    var events = <?php echo json_encode($events); ?>;
+
+    function formatDate(dateStr) {
+      var date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
       });
-      calendar.render();
+    }
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: events,
+      dateClick: function(info) {
+        var selectedDateEvents = events.filter(function(event) {
+          return event.start === info.dateStr;
+        });
+
+        var modalBody = document.getElementById('event-details');
+        modalBody.innerHTML = '';
+
+        if (selectedDateEvents.length > 0) {
+          selectedDateEvents.forEach(function(event) {
+            modalBody.innerHTML += `
+              <p><strong>Title:</strong> ${event.title}</p>
+              <p><strong>Date:</strong> ${formatDate(event.start)}</p>
+              <p><strong>Time:</strong> ${event.time ? event.time : 'N/A'}</p>
+              <hr>
+            `;
+          });
+        } else {
+          modalBody.innerHTML = '<p>No events scheduled for this day.</p>';
+        }
+
+        var myModal = new bootstrap.Modal(document.getElementById('eventModal'));
+        myModal.show();
+      }
     });
-  </script>
+    calendar.render();
 
+    document.getElementById('openCalendarBtn').addEventListener('click', function() {
+      calendarEl.classList.add('show'); 
+    });
 
-  
+    document.getElementById('closeCalendarBtn').addEventListener('click', function() {
+      calendarEl.classList.remove('show'); 
+    });
+  });
+</script>
 </head>
-<style>
-  .btnv {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007BFF; /* Blue background */
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-#calendar
-{
-  width: auto;
-}
 
-
-</style>
-
-  
 <body>
   <div class="container-scroller">
-    <?php include_once('includes/header.php');?>       
+    <?php include_once('includes/header.php');?>
+
     <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
@@ -85,18 +125,21 @@
 
     <div class="container-fluid page-body-wrapper">
       <?php include_once('includes/sidebar.php');?>
+
       <div class="main-panel">
         <div class="content-wrapper">
-          <div id='calendar'></div> 
+          <button id="openCalendarBtn" class="btnv">Open Calendar</button>
+          <button id="closeCalendarBtn" class="btnv" style="background-color: #dc3545;">Close Calendar</button>
+
+          <div id='calendars' class="main-content"></div>
+
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Accepted Event of Admin</h4>
-                <p class="card-description" style="padding-left: 20px;"> 
-                  User event has been booked.
-                </p>
+                <p class="card-description" style="padding-left: 20px;">User event has been booked.</p>
                 <div class="table-responsive pt-3">
-                  <form action="<?= base_url('fundamental/accept') ?>" method ="post">
+                  <form action="<?= base_url('fundamental/accept') ?>" method="post">
                     <table class="table table-striped project-orders-table" id="userbooking">
                       <thead>
                         <tr>
@@ -106,7 +149,7 @@
                           <th>Middle Name</th>
                           <th>Contact Number</th>
                           <th>Event</th>
-                          <th>Preffered Date</th>
+                          <th>Preferred Date</th>
                           <th>Time</th>
                           <th>Equipment</th>
                           <th>Comments</th>
@@ -119,32 +162,32 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <?php foreach($calen as $even): ?>
-                        <tr>
-                          <td><?=$even['establishment'] ?></td>
-                          <td><?=$even['lastname'] ?></td>
-                          <td><?=$even['firstname'] ?></td>
-                          <td><?=$even['middlename'] ?></td>
-                          <td><?=$even['contactnum'] ?></td>
-                          <td><?=$even['event']?></td>
-                          <td><?=$even['prefferdate'] ?></td>
-                          <td><?=$even['Time'] ?></td>
-                          <td><?=$even['equipment'] ?></td>
-                          <td><?=$even['comments'] ?></td>
-                          <td><?=$even['description'] ?></td>
-                          <td><?=$even['amount_raised'] ?></td>
-                          <td><?=$even['outcomes'] ?></td>
-                          <td><?=$even['acknowledgement'] ?></td>
-                          <td><?=$even['status']?></td>
-                          <td>
-                            <a href="<?= base_url('viewEvent/') . $even['id']?>" class="btnv">View Event</a>
-                          </td>
-                          <td>
-                            <a href="<?= base_url("deleteAcceptedEvent/" .$even['id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
-                            Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
-                          </td>
-                        </tr>
-                      <?php endforeach; ?>
+                        <?php foreach($calen as $even): ?>
+                          <tr>
+                            <td><?=$even['establishment'] ?></td>
+                            <td><?=$even['lastname'] ?></td>
+                            <td><?=$even['firstname'] ?></td>
+                            <td><?=$even['middlename'] ?></td>
+                            <td><?=$even['contactnum'] ?></td>
+                            <td><?=$even['event']?></td>
+                            <td><?=$even['prefferdate'] ?></td>
+                            <td><?=$even['Time'] ?></td>
+                            <td><?=$even['equipment'] ?></td>
+                            <td><?=$even['comments'] ?></td>
+                            <td><?=$even['description'] ?></td>
+                            <td><?=$even['amount_raised'] ?></td>
+                            <td><?=$even['outcomes'] ?></td>
+                            <td><?=$even['acknowledgement'] ?></td>
+                            <td><?=$even['status']?></td>
+                            <td>
+                              <a href="<?= base_url('viewEvent/') . $even['id']?>" class="btnv">View Event</a>
+                            </td>
+                            <td>
+                              <a href="<?= base_url("deleteAcceptedEvent/" . $even['id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
+                              Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
+                            </td>
+                          </tr>
+                        <?php endforeach; ?>
                       </tbody>
                     </table>
                   </form>
@@ -158,41 +201,19 @@
     </div>
   </div>
 
-
-
-  <script src="login/vendors/js/vendor.bundle.base.js"></script>
-  <script src="login/vendors/chart.js/Chart.min.js"></script>
-  <script src="login/js/off-canvas.js"></script>
-  <script src="login/js/hoverable-collapse.js"></script>
-  <script src="login/js/template.js"></script>
-  <script src="login/js/settings.js"></script>
-  <script src="login/js/todolist.js"></script>
-  <script src="login/js/dashboard.js"></script>
-
-  <!-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var events = <?php echo json_encode($events); ?>; // Pass PHP events to JavaScript
-
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                events: events,
-                dateClick: function(info) {
-                    var title = prompt('Event Title:');
-                    if (title) {
-                        var eventData = {
-                            title: title,
-                            start: info.dateStr,
-                            end: info.dateStr
-                        };
-                        alert('Event added (not saved): ' + eventData.title);
-                        // Here you can add logic to display the new event in the calendar
-                        calendar.addEvent(eventData); // Add event to the calendar view
-                    }
-                }
-            });
-            calendar.render();
-        });
-    </script> -->
+  <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="event-details"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
