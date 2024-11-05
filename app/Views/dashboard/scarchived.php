@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <title>Left Elder</title>
     <link rel="icon" type="image/png" href="/picture.png">
     <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
@@ -12,90 +11,121 @@
     <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
     <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
     <script type="text/javascript">
-    bkLib.onDomLoaded(nicEditors.allTextAreas);
+        bkLib.onDomLoaded(nicEditors.allTextAreas);
     </script>
 </head>
+
 <style>
-.button-print {
-    float: left;
-    margin-right:10px;
-}
-
-.table {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.table-striped tbody>tr:nth-child(odd)>td,
-.table-striped tbody>tr:nth-child(odd)>th {
-    background-color: #f9f9f9;
-}
-
-@media print {
-
-    #PrintButton,
-    .navbar-breadcrumb,
-    .sidebar,
-    .header {
-        display: none !important;
+    .button-print {
+        float: left;
+        margin-right: 10px;
     }
 
-    .content-wrapper {
-        width: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
+    .table {
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    .main-panel {
-        width: 100% !important;
+    .table-striped tbody>tr:nth-child(odd)>td,
+    .table-striped tbody>tr:nth-child(odd)>th {
+        background-color: #f9f9f9;
     }
-}
 
-@page {
-    size: auto;
-    /* auto is the initial value */
-    margin: 0;
-    /* this affects the margin in the printer settings */
+    /* Modal styling */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
 
-}
+    .modal-content img {
+        width: 100%;
+        height: auto;
+    }
 
-.button-print {
-    text-align: right;
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        color: white;
+        font-size: 60px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-}
+    @media print {
+        #PrintButton,
+        .navbar-breadcrumb,
+        .sidebar,
+        .header {
+            display: none !important;
+        }
 
-.button-print button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+        .content-wrapper {
+            width: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-.edit-button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-}
+        .main-panel {
+            width: 100% !important;
+        }
+    }
 
-.edit-button:hover {
-    background-color: #45a049;
-}
+    @page {
+        size: auto;
+        margin: 0;
+    }
+
+    .button-print {
+        text-align: right;
+    }
+
+    .button-print button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .edit-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .edit-button:hover {
+        background-color: #45a049;
+    }
 </style>
 
 <body>
     <div class="container-scroller">
-        <?php include_once('includes/header.php');?>
+        <?php include_once('includes/header.php'); ?>
         <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
             &nbsp;
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
@@ -116,27 +146,23 @@
             </div>
         </nav>
         <div class="container-fluid page-body-wrapper">
-            <?php include_once('includes/sidebar.php');?>
+            <?php include_once('includes/sidebar.php'); ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Left Elder
-                                </h4>
+                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Left Elder</h4>
                                 <p class="card-description" style="padding-left: 20px;">
                                     Elders who left Aruga-Kapatid Foundation Incorporated
                                 </p>
-                                <div class="button-print"><a class="btn btn-primary"
-                                        href="<?= base_url('previewLeft') ?>" id="PrintButton">Preview</a>
-                                </div>
-
-
+                                <div class="button-print"><a class="btn btn-primary" href="<?= base_url('previewLeft') ?>" id="PrintButton">Preview</a></div>
+                                
                                 <div class="table-responsive pt-3">
                                     <table class="table table-striped project-orders-table" id="tblscdetails">
-                                        <?php if(isset($k['Id'])){?>
-                                        <input type="hidden" name="Id" value="<?=$k['Id']?>">
-                                        <?php }?>
+                                        <?php if (isset($k['Id'])) { ?>
+                                            <input type="hidden" name="Id" value="<?= $k['Id'] ?>">
+                                        <?php } ?>
                                         <thead>
                                             <tr>
                                                 <th>Last Name</th>
@@ -159,51 +185,54 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($main as $k): ?>
-                                            <tr>
-                                                <td><?=$k['lastname'] ?></td>
-                                                <td><?=$k['firstname'] ?></td>
-                                                <td><?=$k['middlename'] ?></td>
-                                                <td><?=$k['nickname'] ?></td>
-                                                <td><?=$k['DateBirth'] ?></td>
-                                                <td><?=$k['gender'] ?></td>
-                                                <td><?=$k['marital_stat'] ?></td>
-                                                <td><?=$k['ContNum'] ?></td>
-                                                <td><img src="<?="upload/seniors/" .$k['ProfPic']?>" alt="Senior Image" style="width: 90px;height: 90px;"></td>
-                                                <td><?=$k['ComAdd'] ?></td>
-                                                <td><?=$k['EmergencyAdd'] ?></td>
-                                                <td><?=$k['EmergencyContNum'] ?></td>
-                                                <td><?=$k['RegDate'] ?></td>
-                                                <td><?=$k['departuredate'] ?></td>
-                                                <td><?=$k['reasonleft'] ?></td>
-                                                <td>
-                                                    <?=$k['scstatus'] ?>
-                                                </td>
-                                                <td>
-                                                    <a href="<?= base_url('/vieweditleft/') . $k['Id']?>">
-                                                        <button class="edit-button">Edit</button>
-                                                    </a>
-                                                    <a href="<?= base_url("deleteleftElder/".$k['Id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
-                                                    Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a>
-                                                </td>
-
-                                            </tr>
+                                            <?php foreach ($main as $k) : ?>
+                                                <tr>
+                                                    <td><?= $k['lastname'] ?></td>
+                                                    <td><?= $k['firstname'] ?></td>
+                                                    <td><?= $k['middlename'] ?></td>
+                                                    <td><?= $k['nickname'] ?></td>
+                                                    <td><?= $k['DateBirth'] ?></td>
+                                                    <td><?= $k['gender'] ?></td>
+                                                    <td><?= $k['marital_stat'] ?></td>
+                                                    <td><?= $k['ContNum'] ?></td>
+                                                    <td><img src="<?= "upload/seniors/" . $k['ProfPic'] ?>" alt="Senior Image" style="width: 90px;height: 90px; cursor: pointer;" onclick="openModal(this)"></td>
+                                                    <td><?= $k['ComAdd'] ?></td>
+                                                    <td><?= $k['EmergencyAdd'] ?></td>
+                                                    <td><?= $k['EmergencyContNum'] ?></td>
+                                                    <td><?= $k['RegDate'] ?></td>
+                                                    <td><?= $k['departuredate'] ?></td>
+                                                    <td><?= $k['reasonleft'] ?></td>
+                                                    <td><?= $k['scstatus'] ?></td>
+                                                    <td>
+                                                        <a href="<?= base_url('/vieweditleft/') . $k['Id'] ?>">
+                                                            <button class="edit-button">Edit</button>
+                                                        </a>
+                                                        <a href="<?= base_url("deleteleftElder/" . $k['Id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
+                                                            Delete <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
-
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <?php include_once('includes/footer.php');?>
+                <?php include_once('includes/footer.php'); ?>
             </div>
         </div>
     </div>
+
+    <!-- Modal structure for large image view -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()" style="font-size:90px;">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Large Profile Picture">
+        </div>
+    </div>
+
     <script src="login/vendors/js/vendor.bundle.base.js"></script>
     <script src="login/vendors/chart.js/Chart.min.js"></script>
     <script src="login/js/off-canvas.js"></script>
@@ -213,6 +242,17 @@
     <script src="login/js/todolist.js"></script>
     <script src="login/js/dashboard.js"></script>
 
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        function openModal(img) {
+            document.getElementById("modalImage").src = img.src;
+            document.getElementById("imageModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>

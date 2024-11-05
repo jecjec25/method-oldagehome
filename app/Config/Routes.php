@@ -358,5 +358,7 @@ $routes->match(['get','post'], 'emailAuth', 'UserController::validEmail');
 $routes->match(['get','post'], 'codeAuth', 'UserController::codeAuth');
 $routes->match(['get','post'], 'AuthCode', 'UserController::codeCheck');
 $routes->match(['get','post'], 'PasswordAuth', 'UserController::PasswordAuth');
+$routes->match(['get','post'], 'sampleNotif', 'UserController::sampleNotif');
+$routes->post('trytosendnotif', 'UserController::trytosendnotif');
 
 

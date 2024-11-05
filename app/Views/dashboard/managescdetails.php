@@ -21,6 +21,38 @@
         .table-striped tbody>tr:nth-child(odd)>th {
             background-color: #f9f9f9;
         }
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
         @media print {
             #PrintButton, #DatePrepared {
                 display: none;
@@ -30,6 +62,7 @@
             size: auto;
             margin: 0;
         }
+        /* Responsive styling */
         @media only screen and (max-width: 412px) {
             .navbar-breadcrumb {
                 flex-direction: column;
@@ -114,7 +147,6 @@
                                         </select>
                                     </div>
 
-
                                 <form action="searchdets" method="get">
                                     <input name="searchsc" type="text">
                                     <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
@@ -156,7 +188,7 @@
                                                     <td><?= $k['gender'] ?></td>
                                                     <td><?= $k['marital_stat'] ?></td>
                                                     <td><?= $k['ContNum'] ?></td>
-                                                    <td><img src="<?= "upload/seniors/" . $k['ProfPic'] ?>" alt="Senior Image" style="width: 90px;height: 90px;"></td>
+                                                    <td><img src="<?= "upload/seniors/" . $k['ProfPic'] ?>" alt="Senior Image" style="width: 90px;height: 90px; cursor: pointer;" onclick="openModal(this)"></td>
                                                     <td><?= $k['ComAdd'] ?></td>
                                                     <td><?= $k['EmergencyAdd'] ?></td>
                                                     <td><?= $k['EmergencyContNum'] ?></td>
@@ -189,6 +221,13 @@
             </div>
         </div>
     </div>
+    <!-- Modal structure -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()" style="font-size:90px;">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Large Profile Picture">
+        </div>
+    </div>
     <script src="login/vendors/js/vendor.bundle.base.js"></script>
     <script src="login/vendors/chart.js/Chart.min.js"></script>
     <script src="login/js/off-canvas.js"></script>
@@ -198,11 +237,20 @@
     <script src="login/js/todolist.js"></script>
     <script src="login/js/dashboard.js"></script>
     <script>
-    document.getElementById('sortOption').addEventListener('change', function () {
-        const selectedSort = this.value;
-        window.location.href = `?sort=${selectedSort}`;
+        document.getElementById('sortOption').addEventListener('change', function () {
+            const selectedSort = this.value;
+            window.location.href = `?sort=${selectedSort}`;
         });
-    </script>
+        
+        // JavaScript for modal functionality
+        function openModal(img) {
+            document.getElementById("modalImage").src = img.src;
+            document.getElementById("imageModal").style.display = "block";
+        }
 
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
 </body>
 </html>

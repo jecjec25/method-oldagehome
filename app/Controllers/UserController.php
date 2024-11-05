@@ -13,12 +13,16 @@ class UserController extends BaseController
 {
     private $user;
     private $userbooking;
+    private $credentials;
     public function __construct(){
 
 
         $this->user = new UsersModel();
         $this->userbooking = new UserbookingModel();
         
+
+        $this->credentials = new ServiceAccountCredentials("https://www.googleapis.com/auth/firebase.messaging",
+                                                          json_decode(file_get_contents("js/pvKey.json"), true));
 
         helper(['form', 'url']);
 
@@ -77,7 +81,7 @@ class UserController extends BaseController
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Email Verification');
-        $emailService->setMessage("Hapag Aruga Foundation Incorporated. This is your verification code:\n\n $token");
+        $emailService->setMessage("Hapag Aruga Foundation Incorporated. This is your verification code:\n\n$token");
 
         $emailService->send();
     }
@@ -297,6 +301,53 @@ class UserController extends BaseController
         session_destroy();
 
         return redirect()->to('/signin');
-        }
+    }
+    
+    public function sampleNotif()
+    {
+        return view('admin/notiftest');
+    }
 
+    public function trytosendnotif()
+    {
+        $token = $this->credentials->fetchAuthToken(HttpHandlerFactory::build());
+        $ch = curl_init('https://fcm.googleapis.com/v1/projects/method-oldagehome/messages:send');
+    
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $token['access_token']  // Added space after Bearer
+        ]);
+    
+        $postFields = json_encode([  // Properly encode the payload
+            "message" => [
+                "token" => "cyKuiFSrQZVh9cv8-8F9b0:APA91bEMspvHAZxQu1c-CUGYqOs9TPA3u1A99gYfhm4jxkTkrIwEpOd31pMkS_SYoIk2L-O3j2FphAMcYP7GUABQRbK4h5aELxH2srxm7ONOm801BajoKSE",
+                "notification" => [
+                    "title" => "notification",
+                    "body" => "this is a text"
+                ],
+                "webpush" => [
+                    "fcm_options" => [
+                        "link" => "https://google.com"
+                    ]
+                ]
+            ]
+        ]);
+    
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  // Capture the response
+    
+        $response = curl_exec($ch);
+    
+        if (curl_errno($ch)) {
+            // If an error occurs
+            $error_msg = curl_error($ch);
+            echo 'Curl error: ' . $error_msg;
+        } else {
+            echo $response;  // Print the response
+        }
+    
+        curl_close($ch);
+    }
+    
 }
