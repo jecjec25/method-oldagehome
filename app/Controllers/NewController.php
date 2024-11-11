@@ -1243,7 +1243,6 @@ exit();
         $dompdf->setOptions($options);
         $currentDate = date('Y-m-d'); // Get the current date in 'YYYY-MM-DD' format
        
-        // Define the HTML content
         $html = '
         <html>
         <head>
@@ -1252,6 +1251,7 @@ exit();
                     font-family: Arial, sans-serif;
                     margin: 0;
                     padding: 0;
+                    font-size: 12px;
                 }
                 .header {
                     text-align: center;
@@ -1261,52 +1261,71 @@ exit();
                     position: absolute;
                     left: 0;
                     top: 0;
-                    height: 120px;
+                    height: 100px;
                 }
                 .header h5 {
                     margin: 0;
                 }
                 .title {
                     text-align: center;
+                    margin-top: 20px;
                 }
                 .title h3, .title h4 {
-                    margin: 0;
+                    margin: 5px 0;
                 }
                 .report-info {
-                    margin: 20px 0;
+                    text-align: center;
+                    margin: 10px 0;
                 }
                 .table {
                     width: 100%;
                     border-collapse: collapse;
+                    table-layout: fixed;
                 }
                 .table th, .table td {
                     border: 1px solid black;
-                    padding: 8px;
+                    padding: 4px;
                     text-align: left;
+                    font-size: 10px;
+                    word-wrap: break-word;
+                }
+                .table th {
+                    background-color: #f2f2f2;
+                    font-weight: bold;
                 }
                 .summary {
                     font-weight: 600;
                     margin-top: 20px;
+                    text-align: center;
                 }
                 .footer {
-                    margin-top: 40px;
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px 0;
+                    border-top: 1px solid black;
+                    background-color: white;
                 }
                 .footer .signature-group {
                     display: flex;
-                    justify-content: space-between;
-                    margin-top: 50px;
+                    justify-content: space-around;
+                    margin-top: 20px;
                 }
                 .footer .signature-section {
-                    width: 20%;
+                    width: 30%;
                     text-align: center;
-                }
-                .footer .signature-section p {
-                    margin: 5px 0;
                 }
                 .footer .signature-line {
                     border-top: 1px solid black;
-                    margin-top: 40px;
+                    margin-top: 30px;
                     margin-bottom: 5px;
+                }
+                /* Ensures enough margin at the bottom for the footer */
+                .content {
+                    min-height: calc(100vh - 150px); /* Leaves space for the footer */
+                    padding-bottom: 100px; /* Pushes content above footer */
                 }
             </style>
         </head>
@@ -1320,36 +1339,37 @@ exit();
                 <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
                 <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
             </div>
-                <br>
+            <br>
             <div class="title">
                 <h3>Aruga Kapatid Foundation Incorporated</h3>
-                <h4>Elder Care Program Participant Report</h4>
+                <h4>Elder Care Program Deceased Participant Report</h4>
             </div>
-
+        
             <div class="report-info">
                 <p>Date: ' . $currentDate . '</p>
                 <p>Reporting Period: '. $fromdate .' - '. $todate . '</p>
             </div>
-            
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Middle Name</th>
-                        <th>Nickname</th>
-                        <th>Date of Birth</th>
-                        <th>Gender</th>
-                        <th>Marital Status</th>
-                        <th>Contact Number</th>
-                        <th>Address</th>
-                        <th>Registration Date</th>
-                        <th>Date Of Death</th>
-                        <th>Cause Of Death</th>
-                    </tr>
-                </thead>
-                <tbody>';
-
+        
+            <div class="content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Nickname</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>Marital Status</th>
+                            <th>Contact Number</th>
+                            <th>Address</th>
+                            <th>Registration Date</th>
+                            <th>Date Of Death</th>
+                            <th>Cause Of Death</th>
+                        </tr>
+                    </thead>
+                    <tbody>';
+        
         foreach ($data['main'] as $reg) {
             $html .= '<tr>
                 <td>' . $reg['lastname'] . '</td>
@@ -1366,50 +1386,45 @@ exit();
                 <td>' . $reg['causedeath'] . '</td>
             </tr>';
         }
-
+        
         $html .= '</tbody></table>
-
+        
         <p class="summary">Summary</p>
         <p>During the reporting period, a total of '.$count.' elderly individuals passed away in the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
-
+        </div>
+        
         <div class="footer">
             <div class="signature-group">
                 <div class="signature-section">
-                    <p class="generated-by">
-                        <strong>Report Generated By:</strong>
-                        <div class="signature-line"></div>
-                        <br>HENRY A. DACANAY III
-                        <strong><br>ADMIN STAFF</strong>
-                    </p>
+                    <p><strong>Report Generated By:</strong></p>
+                    <div class="signature-line"></div>
+                    <p>HENRY A. DACANAY III<br><strong>ADMIN STAFF</strong></p>
                 </div>
-                <br>
                 <div class="signature-section">
-                    <p class="approved-by">
-                        <strong>Approved By:</strong>
-                        <div class="signature-line"></div>
-                        <br>LITO C. VERGARA
-                        <strong><br>ADMINISTRATOR</strong>
-                    </p>
+                    <p><strong>Approved By:</strong></p>
+                    <div class="signature-line"></div>
+                    <p>LITO C. VERGARA<br><strong>ADMINISTRATOR</strong></p>
                 </div>
             </div>
         </div>
         </body>
         </html>';
-
+        
         // Load HTML content into Dompdf
         $dompdf->loadHtml($html);
-
-        // Set paper size and orientation (optional)
+        
+        // Set paper size and orientation
         $dompdf->setPaper('A4', 'landscape');
-
-        // Render PDF (optional: save to file or stream to browser)
+        
+        // Render PDF
         $dompdf->render();
-
+        
         // Output the PDF as a string (inline display in the browser)
         $dompdf->stream('Elderly_Deceased_Report.pdf', array('Attachment' => true));
-
-        // Stop CodeIgniter from further processing (optional, but good practice)
+        
+        // Stop CodeIgniter from further processing
         exit();
+        
     }
 
 

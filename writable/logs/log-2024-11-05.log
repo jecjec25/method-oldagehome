@@ -14,3 +14,102 @@ in APPPATH\Controllers\UserController.php on line 25.
  5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:09:31 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:10:29 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:10:32 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:11:22 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:11:24 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:11:25 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:11:48 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:11:56 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:11:57 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:12:43 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-05 09:12:45 --> array_key_exists(): Argument #2 ($array) must be of type array, null given
+in VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php on line 140.
+ 1 VENDORPATH\google\auth\src\Credentials\ServiceAccountCredentials.php(140): array_key_exists('client_email', null)
+ 2 APPPATH\Controllers\UserController.php(25): Google\Auth\Credentials\ServiceAccountCredentials->__construct('https://www.googleapis.com/auth/firebase.messaging', null)
+ 3 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\UserController->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

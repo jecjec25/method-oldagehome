@@ -188,133 +188,134 @@ class Fullcalendar extends BaseController
         // Define the HTML content
         $html = '
         <html>
-        <head>
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            margin: 20px;
-        }
-        .header {
-            text-align: center;
-            position: relative;
-        }
-        .header img {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100px;
-        }
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 20px;
-                table-layout: fixed;
-            }
-        table, th, td {
-            border: 1px solid black;
-            word-wrap: break-word;
-        }
-        th, td {
-            padding: 4px;
-            text-align: left;
-        }
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            text-align: left;
-            margin-top: 16px;
-        }
-        .footer .report {
-            font-weight: 600;
-        }
-        .signatures {
-            display: flex;
-            flex-direction: column;
-        }
-        .signatures p {
-            margin: 2px 0;
-            
-        }
-        .content {
-            page-break-after: auto;
-        }
-    </style>
-        </head>
-        <body >
-            <div style="text-align: center;position:relative;">
-                <img src="' . $imageSrc . '" alt="Logo" style="position:absolute;left:0;top:0;height:120px">
-                <h5 style="margin: 0;">Republic of the Philippines</h5>
-                <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
-                <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
-                <h5 style="margin: 0;">Company Registration Number: CN2011421030</h5>
-                <h5 style="margin: 0;">Company TIN Number: 008-893-471</h5>
-                <h4 style="margin: 0; padding-top: 5px;">ARUGA-KAPATID FOUNDATION INCORPORATED</h4>
-            </div>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        margin: 20px;
+    }
+    .header {
+        text-align: center;
+        position: relative;
+    }
+    .header img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        table-layout: fixed;
+    }
+    table, th, td {
+        border: 1px solid black;
+        word-wrap: break-word;
+    }
+    th, td {
+        padding: 4px;
+        text-align: left;
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        page-break-inside: avoid; /* Prevents the footer from breaking across pages */
+    }
+    .footer-content {
+        height: 150px; /* Define a height for the footer to fit within a bond paper */
+    }
+    .report {
+        font-weight: 600;
+    }
+    .signatures {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px;
+    }
+    .signatures p {
+        margin: 2px 0;
+    }
+</style>
+</head>
+<body>
+    <div style="text-align: center;position:relative;">
+        <img src="' . $imageSrc . '" alt="Logo" style="position:absolute;left:0;top:0;height:120px">
+        <h5 style="margin: 0;">Republic of the Philippines</h5>
+        <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
+        <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
+        <h5 style="margin: 0;">Company Registration Number: CN2011421030</h5>
+        <h5 style="margin: 0;">Company TIN Number: 008-893-471</h5>
+        <h4 style="margin: 0; padding-top: 5px;">ARUGA-KAPATID FOUNDATION INCORPORATED</h4>
+    </div>
 
-            <h3  style="text-align: center;">Aruga Kapatid Foundation Incorporated</h3>
-            <h4  style="text-align: center;">Elder Care Program Participant Report</h4>
+    <h3 style="text-align: center;">Aruga Kapatid Foundation Incorporated</h3>
+    <h4 style="text-align: center;">Elder Care Program Participant Report</h4>
 
-            <p>Date: ' . $currentDate . '</p>
-            <p>Reporting Period: '. $closestLowerDate .'  -  ' . $search . '</p>
-            
-            <table border="1" style="border-collapse: collapse; border: 1px solid black;">
-                <thead>
-                    <tr>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Middle Name</th>
-                        <th>Nickname</th>
-                        <th>Date of Birth</th>
-                        <th>Gender</th>
-                        <th>Marital Status</th>
-                        <th>Contact Number</th>
-                        <th>Address</th>
-                        <th>Registration Date</th>
-                    </tr>
-                </thead>
-                <tbody>';
-                
-        // Loop through the data and append rows to the HTML table with inline styles
-        foreach ($data['reg'] as $reg) {
-            $html .= '<tr>
-                <td>' . $reg['lastname'] . '</td>
-                <td>' . $reg['firstname'] . '</td>
-                <td>' . $reg['middlename'] . '</td>
-                <td>' . $reg['nickname'] . '</td>
-                <td>' . $reg['DateBirth'] . '</td>
-                <td>' . $reg['gender'] . '</td>
-                <td>' . $reg['marital_stat'] . '</td>
-                <td>' . $reg['ContNum'] . '</td>
-                <td>' . $reg['EmergencyAdd'] . '</td>
-                <td>' . $reg['RegDate'] . '</td>
-            </tr>';
-        }
+    <p>Date: ' . $currentDate . '</p>
+    <p>Reporting Period: ' . $closestLowerDate . ' - ' . $search . '</p>
+    
+    <table border="1" style="border-collapse: collapse; border: 1px solid black;">
+        <thead>
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Nickname</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Marital Status</th>
+                <th>Contact Number</th>
+                <th>Address</th>
+                <th>Registration Date</th>
+            </tr>
+        </thead>
+        <tbody>';
         
+// Loop through the data and append rows to the HTML table with inline styles
+foreach ($data['reg'] as $reg) {
+    $html .= '<tr>
+        <td>' . $reg['lastname'] . '</td>
+        <td>' . $reg['firstname'] . '</td>
+        <td>' . $reg['middlename'] . '</td>
+        <td>' . $reg['nickname'] . '</td>
+        <td>' . $reg['DateBirth'] . '</td>
+        <td>' . $reg['gender'] . '</td>
+        <td>' . $reg['marital_stat'] . '</td>
+        <td>' . $reg['ContNum'] . '</td>
+        <td>' . $reg['EmergencyAdd'] . '</td>
+        <td>' . $reg['RegDate'] . '</td>
+    </tr>';
+        }
+            
         // Close the HTML table and body
         $html .= '</tbody></table>
-        
+
         <p style="font-weight:600;">Summary</p>
-        <p>During the reporting period, a total of '. $count.' elderly individuals were registered in the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
-       
-            <div class="footer">
-            <p class="report">Report Generated By:</p>
-            <br>
-            <div class="signatures">
-                <p>Henry Dacanay III</p>
-                <p>Admin Staff</p>
-            </div>
-            <p class="report">Approved By:</p>
-            <br>
-            <div class="signatures">
-                <p>Lito Vergara</p>
-                <p>Administrator</p>
+        <p>During the reporting period, a total of '. $count .' elderly individuals were registered in the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+
+        <div class="footer">
+            <div class="footer-content">
+                <p class="report">Report Generated By:</p>
+                <div class="signatures">
+                    <p>Henry Dacanay III</p>
+                    <p>Admin Staff</p>
+                </div>
+                <p class="report">Approved By:</p>
+                <div class="signatures">
+                    <p>Lito Vergara</p>
+                    <p>Administrator</p>
+                </div>
             </div>
         </div>
-    </body>
-    </html>';
+        </body>
+        </html>';
+
         
         // Load HTML content into Dompdf
         $dompdf->loadHtml($html);

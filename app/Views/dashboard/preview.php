@@ -15,15 +15,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            height: auto;
         }
-        .button-download {
+        
+        .button-download, .button-back {
             position: absolute;
             top: 20px;
-            right: 20px;
+            display: flex;
         }
+        
+        .button-download { right: 20px; }
+        .button-back { left: 20px; }
 
-        .button-download a {
+        .button-download a, .button-back a {
             padding: 10px 20px;
             font-size: 16px;
             background-color: #007BFF;
@@ -34,30 +39,9 @@
             transition: background-color 0.3s ease;
         }
 
-        .button-download a:hover {
+        .button-download a:hover, .button-back a:hover {
             background-color: #0056b3;
         }
-        .button-back {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-
-        .button-back a {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button-back a:hover {
-            background-color: #0056b3;
-        }
-
 
         .size {
             width: 210mm;
@@ -67,8 +51,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
             margin: 20px auto;
-            
-            margin-top: 450px;
+            overflow: hidden;
         }
 
         .header {
@@ -118,8 +101,28 @@
             margin: 2px 0;
         }
 
+        /* For handling multiple pages in print */
         .content {
             page-break-after: auto;
+        }
+        
+        /* Page breaks for print */
+        @media print {
+            .size {
+                page-break-before: always;
+                page-break-after: always;
+            }
+
+            table, th, td {
+                page-break-inside: avoid;
+            }
+
+            .size {
+                width: auto; /* Full width for printing */
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+            }
         }
     </style>
 </head>
@@ -198,7 +201,5 @@
             </div>
         </div>
     </div>
-
-
 </body>
 </html>

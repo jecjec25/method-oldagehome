@@ -59,7 +59,6 @@ $routes->get('/list', 'HomeController::index');
 $routes->get('/create', 'ViewController::create');
 $routes->post('/submit', 'ViewController::store');
 
-
 $routes->get('/unreadq', 'ViewController::unreadq');
 $routes->get('/readenq', 'ViewController::readenq');
 $routes->get('/manageproduct', 'ViewController::manageproduct');
@@ -360,5 +359,3 @@ $routes->match(['get','post'], 'AuthCode', 'UserController::codeCheck');
 $routes->match(['get','post'], 'PasswordAuth', 'UserController::PasswordAuth');
 $routes->match(['get','post'], 'sampleNotif', 'UserController::sampleNotif');
 $routes->post('trytosendnotif', 'UserController::trytosendnotif');
-
-

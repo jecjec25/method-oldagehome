@@ -1,0 +1,103 @@
+/* General styles */
+.box-main {
+    width: 60%;
+    margin: auto;
+    background-color: bisque;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 5px solid;
+    border-radius: 4px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.firsthalf, .secondhalf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-big {
+    font-family: 'Piazzolla', serif;
+    font-weight: bold;
+    font-size: 3rem; /* Reduced initial size */
+}
+
+.text-small {
+    font-size: 2rem; /* Reduced initial size */
+    font-weight: bolder;
+    text-indent: 2em;
+}
+
+.image-qr {
+    width: 100%;
+    max-width: 40vh; /* Reduced initial size */
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .box-main {
+        width: 80%;
+    }
+
+    .text-big {
+        font-size: 2rem;
+    }
+
+    .text-small {
+        font-size: 1.3rem;
+        text-indent: 1.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .box-main {
+        width: 90%;
+        padding: 10px 15px;
+    }
+
+    .text-big {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .text-small {
+        font-size: 1.4rem;
+        text-indent: 1.2em;
+    }
+
+    .image-qr {
+        width: 80%;
+        max-width: 30vh;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .box-main {
+        width: 100%;
+        padding: 8px 10px;
+    }
+
+    .text-big {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .text-small {
+        font-size: 1.4rem;
+        text-indent: 1.2em;
+    }
+
+
+    .image-qr {
+        width: 90%;
+        max-width: 25vh;
+        height: auto;
+        margin: 0 auto;
+    }
+}
