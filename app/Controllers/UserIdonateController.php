@@ -88,7 +88,7 @@ class UserIdonateController extends BaseController
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
-        $emailService->setSubject('Monetary Donation');
+        $emailService->setSubject('Monetary Donation Confirmation');
     
         // HTML message with inline image
         $emailMessage = "
@@ -250,7 +250,7 @@ class UserIdonateController extends BaseController
         $emailService = \Config\Services::email();
         $emailService->setTo($myEmail);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
-        $emailService->setSubject('Acknowledgment of Donation');
+        $emailService->setSubject('Monetary Donation on Process');
         
         // Formal message
         $emailMessage = "
