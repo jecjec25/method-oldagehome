@@ -88,9 +88,9 @@ class UserIdonateController extends BaseController
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
-        $emailService->setSubject('Acknowledgment of Your Monetary Donation');
+        $emailService->setSubject('Monetary Donation');
     
-        // Formal HTML message with inline image
+        // HTML message with inline image
         $emailMessage = "
             <html>
             <body>
@@ -103,11 +103,9 @@ class UserIdonateController extends BaseController
             </html>
         ";
     
-        // Set the email message and specify the content type as HTML
+
         $emailService->setMessage($emailMessage);
         $emailService->setMailType('html');
-    
-        // Attach the image (if necessary, inline or regular attachment)
         $emailService->attach($filePath);
     
         // Send the email and log errors if any
@@ -115,7 +113,6 @@ class UserIdonateController extends BaseController
             log_message('error', 'Email sending failed: ' . $emailService->printDebugger(['headers']));
         }
     }
-    
     
     private function viewToUpdateReceivedMonetary($updateID)
     {
