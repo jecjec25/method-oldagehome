@@ -71,7 +71,7 @@ class UserIdonateController extends BaseController
         $file->move($_SERVER['DOCUMENT_ROOT'] . '/uploads/', $fileName);
 
         $imageHTML = '<img src="' . base_url('uploads/' . $fileName) . '" alt="Donation Image">';
-        $this->sendEmailReceived($email, $name, $imageHTML);
+        $this->sendEmailReceived($email, $name, $filePath );
         $update = $this->viewToUpdateReceivedMonetary($updateID);
 
             $this->updateTheInkindToReceivedMonetary($updateID);
@@ -108,7 +108,7 @@ class UserIdonateController extends BaseController
         // Set the email content and attach the image
         $emailService->setMessage($emailMessage);
         $emailService->setMailType('html'); // Ensure the email is sent as HTML
-        $emailService->attach($filePath, 'inline', basename($filePath), null, $cid);
+        $emailService->attach($filePath);
     
         // Send the email and log errors if any
         if (!$emailService->send()) {
