@@ -67,8 +67,8 @@ class UserIdonateController extends BaseController
 
         // Move the uploaded file to a writable location
         $fileName = $file->getRandomName(); // Generate a unique name
-        $filePath = $_SERVER['DOCUMENT_ROOT'] . 'uploads/' . $fileName;
-        $file->move($_SERVER['DOCUMENT_ROOT'] . 'uploads/', $fileName);
+        $filePath = $_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $fileName;
+        $file->move($_SERVER['DOCUMENT_ROOT'] . '/uploads/', $fileName);
 
 
         $this->sendEmailReceived($email, $name, $filePath);
