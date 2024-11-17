@@ -150,7 +150,19 @@ class UserIdonateController extends BaseController
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Monetary Donation');
-        $emailService->setMessage("Hello, " . $name . " Apologies. Unfortunately we didn't receive your donation. More Blessings to come! \n\nDonation has been Postponed. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
+        $emailService->setMessage("
+        <html>
+        <body>
+            <p>Dear {$name},</p>
+            <p>We regret to inform you that, unfortunately, we were unable to receive your donation at this time. Please accept our sincerest apologies for any inconvenience this may have caused.</p>
+            <p>We kindly inform you that your donation has been postponed. Rest assured, we are actively working on resolving this matter, and we will notify you as soon as it is processed.</p>
+            <p>We deeply appreciate your willingness to support our cause, and we look forward to your continued generosity.</p>
+            <p>Thank you for your understanding, and may blessings continue to come your way.</p>
+            <p>Warm regards, <br>Hapag Aruga Foundation Incorporated</p>
+        </body>
+        </html>
+    ");
+    
 
         $emailService->send();
     }
