@@ -88,23 +88,26 @@ class UserIdonateController extends BaseController
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
-        $emailService->setSubject('Monetary Donation');
+        $emailService->setSubject('Acknowledgment of Your Monetary Donation');
     
-        // HTML message with inline image
+        // Formal HTML message with inline image
         $emailMessage = "
             <html>
             <body>
-                <p>Hello, {$name}</p>
-                <p>Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More blessings to come!</p>
-                <p>Your donation has already been confirmed. God bless you, and we deeply appreciate your generosity.</p>
-                <p>Warm Regards,<br>Hapag Aruga Foundation Incorporated</p>
-             </body>
+                <p>Dear {$name},</p>
+                <p>We are deeply grateful for your generous contribution to the Hapag Aruga Foundation. Your monetary donation is invaluable to our mission and helps us continue our work in making a meaningful impact on the community.</p>
+                <p>We are pleased to inform you that your donation has been successfully received and confirmed. Your support will go a long way in helping those in need. We are honored to have your participation in this cause.</p>
+                <p>Once again, thank you for your kindness and generosity. Your support is greatly appreciated.</p>
+                <p>Warm regards, <br>Hapag Aruga Foundation Incorporated</p>
+            </body>
             </html>
         ";
     
-        // Set the email content and attach the image
+        // Set the email message and specify the content type as HTML
         $emailService->setMessage($emailMessage);
-        $emailService->setMailType('html'); // Ensure the email is sent as HTML
+        $emailService->setMailType('html');
+    
+        // Attach the image (if necessary, inline or regular attachment)
         $emailService->attach($filePath);
     
         // Send the email and log errors if any
@@ -112,6 +115,7 @@ class UserIdonateController extends BaseController
             log_message('error', 'Email sending failed: ' . $emailService->printDebugger(['headers']));
         }
     }
+    
     
     private function viewToUpdateReceivedMonetary($updateID)
     {
@@ -237,11 +241,28 @@ class UserIdonateController extends BaseController
         $emailService = \Config\Services::email();
         $emailService->setTo($myEmail);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
-        $emailService->setSubject('Donation');
-        $emailService->setMessage("Hello, " . $name . " Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nPlease wait for the confirmation. We will email it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
+        $emailService->setSubject('Acknowledgment of Donation');
+        
+        // Formal message
+        $emailMessage = "
+            <html>
+            <body>
+                <p>Dear {$name},</p>
+                <p>On behalf of the Hapag Aruga Foundation, we would like to extend our heartfelt gratitude for your generous donation. Your contribution plays a significant role in helping us continue our mission and make a positive impact in the community.</p>
+                <p>We are in the process of reviewing your donation, and you will receive a formal confirmation via email in due course.</p>
+                <p>Once again, thank you for your support. May you be richly blessed for your kindness and generosity.</p>
+                <p>Sincerely,</p>
+                <p>Hapag Aruga Foundation Incorporated</p>
 
+            </body>
+            </html>
+        ";
+    
+        $emailService->setMessage($emailMessage);
+        $emailService->setMailType('html'); // Ensure the email is sent as HTML
         $emailService->send();
     }
+    
     public function deletedonation($id = null)
     {
         $this->uidm->delete($id);
