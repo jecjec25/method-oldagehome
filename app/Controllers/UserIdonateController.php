@@ -374,7 +374,7 @@ class UserIdonateController extends BaseController
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
-        $emailService->setSubject('Donation');
+        $emailService->setSubject('In-kind Donation');
         $emailService->setMessage($emailMessage);
         $emailService->setMailType('html');
         $emailService->send();
@@ -441,7 +441,7 @@ class UserIdonateController extends BaseController
       $emailService = \Config\Services::email();
       $emailService->setTo($email);
       $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
-      $emailService->setSubject('Inkind Donation');
+      $emailService->setSubject('In-kind Donation Postponed');
       $emailService->setMessage($emailMessage);
       $emailService->setMailType('html');
       $emailService->send();
@@ -484,7 +484,7 @@ class UserIdonateController extends BaseController
             <body>
                 <p>Dear {$name},</p>
                 <p>On behalf of the Hapag Aruga Foundation, we would like to express our sincere gratitude for your generous in-kind donation. Your support is vital to our mission, and your contribution will help us continue to make a meaningful difference in the lives of those we serve.</p>
-                <p>We are pleased to confirm that we have received your donation. We deeply appreciate your generosity and commitment to our cause. Rest assured, we will process it accordingly, and we will send you an official confirmation shortly.</p>
+                <p>We are pleased to confirm that we have received your donation. We deeply appreciate your generosity and commitment to our cause. Rest assured, we will process it accordingly.</p>
                 <p>Once again, thank you for your kind support. Your contribution is invaluable to us, and we look forward to continuing to make a positive impact together.</p>
                 <p>Warm regards, <br>Hapag Aruga Foundation Incorporated</p>
             </body>
@@ -493,7 +493,7 @@ class UserIdonateController extends BaseController
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
-        $emailService->setSubject('Inkind Donation');
+        $emailService->setSubject('In-kind Donation Confirmation');
         $emailService->setMessage($emailMessage);
         $emailService->setMailType('html');
         $emailService->send();
