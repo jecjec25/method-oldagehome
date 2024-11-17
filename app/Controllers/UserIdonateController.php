@@ -70,14 +70,14 @@ class UserIdonateController extends BaseController
         $filePath = $_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $fileName;
         $file->move($_SERVER['DOCUMENT_ROOT'] . '/uploads/', $fileName);
 
-
+        $imageHTML = '<img src="' . base_url('uploads/' . $fileName) . '" alt="Donation Image">';
         $this->sendEmailReceived($email, $name, $imageHTML);
         $update = $this->viewToUpdateReceivedMonetary($updateID);
 
             $this->updateTheInkindToReceivedMonetary($updateID);
 
         $image = $_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $filePath;
-        $imageHTML = '<img src="' . base_url('uploads/' . $fileName) . '" alt="Donation Image">';
+
         // var_dump($imageHTML);
         return redirect()->to('/userdonatedtable');
     }
