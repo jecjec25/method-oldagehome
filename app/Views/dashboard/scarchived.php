@@ -185,7 +185,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($main as $k) : ?>
+                                            <?php 
+                                            $rowsPerPage = 10; // Number of rows per page
+                                            $totalRows = count($main); // Total number of rows
+                                            $totalPages = ceil($totalRows / $rowsPerPage); // Calculate total number of pages
+
+                                            // Determine the current page
+                                            $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+                                            $start = ($currentPage - 1) * $rowsPerPage;
+
+                                            // Slice the data for the current page
+                                            $pagedData = array_slice($main, $start, $rowsPerPage);
+
+                                            foreach ($pagedData as $k) : ?>
                                                 <tr>
                                                     <td><?= $k['lastname'] ?></td>
                                                     <td><?= $k['firstname'] ?></td>
@@ -215,6 +227,11 @@
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div id="paginationControls" class="pagination">
+                                    <?php for ($page = 1; $page <= $totalPages; $page++) : ?>
+                                        <a href="?page=<?= $page ?>" class="page-link"><?= $page ?></a>
+                                    <?php endfor; ?>
                                 </div>
                             </div>
                         </div>

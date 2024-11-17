@@ -60,21 +60,34 @@ class UserIdonateController extends BaseController
         $email = $receivedDon['Email'];
         $name = $receivedDon['FirstName'];
 
-        $this->sendEmailReceived($email, $name);
+        $file = $this->request->getFile('sendfile');
+        if (!$file || !$file->isValid()) {
+            return "No file uploaded or the upload is invalid.";
+        }
+
+        // Move the uploaded file to a writable location
+        $fileName = $file->getRandomName(); // Generate a unique name
+        $filePath = $_SERVER . 'uploads/' . $fileName;
+        $file->move($_SERVER . 'uploads/', $fileName);
+
+
+        $this->sendEmailReceived($email, $name, $filePath);
         $update = $this->viewToUpdateReceivedMonetary($updateID);
 
             $this->updateTheInkindToReceivedMonetary($updateID);
         
         return redirect()->to('/userdonatedtable');
     }
-    private function sendEmailReceived($email, $name)
+    private function sendEmailReceived($email, $name, $filePath)
     {
+        $cid = 'photo_cid';
+
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Monetary Donation');
         $emailService->setMessage("Hello, " . $name . "Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nYour Donation has Already Confirmed God Bless We Aprreciate it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
-
+        $emailService->attach($filePath, 'inline', null, null, $cid);
         $emailService->send();
     }
     private function viewToUpdateReceivedMonetary($updateID)

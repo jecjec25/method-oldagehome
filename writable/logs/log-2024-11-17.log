@@ -1,0 +1,33 @@
+CRITICAL - 2024-11-17 13:58:44 --> Undefined variable $file
+in APPPATH\Controllers\UserIdonateController.php on line 72.
+ 1 APPPATH\Controllers\UserIdonateController.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $file', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserIdonateController.php', 72)
+ 2 APPPATH\Controllers\UserIdonateController.php(63): App\Controllers\UserIdonateController->sendEmailReceived('changeldc11@gmail.com', 'Christia Angel')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserIdonateController->ReceivedMonetary()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserIdonateController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-17 13:59:51 --> Call to a member function attach() on string
+in APPPATH\Controllers\UserIdonateController.php on line 86.
+ 1 APPPATH\Controllers\UserIdonateController.php(63): App\Controllers\UserIdonateController->sendEmailReceived('changeldc11@gmail.com', 'Christia Angel')
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserIdonateController->ReceivedMonetary()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserIdonateController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-17 14:04:58 --> Call to a member function attach() on string
+in APPPATH\Controllers\UserIdonateController.php on line 86.
+ 1 APPPATH\Controllers\UserIdonateController.php(63): App\Controllers\UserIdonateController->sendEmailReceived('changeldc11@gmail.com', 'Christia Angel')
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserIdonateController->ReceivedMonetary()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserIdonateController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-17 14:19:12 --> Array to string conversion
+in APPPATH\Controllers\UserIdonateController.php on line 70.
+ 1 APPPATH\Controllers\UserIdonateController.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\UserIdonateController.php', 70)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserIdonateController->ReceivedMonetary()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserIdonateController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

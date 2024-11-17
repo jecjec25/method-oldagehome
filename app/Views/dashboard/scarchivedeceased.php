@@ -119,6 +119,19 @@
     .edit-button:hover {
         background-color: #45a049;
     }
+
+    .pagination a {
+        padding: 8px 16px;
+        margin: 0 4px;
+        border: 1px solid #ddd;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .pagination a.active {
+        background-color: #007bff;
+        color: white;
+    }
 </style>
 
 <body>
@@ -183,7 +196,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($main as $k) : ?>
+                                            <?php 
+                                            $rowsPerPage = 10; // Number of rows per page
+                                            $totalRows = count($main); // Total number of rows
+                                            $totalPages = ceil($totalRows / $rowsPerPage); // Calculate total number of pages
+
+                                            // Determine the current page
+                                            $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+                                            $start = ($currentPage - 1) * $rowsPerPage;
+
+                                            // Slice the data for the current page
+                                            $pagedData = array_slice($main, $start, $rowsPerPage);
+
+                                            foreach ($pagedData as $k) : ?>
                                                 <tr>
                                                     <td><?= $k['lastname'] ?></td>
                                                     <td><?= $k['firstname'] ?></td>
@@ -214,6 +239,14 @@
                                         </tbody>
                                     </table>
                                 </div>
+
+                                <!-- Pagination Controls -->
+                                <div class="pagination">
+                                    <?php for ($page = 1; $page <= $totalPages; $page++) : ?>
+                                        <a href="?page=<?= $page ?>" class="<?= ($page == $currentPage) ? 'active' : '' ?>"><?= $page ?></a>
+                                    <?php endfor; ?>
+                                </div>
+
                             </div>
                         </div>
                     </div>

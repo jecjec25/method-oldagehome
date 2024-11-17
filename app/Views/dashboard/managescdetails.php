@@ -13,94 +13,24 @@
         bkLib.onDomLoaded(nicEditors.allTextAreas);
     </script>
     <style>
-        .table {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .table-striped tbody>tr:nth-child(odd)>td,
-        .table-striped tbody>tr:nth-child(odd)>th {
-            background-color: #f9f9f9;
-        }
-        /* Modal styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-        .modal-content img {
-            width: 100%;
-            height: auto;
-        }
-        .close {
-            position: absolute;
-            top: 30px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        @media print {
-            #PrintButton, #DatePrepared {
-                display: none;
-            }
-        }
-        @page {
-            size: auto;
-            margin: 0;
-        }
-        /* Responsive styling */
+        .table { width: 100%; margin-bottom: 20px; }
+        .table-striped tbody>tr:nth-child(odd)>td, .table-striped tbody>tr:nth-child(odd)>th { background-color: #f9f9f9; }
+        .modal { display: none; position: fixed; z-index: 1000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8); }
+        .modal-content { margin: auto; display: block; width: 80%; max-width: 700px; }
+        .modal-content img { width: 100%; height: auto; }
+        .close { position: absolute; top: 30px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; }
+        @media print { #PrintButton, #DatePrepared { display: none; } }
+        @page { size: auto; margin: 0; }
         @media only screen and (max-width: 412px) {
-            .navbar-breadcrumb {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px;
-            }
-            .navbar-menu-wrapper {
-                justify-content: flex-start;
-                padding: 10px;
-            }
-            .navbar-nav {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .card {
-                margin: 0 10px;
-                padding: 10px;
-            }
-            .table-responsive {
-                overflow-x: auto;
-            }
-            .table thead, .table tbody {
-                display: block;
-            }
-            .table tbody tr {
-                display: block;
-                margin-bottom: 10px;
-            }
-            .table td, .table th {
-                display: block;
-                width: 100%;
-                text-align: left;
-            }
-            .table td img {
-                width: 100%;
-                height: auto;
-            }
+            .navbar-breadcrumb { flex-direction: column; align-items: flex-start; padding: 10px; }
+            .navbar-menu-wrapper { justify-content: flex-start; padding: 10px; }
+            .navbar-nav { display: flex; flex-direction: column; align-items: flex-start; }
+            .card { margin: 0 10px; padding: 10px; }
+            .table-responsive { overflow-x: auto; }
+            .table thead, .table tbody { display: block; }
+            .table tbody tr { display: block; margin-bottom: 10px; }
+            .table td, .table th { display: block; width: 100%; text-align: left; }
+            .table td img { width: 100%; height: auto; }
         }
     </style>
 </head>
@@ -108,19 +38,14 @@
     <div class="container-scroller">
         <?php include_once('includes/header.php');?>
         <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
-            &nbsp;
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
                 <ul class="navbar-nav mr-lg-2">
-                    <li class="nav-item ml-0">
-                        <h4 class="mb-0">Update Elder</h4>
-                    </li>
+                    <li class="nav-item ml-0"><h4 class="mb-0">Update Elder</h4></li>
                     <li class="nav-item">
                         <div class="d-flex align-items-baseline">
                             <p class="mb-0">Home</p>
                             <i class="typcn typcn-chevron-right"></i>
-                            <p class="mb-0">
-                                <a href="adddetails" style="color: white;">Register Elder</a>
-                            </p>
+                            <p class="mb-0"><a href="adddetails" style="color: white;">Register Elder</a></p>
                         </div>
                     </li>
                 </ul>
@@ -134,18 +59,16 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Elder</h4>
-                                <p class="card-description" style="padding-left: 20px;">
-                                    Update an Elder to Aruga Kapatid
-                                </p>
-                                    <div style="padding-left: 20px; margin-bottom: 10px;">
-                                        <label for="sortOption">Sort by:</label>
-                                        <select id="sortOption">
-                                            <option value="az" <?= $sortOption == 'az' ? 'selected' : '' ?>>A-Z by Last Name</option>
-                                            <option value="za" <?= $sortOption == 'za' ? 'selected' : '' ?>>Z-A by Last Name</option>
-                                            <option value="date_asc" <?= $sortOption == 'date_asc' ? 'selected' : '' ?>>By Date (Ascending)</option>
-                                            <option value="date_desc" <?= $sortOption == 'date_desc' ? 'selected' : '' ?>>By Date (Descending)</option>
-                                        </select>
-                                    </div>
+                                <p class="card-description" style="padding-left: 20px;">Update an Elder to Aruga Kapatid</p>
+                                <div style="padding-left: 20px; margin-bottom: 10px;">
+                                    <label for="sortOption">Sort by:</label>
+                                    <select id="sortOption">
+                                        <option value="az" <?= isset($sortOption) && $sortOption == 'az' ? 'selected' : '' ?>>A-Z by Last Name</option>
+                                        <option value="za" <?= isset($sortOption) && $sortOption == 'za' ? 'selected' : '' ?>>Z-A by Last Name</option>
+                                        <option value="date_asc" <?= isset($sortOption) && $sortOption == 'date_asc' ? 'selected' : '' ?>>By Date (Ascending)</option>
+                                        <option value="date_desc" <?= isset($sortOption) && $sortOption == 'date_desc' ? 'selected' : '' ?>>By Date (Descending)</option>
+                                    </select>
+                                </div>
 
                                 <form action="searchdets" method="get">
                                     <input name="searchsc" type="text">
@@ -213,6 +136,7 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <ul class="pagination" id="paginationControls"> </ul>
                             </div>
                         </div>
                     </div>
@@ -221,7 +145,6 @@
             </div>
         </div>
     </div>
-    <!-- Modal structure -->
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()" style="font-size:90px;">&times;</span>
         <div class="modal-content">
@@ -236,13 +159,44 @@
     <script src="login/js/settings.js"></script>
     <script src="login/js/todolist.js"></script>
     <script src="login/js/dashboard.js"></script>
+    <script src="https://code.jquery.com//jquery-3.7.1.js" integrity="sha256-eKHayi8LEQwp4NKxN+3qOVUtJn3QNZ0ciWLP4=" crossorigin="anonymous"></script>
+
     <script>
+        $(document).ready(function (){
+            const rowsPerPage = 7;
+            const rows = $('#tblscdetails tbody tr');
+            const rowsCount = rows.length;
+            const pageCount = Math.ceil(rowsCount / rowsPerPage);
+
+            for (let i = 1; i <= pageCount; i++) {
+                $('#paginationControls').append(`<li class="page-item"> <a href="#" class="page-link">${i}</a> </li>`);
+            }
+        
+            displayPage(1);
+
+            $('#paginationControls').on('click', '.page-link', function (e) {
+                e.preventDefault();
+                const page = parseInt($(this).text());
+                displayPage(page);
+            });
+
+            function displayPage(page) {
+                const start = (page - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+
+                rows.hide();
+                rows.slice(start, end).show();
+
+                $('#paginationControls .page-item').removeClass('active');
+                $(`#paginationControls .page-item:eq(${page - 1})`).addClass('active');
+            }
+        });
+
         document.getElementById('sortOption').addEventListener('change', function () {
             const selectedSort = this.value;
             window.location.href = `?sort=${selectedSort}`;
         });
-        
-        // JavaScript for modal functionality
+
         function openModal(img) {
             document.getElementById("modalImage").src = img.src;
             document.getElementById("imageModal").style.display = "block";

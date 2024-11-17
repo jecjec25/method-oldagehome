@@ -32,7 +32,7 @@ class SignupController extends BaseController
             'LastName'   => 'required|max_length[30]',
             'FirstName'  => 'required|max_length[30]',
             'Username'   => 'required|max_length[30]',
-            'Email'      => 'required|max_length[254]|valid_email',
+            'Email'      => 'required|max_length[254]|valid_email|is_unique[user.Email]',
             'ContactNumber' => 'required|max_length[13]|min_length[10]',
             'Password'   => 'required|max_length[255]|min_length[8]',
         ];
@@ -97,11 +97,12 @@ class SignupController extends BaseController
     public function AdminRegister()
     {
         helper(['form']);
+        $verificationToken = bin2hex(random_bytes(16));
         $rules = [
             'LastName'   => 'required|max_length[30]',
             'FirstName'  => 'required|max_length[30]',
             'Username'   => 'required|max_length[30]',
-            'Email'      => 'required|max_length[254]|valid_email',
+            'Email'      => 'required|max_length[254]|valid_email|is_unique[user.Email]',
             'ContactNumber' => 'required|max_length[13]|min_length[10]',
             'Password'   => 'required|max_length[255]|min_length[10]',
         ];
@@ -114,7 +115,7 @@ class SignupController extends BaseController
             if ($image && $image->isValid() && !$image->hasMoved()) 
             {
                 $myImage = $image->getRandomName();
-                $verificationToken = bin2hex(random_bytes(16));
+
                 $image->move($imagePath . '/upload/user_images/',  $myImage);
 
             $data = [
@@ -130,6 +131,8 @@ class SignupController extends BaseController
                 'verification_token' => $verificationToken,
                 'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
             ];
+
+            // var_dump($data);
             $userModel->save($data);
             $this->sendVerificationEmail($this->request->getVar('Email'), $verificationToken);
 
@@ -147,10 +150,13 @@ class SignupController extends BaseController
                     'Email'    => $this->request->getVar('Email'),
                     'ContactNo'    => $this->request->getVar('ContactNumber'),
                     'role'         => 'Admin',
+                    'verification_token' => $verificationToken,
                     'birthday'    => $this->request->getVar('birthday'),
                     'Password' => password_hash($this->request->getVar('Password'), PASSWORD_DEFAULT)
                 ];
                 $userModel->save($data);
+                $this->sendVerificationEmail($this->request->getVar('Email'), $verificationToken);
+
                 session()->setFlashdata('success', 'Saved. Please verify your email address in your email account.');
                 return redirect()->to('viewAdminRegister')->with('msg', 'You have Successfully Registered A new account');
             }

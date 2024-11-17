@@ -13,87 +13,102 @@
     <script type="text/javascript">
     bkLib.onDomLoaded(nicEditors.allTextAreas);
     </script>
+    <!-- Bootstrap CSS for Modal -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <style>
-.button-print {
-    float: left;
-}
-
-.table {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.table-striped tbody>tr:nth-child(odd)>td,
-.table-striped tbody>tr:nth-child(odd)>th {
-    background-color: #f9f9f9;
-}
-
-@media print {
-
-    #PrintButton,
-    .navbar-breadcrumb,
-    .sidebar,
-    .header {
-        display: none !important;
+    .button-print {
+        float: left;
     }
 
-    .content-wrapper {
-        width: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
+    .table {
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    .main-panel {
-        width: 100% !important;
+    .table-striped tbody>tr:nth-child(odd)>td,
+    .table-striped tbody>tr:nth-child(odd)>th {
+        background-color: #f9f9f9;
     }
-}
 
-@page {
-    size: auto;
-    /* auto is the initial value */
-    margin: 0;
-    /* this affects the margin in the printer settings */
+    @media print {
+        #PrintButton,
+        .navbar-breadcrumb,
+        .sidebar,
+        .header {
+            display: none !important;
+        }
 
+        .content-wrapper {
+            width: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-}
+        .main-panel {
+            width: 100% !important;
+        }
+    }
 
-.button-print {
-    text-align: right;
+    @page {
+        size: auto;
+        margin: 0;
+    }
 
-}
+    .button-print {
+        text-align: right;
+    }
 
-.button-print button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    .button-print button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-.edit-button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-}
+    .edit-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
 
-.edit-button:hover {
-    background-color: #45a049;
-}
+    .edit-button:hover {
+        background-color: #45a049;
+    }
+
+    /* Modal styles */
+    .modal-dialog {
+        max-width: 80%;
+    }
+
+    .pagination a {
+        padding: 8px 16px;
+        margin: 0 4px;
+        border: 1px solid #ddd;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .pagination a.active {
+        background-color: #007bff;
+        color: white;
+    }
 </style>
 
 <body>
     <div class="container-scroller">
-        <?php include_once('includes/header.php');?>
+        <?php include_once('includes/header.php'); ?>
         <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
             &nbsp;
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
@@ -111,20 +126,20 @@
                 </ul>
             </div>
         </nav>
+
         <div class="container-fluid page-body-wrapper">
-            <?php include_once('includes/sidebar.php');?>
+            <?php include_once('includes/sidebar.php'); ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Table Report of Deceased Elders
-                                </h4>
+                                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Table Report of Deceased Elders</h4>
                                 <p class="card-description" style="padding-left: 20px;">
                                     Table Report of Deceased Elders of Aruga-Kapatid Foundation Incorporated
                                 </p>
-                                <div class="button-print"><a class="btn btn-primary"
-                                href="<?= base_url('previewDeath/' .$fromdate. '/' . $todate ) ?>" id="PrintButton">Preview</a>
+                                <div class="button-print">
+                                    <a class="btn btn-primary" href="<?= base_url('previewDeath/' . $fromdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
                                 </div>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-striped project-orders-table" id="tblscdetails">
@@ -153,7 +168,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($Deceased as $k): ?>
+                                            <?php
+                                            // Pagination logic
+                                            $itemsPerPage = 3;  // Number of records per page
+                                            $totalItems = count($Deceased);  // Total number of records
+                                            $totalPages = ceil($totalItems / $itemsPerPage);  // Calculate total pages
+
+                                            // Get current page
+                                            $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+                                            $currentPage = max(1, min($currentPage, $totalPages));
+
+                                            // Calculate the starting index for the query
+                                            $startIndex = ($currentPage - 1) * $itemsPerPage;
+
+                                            // Get the records for the current page
+                                            $pagedData = array_slice($Deceased, $startIndex, $itemsPerPage);
+
+                                            foreach($pagedData as $k): ?>
                                             <tr>
                                                 <td><?=$k['lastname'] ?></td>
                                                 <td><?=$k['firstname'] ?></td>
@@ -163,37 +194,73 @@
                                                 <td><?=$k['gender'] ?></td>
                                                 <td><?=$k['marital_stat'] ?></td>
                                                 <td><?=$k['ContNum'] ?></td>
-                                                <td><img src="<?="upload/seniors/" .$k['ProfPic']?>" alt="Senior Image" style="width: 90px;height: 90px;"></td>
+                                                <td><img src="<?="upload/seniors/" .$k['ProfPic']?>" alt="Senior Image" style="width: 90px;height: 90px; cursor: pointer;" data-toggle="modal" data-target="#profileModal<?=$k['Id']?>"></td>
                                                 <td><?=$k['ComAdd'] ?></td>
                                                 <td><?=$k['EmergencyAdd'] ?></td>
                                                 <td><?=$k['EmergencyContNum'] ?></td>
                                                 <td><?=$k['RegDate'] ?></td>
                                                 <td><?=$k['datedeath'] ?></td>
                                                 <td><?=$k['causedeath'] ?></td>
+                                                <td><?=$k['scstatus'] ?></td>
                                                 <td>
-                                                    <?=$k['scstatus'] ?>
-                                                    <td>
                                                     <a href="<?= base_url('/vieweditdeceased/') . $k['Id']?>">
                                                         <button class="edit-button">Edit</button>
                                                     </a>
                                                 </td>
                                             </tr>
+
+                                            <!-- Modal for Profile Picture -->
+                                            <div class="modal fade" id="profileModal<?=$k['Id']?>" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel<?=$k['Id']?>" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="profileModalLabel<?=$k['Id']?>">Profile Picture</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <img src="<?="upload/seniors/" .$k['ProfPic']?>" alt="Senior Image" class="img-fluid" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>
+
+                               <!-- Pagination controls -->
+<div class="pagination">
+    <?php
+    $query = $_GET;
+    // Display pagination links
+    for ($i = 1; $i <= $totalPages; $i++) :
+        $query['page'] = $i;
+        $pageUrl = '?' . http_build_query($query);
+    ?>
+        <a href="<?= $pageUrl ?>" class="<?= ($i == $currentPage) ? 'active' : '' ?>"><?= $i ?></a>
+    <?php endfor; ?>
+</div>
+
+<p>Showing page <?= $currentPage ?> of <?= $totalPages ?> (<?= $totalItems ?> total entries)</p>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <a href="/viewreportdeath" class="btn btn-secondary">Back</a>
                     </div>
-
                 </div>
-                <?php include_once('includes/footer.php');?>
+                <?php include_once('includes/footer.php'); ?>
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS and dependencies for Modal -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="login/vendors/js/vendor.bundle.base.js"></script>
     <script src="login/vendors/chart.js/Chart.min.js"></script>
     <script src="login/js/off-canvas.js"></script>
@@ -202,7 +269,6 @@
     <script src="login/js/settings.js"></script>
     <script src="login/js/todolist.js"></script>
     <script src="login/js/dashboard.js"></script>
-
 </body>
 
 </html>
