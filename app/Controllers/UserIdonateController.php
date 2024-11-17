@@ -360,12 +360,23 @@ class UserIdonateController extends BaseController
     }
     private function sendInkindUser($email, $name)
     {
+        $emailMessage = "
+            <html>
+            <body>
+                <p>Dear {$name},</p>
+                <p>On behalf of the Hapag Aruga Foundation, we would like to extend our heartfelt gratitude for your generous in-kind donation. Your support plays a significant role in helping us achieve our mission and make a positive impact on the lives of those in need.</p>
+                <p>We would like to inform you that we are in the process of reviewing your donation. You will receive an official confirmation email shortly.</p>
+                <p>Once again, thank you for your kindness and generosity. Your contribution is deeply appreciated, and we are truly grateful for your support.</p>
+                <p>Warm regards, <br>Hapag Aruga Foundation Incorporated</p>
+            </body>
+            </html>
+        ";
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Donation');
-        $emailService->setMessage("Hello, " . $name . " Thank you for your in-kind donation to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nPlease wait for the confirmation. We will email it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
-
+        $emailService->setMessage($emailMessage);
+        $emailService->setMailType('html');
         $emailService->send();
     }
 
@@ -416,12 +427,23 @@ class UserIdonateController extends BaseController
     }
     private function sendEmailPostponedInkind($email, $name)
     {
+        $emailMessage = "
+            <html>
+            <body>
+                <p>Dear {$name},</p>
+                <p>We hope this message finds you well. We are writing to inform you that, unfortunately, we were unable to receive your recent in-kind donation to Hapag Aruga. As a result, we regret to inform you that your donation has been postponed.</p>
+                <p>We sincerely apologize for any inconvenience this may have caused, and we want to assure you that we are working diligently to resolve this matter as soon as possible. Your support is greatly valued, and we remain grateful for your generosity.</p>
+                <p>Once again, we apologize for the delay and we look forward to your continued support. More blessings to you!</p>
+                <p>Warm regards, <br>Hapag Aruga Foundation Incorporated</p>
+            </body>
+            </html>
+        ";
       $emailService = \Config\Services::email();
       $emailService->setTo($email);
       $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
       $emailService->setSubject('Inkind Donation');
-      $emailService->setMessage("Hello, " . $name . " Apologies. Unfortunately, we didn't receive your In-kind donation to Hapag Aruga. It has been postponed. More Blessings to come! \n\nYour Donation has been postponed. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
-
+      $emailService->setMessage($emailMessage);
+      $emailService->setMailType('html');
       $emailService->send();
     }
     private function viewToUpdate($updateID)
@@ -457,12 +479,23 @@ class UserIdonateController extends BaseController
 
       private function sendEmailReceivedInkind($email, $name)
       {
+        $emailMessage = "
+            <html>
+            <body>
+                <p>Dear {$name},</p>
+                <p>On behalf of the Hapag Aruga Foundation, we would like to express our sincere gratitude for your generous in-kind donation. Your support is vital to our mission, and your contribution will help us continue to make a meaningful difference in the lives of those we serve.</p>
+                <p>We are pleased to confirm that we have received your donation. We deeply appreciate your generosity and commitment to our cause. Rest assured, we will process it accordingly, and we will send you an official confirmation shortly.</p>
+                <p>Once again, thank you for your kind support. Your contribution is invaluable to us, and we look forward to continuing to make a positive impact together.</p>
+                <p>Warm regards, <br>Hapag Aruga Foundation Incorporated</p>
+            </body>
+            </html>
+        ";
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Inkind Donation');
-        $emailService->setMessage("Hello, " . $name . " Thank you for your in-kind donation to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nYour Donation has Already Confirmed God Bless We Appreciate it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
-
+        $emailService->setMessage($emailMessage);
+        $emailService->setMailType('html');
         $emailService->send();
       }
   
