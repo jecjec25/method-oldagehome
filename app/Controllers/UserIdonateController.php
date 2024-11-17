@@ -80,16 +80,39 @@ class UserIdonateController extends BaseController
     }
     private function sendEmailReceived($email, $name, $filePath)
     {
-        $cid = 'photo_cid';
-
+        $cid = 'photo_cid'; // Content-ID for the image
+    
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
         $emailService->setFrom('aruga.kapatid@gmail.com', 'Hapag Aruga Foundation');
         $emailService->setSubject('Monetary Donation');
-        $emailService->setMessage("Hello, " . $name . "Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More Blessings to come! \n\nYour Donation has Already Confirmed God Bless We Aprreciate it. \n\nWarm Regards, \nHapag Aruga Foundation Incorporated\n\n" . base_url());
-        $emailService->attach($filePath, 'inline', null, null, $cid);
-        $emailService->send();
+    
+        // HTML message with inline image
+        $emailMessage = "
+            <html>
+            <body>
+                <p>Hello, {$name}</p>
+                <p>Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More blessings to come!</p>
+                <p>Your donation has already been confirmed. God bless you, and we deeply appreciate your generosity.</p>
+                <p>Warm Regards,<br>Hapag Aruga Foundation Incorporated</p>
+                <p>
+                    <img src=\"cid:{$cid}\" alt=\"Donation Image\" style=\"max-width: 100%; height: auto;\">
+                </p>
+            </body>
+            </html>
+        ";
+    
+        // Set the email content and attach the image
+        $emailService->setMessage($emailMessage);
+        $emailService->setMailType('html'); // Ensure the email is sent as HTML
+        $emailService->attach($filePath, 'inline', basename($filePath), null, $cid);
+    
+        // Send the email and log errors if any
+        if (!$emailService->send()) {
+            log_message('error', 'Email sending failed: ' . $emailService->printDebugger(['headers']));
+        }
     }
+    
     private function viewToUpdateReceivedMonetary($updateID)
     {
         $update = $this->uidm->where('id', $updateID)->first();
