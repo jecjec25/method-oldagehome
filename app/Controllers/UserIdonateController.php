@@ -163,7 +163,7 @@ class UserIdonateController extends BaseController
         </html>
     ");
     
-
+    $emailService->setMailType('html');
         $emailService->send();
     }
     
