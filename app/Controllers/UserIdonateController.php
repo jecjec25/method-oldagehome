@@ -98,10 +98,7 @@ class UserIdonateController extends BaseController
                 <p>Thank you for donating to Hapag Aruga. We appreciate the donation you gave. More blessings to come!</p>
                 <p>Your donation has already been confirmed. God bless you, and we deeply appreciate your generosity.</p>
                 <p>Warm Regards,<br>Hapag Aruga Foundation Incorporated</p>
-                <p>
-                    <img src=\"cid:{$cid}\" alt=\"Donation Image\" style=\"max-width: 100%; height: auto;\">
-                </p>
-            </body>
+             </body>
             </html>
         ";
     
