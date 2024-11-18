@@ -154,18 +154,36 @@ class ViewController extends BaseController
                 ->findAll(),
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
             'events' => $this->events->where('EventID', $id)->where('status', 'Published')->find(),
-           'feedback' => $this->feedback->select('feedbacktbl.id, feedbacktbl.usersignsId, feedbacktbl.eventid,feedbacktbl.status,
-           feedbacktbl.announceid, feedbacktbl.feedback, user.userID, user.LastName,user.Username, user.FirstName, events.EventID, events.Title, events.Description, events.Organizer')
-           ->join('user', 'user.userID = feedbacktbl.usersignsId')
-           ->join('events', 'events.EventID = feedbacktbl.eventid')
-           ->where('feedbacktbl.eventid', $id)
-           ->where('feedbacktbl.status', 'Accepted')
-           ->findAll()
+            'feedback' => $this->feedback->select('feedbacktbl.id, feedbacktbl.usersignsId, feedbacktbl.eventid, feedbacktbl.status,
+                feedbacktbl.announceid, feedbacktbl.feedback, user.userID, user.LastName, user.Username, user.FirstName, events.EventID, events.Title, events.Description, events.Organizer')
+                ->join('user', 'user.userID = feedbacktbl.usersignsId')
+                ->join('events', 'events.EventID = feedbacktbl.eventid')
+                ->where('feedbacktbl.eventid', $id)
+                ->where('feedbacktbl.status', 'Accepted')
+                ->findAll()
         ];
+    
+        // Fetching the event details, which is expected to be a single event
         $data['news'] = $this->newsevents->where('id', $id)->where('status', 'Published')->find();
+    
+        // Check if 'events' data is returned and ensure it is an array
+        if (isset($data['events']) && is_array($data['events']) && !empty($data['events'])) {
+            foreach ($data['events'] as &$event) {
+                if (!empty($event['Attachments'])) {
+                    // Convert comma-separated string to array (if applicable)
+                    $event['Attachments'] = explode(',', $event['Attachments']);
+                }
+            }
+        } else {
+            // If no event is found, you can handle it appropriately
+            // For example, setting an empty array or providing a fallback message
+            $data['events'] = [];
+        }
+    
+        // Pass the data to the view
         return view('admin/newsevent', $data);
     }
-
+    
     public function eventForUsers($id)
     {
         $data = [

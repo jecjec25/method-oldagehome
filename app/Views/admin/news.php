@@ -151,8 +151,7 @@
                                         </div>
                                         <div class="details">
                                             <h3><?= $mevents['Title'] ?><br></h3>
-                                            <img src="<?= "/upload/events/" . $mevents['Attachments'] ?>" alt=""><br>
-                                            <a href="<?= base_url('newsvents/' . $mevents['EventID']) ?>">View Event</a>
+                                              <a href="<?= base_url('newsvents/' . $mevents['EventID']) ?>">View Event</a>
                                         </div>
                                     </li>
                                 <?php endif; ?>
