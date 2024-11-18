@@ -79,7 +79,6 @@
                                             <td><?=$mevents['Category']?></td>
                                             <td><?=$mevents['Atendees'] ?></td>
                                             <td>
-                                            <td>
     <?php if (!empty($mevents['Attachments'])): ?>
         <?php foreach ($mevents['Attachments'] as $attachment): ?>
             <?php
