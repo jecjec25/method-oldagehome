@@ -102,7 +102,6 @@
                     <input id="Attachments" name="Attachments" type="file" class="form-control">
                     <?php if ($main['Attachments']): ?>
                         <p><?= $main['Attachments']?></p>
-                    <img id="profile_image_preview"src="<?="/upload/events/"  . $main['Attachments'] ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />
                       <?php else: ?>
                           <img id="profile_image_preview" src="<?="/upload/events/"  . $main['Attachments'] ?>" alt="Profile Image" style="max-width: 100px; max-height: 100px;" />
                       <?php endif; ?>

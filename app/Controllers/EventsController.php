@@ -148,6 +148,8 @@ class EventsController extends BaseController
  
         $data['main'] = $this->admevent->where('EventID', $id)->first();
 
+        
+
         return view('dashboard/editevents', $data);
 
     }
