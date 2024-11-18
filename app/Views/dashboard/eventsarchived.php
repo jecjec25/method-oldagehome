@@ -75,7 +75,18 @@
                                                     <td><?= $events['End_date'] ?></td>
                                                     <td><?= $events['Category'] ?></td>
                                                     <td><?= $events['Atendees'] ?></td>
-                                                    <td><img src="<?="/upload/events/" . $events['Attachments'] ?>" style="width:50px; height:50px; border:box;"></td>
+                                                    <td><?php if (!empty($events['Attachments'])): ?>
+                                                            <?php foreach ($events['Attachments'] as $attachment): ?>
+                                                                <?php
+                                                                    // Trim any unwanted spaces or characters from the attachment name
+                                                                    $imagePath = base_url("/upload/events/") . trim($attachment);
+                                                                ?>
+                                                                <img src="<?= $imagePath ?>" alt="event image" style="width:50px; height:50px; border:box; margin-right: 5px;">
+                                                                    <?php endforeach; ?>
+                                                        <?php else: ?>
+                                                            <p>No attachments available</p>
+                                                        <?php endif; ?>
+                                                    </td>
                                                     <?php if ($events['End_date'] <= $currentDate) : ?>
                                                         <?php if ($events['Status'] === "Archive") : ?>
                                                             <td>Up to Date & <?= $events['Status'] ?></td>

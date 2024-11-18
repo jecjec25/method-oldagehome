@@ -96,28 +96,39 @@ class EventsController extends BaseController
         }
         }
 
-    public function Viewevents()
-    {
+        public function Viewevents()
+        {
             $data = [
-            'notif' => $this->userbooking->where('status', 'pending')->first(),
-            'getnotif' => $this->userbooking
-                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
-                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
-                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
-                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
-                    user.userID, user.LastName, user.FirstName')
-                ->join('user', 'user.userID = userbooking.usersignsId')
-                ->where('userbooking.status', 'Accepted')
-                ->orWhere('userbooking.status', 'Pending')
-                ->findAll(),
-            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
-        ];
- 
-      $data['main'] =  $this->admevent->where('Status', 'Draft')->findAll();
-
-        return view('dashboard/manageEvents', $data);
-    }
-
+                'notif' => $this->userbooking->where('status', 'pending')->first(),
+                'getnotif' => $this->userbooking
+                    ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                        userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                        userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                        userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                        user.userID, user.LastName, user.FirstName')
+                    ->join('user', 'user.userID = userbooking.usersignsId')
+                    ->where('userbooking.status', 'Accepted')
+                    ->orWhere('userbooking.status', 'Pending')
+                    ->findAll(),
+                'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+            ];
+        
+            // Fetch events
+            $events = $this->admevent->where('Status', 'Draft')->findAll();
+            
+            // If Attachments is a comma-separated string, convert it into an array
+            foreach ($events as &$event) {
+                if (!empty($event['Attachments'])) {
+                    // Convert comma-separated string to array (if applicable)
+                    $event['Attachments'] = explode(',', $event['Attachments']);
+                }
+            }
+        
+            $data['main'] = $events;
+        
+            return view('dashboard/manageEvents', $data);
+        }
+        
     public function update($id)
     {
             $data = [
@@ -259,7 +270,18 @@ class EventsController extends BaseController
             'currentDate' => date('Y-m-d H:i:s')
         ];
  
-        $data['main'] = $this->admevent->where('Status', 'published')->findAll();
+        $events = $this->admevent->where('Status', 'published')->findAll();
+
+                    // If Attachments is a comma-separated string, convert it into an array
+                    foreach ($events as &$event) {
+                        if (!empty($event['Attachments'])) {
+                            // Convert comma-separated string to array (if applicable)
+                            $event['Attachments'] = explode(',', $event['Attachments']);
+                        }
+                    }
+
+                    $data['main'] = $events;
+
         return view('dashboard/eventspublished', $data);
     }
     public function viewpublishevent($id)
@@ -302,6 +324,13 @@ class EventsController extends BaseController
         ];
  
        $data['main']= $this->admevent->where('Status','Archive')->orwhere('End_date <=', $currentDate)->findAll();
+
+       foreach ($data['main'] as &$event) {
+        if (!empty($event['Attachments'])) {
+            // Convert comma-separated string to array (if applicable)
+            $event['Attachments'] = explode(',', $event['Attachments']);
+        }
+    }
         return view('dashboard/eventsarchived', $data);
     }
 

@@ -39,5 +39,7 @@ class EventsModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    
+
    
 }

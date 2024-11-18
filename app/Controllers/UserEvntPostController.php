@@ -51,56 +51,86 @@ class UserEvntPostController extends BaseController
 
     public function usersavepost()
     {
-      
+        // Validation rules
         $rules = [
-            'Title'   => 'required|min_length[5]',
-            'Description'   => 'required|min_length[5]',
-            'Organizer'  => 'required|min_length[5]',
-            'Atendees'  => 'required|min_length[5]',
-            'Category'   => 'required',
+            'Title'       => 'required|min_length[5]',
+            'Description' => 'required|min_length[5]',
+            'Organizer'   => 'required|min_length[5]',
+            'Atendees'    => 'required|min_length[5]',
+            'Category'    => 'required', // Ensuring Category is provided
         ];
-        $imagePath = $_SERVER['DOCUMENT_ROOT'];
-
-        $image = $this->request->getFile('Attachments');
-        if($this->validate($rules))
-        {
-
-        if ($image && $image->isValid() && !$image->hasMoved()) 
-        {
-            $myImage = $image->getRandomName();
-
-            $image->move($imagePath . '/upload/events', $myImage);
-            $data = [
-                'Attachments' => $image,
-                'Attachments' => $myImage,
-                'usersignsid' => $this->request->getVar('usersignsId'),
-                'Title' => $this->request->getVar('Title'),
-                'Description' => $this->request->getVar('Description'),
-                'Organizer' => $this->request->getVar('Organizer'),
-                'Start_date' => $this->request->getVar('Start_date'),
-                'End_date' => $this->request->getVar('End_date'),
-                'Status' => 'Draft',
-                'Atendees' => $this->request->getVar('Atendees'),
-                'adminId' => $this->request->getVar('adminId'),
-                'type' => 'user',
-            ];
-            $categories = $this->request->getVar('Category');
-            if (!empty($categories)) {
-                $data['Category'] = implode(', ', $categories);
+    
+        // If form validation passes
+        if ($this->validate($rules)) {
+            // Path to store the uploaded images
+            $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/upload/events/';
+            
+            // Handle multiple image uploads
+            $images = $this->request->getFileMultiple('Attachments');
+    
+            // Check if the number of uploaded files exceeds the PHP limit
+            if (count($images) > ini_get('max_file_uploads')) {
+                // Return a custom error message if too many files
+                return redirect()->back()->with('error', 'You have exceeded the maximum number of file uploads.')->withInput();
             }
     
+            // Check if any file exceeds the allowed upload size based on PHP settings
+            foreach ($images as $file) {
+                // Check if file size exceeds the maximum allowed (upload_max_filesize or post_max_size)
+                if ($file->getError() == UPLOAD_ERR_INI_SIZE || $file->getError() == UPLOAD_ERR_FORM_SIZE) {
+                    return redirect()->back()->with('error', 'One or more files exceed the maximum allowed upload size.')->withInput();
+                }
+            }
+    
+            // If all checks pass, proceed with file uploads
+            $uploadedImages = $this->uploadImages($images, $imagePath);
+    
+            // Prepare data to save into the database
+            $data = [
+                'Attachments' => implode(',', $uploadedImages), // Store uploaded image paths as a comma-separated string
+                'usersignsid' => $this->request->getVar('usersignsId'),
+                'Title'       => $this->request->getVar('Title'),
+                'Description' => $this->request->getVar('Description'),
+                'Organizer'   => $this->request->getVar('Organizer'),
+                'Start_date'  => $this->request->getVar('Start_date'),
+                'End_date'    => $this->request->getVar('End_date'),
+                'Status'      => 'Draft',
+                'Atendees'    => $this->request->getVar('Atendees'),
+                'adminId'     => $this->request->getVar('adminId'),
+                'type'        => 'user',
+            ];
+    
+            // Handle the Category field: Convert to a plain comma-separated string without array signs
+            $categories = $this->request->getVar('Category');
+            if (!empty($categories)) {
+                // Ensure $categories is an array, then implode it into a comma-separated string
+                $data['Category'] = implode(', ', (array) $categories); // Store categories as a string without array notation
+            }
+    
+            // Save event data to the database
             $this->userevent->save($data);
     
-            return redirect()->to('/usereventpost')->with('success', 'Data has been Uploaded');
+            // Redirect to the success page with a success message
+            return redirect()->to('/usereventpost')->with('success', 'Data has been uploaded.');
+        } else {
+            // Validation failed, return with validation errors
+            return redirect()->back()->with('error', $this->validator->listErrors())->withInput();
         }
-        else
-        {
-            return redirect()->to('/newsAndEvents')->with('error', 'Error uploading image.');
+    }
+    
+    private function uploadImages($files, $uploadPath)
+    {
+        $uploadedImages = [];
+        foreach ($files as $file) {
+            if ($file->isValid() && !$file->hasMoved()) {
+                // Generate a random name for the image to avoid overwriting
+                $imageName = $file->getRandomName();
+                // Move the file to the server
+                $file->move($uploadPath, $imageName);
+                // Collect the uploaded file names
+                $uploadedImages[] = $imageName;
+            }
         }
-    }
-    else{
-        $data['validation'] = $this->validator;
-        echo'Invalid, try again.';
+        return $uploadedImages;
     }
     }
-}

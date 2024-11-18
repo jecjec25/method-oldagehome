@@ -111,7 +111,6 @@
                                             </div>
                                             <div class="details">
                                                 <h3><?= $mevents['Title'] ?><br></h3>
-                                                <img src="<?= "/upload/events/" . $mevents['Attachments'] ?>" alt=""><br>
                                                 <a href="<?= base_url('eventForUsers/' . $mevents['EventID']) ?>">View Event</a>
                                             </div>
                                         </li>
@@ -135,7 +134,6 @@
                                         </div>
                                         <div class="details">
                                             <h3><?= $mevents['Title'] ?><br></h3>
-                                            <img src="<?= "/upload/events/" . $mevents['Attachments'] ?>" alt=""><br>
                                             <a href="<?= base_url('eventForUsers/' . $mevents['EventID']) ?>">View Event</a>
                                         </div>
                                     </li>
