@@ -149,6 +149,14 @@ $routes->get('previewMonetary/(:any)/(:any)', 'Fullcalendar::previewMonetary/$1/
 $routes->get('previewLeft', 'Fullcalendar::previewLeft2');
 $routes->get('previewDeath', 'Fullcalendar::previewDeath2');
 
+$routes->get('insertMember', 'HomeController::viewOrg');
+$routes->get('updatemember', 'HomeController::organizer');
+$routes->get('editmember/(:any)', 'HomeController::viewedit/$1');
+$routes->post('HomeController/Insert', 'HomeController::insertOrganization');
+$routes->post('HomeController/updateOrganization/(:any)', 'HomeController::updateOrganization/$1');
+$routes->get('HomeController/deleteOrganizer/(:any)', 'HomeController::deleteOrganizer/$1');
+
+
 }
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
 $routes->get('/editproduct/(:num)', 'ProductsController::editprod/$1');

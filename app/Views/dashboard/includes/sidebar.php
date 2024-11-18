@@ -40,6 +40,24 @@
               </ul>
             </div>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#organization" aria-expanded="false" aria-controls="tables">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">Organization</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="organization">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/insertMember">Insert Member</a></li>
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/updatemember">Update Member</a></li>
+              </ul>
+              </div>
+          </li>
+
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-shopping-bag menu-icon"></i>
@@ -91,6 +109,8 @@
               </ul>
             </div>
           </li>
+
+          
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#calendar" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-calendar menu-icon"></i>
