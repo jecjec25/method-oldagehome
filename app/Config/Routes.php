@@ -8,7 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 
  $routes->get('/trylangmagsend', 'SignupController::trylangmagsend');
  
- $routes->get('/profile', 'UserController::Admin');
+ $routes->get('/profile', 'UserController::Admin' ,['filter'  => 'authGuard']);
  $routes->post('/updateProfile/(:any)', 'UserController::updateProfile/$1');
  $routes->get('/signup', 'SignupController::index', ['filter'  => 'guestFilter']);
  $routes->match(['get', 'post'], 'store', 'SignupController::store');
@@ -16,55 +16,55 @@ use CodeIgniter\Router\RouteCollection;
  $routes->get('/signin', 'UserController::index', ['filter' => 'guestFilter']);
  $routes->get('GoogleAuth', 'UserController::GoogleAuthLogin');
  
- $routes->get('/contact', 'ViewController::contact');
- $routes->get('/eligibility', 'ViewController::eligability');
- $routes->get('/about', 'ViewController::about');
- $routes->get('/example', 'ViewController::example');
- $routes->get('/rules', 'ViewController::rules');
- $routes->get('/services', 'ViewController::service');
+ $routes->get('/contact', 'ViewController::contact',['filter'  => 'guestFilter']);
+ $routes->get('/eligibility', 'ViewController::eligability',['filter'  => 'guestFilter']);
+ $routes->get('/about', 'ViewController::about', ['filter'  => 'guestFilter']);
+ $routes->get('/example', 'ViewController::example', ['filter'  => 'guestFilter']);
+ $routes->get('/rules', 'ViewController::rules', ['filter'  => 'guestFilter']);
+ $routes->get('/services', 'ViewController::service', ['filter'  => 'guestFilter']);
  $routes->match(['get', 'post'], 'viewAdminRegister', 'SignupController::Register');
  $routes->match(['get', 'post'], 'adminRegister', 'SignupController::AdminRegister');
  $routes->match(['get', 'post'], 'viewUsers', 'SignupController::viewUsers');
  $routes->match(['get', 'post'], 'deleteUser/(:any)', 'SignupController::deleteUser/$1');
 
- $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
- $routes->get('/logout', 'UserController::logout',['filter'  => 'authGuard']);
+ $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save',['filter'  => 'authGuard']);
+ $routes->get('/logout', 'UserController::logout');
 
- $routes->get('verify/(:any)', 'SignupController::verify/$1');
- $routes->get('/verify-email', 'SignupController::verifyEmailReminder');
+ $routes->get('verify/(:any)', 'SignupController::verify/$1',['filter'  => 'authGuard']);
+ $routes->get('/verify-email', 'SignupController::verifyEmailReminder',['filter'  => 'authGuard']);
 
 // $routes->get('/signin', 'Home::try');
 $routes->get('/', 'ViewController::home', ['filter' => 'guestFilter']);
 $routes->get('/contact', 'ViewController::contact', ['filter' => 'guestFilter']);
 $routes->get('/userbooking', 'ViewController::userbooking');
 $routes->match(['GET', 'POST'],'ContactController/contact', 'ContactController::submit');
-$routes->get('/donation', 'ViewController::donation');
+$routes->get('/donation', 'ViewController::donation', ['filter'  => 'guestFilter']);
 $routes->get('/about', 'ViewController::about', ['filter'  => 'guestFilter']);
-$routes->get('/rules', 'ViewController::rules', ['filter'  => 'guestFilter']);
+$routes->get('/rules', 'ViewController::rules', ['filter'  => 'authGuard']);
 $routes->get('/services', 'ViewController::service', ['filter'  => 'authGuard']);
 $routes->get('/products', 'ViewController::products', ['filter'  => 'guestFilter']);
 $routes->match(['GET', 'POST'],'UserController/register', 'UserController::save');
-$routes->get('/register', 'UserController::register');
+$routes->get('/register', 'UserController::register', ['filter'  => 'guestFilter']);
 $routes->get('/product', 'ProductsController::products', ['filter'  => 'authGuard']);
 
-$routes->get('/search', 'ViewController::search');
-$routes->get('/searchs', 'ViewController::searchs');
-$routes->get('/rule', 'ViewController::rule');
+$routes->get('/search', 'ViewController::search', ['filter'  => 'authGuard']);
+$routes->get('/searchs', 'ViewController::searchs', ['filter'  => 'authGuard']);
+$routes->get('/rule', 'ViewController::rule', ['filter'  => 'authGuard']);
 $routes->get('/eligibility', 'ViewController::eligibility', ['filter'  => 'uFilter'], ['filter'  => 'guestFilter']);
-$routes->get('/aboutus', 'ViewController::aboutus');
-$routes->get('/contactus', 'ViewController::contactus');
-$routes->get('/news', 'ViewController::news');
-$routes->get('/reps', 'ViewController::reports');
-$routes->get('/list', 'HomeController::index');
-$routes->get('/create', 'ViewController::create');
+$routes->get('/aboutus', 'ViewController::aboutus',['filter'  => 'authGuard']);
+$routes->get('/contactus', 'ViewController::contactus',['filter'  => 'authGuard']);
+$routes->get('/news', 'ViewController::news', ['filter'  => 'guestFilter']);
+$routes->get('/reps', 'ViewController::reports' ,['filter'  => 'authGuard']);
+$routes->get('/list', 'HomeController::index',['filter'  => 'authGuard']);
+$routes->get('/create', 'ViewController::create',['filter'  => 'authGuard']);
 $routes->post('/submit', 'ViewController::store');
 
-$routes->get('/unreadq', 'ViewController::unreadq');
-$routes->get('/readenq', 'ViewController::readenq');
-$routes->get('/manageproduct', 'ViewController::manageproduct');
-$routes->get('/addproduct', 'ViewController::addproduct');
-$routes->get('/mysearchproducts', 'ProductsController::searchproduct');
-$routes->get('/editscdetails', 'ViewController::editscdetails');
+$routes->get('/unreadq', 'ViewController::unreadq',['filter'  => 'authGuard']);
+$routes->get('/readenq', 'ViewController::readenq',['filter'  => 'authGuard']);
+$routes->get('/manageproduct', 'ViewController::manageproduct',['filter'  => 'authGuard']);
+$routes->get('/addproduct', 'ViewController::addproduct' ,['filter'  => 'authGuard']);
+$routes->get('/mysearchproducts', 'ProductsController::searchproduct',['filter'  => 'authGuard']);
+$routes->get('/editscdetails', 'ViewController::editscdetails',['filter'  => 'authGuard']);
 $routes->get('/editproduct', 'ViewController::editproduct');
 // $routes->get('/usersignin', 'ViewController::usersignin');
 // $routes->get('/usersignup', 'ViewController::usersignup');
@@ -202,7 +202,7 @@ if(session()->get('role') == 'Booker' && session()->get('is_verified') == 1){
     $routes->post('/usersavepost', 'UserEvntPostController::usersavepost');
 }
 
-$routes->get('/announcement', 'ViewController::announcement');
+$routes->get('/announcement', 'ViewController::announcement', ['filter'  => 'guestFilter']);
 
 $routes->post('/checkbooks', 'UserbookingController::checkbook');
 $routes->post('/bookcheck', 'UserbookingController::bookcheck');
@@ -296,7 +296,7 @@ $routes->get('searchannounce', 'AnnouncementController::searchannouncement');
 //user products
 
 //menu what elders need
-$routes->get('menu', 'MenuController::seemenu');
+$routes->get('menu', 'MenuController::seemenu', ['filter'  => 'guestFilter']);
 
 
 //admin userdonatedtable

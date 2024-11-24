@@ -51,7 +51,7 @@
                       <label for="exampleInputEmail1">To Dates</label>
                       <input class="form-control " id="todate" type="date" name="todate" required="true">
                     </div>
-                    <button type="submit" cl  ass="btn btn-primary mr-2" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2" name="submit">Submit</button>
                   </form>
                 </div>
               </div>

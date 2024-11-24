@@ -168,19 +168,20 @@
     </div>
 
     <div class="button-back">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Preview</button>
     </div>
     <div class="size">
         <div class="header">
+            <br>
+            <br>    
+            <br>
             <h5 style="margin: 0;">Republic of the Philippines</h5>
             <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
             <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
-            <h5 style="margin: 0;">Company Registration Number: CN2011421030</h5>
-            <h5 style="margin: 0;">Company TIN Number: 008-893-471</h5>
-            <h4 style="margin: 0; padding-top: 5px;">ARUGA-KAPATID FOUNDATION INCORPORATED</h4>
+            <h4 style="margin: 0; padding-top: 5px;">HAPAG ARUGA FOUNDATION INCORPORATED</h4>
         </div>
 
-        <h4 style="text-align: center;">ADMISION SLIP</h4>
+        <h4 style="text-align: center;">ADMISSION SLIP</h4>
         <?php if(isset($elder['scId'])):?>
             <table>
                 <tr>
@@ -539,4 +540,3 @@
 
 </body>
 </html>
-                    

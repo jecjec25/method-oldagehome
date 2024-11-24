@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview Monetary Report</title>
+    <title>Preview Monetary</title>
     <link rel="icon" type="image/png" href="/picture.png">
     <style>
+        /* Set landscape page orientation */
+        @page {
+            size: landscape;
+            margin: 10mm; /* Adjust margins if needed */
+        }
+
         body {
             font-family: Arial, sans-serif;
-            font-size: 15px;
+            font-size: 12px;  /* Reduced font size for better fit */
             margin: 0;
             padding: 0;
             background-color: #EDEEF1;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Changed to flex-start to avoid centering */
             height: 100vh;
+            overflow: auto;
         }
+
         .button-download {
             position: absolute;
             top: 20px;
@@ -37,6 +45,7 @@
         .button-download a:hover {
             background-color: #0056b3;
         }
+
         .button-back {
             position: absolute;
             top: 20px;
@@ -58,17 +67,17 @@
             background-color: #0056b3;
         }
 
-
+        /* Adjust size for landscape */
         .size {
-            width: 210mm;
-            min-height: 297mm;
+            width: 297mm; /* Landscape width */
+            min-height: 210mm; /* Landscape height */
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
             margin: 20px auto;
-            
-            margin-top: 450px;
+            overflow: auto; /* Ensure content fits without cutting off */
+            height: auto; /* Let the content stretch to fit */
         }
 
         .header {
@@ -88,7 +97,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            table-layout: fixed;
+            table-layout: fixed; /* Makes sure the table doesn't stretch */
         }
 
         table, th, td {
@@ -97,8 +106,9 @@
         }
 
         th, td {
-            padding: 8px;
+            padding: 6px;  /* Reduced padding to make table content fit better */
             text-align: left;
+            font-size: 11px;  /* Smaller font size for the table */
         }
 
         .footer {
@@ -121,31 +131,123 @@
         .content {
             page-break-after: auto;
         }
+        .container-header{
+            font-size:13px;
+        }
+        @media print {
+            header, footer {
+                display: none;
+            }
+
+            body {
+                background-color: white; /* Remove background during print */
+                visibility: visible; /* Ensure body content is visible */
+            }
+
+            /* Hide buttons during print */
+            .button-download, .button-back, .button-print {
+                display: none;
+            }
+
+            .size {
+                width: 297mm; /* Landscape width */
+                min-height: 210mm; /* Landscape height */
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                box-sizing: border-box;
+                margin: 0;
+                overflow: auto; /* Ensure content fits without cutting off */
+                height: auto; /* Let the content stretch to fit */
+            }
+            @page {
+        margin: 0;
+    }
+
+
+            .header {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                table-layout: fixed; /* Makes sure the table doesn't stretch */
+            }
+
+            table, th, td {
+                border: 1px solid black;
+                word-wrap: break-word;
+            }
+
+            th, td {
+                padding: 6px;  /* Reduced padding to make table content fit better */
+                text-align: left;
+                font-size: 11px;  /* Smaller font size for the table */
+            }
+
+            .footer {
+                margin-top: 40px;
+            }
+
+            .footer .report {
+                font-weight: 600;
+            }
+
+            .signatures {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .signatures p {
+                margin: 2px 0;
+            }
+
+            /* Ensure content is printed in a clean format without breaking */
+            .content {
+                page-break-after: auto;
+            }
+        }
+
+        .button-download button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
     </style>
 </head>
 <body>
+
+<div class="button-download" style="margin-top:50px;">
+    <!-- Print button is hidden during print -->
+    <button class="print-button" onclick="window.print()">Print This Page</button>
+</div>
+
     <div class="button-download">
-        <a href="<?= base_url('getReportsMonatary/' .$fromdate. '/' . $todate ) ?>">Print</a>
+    <a href="<?= base_url('getReportsMonatary/' .$fromdate. '/' . $todate ) ?>">Print</a>
     </div>
     <div class="button-back">
         <a href="javascript:history.back()">Back</a>
     </div>
     <div class="size">
         <div class="header">
-            <img src="<?= base_url('picture.jpg') ?>" alt="Logo">
-            <h5 style="margin: 0;">Republic of the Philippines</h5>
-            <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
-            <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
-            <h5 style="margin: 0;">Company Registration Number: CN2011421030</h5>
-            <h5 style="margin: 0;">Company TIN Number: 008-893-471</h5>
-            <h4 style="margin: 0; padding-top: 5px;">ARUGA-KAPATID FOUNDATION INCORPORATED</h4>
+        <div class="container-header">
+            <h4 style="margin: 0;">Republic of the Philippines</h4>
+            <h4 style="margin: 0;">Province of Oriental Mindoro</h4>
+            <h4 style="margin: 0;">Barangay Managpi, Calapan City</h4>
+            <h4 style="margin: 0; padding-top: 5px;">HAPAG ARUGA FOUNDATION INCORPORATED</h4>
+            </div>
         </div>
-
-        <h3 style="text-align: center;">Aruga Kapatid Foundation Incorporated</h3>
-        <h4 style="text-align: center;">Elder Care Program Participant Report</h4>
-
-        <p>Date: <?= $currentDate ?></p>
-        <p>Reporting Period: <?= $fromdate ?> - <?= $todate ?></p>
+        <h4 style="text-align: center; font-size:13px;">CASH DONATIONS</h4>
+        <p>Date: <?= date('F j, Y', strtotime($currentDate)) ?></p>
+        <p>Reporting Period: <?= date('F j, Y', strtotime($fromdate)) ?> - <?= date('F j, Y', strtotime($todate)) ?></p>
 
         <table>
             <thead>
@@ -169,7 +271,7 @@
                     <?php
                     $dateString = $mntry['donationdate'];
                     $date = new DateTime($dateString);
-                    echo $date->format('F j, Y g:i A');
+                    echo $date->format('F j, Y');
                     ?>
                 </td>
                 <td><?= $mntry['establishment'] ?></td>
@@ -178,8 +280,8 @@
                 <td><?= $mntry['middlename'] ?></td>
                 <td><?= $mntry['contactnum'] ?></td>
                 <td><?= $mntry['referencenum'] ?></td>
-                <td><?= $mntry['cashDonation'] ?></td>
-                <td><?= $mntry['cashCheck']?></td>
+                <td><?= number_format($mntry['cashDonation'], 2) ?></td>
+                <td><?= number_format($mntry['cashCheck'], 2)?></td>
                 <td><?= $mntry['mumosahapag'] ?></td>
                     </tr>
                 <?php endforeach; ?>
@@ -188,30 +290,8 @@
 
         <p><strong>Total Cash Donation:</strong> <?=  number_format($totals['total_cash_donation'], 2)?></p>
         <p><strong>Total Cash Check:</strong> <?= number_format($totals['total_cash_check'], 2)?></p>
-        <p><strong>Total Mumo sa Hapag:</strong><?= number_format($totals['total_mumosahapag'], 2)?></p>
-        <p class="summary">Summary</p>
-        <p>During the reporting period, a total of <?= $count ?> monetary donations were received by Aruga Kapatid Foundation Incorporated.</p>
-                <div class="acknowledgement">
-                    <p>Acknowledgement</p>
-                    <p>Thank you to all sponsors, volunteers, and attendees for their support and participation in the events.</p>
-                </div>
-        <div class="footer">
-            <p class="report">Report Generated By:</p>
-            <br>
-            <div class="signatures">
-                <p>Henry Dacanay III</p>
-                <p>Admin Staff</p>
-            </div>
-            <p class="report">Approved By:</p>
-            <br>
-            <div class="signatures">
-                <p>Lito Vergara</p>
-                <p>Administrator</p>
-            </div>
+        <p><strong>Total Mumo sa Hapag:</strong> <?= number_format($totals['total_mumosahapag'], 2)?></p>
         </div>
     </div>
-
-
 </body>
 </html>
-                    

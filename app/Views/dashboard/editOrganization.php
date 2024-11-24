@@ -35,9 +35,9 @@
         </ul>
       </div>
     </nav>
-    <div class="container-fluid page-body-wrapper">     
+    <div class="container-fluid page-body-wrapper">
       <?php include_once('includes/sidebar.php'); ?>
-      <div class="main-panel">        
+      <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
@@ -48,14 +48,22 @@
                     Elder Needs of Aruga-Kapatid Foundation Incorporated
                   </p>
                   <form action="<?= base_url("HomeController/updateOrganization/" . $organizer['id']) ?>" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">Profile</label>
-                      <?php if (!empty($organizer['img'])): ?>
-                        <!-- Show current image if exists -->
-                     
-                      <?php endif; ?>
-                      <input name="img" type="file" accept="image/*" class="form-control">
+                  <div class="form-group">
+                    <label for="exampleInputUsername1">Profile</label>
+                    <?php if (!empty($organizer['img'])): ?>
+                      <!-- Show current image if it exists -->
+                      <div>
+                        <img id="current-img" src="<?= base_url('images/' . $organizer['img']) ?>" alt="Current Profile Image" style="max-width: 150px; display: block; margin-bottom: 10px;">
+                      </div>
+                      <!-- Hidden input to pass current image path -->
+                      <input type="hidden" name="current_img" value="<?= $organizer['img'] ?>">
+                    <?php endif; ?>
+                    <!-- Preview selected image -->
+                    <div>
+                      <img id="preview-img" style="max-width: 150px; display: none; margin-bottom: 10px;">
                     </div>
+                    <input name="img" type="file" accept="image/*" class="form-control" onchange="previewImage(event)">
+                  </div>
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Name</label>
@@ -78,6 +86,34 @@
   </div>
 
   <script>
+    // Function to preview the selected image
+    function previewImage(event) {
+      const previewImg = document.getElementById('preview-img');
+      const currentImg = document.getElementById('current-img');
+      const file = event.target.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          previewImg.src = e.target.result;
+          previewImg.style.display = 'block'; // Show the preview image
+        };
+        reader.readAsDataURL(file);
+
+        // Hide the current image preview if available
+        if (currentImg) {
+          currentImg.style.display = 'none';
+        }
+      } else {
+        // If no file is selected, reset the preview
+        previewImg.src = '';
+        previewImg.style.display = 'none';
+        if (currentImg) {
+          currentImg.style.display = 'block';
+        }
+      }
+    }
+
     // Ensure only numeric values are input for "ContNum" and "EmergencyContNum"
     var contNumInput = document.getElementById("ContNum");
     if (contNumInput) {

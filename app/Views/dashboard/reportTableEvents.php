@@ -20,19 +20,22 @@
         }
 
         .button-print a {
-            background-color: #007bff;
-            color: #fff;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-        }
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none !important;
+    }
 
-        .button-print a:hover {
-            background-color: #0056b3;
-        }
+    .button-print a:hover {
+        background-color: #007bff;  /* Same color as normal state */
+        color: #fff; /* Keep the text color same */
+        text-decoration: none; /* Remove any underline if added */
+    }
 
+      
         .table {
             width: 100%;
             margin-bottom: 20px;
@@ -81,13 +84,9 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-            /* Darker blue on hover */
-        }
-    </style>
+        } 
+        
+        </style>
 </head>
 
 <body>

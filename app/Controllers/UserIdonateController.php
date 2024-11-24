@@ -786,8 +786,9 @@ class UserIdonateController extends BaseController
                 userdonation.middlename, userdonation.contactnum, userdonation.donationdate, userdonation.establishment, userdonation.cashDonation,userdonation.cashCheck, 
                 userdonation.picture, userdonation.referencenum, userdonation.message,userdonation.status')
                 ->join('user', 'user.userID = userdonation.usersignsId')->where('DATE(donationdate) >=', $fromdate)
-                                         ->where('DATE(donationdate) <=', $todate)
-                                         ->findAll(),
+                ->where('status', 'Received')
+                ->where('DATE(donationdate) <=', $todate)
+                ->findAll(),
         ];
 
         return view('dashboard/searchMonetary', $data);

@@ -179,15 +179,146 @@
         .button-print button:hover {
             background-color: #0056b3;
         }
+        @media print {
+    /* Prevent margins and padding from affecting print layout */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hide all unnecessary UI elements like buttons and page controls */
+    .button-download,
+    .button-back,
+    .button-print,
+    .print-button {
+        display: none;
+    }
+
+    /* Hide the header and footer of the page */
+    header, footer {
+        display: none;
+    }
+
+    /* Hide browser-specific header and footer like the URL */
+    @page {
+        margin: 0;
+    }
+
+    /* Ensure that the main content is visible */
+    .size {
+        width: 8.5in; /* Standard paper size for printing */
+        min-height: auto; /* Allow dynamic height */
+        background-color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    /* Make sure all tables and data fit within the printable page */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    th, td {
+        padding: 4px; /* Reduce padding for better fit */
+        text-align: left;
+        word-wrap: break-word; /* Ensure long words break correctly */
+    }
+
+    /* Adjust header for printing */
+    .header img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 120px;
+    }
+
+    h4, h5 {
+        margin: 0;
+        text-align: center;
+    }
+
+    .content {
+        margin-top: 20px;
+    }
+
+    /* Ensure signature section layout is neat */
+    .signature-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .signature-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 45%; /* Space for both signatures */
+    }
+
+    .signature-line {
+        border-bottom: 1px solid black;
+        width: 200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Ensure that no URL or browser details are printed */
+    body {
+        visibility: visible; /* Ensure the page is visible when printing */
+    }
+
+    /* Print settings: hide print button or any print UI controls */
+    .button-download,
+    .button-back,
+    .button-print {
+        display: none;
+    }
+
+    /* Make sure the printed content looks clean and centered */
+    .content {
+        margin-top: 20px;
+        page-break-before: always;
+    }
+
+    /* Adjust for long tables */
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    /* Ensure all input fields and other form elements are styled to fit printout */
+    input[type="text"] {
+        width: auto;
+        padding: 4px;
+        border: none;
+        background-color: transparent;
+    }
+
+    /* Ensure the footer or extra page information is hidden */
+    .footer {
+        display: none;
+    }
+
+    /* Styling for long contents, ensuring everything fits well within the page */
+    .size {
+        page-break-after: auto;
+    }
+}
+
     </style>
 </head>
 <body>
-    
+        <div class="button-print" style="margin-top:50px;">
+    <button class="print-button" onclick="window.print()">Print This Page</button>
+    </div>
 <form action="<?= base_url('saveToPdfSlip/' . $elder['Id'])?>" method="GET">
     <div class="button-download">
     </div>
     <div class="button-print">
-    <button id="saveButton">Save</button>
+    <button id="saveButton">Export</button>
     <div id="responseMessage"></div>
 
     </div>
@@ -195,17 +326,17 @@
     <div class="button-back">
         <a href="javascript:history.back()">Back</a>
     </div>
+
     <div class="size">
         <div class="header">
             <h5 style="margin: 0;">Republic of the Philippines</h5>
             <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
             <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
-            <h5 style="margin: 0;">Company Registration Number: CN2011421030</h5>
-            <h5 style="margin: 0;">Company TIN Number: 008-893-471</h5>
-            <h4 style="margin: 0; padding-top: 5px;">ARUGA-KAPATID FOUNDATION INCORPORATED</h4>
+            <h4 style="margin: 0; padding-top: 5px;">HAPAG ARUGA FOUNDATION INCORPORATED</h4>
         </div>
+        
 
-        <h4 style="text-align: center;">ADMISION SLIP</h4>
+        <h4 style="text-align: center;">ADMISSION SLIP</h4>
 
 <input type="hidden" name="casenum" value="<?= $casenum?>">
 <input type="hidden" name="birthplace" value="<?= $birthplace?>">

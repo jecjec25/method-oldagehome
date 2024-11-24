@@ -115,10 +115,16 @@ class NewController extends BaseController
         $data['main']= $this->main->where('scstatus', 'Left')->findAll();
         $closestLowerRecord = $this->main
         ->where('scstatus', 'Left')
-        ->orderBy('RegDate', 'ASC')
-        ->first(); // Getting the record with the closest lower date
+        ->orderBy('departuredate', 'ASC')
+        ->first();
 
-        $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A'; 
+        $LatestDate = $this->main
+        ->where('scstatus', 'Left')
+        ->orderBy('departuredate', 'DESC')
+        ->first();
+
+        $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['departuredate'] : 'N/A'; 
+        $LatestDates = $LatestDate ? $LatestDate['departuredate'] : 'N/A'; 
 
         $count = $this->main->where('scstatus', 'Left')
                             ->countAllResults();
@@ -163,16 +169,6 @@ class NewController extends BaseController
         .report-info {
             margin: 20px 0;
         }
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .table th, .table td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-            font-size: 10px;
-        }
         .summary {
             font-weight: 600;
             margin-top: 20px;
@@ -199,38 +195,89 @@ class NewController extends BaseController
         }
         
         /* Add this CSS style for table cells */
-            .table td {
-                max-width: 150px; /* Adjust as needed */
-                overflow: hidden;
-                text-overflow: ellipsis;
-             
-            }
-        
-            .table th, .table td {
-                         font-size: 15px; /* Reduce font size for better fit */
-            }
-        
+            .table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+        .table th, .table td {
+            border: 1px solid black;
+            padding: 4px; /* Reduced padding for more compactness */
+            text-align: left;
+            font-size: 9px; /* Further reduced font size to fit content */
+            word-wrap: break-word;
+            white-space: nowrap; /* Prevent word wrapping, keep content in one line */
+            overflow: hidden; 
+            text-overflow: ellipsis; /* Show ellipsis when content overflows */
+        }
+
+        /* Specific column widths */
+        .table th:nth-child(1), .table td:nth-child(1) {
+            width: 10%; /* Last Name */
+        }
+
+        .table th:nth-child(2), .table td:nth-child(2) {
+            width: 10%; /* First Name */
+        }
+
+        .table th:nth-child(3), .table td:nth-child(3) {
+            width: 10%; /* Middle Name */
+        }
+
+        .table th:nth-child(4), .table td:nth-child(4) {
+            width: 8%; /* Nickname */
+        }
+
+        .table th:nth-child(5), .table td:nth-child(5) {
+            width: 8%; /* Date of Birth */
+        }
+
+        .table th:nth-child(6), .table td:nth-child(6) {
+            width: 6%; /* Gender */
+        }
+
+        .table th:nth-child(7), .table td:nth-child(7) {
+            width: 8%; /* Marital Status */
+        }
+
+        .table th:nth-child(8), .table td:nth-child(8) {
+            width: 8%; /* Contact Number */
+        }
+
+        .table th:nth-child(9), .table td:nth-child(9) {
+            width: 12%; /* Address */
+        }
+
+        .table th:nth-child(10), .table td:nth-child(10) {
+            width: 8%; /* Registration Date */
+        }
+
+        .table th:nth-child(11), .table td:nth-child(11) {
+            width: 8%; /* Date of Death */
+        }
+
+        .table th:nth-child(12), .table td:nth-child(12) {
+            width: 10%; /* Cause of Death */
+        }
+                
         </style>
         </head>
         <body>
-            <div class="header">
-                <img src="' . $imageSrc . '" alt="Logo">
+            <div class="header" style="font-size:16px;">
                 <h5>Republic of the Philippines</h5>
                 <h5>Province of Oriental Mindoro</h5>
                 <h5>Barangay Managpi, Calapan City</h5>
-                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
-                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
-                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+                <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
             </div>
                 <br>
             <div class="title">
-                <h3>Aruga Kapatid Foundation Incorporated</h3>
-                <h4>Elder Care Program Participant Report</h4>
+                <h3 style="font-size:15px;">LIST OF ELDERS (LEFT)</h3>
             </div>
 
             <div class="report-info">
-                <p>Date: ' . $currentDate . '</p>
-                <p>Reporting Period: '. $closestLowerDate .' - '. $currentDate . '</p>
+                <p>Date: ' . date('F j, Y',strtotime($currentDate)) . '</p>
+                <p>Reporting Period: '. date('F j, Y', strtotime($closestLowerDate)) .' - '. date('F j, Y',strtotime($LatestDates)) . '</p>
             </div>
             
             <table class="table">
@@ -274,26 +321,6 @@ class NewController extends BaseController
         <p class="summary">Summary</p>
         <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
 
-        <div class="footer">
-            <div class="signature-group">
-                <div class="signature-section">
-                    <p class="generated-by">
-                        <strong>Report Generated By:</strong>
-                        <div class="signature-line"></div>
-                        <br>HENRY A. DACANAY III
-                        <strong><br>ADMIN STAFF</strong>
-                    </p>
-                </div>
-                <br>
-                <div class="signature-section">
-                    <p class="approved-by">
-                        <strong>Approved By:</strong>
-                        <div class="signature-line"></div>
-                        <br>LITO C. VERGARA
-                        <strong><br>ADMINISTRATOR</strong>
-                    </p>
-                </div>
-            </div>
         </div>
         </body>
         </html>';
@@ -359,10 +386,17 @@ class NewController extends BaseController
 
         $closestLowerRecord = $this->main
         ->where('scstatus', 'Deceased')
-        ->orderBy('RegDate', 'ASC')
+        ->orderBy('datedeath', 'ASC')
         ->first(); // Getting the record with the closest lower date
 
-        $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A'; 
+        $latest = $this->main
+        ->where('scstatus', 'Deceased')
+        ->orderBy('datedeath', 'DESC')
+        ->first(); // Getting the record with the closest lower date
+
+        $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['datedeath'] : 'N/A'; 
+
+        $LatestDeath = $latest ? $latest['datedeath'] : 'N/A'; 
 
         $count = $this->main->where('scstatus', 'Deceased')
                             ->countAllResults();
@@ -407,16 +441,7 @@ class NewController extends BaseController
         .report-info {
             margin: 20px 0;
         }
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .table th, .table td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-            font-size: 10px;
-        }
+        
         .summary {
             font-weight: 600;
             margin-top: 20px;
@@ -443,38 +468,92 @@ class NewController extends BaseController
         }
         
         /* Add this CSS style for table cells */
-            .table td {
-                max-width: 150px; /* Adjust as needed */
-                overflow: hidden;
-                text-overflow: ellipsis;
-             
-            }
-        
-            .table th, .table td {
-                         font-size: 15px; /* Reduce font size for better fit */
-            }
-        
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.table th, .table td {
+    border: 1px solid black;
+    padding: 4px; /* Reduced padding for more compactness */
+    text-align: left;
+    font-size: 9px; /* Further reduced font size to fit content */
+    word-wrap: break-word;
+    white-space: nowrap; /* Prevent word wrapping, keep content in one line */
+    overflow: hidden; 
+    text-overflow: ellipsis; /* Show ellipsis when content overflows */
+}
+
+/* Specific column widths */
+.table th:nth-child(1), .table td:nth-child(1) {
+    width: 10%; /* Last Name */
+}
+
+.table th:nth-child(2), .table td:nth-child(2) {
+    width: 10%; /* First Name */
+}
+
+.table th:nth-child(3), .table td:nth-child(3) {
+    width: 10%; /* Middle Name */
+}
+
+.table th:nth-child(4), .table td:nth-child(4) {
+    width: 8%; /* Nickname */
+}
+
+.table th:nth-child(5), .table td:nth-child(5) {
+    width: 8%; /* Date of Birth */
+}
+
+.table th:nth-child(6), .table td:nth-child(6) {
+    width: 6%; /* Gender */
+}
+
+.table th:nth-child(7), .table td:nth-child(7) {
+    width: 8%; /* Marital Status */
+}
+
+.table th:nth-child(8), .table td:nth-child(8) {
+    width: 8%; /* Contact Number */
+}
+
+.table th:nth-child(9), .table td:nth-child(9) {
+    width: 12%; /* Address */
+}
+
+.table th:nth-child(10), .table td:nth-child(10) {
+    width: 8%; /* Registration Date */
+}
+
+.table th:nth-child(11), .table td:nth-child(11) {
+    width: 8%; /* Date of Death */
+}
+
+.table th:nth-child(12), .table td:nth-child(12) {
+    width: 10%; /* Cause of Death */
+}
+
         </style>
         </head>
         <body>
-            <div class="header">
-                <img src="' . $imageSrc . '" alt="Logo">
+            <div class="header" style="font-size:1rem;">
+
                 <h5>Republic of the Philippines</h5>
                 <h5>Province of Oriental Mindoro</h5>
                 <h5>Barangay Managpi, Calapan City</h5>
-                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
-                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
-                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+                <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
             </div>
                 <br>
             <div class="title">
-                <h3>Aruga Kapatid Foundation Incorporated</h3>
-                <h4>Elder Care Program Participant Report</h4>
+                <h3 style="font-size:15px;">LIST OF ELDERS (DECEASED)</h3>
+
             </div>
 
             <div class="report-info">
-                <p>Date: ' . $currentDate . '</p>
-                <p>Reporting Period: '. $closestLowerDate .' - '. $currentDate . '</p>
+                <p>Date: ' . Date('F j, Y',strtotime($currentDate)) . '</p>
+                <p>Reporting Period: '. date('F j, Y', strtotime($closestLowerDate)) .' - '. date('F j, Y',strtotime($LatestDeath)) . '</p>
             </div>
             
             <table class="table">
@@ -490,8 +569,8 @@ class NewController extends BaseController
                         <th>Contact Number</th>
                         <th>Address</th>
                         <th>Registration Date</th>
-                        <th>Departure Date</th>
-                        <th>Reason</th>
+                        <th>Date of Death</th>
+                        <th>Cause</th>
                     </tr>
                 </thead>
                 <tbody>';
@@ -508,8 +587,8 @@ class NewController extends BaseController
                 <td>' . $reg['ContNum'] . '</td>
                 <td>' . $reg['EmergencyAdd'] . '</td>
                 <td>' . $reg['RegDate'] . '</td>
-                <td>' . $reg['departuredate'] . '</td>
-                <td>' . $reg['reasonleft'] . '</td>
+                <td>' . $reg['datedeath'] . '</td>
+                <td>' . $reg['causedeath'] . '</td>
             </tr>';
         }
 
@@ -517,27 +596,6 @@ class NewController extends BaseController
 
         <p class="summary">Summary</p>
         <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
-
-        <div class="footer">
-            <div class="signature-group">
-                <div class="signature-section">
-                    <p class="generated-by">
-                        <strong>Report Generated By:</strong>
-                        <div class="signature-line"></div>
-                        <br>HENRY A. DACANAY III
-                        <strong><br>ADMIN STAFF</strong>
-                    </p>
-                </div>
-                <br>
-                <div class="signature-section">
-                    <p class="approved-by">
-                        <strong>Approved By:</strong>
-                        <div class="signature-line"></div>
-                        <br>LITO C. VERGARA
-                        <strong><br>ADMINISTRATOR</strong>
-                    </p>
-                </div>
-            </div>
         </div>
         </body>
         </html>';
@@ -925,7 +983,6 @@ class NewController extends BaseController
 
     public function viewSearchLeft()
     {
-
        $fromdate = $this->request->getVar('fromdate');
        $todate   =  $this->request->getVar('todate');
         $data = [   
@@ -996,149 +1053,194 @@ class NewController extends BaseController
     $currentDate = date('Y-m-d'); // Get the current date in 'YYYY-MM-DD' format
    
    // Define the HTML content
-// Define the HTML content
-$html = '
-<html>
-<head>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    .header {
-        text-align: center;
-        position: relative;
-    }
-    .header img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 120px;
-    }
-    .header h5 {
-        margin: 0;
-    }
-    .title {
-        text-align: center;
-    }
-    .title h3, .title h4 {
-        margin: 0;
-    }
-    .report-info {
-        margin: 20px 0;
-    }
-    .table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .table th, .table td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-        font-size: 10px;
-    }
-    .summary {
-        font-weight: 600;
-        margin-top: 20px;
-    }
-    .footer {
-        margin-top: 40px;
-    }
-    .footer .signature-group {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 50px;
-    }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <img src="' . $imageSrc . '" alt="Logo">
-        <h5>Republic of the Philippines</h5>
-        <h5>Province of Oriental Mindoro</h5>
-        <h5>Barangay Managpi, Calapan City</h5>
-        <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
-        <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
-        <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
-    </div>
-        <br>
-    <div class="title">
-        <h3>Aruga Kapatid Foundation Incorporated</h3>
-        <h4>Elder Care Program Participant Report</h4>
-    </div>
+        // Define the HTML content
+        $html = '
+        <html>
+        <head>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 120px;
+        }
+        .header h5 {
+            margin: 0;
+        }
+        .title {
+            text-align: center;
+        }
+        .title h3, .title h4 {
+            margin: 0;
+        }
+        .report-info {
+            margin: 20px 0;
+        }
+        .summary {
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 40px;
+        }
+        .footer .signature-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .footer .signature-section {
+            width: 20%;
+            text-align: center;
+        }
+        .footer .signature-section p {
+            margin: 5px 0;
+        }
+        .footer .signature-line {
+            border-top: 1px solid black;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+        
+        /* Add this CSS style for table cells */
+            .table {
+    width: 100%;
+    border-collapse: collapse;
 
-    <div class="report-info">
-        <p>Date: ' . $currentDate . '</p>
-        <p>Reporting Period: ' . $fromdate . ' - ' . $todate . '</p>
-    </div>
-    
-    <div class="table-container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Nickname</th>
-                    <th>Date of Birth</th>
-                    <th>Gender</th>
-                    <th>Marital Status</th>
-                    <th>Contact Number</th>
-                    <th>Address</th>
-                    <th>Registration Date</th>
-                    <th>Departure Date</th>
-                    <th>Reason</th>
-                </tr>
-            </thead>
-            <tbody>';
+}
 
-            foreach ($data['main'] as $reg) {
-                $html .= '<tr>
-                    <td>' . $reg['lastname'] . '</td>
-                    <td>' . $reg['firstname'] . '</td>
-                    <td>' . $reg['middlename'] . '</td>
-                    <td>' . $reg['nickname'] . '</td>
-                    <td class="date">' . $reg['DateBirth'] . '</td> 
-                    <td>' . $reg['gender'] . '</td>
-                    <td>' . $reg['marital_stat'] . '</td>
-                    <td>' . $reg['ContNum'] . '</td>
-                    <td>' . $reg['EmergencyAdd'] . '</td>
-                    <td>' . $reg['RegDate'] . '</td>
-                    <td class="date">' . $reg['departuredate'] . '</td> 
-                    <td>' . $reg['reasonleft'] . '</td>
-                </tr>';
-            }
+        .table th, .table td {
+            border: 1px solid black;
+            padding: 4px; /* Reduced padding for more compactness */
+            text-align: left;
+            font-size: 9px; /* Further reduced font size to fit content */
+            word-wrap: break-word;
+            white-space: nowrap; /* Prevent word wrapping, keep content in one line */
+            overflow: hidden; 
+            text-overflow: ellipsis; /* Show ellipsis when content overflows */
+        }
+
+        /* Specific column widths */
+        .table th:nth-child(1), .table td:nth-child(1) {
+            width: 10%; /* Last Name */
+        }
+
+        .table th:nth-child(2), .table td:nth-child(2) {
+            width: 10%; /* First Name */
+        }
+
+        .table th:nth-child(3), .table td:nth-child(3) {
+            width: 10%; /* Middle Name */
+        }
+
+        .table th:nth-child(4), .table td:nth-child(4) {
+            width: 8%; /* Nickname */
+        }
+
+        .table th:nth-child(5), .table td:nth-child(5) {
+            width: 8%; /* Date of Birth */
+        }
+
+        .table th:nth-child(6), .table td:nth-child(6) {
+            width: 6%; /* Gender */
+        }
+
+        .table th:nth-child(7), .table td:nth-child(7) {
+            width: 8%; /* Marital Status */
+        }
+
+        .table th:nth-child(8), .table td:nth-child(8) {
+            width: 8%; /* Contact Number */
+        }
+
+        .table th:nth-child(9), .table td:nth-child(9) {
+            width: 12%; /* Address */
+        }
+
+        .table th:nth-child(10), .table td:nth-child(10) {
+            width: 8%; /* Registration Date */
+        }
+
+        .table th:nth-child(11), .table td:nth-child(11) {
+            width: 8%; /* Date of Death */
+        }
+
+        .table th:nth-child(12), .table td:nth-child(12) {
+            width: 10%; /* Cause of Death */
+        }
+                
+        </style>
+        </head>
+        <body>
+            <div class="header" style="font-size:16px;">
+                <h5>Republic of the Philippines</h5>
+                <h5>Province of Oriental Mindoro</h5>
+                <h5>Barangay Managpi, Calapan City</h5>
+                <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
+            </div>
+                <br>
+            <div class="title">
+                <h3 style="font-size:15px;">LIST OF ELDERS (LEFT)</h3>
+            </div>
+
+            <div class="report-info">
+                <p>Date: ' . date('F j, Y',strtotime($currentDate)) . '</p>
+                <p>Reporting Period: '. date('F j, Y', strtotime($fromdate)) .' - '. date('F j, Y',strtotime($todate)) . '</p>
+            </div>
             
-$html .= '</tbody></table>
-    </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Nickname</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Marital Status</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
+                        <th>Registration Date</th>
+                        <th>Departure Date</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>';
 
-    <p class="summary">Summary</p>
-    <p>During the reporting period, a total of ' . $count . ' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+        foreach ($data['main'] as $reg) {
+            $html .= '<tr>
+                <td>' . $reg['lastname'] . '</td>
+                <td>' . $reg['firstname'] . '</td>
+                <td>' . $reg['middlename'] . '</td>
+                <td>' . $reg['nickname'] . '</td>
+                <td>' . $reg['DateBirth'] . '</td>
+                <td>' . $reg['gender'] . '</td>
+                <td>' . $reg['marital_stat'] . '</td>
+                <td>' . $reg['ContNum'] . '</td>
+                <td>' . $reg['EmergencyAdd'] . '</td>
+                <td>' . $reg['RegDate'] . '</td>
+                <td>' . $reg['departuredate'] . '</td>
+                <td>' . $reg['reasonleft'] . '</td>
+            </tr>';
+        }
 
-    <div class="footer">
-        <div class="signature-group">
-            <div class="signature-section">
-                <p class="generated-by">
-                    <strong>Report Generated By:</strong>
-                    <div class="signature-line"></div>
-                    <br>HENRY A. DACANAY III
-                    <strong><br>ADMIN STAFF</strong>
-                </p>
-            </div>
-            <br>
-            <div class="signature-section">
-                <p class="approved-by">
-                    <strong>Approved By:</strong>
-                    <div class="signature-line"></div>
-                    <br>LITO C. VERGARA
-                    <strong><br>ADMINISTRATOR</strong>
-                </p>
-            </div>
+        $html .= '</tbody></table>
+
+        <p class="summary">Summary</p>
+        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+
         </div>
-    </div>
-</body>
-</html>';
+        </body>
+        </html>';
+
 
 // Load HTML content into Dompdf
 $dompdf->loadHtml($html);
@@ -1246,130 +1348,168 @@ exit();
         $html = '
         <html>
         <head>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                    font-size: 12px;
-                }
-                .header {
-                    text-align: center;
-                    position: relative;
-                }
-                .header img {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 100px;
-                }
-                .header h5 {
-                    margin: 0;
-                }
-                .title {
-                    text-align: center;
-                    margin-top: 20px;
-                }
-                .title h3, .title h4 {
-                    margin: 5px 0;
-                }
-                .report-info {
-                    text-align: center;
-                    margin: 10px 0;
-                }
-                .table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    table-layout: fixed;
-                }
-                .table th, .table td {
-                    border: 1px solid black;
-                    padding: 4px;
-                    text-align: left;
-                    font-size: 10px;
-                    word-wrap: break-word;
-                }
-                .table th {
-                    background-color: #f2f2f2;
-                    font-weight: bold;
-                }
-                .summary {
-                    font-weight: 600;
-                    margin-top: 20px;
-                    text-align: center;
-                }
-                .footer {
-                    position: fixed;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    text-align: center;
-                    padding: 10px 0;
-                    border-top: 1px solid black;
-                    background-color: white;
-                }
-                .footer .signature-group {
-                    display: flex;
-                    justify-content: space-around;
-                    margin-top: 20px;
-                }
-                .footer .signature-section {
-                    width: 30%;
-                    text-align: center;
-                }
-                .footer .signature-line {
-                    border-top: 1px solid black;
-                    margin-top: 30px;
-                    margin-bottom: 5px;
-                }
-                /* Ensures enough margin at the bottom for the footer */
-                .content {
-                    min-height: calc(100vh - 150px); /* Leaves space for the footer */
-                    padding-bottom: 100px; /* Pushes content above footer */
-                }
-            </style>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 120px;
+        }
+        .header h5 {
+            margin: 0;
+        }
+        .title {
+            text-align: center;
+        }
+        .title h3, .title h4 {
+            margin: 0;
+        }
+        .report-info {
+            margin: 20px 0;
+        }
+        
+        .summary {
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 40px;
+        }
+        .footer .signature-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .footer .signature-section {
+            width: 20%;
+            text-align: center;
+        }
+        .footer .signature-section p {
+            margin: 5px 0;
+        }
+        .footer .signature-line {
+            border-top: 1px solid black;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+        
+        /* Add this CSS style for table cells */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.table th, .table td {
+    border: 1px solid black;
+    padding: 4px; /* Reduced padding for more compactness */
+    text-align: left;
+    font-size: 9px; /* Further reduced font size to fit content */
+    word-wrap: break-word;
+    white-space: nowrap; /* Prevent word wrapping, keep content in one line */
+    overflow: hidden; 
+    text-overflow: ellipsis; /* Show ellipsis when content overflows */
+}
+
+/* Specific column widths */
+.table th:nth-child(1), .table td:nth-child(1) {
+    width: 10%; /* Last Name */
+}
+
+.table th:nth-child(2), .table td:nth-child(2) {
+    width: 10%; /* First Name */
+}
+
+.table th:nth-child(3), .table td:nth-child(3) {
+    width: 10%; /* Middle Name */
+}
+
+.table th:nth-child(4), .table td:nth-child(4) {
+    width: 8%; /* Nickname */
+}
+
+.table th:nth-child(5), .table td:nth-child(5) {
+    width: 8%; /* Date of Birth */
+}
+
+.table th:nth-child(6), .table td:nth-child(6) {
+    width: 6%; /* Gender */
+}
+
+.table th:nth-child(7), .table td:nth-child(7) {
+    width: 8%; /* Marital Status */
+}
+
+.table th:nth-child(8), .table td:nth-child(8) {
+    width: 8%; /* Contact Number */
+}
+
+.table th:nth-child(9), .table td:nth-child(9) {
+    width: 12%; /* Address */
+}
+
+.table th:nth-child(10), .table td:nth-child(10) {
+    width: 8%; /* Registration Date */
+}
+
+.table th:nth-child(11), .table td:nth-child(11) {
+    width: 8%; /* Date of Death */
+}
+
+.table th:nth-child(12), .table td:nth-child(12) {
+    width: 10%; /* Cause of Death */
+}
+
+        </style>
         </head>
         <body>
-            <div class="header">
-                <img src="' . $imageSrc . '" alt="Logo">
+            <div class="header" style="font-size:1rem;">
+
                 <h5>Republic of the Philippines</h5>
                 <h5>Province of Oriental Mindoro</h5>
                 <h5>Barangay Managpi, Calapan City</h5>
-                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
-                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
-                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+                <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
             </div>
-            <br>
+                <br>
             <div class="title">
-                <h3>Aruga Kapatid Foundation Incorporated</h3>
-                <h4>Elder Care Program Deceased Participant Report</h4>
+                <h3 style="font-size:15px;">LIST OF ELDERS (DECEASED)</h3>
+
             </div>
-        
+
             <div class="report-info">
-                <p>Date: ' . $currentDate . '</p>
-                <p>Reporting Period: '. $fromdate .' - '. $todate . '</p>
+                <p>Date: ' . Date('F j, Y',strtotime($currentDate)) . '</p>
+                <p>Reporting Period: '. date('F j, Y', strtotime($fromdate)) .' - '. date('F j, Y',strtotime($todate)) . '</p>
             </div>
-        
-            <div class="content">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Last Name</th>
-                            <th>First Name</th>
-                            <th>Middle Name</th>
-                            <th>Nickname</th>
-                            <th>Date of Birth</th>
-                            <th>Gender</th>
-                            <th>Marital Status</th>
-                            <th>Contact Number</th>
-                            <th>Address</th>
-                            <th>Registration Date</th>
-                            <th>Date Of Death</th>
-                            <th>Cause Of Death</th>
-                        </tr>
-                    </thead>
-                    <tbody>';
-        
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Nickname</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Marital Status</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
+                        <th>Registration Date</th>
+                        <th>Date of Death</th>
+                        <th>Cause</th>
+                    </tr>
+                </thead>
+                <tbody>';
+
         foreach ($data['main'] as $reg) {
             $html .= '<tr>
                 <td>' . $reg['lastname'] . '</td>
@@ -1386,29 +1526,15 @@ exit();
                 <td>' . $reg['causedeath'] . '</td>
             </tr>';
         }
-        
+
         $html .= '</tbody></table>
-        
+
         <p class="summary">Summary</p>
-        <p>During the reporting period, a total of '.$count.' elderly individuals passed away in the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
-        </div>
-        
-        <div class="footer">
-            <div class="signature-group">
-                <div class="signature-section">
-                    <p><strong>Report Generated By:</strong></p>
-                    <div class="signature-line"></div>
-                    <p>HENRY A. DACANAY III<br><strong>ADMIN STAFF</strong></p>
-                </div>
-                <div class="signature-section">
-                    <p><strong>Approved By:</strong></p>
-                    <div class="signature-line"></div>
-                    <p>LITO C. VERGARA<br><strong>ADMINISTRATOR</strong></p>
-                </div>
-            </div>
+        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
         </div>
         </body>
         </html>';
+
         
         // Load HTML content into Dompdf
         $dompdf->loadHtml($html);
@@ -1444,12 +1570,14 @@ exit();
         
         $data['main'] = $this->uidm->where('DATE(donationdate) >=', $fromdate)
                                    ->where('DATE(donationdate) <=', $todate)
+                                   ->where('status', 'Received')    
                                    ->findAll();
 
         $totals = $this->uidm
         ->select('SUM(cashDonation) as total_cash_donation, SUM(cashCheck) as total_cash_check, SUM(mumosahapag) as total_mumosahapag')
         ->where('DATE(donationdate) >=', $fromdate)
         ->where('DATE(donationdate) <=', $todate)
+        ->where('status', 'Received')
         ->first();
     
         $count = $this->uidm
@@ -1468,91 +1596,152 @@ exit();
         $html = '
         <html>
         <head>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                }
-                .header {
-                    text-align: center;
-                    position: relative;
-                }
-                .header img {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 120px;
-                }
-                .header h5 {
-                    margin: 0;
-                }
-                .title {
-                    text-align: center;
-                }
-                .title h3, .title h4 {
-                    margin: 0;
-                }
-                .report-info {
-                    margin: 20px 0;
-                }
-                .table {
-                    width: 100%;
-                    border-collapse: collapse;
-                }
-                .table th, .table td {
-                    border: 1px solid black;
-                    padding: 8px;
-                    text-align: left;
-                }
-                .summary {
-                    font-weight: 600;
-                    margin-top: 20px;
-                }
-                .footer {
-                    margin-top: 40px;
-                }
-                .footer .signature-group {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 50px;
-                }
-                .footer .signature-section {
-                    width: 20%;
-                    text-align: center;
-                }
-                .footer .signature-section p {
-                    margin: 5px 0;
-                }
-                .footer .signature-line {
-                    border-top: 1px solid black;
-                    margin-top: 40px;
-                    margin-bottom: 5px;
-                }
-            </style>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 11px;
+        }
+        .header {
+            text-align: center;
+            position: relative;
+        }
+        .header img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 120px;
+        }
+        .header h5 {
+            margin: 0;
+        }
+        .title {
+            text-align: center;
+        }
+        .title h3, .title h4 {
+            margin: 0;
+        }
+        .report-info {
+            margin: 20px 0;
+        }
+        
+        .summary {
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 40px;
+        }
+        .footer .signature-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .footer .signature-section {
+            width: 20%;
+            text-align: center;
+        }
+        .footer .signature-section p {
+            margin: 5px 0;
+        }
+        .footer .signature-line {
+            border-top: 1px solid black;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+        
+        /* Add this CSS style for table cells */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    
+
+}
+
+.table th, .table td {
+    border: 1px solid black;
+    padding: 4px; /* Reduced padding for more compactness */
+    text-align: left;
+    font-size: 9px; /* Further reduced font size to fit content */
+    word-wrap: break-word;
+    white-space: nowrap; /* Prevent word wrapping, keep content in one line */
+    overflow: hidden; 
+    text-overflow: ellipsis; /* Show ellipsis when content overflows */
+}
+
+/* Specific column widths */
+.table th:nth-child(1), .table td:nth-child(1) {
+    width: 10%; /* Last Name */
+}
+
+.table th:nth-child(2), .table td:nth-child(2) {
+    width: 10%; /* First Name */
+}
+
+.table th:nth-child(3), .table td:nth-child(3) {
+    width: 10%; /* Middle Name */
+}
+
+.table th:nth-child(4), .table td:nth-child(4) {
+    width: 8%; /* Nickname */
+}
+
+.table th:nth-child(5), .table td:nth-child(5) {
+    width: 8%; /* Date of Birth */
+}
+
+.table th:nth-child(6), .table td:nth-child(6) {
+    width: 6%; /* Gender */
+}
+
+.table th:nth-child(7), .table td:nth-child(7) {
+    width: 8%; /* Marital Status */
+}
+
+.table th:nth-child(8), .table td:nth-child(8) {
+    width: 8%; /* Contact Number */
+}
+
+.table th:nth-child(9), .table td:nth-child(9) {
+    width: 12%; /* Address */
+}
+
+.table th:nth-child(10), .table td:nth-child(10) {
+    width: 8%; /* Registration Date */
+}
+
+.table th:nth-child(11), .table td:nth-child(11) {
+    width: 8%; /* Date of Death */
+}
+
+.table th:nth-child(12), .table td:nth-child(12) {
+    width: 10%; /* Cause of Death */
+}
+
+        </style>
         </head>
         <body>
-            <div class="header">
-                <img src="' . $imageSrc . '" alt="Logo">
+            <div class="header" style="font-size:1rem;">
+
                 <h5>Republic of the Philippines</h5>
                 <h5>Province of Oriental Mindoro</h5>
                 <h5>Barangay Managpi, Calapan City</h5>
-                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
-                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
-                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+                <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
             </div>
-            <br>
+                <br>
             <div class="title">
-                <h3>Aruga Kapatid Foundation Incorporated</h3>
-                <h4>Monetary Donation Report</h4>
+                <h3 style="font-size:15px;">CASH DONATIONS</h3>
+
             </div>
-    
+
             <div class="report-info">
-                <p>Date: ' . $currentDate . '</p>
-                <p>Reporting Period: ' . $fromdate . ' - ' . $todate . '</p>
+                <p>Date: ' . Date('F j, Y',strtotime($currentDate)) . '</p>
+                <p>Reporting Period: '. date('F j, Y', strtotime($fromdate)) .' - '. date('F j, Y',strtotime($todate)) . '</p>
             </div>
             
-            <table class="table">
+          <table class="table">
                 <thead>
                 <tr>
                     <th>Date</th>
@@ -1568,7 +1757,7 @@ exit();
                 </tr>
                 </thead>
                 <tbody>';
-    
+                
         foreach ($data['main'] as $mntry) {
             $dateString = $mntry['donationdate'];
             $date = new \DateTime($dateString);
@@ -1581,41 +1770,20 @@ exit();
                 <td>' . $mntry['middlename'] . '</td>
                 <td>' . $mntry['contactnum'] . '</td>
                 <td>' . $mntry['referencenum'] . '</td>
-                <td>' . $mntry['cashDonation'] . '</td>
-                <td>' . $mntry['cashCheck'] . '</td>
+                <td>' .number_format($mntry['cashDonation'], 2) . '</td>
+                <td>' . number_format($mntry['cashCheck'], 2) . '</td>
                 <td>' . $mntry['mumosahapag'] . '</td>
             </tr>';
         }
-    
+
         $html .= '</tbody></table>
-        <p><strong>Total Cash Donation:</strong> '. number_format($totals['total_cash_donation'], 2).'</p>
-        <p><strong>Total Cash Check:</strong> '. number_format($totals['total_cash_check'], 2).'</p>
-        <p><strong>Total Mumo sa Hapag:</strong> '. number_format($totals['total_mumosahapag'], 2).'</p>
-        <p class="summary">Summary</p>
-        <p>During the reporting period, a total of ' . $count . ' monetary donations were received by Aruga Kapatid Foundation Incorporated.</p>
-        <div class="footer">
-            <div class="signature-group">
-                <div class="signature-section">
-                    <p class="generated-by">
-                        <strong>Report Generated By:</strong>
-                        <div class="signature-line"></div>
-                        <br>HENRY A. DACANAY III
-                        <strong><br>ADMIN STAFF</strong>
-                    </p>
-                </div>
-                <br>
-                <div class="signature-section">
-                    <p class="approved-by">
-                        <strong>Approved By:</strong>
-                        <div class="signature-line"></div>
-                        <br>LITO C. VERGARA
-                        <strong><br>ADMINISTRATOR</strong>
-                    </p>
-                </div>
-            </div>
+        <p>Total Cash Donation: '. number_format($totals['total_cash_donation'], 2).'</p>
+        <p>Total Cash Check: '. number_format($totals['total_cash_check'], 2).'</p>
+        <p>Total Mumo sa Hapag: '. number_format($totals['total_mumosahapag'], 2).'</p>
         </div>
         </body>
         </html>';
+
     
         // Load HTML content into Dompdf
         $dompdf->loadHtml($html);
@@ -1949,23 +2117,32 @@ $html = '<html lang="en">
             text-align: left;
         }
 
-        .signature-section {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
+      .signature-section {
+    display: flex;
+    justify-content: space-between; /* This will place the boxes on opposite sides */
+    margin-top: 30px;
         }
 
-        .signature-box {
-            text-align: center;
-            width: 45%; /* Adjust width to fit within the section */
-        
+        .signature-box  {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 45%; /* Adjust the width if necessary */
         }
 
         .signature-line {
             border-bottom: 1px solid black;
             width: 200px;
             margin: 0 auto;
+            text-align: center;
         }
+
+        .signature-text {
+            margin-top: 5px;
+            font-size: 12px;
+            text-align: center;
+        }
+
                     .signature-lines {
             border-bottom: 2px solid black;
             width:200px;
@@ -1983,21 +2160,17 @@ $html = '<html lang="en">
 <body>
 
     <div class="size">
-       <div class="header">
-                <img src="' . $imageSrc . '" alt="Logo">
+       <div class="header" style="font-size:15px; text-align:center;">
+
                 <h5>Republic of the Philippines</h5>
                 <h5>Province of Oriental Mindoro</h5>
                 <h5>Barangay Managpi, Calapan City</h5>
-                <h5>Company Registration Number: <span style="color:red;">CN2011421030</span></h5>
-                <h5>Company TIN Number: <span style="color:red;">008-893-471</span></h5>
-                <h5>ARUGA-KAPATID FOUNDATION INCORPORATED</h5>
+                <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
             </div>
 
-        <br> <br>
 
-        <h4 style="text-align: center;">ADMISSION SLIP</h4>
+        <h4 style="text-align: center; margin-bottom:10px;">ADMISSION SLIP</h4>
 
-        <!-- Admission Data -->
         <table>
             <tr>
                 <th colspan="10">Date of Admission:  ' . $mydata. ' </th>

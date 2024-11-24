@@ -170,7 +170,7 @@
                                         <tbody>
                                             <?php
                                             // Pagination logic
-                                            $itemsPerPage = 3;  // Number of records per page
+                                            $itemsPerPage = 5;  // Number of records per page
                                             $totalItems = count($Deceased);  // Total number of records
                                             $totalPages = ceil($totalItems / $itemsPerPage);  // Calculate total pages
 
@@ -240,7 +240,7 @@
         $pageUrl = '?' . http_build_query($query);
     ?>
         <a href="<?= $pageUrl ?>" class="<?= ($i == $currentPage) ? 'active' : '' ?>"><?= $i ?></a>
-    <?php endfor; ?>
+    <?php endfor; ?>    
 </div>
 
 <p>Showing page <?= $currentPage ?> of <?= $totalPages ?> (<?= $totalItems ?> total entries)</p>

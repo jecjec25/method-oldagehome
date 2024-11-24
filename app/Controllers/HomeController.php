@@ -121,33 +121,40 @@ class HomeController extends BaseController
     
         // Get the input data
         $name = $this->request->getPost('name');
-        $position = $this->request->getPost('position');  // Fixed typo here: 'postion' -> 'position'
+        $position = $this->request->getPost('position'); // Ensure the correct input name is used
     
         // Get the uploaded file
         $file = $this->request->getFile('img');
-        
-        if (!$file || !$file->isValid()) {
-            // If no file was uploaded or the upload is invalid, you can keep the old image or handle this scenario
-            $filePath = $this->request->getPost('old_img'); // assuming you pass the previous image path as "old_img"
+    
+        // Check if a file was uploaded and is valid
+        if ($file && $file->isValid()) {
+            // Generate a unique file name
+            $fileName = $file->getRandomName();
+    
+            // Move the uploaded file to the `images` directory
+            $file->move($_SERVER['DOCUMENT_ROOT'] . '/images/', $fileName);
+    
+            // Save the new file name for the database
+            $filePath = 'images/' . $fileName; // Relative path to save in the database
         } else {
-            // Move the uploaded file to a writable location
-            $fileName = $file->getRandomName(); // Generate a unique name
-            $filePath = $_SERVER['DOCUMENT_ROOT'] . '/images/' . $fileName; // Use CI's constant for the writable path
-            $file->move($_SERVER['DOCUMENT_ROOT'] . '/images/', $fileName);  // Move the file to the uploads directory
+            // If no new file is uploaded, use the old image path
+            $fileName = $this->request->getPost('current_img'); // Assuming "old_img" is passed in the form
         }
     
         // Prepare the data to update the database
         $data = [
-            'img' => $fileName,  // Store the relative file path
+            'img' => $fileName, // Store the relative file path
             'name' => $name,
-            'position' => $position  // Fixed 'postion' to 'position'
+            'position' => $position
         ];
     
-        // Update the organizer entry
+        // Update the organizer entry in the database
         $organizer->where('id', $id)->set($data)->update();
-
+    
+        // Redirect to the update member page or any other desired route
         return redirect()->to('updatemember');
     }
+    
     
     public function viewedit($id)
     {
