@@ -75,7 +75,7 @@ class ViewController extends BaseController
     public function about()
     {
         $data = [
-            'VM' => $this->Vm->where('img', 'g11.jpg')->findAll(),
+            'VM' => $this->Vm->findAll(),
             'organization' => $this->org->findAll(),
         ];
         return view('admin/about', $data);
