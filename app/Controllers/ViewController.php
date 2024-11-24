@@ -75,7 +75,7 @@ class ViewController extends BaseController
     public function about()
     {
         $data = [
-            'VM' => $this->Vm->findAll(),
+            'VM' => $this->Vm->where('img', 'g11.jpg')->findAll(),
             'organization' => $this->org->findAll(),
         ];
         return view('admin/about', $data);
@@ -87,7 +87,7 @@ class ViewController extends BaseController
     }
     public function service()
     {
-        $data = ['service' =>  $this->Vm->where('img', 'g11.jpg')->findAll()];
+        $data = ['service' =>  $this->donation->findAll()];
         return view('admin/service', $data);
     }
     public function searchs()
