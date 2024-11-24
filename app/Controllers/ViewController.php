@@ -87,7 +87,7 @@ class ViewController extends BaseController
     }
     public function service()
     {
-        $data = ['service' =>  $this->donation->findAll()];
+        $data = ['service' =>  $this->donation->where('image', 'g11.jpg')->findAll()];
         return view('admin/service', $data);
     }
     public function searchs()
