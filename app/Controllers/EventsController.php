@@ -375,18 +375,25 @@ class EventsController extends BaseController
     public function savefeedbackevent()
     {
         $id = $this->request->getVar('eventid');
+        $feedback = trim($this->request->getVar('feedback'));
+
+        // Validate if feedback is not empty
+        if (empty($feedback)) {
+            session()->setFlashdata('feedback_message', 'Feedback cannot be empty. Please provide your comments.');
+            return redirect()->to('/eventForUsers/' . $id)->withInput();
+        }
+
         $data = [
-            'feedback' => $this->request->getVar('feedback'),
+            'feedback' => $feedback,
             'usersignsId' => $this->request->getVar('usersignsId'),
-            'eventid' => $this->request->getVar('eventid'),
+            'eventid' => $id,
             'status' => 'Pending'
         ];
 
         $this->feedback->save($data);
-        session()->setFlashdata('feedback_message', 'Your data has been submitted as feedback');
+        session()->setFlashdata('feedback_message', 'Your feedback has been submitted successfully.');
 
-        return redirect()->to('/eventForUsers/'. $id);
-
+        return redirect()->to('/eventForUsers/' . $id);
     }
-       
+
 }

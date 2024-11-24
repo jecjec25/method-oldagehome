@@ -3,175 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event</title>
+    <title>News & Events</title>
     <link rel="icon" type="image/png" href="/picture.png">
     <link href="/css/eventslogin.css" rel="stylesheet" type="text/css" />
     <style>
-        .alert {
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            color: #3c763d;
-            background-color: #dff0d8;
-            border-color: #d6e9c6;
-            opacity: 1;
-            transition: opacity 2s ease-in-out;
-            width: 30rem;
-        }
-        .alert.fade-out {
-            opacity: 0;
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Resize the image */
-        .event-attachment {
-            width: 80px;
-            height: 80px;
-            margin-right: 5px;
-            cursor: pointer;
-        }
-
-        /* Preview the image on hover */
-        .image-preview {
-            display: none;
-            position: absolute;
-            border: 1px solid #ccc;
-            background: white;
-            z-index: 1000;
-            padding: 5px;
-        }
-
-        .event-attachment:hover + .image-preview {
-            display: block;
-        }
-
-        /* Basic styling for the container */
         .container {
-            width: 80%;
-            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
         }
 
-        /* Styling for event and feedback display */
-        li {
-            list-style-type: none;
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #007bff;
+        }
+
+        /* Card Layout */
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            background: #f9f9f9;
         }
 
-        .mean {
+        .card h2 {
+            font-size: 1.8rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
-        .dist {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+        .card p {
+            margin: 10px 0;
+            line-height: 1.6;
         }
 
-        .btn, .btn-secondary {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
+        .card img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
             border-radius: 5px;
-            text-decoration: none;
+            margin-top: 10px;
             cursor: pointer;
         }
 
+        /* Buttons */
+        .btn, .btn-secondary {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn {
+            background: #007bff;
+        }
+
         .btn-secondary {
-            background-color: #6c757d;
+            background: #6c757d;
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background: #0056b3;
         }
 
         .btn-secondary:hover {
-            background-color: #5a6268;
+            background: #5a6268;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-content img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .card h2, .card h3 {
+                font-size: 1.2rem;
+            }
+
+            .btn, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-            <!-- Display News -->
-            <?php foreach ($news as $mnews): ?>
-            <li>
-                <h2>News</h2>
-                <h3 class="mean"><?= $mnews['title']; ?></h3>
-                <h4 class="mean"><strong>Author:</strong> <?= $mnews['author']; ?></h4>
-                <p class="dist"><strong>Content:</strong> <?= $mnews['Content']; ?></p>
-                <p><strong>Date Published:</strong> <?= $mnews['date_published']; ?></p>
-                <p><strong>Category:</strong> <?= $mnews['Category']; ?></p>
-                <p><strong>Attachment:</strong><br><img class="sinc" src="<?="/upload/news/" . $mnews['picture'] ?>" alt="news image"></p>
-                <a href="/news" class="btn">Back</a>
-            </li>
-        <?php endforeach; ?>
+    <!-- Header -->
+    <header>
+        <h1>News & Events Portal</h1>
+        <p>Stay updated with the latest news and events</p>
+    </header>
 
-    <ul>
-        <!-- Display Events -->
+    <!-- Display News -->
+    <section id="news-section">
+        <?php foreach ($news as $mnews): ?>
+        <h2>Latest News</h2>
+        <div class="card">
+            <h3><?= $mnews['title']; ?></h3>
+            <p><strong>Author:</strong> <?= $mnews['author']; ?></p>
+            <p><?= $mnews['Content']; ?></p>
+            <p><strong>Published On:</strong> <?= $mnews['date_published']; ?></p>
+            <p><strong>Category:</strong> <?= $mnews['Category']; ?></p>
+            <?php if (!empty($mnews['picture'])): ?>
+            <img src="<?= "/upload/news/" . $mnews['picture'] ?>" alt="News Image" onclick="openModal(this.src)">
+            <?php endif; ?>
+        </div>
+        <?php endforeach; ?>
+    </section>
+
+    <!-- Display Events -->
+    <section id="events-section">
         <?php foreach ($events as $mevents): ?>
-            <li>
-                <h2>Event Details</h2>
-                <h3 class="mean"><?= $mevents['Title']; ?></h3>
-                <p class="dist"><strong>Description:</strong> <?= $mevents['Description']; ?></p>
-                <p><strong>Organizer:</strong> <?= $mevents['Organizer']; ?></p>
-                <p><strong>Category:</strong> <?= $mevents['Category']; ?></p>
-                <p><strong>Attendees:</strong> <?= $mevents['Atendees']; ?></p>
-                
-                <p><strong>Attachments:</strong>  
-                    <?php if (!empty($mevents['Attachments'])): ?>
-                        <?php foreach ($mevents['Attachments'] as $attachment): ?>
-                            <?php
-                                // Trim any unwanted spaces or characters from the attachment name
-                                $imagePath = base_url("/upload/events/") . trim($attachment);
-                            ?>
-                            <div style="position:relative; display:inline-block;">
-                                <img src="<?= $imagePath ?>" alt="event image" class="event-attachment">
-                                <!-- Preview of the image -->
-                                <div class="image-preview">
-                                    <img src="<?= $imagePath ?>" alt="event preview" style="width:300px; height:auto;">
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <p>No attachments available</p>
-                    <?php endif; ?>
-                </p>
-
-                <p><strong>Start Date:</strong> <?= $mevents['Start_date']; ?></p>
-                <p><strong>End Date:</strong> <?= $mevents['End_date']; ?></p>
-
-                <!-- Feedback Form -->
-                <form action="<?= base_url('feedback')?>" method="post">
-                    <input type="hidden" name="usersignsId" value="<?= session()->get('userID')?>">
-                    <input type="hidden" name="eventid" value="<?= $mevents['EventID']?>">
-                    <textarea name="feedback" cols="60" rows="10" placeholder="Leave your feedback"></textarea>
-                    <button class="btn" type="submit" onclick="return confirm('Are you sure you want to submit this form?')">Send</button>
-                    <?php if(session()->getFlashdata('feedback_message')): ?>
-                        <div class="alert">
-                            <?= session()->getFlashdata('feedback_message') ?>
-                        </div>
-                    <?php endif; ?>
-                </form>
-                <br><br>
-                <a href="/news" class="btn btn-secondary">Back</a>
-            </li>
+        <h2>Events</h2>
+        <div class="card">
+            <h3><?= $mevents['Title']; ?></h3>
+            <p><strong>Description:</strong> <?= $mevents['Description']; ?></p>
+            <p><strong>Organizer:</strong> <?= $mevents['Organizer']; ?></p>
+            <p><strong>Category:</strong> <?= $mevents['Category']; ?></p>
+            <p><strong>Attendees:</strong> <?= $mevents['Atendees']; ?></p>
+            <p><strong>Attachments:</strong></p>
+            <?php if (!empty($mevents['Attachments'])): ?>
+            <div>
+                <?php foreach ($mevents['Attachments'] as $attachment): ?>
+                <?php $imagePath = base_url("/upload/events/") . trim($attachment); ?>
+                <img src="<?= $imagePath ?>" alt="Attachment Image" onclick="openModal(this.src)">
+                <?php endforeach; ?>
+            </div>
+            <?php else: ?>
+            <p>No attachments available</p>
+            <?php endif; ?>
+            <p><strong>Start Date:</strong> <?= $mevents['Start_date']; ?></p>
+            <p><strong>End Date:</strong> <?= $mevents['End_date']; ?></p>
+        </div>
         <?php endforeach; ?>
+    </section>
 
-        <!-- Display Feedbacks -->
-        <?php foreach($feedback as $feed):?>
-            <ul>
-                <li>
-                   <strong><?= $feed['Username']?>:</strong> <?= $feed['feedback']?>
-                </li>
-            </ul>
+    <!-- Display Feedback -->
+    <section id="feedback-section">
+    <?php foreach ($events as $mevents): ?>
+    <h2>Feedback</h2>
+    <ul>
+        <?php foreach ($feedback as $feed): ?>
+        <li>
+            <strong><?= $feed['Username']; ?>:</strong> <?= $feed['feedback']; ?>
+        </li>
         <?php endforeach; ?>
     </ul>
+    <p>Please <a href="/signin">sign in</a> before sending your feedback.</p>
+    <?php endforeach; ?>
+</section>
 </div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">×</button>
+        <img id="modal-img" src="" alt="Full View">
+    </div>
+</div>
+
+<script>
+    // Function to open the modal with the image
+    function openModal(src) {
+        document.getElementById('modal').style.display = 'block';
+        document.getElementById('modal-img').src = src;
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    // Close the modal if clicked outside of the image
+    window.onclick = function(event) {
+        if (event.target === document.getElementById('modal')) {
+            closeModal();
+        }
+    }
+</script>
 
 </body>
 </html>

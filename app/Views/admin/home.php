@@ -42,19 +42,19 @@
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     .slider {
-        max-height: 250px; /* Adjust for smaller screens */
+        max-height: 250px; 
     }
     .text {
-        font-size: 14px; /* Smaller text on mobile */
+        font-size: 14px; 
     }
     .arugaGallery {
-        padding-top: 5px; /* Adjust padding for smaller screens */
+        padding-top: 5px; 
     }
 
     .wmuSlider {
         position: relative;
-        overflow: hidden; /* Hide overflow for cleaner edges */
-        max-height: 400px; /* Set a max height for the slider */
+        overflow: hidden; 
+        max-height: 400px; 
     }
 
     /* Slider Image Styles */
@@ -141,18 +141,5 @@
     
     <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
-        <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6729a58f2480f5b4f598b82b/1ibtatefm';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-</body>
+   </body>
 </html>

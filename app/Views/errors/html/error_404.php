@@ -69,15 +69,16 @@
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <h1>404</h1>
-
+    <div class="wrap">  
+        <h1>Hapag Aruga Foundation Incorporated</h1>
+        <img src="<?= base_url('picture.png')?>" alt="">
         <p>
             <?php if (ENVIRONMENT !== 'production') : ?>
                 <?= nl2br(esc($message)) ?>
             <?php else : ?>
                 <?= lang('Errors.sorryCannotFind') ?>
             <?php endif ?>
+            <a href="/">BACK TO HOME PAGE</a>
         </p>
     </div>
 </body>

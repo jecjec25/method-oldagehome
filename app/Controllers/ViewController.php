@@ -216,7 +216,7 @@ class ViewController extends BaseController
                                     $event['Attachments'] = explode(',', $event['Attachments']);
                                 }
                             }
-$data['events'] = $events;        
+        $data['events'] = $events;        
           
         
 

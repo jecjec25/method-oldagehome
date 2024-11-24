@@ -700,12 +700,15 @@ foreach ($data['reg'] as $reg) {
     public function Decline()
     {
         $decline  = $this->request->getVar('decline');
+        $reasonToDecline = $this->request->getPost('declineReason');
+
         if(empty($decline))
         {
             return redirect()->to('canlendar')->with('msg', 'No Data to Insert');
         }
+
         $declineMe = $this->declineBook($decline);
-                    $this->declineBooking($declineMe);
+           $this->declineBooking($declineMe, $reasonToDecline);
                     $this->removedeclinePending($decline);
             return redirect()->to('calendar');
     }
@@ -717,7 +720,7 @@ foreach ($data['reg'] as $reg) {
     }
 
 
-    private function declineBooking($declineMe)
+    private function declineBooking($declineMe, $reasonToDecline)
     {
 
         if (empty($declineMe)) {
@@ -741,10 +744,13 @@ foreach ($data['reg'] as $reg) {
             'Time' => $a['Time'],
             'equipment' => $a['equipment'],
             'comments' => $a['comments'],
-            'status' => 'Declined'
+            'status' => 'Declined',
+            'reason' => $reasonToDecline
             ];
         }
         
+
+        // var_dump($declineBookings);
         $this->book->InsertBatch($declineBookings);
     }
 

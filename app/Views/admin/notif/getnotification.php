@@ -13,7 +13,7 @@
 <div class="container"> 
 <p> <?= $getNotif['establishment']?> <?= $getNotif['lastname']?> <?= $getNotif['firstname']?> Your Event has been <?= $getNotif['status']?></p>
 <h1>Event: <?= $getNotif['event']?><br> </h1><h2>Time: <?= $getNotif['Time']?></h2><br><h2>Date: <?= $getNotif['prefferdate']?></h2>
-<h2>Equipment: <?= $getNotif['equipment']?><br> </h2><h2>Comment: <?= $getNotif['comments']?></h2>
+<h2>Equipment: <?= $getNotif['equipment']?><br> </h2><h2>Comment: <?= $getNotif['comments']?></h2><h2>Reason: <?= $getNotif['reason']?></h2>
 <br>
 <a href="/booking" class="btn btn-secondary">Back</a>
 <br>

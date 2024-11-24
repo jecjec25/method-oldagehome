@@ -62,6 +62,7 @@
                           <th>Equipment</th>
                           <th>Comments</th>
                           <th>Status</th>
+                          <th>Reason</th>
                           <th>Action</th>
                         </tr>
                     </thead>
@@ -81,6 +82,7 @@
                       <td>
                           <?= $even['status']?>
                       </td>
+                      <td><?= $even['reason']?></td>
                       <td><a href="<?= base_url("deleteDeclinedEvent/".$even['id']); ?>" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm btn-icon-text">
                       Delete <i class="typcn typcn-delete-outline btn-icon-append"></i></a></td>
                       </tr>
