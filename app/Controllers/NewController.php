@@ -1761,7 +1761,7 @@ exit();
         foreach ($data['main'] as $mntry) {
             $dateString = $mntry['donationdate'];
             $date = new \DateTime($dateString);
-            $formattedDate = $date->format('F j, Y g:i A');
+            $formattedDate = $date->format('F j, Y');
             $html .= '<tr>
                 <td>' . $formattedDate . '</td>
                 <td>' . $mntry['establishment'] . '</td>

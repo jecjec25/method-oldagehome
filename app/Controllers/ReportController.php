@@ -32,7 +32,14 @@ class ReportController extends BaseController
     public function getInKindDonations()
     {
         $model = new InKindModel();
-        $donations = $model->where('status', 'Received')->findAll();
+        $donations = $model
+        ->select("YEAR(donationdate) as year, MONTH(donationdate) as month, COUNT(*) AS total_Inkinds") // Fixed alias
+        ->where('status', 'Received')
+        ->groupBy("YEAR(donationdate), MONTH(donationdate)")
+        ->orderBy("YEAR(donationdate), MONTH(donationdate)")
+        ->findAll();
+    
+
 
         return $this->respond($donations);
     }

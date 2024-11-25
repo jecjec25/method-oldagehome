@@ -24,22 +24,22 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
-                        <div class="col-md-6 grid-margin stretch-card">
+                        <!-- <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <canvas id="bookingsChart"></canvas>
                                     <div class="chart-description">Number of Bookings per Time Range</div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- <div class="col-md-6 grid-margin stretch-card">
+                        </div> -->
+                        <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <canvas id="bookingsChart99"></canvas>
                                     <div class="chart-description">Number of Bookings per Month</div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
@@ -61,7 +61,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <canvas id="inKindDonationsChart"></canvas>
-                                    <div class="chart-description">Number of In-Kind Donations by Establishment</div>
+                                    <div class="chart-description">Number of In-Kind Donations per Month</div>
                                 </div>
                             </div>
                         </div>
@@ -176,50 +176,7 @@
                 })
                 .catch(error => console.error('Error fetching data:', error));
         </script>
-    <script>
-        fetch('bookings/by-month')
-            .then(response => response.json())
-            .then(data => {
-                console.log('Fetched data:', data);
-                var labels = data.map(item => {
-                    if (item.year == null || item.month == null) {
-                        console.error('Invalid data item:', item);
-                        return 'Invalid Date';
-                    }
-                    return `${String(item.month).padStart(2, '0')}/${item.year}`;
-                });
-                var bookingCounts = data.map(item => parseInt(item.total_bookings) || 0);
-                const ctx = document.getElementById('bookingsChart99').getContext('2d');
-                var bookingsChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Number of Bookings per Month',
-                            data: bookingCounts,
-                            backgroundColor: 'rgba(54, 162, 235, 0.8)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Bookings by Month'
-                            }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    </script>
-
+    
     <script>
         fetch('bookings/by-time-range')
             .then(response => response.json())
@@ -372,37 +329,29 @@
             })
             .catch(error => console.error('Error fetching data:', error));
     </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('/in-kind-donation/getInKindDonations')
+<script>
+            fetch('in-kind-donation/getInKindDonations')
                 .then(response => response.json())
-                .then(donations => {
-                    // Prepare data for the bar chart
-                    const donationCountsByDate = {};
-
-                    donations.forEach(donation => {
-                        const date = donation.donationdate;
-
-                        if (!donationCountsByDate[date]) {
-                            donationCountsByDate[date] = 0;
+                .then(data => {
+                    console.log('Fetched data:', data);
+                    var labels = data.map(item => {
+                        if (item.year == null || item.month == null) {
+                            console.error('Invalid data item:', item);
+                            return 'Invalid Date';
                         }
-                        donationCountsByDate[date] += 1;
+                        return `${String(item.month).padStart(2, '0')}/${item.year}`;
                     });
-
-                    const dates = Object.keys(donationCountsByDate);
-                    const donationCounts = Object.values(donationCountsByDate);
-
+                    var bookingCounts = data.map(item => parseInt(item.total_Inkinds) || 0);
                     const ctx = document.getElementById('inKindDonationsChart').getContext('2d');
-                    new Chart(ctx, {
+                    var bookingsChart = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                            labels: dates,
+                            labels: labels,
                             datasets: [{
-                                label: 'Number of In-Kind Donations (Received)',
-                                data: donationCounts,
-                                backgroundColor: 'rgba(75, 192, 192, 0.8)',
-                                borderColor: 'rgba(75, 192, 192, 1)',
+                                label: 'Number of Inkind-Donation By Month',
+                                data: bookingCounts,
+                                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
                                 borderWidth: 1
                             }]
                         },
@@ -410,7 +359,7 @@
                             plugins: {
                                 title: {
                                     display: true,
-                                    text: 'In-Kind Donations by Date (Received)'
+                                    text: 'Bookings by Month'
                                 }
                             },
                             scales: {
@@ -422,8 +371,7 @@
                     });
                 })
                 .catch(error => console.error('Error fetching data:', error));
-        });
-    </script>
+        </script>
 </body>
 
 </html>

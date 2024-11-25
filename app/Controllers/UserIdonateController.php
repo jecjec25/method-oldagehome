@@ -796,5 +796,66 @@ class UserIdonateController extends BaseController
 
     }
 
-   
+ 
+    public function InsertDonation()
+    {
+        $session = session();
+        $userSesion = session()->get('userID');
+
+        $email = $this->user->where('userID', $userSesion)->first();
+
+
+        $name = $email['FirstName'];
+
+        $myEmail = $email['Email'];
+
+        $data = [
+            'usersignsId' => $this->request->getPost('adminId'),
+            'establishment' => $this->request->getPost('establishment'),
+            'lastname' => $this->request->getPost('lastname'),
+            'firstname' => $this->request->getPost('firstname'),
+            'middlename' => $this->request->getPost('middlename'),
+            'contactnum' => $this->request->getPost('ContNum'),
+            'cashDonation' => $this->request->getPost('cashdonation'),
+            'cashCheck' => $this->request->getPost('cashCheck'),
+            'referencenum' => $this->request->getPost('receiptnum'),
+            'message' => $this->request->getPost('message'),
+            'status' => 'Received'
+        ];
+        
+        $imagePath = $_SERVER['DOCUMENT_ROOT'];
+        $picture = $this->request->getFile('picture');
+        $imageData = $this->request->getPost('imageData');
+        
+        if ($picture && $picture->isValid() && !$picture->hasMoved()) {
+            // Handle file upload
+            $newFileName = $picture->getRandomName();
+            $picture->move($imagePath . '/upload/monetary/', $newFileName);
+            $data['picture'] = $newFileName;
+        } 
+        elseif ($imageData) {
+            // Handle captured image
+            $imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
+            $imageData = base64_decode($imageData);
+            $newFileName = uniqid() . '.jpg';
+            file_put_contents($imagePath . '/upload/monetary/' . $newFileName);
+            $data['picture'] = $newFileName;
+
+            
+        }
+       
+        $uidm = new UserIdonateModel();
+        
+        if (!empty($id)) {
+            $uidm->update($id, $data);
+        } else {
+            $uidm->save($data);
+
+
+        }
+        
+        session()->setFlashdata('success', 'The data has been saved sucessfully.');
+        return redirect()->to('/viewReceiveMonetary');
+    }
+
 }

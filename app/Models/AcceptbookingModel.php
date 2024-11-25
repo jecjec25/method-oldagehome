@@ -61,4 +61,20 @@ class AcceptbookingModel extends Model
             ->orderBy('time_range', 'ASC')
             ->findAll();
     }
+
+    
+    public function getBookingsByMonth()
+    {
+        $result = $this->select('YEAR(prefferdate) AS year, MONTH(prefferdate) AS month, COUNT(*) AS total_bookings')
+            ->where('status', 'Accepted')
+            ->groupBy('YEAR(prefferdate), MONTH(prefferdate)')
+            ->orderBy('YEAR(prefferdate)', 'ASC')
+            ->orderBy('MONTH(prefferdate)', 'ASC')
+            ->findAll();
+
+        // // Log the result to debug
+        // log_message('debug', 'Query Result: ' . print_r($result, true));
+
+        return $result;
+    }
 }

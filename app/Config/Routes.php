@@ -157,6 +157,10 @@ $routes->post('HomeController/updateOrganization/(:any)', 'HomeController::updat
 $routes->get('HomeController/deleteOrganizer/(:any)', 'HomeController::deleteOrganizer/$1');
 $routes->get('donations/by-month', 'ViewController::donationsByMonth');
 
+
+$routes->get('InsertDonation', 'ViewController::viewInsertDonations');
+$routes->post('saveDonation', 'UserIdonateController::InsertDonation');
+
 }
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
 $routes->get('/editproduct/(:num)', 'ProductsController::editprod/$1');

@@ -748,4 +748,23 @@ class ViewController extends BaseController
         return view('dashboard/dashboard', $data);
     }
 
+    public function viewInsertDonations()
+    {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+
+        return view('dashboard/saveDonation', $data);
+    }
 }

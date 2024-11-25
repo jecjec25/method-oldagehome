@@ -43,7 +43,7 @@ class UserbookingController extends ResourceController
     public function index1()
     {
 
-        $data = $this->userbooking->getBookingsByMonth();
+        $data = $this->acceptbooking->getBookingsByMonth();
 
 
 
