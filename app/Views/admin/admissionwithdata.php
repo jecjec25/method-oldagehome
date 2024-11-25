@@ -60,6 +60,29 @@
             background-color: #0056b3;
         }
 
+        .button-backed {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .button-backed a {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-backed a:hover {
+            background-color: #0056b3;
+        }
+
+
+
 
 
         .size {
@@ -169,6 +192,10 @@
 
     <div class="button-back">
         <button type="submit" class="btn btn-success">Preview</button>
+    </div>
+
+    <div class="button-backed">
+        <a href="javascript:history.back()">Back</a>
     </div>
     <div class="size">
         <div class="header">
