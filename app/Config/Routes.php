@@ -155,7 +155,7 @@ $routes->get('editmember/(:any)', 'HomeController::viewedit/$1');
 $routes->post('HomeController/Insert', 'HomeController::insertOrganization');
 $routes->post('HomeController/updateOrganization/(:any)', 'HomeController::updateOrganization/$1');
 $routes->get('HomeController/deleteOrganizer/(:any)', 'HomeController::deleteOrganizer/$1');
-
+$routes->get('donations/by-month', 'ViewController::donationsByMonth');
 
 }
 $routes->get('/deleteproduct/(:any)', 'ProductsController::delete/$1');
@@ -200,6 +200,10 @@ if(session()->get('role') == 'Booker' && session()->get('is_verified') == 1){
     // Route to view and post events
     $routes->get('usereventpost', 'UserEvntPostController::userEventpost');
     $routes->post('/usersavepost', 'UserEvntPostController::usersavepost');
+
+
+
+
 }
 
 $routes->get('/announcement', 'ViewController::announcement', ['filter'  => 'guestFilter']);

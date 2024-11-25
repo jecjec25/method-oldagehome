@@ -65,12 +65,117 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <canvas id="donationsChart" width="800" height="400"></canvas>
+                                    <div class="chart-description">Monthly Cash Donations</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <script>
+            fetch('donations/by-month')
+    .then(response => response.json())
+    .then(data => {
+        if (data.length === 0) {
+            console.error('No data found for donations.');
+            return;
+        }
 
+        // Prepare labels and dataset
+        var labels = data.map(item => {
+            if (item.year == null || item.month == null) {
+                console.error('Invalid data item:', item);
+                return 'Invalid Date';
+            }
+            return `${String(item.month).padStart(2, '0')}/${item.year}`;
+        });
+
+        var donationAmounts = data.map(item => parseFloat(item.total_donations) || 0);
+
+        // Get chart context
+        const ctx = document.getElementById('donationsChart').getContext('2d');
+
+        // Create chart
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Total Donations (in PHP)',
+                    data: donationAmounts   ,
+                    backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Cash Donations by Month'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching donation data:', error));
+
+        </script>
+        <script>
+            fetch('bookings/by-month')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Fetched data:', data);
+                    var labels = data.map(item => {
+                        if (item.year == null || item.month == null) {
+                            console.error('Invalid data item:', item);
+                            return 'Invalid Date';
+                        }
+                        return `${String(item.month).padStart(2, '0')}/${item.year}`;
+                    });
+                    var bookingCounts = data.map(item => parseInt(item.total_bookings) || 0);
+                    const ctx = document.getElementById('bookingsChart99').getContext('2d');
+                    var bookingsChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Number of Bookings per Month',
+                                data: bookingCounts,
+                                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Bookings by Month'
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        </script>
     <script>
         fetch('bookings/by-month')
             .then(response => response.json())

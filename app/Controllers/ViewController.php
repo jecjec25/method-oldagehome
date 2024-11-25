@@ -16,6 +16,7 @@ use App\Models\ProdImgModel;
 use App\Models\VMModel;
 use App\Models\OrganizerModel;
 use App\Models\DonationModel;
+use App\Models\UserIdonateModel;
 
 class ViewController extends BaseController
 {
@@ -31,6 +32,7 @@ class ViewController extends BaseController
     private $org;
     private $donation;
     private $prodImge;
+    private $userDonation;
     public function example(){
         return view('admin/example');
     }
@@ -50,6 +52,7 @@ class ViewController extends BaseController
         $this->Vm = new VMModel();
         $this->donation  = new DonationModel();
         $this->org = new OrganizerModel();
+        $this->userDonation = new UserIdonateModel();
 
         helper(['form']);
     }
@@ -311,8 +314,25 @@ class ViewController extends BaseController
         ];
         return view('dashboard/fullcalendar', $data);
     }
+
+    public function donationsByMonth()
+    {
+        $donations = $this->userDonation
+            ->select("YEAR(donationdate) as year, MONTH(donationdate) as month, SUM(cashDonation) as total_donations")
+            ->where('status', 'Received')
+            ->groupBy("YEAR(donationdate), MONTH(donationdate)")
+            ->orderBy("YEAR(donationdate), MONTH(donationdate)")
+            ->findAll();
+    
+        
+        return $this->response->setJSON($donations);
+
+        // var_dump($data);
+    }
+    
     public function dash()
     {
+        
         $data = [
             'notif' => $this->userbooking->where('status', 'pending')->first(),
             'getnotif' => $this->userbooking

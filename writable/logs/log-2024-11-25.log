@@ -1,0 +1,38 @@
+ERROR - 2024-11-25 00:57:54 --> mysqli_sql_exception: Expression #1 of ORDER BY clause is not in GROUP BY clause and contains nonaggregated column 'seniorcaredb.userdonation.donationdate' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT MONTH(do...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(do...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(do...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(do...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\method-oldagehome\app\Controllers\ViewController.php(325): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\ViewController->dash()
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-11-25 00:57:54 --> Expression #1 of ORDER BY clause is not in GROUP BY clause and contains nonaggregated column 'seniorcaredb.userdonation.donationdate' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(donationdate) as month, SUM(cashDonation) as total
+FROM `userdonation`
+WHERE `status` = :status:
+GROUP BY MONTH(donationdate)
+ORDER BY `donationdate`', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ViewController.php(325): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->dash()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-25 01:45:09 --> Undefined variable $data
+in APPPATH\Controllers\ViewController.php on line 329.
+ 1 APPPATH\Controllers\ViewController.php(329): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\laragon\\www\\method-oldagehome\\app\\Controllers\\ViewController.php', 329)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->donationsByMonth()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
