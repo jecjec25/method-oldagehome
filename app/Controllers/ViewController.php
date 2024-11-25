@@ -72,7 +72,7 @@ class ViewController extends BaseController
     public function donation()
     {
 
-      $data = ['donation' =>  $this->donation->where('img', 'g11.jpg')->findAll()];
+      $data = ['donation' =>  $this->donation->where('img', 'sirpoygcashnum.jpg')->findAll()];
         return view('admin/donation', $data);
     }
     public function about()
