@@ -375,3 +375,10 @@ $routes->match(['get','post'], 'AuthCode', 'UserController::codeCheck');
 $routes->match(['get','post'], 'PasswordAuth', 'UserController::PasswordAuth');
 $routes->match(['get','post'], 'sampleNotif', 'UserController::sampleNotif');
 $routes->post('trytosendnotif', 'UserController::trytosendnotif');
+
+$routes->get('chatbot', 'MessgeController::chatBot');
+$routes->post('/chatbot/getResponse', 'MessgeController::getResponse');
+$routes->match(['get','post'], 'InsertResponse', 'ViewController::chatview');
+$routes->post('saveResponse', 'ViewController::insertResponse');
+$routes->get('updateResponse', 'ViewController::updateResponse');
+$routes->get('deleteResponse/(:any)', 'ViewController::deleteResponse/$1');

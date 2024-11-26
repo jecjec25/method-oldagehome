@@ -6,12 +6,14 @@ use App\Controllers\BaseController;
 use App\Models\NewsModel;
 use App\Models\EventsModel;
 use App\Models\AcceptbookingModel;
+use App\Models\MessageModel;
 
 class UserViewPostController extends BaseController
 {
     private $newsevents;
     private $events;
     private $acBooking;
+    private $chat;
 
     public function __construct()
     {
@@ -19,6 +21,7 @@ class UserViewPostController extends BaseController
         $this->newevents = new NewsModel();
         $this->events = new EventsModel();
         $this->acBooking = new AcceptbookingModel();
+        $this->chat = new MessageModel();
         helper(['form']);
     }
 
@@ -55,7 +58,8 @@ class UserViewPostController extends BaseController
             ->where('acceptbooking.status', 'Accepted')->where('acceptbooking.usersignsId', $user )
             ->first(),
         'getCount' => $this->acBooking->select('Count(*) as notif')->where('acceptbooking.usersignsId', $user)->first(),
-        'currentDate' => date('Y-m-d H:i:s')
+        'currentDate' => date('Y-m-d H:i:s'),
+        'chat' => $this->chat->findAll()
         ];
         
         return view('admin/userViewpost', $data);

@@ -1,0 +1,313 @@
+ERROR - 2024-11-26 11:23:16 --> mysqli_sql_exception: Unknown collation: 'utf8_ai_ci' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `m...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `m...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `m...')
+#3 D:\laragon\www\method-oldagehome\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `m...')
+#4 D:\laragon\www\method-oldagehome\system\Database\MigrationRunner.php(815): CodeIgniter\Database\Forge->createTable('migrations', true)
+#5 D:\laragon\www\method-oldagehome\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 D:\laragon\www\method-oldagehome\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 D:\laragon\www\method-oldagehome\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 D:\laragon\www\method-oldagehome\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 D:\laragon\www\method-oldagehome\spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2024-11-26 13:12:30 --> mysqli_sql_exception: Unknown column 'question' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\app\Controllers\MessgeController.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+#6 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+#7 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2024-11-26 13:12:30 --> Unknown column 'question' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `chat_bot`
+WHERE `question` = :question:', [...], false)
+ 2 APPPATH\Controllers\MessgeController.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-11-26 13:34:06 --> mysqli_sql_exception: Unknown column 'Question' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 D:\laragon\www\method-oldagehome\app\Models\MessageModel.php(44): CodeIgniter\BaseModel->first()
+#7 D:\laragon\www\method-oldagehome\app\Controllers\MessgeController.php(27): App\Models\MessageModel->getResponseByKeyword('hello')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2024-11-26 13:34:06 --> Unknown column 'Question' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `chat_bot`
+WHERE `Question` = :Question:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MessageModel.php(44): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\MessgeController.php(27): App\Models\MessageModel->getResponseByKeyword('hello')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-11-26 13:38:59 --> mysqli_sql_exception: Unknown column 'Question' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 D:\laragon\www\method-oldagehome\app\Models\MessageModel.php(44): CodeIgniter\BaseModel->first()
+#7 D:\laragon\www\method-oldagehome\app\Controllers\MessgeController.php(27): App\Models\MessageModel->getResponseByKeyword('hello')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2024-11-26 13:38:59 --> Unknown column 'Question' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `chat_bot`
+WHERE `Question` = :Question:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MessageModel.php(44): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\MessgeController.php(27): App\Models\MessageModel->getResponseByKeyword('hello')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-11-26 13:39:39 --> mysqli_sql_exception: Unknown column 'Question' in 'where clause' in D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 D:\laragon\www\method-oldagehome\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\method-oldagehome\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\method-oldagehome\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\method-oldagehome\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\method-oldagehome\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 D:\laragon\www\method-oldagehome\app\Models\MessageModel.php(44): CodeIgniter\BaseModel->first()
+#7 D:\laragon\www\method-oldagehome\app\Controllers\MessgeController.php(27): App\Models\MessageModel->getResponseByKeyword('hello')
+#8 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+#9 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+#10 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2024-11-26 13:39:39 --> Unknown column 'Question' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `chat_bot`
+WHERE `Question` = :Question:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MessageModel.php(44): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\MessgeController.php(27): App\Models\MessageModel->getResponseByKeyword('hello')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 13:40:02 --> Undefined array key "response"
+in APPPATH\Models\MessageModel.php on line 49.
+ 1 APPPATH\Models\MessageModel.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "response"', 'D:\\laragon\\www\\method-oldagehome\\app\\Models\\MessageModel.php', 49)
+ 2 APPPATH\Controllers\MessgeController.php(31): App\Models\MessageModel->getDefaultResponse()
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 13:46:57 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p61p5q562jg6gh3...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p61p5q562jg6gh3...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-26 13:46:58 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p61p5q562jg6gh3...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p61p5q562jg6gh3...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-26 13:50:06 --> Uncaught ErrorException: Cannot modify header information - headers already sent in D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php:774
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'D:\\laragon\\www\\...', 774)
+#1 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(774): setcookie('ci_session', 'p61p5q562jg6gh3...', Array)
+#2 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(750): CodeIgniter\HTTP\Response->doSetCookie('ci_session', 'p61p5q562jg6gh3...', Array)
+#3 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(730): CodeIgniter\HTTP\Response->dispatchCookies()
+#4 D:\laragon\www\method-oldagehome\system\HTTP\ResponseTrait.php(447): CodeIgniter\HTTP\Response->sendCookies()
+#5 D:\laragon\www\method-oldagehome\system\Debug\ExceptionHandler.php(78): CodeIgniter\HTTP\Response->send()
+#6 D:\laragon\www\method-oldagehome\system\Debug\Exceptions.php(147): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#8 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(967): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 D:\laragon\www\method-oldagehome\system\CodeIgniter.php(362): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 D:\laragon\www\method-oldagehome\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#3 D:\laragon\www\method-oldagehome\system\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\...')
+#4 {main}
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 774.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-26 13:57:38 --> Call to undefined method App\Models\MessageModel::getAllQuestions
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\MessgeController.php(19): CodeIgniter\Model->__call('getAllQuestions', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->chatBot()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 13:58:06 --> Undefined array key "message"
+in APPPATH\Views\admin\chatbot.php on line 22.
+ 1 APPPATH\Views\admin\chatbot.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "message"', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\chatbot.php', 22)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\chatbot.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/chatbot', [], true)
+ 5 APPPATH\Controllers\MessgeController.php(20): view('admin/chatbot', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->chatBot()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 13:58:26 --> Call to undefined method App\Models\MessageModel::getResponseById
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\MessgeController.php(28): CodeIgniter\Model->__call('getResponseById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 13:58:27 --> Call to undefined method App\Models\MessageModel::getResponseById
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\MessgeController.php(28): CodeIgniter\Model->__call('getResponseById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 13:58:29 --> Call to undefined method App\Models\MessageModel::getResponseById
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\MessgeController.php(28): CodeIgniter\Model->__call('getResponseById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 13:58:29 --> Call to undefined method App\Models\MessageModel::getResponseById
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\MessgeController.php(28): CodeIgniter\Model->__call('getResponseById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 14:02:24 --> Call to undefined method App\Models\MessageModel::getResponseById
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\MessgeController.php(28): CodeIgniter\Model->__call('getResponseById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MessgeController->getResponse()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MessgeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 23:04:02 --> Undefined variable $chat
+in APPPATH\Views\admin\home.php on line 311.
+ 1 APPPATH\Views\admin\home.php(311): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $chat', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\home.php', 311)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\home.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/home', [], true)
+ 5 APPPATH\Controllers\ViewController.php(66): view('admin/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 23:06:18 --> Undefined variable $chat
+in APPPATH\Views\admin\home.php on line 311.
+ 1 APPPATH\Views\admin\home.php(311): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $chat', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\home.php', 311)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\home.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/home', [], true)
+ 5 APPPATH\Controllers\ViewController.php(68): view('admin/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 23:06:31 --> Undefined variable $chat
+in APPPATH\Views\admin\home.php on line 311.
+ 1 APPPATH\Views\admin\home.php(311): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $chat', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\home.php', 311)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\home.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/home', [], true)
+ 5 APPPATH\Controllers\ViewController.php(68): view('admin/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ViewController->home()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-26 23:53:36 --> Undefined variable $chat
+in APPPATH\Views\admin\userViewpost.php on line 423.
+ 1 APPPATH\Views\admin\userViewpost.php(423): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $chat', 'D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userViewpost.php', 423)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\method-oldagehome\\app\\Views\\admin\\userViewpost.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/userViewpost', [], true)
+ 5 APPPATH\Controllers\UserViewPostController.php(61): view('admin/userViewpost', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserViewPostController->userViewpost()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserViewPostController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')

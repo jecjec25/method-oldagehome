@@ -17,6 +17,7 @@ use App\Models\VMModel;
 use App\Models\OrganizerModel;
 use App\Models\DonationModel;
 use App\Models\UserIdonateModel;
+use App\Models\MessageModel;
 
 class ViewController extends BaseController
 {
@@ -33,6 +34,7 @@ class ViewController extends BaseController
     private $donation;
     private $prodImge;
     private $userDonation;
+    private $chat;
     public function example(){
         return view('admin/example');
     }
@@ -53,7 +55,7 @@ class ViewController extends BaseController
         $this->donation  = new DonationModel();
         $this->org = new OrganizerModel();
         $this->userDonation = new UserIdonateModel();
-
+        $this->chat = new MessageModel();
         helper(['form']);
     }
 
@@ -62,11 +64,13 @@ class ViewController extends BaseController
         $data = [
             'home' => $this->prodImge->where('other', 'homepage')->findAll(),
             'gallery' => $this->prodImge->where('other', 'gallery')->findAll(),
+            'chat' => $this->chat->findAll()
         ];
         return view('admin/home', $data);
     }
     public function contact()
     {
+        $data['chat'] = $this->chat->findAll();
         return view('admin/contact');
     }
     public function donation()
@@ -766,5 +770,70 @@ class ViewController extends BaseController
         ];
 
         return view('dashboard/saveDonation', $data);
+    }
+
+    public function chatview()
+    {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
+        ];
+
+        return view('dashboard/InsertResponse', $data);
+    }
+
+    public function insertResponse()
+    {
+       $questions = $this->request->getPost('Questions');
+       $answer = $this->request->getPost('Answers');
+
+       $data = [
+        'Questions' => $questions,
+        'Answers' => $answer
+       ];
+
+       $this->chat->save($data);
+
+       return redirect()->to('/InsertResponse');
+
+    }
+
+    public function updateResponse()
+    {
+        $data = [
+            'notif' => $this->userbooking->where('status', 'pending')->first(),
+            'getnotif' => $this->userbooking
+                ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
+                    userbooking.middlename, userbooking.contactnum, userbooking.event, 
+                    userbooking.time, userbooking.prefferdate, userbooking.equipment, 
+                    userbooking.comments, userbooking.status, userbooking.usersignsId, 
+                    user.userID, user.LastName, user.FirstName')
+                ->join('user', 'user.userID = userbooking.usersignsId')
+                ->where('userbooking.status', 'Accepted')
+                ->orWhere('userbooking.status', 'Pending')
+                ->findAll(),
+            'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults(),
+            'response' => $this->chat->findAll()
+        ];
+
+        return view('dashboard/updateResponse', $data);
+        
+    }
+
+    public function deleteResponse($id)
+    {
+        $this->chat->delete($id);
+
+        return redirect()->to('/updateResponse');
     }
 }

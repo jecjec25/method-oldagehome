@@ -230,6 +230,20 @@
                 </ul>
             </div>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#chat" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-user-add-outline menu-icon"></i>
+              <span class="menu-title">Chatbot</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="chat">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="InsertResponse">Add Chat Response</a></li> 
+                <li class="nav-item"><a class="nav-link" href="updateResponse">Update Chat Response</a></li> 
+                </ul>
+            </div>
+          </li>
           <?php endif;?>
                 
       </nav>
