@@ -64,7 +64,7 @@ class ViewController extends BaseController
         $data = [
             'home' => $this->prodImge->where('other', 'homepage')->findAll(),
             'gallery' => $this->prodImge->where('other', 'gallery')->findAll(),
-            'chat' => $this->chat->findAll()
+            'chat' => $this->chat->limit(2)->findAll()
         ];
         return view('admin/home', $data);
     }

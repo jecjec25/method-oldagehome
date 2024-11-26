@@ -334,7 +334,7 @@
 <!-- Chatbot Modal -->
 <div id="chatModal" class="chat-modal">
     <div class="chat-header">
-        <h2>Chatbot</h2>
+        <h2>HapagArugaBot</h2>
         <span id="closeChatBtn" class="close-chat-btn">&times;</span>
     </div>
     <div id="chatMessages" class="chat-messages"></div>
@@ -417,39 +417,41 @@
                 }
             }
         });
-         // Handle dynamic button options from PHP
-    $(document).ready(function () {
-        // Example: Assume we have this PHP array (encoded as JSON) passed to JavaScript
-        const options = <?php echo json_encode(array_column($chat, 'Questions')); ?>;
+        $(document).ready(function () {
+    // Example: Assume we have this PHP array (encoded as JSON) passed to JavaScript
+    const options = <?php echo json_encode(array_column($chat, 'Questions')); ?>;
 
-        // Flatten the array to get all questions
-        const allOptions = options.flat();
+    // Flatten the array to get all questions
+    const allOptions = options.flat();
 
-        // Append buttons to the button container
-        allOptions.forEach(option => {
-            chatOptionContainer.innerHTML += `<button class="chat-option">${option}</button>`;
-        });
+    // Limit the options to the first two questions
+    const limitedOptions = allOptions.slice(0, 6); // Take only the first two options
 
-        // Handle button click events
-        $('.chat-option').click(function () {
-            const message = $(this).text().trim();
+    // Append buttons to the button container
+    limitedOptions.forEach(option => {
+        chatOptionContainer.innerHTML += `<button class="chat-option">${option}</button>`;
+    });
 
-            // Append user message to the chat
-            $('#chatMessages').append('<div class="chat-message user">' + message + '</div>');
+    // Handle button click events
+    $('.chat-option').click(function () {
+        const message = $(this).text().trim();
 
-            // Simulate sending the message to the chatbot via AJAX (replace URL with actual API endpoint)
-            $.post('/chatbot/getResponse', { message: message }, function (data) {
-                const botResponse = data.response || "Sorry, I didn't understand that.";
-                $('#chatMessages').append('<div class="chat-message bot">' + botResponse + '</div>');
+        // Append user message to the chat
+        $('#chatMessages').append('<div class="chat-message user">' + message + '</div>');
 
-                // Scroll to the bottom to show the latest messages
-                $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
-            });
+        // Simulate sending the message to the chatbot via AJAX (replace URL with actual API endpoint)
+        $.post('/chatbot/getResponse', { message: message }, function (data) {
+            const botResponse = data.response || "Sorry, I didn't understand that.";
+            $('#chatMessages').append('<div class="chat-message bot">' + botResponse + '</div>');
 
-            // Automatically scroll to the bottom of the messages
+            // Scroll to the bottom to show the latest messages
             $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
         });
-    }); 
+
+        // Automatically scroll to the bottom of the messages
+        $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
+    });
+});
     </script>
 
         <?php include_once('includes/footer.php'); ?>
