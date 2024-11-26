@@ -233,7 +233,7 @@
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#chat" aria-expanded="false" aria-controls="form-elements">
-              <i class="typcn typcn-user-add-outline menu-icon"></i>
+              <i class="typcn typcn-message menu-icon"></i>
               <span class="menu-title">Chatbot</span>
               <i class="menu-arrow"></i>
             </a>
