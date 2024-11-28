@@ -28,6 +28,50 @@
             });
         });
     </script>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/absolute positioning */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            justify-content: center; /* Center the modal */
+            align-items: center; /* Vertically center the modal content */
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            max-width: 90%; /* Limit the image width */
+            max-height: 90%; /* Limit the image height */
+            margin: auto;
+            display: block; /* Center image inside the modal */
+        }
+
+        .close {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 <body>
     <?php include_once('includes/header.php'); ?>
@@ -71,11 +115,19 @@
             const modalImage = document.getElementById("modalImage");
             modal.style.display = "flex"; // Use flex to center the modal content
             modalImage.src = imageSrc;
+
+            // Optional: Add fade-in effect when the modal appears
+            setTimeout(function() {
+                modal.style.opacity = "1";
+            }, 10);
         }
 
         function closeModal() {
             const modal = document.getElementById("imageModal");
-            modal.style.display = "none";
+            modal.style.opacity = "0"; // Fade out effect
+            setTimeout(function() {
+                modal.style.display = "none"; // Hide the modal after the fade-out effect
+            }, 300); // Time matches the transition duration
         }
 
         $(document).ready(function() {
