@@ -27,9 +27,9 @@
             });
         });
     </script>
-    
-    <!-- Chatbot Styles -->
-    <style>
+</head>
+
+<style>
         /* Basic Reset */
         * {
             margin: 0;
@@ -209,8 +209,47 @@
                 padding: 8px 12px;
             }
         }
-    </style>
-</head>
+
+.text {
+    color: #f0f0f0; /* Set a brighter color for better visibility */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-weight: bold; 
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 2px 5px; 
+    display: inline; 
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .slider {
+        max-height: 250px; /* Adjust for smaller screens */
+    }
+    .text {
+        font-size: 14px; /* Smaller text on mobile */
+    }
+    .arugaGallery {
+        padding-top: 5px; /* Adjust padding for smaller screens */
+    }
+
+    .wmuSlider {
+        position: relative;
+        overflow: hidden; /* Hide overflow for cleaner edges */
+        max-height: 400px; /* Set a max height for the slider */
+    }
+
+    /* Slider Image Styles */
+    .slider {
+        margin-top: 500px;
+        width: 100%; /* Full width of container */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 400px; /* Maintain a max height */
+        object-fit: cover; /* Cover the container while maintaining aspect ratio */
+        border-radius: 5px; /* Optional: adds rounded corners to the slider images */
+        display: block; /* Prevents small space under images */
+        margin: 0 auto; /* Center align images */
+    }
+}
+</style>
 
 <body>
     <?php include_once('includes/header.php'); ?>
@@ -266,8 +305,8 @@
             </div>
         </div>
     </div>
-
-    <!-- Chatbot Button -->
+    
+        <!-- Chatbot Button -->
     <button id="showChatBoxBtn" class="chat-btn">Chat</button>
 
     <!-- Chatbot Modal -->
@@ -394,6 +433,13 @@
 });
 </script>
 
+
+
+    <script src="./js/jquery.wmuSlider.js"></script> 
+    <script>
+        $('.example1').wmuSlider();         
+    </script>
+    
     <?php include_once('includes/footer.php');?>
 
     <script type="text/javascript">
@@ -403,5 +449,8 @@
     </script>
     
     <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+       
+<!--End of Tawk.to Script-->
 </body>
 </html>

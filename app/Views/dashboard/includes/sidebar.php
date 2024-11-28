@@ -80,7 +80,7 @@
             </a>
             <div class="collapse" id="form-element">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="contactu">Unread Inquiry</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contactu">Unread Inquiry</a></li>
                 <li class="nav-item"><a class="nav-link" href="/readenq">Read Inquiry</a></li>
               </ul>
             </div>
@@ -151,7 +151,7 @@
                 <li class="nav-item"> <a class="nav-link" href="/newspublished">Published News</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/newsarchive">Archived News</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/adevents">Events</a></li>
-                <li class="nav-item"> <a class="nav-link" href="Viewevents">Update Events</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Viewevents">Update Events</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/publishedevents  ">Published Events</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/eventsarchive ">Archived Events</a></li>
               </ul>
@@ -181,12 +181,12 @@
             <div class="collapse" id="donation">
               <ul class="nav flex-column sub-menu">
               <li class="nav-item"><a class="nav-link" href="<?= base_url()?>InsertDonation">Insert Donation</a></li> 
-              <li class="nav-item"><a class="nav-link" href="userdonatedtable">Track Monetary Donation</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewReceiveMonetary">Received Monetary Donation</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewPostponedMonetary">Postponed Monetary Donation</a></li>
-                <li class="nav-item"><a class="nav-link" href="tableindkind">Track In-kind Donation</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewReceiveInkind">Received Inkind Donation</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewPostponedInkind">Postponed Inkind Donation</a></li>
+              <li class="nav-item"><a class="nav-link" href="<?= base_url()?>userdonatedtable">Track Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>viewReceiveMonetary">Received Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>viewPostponedMonetary">Postponed Monetary Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>tableindkind">Track In-kind Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>viewReceiveInkind">Received Inkind Donation</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>viewPostponedInkind">Postponed Inkind Donation</a></li>
               </ul>
             </div>
           </li>
@@ -198,8 +198,8 @@
             </a>
             <div class="collapse" id="Feedback">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="eventfeedback">Event Feedbacks</a></li>
-                <li class="nav-item"><a class="nav-link" href="announcefeedback">Announcement Feedbacks</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>eventfeedback">Event Feedbacks</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>announcefeedback">Announcement Feedbacks</a></li>
               </ul>
             </div>
           </li>
@@ -211,8 +211,8 @@
             </a>
             <div class="collapse" id="elderneed">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="viewelderneed">Elder Need</a></li>
-                <li class="nav-item"><a class="nav-link" href="manageneed ">Update Elder Need</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>viewelderneed">Elder Need</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>manageneed">Update Elder Need</a></li>
                 </ul>
             </div>
           </li>
@@ -225,8 +225,8 @@
             </a>
             <div class="collapse" id="user">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="viewAdminRegister">Add Admin Users</a></li>
-                <li class="nav-item"><a class="nav-link" href="viewUsers">View Admin User</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>viewAdminRegister">Add Admin Users</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>viewUsers">View Admin User</a></li>
                 </ul>
             </div>
           </li>
@@ -239,8 +239,8 @@
             </a>
             <div class="collapse" id="chat">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="InsertResponse">Add Chat Response</a></li> 
-                <li class="nav-item"><a class="nav-link" href="updateResponse">Update Chat Response</a></li> 
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>InsertResponse">Add Chat Response</a></li> 
+                <li class="nav-item"><a class="nav-link" href="<?= base_url()?>updateResponse">Update Chat Response</a></li> 
                 </ul>
             </div>
           </li>

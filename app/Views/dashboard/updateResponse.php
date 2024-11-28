@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>Update Donation Report</title>
+  <title>Update Response</title>
   <link rel="icon" type="image/png" href="/picture.png">
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
@@ -22,13 +22,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Update Donation Report</h4>
+            <h4 class="mb-0">Update Response</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Report of Donation</p>
+              <p class="mb-0">Chatbot</p>
             </div>
           </li>
         </ul>
@@ -41,9 +41,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Donation Report</h4>
+                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Update Response</h4>
                   <p class="card-description" style="padding-left: 20px;"> 
-                    Update Donation Report
+                    Update Response in Chatbot.
                   </p>
                 <div class="table-responsive pt-3">
                   

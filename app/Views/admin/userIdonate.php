@@ -55,7 +55,7 @@
                         <span><input name="cashCheck" id="cashCheck" type="text" placeholder="Amount" class="textbox"></span>
                        </div>
                        <div>
-                        <label>For Cash Check</label><br>
+                        <label>Upload Image</label><br>
                         
                         <button type="button" id="openCamera">Open Camera</button>
                         <!-- Camera container -->

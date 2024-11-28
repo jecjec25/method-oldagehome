@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Insert Donation</title>
+  <title>Insert Questions</title>
   <link rel="icon" type="image/png" href="/picture.png">
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
@@ -32,13 +32,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Insert Donation</h4>
+            <h4 class="mb-0">Add Chat Response</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Donation</p>
+              <p class="mb-0">Chatbot</p>
             </div>
           </li>
         </ul>
@@ -52,9 +52,9 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Insert Donation</h4>
+                  <h4 class="card-title">Add Chat Reponse</h4>
                   <p class="card-description">
-                    Insert Cash Donation to Hapag Aruga
+                    Add Chat Reponse for users to chat.
                   </p>
                   <form action="<?= base_url('saveResponse')?>" method="post">
                   <div class="card-text">

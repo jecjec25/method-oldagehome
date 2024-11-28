@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Monetary Donations</title>
   <link rel="icon" type="image/png" href="/picture.png">
@@ -8,10 +9,36 @@
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
   <!-- Bootstrap CSS for Modal -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Add some custom styles for the pagination buttons */
+    #paginationControls {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .page-btn {
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .page-btn.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .page-btn:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container-scroller">
-    <?php include_once('includes/header.php'); ?>       
+    <?php include_once('includes/header.php'); ?>
     <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-2">
@@ -79,7 +106,7 @@
                           <td><?= $dnt['cashCheck'] ?: 'No Cash Check'; ?></td>
                           <td>
                             <?php if (!empty($dnt['picture'])): ?>
-                              <img src="<?= "upload/monetary/" . $dnt['picture'] ?>" alt="Donation Image" style="width: 90px; height: 90px;">
+                              <img src="<?= "upload/monetary/" . $dnt['picture'] ?>" alt="Donation Image" style="width: 90px; height: 90px;" data-bs-toggle="modal" data-bs-target="#imageModal-<?= $dnt['id'] ?>">
                             <?php else: ?>
                               No Image
                             <?php endif; ?>
@@ -129,10 +156,29 @@
                             </div>
                           </td>
                         </tr>
+
+                        <!-- Image Modal -->
+                        <div class="modal fade" id="imageModal-<?= $dnt['id'] ?>" tabindex="-1" aria-labelledby="imageModalLabel-<?= $dnt['id'] ?>" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="imageModalLabel-<?= $dnt['id'] ?>">Donation Image</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <img src="<?= "upload/monetary/" . $dnt['picture'] ?>" class="img-fluid" alt="Donation Image">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                       <?php endforeach; ?>
                     </tbody>
                   </table>
                 </div>
+
+                <!-- Pagination Controls -->
+                <div id="paginationControls"></div>
               </div>
             </div>
           </div>
@@ -152,5 +198,35 @@
   <script src="login/js/dashboard.js"></script>
   <!-- Bootstrap JS for Modal -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const rowsPerPage = 5;
+      const rows = $('#userbooking tbody tr');
+      const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+      // Append pagination buttons
+      for (let i = 1; i <= totalPages; i++) {
+        $('#paginationControls').append(`<button class="page-btn" data-page="${i}">${i}</button>`);
+      }
+
+      function showPage(page) {
+        rows.hide();
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        rows.slice(start, end).show();
+      }
+
+      $('#paginationControls').on('click', '.page-btn', function () {
+        const page = $(this).data('page');
+        showPage(page);
+        $('.page-btn').removeClass('active');
+        $(this).addClass('active');
+      });
+
+      showPage(1); // Show first page by default
+    });
+  </script>
 </body>
+
 </html>

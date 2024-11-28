@@ -9,8 +9,54 @@
     <link rel="stylesheet" href="login/vendors/select2/select2.min.css">
     <link rel="stylesheet" href="login/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
     <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
+
+    <!-- Modal Styling -->
+    <style>
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+            object-fit: contain;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+
     <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+    <script type="text/javascript">
+        bkLib.onDomLoaded(nicEditors.allTextAreas);
+    </script>
 </head>
 
 <body>
@@ -79,19 +125,18 @@
                                             <td><?=$mevents['Category']?></td>
                                             <td><?=$mevents['Atendees'] ?></td>
                                             <td>
-    <?php if (!empty($mevents['Attachments'])): ?>
-        <?php foreach ($mevents['Attachments'] as $attachment): ?>
-            <?php
-                // Trim any unwanted spaces or characters from the attachment name
-                $imagePath = base_url("/upload/events/") . trim($attachment);
-            ?>
-            <img src="<?= $imagePath ?>" alt="event image" style="width:50px; height:50px; border:box; margin-right: 5px;">
-                 <?php endforeach; ?>
-    <?php else: ?>
-        <p>No attachments available</p>
-    <?php endif; ?>
-</td>
-
+                                                <?php if (!empty($mevents['Attachments'])): ?>
+                                                    <?php foreach ($mevents['Attachments'] as $attachment): ?>
+                                                        <?php
+                                                            // Trim any unwanted spaces or characters from the attachment name
+                                                            $imagePath = base_url("/upload/events/") . trim($attachment);
+                                                        ?>
+                                                        <img src="<?= $imagePath ?>" alt="event image" style="width:50px; height:50px; border:box; margin-right: 5px;" class="open-modal">
+                                                    <?php endforeach; ?>
+                                                <?php else: ?>
+                                                    <p>No attachments available</p>
+                                                <?php endif; ?>
+                                            </td>
                                             <td><?=$mevents['Status'] ?></td>
                                             <td><?=$mevents['type'] ?></td>
                                             <td>
@@ -118,6 +163,39 @@
         </div>
     </div>
 </div>
+
+<!-- Modal for Viewing Image -->
+<div id="pictureModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" class="modal-content" src="">
+</div>
+
+<!-- JavaScript for Modal Handling -->
+<script>
+// Open the modal and display the image
+document.querySelectorAll('.open-modal').forEach(item => {
+    item.addEventListener('click', function() {
+        openModal(item.src);
+    });
+});
+
+function openModal(imageSrc) {
+    document.getElementById('modalImage').src = imageSrc;
+    document.getElementById('pictureModal').style.display = 'block';
+}
+
+// Close the modal
+function closeModal() {
+    document.getElementById('pictureModal').style.display = 'none';
+}
+
+// Close modal when clicking outside the modal content
+window.onclick = function (event) {
+    if (event.target == document.getElementById('pictureModal')) {
+        closeModal();
+    }
+}
+</script>
 
 <script src="login/vendors/js/vendor.bundle.base.js"></script>
 <script src="login/vendors/chart.js/Chart.min.js"></script>

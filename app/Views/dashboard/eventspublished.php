@@ -10,123 +10,200 @@
   <link rel="stylesheet" href="login/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
   <link rel="stylesheet" href="login/css/vertical-layout-light/style.css">
   <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+  <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+  <!-- Modal Styling -->
+  <style>
+    /* Modal styling */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+        position: relative;
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+        object-fit: contain;
+    }
+
+    .modal-content img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+  </style>
+
 </head>
 
 <body>
 <div class="container-scroller">
-<?php include_once('includes/header.php') ?>
+  <?php include_once('includes/header.php') ?>
   <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
-&nbsp;
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item ml-0">
-            <h4 class="mb-0">Published Events</h4>
-          </li>
-          <li class="nav-item">
-            <div class="d-flex align-items-baseline">
-              <p class="mb-0">Home</p>
-              <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">
-                <a href="adevents" style="color: white;">Events</a>
+    &nbsp;
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
+      <ul class="navbar-nav mr-lg-2">
+        <li class="nav-item ml-0">
+          <h4 class="mb-0">Published Events</h4>
+        </li>
+        <li class="nav-item">
+          <div class="d-flex align-items-baseline">
+            <p class="mb-0">Home</p>
+            <i class="typcn typcn-chevron-right"></i>
+            <p class="mb-0">
+              <a href="adevents" style="color: white;">Events</a>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid page-body-wrapper">
+    <?php include_once('includes/sidebar.php'); ?>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Published Events</h4>
+              <p class="card-description" style="padding-left: 20px;">
+                Published Events of Aruga Kapatid
               </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="container-fluid page-body-wrapper">     
-    <?php include_once('includes/sidebar.php');?>
-          <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <h4 class="card-title" style="padding-left: 20px; padding-top: 20px;">Published Events</h4>
-                  <p class="card-description" style="padding-left: 20px;"> 
-                    Published Events of Aruga Kapatid
-                  </p>
-                 <!-- <form action="searchevents" method="get">
-                  <input  name="searchevents" type="text">
+              <!-- <form action="searchevents" method="get">
+              <input  name="searchevents" type="text">
 
-                  <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
-                  </form>  -->
-                <div class="table-responsive pt-3">
-                  
-                  <table class="table table-striped project-orders-table" id="events">
-                    <thead>
-                      <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Organizer</th>
-                        <th>Start_date</th>
-                        <th>End_date</th>
-                        <th>Category</th>
-                        <th>Attendees</th>
-                        <th>Attachments</th>
-                        <th>Status</th>
-                        <th>Type</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+              <button type="submit"><i class="typcn typcn-zoom menu-icon"></i></button>
+              </form> -->
+              <div class="table-responsive pt-3">
+                <table class="table table-striped project-orders-table" id="events">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>Organizer</th>
+                      <th>Start_date</th>
+                      <th>End_date</th>
+                      <th>Category</th>
+                      <th>Attendees</th>
+                      <th>Attachments</th>
+                      <th>Status</th>
+                      <th>Type</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     <?php foreach($main as $events): ?>
-                      <?php if($events['End_date'] >= $currentDate):?>
-                      
-                <tr>
-                    <td><?=$events['Title'] ?></td>
-                    <td><?=$events['Description'] ?></td>
-                    <td><?=$events['Organizer'] ?></td>
-                    <td><?=$events['Start_date'] ?></td>
-                    <td><?=$events['End_date'] ?></td>
-                    <td><?=$events['Category'] ?></td>
-                    <td><?=$events['Atendees'] ?></td>
-                    <td>
-    <?php if (!empty($events['Attachments'])): ?>
-        <?php foreach ($events['Attachments'] as $attachment): ?>
-            <?php
-                // Trim any unwanted spaces or characters from the attachment name
-                $imagePath = base_url("/upload/events/") . trim($attachment);
-            ?>
-            <img src="<?= $imagePath ?>" alt="event image" style="width:50px; height:50px; border:box; margin-right: 5px;">
-                 <?php endforeach; ?>
-    <?php else: ?>
-        <p>No attachments available</p>
-    <?php endif; ?>
-</td>
+                      <?php if($events['End_date'] >= $currentDate): ?>
+                        <tr>
+                          <td><?=$events['Title'] ?></td>
+                          <td><?=$events['Description'] ?></td>
+                          <td><?=$events['Organizer'] ?></td>
+                          <td><?=$events['Start_date'] ?></td>
+                          <td><?=$events['End_date'] ?></td>
+                          <td><?=$events['Category'] ?></td>
+                          <td><?=$events['Atendees'] ?></td>
+                          <td>
+                            <?php if (!empty($events['Attachments'])): ?>
+                              <?php foreach ($events['Attachments'] as $attachment): ?>
+                                <?php
+                                  // Trim any unwanted spaces or characters from the attachment name
+                                  $imagePath = base_url("/upload/events/") . trim($attachment);
+                                ?>
+                                <img src="<?= $imagePath ?>" alt="event image" style="width:50px; height:50px; border:box; margin-right: 5px;" class="open-modal">
+                              <?php endforeach; ?>
+                            <?php else: ?>
+                              <p>No attachments available</p>
+                            <?php endif; ?>
+                          </td>
 
-                    <td><?=$events['Status'] ?></td>
-                    <td><?=$events['type'] ?></td>
-                    <td>
-                          <div class="d-flex align-items-center">
-                            <form action="<?= base_url('EventPubArc')?>" method="post">
-                            <input type="hidden" name="updateEve" value="<?= $events['EventID']?>">
-                            <button class="btn btn-danger btn-sm btn-icon-text" type="submit" onclick="return confirm('Are you sure you want to archive this form?')">Archive<i class="typcn typcn-archive btn-icon-append"></i></button>
-                          </form>
-                          </div>
-                    </td>
-                </tr>
-                <?php endif;?>
-                  <?php endforeach; ?>
-                    </tbody>
-                  </table>
-                </div>
+                          <td><?=$events['Status'] ?></td>
+                          <td><?=$events['type'] ?></td>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <form action="<?= base_url('EventPubArc')?>" method="post">
+                                <input type="hidden" name="updateEve" value="<?= $events['EventID']?>">
+                                <button class="btn btn-danger btn-sm btn-icon-text" type="submit" onclick="return confirm('Are you sure you want to archive this form?')">Archive<i class="typcn typcn-archive btn-icon-append"></i></button>
+                              </form>
+                            </div>
+                          </td>
+                        </tr>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
-        <?php include_once('includes/footer.php');?>
       </div>
+      <?php include_once('includes/footer.php');?>
     </div>
   </div>
-  <script src="login/vendors/js/vendor.bundle.base.js"></script>
-  <script src="login/vendors/chart.js/Chart.min.js"></script>
-  <script src="login/js/off-canvas.js"></script>
-  <script src="login/js/hoverable-collapse.js"></script>
-  <script src="login/js/template.js"></script>
-  <script src="login/js/settings.js"></script>
-  <script src="login/js/todolist.js"></script>
-  <script src="login/js/dashboard.js"></script>
+</div>
 
-   </body>
+<!-- Modal for Viewing Image -->
+<div id="pictureModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="modalImage" class="modal-content" src="">
+</div>
+
+<!-- JavaScript for Modal Handling -->
+<script>
+// Open the modal and display the image
+document.querySelectorAll('.open-modal').forEach(item => {
+  item.addEventListener('click', function() {
+    openModal(item.src);
+  });
+});
+
+function openModal(imageSrc) {
+  document.getElementById('modalImage').src = imageSrc;
+  document.getElementById('pictureModal').style.display = 'block';
+}
+
+// Close the modal
+function closeModal() {
+  document.getElementById('pictureModal').style.display = 'none';
+}
+
+// Close modal when clicking outside the modal content
+window.onclick = function (event) {
+  if (event.target == document.getElementById('pictureModal')) {
+    closeModal();
+  }
+}
+</script>
+
+<script src="login/vendors/js/vendor.bundle.base.js"></script>
+<script src="login/vendors/chart.js/Chart.min.js"></script>
+<script src="login/js/off-canvas.js"></script>
+<script src="login/js/hoverable-collapse.js"></script>
+<script src="login/js/template.js"></script>
+<script src="login/js/settings.js"></script>
+<script src="login/js/todolist.js"></script>
+<script src="login/js/dashboard.js"></script>
+
+</body>
 </html>
