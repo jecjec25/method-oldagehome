@@ -140,6 +140,14 @@ class Fullcalendar extends BaseController
             // For example, you can set a message to display in the view
                 $data['no_data_message'] = 'No data found.';
         }
+
+        $cdate = new \DateTime();
+        foreach($data['reg'] as &$person)
+        {
+            $birthDate = new \DateTime($person['DateBirth']);
+            $age = $cdate->diff($birthDate)->y;
+            $person['age'] = $age;
+        }
         
         return view('dashboard/reportstable', $data);
     }
@@ -176,6 +184,15 @@ class Fullcalendar extends BaseController
         $count = $this->main->where('RegDate <=', $search)
                             ->where('scstatus', 'Unarchive')
                             ->countAllResults();
+
+    $cdate = new \DateTime();
+
+    foreach($data['reg'] as &$person)
+            {
+                $birthDate = new \DateTime($person['DateBirth']);
+                $age = $cdate->diff($birthDate)->y;
+                $person['age'] = $age;
+            }
 
         
         $dompdf = new Dompdf();
@@ -336,6 +353,7 @@ class Fullcalendar extends BaseController
              <th>Middle Name</th>
              <th>Nickname</th>
              <th>Date of Birth</th>
+             <th>Age</th>
              <th>Gender</th>
              <th>Marital Status</th>
              <th>Contact Number</th>
@@ -353,6 +371,7 @@ foreach ($data['reg'] as $reg) {
      <td>' . $reg['middlename'] . '</td>
      <td>' . $reg['nickname'] . '</td>
      <td>' . $reg['DateBirth'] . '</td>
+     <td>' . $reg['age'] . '</td>
      <td>' . $reg['gender'] . '</td>
      <td>' . $reg['marital_stat'] . '</td>
      <td>' . $reg['ContNum'] . '</td>
@@ -365,8 +384,16 @@ foreach ($data['reg'] as $reg) {
      $html .= '</tbody></table>
 
  <p class="summary">Summary</p>
-     <p>During the reporting period, a total of '. $count .' elderly individuals were registered in the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
-     </div>
+     <p>During the reporting period, a total of '. $count .' elderly individuals were registered in the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
+     <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
+            <div style="text-align: center; width: 200px;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
+    </div>
+
      </body>
      </html>';
 
@@ -382,7 +409,7 @@ foreach ($data['reg'] as $reg) {
         // Render PDF (optional: save to file or stream to browser)
         $dompdf->render();
         
-        $dompdf->stream('Elderly_Report.pdf', array('Attachment' => true));
+        $dompdf->stream('Elderly_Report.pdf', array('Attachment' => 0));
         
         // Stop CodeIgniter from further processing (optional, but good practice)
         exit();
@@ -421,6 +448,15 @@ foreach ($data['reg'] as $reg) {
             'currentDate' => date('Y-m-d'),
             'search' => $search
         ];
+
+        $cdate = new \DateTime();
+
+        foreach($data['reg'] as &$person)
+               {
+                   $birthDate = new \DateTime($person['DateBirth']);
+                   $age = $cdate->diff($birthDate)->y;
+                   $person['age'] = $age;
+               }
 
         return view('dashboard/preview', $data);
     }
@@ -463,6 +499,15 @@ foreach ($data['reg'] as $reg) {
            
         ];
 
+
+        foreach($data['reg'] as &$person)
+        {
+            $birthDate = new \DateTime($person['DateBirth']);
+            $LeftDate = new \DateTime($person['departuredate']);
+            $age = $LeftDate->diff($birthDate)->y;
+            $person['age'] = $age;
+        }
+
         return view('dashboard/previewLeft2', $data);
     }
 
@@ -498,6 +543,15 @@ foreach ($data['reg'] as $reg) {
             'search' => $search,
             'tosearch' => $tosearch
         ];
+
+        $cdate = new \DateTime();
+       foreach($data['reg'] as &$person)
+       {
+           $birthDate = new \DateTime($person['DateBirth']);
+           $LeftDate = new \DateTime($person['departuredate']);
+           $age = $LeftDate->diff($birthDate)->y;
+           $person['age'] = $age;
+       }
 
         return view('dashboard/previewLeft', $data);
     }
@@ -537,6 +591,15 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
             'LatestDeath' => $lastDeathDate
         ];
 
+        foreach($data['reg'] as &$person)
+        {
+            $birthDate = new \DateTime($person['DateBirth']);
+            $deathDate = new \DateTime($person['datedeath']);
+            $age = $deathDate->diff($birthDate)->y;
+            $person['age'] = $age;
+        }
+
+
         return view('dashboard/previewDeath2', $data);
     }
 
@@ -567,6 +630,15 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
             'search' => $search,
             'tosearch' => $tosearch
         ];
+
+        $cdate = new \DateTime();
+       foreach($data['reg'] as &$person)
+       {
+           $birthDate = new \DateTime($person['DateBirth']);
+           $deathDate = new \DateTime($person['datedeath']);
+           $age = $deathDate->diff($birthDate)->y;
+           $person['age'] = $age;
+       }
 
         return view('dashboard/previewDeath', $data);
     }
@@ -790,7 +862,14 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
         $html .= '</tbody></table>
 
               <p style="font-weight: 600;">Total Amount Raised: ' . number_format($totalAmountRaised, 2) . '</p>
-
+         <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
+            <div style="text-align: center; width: 200px;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
+        </div>
         </div>
         </body>
         </html>';
@@ -805,7 +884,7 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
         $dompdf->render();
     
         // Output the PDF as a string (inline display in the browser)
-        $dompdf->stream('Event_Report.pdf', array('Attachment' => true));
+        $dompdf->stream('Event_Report.pdf', array('Attachment' => 0));
     
         // Stop CodeIgniter from further processing (optional, but good practice)
         exit();

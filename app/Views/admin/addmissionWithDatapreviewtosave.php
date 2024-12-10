@@ -311,9 +311,6 @@
     </style>
 </head>
 <body>
-        <div class="button-print" style="margin-top:50px;">
-    <button class="print-button" onclick="window.print()">Print This Page</button>
-    </div>
 <form action="<?= base_url('saveToPdfSlip/' . $elder['Id'])?>" method="GET">
     <div class="button-download">
     </div>

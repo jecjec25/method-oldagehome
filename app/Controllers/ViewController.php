@@ -333,6 +333,11 @@ class ViewController extends BaseController
 
         // var_dump($data);
     }
+
+    public function ageVisualization()
+    {
+        
+    }
     
     public function dash()
     {

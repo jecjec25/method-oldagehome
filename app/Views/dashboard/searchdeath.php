@@ -104,6 +104,19 @@
         background-color: #007bff;
         color: white;
     }
+
+    #iframeContainer 
+    {
+        margin-top: 20px;
+        display: none;
+    }
+
+    iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+    }
+
 </style>
 
 <body>
@@ -139,7 +152,7 @@
                                     Table Report of Deceased Elders of Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print">
-                                    <a class="btn btn-primary" href="<?= base_url('previewDeath/' . $fromdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
+                                    <a class="btn btn-primary" href="<?= base_url('getReportsDeath/' . $fromdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
                                 </div>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-striped project-orders-table" id="tblscdetails">
@@ -153,6 +166,7 @@
                                                 <th>Middle Name</th>
                                                 <th>Nickname</th>
                                                 <th>Date of Birth</th>
+                                                <th>Age</th>
                                                 <th>Gender</th>
                                                 <th>Marital Status</th>
                                                 <th>Contact Number</th>
@@ -191,6 +205,7 @@
                                                 <td><?=$k['middlename'] ?></td>
                                                 <td><?=$k['nickname'] ?></td>
                                                 <td><?=$k['DateBirth'] ?></td>
+                                                <td><?=$k['age'] ?></td>
                                                 <td><?=$k['gender'] ?></td>
                                                 <td><?=$k['marital_stat'] ?></td>
                                                 <td><?=$k['ContNum'] ?></td>
@@ -231,23 +246,26 @@
                                 </div>
 
                                <!-- Pagination controls -->
-<div class="pagination">
-    <?php
-    $query = $_GET;
-    // Display pagination links
-    for ($i = 1; $i <= $totalPages; $i++) :
-        $query['page'] = $i;
-        $pageUrl = '?' . http_build_query($query);
-    ?>
-        <a href="<?= $pageUrl ?>" class="<?= ($i == $currentPage) ? 'active' : '' ?>"><?= $i ?></a>
-    <?php endfor; ?>    
-</div>
+                        <div class="pagination">
+                            <?php
+                            $query = $_GET;
+                            // Display pagination links
+                            for ($i = 1; $i <= $totalPages; $i++) :
+                                $query['page'] = $i;
+                                $pageUrl = '?' . http_build_query($query);
+                            ?>
+                                <a href="<?= $pageUrl ?>" class="<?= ($i == $currentPage) ? 'active' : '' ?>"><?= $i ?></a>
+                            <?php endfor; ?>    
+                        </div>
 
-<p>Showing page <?= $currentPage ?> of <?= $totalPages ?> (<?= $totalItems ?> total entries)</p>
+                        <p>Showing page <?= $currentPage ?> of <?= $totalPages ?> (<?= $totalItems ?> total entries)</p>
 
                             </div>
                         </div>
                     </div>
+                    <div id="iframeContainer">
+                                    <iframe id="pdfIframe" src=""></iframe>
+                                </div> 
                     <div class="col-md-12">
                         <a href="/viewreportdeath" class="btn btn-secondary">Back</a>
                     </div>
@@ -269,6 +287,16 @@
     <script src="login/js/settings.js"></script>
     <script src="login/js/todolist.js"></script>
     <script src="login/js/dashboard.js"></script>
+
+    <script>
+         document.getElementById("PrintButton").addEventListener("click", function (event) {
+            event.preventDefault();
+            const pdfUrl = this.href;
+            document.getElementById("pdfIframe").src = pdfUrl;
+            document.getElementById("iframeContainer").style.display = "block";
+        });
+    </script>
+
 </body>
 
 </html>

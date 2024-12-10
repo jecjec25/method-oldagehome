@@ -85,6 +85,18 @@
             border-radius: 4px;
             cursor: pointer;
         } 
+
+            #iframeContainer 
+        {
+            margin-top: 20px;
+            display: none;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
         
         </style>
 </head>
@@ -123,7 +135,7 @@
                                         Table Report of Events of Aruga-Kapatid Foundation Incorporated
                                     </p>
                                     <div class="button-print">
-                                        <a href="<?= base_url('/previewEvent/' . $regdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
+                                        <a href="<?= base_url('/generateEventReport/' . $regdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
                                     </div>
                                     <div class="table-responsive pt-3">
                                         <table class="table table-striped project-orders-table" id="acceptbooking">
@@ -175,6 +187,9 @@
                             </div>
                         </div>
                     </div>
+                    <div id="iframeContainer">
+                        <iframe id="pdfIframe" src=""></iframe>
+                    </div> 
                     <div class="col-md-12">
                         <a href="/reportevent" class="btn btn-secondary">Back</a>
                     </div>
@@ -192,6 +207,15 @@
     <script src="login/js/settings.js"></script>
     <script src="login/js/todolist.js"></script>
     <script src="login/js/dashboard.js"></script>
+
+    <script>
+         document.getElementById("PrintButton").addEventListener("click", function (event) {
+            event.preventDefault();
+            const pdfUrl = this.href;
+            document.getElementById("pdfIframe").src = pdfUrl;
+            document.getElementById("iframeContainer").style.display = "block";
+        });
+    </script>
 </body>
 
 </html>

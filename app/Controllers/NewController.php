@@ -30,7 +30,6 @@ class NewController extends BaseController
     {
         $sortOption = $this->request->getGet('sort');
         $main = new MainModel();
-    
 
         switch ($sortOption) {
             case 'az':
@@ -50,10 +49,18 @@ class NewController extends BaseController
                 $sortOption = ''; 
                 break;
         }
-    
+
+        $cdate = new \DateTime();
+
+        foreach($data['main'] as &$person)
+        {
+            $birthDate = new \DateTime($person['DateBirth']);
+            $age = $cdate->diff($birthDate)->y;
+            $person['age'] = $age;
+        }
+
         $data['sortOption'] = $sortOption;
     
-
         $data['notif'] = $this->userbooking->where('status', 'pending')->first();
         $data['getnotif'] = $this->userbooking
             ->select('userbooking.bookingId, userbooking.lastname, userbooking.firstname, 
@@ -70,7 +77,6 @@ class NewController extends BaseController
     
         return view('dashboard/managescdetails', $data);
     }
-
 
     public function archives()
     {
@@ -89,6 +95,16 @@ class NewController extends BaseController
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];
        $data['main']= $this->main->where('scstatus', 'Left')->findAll();
+
+       $cdate = new \DateTime();
+       foreach($data['main'] as &$person)
+       {
+           $birthDate = new \DateTime($person['DateBirth']);
+           $LeftDate = new \DateTime($person['departuredate']);
+           $age = $LeftDate->diff($birthDate)->y;
+           $person['age'] = $age;
+       }
+       
         return view('dashboard/scarchived', $data);
     }
 
@@ -122,6 +138,14 @@ class NewController extends BaseController
         ->where('scstatus', 'Left')
         ->orderBy('departuredate', 'DESC')
         ->first();
+
+        foreach($data['main'] as &$person)
+        {
+            $birthDate = new \DateTime($person['DateBirth']);
+            $LeftDate = new \DateTime($person['departuredate']);
+            $age = $LeftDate->diff($birthDate)->y;
+            $person['age'] = $age;
+        }
 
         $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['departuredate'] : 'N/A'; 
         $LatestDates = $LatestDate ? $LatestDate['departuredate'] : 'N/A'; 
@@ -288,6 +312,7 @@ class NewController extends BaseController
                         <th>Middle Name</th>
                         <th>Nickname</th>
                         <th>Date of Birth</th>
+                       <th>Age</th>
                         <th>Gender</th>
                         <th>Marital Status</th>
                         <th>Contact Number</th>
@@ -306,6 +331,7 @@ class NewController extends BaseController
                 <td>' . $reg['middlename'] . '</td>
                 <td>' . $reg['nickname'] . '</td>
                 <td>' . $reg['DateBirth'] . '</td>
+                <td>' . $reg['age'] . '</td>
                 <td>' . $reg['gender'] . '</td>
                 <td>' . $reg['marital_stat'] . '</td>
                 <td>' . $reg['ContNum'] . '</td>
@@ -319,8 +345,15 @@ class NewController extends BaseController
         $html .= '</tbody></table>
 
         <p class="summary">Summary</p>
-        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
 
+       <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
+            <div style="text-align: center; width: 200px;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
         </div>
         </body>
         </html>';
@@ -335,7 +368,7 @@ class NewController extends BaseController
         $dompdf->render();
 
         // Output the PDF as a string (inline display in the browser)
-        $dompdf->stream('Elderly_Left_Report.pdf', array('Attachment' => true));
+        $dompdf->stream('Elderly_Left_Report.pdf', array('Attachment' => 0));
 
         // Stop CodeIgniter from further processing (optional, but good practice)
         exit();
@@ -359,6 +392,15 @@ class NewController extends BaseController
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];
        $data['main']= $this->main->where('scstatus','Deceased')->findAll();
+
+       $cdate = new \DateTime();
+       foreach($data['main'] as &$person)
+       {
+           $birthDate = new \DateTime($person['DateBirth']);
+           $deathDate = new \DateTime($person['datedeath']);
+           $age = $deathDate->diff($birthDate)->y;
+           $person['age'] = $age;
+       }
         return view('dashboard/scarchivedeceased', $data);
     }
 
@@ -400,6 +442,14 @@ class NewController extends BaseController
 
         $count = $this->main->where('scstatus', 'Deceased')
                             ->countAllResults();
+
+        foreach($data['main'] as &$person)
+        {
+            $birthDate = new \DateTime($person['DateBirth']);
+            $deathDate = new \DateTime($person['datedeath']);
+            $age = $deathDate->diff($birthDate)->y;
+            $person['age'] = $age;
+        }
 
         
         $dompdf = new Dompdf();
@@ -564,6 +614,7 @@ class NewController extends BaseController
                         <th>Middle Name</th>
                         <th>Nickname</th>
                         <th>Date of Birth</th>
+                        <th>Age</th>
                         <th>Gender</th>
                         <th>Marital Status</th>
                         <th>Contact Number</th>
@@ -582,6 +633,7 @@ class NewController extends BaseController
                 <td>' . $reg['middlename'] . '</td>
                 <td>' . $reg['nickname'] . '</td>
                 <td>' . $reg['DateBirth'] . '</td>
+                <td>' . $reg['age'] . '</td>
                 <td>' . $reg['gender'] . '</td>
                 <td>' . $reg['marital_stat'] . '</td>
                 <td>' . $reg['ContNum'] . '</td>
@@ -595,7 +647,14 @@ class NewController extends BaseController
         $html .= '</tbody></table>
 
         <p class="summary">Summary</p>
-        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+        <p>During the reporting period, a total of '. $count.' elderly individuals passed away in the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
+        <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
+            <div style="text-align: center; width: 200px;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
         </div>
         </body>
         </html>';
@@ -610,12 +669,11 @@ class NewController extends BaseController
         $dompdf->render();
 
         // Output the PDF as a string (inline display in the browser)
-        $dompdf->stream('Elderly_Deceased_Report.pdf', array('Attachment' => true));
+        $dompdf->stream('Elderly_Deceased_Report.pdf', array('Attachment' => 0));
 
         // Stop CodeIgniter from further processing (optional, but good practice)
         exit();
-
-                
+  
     }
 
     public function save()
@@ -1008,6 +1066,14 @@ class NewController extends BaseController
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];
 
+        $cdate = new \DateTime();
+       foreach($data['Left'] as &$person)
+       {
+           $birthDate = new \DateTime($person['DateBirth']);
+           $LeftDate = new \DateTime($person['departuredate']);
+           $age = $LeftDate->diff($birthDate)->y;
+           $person['age'] = $age;
+       }
 
         return view('dashboard/searchLeft', $data);
     }
@@ -1044,6 +1110,15 @@ class NewController extends BaseController
                                      ->first(); // Getting the record with the closest lower date
 
     $closestLowerDate = $closestLowerRecord ? $closestLowerRecord['RegDate'] : 'N/A'; 
+
+    $cdate = new \DateTime();
+       foreach($data['main'] as &$person)
+       {
+           $birthDate = new \DateTime($person['DateBirth']);
+           $LeftDate = new \DateTime($person['departuredate']);
+           $age = $LeftDate->diff($birthDate)->y;
+           $person['age'] = $age;
+       }
 
     $dompdf = new Dompdf();
     $options = $dompdf->getOptions();
@@ -1204,6 +1279,7 @@ class NewController extends BaseController
                         <th>Middle Name</th>
                         <th>Nickname</th>
                         <th>Date of Birth</th>
+                        <th>Age</th>
                         <th>Gender</th>
                         <th>Marital Status</th>
                         <th>Contact Number</th>
@@ -1222,6 +1298,7 @@ class NewController extends BaseController
                 <td>' . $reg['middlename'] . '</td>
                 <td>' . $reg['nickname'] . '</td>
                 <td>' . $reg['DateBirth'] . '</td>
+                <td>' . $reg['age'] . '</td>
                 <td>' . $reg['gender'] . '</td>
                 <td>' . $reg['marital_stat'] . '</td>
                 <td>' . $reg['ContNum'] . '</td>
@@ -1235,8 +1312,15 @@ class NewController extends BaseController
         $html .= '</tbody></table>
 
         <p class="summary">Summary</p>
-        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
-
+        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
+         <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
+            <div style="text-align: center; width: 200px;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
+        </div>
         </div>
         </body>
         </html>';
@@ -1252,7 +1336,7 @@ $dompdf->setPaper('A4', 'landscape');
 $dompdf->render();
 
 // Output the PDF as a string (inline display in the browser)
-$dompdf->stream('Elderly_Left_Report.pdf', array('Attachment' => true));
+$dompdf->stream('Elderly_Left_Report.pdf', array('Attachment' => 0));
 
 // Stop CodeIgniter from further processing (optional, but good practice)
 exit();
@@ -1306,6 +1390,14 @@ exit();
             'countNotifs' => $this->userbooking->where('status', 'pending')->countAllResults()
         ];
 
+        $cdate = new \DateTime();
+        foreach($data['Deceased'] as &$person)
+        {
+            $birthDate = new \DateTime($person['DateBirth']);
+            $deathDate = new \DateTime($person['datedeath']);
+            $age = $deathDate->diff($birthDate)->y;
+            $person['age'] = $age;
+        }
 
         return view('dashboard/searchdeath', $data);
     }
@@ -1337,6 +1429,14 @@ exit();
         ->where('datedeath <=', $todate)
         ->countAllResults();
 
+        $cdate = new \DateTime();
+       foreach($data['main'] as &$person)
+       {
+           $birthDate = new \DateTime($person['DateBirth']);
+           $deathDate = new \DateTime($person['datedeath']);
+           $age = $deathDate->diff($birthDate)->y;
+           $person['age'] = $age;
+       }
         
         $dompdf = new Dompdf();
         $options = $dompdf->getOptions();
@@ -1499,6 +1599,7 @@ exit();
                         <th>Middle Name</th>
                         <th>Nickname</th>
                         <th>Date of Birth</th>
+                        <th>Age</th>
                         <th>Gender</th>
                         <th>Marital Status</th>
                         <th>Contact Number</th>
@@ -1517,6 +1618,7 @@ exit();
                 <td>' . $reg['middlename'] . '</td>
                 <td>' . $reg['nickname'] . '</td>
                 <td>' . $reg['DateBirth'] . '</td>
+                <td>' . $reg['age'] . '</td>
                 <td>' . $reg['gender'] . '</td>
                 <td>' . $reg['marital_stat'] . '</td>
                 <td>' . $reg['ContNum'] . '</td>
@@ -1530,7 +1632,15 @@ exit();
         $html .= '</tbody></table>
 
         <p class="summary">Summary</p>
-        <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
+        <p>During the reporting period, a total of '. $count.' elderly individuals passed away in the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
+         <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
+            <div style="text-align: center; width: 200px;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
+        </div>
         </div>
         </body>
         </html>';
@@ -1546,7 +1656,7 @@ exit();
         $dompdf->render();
         
         // Output the PDF as a string (inline display in the browser)
-        $dompdf->stream('Elderly_Deceased_Report.pdf', array('Attachment' => true));
+        $dompdf->stream('Elderly_Deceased_Report.pdf', array('Attachment' => 0));
         
         // Stop CodeIgniter from further processing
         exit();
@@ -1555,7 +1665,7 @@ exit();
 
 
 
-    public function  getReportsMonatary($fromdate, $todate)
+    public function getReportsMonatary($fromdate, $todate)
     {
         set_time_limit(120);
         
@@ -1780,6 +1890,14 @@ exit();
         <p>Total Cash Donation: '. number_format($totals['total_cash_donation'], 2).'</p>
         <p>Total Cash Check: '. number_format($totals['total_cash_check'], 2).'</p>
         <p>Total Mumo sa Hapag: '. number_format($totals['total_mumosahapag'], 2).'</p>
+
+         <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
+            <div style="text-align: center; width: 200px;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
         </div>
         </body>
         </html>';
@@ -1795,7 +1913,7 @@ exit();
         $dompdf->render();
     
         // Output the PDF as a string (inline display in the browser)
-        $dompdf->stream('Monetary_Donation_Report.pdf', array('Attachment' => true));
+        $dompdf->stream('Monetary_Donation_Report.pdf', array('Attachment' => 0));
     
         // Stop CodeIgniter from further processing (optional, but good practice)
         exit();
@@ -1806,42 +1924,42 @@ exit();
         return view("admin/admisionslip");
     }
 
-    public function admisionWithData($elderData)
-    {
-        $data = [
-
-            'elder' =>  $this->admissionslip->select('tblscdetails.Id, adminsionsliptbl.slipId, adminsionsliptbl.scId, adminsionsliptbl.casenum, adminsionsliptbl.birthplace, adminsionsliptbl.nameCom
-                                                    , adminsionsliptbl.addressCom , adminsionsliptbl.contactCom , adminsionsliptbl.RelationClient , adminsionsliptbl.nameRef
-                                                      , adminsionsliptbl.addressRef , adminsionsliptbl.contactRef , adminsionsliptbl.Num1A , adminsionsliptbl.Num1D
-                                                      , adminsionsliptbl.Num2A , adminsionsliptbl.Num2D , adminsionsliptbl.Num3A , adminsionsliptbl.Num3D , adminsionsliptbl.Num4A , adminsionsliptbl.Num4D
-                                    , adminsionsliptbl.Num5A , adminsionsliptbl.Num5D , adminsionsliptbl.Num6A , adminsionsliptbl.Num6D , adminsionsliptbl.Num7A 
-                                    , adminsionsliptbl.Num7D , adminsionsliptbl.Num8A , adminsionsliptbl.Num8D , adminsionsliptbl.Num9A , adminsionsliptbl.Num9D , adminsionsliptbl.Num10A , adminsionsliptbl.Num10D 
-                                    , adminsionsliptbl.Num11A , adminsionsliptbl.Num11D , adminsionsliptbl.Num12A , adminsionsliptbl.Num12D , adminsionsliptbl.Num13A 
-                                    , adminsionsliptbl.Num13D , adminsionsliptbl.Num14A , adminsionsliptbl.Num14D , adminsionsliptbl.Num15A , adminsionsliptbl.Num15D 
-                                    , adminsionsliptbl.inventoriedby , adminsionsliptbl.turnoverto , adminsionsliptbl.receivedby , adminsionsliptbl.referringparty , adminsionsliptbl.socialworker, tblscdetails.lastname , tblscdetails.firstname 
-                                    , tblscdetails.middlename , tblscdetails.nickname , tblscdetails.DateBirth , tblscdetails.gender , tblscdetails.marital_stat , tblscdetails.ContNum 
-                                    , tblscdetails.ComAdd , tblscdetails.ProfPic , tblscdetails.EmergencyAdd , tblscdetails.EmergencyContNum , tblscdetails.RegDate , tblscdetails.scstatus , tblscdetails.departuredate 
-                                    , tblscdetails.reasonleft , tblscdetails.datedeath , tblscdetails.causedeath , tblscdetails.InputedDate , tblscdetails.adminId')
-                                    ->join('tblscdetails', 'tblscdetails.Id = adminsionsliptbl.scId')->where('adminsionsliptbl.scId', $elderData)->first(),
-
-
-            // 'elder' =>    $this->main->where('Id', $elderData)->first(), 
-        ];   
-        
-        if(isset($data['elder']))
+        public function admisionWithData($elderData)
         {
-        return view("admin/admissionwithdata", $data);
+            $data = [
 
-        }
-        else{
+                'elder' =>  $this->admissionslip->select('tblscdetails.Id, adminsionsliptbl.slipId, adminsionsliptbl.scId, adminsionsliptbl.casenum, adminsionsliptbl.birthplace, adminsionsliptbl.nameCom
+                                                        , adminsionsliptbl.addressCom , adminsionsliptbl.contactCom , adminsionsliptbl.RelationClient , adminsionsliptbl.nameRef
+                                                        , adminsionsliptbl.addressRef , adminsionsliptbl.contactRef , adminsionsliptbl.Num1A , adminsionsliptbl.Num1D
+                                                        , adminsionsliptbl.Num2A , adminsionsliptbl.Num2D , adminsionsliptbl.Num3A , adminsionsliptbl.Num3D , adminsionsliptbl.Num4A , adminsionsliptbl.Num4D
+                                        , adminsionsliptbl.Num5A , adminsionsliptbl.Num5D , adminsionsliptbl.Num6A , adminsionsliptbl.Num6D , adminsionsliptbl.Num7A 
+                                        , adminsionsliptbl.Num7D , adminsionsliptbl.Num8A , adminsionsliptbl.Num8D , adminsionsliptbl.Num9A , adminsionsliptbl.Num9D , adminsionsliptbl.Num10A , adminsionsliptbl.Num10D 
+                                        , adminsionsliptbl.Num11A , adminsionsliptbl.Num11D , adminsionsliptbl.Num12A , adminsionsliptbl.Num12D , adminsionsliptbl.Num13A 
+                                        , adminsionsliptbl.Num13D , adminsionsliptbl.Num14A , adminsionsliptbl.Num14D , adminsionsliptbl.Num15A , adminsionsliptbl.Num15D 
+                                        , adminsionsliptbl.inventoriedby , adminsionsliptbl.turnoverto , adminsionsliptbl.receivedby , adminsionsliptbl.referringparty , adminsionsliptbl.socialworker, tblscdetails.lastname , tblscdetails.firstname 
+                                        , tblscdetails.middlename , tblscdetails.nickname , tblscdetails.DateBirth , tblscdetails.gender , tblscdetails.marital_stat , tblscdetails.ContNum 
+                                        , tblscdetails.ComAdd , tblscdetails.ProfPic , tblscdetails.EmergencyAdd , tblscdetails.EmergencyContNum , tblscdetails.RegDate , tblscdetails.scstatus , tblscdetails.departuredate 
+                                        , tblscdetails.reasonleft , tblscdetails.datedeath , tblscdetails.causedeath , tblscdetails.InputedDate , tblscdetails.adminId')
+                                        ->join('tblscdetails', 'tblscdetails.Id = adminsionsliptbl.scId')->where('adminsionsliptbl.scId', $elderData)->first(),
 
+
+                // 'elder' =>    $this->main->where('Id', $elderData)->first(), 
+            ];   
             
-             $data['elder'] =   $this->main->where('Id', $elderData)->first();
-
+            if(isset($data['elder']))
+            {
             return view("admin/admissionwithdata", $data);
+
+            }
+            else{
+
+                
+                $data['elder'] =   $this->main->where('Id', $elderData)->first();
+
+                return view("admin/admissionwithdata", $data);
+            }
+            // return view("admin/admissionwithdata", $data);
         }
-        // return view("admin/admissionwithdata", $data);
-    }
 
     public function addmissionWithDatapreviewtosave($elderData)
     {
@@ -2009,6 +2127,9 @@ exit();
         $referringparty = $this->request->getVar('referringparty');
         $socialworker = $this->request->getVar('socialworker');
 
+        $elder = $this->main->where('Id', $elderData)->first();
+
+
         $data = [
             'casenum' => $casenum,
             'birthplace' => $birthplace,
@@ -2054,231 +2175,12 @@ exit();
             'receivedby' => $receivedby,
             'referringparty' => $referringparty,
             'socialworker' => $socialworker,
-
             'elder' =>    $this->main->where('Id', $elderData)->first(), 
+            'mydata' => date('F d, Y', strtotime($elder['InputedDate']))
         ];  
-
-       $elder = $data['elder'];
-$mydata = date('F d, Y', strtotime($elder['InputedDate']));
-$html = '<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-           
-            font-size: 12px;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .size {
-            width: 8.5in; /* Long bond paper width */
-            height: auto; /* Allow for dynamic height */
-            background-color: #fff;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-         .header {
-                    text-align: center;
-                    position: relative;
-                }
-                .header img {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 120px;
-                }
-                .header h5 {
-                    margin: 0;
-                }
-
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            table-layout: fixed;
-            font-size: 12px;
-            margin-left:40px;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-            word-wrap: break-word;
-        }
-
-        th, td {
-            padding: 4px;
-            text-align: left;
-        }
-
-      .signature-section {
-    display: flex;
-    justify-content: space-between; /* This will place the boxes on opposite sides */
-    margin-top: 30px;
-        }
-
-        .signature-box  {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 45%; /* Adjust the width if necessary */
-        }
-
-        .signature-line {
-            border-bottom: 1px solid black;
-            width: 200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .signature-text {
-            margin-top: 5px;
-            font-size: 12px;
-            text-align: center;
-        }
-
-                    .signature-lines {
-            border-bottom: 2px solid black;
-            width:200px;
-            margin: 0 auto;
-        }
-
-        .signature-section .social
-        {
-            margin-left:400px;
-        
-        }
-        
-    </style>
-</head>
-<body>
-
-    <div class="size">
-       <div class="header" style="font-size:15px; text-align:center;">
-
-                <h5>Republic of the Philippines</h5>
-                <h5>Province of Oriental Mindoro</h5>
-                <h5>Barangay Managpi, Calapan City</h5>
-                <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
-            </div>
+$html = view('admin/topdf/addmission_pdf', $data);
 
 
-        <h4 style="text-align: center; margin-bottom:10px;">ADMISSION SLIP</h4>
-
-        <table>
-            <tr>
-                <th colspan="10">Date of Admission:  ' . $mydata. ' </th>
-                <th colspan="8">Case No.  '. $casenum .'  </th>
-            </tr>
-            <tr>
-                <th colspan="18" style="text-align: center;">Client</th>
-            </tr>
-            <tr>
-                <th colspan="10">Name:  '. $elder['firstname'] . " " . $elder['middlename'] . " " . $elder['lastname'] .' </th>
-                <th colspan="3">Sex:  '. $elder['gender'] .' </th>
-                <th colspan="5">Civil Status:  '. $elder['marital_stat'].' </th>
-            </tr>
-            <tr>
-                <th colspan="18">Address:  '. $elder['ComAdd'] .' </th>
-            </tr>
-            <tr>
-                <th colspan="3">Birth Date </th>
-                <th colspan="7"> '. date('F d, Y', strtotime($elder['DateBirth'])) .' </th>
-                <th colspan="8">Birth Place  '. $birthplace .'  </th>
-            </tr>
-            <tr>
-                <th colspan="18" style="text-align: center;">COMPANION UPON ADMISSION</th>
-            </tr>
-            <tr>
-                <th colspan="8">Name:  '. $nameCom .'  </th>
-                <th colspan="10">Contact No.  '. $contactCom .' </th>
-            </tr>
-            <tr>
-                <th colspan="8">Address:  '. $addressCom .' </th>
-                <th colspan="10">Relation to the Client:  '. $RelatinClient .' </th>
-            </tr>
-            <tr>
-                <th colspan="18" style="text-align: center;">REFERRING PARTY</th>
-            </tr>
-            <tr>
-                <th colspan="18">Name:  '. $nameRef .' </th>
-            </tr>
-            <tr>
-                <th colspan="18">Address:  '. $addressRef .' </th>
-            </tr>
-            <tr>
-                <th colspan="18">Contact no.:  '. $contactRef .' </th>
-            </tr>
-        </table>
-
-        <h3 style="text-align: center;">BELONGINGS</h3>
-        <table>
-            <tr>
-                <th colspan="2">No.</th>
-                <th colspan="9">Upon Admission</th>
-                <th colspan="9">Upon Discharge</th>
-            </tr>';
-            
-            for ($i = 1; $i <= 15; $i++) {
-                $html .= '<tr>
-                            <th colspan="2">' . $i . '.</th>
-                            <th colspan="9">' . ${"num{$i}Admision"} . '</th>
-                            <th colspan="9">' . ${"num{$i}Discharge"} . '</th>
-                        </tr>';
-            };
-         
-           $html .='       <tr>
-                    <th colspan="11" style="text-align: center;">
-                        <h4 style="margin: 10px 0 0 0; text-align: center;">
-                        Inventoried by: 
-                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
-                            <span style="position: relative; top: 3px; margin-left:20px;"> ' .$inventoriedby .'</span>
-                        </span>
-                        </h4>
-                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-                        <h4 style="margin: 20px 0 0 0; text-align: center;">
-                        Turn Over to: 
-                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
-                            <span style="position: relative; top: 3px; margin-left:20px;"> '. $turnoverto .'</span>
-                        </span>
-                        </h4>
-                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-                    </th>
-                    
-                    <th colspan="9" style="text-align: center;">
-                        <h4 style="margin: 0; text-align: center;">
-                        Received By: 
-                        <span style="text-decoration: underline; display: inline-block; width: 200px; text-align: left;">
-                            <span style="position: relative; top: 3px; margin-left:20px;"> '. $receivedby .'</span>
-                        </span>
-                        </h4>
-                        <p style="margin: 0 0 0 70px; font-size: 12px; text-align: center;">Printed Name over Signature</p>
-                    </th>
-                </tr>
-            
-        </table>
-
-        <div class="signature-section">
-            <div class="signature-box Name-Sig">
-                <div class="signature-line">  '. $referringparty .'  </div>
-                <p class="signature-text">Name & Signature of Referring Party  </p>
-            </div>
-
-            <div class="signature-box social">
-                <div class="signature-line"> '. $socialworker .' </div>
-                <p class="signature-text">Social Worker</p>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>';
 
 // Load HTML content into Dompdf
 $dompdf->loadHtml($html);
@@ -2290,12 +2192,18 @@ $dompdf->setPaper('Legal', 'portrait'); // Change to 'Legal' for long bond paper
 $dompdf->render();
 
 // Output the PDF as a string (inline display in the browser)
-$dompdf->stream('Admission_Slip.pdf', array('Attachment' => true));
+$pdfFilePath = $_SERVER['DOCUMENT_ROOT'] . '/uploads/Admission_Slip.pdf';
+file_put_contents($pdfFilePath, $dompdf->output());
 
-// Stop CodeIgniter from further processing (optional, but good practice)
-exit();
+return redirect()->to('previewAdminslip');
+
 
     }   
+
+    public function previewAdminslip()
+    {
+        return view('admin/topdf/include/addmissionPreview');
+    }
 
     public function savedata()
     {
@@ -2393,4 +2301,34 @@ exit();
             ]);
         }
     }
+
+    public function ageCount()
+    {
+        $data = [
+            ['name' => 'Alice', 'birthdate' => '1990-06-15'],
+            ['name' => 'Bob', 'birthdate' => '1985-12-22'],
+            ['name' => 'Charlie', 'birthdate' => '1992-03-05'],
+            ['name' => 'Diana', 'birthdate' => '1998-09-10'],
+            ['name' => 'Eve', 'birthdate' => '2000-01-25'],
+            ['name' => 'Frank', 'birthdate' => '1980-04-18'],
+            ['name' => 'Grace', 'birthdate' => '1995-11-30'],
+            ['name' => 'Hank', 'birthdate' => '1993-07-09'],
+            ['name' => 'Ivy', 'birthdate' => '2001-05-14'],
+            ['name' => 'Jack', 'birthdate' => '1988-10-03']
+        ];
+
+        // Calculate ages
+        $currentDate = new \DateTime();
+        foreach ($data as &$person) {
+            $birthDate = new \DateTime($person['birthdate']);
+            $age = $currentDate->diff($birthDate)->y;
+            $person['age'] = $age;
+        }
+
+        // Return data (can be modified to return as JSON or view)
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+    }
+
     }

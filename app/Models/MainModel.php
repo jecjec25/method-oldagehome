@@ -13,7 +13,7 @@ class MainModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['slipId', 'lastname', 'firstname', 'middlename', 'nickname', 'DateBirth', 'gender', 'marital_stat', 'ContNum', 'ComAdd', 'ProfPic','EmergencyAdd','EmergencyContNum', 'RegDate', 'scstatus', 'departuredate', 'reasonleft', 'datedeath', 'InputedDate', 'causedeath', 'adminId'];
+    protected $allowedFields    = ['slipId', 'lastname', 'age','firstname', 'middlename', 'nickname', 'DateBirth', 'gender', 'marital_stat', 'ContNum', 'ComAdd', 'ProfPic','EmergencyAdd','EmergencyContNum', 'RegDate', 'scstatus', 'departuredate', 'reasonleft', 'datedeath', 'InputedDate', 'causedeath', 'adminId'];
 
     // Dates
     protected $useTimestamps = false;
@@ -45,6 +45,17 @@ class MainModel extends Model
             ->groupBy('gender')
             ->orderBy('gender')
             ->findAll();
+    }
+
+    public function getAgeDistribution()
+    {
+        return $this->select('DateBirth, RegDate')
+            ->findAll();
+    }
+    
+    public function getAgeDeath()
+    {
+        return $this->select('DateBirth, datedeath')->findAll();
     }
 }
 

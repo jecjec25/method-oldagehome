@@ -382,3 +382,11 @@ $routes->match(['get','post'], 'InsertResponse', 'ViewController::chatview');
 $routes->post('saveResponse', 'ViewController::insertResponse');
 $routes->get('updateResponse', 'ViewController::updateResponse');
 $routes->get('deleteResponse/(:any)', 'ViewController::deleteResponse/$1');
+
+
+$routes->get('sampleage', 'NewController::ageCount');
+
+$routes->get('age/distribution', 'UserbookingController::ageDistribution');
+$routes->get('ageDeath/distribution', 'UserbookingController::ageDeathDistribution');
+
+$routes->get('previewAdminslip', 'NewController::previewAdminslip');

@@ -53,8 +53,8 @@
             <div class="logo-content">
                 <div class="logo">
                     <img src="images/Alogo1.jpg" alt="" style="width: 100px; height: 100px;" />
-                    <img src="images/Alogo.jpg" alt="" style="width: 160px; height: 140px;" />
-                    <h4 style="color: darkgreen;">Senior Care Management System</h4>
+                    <img src="images/LogoHapagAruga.png" alt="" style="width: 160px; height: 140px;" />
+                    <h4 style="color: darkgreen;">ESENIORCARE</h4>
                 </div>
                 <div class="top-log">
                     <br>

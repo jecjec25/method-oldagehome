@@ -4,9 +4,9 @@
                     <div class="Office Address">
                         <h4>Our Address</h4>
                        <ul class="bottom-icons">
-                            <li><a class="home"><span></span></a>Managpi, Calapan City, Oriental Mindoro</li>
-                            <li><a class="mail" ><span></span></a>aruga.kapatid@gmail.com</li>
-                            <li><a class="mbl"><span></span></a>288-7562/ 0998-577-4919/ 0916-579-1919</li>   
+                            <li><a class="home"><span></span></a>Brgy. Managpi, Calapan City, Oriental Mindoro</li>
+                            <li><a class="mail" ><span></span></a>hapagaruga@gmail.com</li>
+                            <li><a class="mbl"><span></span></a>288-7562 | 0998-577-4919</li>   
                             <div class="clearfix"> </div><?php  ?>   
                         </ul>
                      </div>
@@ -21,7 +21,7 @@
                         </ul>
                     </div>
                     <div class="copy-center">
-                            <p>Senior Care Management System @2024</p>
+                            <p>eSeniorCare@2024</p>
                         </div>      
                     </div>
                     <div class="clearfix"> </div>   

@@ -55,8 +55,51 @@ class UserbookingController extends ResourceController
         // Fetch data from the model
         $data = $this->main->where('scstatus', 'Unarchive')->getGenderDistribution();
 
-        // Return the data as JSON
+
         return $this->respond($data);
+    }
+
+
+    public function ageDistribution()
+    {
+        $data = $this->main->where('scstatus', 'Unarchive')->getAgeDistribution();
+
+        // Calculate the age and group by age
+        $ageData = [];
+        foreach ($data as $user) {
+            $birthDate = new \DateTime($user['DateBirth']);
+            $registrationDate = new \DateTime($user['RegDate']);
+            $age = $registrationDate->diff($birthDate)->y; // Calculate age
+
+            if (isset($ageData[$age])) {
+                $ageData[$age] += 1; // Increment count for this age
+            } else {
+                $ageData[$age] = 1; // Initialize count for this age
+            }
+        }
+
+        return $this->respond($ageData);
+    }
+
+    public function ageDeathDistribution()
+    {
+        $data = $this->main->where('scstatus', 'Deceased')->getAgeDeath();
+
+        // Calculate the age and group by age
+        $ageData = [];
+        foreach ($data as $user) {
+            $birthDate = new \DateTime($user['DateBirth']); 
+            $deathDate = new \DateTime($user['datedeath']);
+            $age = $deathDate->diff($birthDate)->y; // Calculate age
+
+            if (isset($ageData[$age])) {
+                $ageData[$age] += 1; // Increment count for this age
+            } else {
+                $ageData[$age] = 1; // Initialize count for this age
+            }
+        }
+
+        return $this->respond($ageData);
     }
 
     public function getNotifAccept($id)

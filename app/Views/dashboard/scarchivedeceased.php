@@ -132,6 +132,17 @@
         background-color: #007bff;
         color: white;
     }
+
+    #iframeContainer {
+            margin-top: 20px;
+            display: none;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
 </style>
 
 <body>
@@ -167,7 +178,7 @@
                                 <p class="card-description" style="padding-left: 20px;">
                                     Deceased elders of Aruga-Kapatid Foundation Incorporated
                                 </p>
-                                <div class="button-print"><a class="btn btn-primary" href="<?= base_url('previewDeath') ?>" id="PrintButton">Preview</a></div>
+                                <div class="button-print"><a class="btn btn-primary" href="<?= base_url('generateElderlyDeceased') ?>" id="PrintButton">Preview</a></div>
                                 
                                 <div class="table-responsive pt-3">
                                     <table class="table table-striped project-orders-table" id="tblscdetails">
@@ -181,6 +192,7 @@
                                                 <th>Middle Name</th>
                                                 <th>Nickname</th>
                                                 <th>Date of Birth</th>
+                                                <th>Age</th>
                                                 <th>Gender</th>
                                                 <th>Marital Status</th>
                                                 <th>Contact Number</th>
@@ -215,6 +227,7 @@
                                                     <td><?= $k['middlename'] ?></td>
                                                     <td><?= $k['nickname'] ?></td>
                                                     <td><?= $k['DateBirth'] ?></td>
+                                                    <td><?= $k['age'] ?></td>
                                                     <td><?= $k['gender'] ?></td>
                                                     <td><?= $k['marital_stat'] ?></td>
                                                     <td><?= $k['ContNum'] ?></td>
@@ -238,6 +251,10 @@
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
+                                </div>
+
+                                <div id="iframeContainer">
+                                    <iframe id="pdfIframe" src=""></iframe>
                                 </div>
 
                                 <!-- Pagination Controls -->
@@ -275,6 +292,13 @@
 
     <!-- JavaScript for Modal Functionality -->
     <script>
+
+    document.getElementById("PrintButton").addEventListener("click", function (event) {
+            event.preventDefault();
+            const pdfUrl = this.href;
+            document.getElementById("pdfIframe").src = pdfUrl;
+            document.getElementById("iframeContainer").style.display = "block";
+        });
         function openModal(img) {
             document.getElementById("modalImage").src = img.src;
             document.getElementById("imageModal").style.display = "block";

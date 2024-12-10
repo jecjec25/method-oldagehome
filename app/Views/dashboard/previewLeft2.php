@@ -260,6 +260,7 @@
                 <th>Middle Name</th>
                 <th>Nickname</th>
                 <th>Date of Birth</th>
+                <th>Age</th>
                 <th>Gender</th>
                 <th>Marital Status</th>
                 <th>Contact Number</th>
@@ -277,6 +278,7 @@
                     <td><?= $reg['middlename'] ?></td>
                     <td><?= $reg['nickname'] ?></td>
                     <td><?= $reg['DateBirth'] ?></td>
+                    <td><?= $reg['age'] ?></td>
                     <td><?= $reg['gender'] ?></td>
                     <td><?= $reg['marital_stat'] ?></td>
                     <td><?= $reg['ContNum'] ?></td>
@@ -290,7 +292,15 @@
     </table>
 
     <p style="font-weight: 600;">Summary</p>
-    <p>During the reporting period, a total of <?= $count ?> elderly individuals left the Elder Care Program of Aruga Kapatid Foundation Incorporated.</p>
-</div>
+    <p>During the reporting period, a total of <?= $count ?> elderly individuals left the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+            <div style="text-align: center;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 200px; margin: 0 auto;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

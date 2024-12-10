@@ -89,6 +89,7 @@
                                                 <th>Middle Name</th>
                                                 <th>Nickname</th>
                                                 <th>Date of Birth</th>
+                                                <th>Age</th>
                                                 <th>Gender</th>
                                                 <th>Marital Status</th>
                                                 <th>Contact Number</th>
@@ -108,6 +109,7 @@
                                                     <td><?= $k['middlename'] ?></td>
                                                     <td><?= $k['nickname'] ?></td>
                                                     <td><?= $k['DateBirth'] ?></td>
+                                                    <td><?= $k['age'] ?></td>
                                                     <td><?= $k['gender'] ?></td>
                                                     <td><?= $k['marital_stat'] ?></td>
                                                     <td><?= $k['ContNum'] ?></td>

@@ -80,6 +80,10 @@
                     <input id="DateBirth" name="DateBirth" type="date" class="form-control short-input" required="true" value="<?= isset($d['DateBirth']) ? $d['DateBirth'] : '' ?>" max="1970-01-01">
                   </div>
                   <div class="form-group">
+                    <label for="age">Age (Current Age)</label>
+                    <input id="age" name="age" type="number" min="60" class="form-control short-input" required="true" value="<?= isset($d['age']) ? $d['age'] : '' ?>">
+                  </div>
+                  <div class="form-group">
                     <label for="gender">Gender</label>
                     <select id="gender" name="gender" class="form-control short-input" required="true">
                       <option value="" selected Disabled>Select Gender</option>

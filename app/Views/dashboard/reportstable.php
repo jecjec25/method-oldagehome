@@ -28,7 +28,6 @@
             background-color: #f9f9f9;
         }
 
-        /* Modal styling */
         .modal {
             display: none;
             position: fixed;
@@ -101,7 +100,6 @@
             cursor: pointer;
         }
 
-        /* Pagination styles */
         .pagination a {
             padding: 8px 16px;
             margin: 0 4px;
@@ -113,6 +111,17 @@
         .pagination a.active {
             background-color: #007bff;
             color: white;
+        }
+
+        #iframeContainer {
+            margin-top: 20px;
+            display: none;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
         }
     </style>
 </head>
@@ -149,7 +158,7 @@
                                     Table Report of Elders in Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print">
-                                    <a class="btn btn-primary text-decoration-none" href="<?= base_url('/previewElders/'.$searchParams['todate']) ?>" id="PrintButton">Preview</a>
+                                    <a class="btn btn-primary text-decoration-none" href="<?= base_url('/generateElderlyReport/'.$searchParams['todate']) ?>" id="PrintButton">Preview</a>
                                 </div>
 
                                 <div class="table-responsive pt-3">
@@ -164,6 +173,7 @@
                                                 <th>Middle Name</th>
                                                 <th>Nickname</th>
                                                 <th>Date of Birth</th>
+                                                <th>Age</th>
                                                 <th>Gender</th>
                                                 <th>Marital Status</th>
                                                 <th>Contact Number</th>
@@ -178,14 +188,12 @@
                                         <tbody>
                                             <?php 
                                             $rowsPerPage = 10;
-                                            $totalRows = count($reg); // Total number of rows
-                                            $totalPages = ceil($totalRows / $rowsPerPage); // Total pages
+                                            $totalRows = count($reg); 
+                                            $totalPages = ceil($totalRows / $rowsPerPage);
 
-                                            // Current page from query parameter, default is 1
                                             $currentPage = isset($_GET['page']) ? max(1, min($_GET['page'], $totalPages)) : 1;
                                             $start = ($currentPage - 1) * $rowsPerPage;
 
-                                            // Slice data for current page
                                             $pagedData = array_slice($reg, $start, $rowsPerPage);
 
                                             foreach ($pagedData as $reg) : ?>
@@ -195,6 +203,7 @@
                                                     <td><?= $reg['middlename'] ?></td>
                                                     <td><?= $reg['nickname'] ?></td>
                                                     <td><?= $reg['DateBirth'] ?></td>
+                                                    <td><?= $reg['age'] ?></td>
                                                     <td><?= $reg['gender'] ?></td>
                                                     <td><?= $reg['marital_stat'] ?></td>
                                                     <td><?= $reg['ContNum'] ?></td>
@@ -224,8 +233,9 @@
                                         </tbody>
                                     </table>
                                 </div>
-
-                                <!-- Pagination Controls -->
+                                <div id="iframeContainer">
+                                    <iframe id="pdfIframe" src=""></iframe>
+                                </div>
                                 <div class="pagination">
                                     <?php 
                                     $query = $_GET; 
@@ -237,7 +247,6 @@
                                     <?php endfor; ?>
                                 </div>
 
-                                <!-- Page info -->
                                 <p>Showing page <?= $currentPage ?> of <?= $totalPages ?> (<?= $totalRows ?> total entries)</p>
 
                             </div>
@@ -252,7 +261,6 @@
         </div>
     </div>
 
-    <!-- Modal structure for large image view -->
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()" style="font-size:90px;">&times;</span>
         <div class="modal-content">
@@ -269,8 +277,14 @@
     <script src="login/js/todolist.js"></script>
     <script src="login/js/dashboard.js"></script>
 
-    <!-- JavaScript for Modal Functionality -->
     <script>
+        document.getElementById("PrintButton").addEventListener("click", function (event) {
+            event.preventDefault();
+            const pdfUrl = this.href;
+            document.getElementById("pdfIframe").src = pdfUrl;
+            document.getElementById("iframeContainer").style.display = "block";
+        });
+
         function openModal(img) {
             document.getElementById("modalImage").src = img.src;
             document.getElementById("imageModal").style.display = "block";
@@ -283,3 +297,4 @@
 </body>
 
 </html>
+        

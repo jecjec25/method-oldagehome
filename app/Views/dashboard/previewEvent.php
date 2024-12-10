@@ -283,6 +283,15 @@
 
         <p style="font-weight: 600;">Total Amount Raised: <?= number_format($totalAmountRaised, 2) ?></p>
 
+        <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+            <div style="text-align: center;">
+                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <div style="border-bottom: 1px solid black; width: 200px; margin: 0 auto;"></div>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+            </div>
+        </div>
+    </div>
+
          </div>
     </div>
 </body>
