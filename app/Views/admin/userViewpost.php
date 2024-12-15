@@ -7,7 +7,7 @@
     <title>View Event</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/picture.png">
+    <link rel="icon" type="image/png" href="/LogoHapagAruga.png">
 
     <!-- CSS Stylesheets -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
