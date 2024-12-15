@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Update Organization</title>
-  <link rel="icon" type="image/png" href="<?= base_url('picture.png') ?>">
+  <link rel="icon" type="image/png" href="<?= base_url('LogoHapagAruga.png') ?>">
   <link rel="stylesheet" href="<?= base_url('login/vendors/typicons/typicons.css') ?>">
   <link rel="stylesheet" href="<?= base_url('login/vendors/css/vendor.bundle.base.css') ?>">
   <link rel="stylesheet" href="<?= base_url('login/css/vertical-layout-light/style.css') ?>">

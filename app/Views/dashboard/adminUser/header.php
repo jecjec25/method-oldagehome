@@ -2,7 +2,7 @@
   <div class="navbar-brand-wrapper d-flex justify-content-center">
     <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
       <a class="navbar-brand brand-logo d-none d-md-block" href="/dashboard">
-        <strong style="color: white;">SENIORCARE</strong>
+        <strong style="color: white;">ESENIORCARE</strong>
       </a>
       <a class="navbar-brand brand-logo-mini" href="/dashboard">
         <img src="../login/images/logo-mini.svg" alt="logo" />

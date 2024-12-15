@@ -3,7 +3,7 @@
 
 <head>
   <title>Published Announcement</title>
-  <link rel="icon" type="image/png" href="/picture.png">
+  <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
   <link rel="stylesheet" href="login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="login/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="login/vendors/select2/select2.min.css">

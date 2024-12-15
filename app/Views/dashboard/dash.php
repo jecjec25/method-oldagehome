@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../login/css/vertical-layout-light/style.css">
-      <link rel="icon" type="image/png" href="/picture.png">
+      <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>

@@ -5,7 +5,7 @@
 <head>
   
   <title>Edit Product</title>
-  <link rel="icon" type="image/png" href="/picture.png">
+  <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
   <!-- base:css -->
   <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
