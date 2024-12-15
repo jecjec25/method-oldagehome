@@ -6,7 +6,7 @@
     <title>Announcement</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/LogoHapagAruga.png">
+    <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />

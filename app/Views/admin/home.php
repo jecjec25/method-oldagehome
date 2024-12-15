@@ -7,7 +7,7 @@
     
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="/LogoHapagAruga.png">
+    <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
     
     <script src="./js/jquery-1.8.3.min.js"></script>
     <script src="./js/modernizr.custom.js"></script>

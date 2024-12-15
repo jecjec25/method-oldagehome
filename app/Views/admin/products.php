@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="icon" type="image/png" href="/LogoHapagAruga.png">
+    <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <link href="./css/styles.css" rel="stylesheet" type="text/css" />

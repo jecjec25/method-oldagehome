@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event</title>
     <link rel="stylesheet" href="/css/eventslogin.css">
-    <link rel="icon" type="image/png" href="/LogoHapagAruga.png">
+    <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
     <style>
         body {
             font-family: Arial, sans-serif;
