@@ -49,7 +49,7 @@
         <div class="navbar-brand-wrapper d-flex justify-content-center">
             <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
                 <a class="navbar-brand brand-logo" href="/dashboard">
-                    <strong style="color: white;">SENIORCARE</strong>
+                    <strong style="color: white;">ESENIORCARE</strong>
                 </a>
                 <a class="navbar-brand brand-logo-mini hello-icon" style="margin-right:10px; border-radius:30%;" href="/dashboard">
                     <img src="../picture.jpg" alt="logo" />

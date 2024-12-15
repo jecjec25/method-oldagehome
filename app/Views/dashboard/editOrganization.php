@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elder Need</title>
+  <title>Edit Organization</title>
   <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
   <link rel="stylesheet" href="../login/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../login/vendors/css/vendor.bundle.base.css">
@@ -23,13 +23,13 @@
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" align="right">
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item ml-0">
-            <h4 class="mb-0">Elder Need</h4>
+            <h4 class="mb-0">Edit Organization</h4>
           </li>
           <li class="nav-item">
             <div class="d-flex align-items-baseline">
               <p class="mb-0">Home</p>
               <i class="typcn typcn-chevron-right"></i>
-              <p class="mb-0">Elder Needs</p>
+              <p class="mb-0">Organization</p>
             </div>
           </li>
         </ul>
@@ -43,9 +43,9 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Elder Needs</h4>
+                  <h4 class="card-title">Edit Organization</h4>
                   <p class="card-description">
-                    Elder Needs of Aruga-Kapatid Foundation Incorporated
+                    Edit a member of the organization of Hapag Aruga Foundation Incorporated
                   </p>
                   <form action="<?= base_url("HomeController/updateOrganization/" . $organizer['id']) ?>" method="post" enctype="multipart/form-data">
                   <div class="form-group">

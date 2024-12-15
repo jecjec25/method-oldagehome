@@ -123,7 +123,7 @@ class NewController extends BaseController
         $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -423,7 +423,7 @@ class NewController extends BaseController
         $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -1094,7 +1094,7 @@ class NewController extends BaseController
     $namepos = $this->request->getVar('positionName');
     
     // Use local file path for the image
-    $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+    $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
     if (file_exists($imagePath)) {
         $imageData = base64_encode(file_get_contents($imagePath));
         $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -1419,7 +1419,7 @@ exit();
         $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -1674,8 +1674,6 @@ exit();
         
     }
 
-
-
     public function getReportsMonatary($fromdate, $todate)
     {
         set_time_limit(120);
@@ -1684,7 +1682,7 @@ exit();
         $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;

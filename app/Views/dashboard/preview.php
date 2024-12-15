@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview Elders</title>
-    <link rel="icon" type="image/png" href="/picture.png">
+    <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
     <style>
         /* Set landscape page orientation */
         @page {
