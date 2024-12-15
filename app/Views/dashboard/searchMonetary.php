@@ -130,7 +130,7 @@
                   </p>
                   <div class="button-print">
                   <a class="btn btn-primary"
-                    href="<?= base_url('getReportsMonatary/' .$fromdate. '/' . $todate ) ?>" id="PrintButton">Preview</a>
+                    href="<?= base_url('previewMonetary/' .$fromdate. '/' . $todate ) ?>" id="PrintButton">Preview</a>
                   </div>
                 <div class="table-responsive pt-3">
                 <form action="<?= base_url('fundamental/accept') ?>" method ="post">

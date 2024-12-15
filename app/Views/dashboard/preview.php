@@ -225,11 +225,11 @@
 </head>
 <body>
     <div class="button-download" style="margin-top:50px;">
-    <!-- Print button is hidden during print -->
-    <button class="print-button" onclick="window.print()">Print This Page</button>
     </div>
+    <form action="<?= base_url('generateElderlyReport/' .$search)?>" method="get">
 <div class="button-download">
-        <a href="<?= base_url('generateElderlyReport/' .$search)?>">Print</a>
+    <button type="submit">Print</button>
+
     </div>
     <div class="button-back">
         <a href="javascript:history.back()">Back</a>
@@ -288,16 +288,52 @@
         <p>During the reporting period, a total of <?= $count ?> elderly individuals were registered in the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
 
         <div style="display: flex; justify-content: space-between; margin-top: 40px;">
-            <div style="text-align: center;">
-                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
-                <div style="border-bottom: 1px solid black; width: 200px; margin: 0 auto;"></div>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
-            </div>
-        </div>
-    </div>
-     
-        </div>
-    </div>
+    <div style="text-align: center;">
+        <!-- Input field for the signatory name -->
+     <input 
+        id="signatoryInput" 
+        type="text"
+        name="signatoryName"
+        placeholder="Enter Name" 
+        style="margin-bottom: 10px; padding: 5px; font-size: 14px; width: 200px; text-align: center;" 
+     />
+
+    <input 
+        id="positionInput" 
+        type="text"
+        name="positionName"
+        placeholder="Enter Position" 
+        style="margin-bottom: 10px; padding: 5px; font-size: 14px; width: 200px; text-align: center;" 
+    />
+    </form>
+<!-- Dynamic name and position display -->
+<p id="signatoryName" style="margin: 5px 0 0 0; font-size: 14px;">[Name will appear here]</p>
+<div style="border-bottom: 1px solid black; width: 200px; margin: 0 auto;"></div>
+<p id="positionName" style="margin: 5px 0 0 0; font-size: 14px;">[Position will appear here]</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+    // Reference to the input fields and display elements
+    const signatoryInput = document.getElementById('signatoryInput');
+    const signatoryName = document.getElementById('signatoryName');
+    const positionInput = document.getElementById('positionInput');
+    const positionName = document.getElementById('positionName');
+
+    // Event listener to update the signatory name dynamically
+    signatoryInput.addEventListener('input', function () {
+        signatoryName.textContent = this.value || '[Name will appear here]';
+    });
+
+    // Event listener to update the position dynamically
+    positionInput.addEventListener('input', function () {
+        positionName.textContent = this.value || '[Position will appear here]';
+    });
+</script>
+
 
 </body>
 </html>

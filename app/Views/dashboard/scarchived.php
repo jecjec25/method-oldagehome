@@ -167,7 +167,7 @@
                                 <p class="card-description" style="padding-left: 20px;">
                                     Elders who left Aruga-Kapatid Foundation Incorporated
                                 </p>
-                                <div class="button-print"><a class="btn btn-primary" href="<?= base_url('generateElderlyLeft') ?>" id="PrintButton">Preview</a></div>
+                                <div class="button-print"><a class="btn btn-primary" href="<?= base_url('previewLeft') ?>" id="PrintButton">Preview</a></div>
                                 
                                 <div class="table-responsive pt-3">
                                     <table class="table table-striped project-orders-table" id="tblscdetails">

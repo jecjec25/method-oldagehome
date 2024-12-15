@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 26, 2024 at 02:16 AM
+-- Generation Time: Dec 10, 2024 at 11:21 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -68,7 +68,9 @@ INSERT INTO `acceptbooking` (`id`, `establishment`, `lastname`, `firstname`, `mi
 (186, NULL, '', '', '', '09085353978', 'snfhskfhnk', 'WholeDay', '2024-10-09', '', '', 'Declined', '', 60, '', 0.00, '', ''),
 (187, NULL, 'skjkj', 'skjmsljfm', 'kadjmlsljm', '09085353978', 'charity events', 'HalfDay-morning', '2024-10-17', '', '', 'Declined', 'HElloWorld\r\n', 60, '', 0.00, '', ''),
 (188, NULL, 'skjkj', 'skjmsljfm', 'kadjmlsljm', '09085353978', 'charity events', 'HalfDay-morning', '2024-10-17', '', '', 'Declined', 'HElloWorld\r\n', 60, '', 0.00, '', ''),
-(190, 'dhvhdhvjhd', 'sjcsikjcsi', 'sciscskjhcnsj', 'jcdicjdijck', '09085353978', 'dcdijcdijc', 'WholeDay', '2024-11-25', 'djcdjkcdkk', 'kjscksjcms', 'Declined', 'HelloBaks', 60, '', 0.00, '', '');
+(190, 'dhvhdhvjhd', 'sjcsikjcsi', 'sciscskjhcnsj', 'jcdicjdijck', '09085353978', 'dcdijcdijc', 'WholeDay', '2024-11-25', 'djcdjkcdkk', 'kjscksjcms', 'Declined', 'HelloBaks', 60, '', 0.00, '', ''),
+(191, 'Establishment ni jen', 'Ewan', '', '', '09987655656', 'Feeding and Gift Giving', 'HalfDay-morning', '2024-11-29', 'N/A', 'N/A', 'Accepted', '', 60, '', 0.00, '', ''),
+(192, 'skjckjcs', 'scjsopclkp', 'scjmsc', 'jcsmskjcm', '09085353978', 'jscnsknc', 'WholeDay', '2024-11-30', 'lksjcskjc,', 'okcsolck', 'Accepted', '', 60, '', 0.00, '', '');
 
 -- --------------------------------------------------------
 
@@ -138,7 +140,9 @@ INSERT INTO `adminsionsliptbl` (`slipId`, `scId`, `casenum`, `birthplace`, `name
 (12, NULL, 'hq2whe', 'qwje', 'awsd', 'asd', '123567', '213', 'nmsabd', 'jshadj', '21413', 'sjdhf', 'hsjkdfh', 'jshadjh', 'jhajdh', 'gfdfgfd', 'dgfd', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '', '', '', ''),
 (13, 136, '9876543', 'Camansihan, Calapan City', 'Christia', 'Camansihan, Calapan City', '09085353978', 'Mothership', 'Herilla', 'Richard', '09876543212', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '', '', '', ''),
 (14, 135, '252525', 'Camansihan, Calapan City', 'Christia', 'Camansihan, Calapan City', '09085353978', 'Qwertyuiop', 'socjspcjo', 'jdjvmskjvm', '09876543212', 'dvmdlvdl', 'skv,l.kv,s', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', 'skkvjkdjv', 'jvkjvlsjvm', 'svksljvmsl', 'sjvsojvok', 'dkjvdojv'),
-(15, 133, '1371387183', 'jdskjksfnskc', 'ksjskcjmskc', 'ssjkskjcksjcm', '0999999999', 'skjcmksc,jmc,', 'jsmcsk,cjms', 'smcscmsozc', '09876543212', 'ladkaldk,', 'Dan', 'sjskjcm', 'kjsckjsc', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', 'skjmscmks,m', 'smccsm', 'qadjmcskc,', 'skjcmscjm', 'scmsk,cjmsk,');
+(15, 133, '1371387183', 'jdskjksfnskc', 'ksjskcjmskc', 'ssjkskjcksjcm', '0999999999', 'skjcmksc,jmc,', 'jsmcsk,cjms', 'smcscmsozc', '09876543212', 'ladkaldk,', 'Dan', 'sjskjcm', 'kjsckjsc', 'kddjfdkj', 'hahahah', 'hahaha', 'hahaha', 'hehhehe', 'qwert san', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'qwert san', 'skjmscmks,m', 'smccsm', 'qadjmcskc,', 'Christia', 'Jennifer'),
+(16, 126, '1234567890', 'HelloWorld`', 'Dab', 'Tawuran', '09085353978', 'Wala', 'ahsdkjh', 'hjkasdhjahdjk', 'hjksadhjh', 'jhjkadshajkhd', 'jkhjsahdjkhjk', 'hjkahdjkashd', 'hhdajhsdj', 'hjhakdh', 'jkhjdhajk', 'sdas', 'sadhjakshdasjkh', 'jhskadhjk', 'hjkhasjkdhjkh', 'jshadjkhaskjdh', 'jkhjksahdjaksdh', 'asdkjashdjkh', 'hjaksdhajkhsdjk', 'hjhasdjhaskdjhj', 'hjhasjdhasjkdhj', 'hjhasdjhaskdjhj', 'lalalala', 'jkook', '', '', '', '', '', '', '', '', '', NULL, 'hjkhasjkdhjkh', '', '', '', '', ''),
+(17, 127, '221133', 'wALA', 'hELLOwORLD', 'tAWURAN', '09876543212', 'wala', 'hehe123', '123456', '09876543212', '123', '123', '234213', '124w234', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -168,7 +172,38 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`AnnounceID`, `Title`, `Content`, `Author`, `Date_created`, `Date_modified`, `Start_date`, `End_date`, `Category`, `Priority`, `Attachments`, `Status`, `Target_audience`, `adminId`) VALUES
-(28, 'announcement for nobody', 'maicontent lang', 'Christia jennifer kyle', '2024-11-03 14:05:43', '2024-11-03 14:05:43', '2024-11-03', '2024-11-04', 'events, activities, healthtips', 'mememe', '1730642743_b5a5e1db6c7bf84b7d4b.jpg', 'Published', 'family', 58);
+(28, 'announcement for nobody', 'maicontent lang', 'Christia jennifer kyle', '2024-11-03 14:05:43', '2024-11-03 14:05:43', '2024-11-03', '2024-11-04', 'events, activities, healthtips', 'mememe', '1730642743_b5a5e1db6c7bf84b7d4b.jpg', 'Published', 'family', 58),
+(29, 'Announcement ni tia ay talaga', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu urna aliquam, tincidunt nulla sed, vehicula nibh. Etiam tellus purus, molestie nec commodo at, mattis at mi. Vivamus quis mauris lobortis lectus posuere cursus ac eget sapien. Nam vulputate tincidunt rhoncus. Duis vitae mi eleifend, luctus elit vel, eleifend dolor. Curabitur magna arcu, eleifend sit amet porttitor a, egestas non libero. Nam id magna sed sapien porttitor tincidunt sed et ligula.  Phasellus vel aliquet lacus. Donec at faucibus justo. Mauris dictum massa vel dolor congue, condimentum semper turpis viverra. Suspendisse molestie sit amet purus eget porttitor. Ut a odio convallis, venenatis nisi sed, efficitur dui. In efficitur odio neque, in gravida diam mollis vitae. Ut pellentesque, orci ultrices dapibus porttitor, eros arcu viverra erat, id consectetur mi arcu nec mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tincidunt a mi sit amet varius. Duis arcu nisl, maximus congue efficitur sit amet, scelerisque quis dolor.  Ut cursus ligula id est euismod, vitae venenatis sem auctor. Curabitur venenatis ultricies egestas. Nunc commodo non ante quis mollis. Integer pretium velit elit. Etiam vitae rutrum felis. Pellentesque sodales aliquam ullamcorper. Nam a eros dignissim, fringilla magna a, molestie urna.  Integer mollis mauris in laoreet interdum. Donec vestibulum, justo id posuere fringilla, magna quam accumsan risus, quis rhoncus mauris leo sed lacus. Sed egestas luctus libero ut vestibulum. Vestibulum vestibulum dolor quam, consectetur pretium ex varius ornare. Nullam tempus felis vitae ante accumsan efficitur. Curabitur aliquet, ante at tristique suscipit, est enim viverra enim, quis imperdiet libero nisi quis dui. Fusce ac diam vel orci volutpat porttitor. Maecenas ut tortor id diam ullamcorper tempus. Proin tincidunt vitae ligula ac volutpat. Donec scelerisque ultricies lectus ut finibus. Nullam ac est finibus nibh dapibus pellentesque.  Donec elementum sit amet risus non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, nibh facilisis hendrerit maximus, urna dui aliquam turpis, a pellentesque tellus libero sit amet augue. Aenean at mollis dolor. Curabitur sit amet ex in eros suscipit pellentesque id id risus. Nullam varius laoreet accumsan. Mauris euismod vehicula interdum. Pellentesque quis dolor in lectus feugiat pharetra sed gravida massa. Vestibulum fermentum, lectus ac euismod porta, turpis leo commodo nulla, at mollis nibh purus at lorem. Quisque pretium consequat diam ut tincidunt. Etiam ultricies auctor neque, quis iaculis lacus pharetra sagittis. Fusce aliquet turpis a purus fringilla, ac fermentum metus consequat. In euismod ultricies tristique. Integer et mollis turpis. Nullam quis quam sed orci blandit faucibus.', 'Christia Dela Chica nananana', '2024-11-28 02:26:09', '2024-11-28 02:26:09', '2024-11-28', '2024-11-29', 'events', 'Ang priority ko ngayon ay siya', '1732760769_49e569ee606338f2c142.jpg', 'Published', 'family', 58),
+(30, 'hdvjhdvjh', 'iskjvdivjk', 'iksjvdkjvm', '2024-11-28 02:47:50', '2024-11-28 02:47:50', '2024-11-28', '2024-11-29', 'events', 'snskkvksv', '1732762070_6c17bccc0bb703163e34.jpg', 'Published', 'residents', 58),
+(31, 'Andito na si abra tantana', 'ckcjkdchdoido', 'ksjckscksm', '2024-11-28 04:20:48', '2024-11-28 04:20:48', '2024-11-28', '2024-11-29', 'events, activities', 'iwdjwjdowkd', '1732767648_7f7f07625209c5500872.jpg', 'Draft', 'family, caregivers', 58);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat_bot`
+--
+
+CREATE TABLE `chat_bot` (
+  `id` int NOT NULL,
+  `Questions` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `Answers` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Dumping data for table `chat_bot`
+--
+
+INSERT INTO `chat_bot` (`id`, `Questions`, `Answers`, `created_at`, `updated_at`) VALUES
+(3, 'how are you', 'I\'m just a bot, but I\'m functioning as expected!', '2024-11-26 13:38:49', '2024-11-26 13:38:49'),
+(4, 'bye', 'Goodbye! Have a great day!', '2024-11-26 13:38:49', '2024-11-26 13:38:49'),
+(5, 'default', 'I\'m sorry, I didn\'t understand that. Can you rephrase?', '2024-11-26 13:38:49', '2024-11-26 13:38:49'),
+(11, 'Hi', 'Hello, how may I help you today?', '2024-11-26 17:27:08', '2024-11-26 17:27:08'),
+(12, 'What is your name?', 'My name is Hapag Aruga Chatbot. I\'m here to support you.', '2024-11-26 17:27:51', '2024-11-26 17:27:51'),
+(13, 'Location?', 'Managpi Chapter', '2024-11-26 17:28:10', '2024-11-26 17:28:10'),
+(14, 'Contact number?', '09987656782', '2024-11-26 17:28:32', '2024-11-26 17:28:32'),
+(15, 'What time available for event', 'Anytime', '2024-11-28 00:59:52', '2024-11-28 00:59:52');
 
 -- --------------------------------------------------------
 
@@ -208,8 +243,19 @@ CREATE TABLE `elderneed` (
 --
 
 INSERT INTO `elderneed` (`id`, `need`, `description`, `date_started`, `date_modified`) VALUES
-(12, 'sjahxhsh', 'skjiskjcik', '2024-11-04 03:02:15', '2024-11-04 03:02:15'),
-(13, 'dsdj;sjlssl', 'jsosjcosjcoslc', '2024-11-11 07:46:08', '2024-11-11 07:46:08');
+(16, 'Nutritional Support', 'Nutritional food supplies like rice, canned goods, fresh fruits, vegetables, and vitamins.', '2024-12-10 05:35:21', '2024-12-10 05:35:21'),
+(17, 'Medical Supplies', 'Essential medicines, first aid kits, maintenance medications, and supplements.', '2024-12-10 05:35:37', '2024-12-10 05:35:37'),
+(18, 'Hygiene Kits', 'Toothbrush, toothpaste, soap, shampoo, adult diapers, and wipes.', '2024-12-10 05:36:31', '2024-12-10 05:36:31'),
+(19, 'Clothing and Bedding', 'Comfortable clothing, blankets, pillows, and towels.', '2024-12-10 05:37:18', '2024-12-10 05:37:18'),
+(20, 'Mobility Aids	', 'Walkers, wheelchairs, canes, and crutches.', '2024-12-10 05:37:30', '2024-12-10 05:37:30'),
+(21, 'Health Monitoring Devices', 'Blood pressure monitors, glucometers, and thermometers.', '2024-12-10 05:37:47', '2024-12-10 05:37:47'),
+(22, 'Assistive Devices', 'Hearing aids, eyeglasses, and magnifiers.', '2024-12-10 05:38:20', '2024-12-10 05:38:20'),
+(23, 'Recreational Materials', 'Books, puzzles, board games, and radios.', '2024-12-10 05:38:38', '2024-12-10 05:38:38'),
+(24, 'Psychosocial Support', 'Access to counselors or emotional wellness programs.', '2024-12-10 05:38:54', '2024-12-10 05:38:54'),
+(25, 'Shelter Maintenance', 'Repairs, lighting, ventilation, and safety features like handrails', '2024-12-10 05:39:09', '2024-12-10 05:39:09'),
+(26, 'Skill Development Tools', 'Materials for crafts or hobbies to engage the elderly.', '2024-12-10 05:39:23', '2024-12-10 05:39:23'),
+(27, 'Transportation Assistance', 'Support for medical check-ups and errands.', '2024-12-10 05:39:35', '2024-12-10 05:39:35'),
+(28, 'Emergency Preparedness', 'Flashlights, batteries, whistles, and emergency contact systems.', '2024-12-10 05:39:49', '2024-12-10 05:39:49');
 
 -- --------------------------------------------------------
 
@@ -246,13 +292,10 @@ INSERT INTO `events` (`EventID`, `Title`, `Description`, `Organizer`, `Start_dat
 (82, 'asjdklasjdklj', 'kjaklsdjlkajlk', 'jkljsakldjalkdj', '2024-11-18', '2024-11-18', 'Educational, Health, Outreach', 'Draft', 'askldjalk', '', 'user', 60, NULL),
 (83, 'askjdkl', 'jkjaslkdjlk', 'kjaskldj', '0000-00-00', '2024-12-12', 'Recreational, Educational, Health, Outreach', 'Draft', 'sadajsd', '', 'user', 60, NULL),
 (84, 'l;fsfkpsfk', 'lksksfks', 'fkspkfpsf', '2024-11-18', '2024-11-19', 'Recreational, Outreach, Cultural', 'Published', 's;f;slf;sf', '', 'user', 60, NULL),
-(85, 'asdajksdk', 'kjashdkjh', 'khksahdaasd', '2024-11-18', '2024-11-18', 'Educational, Health, Outreach', 'Draft', 'aksdjkdj', '', 'user', 60, NULL),
-(86, 'asdasd', 'asshdahskd', 'hksahdkh', '2024-11-18', '2024-11-18', 'Social', 'Published', 'asdasd', '1731898576_ee781c836837a0528f17.jpg,1731898576_1b92569f617b3ec51a48.jpg,1731898577_6c1a66c09c24f541aaae.jpg,1731898577_3f7ec40424946488258d.jpg,1731898577_73295883360175251e9f.jpg,1731898577_d9eb34cb880c2b44c043.jpg,1731898577_e5dc4e9131e5fa68915a.jpg,1731898577_55da9feb6fe6b7e5a813.jpg,1731898577_dc495cb49a466c377bfa.jpg,1731898577_4c77672146c6a8179ebf.jpg,1731898577_6f28b749cada46fe897f.jpg,1731898577_84307ec183087fff4510.jpg,1731898577_f381a8f08c389ee8ead8.jpg,1731898577_abb64e9999439b3adc90.jpg,1731898577_defdf18182b89533487e.jpg,1731898577_1a9dcadb299015e82fef.jpg,1731898577_7588c7171dd9376bbb76.jpg', 'user', 60, NULL),
-(87, 'sfkjhfhfus', 'hfhfudjhfuid', 'hdhdhvuid', '2024-11-18', '2024-11-18', 'Educational', 'Published', 'djkhidjhvduj', '1731899173_d76b671f4bdd8457de8d.jpg,1731899173_0d4bdba9c0753455eddf.jpg,1731899173_a21299072428e1d6799c.jpg,1731899173_99e01cd386fa0e81775b.jpg,1731899173_3bf6e31aa748b2d48054.jpg,1731899173_bd4e66a2a66581fdf5a5.jpg,1731899173_0350347dc91d93b11aa5.jpg,1731899173_85ab1f846f062ac782c0.jpg', 'user', 60, NULL),
-(88, 'title event', 'cschsicis', 'scoiskjciks', '2024-11-18', '2024-11-18', 'Educational', 'Published', 'dhvidhvidhv', '1731899335_5ce486457503dc0be854.jpg,1731899335_4dfd10eea89a92b57ce1.jpg,1731899335_f4d75c478303a174771e.jpg,1731899335_8b32d22c38305f18ef3b.jpg,1731899335_de905318b82a45b3487f.jpg,1731899335_c39eb3f3d1fb6961477b.jpg,1731899335_1cc449978d656584e2da.jpg,1731899335_ae35000d008fec409c63.jpg', 'user', 60, NULL),
-(89, 'parang event', 'hchcousjhc', 'wchhcjch', '2024-11-18', '2024-11-19', 'Recreational', 'Published', 'scshcishcius', '1731899434_2f5eca2662621d08e2fb.jpg,1731899434_b17086cc6f2edd6e1bfa.jpg,1731899434_ed2c79042d037aa51558.jpg,1731899434_a93ed779c27a68efe204.jpg,1731899434_ddaf0d102fc8aabe7f8e.jpg,1731899434_5f56ab7dc0fcda6e127c.jpg,1731899434_6b237e7f0d8cfd7d6ebe.jpg,1731899434_8fadd16530c0bee1e684.jpg,1731899434_0c664bbad23f9ed1758c.jpg', 'user', 60, NULL),
-(90, 'alkdkandkad', 'iskjcskjc', 'osjsmcskjcsz', '2024-11-18', '2024-11-19', 'Social', 'Published', 'slkdnlskhcnls', '1731901850_567d1458c9f8be326a75.jpg,1731901850_6063129e14a1cada8dcc.jpg,1731901850_288bf4fa1b284531ee78.jpg,1731901850_d70ff953be4bf9d0de34.jpg', 'user', 60, NULL),
-(91, 'skcskcksjc', 'sjcscjmskz,', 'csslckslc', '2024-11-18', '2024-11-20', 'Recreational', 'Published', 'slclscm', '1731903775_6da73510b37462b2780b.jpg,1731903775_2f4f41ba0838976b3f5d.jpg,1731903775_0fd8780c75a010dcf8da.jpg', 'user', 60, NULL);
+(92, 'Title ng Event para kay Christia lang', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu urna aliquam, tincidunt nulla sed, vehicula nibh. Etiam tellus purus, molestie nec commodo at, mattis at mi. Vivamus quis mauris lobortis lectus posuere cursus ac eget sapien. Nam vulputate tincidunt rhoncus. Duis vitae mi eleifend, luctus elit vel, eleifend dolor. Curabitur magna arcu, eleifend sit amet porttitor a, egestas non libero. Nam id magna sed sapien porttitor tincidunt sed et ligula.  Phasellus vel aliquet lacus. Donec at faucibus justo. Mauris dictum massa vel dolor congue, condimentum semper turpis viverra. Suspendisse molestie sit amet purus eget porttitor. Ut a odio convallis, venenatis nisi sed, efficitur dui. In efficitur odio neque, in gravida diam mollis vitae. Ut pellentesque, orci ultrices dapibus porttitor, eros arcu viverra erat, id consectetur mi arcu nec mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tincidunt a mi sit amet varius. Duis arcu nisl, maximus congue efficitur sit amet, scelerisque quis dolor.  Ut cursus ligula id est euismod, vitae venenatis sem auctor. Curabitur venenatis ultricies egestas. Nunc commodo non ante quis mollis. Integer pretium velit elit. Etiam vitae rutrum felis. Pellentesque sodales aliquam ullamcorper. Nam a eros dignissim, fringilla magna a, molestie urna.  Integer mollis mauris in laoreet interdum. Donec vestibulum, justo id posuere fringilla, magna quam accumsan risus, quis rhoncus mauris leo sed lacus. Sed egestas luctus libero ut vestibulum. Vestibulum vestibulum dolor quam, consectetur pretium ex varius ornare. Nullam tempus felis vitae ante accumsan efficitur. Curabitur aliquet, ante at tristique suscipit, est enim viverra enim, quis imperdiet libero nisi quis dui. Fusce ac diam vel orci volutpat porttitor. Maecenas ut tortor id diam ullamcorper tempus. Proin tincidunt vitae ligula ac volutpat. Donec scelerisque ultricies lectus ut finibus. Nullam ac est finibus nibh dapibus pellentesque.  Donec elementum sit amet risus non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, nibh facilisis hendrerit maximus, urna dui aliquam turpis, a pellentesque tellus libero sit amet augue. Aenean at mollis dolor. Curabitur sit amet ex in eros suscipit pellentesque id id risus. Nullam varius laoreet accumsan. Mauris euismod vehicula interdum. Pellentesque quis dolor in lectus feugiat pharetra sed gravida massa. Vestibulum fermentum, lectus ac euismod porta, turpis leo commodo nulla, at mollis nibh purus at lorem. Quisque pretium consequat diam ut tincidunt. Etiam ultricies auctor neque, quis iaculis lacus pharetra sagittis. Fusce aliquet turpis a purus fringilla, ac fermentum metus consequat. In euismod ultricies tristique. Integer et mollis turpis. Nullam quis quam sed orci blandit faucibus.', 'Christia Dela Chica', '2024-11-28', '2024-11-29', 'Social, Recreational, Educational', 'Archive', 'Dan, Christia, jennifer', '1732760127_89c8c84e81dbeebe45fa.jpg', 'admin', NULL, 58),
+(93, 'OEDPOKEDGPOVKE', 'OLKVDSLKVM', 'LSKSLVK', '2024-11-28', '2024-11-29', 'Social, Recreational', 'Draft', 'DJVMDKVM', '1732762489_4b57e9594a42cafd3c68.jpg', 'admin', NULL, 58),
+(94, 'skfmsljkms', 'slkfcslkc', 'lsk,cslkc', '2024-11-28', '2024-11-29', 'Social', 'Published', 'kvsvjmsvms', '1732764912_4a4bb1a9bea0e26ce3a3.jpg', 'admin', NULL, 58),
+(95, 'dkmd;lkv', 'kfk,pe;lf,', 'lf,s;els.f,', '2024-11-29', '2024-11-30', 'Social', 'Published', 'dkjdldlvmdl', '1732764972_26ee0a60ea75733b5c10.jpg', 'admin', NULL, 58);
 
 -- --------------------------------------------------------
 
@@ -279,13 +322,15 @@ INSERT INTO `feedbacktbl` (`id`, `status`, `usersignsId`, `eventid`, `announceid
 (109, 'Accepted', NULL, NULL, 28, 'mama mo announcement'),
 (110, 'Pending', 60, 77, NULL, 'sskjsjsjfjs'),
 (111, 'Pending', 60, 79, NULL, 'Comments ni mam'),
-(112, 'Accepted', 60, 91, NULL, 'qwerty hahaha\r\n'),
-(114, 'Pending', 60, 91, NULL, 'jhgjhkkjkjhh'),
-(115, 'Accepted', 60, 91, NULL, 'hghgjhjmhn'),
-(116, 'Pending', 60, 91, NULL, 'ano pa bayan'),
-(117, 'Pending', 60, 91, NULL, 'ahjahajhcnaj'),
-(118, 'Pending', 60, 91, NULL, 'snkscnkscks'),
-(119, 'Pending', 60, 91, NULL, 'sjsjsjscjsc');
+(112, 'Accepted', 60, NULL, NULL, 'qwerty hahaha\r\n'),
+(114, 'Pending', 60, NULL, NULL, 'jhgjhkkjkjhh'),
+(115, 'Accepted', 60, NULL, NULL, 'hghgjhjmhn'),
+(116, 'Pending', 60, NULL, NULL, 'ano pa bayan'),
+(117, 'Pending', 60, NULL, NULL, 'ahjahajhcnaj'),
+(118, 'Pending', 60, NULL, NULL, 'snkscnkscks'),
+(119, 'Pending', 60, NULL, NULL, 'sjsjsjscjsc'),
+(121, 'Accepted', NULL, NULL, 29, 'feedback mo tol'),
+(122, 'Pending', 60, 92, NULL, 'Hehehehehe');
 
 -- --------------------------------------------------------
 
@@ -317,10 +362,14 @@ INSERT INTO `inkinddonation_tbl` (`id`, `usersignsId`, `Establishment`, `lastnam
 (22, 60, 'Donato', 'AWla', 'asd', 'dasd', 9085353978, 'dsfdasdsa', '1728632261_65271c4ce3a47e02fce2.jpg', '2024-10-11', 'Received', 'jhsajdgadadj'),
 (23, 60, 'kjdsjksok', 'sjvo;sjvm', '', '', 9085353978, 'Damit ng lahat', '1728632380_f21b81e05faadceabdc8.jpg', '2024-10-11', 'Received', ''),
 (24, 60, 'ksjskjsvjm', '', '', '', 9085353978, 'ajdskjfoskjf', '1728633535_34c718cb04c3ce0293c5.jpg', '2024-12-25', 'Received', ''),
-(25, 60, 'ksfjsjfsjm', '', '', '', 9085353978, 'djchndjcndjmc', '1728633571_2a20ad7ce8e554c3181b.png', '2024-10-11', 'Postponed', ''),
-(26, 60, 'olidovlidov', 'oljdovj', 'ikdvdovdov', 'kcdovi', 9085353978, 'sjisjkcisjkcmoslc', '1731858410_65ba25f99aa1d5480d0c.jpg', '2024-11-17', 'pending', 'ddpodpoc\\'),
-(27, 60, 'kjcducjdicuj', 'dusjcoscj', 'iwcjicsjk', 'uwjesujcei', 9085353978, 'wcojcoijkwc', '1731858726_d0e5ae6687dc6ee39677.jpg', '2024-11-17', 'pending', 'dcjdcdikjcdok'),
-(28, 60, 'dokdockdoc', 'slckspoclk', 'osckspoclk', 'sciksock', 9123456789, 'wcmoscskcm', '1731858773_dae78ccf06db7b5e1d88.jpg', '2024-11-17', 'pending', 'cjscijkwsick');
+(26, 60, 'olidovlidov', 'oljdovj', 'ikdvdovdov', 'kcdovi', 9085353978, 'sjisjkcisjkcmoslc', '1731858410_65ba25f99aa1d5480d0c.jpg', '2024-11-17', 'Received', 'ddpodpoc\\'),
+(27, 60, 'kjcducjdicuj', 'dusjcoscj', 'iwcjicsjk', 'uwjesujcei', 9085353978, 'wcojcoijkwc', '1731858726_d0e5ae6687dc6ee39677.jpg', '2024-11-17', 'Received', 'dcjdcdikjcdok'),
+(28, 60, 'dokdockdoc', 'slckspoclk', 'osckspoclk', 'sciksock', 9123456789, 'wcmoscskcm', '1731858773_dae78ccf06db7b5e1d88.jpg', '2024-11-17', 'pending', 'cjscijkwsick'),
+(29, 60, 'lkamcksnvc', 'ksmclksj,cm', 'lswkcmskcm', 'olkscslc', 9085353978, 'akjdiakdjm', '674563fac8ee2.jpg', '2024-11-26', 'Received', 'sjoskkc,'),
+(30, 60, 'djhvkfjv', 'ksjmcskjc', 'ksjmcksc', 'kjscmksjcm', 9987655656, 'dskjkdkjsd', '1732775656_249b1e9ec502e876f1e1.jpg', '2024-11-28', 'Received', 'skjmskjcms'),
+(31, 60, 'djdjkvkdjv', 'jfsmcekjfsc', 'kwfsskf', 'kjsmwksjfc', 9987655656, 'sjfodkfkdjf', '1732777871_989112957adf5686491b.png', '2024-11-28', 'Postponed', 'kjcdkjckdcm'),
+(32, 60, 'dvdddmkvmdvkm', 'kmfekmc', 'kskcscm', 'sk,csc,', 9633895646, 'dk,clkd,ck,dc', '1733738574_4b0e86c32fc7090082a8.jpg', '2024-12-09', 'Received', 'pvrkvkdvf'),
+(33, 60, 'dmvdmvdvmdm', 'dvmdkvmdv', 'kcekcec', 'ckjcmks', 9987655656, 'kscmsck,smc', '1733738612_3adfda350b912a7159ba.jpg', '2024-12-09', 'Received', 'dkckdjcmkdc');
 
 -- --------------------------------------------------------
 
@@ -345,7 +394,10 @@ CREATE TABLE `newsevents` (
 --
 
 INSERT INTO `newsevents` (`id`, `title`, `Content`, `author`, `date_published`, `Category`, `picture`, `status`, `adminId`) VALUES
-(42, 'news for you and me', 'wala maicontent', 'Christia', '2024-11-03 14:02:06', 'Health, Community', '1730642526_48616310a9c8736ab20b.jpg', 'Published', 58);
+(42, 'news for you and me', 'wala maicontent', 'Christia', '2024-11-03 14:02:06', 'Health, Community', '1730642526_48616310a9c8736ab20b.jpg', 'Archive', 58),
+(43, 'Title ni Tia sa News', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu urna aliquam, tincidunt nulla sed, vehicula nibh. Etiam tellus purus, molestie nec commodo at, mattis at mi. Vivamus quis mauris lobortis lectus posuere cursus ac eget sapien. Nam vulputate tincidunt rhoncus. Duis vitae mi eleifend, luctus elit vel, eleifend dolor. Curabitur magna arcu, eleifend sit amet porttitor a, egestas non libero. Nam id magna sed sapien porttitor tincidunt sed et ligula.  Phasellus vel aliquet lacus. Donec at faucibus justo. Mauris dictum massa vel dolor congue, condimentum semper turpis viverra. Suspendisse molestie sit amet purus eget porttitor. Ut a odio convallis, venenatis nisi sed, efficitur dui. In efficitur odio neque, in gravida diam mollis vitae. Ut pellentesque, orci ultrices dapibus porttitor, eros arcu viverra erat, id consectetur mi arcu nec mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tincidunt a mi sit amet varius. Duis arcu nisl, maximus congue efficitur sit amet, scelerisque quis dolor.  Ut cursus ligula id est euismod, vitae venenatis sem auctor. Curabitur venenatis ultricies egestas. Nunc commodo non ante quis mollis. Integer pretium velit elit. Etiam vitae rutrum felis. Pellentesque sodales aliquam ullamcorper. Nam a eros dignissim, fringilla magna a, molestie urna.  Integer mollis mauris in laoreet interdum. Donec vestibulum, justo id posuere fringilla, magna quam accumsan risus, quis rhoncus mauris leo sed lacus. Sed egestas luctus libero ut vestibulum. Vestibulum vestibulum dolor quam, consectetur pretium ex varius ornare. Nullam tempus felis vitae ante accumsan efficitur. Curabitur aliquet, ante at tristique suscipit, est enim viverra enim, quis imperdiet libero nisi quis dui. Fusce ac diam vel orci volutpat porttitor. Maecenas ut tortor id diam ullamcorper tempus. Proin tincidunt vitae ligula ac volutpat. Donec scelerisque ultricies lectus ut finibus. Nullam ac est finibus nibh dapibus pellentesque.  Donec elementum sit amet risus non ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, nibh facilisis hendrerit maximus, urna dui aliquam turpis, a pellentesque tellus libero sit amet augue. Aenean at mollis dolor. Curabitur sit amet ex in eros suscipit pellentesque id id risus. Nullam varius laoreet accumsan. Mauris euismod vehicula interdum. Pellentesque quis dolor in lectus feugiat pharetra sed gravida massa. Vestibulum fermentum, lectus ac euismod porta, turpis leo commodo nulla, at mollis nibh purus at lorem. Quisque pretium consequat diam ut tincidunt. Etiam ultricies auctor neque, quis iaculis lacus pharetra sagittis. Fusce aliquet turpis a purus fringilla, ac fermentum metus consequat. In euismod ultricies tristique. Integer et mollis turpis. Nullam quis quam sed orci blandit faucibus.', 'Christia Angelica M. Dela Chica', '2024-11-28 02:09:06', 'Community', '1732759746_524033b44dbb446a947b.jpg', 'Published', 58),
+(44, 'sksksvnskvn', 'ksjskcm', 'ksmcksmc,ws', '2024-11-28 02:53:36', 'Community', '1732762416_1bfb1f3a99b60d9f900a.jpg', 'Draft', 58),
+(45, 'skfm;slf,mc', 'llwskfsl', 'LSKWLSC', '2024-11-28 02:54:03', 'Health, Community', '1732762443_2f1f32d76b5ad842214b.jpg', 'Draft', 58);
 
 -- --------------------------------------------------------
 
@@ -397,7 +449,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `name`, `description`, `price`, `quantity`, `prodpic`, `created_at`, `updated_at`) VALUES
-(16, '1111', 'Round Doormat', 'Doormat', 50.00, 7, '1729579947_ddda0f67d0a10f73e5e9.jpg', '2024-10-22 14:52:27', '2024-10-22 21:06:19'),
+(16, '1111', 'Round Doormat', 'Doormat', 50.00, 5, '1729579947_ddda0f67d0a10f73e5e9.jpg', '2024-10-22 14:52:27', '2024-12-09 17:57:38'),
 (17, '1112', 'Rectangle Doormat', 'Doormat', 50.00, 10, '1729580021_bf54cec63a209ee3b0ae.jpg', '2024-10-22 14:53:41', '2024-10-22 14:53:41'),
 (18, '1113', 'Bracelet', 'Bracelet Big', 20.00, 10, '1729580215_98645666eb4da35b6989.jpg', '2024-10-22 14:56:55', '2024-10-22 14:56:55'),
 (19, '1114', 'Bracelet', 'Bracelet Small', 10.00, 10, '1729580283_2d0de34d8c00573e5254.jpg', '2024-10-22 14:58:03', '2024-10-22 14:58:03'),
@@ -405,7 +457,7 @@ INSERT INTO `products` (`id`, `code`, `name`, `description`, `price`, `quantity`
 (21, '1116', 'Virgin Mary ', 'Virgin Mary Small', 100.00, 10, '1729580416_bc417871936fea8c5388.jpg', '2024-10-22 15:00:16', '2024-10-22 15:16:59'),
 (22, '1117', 'Patholder', 'Patholder Thin', 30.00, 10, '1729580607_7b436bd927fdc3e822e5.jpg', '2024-10-22 15:03:27', '2024-10-22 15:03:27'),
 (23, '1118', 'Patholder', 'Patholder Square', 40.00, 10, '1729580758_c2847084bf0adff7633b.jpg', '2024-10-22 15:05:58', '2024-10-22 15:05:58'),
-(24, '1119', 'Patholder', 'Patholder Thin', 30.00, 9, '1729580876_dfe60ecca39862af87af.jpg', '2024-10-22 15:07:56', '2024-11-12 14:12:37'),
+(24, '1119', 'Patholder', 'Patholder Thin', 30.00, 6, '1729580876_dfe60ecca39862af87af.jpg', '2024-10-22 15:07:56', '2024-11-28 09:51:22'),
 (25, '1120', 'Rosary', 'Rosary White and Blue', 100.00, 20, '1729580974_d8134e3076896e216224.jpg', '2024-10-22 15:09:34', '2024-11-12 14:13:27'),
 (26, '1121', 'Black Sto. Nino', 'Small', 100.00, 10, '1729581361_284f67186bb2cec11a70.jpg', '2024-10-22 15:16:01', '2024-10-22 15:16:01'),
 (27, '1122', 'Virgin Mary', 'Virgin Mary Small Red', 100.00, 10, '1729581603_3d5f1670305b1475e9ad.jpg', '2024-10-22 15:20:03', '2024-10-22 15:20:03');
@@ -430,8 +482,9 @@ CREATE TABLE `product_image` (
 --
 
 INSERT INTO `product_image` (`id`, `image`, `description`, `price`, `other`, `type`) VALUES
-(14, 'h2.png', 'ARUGA-KAPATID FOUNDATION INCORPORATED', 0.00, 'homepage', ''),
-(15, 'h1.jpg', 'You\'re never too old to begin again, and to create yourself a happy ending', NULL, 'homepage', ''),
+(1, 'h2.jpg', NULL, NULL, 'homepage', ''),
+(14, 'h2.png', 'HAPAG ARUGA FOUNDATION INCORPORATED', NULL, 'homepage', ''),
+(15, 'motherteresa.jpg', '\"Not all of us can do great things, but we can do small things with great love.\"', NULL, 'homepage', ''),
 (16, 'h3.jpg', '\"Your heart holds the wisdom of ages, and your spirit remains forever young. Keep spreading your warmth and love.\"', NULL, 'homepage', ''),
 (17, 'g2.jpg', NULL, NULL, 'gallery', ''),
 (19, 'g3.jpg', NULL, NULL, 'gallery', ''),
@@ -494,8 +547,9 @@ CREATE TABLE `tblcontact` (
 --
 
 INSERT INTO `tblcontact` (`Id`, `Name`, `Phone`, `Email`, `Enquiry_Date`, `Message`, `contact_status`) VALUES
-(14, 'jshclsvujlosjvo', '09085353978', 'shantal@gmail.com', '2024-07-03 02:09:21', ' jhfkkisvliusjvlslvkjslkv', 'Unread'),
-(15, 'Dan Keneth Rontale', '09085353978', 'dalandan@gmail.com', '2024-11-04 06:03:30', ' jahajajajjaja', 'Unread');
+(14, 'jshclsvujlosjvo', '09085353978', 'shantal@gmail.com', '2024-07-03 02:09:21', ' jhfkkisvliusjvlslvkjslkv', 'Read'),
+(15, 'Dan Keneth Rontale', '09085353978', 'dalandan@gmail.com', '2024-11-04 06:03:30', ' jahajajajjaja', 'Unread'),
+(16, 'gumagana ka pa ba', '09085353978', 'changeldc11@gmail.com', '2024-11-28 00:36:43', 'hi, sana gumagana ka pa hehe ', 'Unread');
 
 -- --------------------------------------------------------
 
@@ -566,31 +620,34 @@ CREATE TABLE `tblscdetails` (
 --
 
 INSERT INTO `tblscdetails` (`Id`, `lastname`, `firstname`, `middlename`, `nickname`, `DateBirth`, `gender`, `marital_stat`, `ContNum`, `ComAdd`, `ProfPic`, `EmergencyAdd`, `EmergencyContNum`, `RegDate`, `scstatus`, `InputedDate`, `departuredate`, `reasonleft`, `datedeath`, `causedeath`, `adminId`) VALUES
-(112, 'ADAN', 'ENRICO', 'MALINAO', 'RICO', '1962-02-19', 'Male', 'Single', '09123456789', 'BUHANGIN, NAUJAN, OR. MDO.', '1730764320_fff1b5241530ff6a7fe4.jpg', 'BUHANGIN, NAUJAN, OR. MDO.', '09123456789', '2024-11-05', 'Left', '2024-11-05 07:52:00', '2024-11-08', 'ksjkjskjscc', '', '', 58),
-(113, 'ALCARAZ', 'LORENDA', 'AXALAN', 'LOREN', '1967-08-19', 'Female', 'Single', '09123456789', 'POBLACION, PUERTO GALERA, OR. MDO.', '1730764495_4d3998a0ee127ae9c10f.jpg', 'POBLACION, PUERTO GALERA, OR. MDO.', '09123456789', '2024-11-05', 'Deceased', '2024-11-05 07:54:55', '', '', '2024-11-08', 'jckdlkdkvd', 58),
+(112, 'ADAN', 'ENRICO', 'MALINAO', 'RICO', '1962-02-19', 'Male', 'Single', '09123456789', 'BUHANGIN, NAUJAN, OR. MDO.', '1730764320_fff1b5241530ff6a7fe4.jpg', 'BUHANGIN, NAUJAN, OR. MDO.', '09123456789', '2024-11-05', 'Left', '2024-11-05 07:52:00', '2022-06-02', 'ksjkjskjscc', '', '', 58),
+(113, 'ALCARAZ', 'LORENDA', 'AXALAN', 'LOREN', '1967-08-19', 'Female', 'Single', '09123456789', 'POBLACION, PUERTO GALERA, OR. MDO.', '1730764495_4d3998a0ee127ae9c10f.jpg', 'POBLACION, PUERTO GALERA, OR. MDO.', '09123456789', '2024-11-05', 'Deceased', '2024-11-05 07:54:55', '', '', '2019-03-08', 'jckdlkdkvd', 58),
 (114, 'ARENO', 'LETECIA', 'BELLONES', 'LETY', '1941-02-28', 'Female', 'Single', '09123456789', 'BAGUMBAYAN 2, BONGABONG, OR. MDO.', '1730764750_98da1d0a2652b22c35c8.jpg', 'BAGUMBAYAN 2, BONGABONG, OR. MDO.', '09123456789', '2024-11-02', 'Left', '2024-11-05 07:59:10', '2024-11-08', 'jksncoikck', '', '', 58),
 (115, 'ATIENZA', 'HELEN', 'RAMIREZ', 'HELEN', '1945-12-25', 'Female', 'Widowed', '09123456789', 'BAYANAN 2, CALAPAN CITY, OR, MDO.', '1730766201_4a502d7c9e512d31cfdc.jpg', 'BAYANAN 2, CALAPAN CITY, OR, MDO.', '09123456789', '2024-11-05', 'Left', '2024-11-05 08:23:21', '2024-11-08', 'hcikjiksjcdkc', '', '', 58),
-(116, 'BOONGALING', 'HERMEO', 'MENDOZA', 'HERME', '1957-04-13', 'Male', 'Divorced', '09123456789', 'BAGUMBAYAN, ROXAS, OR. MDO.', '1730767887_a6161cc4fe5a54664796.jpg', 'BAGUMBAYAN, ROXAS, OR. MDO.', '09123456789', '2024-11-05', 'Deceased', '2024-11-05 08:51:27', '', '', '2024-11-08', 'd cdmvnk;djvo;dl', 58),
+(116, 'BOONGALING', 'HERMEO', 'MENDOZA', 'HERME', '1957-04-13', 'Male', 'Divorced', '09123456789', 'BAGUMBAYAN, ROXAS, OR. MDO.', '1730767887_a6161cc4fe5a54664796.jpg', 'BAGUMBAYAN, ROXAS, OR. MDO.', '09123456789', '2024-11-05', 'Deceased', '2024-11-05 08:51:27', '', '', '2023-12-10', 'd cdmvnk;djvo;dl', 58),
 (117, 'DE CASTRO', 'MELECIO', 'MAGRO', 'MELE', '1931-07-29', 'Male', 'Single', '09123456789', 'SAN ANTONIO, PUERTO GALERA, OR. MDO.', '1730768042_763ab2f75b3a1969e408.jpg', 'SAN ANTONIO, PUERTO GALERA, OR. MDO.', '09123456789', '2024-11-05', 'Deceased', '2024-11-05 08:54:02', '', '', '2024-11-08', 'sncihscicsjics', 58),
 (118, 'GUSTO', 'BENEDICTA', 'MACALALAD', 'BENENG', '1933-05-06', 'Female', 'Widowed', '09123456789', 'POLA, OR. MDO.', '1730768156_04b295d614b09015ed71.jpg', 'POLA, OR. MDO.', '09123456789', '2024-11-05', 'Deceased', '2024-11-05 08:55:56', '', '', '2024-11-08', 'scmnskckscksjc', 58),
 (119, 'sjhshcnsjhcnsj', 'kjcscncsjj', 'sjkscschshsch', 'dacnscjsncjsc', '1940-12-25', 'Male', 'Single', '09123456789', 'sjhshcishciskjcis', '1731053402_ba7f8113d24e6696140d.jpg', 'sjhcnksnckjsc', '09876543212', '2024-11-08', 'Deceased', '2024-11-08 16:10:02', '', '', '2024-11-08', 'jsksksksjsjcjc', 58),
 (120, 'my name', 'Testing', 'Jekjek', 'Mary', '1950-12-05', 'Male', 'Married', '09939469530', 'Somewhere', '1731303830_a2f266431ea0153a3240.jpg', 'Camansihan', '09939469530', '2024-11-11', 'Left', '2024-11-08 16:10:57', '2024-11-13', 'reason', '', '', 58),
 (121, 'skjkskjfoisjo', 'ksjckscks', 'iksjsoickj', 'cdcksjsjkcisjci', '1968-02-13', 'Female', 'Married', '09123456789', 'mcnksjcnksnc', '1731303939_f0fc18f2988bc87e9fcd.jpg', 'smcnkscnkscn', '09123456789', '2024-11-08', 'Left', '2024-11-08 16:11:59', '2024-11-13', 'hdoshfois', '', '', 58),
-(122, 'jshcisjciscjn', 'ksjcmiskjcmiok', 'skc,jmsolickjm', 'skjcmsickj', '1960-06-05', 'Male', 'Single', '09876543212', 'sbcjdhcudjhnc', '1731053581_cb32742c248f9ecc1144.jpg', 'msncjscjknckms', '09876543212', '2024-11-08', 'Left', '2024-11-08 16:13:01', '2024-11-13', 'lksfjpdoj', '', '', 58),
+(122, 'jshcisjciscjn', 'ksjcmiskjcmiok', 'skc,jmsolickjm', 'skjcmsickj', '1960-06-05', 'Male', 'Single', '09876543212', 'sbcjdhcudjhnc', '1731053581_cb32742c248f9ecc1144.jpg', 'msncjscjknckms', '09876543212', '2024-11-08', 'Left', '2024-11-08 16:13:01', '2018-11-13', 'lksfjpdoj', '', '', 58),
 (123, 'sjkckjshcjshc', 'shckscisc', 'cscjschsj', 'shcsjhcjsh', '1956-07-07', 'Female', 'Divorced', '09876543212', 'sknckscioskc', '1731053630_201a252cfbc5167be0ca.jpg', 'scksnckskck', '09633895647', '2024-11-08', 'Left', '2024-11-08 16:13:50', '2024-11-13', 'slmlscmslcs', '', '', 58),
-(124, 'snbcnscjbscj', 'snksjcksck', 'skcjkscksocn', 'ksncksjcmhnsk', '1945-08-09', 'Female', 'Divorced', '09261454009', 'sjcjschusjchj', '1731053680_b71b8438b05ddca29a39.jpg', 'jsncjishciusjhcusj', '09123456789', '2024-11-08', 'Left', '2024-11-08 16:14:40', '2024-11-13', 'skjs;lcslck,s', '', '', 58),
-(125, 'smncksjncsjn', 'nskcnskncsik', 'kjscskcnksc', 'ksjcmskjcmsk', '1945-09-05', 'Male', 'Divorced', '09876543212', 'wjkhdiwjdikjwd', '1731053732_d2e378b85f41041f23aa.jpg', 'sncokscnksjcmk', '09261454009', '2024-11-08', 'Left', '2024-11-08 16:15:32', '2024-11-13', 'dkjdjvmdjkvm', '', '', 58),
-(126, 'jkdhvkjdvk', 'ksjmckosjc', 'ksjcmksj', 'ksjcskjc', '1965-08-09', 'Female', 'Married', '09876543212', 'dkjkdjvkdjvkjmed', '1731053781_da94eebc95c43037137b.jpg', 'smussjkscjsnjs', '09123456789', '2024-11-08', 'Unarchive', '2024-11-08 16:16:21', '', '', '', '', 58),
+(124, 'snbcnscjbscj', 'snksjcksck', 'skcjkscksocn', 'ksncksjcmhnsk', '1945-08-09', 'Female', 'Divorced', '09261454009', 'sjcjschusjchj', '1731053680_b71b8438b05ddca29a39.jpg', 'jsncjishciusjhcusj', '09123456789', '2024-11-08', 'Left', '2024-11-08 16:14:40', '2018-11-13', 'skjs;lcslck,s', '', '', 58),
+(125, 'smncksjncsjn', 'nskcnskncsik', 'kjscskcnksc', 'ksjcmskjcmsk', '1945-09-05', 'Male', 'Divorced', '09876543212', 'wjkhdiwjdikjwd', '1731053732_d2e378b85f41041f23aa.jpg', 'sncokscnksjcmk', '09261454009', '2024-11-08', 'Left', '2024-11-08 16:15:32', '2021-11-13', 'dkjdjvmdjkvm', '', '', 58),
+(126, 'jkdhvkjdvk', 'ksjmckosjc', 'ksjcmksj', 'ksjcskjc', '1964-07-09', 'Female', 'Married', '09876543212', 'dkjkdjvkdjvkjmed', '1731053781_da94eebc95c43037137b.jpg', 'smussjkscjsnjs', '09123456789', '2024-11-08', 'Unarchive', '2024-11-08 16:16:21', '', '', '', '', 58),
 (127, 'kvckdjvmkjdvk', 'ks,mksjmsk', 'ksjmckjmscj', 'adskdksjds', '1968-03-14', 'Female', 'Married', '09123456789', 'udghejhdfedj', '1731053846_08b04a67185a8d8faf1b.jpg', 'dmnkdjhnvidj', '09123456789', '2024-11-08', 'Unarchive', '2024-11-08 16:17:26', '', '', '', '', 58),
 (128, 'smnksnckjsck', 'ksjmcksncnjs', 'ksjcdkjcidk', 'ks,jcmksj,cmk', '1956-05-07', 'Male', 'Divorced', '09876543212', 'ehcedvnkdhncik', '1731053899_1368522084a2c61fc800.jpg', 'dmnidnvkdvkd', '09085353978', '2024-11-08', 'Unarchive', '2024-11-08 16:18:19', '', '', '', '', 58),
 (129, 'smcnoidhviudj', 'ksjmclksck', 'ksjcmksjcks', 'ksjckdsjckd', '1967-06-15', 'Female', 'Single', '09876543212', 'jsdckcliksjciks', '1731053950_acb3de7b5c41b28db082.jpg', 'cjkjkjdckdcjkmd', '09261454009', '2024-11-08', 'Unarchive', '2024-11-08 16:19:10', '', '', '', '', 58),
-(130, 'xjkcnodscnxdsnc', 'kjdckjdckj', 'ksjcskjcik', 'skjcidjkcmsik', '1943-06-07', 'Male', 'Divorced', '09876543212', 'jsnlcjkslcjmwliskcsik', '1731054021_ca3cbcd866da8faa5490.jpg', 'smncmsncsm', '09876543212', '2024-11-08', 'Unarchive', '2024-11-08 16:20:21', '', '', '', '', 58),
+(130, 'xjkcnodscnxdsnc', 'kjdckjdckj', 'ksjcskjcik', 'skjcidjkcmsik', '1940-12-25', 'Male', 'Divorced', '09876543212', 'jsnlcjkslcjmwliskcsik', '1731054021_ca3cbcd866da8faa5490.jpg', 'smncmsncsm', '09876543212', '2024-11-08', 'Unarchive', '2024-11-08 16:20:21', '', '', '', '', 58),
 (131, 'slkjsknclksncj', 'lk,sjmcklsjcmk,', 'lks,jcmsk,jcm', 'kjcsmkjcmskc', '1954-05-06', 'Male', 'Divorced', '09633895647', 'ejhckjenckecsi', '1731054070_a33bb5646960a685af4c.jpg', 'njkjwdshnoiskjci', '09876543212', '2024-11-08', 'Unarchive', '2024-11-08 16:21:10', '', '', '', '', 58),
-(132, 'slkcdjclkdjckdj', 'ksjcskjcksc', 'ksjcsickjscjk', 'ksjcmskjcskjcm', '1957-08-05', 'Female', 'Married', '09876543212', 'skjhchcnjknsckjsc', '1731054188_df4d573c57c3b873264e.jpg', 'skcskcoscscsjsl', '09123456789', '2024-11-08', 'Deceased', '2024-11-08 16:23:08', '', '', '2024-11-24', 'tuberculosis', 58),
+(132, 'slkcdjclkdjckdj', 'ksjcskjcksc', 'ksjcsickjscjk', 'ksjcmskjcskjcm', '1957-08-05', 'Female', 'Married', '09876543212', 'skjhchcnjknsckjsc', '1731054188_df4d573c57c3b873264e.jpg', 'skcskcoscscsjsl', '09123456789', '2024-11-08', 'Deceased', '2024-11-08 16:23:08', '', '', '2023-12-05', 'tuberculosis', 58),
 (133, 'ekjckejcmkejcm', 'kjcmskcsk,', 'ksjmksjcskc', 'ksjcskjcskjcm', '1958-07-05', 'Male', 'Married', '09876543212', 'jkscnkmsckjsmc sikjcskjcmskc, socjosclsikc', '1731054234_3b54938c6a95f8ab06c4.jpg', 'skcms.,cmscm,', '09633895647', '2024-11-08', 'Unarchive', '2024-11-08 16:23:54', '', '', '', '', 58),
 (134, 'lsmc,skmc,slcm,sl,c', 'ls,mclsmcslcm', 'skkjcksjcksj', 'kcjsmksjcmksc', '1949-09-04', 'Male', 'Divorced', '09876543212', 'sls,cjmskcmsk,cm', '1731054289_c488bf0561745009b3dc.jpg', 'smc ksl,clsk,c iskjcksjciksc wiksjcisjc', '09085353978', '2024-11-08', 'Unarchive', '2024-11-08 16:24:49', '', '', '', '', 58),
 (135, 'Manalo', 'Rosela', 'Herilla', 'Rose', '1963-03-18', 'Female', 'Married', '09939469530', 'Camansihan, Calapan City, Or. Mdo', '1731303728_3bbad232670f83a61f72.jpg', 'Camansihan, Calapan City, Or. Mdo', '09939469530', '2024-11-11', 'Unarchive', '2024-11-11 13:42:08', '', '', '', '', 58),
-(136, 'Manalo', 'Christia', 'Dela Chica', 'Jekjek', '1969-12-25', 'Female', 'Single', '09633895647', 'Camansihan, Calapan City, Or. Mdo.', '1731313984_dfd2f5f6dda11529fd9c.jpg', 'Camansihan, Calapan City, Or. Mdo.', '09123456789', '2024-11-11', 'Unarchive', '2024-11-11 16:33:04', '', '', '', '', 58);
+(136, 'Manalo', 'Christia', 'Dela Chica', 'Jekjek', '1969-12-25', 'Female', 'Single', '09633895647', 'Camansihan, Calapan City, Or. Mdo.', '1731313984_dfd2f5f6dda11529fd9c.jpg', 'Camansihan, Calapan City, Or. Mdo.', '09123456789', '2023-11-30', 'Unarchive', '2024-11-11 16:33:04', '', '', '', '', 58),
+(137, 'Dela Chica', 'Christia Angelica', 'Manalo', 'Jekjek', '1945-12-25', 'Female', 'Single', '09876543212', 'Camansihan', '1733727887_b4d1c37c9e9f469e40a2.jpg', 'Camansihan', '09876543212', '2024-12-09', 'Unarchive', '2024-12-09 15:04:47', '', '', '', '', 58),
+(138, 'Jekjek', 'Manalo', 'Tia', 'helloworld', '1970-01-01', 'Female', 'Widowed', '09939469530', 'Wala', '1733731457_6c2d00c7e9d7fa2f9bbf.jpg', 'Wala', '09123456789', '2024-12-09', 'Unarchive', '2024-12-09 16:04:17', '', '', '', '', 58),
+(139, 'Dela Chica', 'Christian', 'Banban', 'Chacha', '1958-12-25', 'Female', 'Married', '09261454009', 'Camansihan', '1733732555_7f101672dab636f2b8ac.jpg', 'Camansihan', '09123456789', '2024-12-09', 'Unarchive', '2024-12-09 16:22:35', '', '', '', '', 58);
 
 -- --------------------------------------------------------
 
@@ -630,7 +687,9 @@ INSERT INTO `transactions` (`id`, `code`, `customer`, `total_amount`, `tendered`
 (48, '2024061600001', 'shantal', 200.00, 200.00, '2024-06-16 18:05:19', '2024-06-16 18:05:19'),
 (49, '2024061900001', 'shantal', 600.00, 1000.00, '2024-06-19 11:00:36', '2024-06-19 11:00:36'),
 (50, '2024102200001', 'christia', 150.00, 200.00, '2024-10-22 21:06:18', '2024-10-22 21:06:18'),
-(51, '2024111200001', 'Li', 30.00, 100.00, '2024-11-12 14:12:37', '2024-11-12 14:12:37');
+(51, '2024111200001', 'Li', 30.00, 100.00, '2024-11-12 14:12:37', '2024-11-12 14:12:37'),
+(52, '2024112800001', 'christia', 90.00, 100.00, '2024-11-28 09:51:22', '2024-11-28 09:51:22'),
+(53, '2024120900001', 'Dan bano', 100.00, 200.00, '2024-12-09 17:57:38', '2024-12-09 17:57:38');
 
 -- --------------------------------------------------------
 
@@ -697,7 +756,9 @@ INSERT INTO `transaction_items` (`transaction_id`, `product_id`, `price`, `quant
 (48, 18, 20.00, 10, '2024-06-16 18:05:19', '2024-06-16 18:05:19'),
 (49, 18, 20.00, 30, '2024-06-19 11:00:37', '2024-06-19 11:00:37'),
 (50, 16, 50.00, 3, '2024-10-22 21:06:19', '2024-10-22 21:06:19'),
-(51, 24, 30.00, 1, '2024-11-12 14:12:37', '2024-11-12 14:12:37');
+(51, 24, 30.00, 1, '2024-11-12 14:12:37', '2024-11-12 14:12:37'),
+(52, 24, 30.00, 3, '2024-11-28 09:51:22', '2024-11-28 09:51:22'),
+(53, 16, 50.00, 2, '2024-12-09 17:57:38', '2024-12-09 17:57:38');
 
 -- --------------------------------------------------------
 
@@ -804,7 +865,14 @@ INSERT INTO `userdonation` (`id`, `usersignsId`, `establishment`, `lastname`, `f
 (61, NULL, 'asdasd', 'sadsad', 'sadsad', 'sadasd', 0, '2024-11-25 02:21:19', NULL, NULL, '', '', '', 'asdsa', 0),
 (62, 58, 'asdasd', 'sadsad', 'sadsad', 'sadasd', 9876543212, '2024-11-25 02:23:48', 123132, NULL, '', 'sad2e3', 'Received', 'asdsa', 0),
 (63, 58, 'sadasd', 'sadasd', 'sadsad', 'sadasd', 9876543212, '2024-11-25 02:27:00', 122314, NULL, '1732501620_0ea960e4076d550ba84b.jpg', 'sadasd', 'Received', 'asda', 0),
-(64, 58, 'Establishment ni Tia sa admin', 'kdjclkdjck', 'ksjcsikjc', 'ksjcsikjc', 9876543212, '2024-11-25 02:28:37', 12500, NULL, '1732501717_45473d15ae0f4b01eef4.jpg', '82837281j', 'Received', 'May be This Time', 0);
+(64, 58, 'Establishment ni Tia sa admin', 'kdjclkdjck', 'ksjcsikjc', 'ksjcsikjc', 9876543212, '2024-11-25 02:28:37', 12500, NULL, '1732501717_45473d15ae0f4b01eef4.jpg', '82837281j', 'Received', 'May be This Time', 0),
+(65, 60, 'Establishment Cash', 'Ayoko sabihin', 'Bat ko sasabihin', 'Aba dami tanong ah', 9123456789, '2024-11-28 04:37:28', 26500, 0, '1732768648_b196fc3059a151199825.jpg', '896y5c5d8dhvs', 'pending', 'hello', 0),
+(66, 58, 'Immaculate Conception Parish', '', '', '', 9123456789, '2024-11-28 04:38:28', 122314, NULL, '1732768708_c41a179729550107813f.jpg', '8283728', 'Received', 'Hello', 0),
+(67, 60, 'skjckjsclkjs', 'scjsocm', 'lckslkcms', 'kscmlkscms', 9876543212, '2024-11-28 04:46:14', 0, 0, '1732769174_0633206671bec7ae2812.jpg', 'skjskjcksjc8798', 'Received', 'sjcskjcmskc', 0),
+(68, 60, 'dkjcdkmcdk,', 'olskcolskc', 'oslkcsolck', 'slkcsolck', 9876543212, '2024-11-28 04:46:41', 8227830, 827827, '1732769201_0f7b9915a3f775f1d718.jpg', 'sjchjsic6775546', 'Received', 'sdksls', 0),
+(69, 60, 'dkmpdovdk', 'ksfodkv', 'ksmocks', 'ksfskc', 9123456789, '2024-11-28 04:54:39', 234000, 0, '1732769679_be352692b2192425ff4d.jpg', 'kjdsf787', 'Received', 'djdjvkd', 0),
+(70, 60, 'dmldkvmldkv', 'lkvlkdvlk', 'lksmvclwks', 'l,kms.,m', 9123456789, '2024-11-28 04:55:18', 1837880, 0, '1732769718_2965a66cd49090a0959f.jpg', 'dudvdh898349', 'Postponed', 'ksjksjfks', 0),
+(71, 58, 'kejfdjmfkd', 'lskfsklmf', 'lskfmslfk', 'lksflsk', 9876543212, '2024-11-28 05:04:11', 6473850, NULL, '1732770251_3859647c3ac96a41ca0a.jpg', '28284jdhdjn', 'Received', 'dklfjdkfm', 0);
 
 -- --------------------------------------------------------
 
@@ -867,6 +935,12 @@ ALTER TABLE `adminsionsliptbl`
 ALTER TABLE `announcement`
   ADD PRIMARY KEY (`AnnounceID`),
   ADD KEY `adminId` (`adminId`);
+
+--
+-- Indexes for table `chat_bot`
+--
+ALTER TABLE `chat_bot`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `donationdets`
@@ -1000,19 +1074,25 @@ ALTER TABLE `vm`
 -- AUTO_INCREMENT for table `acceptbooking`
 --
 ALTER TABLE `acceptbooking`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
 
 --
 -- AUTO_INCREMENT for table `adminsionsliptbl`
 --
 ALTER TABLE `adminsionsliptbl`
-  MODIFY `slipId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `slipId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `AnnounceID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `AnnounceID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `chat_bot`
+--
+ALTER TABLE `chat_bot`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `donationdets`
@@ -1024,31 +1104,31 @@ ALTER TABLE `donationdets`
 -- AUTO_INCREMENT for table `elderneed`
 --
 ALTER TABLE `elderneed`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `EventID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `EventID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `feedbacktbl`
 --
 ALTER TABLE `feedbacktbl`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- AUTO_INCREMENT for table `inkinddonation_tbl`
 --
 ALTER TABLE `inkinddonation_tbl`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `newsevents`
 --
 ALTER TABLE `newsevents`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `organizationtable`
@@ -1066,7 +1146,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `product_image`
 --
 ALTER TABLE `product_image`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `reportdonation`
@@ -1078,7 +1158,7 @@ ALTER TABLE `reportdonation`
 -- AUTO_INCREMENT for table `tblcontact`
 --
 ALTER TABLE `tblcontact`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tblproduct`
@@ -1090,13 +1170,13 @@ ALTER TABLE `tblproduct`
 -- AUTO_INCREMENT for table `tblscdetails`
 --
 ALTER TABLE `tblscdetails`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -1108,13 +1188,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `bookingId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=248;
+  MODIFY `bookingId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
 
 --
 -- AUTO_INCREMENT for table `userdonation`
 --
 ALTER TABLE `userdonation`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `usersigns`

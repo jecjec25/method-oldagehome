@@ -135,7 +135,7 @@
                                         Table Report of Events of Aruga-Kapatid Foundation Incorporated
                                     </p>
                                     <div class="button-print">
-                                        <a href="<?= base_url('/generateEventReport/' . $regdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
+                                        <a href="<?= base_url('/previewEvent/' . $regdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
                                     </div>
                                     <div class="table-responsive pt-3">
                                         <table class="table table-striped project-orders-table" id="acceptbooking">

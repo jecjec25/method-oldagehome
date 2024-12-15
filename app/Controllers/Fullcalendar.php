@@ -155,6 +155,10 @@ class Fullcalendar extends BaseController
     public function generateElderlyReport($search)
     {
         set_time_limit(120);
+
+
+        $namesig = $this->request->getVar('signatoryName');
+        $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
         $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
@@ -387,9 +391,9 @@ foreach ($data['reg'] as $reg) {
      <p>During the reporting period, a total of '. $count .' elderly individuals were registered in the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
      <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
             <div style="text-align: center; width: 200px;">
-                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namesig .'</p>
                 <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namepos.'</p>
             </div>
         </div>
     </div>
@@ -648,6 +652,9 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
     public function generateEventReport($searchRevent, $searchR)
     {
         set_time_limit(120);
+
+        $namesig = $this->request->getVar('signatoryName');
+        $namepos = $this->request->getVar('positionName');
     
         // Use local file path for the image
         $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
@@ -864,13 +871,12 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
               <p style="font-weight: 600;">Total Amount Raised: ' . number_format($totalAmountRaised, 2) . '</p>
          <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
             <div style="text-align: center; width: 200px;">
-                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namesig .'</p>
                 <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namepos.'</p>
             </div>
         </div>
-        </div>
-        </div>
+    </div>
         </body>
         </html>';
 

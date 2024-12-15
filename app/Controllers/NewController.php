@@ -118,6 +118,9 @@ class NewController extends BaseController
     public function generateElderlyLeft()
     {
         set_time_limit(120);
+
+        $namesig = $this->request->getVar('signatoryName');
+        $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
         $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
@@ -349,11 +352,12 @@ class NewController extends BaseController
 
        <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
             <div style="text-align: center; width: 200px;">
-                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namesig .'</p>
                 <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namepos.'</p>
             </div>
         </div>
+    </div>
         </div>
         </body>
         </html>';
@@ -414,6 +418,9 @@ class NewController extends BaseController
     public function generateElderlyDeceased()
     {
         set_time_limit(120);
+
+        $namesig = $this->request->getVar('signatoryName');
+        $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
         $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
@@ -650,12 +657,12 @@ class NewController extends BaseController
         <p>During the reporting period, a total of '. $count.' elderly individuals passed away in the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
         <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
             <div style="text-align: center; width: 200px;">
-                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namesig .'</p>
                 <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namepos.'</p>
             </div>
         </div>
-        </div>
+    </div>
         </body>
         </html>';
 
@@ -1082,6 +1089,9 @@ class NewController extends BaseController
  public function getReportsLeft($fromdate, $todate)
 {
     set_time_limit(120);
+
+    $namesig = $this->request->getVar('signatoryName');
+    $namepos = $this->request->getVar('positionName');
     
     // Use local file path for the image
     $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
@@ -1315,13 +1325,12 @@ class NewController extends BaseController
         <p>During the reporting period, a total of '. $count.' elderly individuals left the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
          <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
             <div style="text-align: center; width: 200px;">
-                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namesig .'</p>
                 <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namepos.'</p>
             </div>
         </div>
-        </div>
-        </div>
+    </div>
         </body>
         </html>';
 
@@ -1405,6 +1414,9 @@ exit();
     public function getReportsDeath($fromdate, $todate)
     {
         set_time_limit(120);
+
+        $namesig = $this->request->getVar('signatoryName');
+        $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
         $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
@@ -1635,13 +1647,12 @@ exit();
         <p>During the reporting period, a total of '. $count.' elderly individuals passed away in the Elder Care Program of Hapag Aruga Foundation Incorporated.</p>
          <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
             <div style="text-align: center; width: 200px;">
-                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namesig .'</p>
                 <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namepos.'</p>
             </div>
         </div>
-        </div>
-        </div>
+    </div>
         </body>
         </html>';
 
@@ -1668,6 +1679,9 @@ exit();
     public function getReportsMonatary($fromdate, $todate)
     {
         set_time_limit(120);
+
+        $namesig = $this->request->getVar('signatoryName');
+        $namepos = $this->request->getVar('positionName');
         
         // Use local file path for the image
         $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
@@ -1891,14 +1905,14 @@ exit();
         <p>Total Cash Check: '. number_format($totals['total_cash_check'], 2).'</p>
         <p>Total Mumo sa Hapag: '. number_format($totals['total_mumosahapag'], 2).'</p>
 
-         <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
+        <div style="display: flex; justify-content: flex-start; margin-top: 40px;">
             <div style="text-align: center; width: 200px;">
-                <p style="margin: 5px 0 0 0; font-size: 14px;">LITO C. VERGARA</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namesig .'</p>
                 <div style="border-bottom: 1px solid black; width: 100%; margin: 5px 0;"></div>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Administrator</p>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">'. $namepos.'</p>
             </div>
         </div>
-        </div>
+    </div>
         </body>
         </html>';
 

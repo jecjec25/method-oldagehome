@@ -105,7 +105,7 @@
                                     Table Report of Left Elders of Aruga-Kapatid Foundation Incorporated
                                 </p>
                                 <div class="button-print">
-                                    <a class="btn btn-primary" href="<?= base_url('getReportsLeft/' . $fromdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
+                                    <a class="btn btn-primary" href="<?= base_url('previewLeft/' . $fromdate . '/' . $todate) ?>" id="PrintButton">Preview</a>
                                 </div>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-striped project-orders-table" id="tblscdetails">

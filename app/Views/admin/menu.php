@@ -119,11 +119,8 @@
                             Let's come together to ensure they receive the respect, dignity, and compassion they deserve in their golden years.
                         </p>
                     </div>
-                </div>
-            </div> 
-            <div class="clearfix"> </div> 
-            <br><br>
-            <div class="form">
+                    <div class="form">
+                        <br>
                 <span class="how-to-make-difference">What do our elders need:</span>
                 <?php foreach($menu as $menu):?>
                     <ul>
@@ -131,6 +128,11 @@
                     </ul>
                 <?php endforeach;?>
             </div>
+                </div>
+            </div> 
+            <div class="clearfix"> </div> 
+            <br><br>
+            
         </div>   
     </div>
     <script src="./js/jquery.wmuSlider.js"></script> 
