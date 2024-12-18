@@ -227,7 +227,7 @@
                 <div class="logo-content">
                     <div class="logo">
                         <img src="images/Alogo1.jpg" alt="" style="width: 100px; height: 100px;" />
-                        <img src="images/LogoHapagAruga.png" alt="" style="width: 160px; height: 140px;" />
+                        <img src="LogoHapag.jpg" alt="" style="width: 160px; height: 140px;" />
                         <h4 style="color: darkgreen;">ESENIORCARE</h4>
                     </div>
                     <div class="top-log">

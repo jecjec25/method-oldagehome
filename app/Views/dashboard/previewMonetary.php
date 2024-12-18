@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview Monetary</title>
-    <link rel="icon" type="image/png" href="/LogoHapagAruga.png/">
+    <link rel="icon" type="image/png" href="LogoHapag.jpg">
     <style>
         /* Set landscape page orientation */
         @page {
@@ -231,10 +231,13 @@
     <div class="size">
         <div class="header">
         <div class="container-header">
-            <h4 style="margin: 0;">Republic of the Philippines</h4>
-            <h4 style="margin: 0;">Province of Oriental Mindoro</h4>
-            <h4 style="margin: 0;">Barangay Managpi, Calapan City</h4>
-            <h4 style="margin: 0; padding-top: 5px;">HAPAG ARUGA FOUNDATION INCORPORATED</h4>
+        <img src="<?= base_url('LogoHapag.jpg') ?>" alt="Logo">
+                <h4 style="margin: 0;">Republic of the Philippines</h4>
+                <h4 style="margin: 0;">Province of Oriental Mindoro</h4>
+                <h4 style="margin: 0;">Barangay Managpi, Calapan City</h4>
+                <h4 style="margin: 0; color:blue;">Company Registration Number: <span style="color: red;">2024100172364-01</span></h4>
+                <h4 style="margin: 0; color:blue;">Company TIN Number:<span style="color: red;">663-392-709-00000</span></h4>
+                <h4 style="margin: 0; padding-top: 5px;">HAPAG ARUGA FOUNDATION INCORPORATED</h4>
             </div>
         </div>
         <h4 style="text-align: center; font-size:13px;">CASH DONATIONS</h4>

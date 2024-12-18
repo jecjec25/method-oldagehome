@@ -160,8 +160,8 @@ class Fullcalendar extends BaseController
         $namesig = $this->request->getVar('signatoryName');
         $namepos = $this->request->getVar('positionName');
         
-        // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
+        
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -334,12 +334,15 @@ class Fullcalendar extends BaseController
 </style>
 </head>
 <body>
-         <div class="header" style="font-size:16px;">
-             <h5>Republic of the Philippines</h5>
-             <h5>Province of Oriental Mindoro</h5>
-             <h5>Barangay Managpi, Calapan City</h5>
-             <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
-         </div>
+         <div style="text-align: center;position:relative;">
+                <img src="'. $imageSrc.'" alt="Logo" style="position:absolute;left:0;top:0;height:120px">
+                <h5 style="margin: 0;">Republic of the Philippines</h5>
+                <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
+                <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
+                <h5 style="margin: 0; color:blue;">Company Registration Number: <span style="color: red;">2024100172364-01</span></h5>
+                <h5 style="margin: 0; color:blue;">Company TIN Number:<span style="color: red;">663-392-709-00000</span></h5>
+                <h4 style="margin: 0; padding-top: 5px;">HAPAG ARUGA FOUNDATION INCORPORATED</h4>
+            </div>
          <br>
     <div class="title">
              <h4 style="font-size:15px;">LIST OF ELDERS</h4>
@@ -427,7 +430,7 @@ foreach ($data['reg'] as $reg) {
         set_time_limit(120);
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -469,14 +472,7 @@ foreach ($data['reg'] as $reg) {
     {
         set_time_limit(120);
         
-        // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
-        if (file_exists($imagePath)) {
-            $imageData = base64_encode(file_get_contents($imagePath));
-            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
-        } else {
-            die('Image not found.');
-        }
+        
         $closestLowerRecord = $this->main
         ->where('scstatus', 'Left')
         ->orderBy('departuredate', 'ASC')
@@ -521,7 +517,7 @@ foreach ($data['reg'] as $reg) {
         set_time_limit(120);
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -565,7 +561,7 @@ foreach ($data['reg'] as $reg) {
         set_time_limit(120);
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -612,7 +608,7 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
         set_time_limit(120);
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -655,7 +651,7 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
         $namepos = $this->request->getVar('positionName');
     
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -814,11 +810,15 @@ $lastDeathDate = $latest ? $latest['datedeath'] : 'N/A';
         </head>
         <body>
             <div class="header" style="font-size:1rem;">
-
-                <h5>Republic of the Philippines</h5>
-                <h5>Province of Oriental Mindoro</h5>
-                <h5>Barangay Managpi, Calapan City</h5>
-                <h5>HAPAG ARUGA FOUNDATION INCORPORATED</h5>
+    <div style="text-align: center;position:relative;">
+                <img src="' . $imageSrc . '" alt="Logo" style="position:absolute;left:0;top:0;height:120px">
+                <h5 style="margin: 0;">Republic of the Philippines</h5>
+                <h5 style="margin: 0;">Province of Oriental Mindoro</h5>
+                <h5 style="margin: 0;">Barangay Managpi, Calapan City</h5>
+                <h5 style="margin: 0; color:blue;">Company Registration Number: <span style="color: red;">2024100172364-01</span></h5>
+                <h5 style="margin: 0; color:blue;">Company TIN Number:<span style="color: red;">663-392-709-00000</span></h5>
+                <h4 style="margin: 0; padding-top: 5px;">HAPAG ARUGA FOUNDATION INCORPORATED</h4>
+            </div>
             </div>
                 <br>
             <div class="title">
@@ -1012,7 +1012,7 @@ public function previewMonetary($fromdate, $todate)
     set_time_limit(120);
         
     // Use local file path for the image
-    $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
+    $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
     if (file_exists($imagePath)) {
         $imageData = base64_encode(file_get_contents($imagePath));
         $imageSrc = 'data:image/jpeg;base64,' . $imageData;
@@ -1072,7 +1072,7 @@ public function previewEvent($fromDate, $toDate)
     set_time_limit(120);
     
     // Use local file path for the image
-    $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapagAruga.png';
+    $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
     if (file_exists($imagePath)) {
         $imageData = base64_encode(file_get_contents($imagePath));
         $imageSrc = 'data:image/jpeg;base64,' . $imageData;

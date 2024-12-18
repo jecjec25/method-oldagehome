@@ -50,8 +50,24 @@
         });
     </script>
 
-    <!-- Custom Styles -->
     <style>
+        .flashing-background {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: flashBackground 20s infinite;
+    }
+    @keyframes flashBackground {
+        0% { background-image: url('/aslider/h1.jpg'); }
+        20% { background-image: url('/aruga_gallery/g9.jpg'); }
+        40% { background-image: url('/aslider/h3.jpg'); }
+        60% { background-image: url('/aruga_gallery/g14.jpg'); }
+        80% { background-image: url('/aruga_gallery/g15.jpg'); }
+        100% { background-image: url('/aruga_gallery/g3.jpg'); }
+    }
+
         h2 {
             font-family: 'Lato', sans-serif;
             font-weight: 700;

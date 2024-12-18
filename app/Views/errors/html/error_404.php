@@ -71,7 +71,7 @@
 <body>
     <div class="wrap">  
         <h1>Hapag Aruga Foundation Incorporated</h1>
-        <img src="<?= base_url('images/LogoHapagAruga.png')?>" alt="" width="500" height="500">
+        <img src="<?= base_url('LogoHapag.jpg')?>" alt="" width="500" height="500">
         <p>
             <?php if (ENVIRONMENT !== 'production') : ?>
                 <?= nl2br(esc($message)) ?>
