@@ -1,0 +1,60 @@
+CRITICAL - 2024-11-04 00:15:55 --> cURL error 6: Could not resolve host: oauth2.googleapis.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://oauth2.googleapis.com/token
+in APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php on line 210.
+ 1 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), [...])
+ 2 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+ 3 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Handler\CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+ 4 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), [...])
+ 5 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), [...])
+ 6 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\PrepareBodyMiddleware.php(64): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), [...])
+ 7 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), [...])
+ 8 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), [...])
+ 9 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Middleware.php(63): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), [...])
+10 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\HandlerStack.php(75): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), [...])
+11 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Client.php(333): GuzzleHttp\HandlerStack->__invoke(Object(GuzzleHttp\Psr7\Request), [...])
+12 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Client.php(107): GuzzleHttp\Client->transfer(Object(GuzzleHttp\Psr7\Request), [...])
+13 APPPATH\Libraries\vendor\guzzlehttp\guzzle\src\Client.php(124): GuzzleHttp\Client->sendAsync(Object(GuzzleHttp\Psr7\Request), [...])
+14 APPPATH\Libraries\vendor\google\auth\src\HttpHandler\Guzzle6HttpHandler.php(47): GuzzleHttp\Client->send(Object(GuzzleHttp\Psr7\Request), [...])
+15 APPPATH\Libraries\vendor\google\auth\src\OAuth2.php(675): Google\Auth\HttpHandler\Guzzle6HttpHandler->__invoke(Object(GuzzleHttp\Psr7\Request))
+16 VENDORPATH\google\apiclient\src\Client.php(298): Google\Auth\OAuth2->fetchAuthToken(Object(Google\Auth\HttpHandler\Guzzle7HttpHandler))
+17 APPPATH\Controllers\UserController.php(48): Google\Client->fetchAccessTokenWithAuthCode('4/0AVG7fiQ_tltGJNywl0PbDHoWj62XOhxWuHiOEMqv-7hmAHyxY5cFtHstxwcZcxFAZAOqdg')
+18 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+19 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+20 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+21 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+22 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+ERROR - 2024-11-04 00:17:35 --> Google OAuth failed: Bad Request
+CRITICAL - 2024-11-04 00:17:58 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-04 00:47:31 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-11-04 00:47:44 --> Google OAuth failed: Bad Request
+CRITICAL - 2024-11-04 00:47:49 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-11-04 00:49:06 --> Google OAuth failed: Bad Request
+CRITICAL - 2024-11-04 00:49:10 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-04 00:49:28 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-04 00:50:01 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-04 00:51:41 --> Invalid code
+in VENDORPATH\google\apiclient\src\Client.php on line 287.
+ 1 APPPATH\Controllers\UserController.php(48): Google\Client->fetchAccessTokenWithAuthCode(null)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->GoogleAuthLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\laragon\\www\\method-oldagehome\\public\\index.php')
+CRITICAL - 2024-11-04 00:51:50 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-04 00:59:14 --> Declaration of Monolog\Logger::emergency(Stringable|string $message, array $context = []): void must be compatible with Psr\Log\LoggerInterface::emergency($message, array $context = [])
+in APPPATH\Libraries\vendor\monolog\monolog\src\Monolog\Logger.php on line 681.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-11-04 00:59:26 --> Google OAuth failed: Bad Request
