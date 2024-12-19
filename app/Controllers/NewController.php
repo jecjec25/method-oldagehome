@@ -2094,7 +2094,7 @@ exit();
         set_time_limit(120);
         
         // Use local file path for the image
-        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/picture.jpg';
+        $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/LogoHapag.jpg';
         if (file_exists($imagePath)) {
             $imageData = base64_encode(file_get_contents($imagePath));
             $imageSrc = 'data:image/jpeg;base64,' . $imageData;
